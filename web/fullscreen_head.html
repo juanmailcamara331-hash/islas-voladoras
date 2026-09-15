@@ -1,0 +1,26 @@
+<style>
+html, body { margin: 0 !important; padding: 0 !important; width: 100% !important; height: 100% !important; overflow: hidden !important; background: #000 !important; }
+canvas { width: 100vw !important; height: 100vh !important; display: block !important; }
+#fullscreen-helper { position: fixed; right: 14px; top: 14px; z-index: 99999; border: 0; border-radius: 12px; padding: 10px 14px; background: rgba(0,0,0,.72); color: white; font: 600 14px sans-serif; }
+</style>
+<script>
+(function () {
+  function enterFullscreen() {
+    var el = document.documentElement;
+    if (!document.fullscreenElement && el.requestFullscreen) {
+      el.requestFullscreen().catch(function () {});
+    }
+  }
+  function addButton() {
+    if (document.getElementById('fullscreen-helper')) return;
+    var b = document.createElement('button');
+    b.id = 'fullscreen-helper';
+    b.textContent = '⛶ Pantalla completa';
+    b.addEventListener('click', enterFullscreen, {once: true});
+    document.body.appendChild(b);
+    setTimeout(function () { if (document.fullscreenElement && b.parentNode) b.remove(); }, 1500);
+  }
+  document.addEventListener('pointerdown', enterFullscreen, {once: true, passive: true});
+  window.addEventListener('load', addButton);
+})();
+</script>
