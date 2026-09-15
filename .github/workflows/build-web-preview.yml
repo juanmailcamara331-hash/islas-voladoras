@@ -43,7 +43,17 @@ jobs:
       - name: Evitar caché de una exportación Web anterior
         shell: bash
         run: |
-          python3 -c 'from pathlib import Path; import os, re; p=Path("build/web/index.html"); s=p.read_text(encoding="utf-8"); v=os.environ["GITHUB_SHA"]; s=re.sub(r"(\\.(?:wasm|pck|js))(\\")", r"\\1?v="+v+r"\\2", s); p.write_text(s, encoding="utf-8")'
+          python3 <<'PY'
+          from pathlib import Path
+          import os
+          import re
+
+          p = Path("build/web/index.html")
+          s = p.read_text(encoding="utf-8")
+          v = os.environ["GITHUB_SHA"]
+          s = re.sub(r'(\.(?:wasm|pck|js))"', r'\1?v=' + v + '"', s)
+          p.write_text(s, encoding="utf-8")
+          PY
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
