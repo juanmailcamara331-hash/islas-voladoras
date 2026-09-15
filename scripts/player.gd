@@ -13,8 +13,10 @@ var gravity: float = 20.0
 func _ready() -> void:
     # Reduce contact jitter on Web, especially on overlapping ramp/floor seams.
     safe_margin = 0.02
-    floor_snap_length = 0.55
+    floor_snap_length = 0.70
     floor_max_angle = deg_to_rad(58.0)
+    floor_constant_speed = true
+    floor_stop_on_slope = true
     if camera != null:
         camera.keep_aspect = Camera3D.KEEP_HEIGHT
     if not OS.has_feature("mobile"):
