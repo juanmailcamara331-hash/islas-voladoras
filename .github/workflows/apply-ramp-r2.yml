@@ -1,0 +1,41 @@
+name: Apply definitive ramp reconstruction
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/apply-ramp-r2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild ZG ramps as unmistakable walkable ascents
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/main.gd')
+          s=p.read_text(encoding='utf-8')
+          a=s.index('func _make_navigation_terrain_zc() -> void:')
+          b=s.index('func _nav_floor_top(', a)
+          block='''func _make_navigation_terrain_zc() -> void:\n\t# ZG-R2: verticalidad inequívoca. Cada tramo gana 3 m reales.\n\tvar thickness: float = 0.80\n\t_nav_floor_top(Vector3(0.0, 0.0, 8.0), Vector2(24.0, 26.0), 2.10, thickness)\n\t_nav_floor_top(Vector3(0.0, 0.0, -16.0), Vector2(24.0, 10.0), 5.10, thickness)\n\t_nav_floor_top(Vector3(-6.0, 0.0, -31.0), Vector2(24.0, 10.0), 8.10, thickness)\n\t_nav_floor_top(Vector3(-2.0, 0.0, -46.0), Vector2(26.0, 10.0), 11.10, thickness)\n\t_nav_floor_top(Vector3(6.0, 0.0, -62.0), Vector2(26.0, 14.0), 14.10, thickness)\n\t_nav_connector(Vector3(0.0, 2.10, -4.0), Vector3(0.0, 5.10, -12.0), 9.0, thickness, 1.25)\n\t_nav_connector(Vector3(0.0, 5.10, -20.0), Vector3(-6.0, 8.10, -27.0), 9.0, thickness, 1.25)\n\t_nav_connector(Vector3(-6.0, 8.10, -35.0), Vector3(-2.0, 11.10, -42.0), 9.0, thickness, 1.25)\n\t_nav_connector(Vector3(-2.0, 11.10, -50.0), Vector3(6.0, 14.10, -56.0), 9.0, thickness, 1.25)\n\t_nav_floor_top(Vector3(-18.0, 0.0, -10.0), Vector2(10.0, 10.0), 3.60, thickness)\n\t_nav_connector(Vector3(-10.0, 2.10, -8.0), Vector3(-14.0, 3.60, -10.0), 6.0, thickness, 1.0)\n\t_nav_floor_top(Vector3(18.0, 0.0, -25.0), Vector2(10.0, 10.0), 6.60, thickness)\n\t_nav_connector(Vector3(10.0, 5.10, -18.0), Vector3(14.0, 6.60, -23.0), 6.0, thickness, 1.0)\n\t_nav_floor_top(Vector3(-19.0, 0.0, -41.0), Vector2(10.0, 10.0), 9.60, thickness)\n\t_nav_connector(Vector3(-12.0, 8.10, -34.0), Vector3(-15.0, 9.60, -39.0), 6.0, thickness, 1.0)\n\t_nav_floor_top(Vector3(21.0, 0.0, -55.0), Vector2(10.0, 10.0), 12.60, thickness)\n\t_nav_connector(Vector3(10.0, 11.10, -48.0), Vector3(17.0, 12.60, -53.0), 6.0, thickness, 1.0)\n\n'''
+          s=s[:a]+block+s[b:]
+          old='''\tmat.albedo_color = Color("b8a66a") if rot != Vector3.ZERO else Color("91a665")\n\tmat.roughness = 1.0\n\tmesh.material_override = mat\n\tbody.add_child(mesh)\n'''
+          old2='''\tmat.albedo_color = Color("91a665")\n\tmat.roughness = 1.0\n\tmesh.material_override = mat\n\tbody.add_child(mesh)\n'''
+          new='''\tvar is_ramp: bool = rot != Vector3.ZERO\n\tmat.albedo_color = Color("d2b36f") if is_ramp else Color("91a665")\n\tmat.roughness = 0.92\n\tmesh.material_override = mat\n\tbody.add_child(mesh)\n\tif is_ramp:\n\t\tfor side in [-1.0, 1.0]:\n\t\t\tvar edge: MeshInstance3D = MeshInstance3D.new()\n\t\t\tvar edge_box: BoxMesh = BoxMesh.new()\n\t\t\tedge_box.size = Vector3(0.24, 0.18, size.z)\n\t\t\tedge.mesh = edge_box\n\t\t\tedge.position = Vector3(side * (size.x * 0.5 - 0.18), size.y * 0.5 + 0.09, 0.0)\n\t\t\tvar edge_mat: StandardMaterial3D = StandardMaterial3D.new()\n\t\t\tedge_mat.albedo_color = Color("66553f")\n\t\t\tedge_mat.roughness = 1.0\n\t\t\tedge.material_override = edge_mat\n\t\t\tbody.add_child(edge)\n'''
+          if old in s: s=s.replace(old,new,1)
+          elif old2 in s: s=s.replace(old2,new,1)
+          elif 'var is_ramp: bool = rot != Vector3.ZERO' not in s: raise SystemExit('nav material block not found')
+          p.write_text(s,encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/main.gd
+          git commit -m 'Rebuild ZG ramps with clear vertical progression'
+          git push
