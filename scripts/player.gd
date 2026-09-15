@@ -4,19 +4,20 @@ extends CharacterBody3D
 @onready var camera: Camera3D = get_node_or_null("CameraPivot/Camera3D")
 
 var yaw: float = 0.0
-var pitch: float = -0.22
+var pitch: float = 0.22
 var max_speed: float = 6.0
 var acceleration: float = 7.0
 var deceleration: float = 10.0
 var gravity: float = 20.0
 
 func _ready() -> void:
-    # Reduce contact jitter on Web, especially on overlapping ramp/floor seams.
     safe_margin = 0.02
     floor_snap_length = 0.70
     floor_max_angle = deg_to_rad(58.0)
     floor_constant_speed = true
     floor_stop_on_slope = true
+    if pivot != null:
+        pivot.rotation.x = pitch
     if camera != null:
         camera.keep_aspect = Camera3D.KEEP_HEIGHT
     if not OS.has_feature("mobile"):
