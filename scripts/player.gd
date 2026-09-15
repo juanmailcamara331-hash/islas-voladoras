@@ -22,7 +22,10 @@ func _unhandled_input(event: InputEvent) -> void:
     if event is InputEventMouseMotion:
         if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
             var mouse_event: InputEventMouseMotion = event as InputEventMouseMotion
-            _apply_look(mouse_event.relative * 0.003)
+            var mouse_look_factor: float = 0.003
+            if OS.has_feature("web"):
+                mouse_look_factor = 0.0015
+            _apply_look(mouse_event.relative * mouse_look_factor)
 
 func _physics_process(delta: float) -> void:
     var input_vector: Vector2 = Input.get_vector(
@@ -40,7 +43,10 @@ func _physics_process(delta: float) -> void:
     if has_meta("touch_look"):
         var mobile_look: Vector2 = get_meta("touch_look")
         if mobile_look.length() > 0.0:
-            _apply_look(mobile_look * 0.0036)
+            var touch_look_factor: float = 0.0036
+            if OS.has_feature("web"):
+                touch_look_factor = 0.0018
+            _apply_look(mobile_look * touch_look_factor)
 
     # MOVIMIENTO RELATIVO A LA VISTA:
     # usamos la dirección horizontal REAL de la cámara en cada frame.
@@ -64,10 +70,6 @@ func _physics_process(delta: float) -> void:
 
     var strength: float = clampf(input_vector.length(), 0.0, 1.0)
 
-    # En pantalla:
-    # joystick arriba -> fondo de la vista
-    # joystick abajo  -> hacia la cámara
-    # joystick derecha/izquierda -> derecha/izquierda de pantalla
     var desired_direction: Vector3 = (
         camera_right * input_vector.x
         + camera_forward * (-input_vector.y)
