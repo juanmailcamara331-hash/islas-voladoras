@@ -1,0 +1,55 @@
+name: Apply ZG ramp fix
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/apply-zg-ramp-fix.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch exact ZG source without touching controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/main.gd')
+          s=p.read_text(encoding='utf-8')
+          assert 'func _nav_connector(' in s
+          assert 'func _nav_piece(' in s
+          # Safe cleanup documented in the ZG checkpoint.
+          s=s.replace('    var horizontal_dir: Vector3 = Vector3(delta.x, 0.0, delta.z).normalized()\n','')
+          s=s.replace('    var dir3: Vector3 = delta.normalized()\n','')
+          s=s.replace('    center = center\n','')
+          # Make mathematical slopes visually legible while keeping the exact collision geometry.
+          old='    mat.albedo_color = Color("91a665")\n'
+          new='    mat.albedo_color = Color("b8a66a") if rot != Vector3.ZERO else Color("91a665")\n'
+          if old not in s and new not in s:
+              raise SystemExit('Expected navigation material line not found')
+          s=s.replace(old,new)
+          # Godot accepts tabs; this also keeps the existing Android checkpoint parser compatible.
+          lines=[]
+          for line in s.splitlines(True):
+              n=0
+              while line.startswith('    '):
+                  n+=1
+                  line=line[4:]
+              lines.append('\t'*n+line)
+          p.write_text(''.join(lines),encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/main.gd
+          if git diff --cached --quiet; then
+            echo 'Ramp fix already applied.'
+            exit 0
+          fi
+          git commit -m 'Fix ZG mathematical ramp visibility'
+          git push
