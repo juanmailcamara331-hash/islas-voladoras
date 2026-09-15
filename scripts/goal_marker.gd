@@ -4,6 +4,7 @@ const GOAL_POSITION := Vector3(6.0, 15.0, -62.0)
 var ring: MeshInstance3D
 var ring_base_y: float = 4.7
 var pulse_time: float = 0.0
+var pillar_nodes: Array[MeshInstance3D] = []
 
 func _ready() -> void:
 	global_position = GOAL_POSITION
@@ -17,6 +18,9 @@ func _process(delta: float) -> void:
 	ring.position.y = ring_base_y + sin(pulse_time * 2.0) * 0.16
 	var pulse: float = 1.0 + sin(pulse_time * 2.0) * 0.045
 	ring.scale = Vector3.ONE * pulse
+	for i in pillar_nodes.size():
+		var pillar: MeshInstance3D = pillar_nodes[i]
+		pillar.position.y = 2.25 + sin(pulse_time * 1.5 + float(i) * 1.57) * 0.06
 
 func _build_goal() -> void:
 	var platform := MeshInstance3D.new()
@@ -46,6 +50,7 @@ func _build_goal() -> void:
 		pillar_mat.roughness = 0.6
 		pillar.material_override = pillar_mat
 		add_child(pillar)
+		pillar_nodes.append(pillar)
 
 	ring = MeshInstance3D.new()
 	var ring_mesh := TorusMesh.new()
