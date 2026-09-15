@@ -24,7 +24,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-
       - name: Install Godot 4.7.2
         shell: bash
         run: |
@@ -43,7 +42,6 @@ jobs:
           TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/4.7.2.stable"
           mkdir -p "$TEMPLATE_DIR"
           cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
-
       - name: Export Godot Web
         shell: bash
         run: |
@@ -61,7 +59,6 @@ jobs:
           exclude_filter=""
           export_path="build/web/index.html"
           script_export_mode=2
-
           [preset.0.options]
           custom_template/debug=""
           custom_template/release=""
@@ -82,15 +79,12 @@ jobs:
           godot --headless --path . --export-release "Web" build/web/index.html
           test -s build/web/index.html
           touch build/web/.nojekyll
-
       - name: Configure Pages
         uses: actions/configure-pages@v5
-
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: build/web
-
       - name: Deploy preview
         id: deployment
         uses: actions/deploy-pages@v4
