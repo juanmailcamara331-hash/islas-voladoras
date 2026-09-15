@@ -1,4 +1,4 @@
-name: Islas Voladoras Web Build Check
+name: Islas Voladoras Web Build and Deploy
 
 on:
   push:
@@ -8,6 +8,12 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -15,6 +21,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Install Godot 4.7.2 and Web export templates
         run: |
           sudo mkdir -p /opt/godot
@@ -25,10 +35,11 @@ jobs:
           mkdir -p "$HOME/.local/share/godot/export_templates/4.7.2.stable"
           unzip -q /tmp/templates.tpz -d /tmp/templates
           cp -a /tmp/templates/templates/. "$HOME/.local/share/godot/export_templates/4.7.2.stable/"
+
       - name: Export Godot Web
         run: |
-          rm -rf "$RUNNER_TEMP/godot-web" build/web
-          mkdir -p "$RUNNER_TEMP/godot-web" build/web
+          rm -rf build/web
+          mkdir -p build/web
           cat > export_presets.cfg <<'EOF'
           [preset.0]
           name="Web"
@@ -54,9 +65,24 @@ jobs:
           html/experimental_virtual_keyboard=false
           progressive_web_app/enabled=false
           EOF
-          godot --headless --path . --export-release "Web" "$RUNNER_TEMP/godot-web/index.html"
-          cp -a "$RUNNER_TEMP/godot-web/." build/web/
+          godot --headless --path . --export-release "Web" build/web/index.html
           mkdir -p build/web/lab
           cp web/index.html build/web/lab/index.html
           cp web/README.md build/web/lab/README.md
           touch build/web/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
