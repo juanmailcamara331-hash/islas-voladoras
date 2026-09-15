@@ -1,9 +1,11 @@
 extends Node3D
 
+const GOAL_POSITION := Vector3(6.0, 15.0, -62.0)
 var time := 0.0
 var beacons: Array[MeshInstance3D] = []
 
 func _ready() -> void:
+	global_position = GOAL_POSITION
 	_build()
 
 func _process(delta: float) -> void:
