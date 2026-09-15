@@ -1,0 +1,6 @@
+[build]
+  command = "bash netlify-build.sh"
+  publish = "build/web"
+
+[build.environment]
+  GODOT_VERSION = "4.7.2"
