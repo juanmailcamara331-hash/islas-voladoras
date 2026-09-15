@@ -27,34 +27,7 @@ jobs:
         with:
           enablement: true
 
-      - name: Preparar interacción Web
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path("scripts/player.gd")
-          s = p.read_text(encoding="utf-8")
-          s = s.replace(
-              '    if not OS.has_feature("mobile"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n',
-              '    if not OS.has_feature("mobile") and not OS.has_feature("web"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n',
-              1,
-          )
-          marker = 'func _unhandled_input(event: InputEvent) -> void:\n'
-          replacement = '''func _unhandled_input(event: InputEvent) -> void:
-    if event is InputEventMouseButton and event.pressed and not OS.has_feature("mobile"):
-        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-        return
-    if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-        return
-'''
-          if marker not in s:
-              raise SystemExit("No se encontró _unhandled_input")
-          s = s.replace(marker, replacement, 1)
-          p.write_text(s, encoding="utf-8")
-          PY
-
-      - name: Export Godot Web exactamente como en Netlify
+      - name: Exportar exactamente como en Netlify
         shell: bash
         run: bash netlify-build.sh
 
