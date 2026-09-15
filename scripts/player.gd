@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var camera: Camera3D = get_node_or_null("CameraPivot/Camera3D")
 
 var yaw: float = 0.0
-var pitch: float = 0.22
+var pitch: float = -0.22
 var max_speed: float = 6.0
 var acceleration: float = 7.0
 var deceleration: float = 10.0
