@@ -60,6 +60,14 @@ jobs:
           cp web/index.html build/web/lab/index.html
           cp web/README.md build/web/lab/README.md
           touch build/web/.nojekyll
+      - name: Diagnose Netlify authentication
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ff2f94b3-0d4c-49bc-957a-b9daafedecf2
+        run: |
+          echo "Checking Netlify authentication..."
+          npx --yes netlify-cli@latest status --auth="$NETLIFY_AUTH_TOKEN"
+          echo "Netlify authentication check passed."
       - name: Deploy Web Preview to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
