@@ -14,6 +14,13 @@ func _ready() -> void:
 func _apply() -> void:
 	_recolor(get_parent())
 
+func _color_distance(a: Color, b: Color) -> float:
+	var dr := a.r - b.r
+	var dg := a.g - b.g
+	var db := a.b - b.b
+	var da := a.a - b.a
+	return sqrt(dr * dr + dg * dg + db * db + da * da)
+
 func _recolor(node: Node) -> void:
 	if node is MeshInstance3D:
 		var mat: Material = node.material_override
@@ -21,7 +28,7 @@ func _recolor(node: Node) -> void:
 			var standard_mat: StandardMaterial3D = mat
 			var color: Color = standard_mat.albedo_color
 			for old_color in PALETTE:
-				if color.distance_to(old_color) < 0.025:
+				if _color_distance(color, old_color) < 0.025:
 					standard_mat.albedo_color = PALETTE[old_color]
 					color = standard_mat.albedo_color
 					break
