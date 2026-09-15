@@ -27,84 +27,9 @@ jobs:
         with:
           enablement: true
 
-      - name: Install Godot 4.7.2 and Web export templates
+      - name: Export Godot Web exactamente como en Netlify
         run: |
-          sudo mkdir -p /opt/godot
-          wget -q https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip -O /tmp/godot.zip
-          unzip -q /tmp/godot.zip -d /opt/godot
-          sudo mv /opt/godot/Godot_v4.7.2-stable_linux.x86_64 /usr/local/bin/godot
-          wget -q https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz -O /tmp/templates.tpz
-          mkdir -p "$HOME/.local/share/godot/export_templates/4.7.2.stable"
-          unzip -q /tmp/templates.tpz -d /tmp/templates
-          cp -a /tmp/templates/templates/. "$HOME/.local/share/godot/export_templates/4.7.2.stable/"
-
-      - name: Export Godot Web
-        run: |
-          rm -rf "$RUNNER_TEMP/godot-web" build/web
-          mkdir -p "$RUNNER_TEMP/godot-web" build/web
-
-          # En Web Pointer Lock solo puede solicitarse tras un gesto del usuario.
-          # Aplicamos el ajuste únicamente al build, sin alterar el código fuente
-          # del juego ni su arte.
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path("scripts/player.gd")
-          s = p.read_text(encoding="utf-8")
-          s = s.replace('    if not OS.has_feature("mobile"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n', '    if not OS.has_feature("mobile") and not OS.has_feature("web"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n')
-          marker = 'func _unhandled_input(event: InputEvent) -> void:\n'
-          replacement = '''func _unhandled_input(event: InputEvent) -> void:\n    if event is InputEventMouseButton and event.pressed and not OS.has_feature("mobile"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n        return\n    if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:\n        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE\n        return\n'''
-          if marker not in s:
-              raise SystemExit("No se encontró _unhandled_input")
-          s = s.replace(marker, replacement, 1)
-          p.write_text(s, encoding="utf-8")
-          PY
-
-          cat > export_presets.cfg <<'EOF'
-          [preset.0]
-          name="Web"
-          platform="Web"
-          runnable=true
-          custom_features=""
-          export_filter="all_resources"
-          include_filter=""
-          exclude_filter=""
-          export_path="build/web/index.html"
-          patch_list=Array[String]([])
-          [preset.0.options]
-          custom_template/debug=""
-          custom_template/release=""
-          variant/export_type=0
-          variant/thread_support=false
-          vram_texture_compression/for_desktop=true
-          vram_texture_compression/for_mobile=false
-          html/custom_html_shell=""
-          html/head_include=""
-          html/canvas_resize_policy=2
-          html/focus_canvas_on_start=true
-          html/experimental_virtual_keyboard=false
-          progressive_web_app/enabled=false
-          EOF
-          godot --headless --path . --export-release "Web" "$RUNNER_TEMP/godot-web/index.html"
-          cp -a "$RUNNER_TEMP/godot-web/." build/web/
-
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-          p = Path("build/web/index.html")
-          html = p.read_text(encoding="utf-8")
-          debug = Path("web/debug-boot.js").read_text(encoding="utf-8")
-          fullscreen = Path("web/fullscreen.js").read_text(encoding="utf-8")
-          fullscreen = re.sub(r'^\s*<script>\s*', '', fullscreen, count=1)
-          fullscreen = re.sub(r'\s*</script>\s*$', '', fullscreen, count=1)
-          inject = "<script>" + debug + "</script>\n<script>" + fullscreen + "</script>"
-          html = html.replace("</head>", inject + "\n</head>")
-          p.write_text(html, encoding="utf-8")
-          PY
-
-          mkdir -p build/web/lab
-          cp web/index.html build/web/lab/index.html
-          cp web/README.md build/web/lab/README.md
-          touch build/web/.nojekyll
+          bash netlify-build.sh
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
