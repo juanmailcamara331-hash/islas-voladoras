@@ -42,6 +42,19 @@ jobs:
             exit 1
           fi
 
+      - name: Enable Android texture compression
+        shell: bash
+        run: |
+          set -euo pipefail
+          PROJECT_FILE="$PROJECT_DIR/project.godot"
+          test -f "$PROJECT_FILE"
+          if grep -q '^\[rendering\]' "$PROJECT_FILE"; then
+            sed -i '/^renderer\/rendering_method=/d;/^renderer\/rendering_method.mobile=/d;/^textures\/default_filters\/use_nearest_mipmap_filter=/d;/^textures\/vram_compression\/import_etc2_astc=/d' "$PROJECT_FILE"
+            sed -i '/^\[rendering\]/a textures/vram_compression/import_etc2_astc=true' "$PROJECT_FILE"
+          else
+            printf '\n[rendering]\ntextures/vram_compression/import_etc2_astc=true\n' >> "$PROJECT_FILE"
+          fi
+
       - name: Install Java 17
         uses: actions/setup-java@v5
         with:
@@ -83,8 +96,6 @@ jobs:
           TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}"
           mkdir -p "$TEMPLATE_DIR"
           cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
-          # Godot's TPZ stores Android templates with an android_ prefix in some builds.
-          # Normalize them to the filenames the editor expects for export.
           if [ ! -f "$TEMPLATE_DIR/android_debug.apk" ]; then
             DEBUG_APK="$(find "$RUNNER_TEMP/templates" -type f -name 'android_debug.apk' -print -quit)"
             test -n "$DEBUG_APK"
@@ -95,7 +106,6 @@ jobs:
             test -n "$RELEASE_APK"
             cp "$RELEASE_APK" "$TEMPLATE_DIR/android_release.apk"
           fi
-          ls -lh "$TEMPLATE_DIR/android_debug.apk" "$TEMPLATE_DIR/android_release.apk"
           godot --version
 
       - name: Configure Android paths for Godot
