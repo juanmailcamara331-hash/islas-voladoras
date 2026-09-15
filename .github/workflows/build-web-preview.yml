@@ -29,60 +29,55 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
-
-      - name: Preparar controles Web sin modificar el código fuente
+      - name: Preparar controles Web sin tocar fuente
         shell: bash
         run: |
           cp scripts/player.gd /tmp/player.gd
           trap 'cp /tmp/player.gd scripts/player.gd' EXIT
           sed -i 's/if not OS.has_feature("mobile"):/if not OS.has_feature("mobile") and not OS.has_feature("web"):/1' scripts/player.gd
           sed -i '/func _unhandled_input(event: InputEvent) -> void:/a\    if event is InputEventMouseButton and event.pressed and not OS.has_feature("mobile"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n        return\n    if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:\n        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE\n        return' scripts/player.gd
-
       - name: Exportar juego Web
         shell: bash
         run: bash netlify-build.sh
-
       - name: Componer portal ISL
         shell: bash
         run: |
           rm -rf build/pages
           mkdir -p build/pages/game
-          cp portal/index.html build/pages/index.html
-          cp portal/ps4.html build/pages/ps4.html
-          cp portal/404.html build/pages/404.html
-          cp portal/manifest.webmanifest build/pages/manifest.webmanifest
+          cp portal/index.html portal/styles.css portal/app.js portal/ps4.html portal/reel.html portal/404.html portal/manifest.webmanifest portal/content-manifest.json build/pages/
+          cp -a portal/labs build/pages/
+          mkdir -p build/pages/assets
+          cp portal/assets/*.svg build/pages/assets/
           touch build/pages/.nojekyll
-
-          cat portal/_payload/chunk-* > /tmp/isl-payload.b64
-          base64 -d /tmp/isl-payload.b64 > /tmp/isl-payload.zip
-          unzip -q /tmp/isl-payload.zip -d build/pages
-
+          cat portal/_payload/chunk-* > /tmp/isl-media.b64
+          base64 -d /tmp/isl-media.b64 > /tmp/isl-media.zip
+          unzip -q /tmp/isl-media.zip -d build/pages
+          if [ -f build/pages/assets/airships-last-waltz.mp3 ]; then cp build/pages/assets/airships-last-waltz.mp3 build/pages/assets/airships-last-waltz-pages.mp3; fi
+          if [ -f build/pages/assets/isl-tv-reel.mp4 ]; then cp build/pages/assets/isl-tv-reel.mp4 build/pages/assets/isl-tv-reel-pages.mp4; fi
           cp -a build/web/. build/pages/game/
-          rm -rf build/pages/_payload
-
-      - name: CQC mínimo del sitio publicado
+      - name: CQC mínimo
         shell: bash
         run: |
           test -f build/pages/index.html
+          test -f build/pages/styles.css
+          test -f build/pages/app.js
           test -f build/pages/ps4.html
+          test -f build/pages/reel.html
           test -f build/pages/game/index.html
           test -f build/pages/labs/wind.html
           test -f build/pages/labs/method.html
-          test -f build/pages/assets/airships-last-waltz.mp3
-          test -f build/pages/assets/isl-tv-reel.mp4
-          echo "ISL Pages listo:"
-          find build/pages -maxdepth 2 -type f | sort | head -100
-
+          test -f build/pages/assets/airships-last-waltz-pages.mp3
+          test -f build/pages/assets/isl-tv-reel-pages.mp4
+          grep -q "Crear es alterar el mundo" build/pages/index.html
+          echo "CQC Pages OK"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: build/pages
-
   deploy:
     environment:
       name: github-pages
@@ -93,6 +88,6 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
