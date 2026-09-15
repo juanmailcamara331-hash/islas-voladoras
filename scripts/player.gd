@@ -22,93 +22,46 @@ func _unhandled_input(event: InputEvent) -> void:
     if event is InputEventMouseMotion:
         if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
             var mouse_event: InputEventMouseMotion = event as InputEventMouseMotion
-            var mouse_look_factor: float = 0.003
-            if OS.has_feature("web"):
-                mouse_look_factor = 0.0015
-            _apply_look(mouse_event.relative * mouse_look_factor)
+            var sensitivity: float = 0.0012 if OS.has_feature("web") else 0.003
+            _apply_look(mouse_event.relative * sensitivity)
 
 func _physics_process(delta: float) -> void:
-    var input_vector: Vector2 = Input.get_vector(
-        "move_left",
-        "move_right",
-        "move_forward",
-        "move_back"
-    )
-
+    var input_vector: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
     if has_meta("touch_move"):
         var mobile_vector: Vector2 = get_meta("touch_move")
         if OS.has_feature("mobile") or mobile_vector.length() > 0.01:
             input_vector = mobile_vector
-
     if has_meta("touch_look"):
         var mobile_look: Vector2 = get_meta("touch_look")
         if mobile_look.length() > 0.0:
-            var touch_look_factor: float = 0.0036
-            if OS.has_feature("web"):
-                touch_look_factor = 0.0018
-            _apply_look(mobile_look * touch_look_factor)
-
-    # MOVIMIENTO RELATIVO A LA VISTA:
-    # usamos la dirección horizontal REAL de la cámara en cada frame.
-    var camera_forward: Vector3 = Vector3(0.0, 0.0, -1.0)
-    var camera_right: Vector3 = Vector3(1.0, 0.0, 0.0)
-
+            _apply_look(mobile_look * 0.0036)
+    var basis: Basis = global_transform.basis
     if camera != null:
-        camera_forward = -camera.global_transform.basis.z
-        camera_right = camera.global_transform.basis.x
-    elif pivot != null:
-        camera_forward = -pivot.global_transform.basis.z
-        camera_right = pivot.global_transform.basis.x
-
-    camera_forward.y = 0.0
-    camera_right.y = 0.0
-
-    if camera_forward.length() > 0.001:
-        camera_forward = camera_forward.normalized()
-    if camera_right.length() > 0.001:
-        camera_right = camera_right.normalized()
-
-    var strength: float = clampf(input_vector.length(), 0.0, 1.0)
-
-    var desired_direction: Vector3 = (
-        camera_right * input_vector.x
-        + camera_forward * (-input_vector.y)
-    )
-
-    if desired_direction.length() > 0.001:
-        desired_direction = desired_direction.normalized()
-
-    var speed_factor: float = strength * strength * 0.72 + strength * 0.28
-    var target_velocity: Vector3 = desired_direction * max_speed * speed_factor
-
-    var horizontal_velocity: Vector3 = Vector3(velocity.x, 0.0, velocity.z)
-    var change_rate: float = deceleration
-    if strength > 0.01:
-        change_rate = acceleration
-
-    horizontal_velocity = horizontal_velocity.move_toward(
-        target_velocity,
-        change_rate * delta
-    )
-
-    velocity.x = horizontal_velocity.x
-    velocity.z = horizontal_velocity.z
-
+        basis = camera.global_transform.basis
+    var forward: Vector3 = -basis.z
+    var right: Vector3 = basis.x
+    forward.y = 0.0
+    right.y = 0.0
+    forward = forward.normalized()
+    right = right.normalized()
+    var direction: Vector3 = (right * input_vector.x + forward * input_vector.y)
+    if direction.length() > 1.0:
+        direction = direction.normalized()
+    var target_velocity: Vector3 = direction * max_speed
+    var horizontal: Vector3 = Vector3(velocity.x, 0.0, velocity.z)
+    var rate: float = acceleration if direction.length() > 0.01 else deceleration
+    horizontal = horizontal.move_toward(Vector3(target_velocity.x, 0.0, target_velocity.z), rate * delta)
+    velocity.x = horizontal.x
+    velocity.z = horizontal.z
     if not is_on_floor():
         velocity.y -= gravity * delta
     else:
-        if velocity.y < 0.0:
-            velocity.y = -0.5
-
+        velocity.y = min(velocity.y, 0.0)
     move_and_slide()
-
-    if global_position.y < -30.0:
-        global_position = Vector3(0.0, 8.0, 0.0)
-        velocity = Vector3.ZERO
 
 func _apply_look(amount: Vector2) -> void:
     yaw -= amount.x
-    pitch = clampf(pitch - amount.y, -1.15, 0.50)
-
+    pitch = clamp(pitch - amount.y, -1.25, 0.75)
+    rotation.y = yaw
     if pivot != null:
-        pivot.rotation = Vector3(pitch, yaw, 0.0)
+        pivot.rotation.x = pitch
