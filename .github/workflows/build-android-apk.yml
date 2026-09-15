@@ -16,7 +16,6 @@ jobs:
   build-apk:
     runs-on: ubuntu-latest
     timeout-minutes: 35
-
     env:
       GODOT_VERSION: "4.7.2"
       GODOT_STATUS: "stable"
@@ -39,24 +38,32 @@ jobs:
             test -n "$PROJECT"
             echo "PROJECT_DIR=$(dirname "$PROJECT")" >> "$GITHUB_ENV"
           else
-            echo "ERROR: falta el checkpoint ZG completo. Sube ZG_ISLAS_ORIGINAL.zip a la raíz del repositorio." >&2
+            echo "ERROR: falta el checkpoint ZG completo." >&2
             exit 1
           fi
 
       - name: Install Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "17"
 
-      - name: Install Android SDK packages
+      - name: Install Android SDK command-line tools
         shell: bash
         run: |
           set -euo pipefail
-          yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.1"
+          SDK="$RUNNER_TEMP/android-sdk"
+          mkdir -p "$SDK/cmdline-tools"
+          curl -fL --retry 3 -o "$RUNNER_TEMP/cmdline.zip" "https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip"
+          unzip -q "$RUNNER_TEMP/cmdline.zip" -d "$SDK/cmdline-tools"
+          mv "$SDK/cmdline-tools/cmdline-tools" "$SDK/cmdline-tools/latest"
+          echo "ANDROID_SDK_ROOT=$SDK" >> "$GITHUB_ENV"
+          echo "$SDK/cmdline-tools/latest/bin" >> "$GITHUB_PATH"
+          echo "$SDK/platform-tools" >> "$GITHUB_PATH"
+          yes | "$SDK/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$SDK" --licenses >/dev/null || true
+          "$SDK/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$SDK" "platform-tools" "platforms;android-35" "build-tools;35.0.1"
 
-      - name: Install Godot 4.7.2 and export templates
+      - name: Install Godot and export templates
         shell: bash
         run: |
           set -euo pipefail
@@ -72,6 +79,7 @@ jobs:
           sudo ln -sf "$GODOT_BIN" /usr/local/bin/godot
           unzip -q "$RUNNER_TEMP/templates.tpz" -d "$RUNNER_TEMP/templates"
           TEMPLATE_SRC="$(find "$RUNNER_TEMP/templates" -type d -name templates -print -quit)"
+          test -n "$TEMPLATE_SRC"
           TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}"
           mkdir -p "$TEMPLATE_DIR"
           cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
@@ -128,7 +136,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cd "$PROJECT_DIR"
           godot --headless --editor --quit --path "$PROJECT_DIR"
 
       - name: Export debug APK
