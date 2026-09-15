@@ -120,35 +120,25 @@ func _build_island_zero() -> void:
 
 
 func _make_navigation_terrain_zc() -> void:
-	# ZG: red de navegación calculada por extremos exactos.
-	# Las mesetas tienen una altura superior explícita y cada rampa se construye
-	# entre dos puntos de esa superficie. No hay ángulos/alturas "a ojo".
+	# ZG-R2: verticalidad inequívoca. Cada tramo gana 3 m reales.
 	var thickness: float = 0.80
-
 	_nav_floor_top(Vector3(0.0, 0.0, 8.0), Vector2(24.0, 26.0), 2.10, thickness)
-	_nav_floor_top(Vector3(0.0, 0.0, -16.0), Vector2(24.0, 10.0), 3.00, thickness)
-	_nav_floor_top(Vector3(-6.0, 0.0, -31.0), Vector2(24.0, 10.0), 4.00, thickness)
-	_nav_floor_top(Vector3(-2.0, 0.0, -46.0), Vector2(26.0, 10.0), 5.00, thickness)
-	_nav_floor_top(Vector3(6.0, 0.0, -62.0), Vector2(26.0, 14.0), 6.00, thickness)
-
-	# Ruta principal. Cada extremo penetra 1 m en su meseta para eliminar juntas.
-	_nav_connector(Vector3(0.0, 2.10, -4.0), Vector3(0.0, 3.00, -12.0), 12.0, thickness, 1.0)
-	_nav_connector(Vector3(0.0, 3.00, -20.0), Vector3(-6.0, 4.00, -27.0), 12.0, thickness, 1.0)
-	_nav_connector(Vector3(-6.0, 4.00, -35.0), Vector3(-2.0, 5.00, -42.0), 12.0, thickness, 1.0)
-	_nav_connector(Vector3(-2.0, 5.00, -50.0), Vector3(6.0, 6.00, -56.0), 12.0, thickness, 1.0)
-
-	# Plataformas laterales: también conectadas físicamente, nunca islas decorativas pisables aisladas.
-	_nav_floor_top(Vector3(-18.0, 0.0, -10.0), Vector2(10.0, 10.0), 2.55, thickness)
-	_nav_connector(Vector3(-10.0, 2.10, -8.0), Vector3(-14.0, 2.55, -10.0), 7.0, thickness, 1.0)
-
-	_nav_floor_top(Vector3(18.0, 0.0, -25.0), Vector2(10.0, 10.0), 3.55, thickness)
-	_nav_connector(Vector3(10.0, 3.00, -18.0), Vector3(14.0, 3.55, -23.0), 7.0, thickness, 1.0)
-
-	_nav_floor_top(Vector3(-19.0, 0.0, -41.0), Vector2(10.0, 10.0), 4.55, thickness)
-	_nav_connector(Vector3(-12.0, 4.00, -34.0), Vector3(-15.0, 4.55, -39.0), 7.0, thickness, 1.0)
-
-	_nav_floor_top(Vector3(21.0, 0.0, -55.0), Vector2(10.0, 10.0), 5.55, thickness)
-	_nav_connector(Vector3(10.0, 5.00, -48.0), Vector3(17.0, 5.55, -53.0), 7.0, thickness, 1.0)
+	_nav_floor_top(Vector3(0.0, 0.0, -16.0), Vector2(24.0, 10.0), 5.10, thickness)
+	_nav_floor_top(Vector3(-6.0, 0.0, -31.0), Vector2(24.0, 10.0), 8.10, thickness)
+	_nav_floor_top(Vector3(-2.0, 0.0, -46.0), Vector2(26.0, 10.0), 11.10, thickness)
+	_nav_floor_top(Vector3(6.0, 0.0, -62.0), Vector2(26.0, 14.0), 14.10, thickness)
+	_nav_connector(Vector3(0.0, 2.10, -4.0), Vector3(0.0, 5.10, -12.0), 9.0, thickness, 1.25)
+	_nav_connector(Vector3(0.0, 5.10, -20.0), Vector3(-6.0, 8.10, -27.0), 9.0, thickness, 1.25)
+	_nav_connector(Vector3(-6.0, 8.10, -35.0), Vector3(-2.0, 11.10, -42.0), 9.0, thickness, 1.25)
+	_nav_connector(Vector3(-2.0, 11.10, -50.0), Vector3(6.0, 14.10, -56.0), 9.0, thickness, 1.25)
+	_nav_floor_top(Vector3(-18.0, 0.0, -10.0), Vector2(10.0, 10.0), 3.60, thickness)
+	_nav_connector(Vector3(-10.0, 2.10, -8.0), Vector3(-14.0, 3.60, -10.0), 6.0, thickness, 1.0)
+	_nav_floor_top(Vector3(18.0, 0.0, -25.0), Vector2(10.0, 10.0), 6.60, thickness)
+	_nav_connector(Vector3(10.0, 5.10, -18.0), Vector3(14.0, 6.60, -23.0), 6.0, thickness, 1.0)
+	_nav_floor_top(Vector3(-19.0, 0.0, -41.0), Vector2(10.0, 10.0), 9.60, thickness)
+	_nav_connector(Vector3(-12.0, 8.10, -34.0), Vector3(-15.0, 9.60, -39.0), 6.0, thickness, 1.0)
+	_nav_floor_top(Vector3(21.0, 0.0, -55.0), Vector2(10.0, 10.0), 12.60, thickness)
+	_nav_connector(Vector3(10.0, 11.10, -48.0), Vector3(17.0, 12.60, -53.0), 6.0, thickness, 1.0)
 
 func _nav_floor_top(center_xz: Vector3, footprint: Vector2, top_y: float, thickness: float) -> void:
 	var pos: Vector3 = Vector3(center_xz.x, top_y - thickness * 0.5, center_xz.z)
@@ -185,10 +175,23 @@ func _nav_piece(pos: Vector3, size: Vector3, rot: Vector3) -> void:
 	box.size = size
 	mesh.mesh = box
 	var mat: StandardMaterial3D = StandardMaterial3D.new()
-	mat.albedo_color = Color("b8a66a") if rot != Vector3.ZERO else Color("91a665")
-	mat.roughness = 1.0
+	var is_ramp: bool = rot != Vector3.ZERO
+	mat.albedo_color = Color("d2b36f") if is_ramp else Color("91a665")
+	mat.roughness = 0.92
 	mesh.material_override = mat
 	body.add_child(mesh)
+	if is_ramp:
+		for side in [-1.0, 1.0]:
+			var edge: MeshInstance3D = MeshInstance3D.new()
+			var edge_box: BoxMesh = BoxMesh.new()
+			edge_box.size = Vector3(0.24, 0.18, size.z)
+			edge.mesh = edge_box
+			edge.position = Vector3(side * (size.x * 0.5 - 0.18), size.y * 0.5 + 0.09, 0.0)
+			var edge_mat: StandardMaterial3D = StandardMaterial3D.new()
+			edge_mat.albedo_color = Color("66553f")
+			edge_mat.roughness = 1.0
+			edge.material_override = edge_mat
+			body.add_child(edge)
 
 
 func _make_visual_house(pos: Vector3, s: float) -> void:
