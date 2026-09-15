@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ISL Method Lab v0.1</title>
+<style>
+:root{
+  --bg:#0d1117;--panel:#141b23;--line:#2a3743;--text:#edf3f7;--muted:#91a3af;
+  --cyan:#8defff;--lime:#dfff7a;--amber:#ffc472;--red:#ff7b7b;--blue:#7fb0ff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(#0d1117,#101821);color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.wrap{max-width:980px;margin:auto;padding:18px}
+h1{font-size:24px;margin:0 0 4px} h2{font-size:14px;margin:0 0 8px;color:var(--cyan)}
+.sub{color:var(--muted);font-size:12px;line-height:1.5}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:16px}
+.card{background:rgba(20,27,35,.96);border:1px solid var(--line);padding:14px;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.step{padding:6px 8px;border:1px solid var(--line);font-size:10px;color:var(--muted)}
+.step.active{border-color:var(--cyan);color:white;background:#182a33}
+.case{font-size:12px;line-height:1.5;padding:10px;background:#0f151b;border-left:3px solid var(--amber);margin:10px 0}
+button,select,textarea,input{font:inherit}
+button{background:#111820;color:var(--text);border:1px solid var(--line);padding:8px 10px;cursor:pointer}
+button:hover{border-color:var(--cyan)}
+button.good{border-color:#587533;color:var(--lime)}
+button.warn{border-color:#875f38;color:var(--amber)}
+button.bad{border-color:#81464b;color:#ffaaaa}
+.choice{display:grid;gap:7px;margin:10px 0}
+.choice button{text-align:left}
+.feedback{min-height:90px;padding:10px;background:#0c1217;border:1px solid var(--line);font-size:11px;line-height:1.5}
+.score{font-size:28px;font-weight:800;color:var(--lime)}
+.small{font-size:10px;color:var(--muted)}
+.rule{font-size:12px;color:var(--lime);line-height:1.5}
+.pipeline{display:grid;gap:4px;text-align:center;font-size:10px}
+.pipe{padding:6px;border:1px solid var(--line);background:#101820}.arrow{color:var(--muted)}
+hr{border:0;border-top:1px solid var(--line);margin:14px 0}
+textarea{width:100%;min-height:86px;background:#0b1116;color:white;border:1px solid var(--line);padding:8px}
+.tag{display:inline-block;padding:3px 6px;border:1px solid var(--line);font-size:9px;color:var(--muted);margin-right:4px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.wrap{padding:10px}h1{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ISL // METHOD LAB v0.1</h1>
+  <div class="sub">Entrena el Bucle Magistral Recursivo: intención → falsificación barata → CQC → comparación → decisión → mimo → parada → regla reutilizable.</div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>MICROCASO</h2>
+      <div id="caseTitle" class="tag"></div>
+      <div id="caseText" class="case"></div>
+      <div id="question" class="sub"></div>
+      <div id="choices" class="choice"></div>
+      <div id="feedback" class="feedback">Elige una respuesta. El objetivo no es adivinar “la correcta”, sino detectar qué decisión protege mejor el experimento.</div>
+      <div style="display:flex;gap:7px;margin-top:8px">
+        <button id="nextBtn">Siguiente caso</button>
+        <button id="resetBtn">Reiniciar</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>ESTADO DE CRITERIO</h2>
+      <div class="score" id="score">0</div>
+      <div class="small">LUCIDEZ · no modifica CANON</div>
+      <hr>
+      <div class="pipeline">
+        <div class="pipe">INTENCIÓN</div><div class="arrow">↓</div>
+        <div class="pipe">ESENCIA / REFERENCIAS</div><div class="arrow">↓</div>
+        <div class="pipe">HIPÓTESIS FALSABLE</div><div class="arrow">↓</div>
+        <div class="pipe">MEDIO MÁS BARATO</div><div class="arrow">↓</div>
+        <div class="pipe">CONSTRUIR → CQC-1</div><div class="arrow">↓</div>
+        <div class="pipe">COMPARAR / CRUZAR → CQC-2</div><div class="arrow">↓</div>
+        <div class="pipe">DECIDIR → MIMAR → PARAR</div><div class="arrow">↓</div>
+        <div class="pipe">FIJAR REGLA → SIGUIENTE INCERTIDUMBRE</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>TARJETA DE ITERACIÓN RÁPIDA</h2>
+      <div class="small">Úsala con un asset 3D, una mecánica, UI, escena o documento.</div>
+      <textarea id="cardText">INTENCIÓN:
+INCERTIDUMBRE:
+ESENCIA:
+HIPÓTESIS FALSABLE:
+BASELINE:
+VARIANTE MÍNIMA:
+MEDIO MÁS BARATO:
+QUÉ OBSERVO:
+CQC-1:
+CRUCE:
+CQC-2:
+DECISIÓN:
+MIMO QUE SÍ COMPRA VALOR:
+CRITERIO DE PARADA:
+REGLA APRENDIDA:
+SIGUIENTE INCERTIDUMBRE:</textarea>
+      <div style="display:flex;gap:7px;margin-top:8px">
+        <button id="copyBtn">Copiar tarjeta</button>
+        <button id="clearBtn">Vaciar</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>REGLAS VIVAS</h2>
+      <div class="rule">1–3–∞ · una prueba mínima, máximo tres conexiones iniciales, expansión sólo después de demostrar valor.</div>
+      <hr>
+      <div class="rule">IA interpreta · ISL valida · el mundo responde.</div>
+      <hr>
+      <div class="rule">Fallo → patrón → regla. Acierto → principio → reutilización sin clonar.</div>
+      <hr>
+      <div class="rule">Natural ≠ aleatorio. Belleza ≠ ruido. Mimo ≠ perfeccionismo infinito.</div>
+      <hr>
+      <div class="rule">Si otra vuelta no cambia decisión, riesgo o experiencia perceptible: parar.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const cases=[
+{
+t:"ASSET 3D",
+x:"Tienes tres receptores de viento generados por Meshy, Rodin y Tripo. Uno parece precioso, pero cada variante usa una cámara, luz y fondo distintos.",
+q:"¿Qué haces antes de decidir cuál es mejor?",
+opts:[
+["Elijo el más bonito a primera vista.",0,"Estás midiendo presentación mezclada con calidad del asset."],
+["Igualo cámara, luz, escala y fondo; cambio sólo el asset/proveedor.",2,"Bien: variables controladas. Ahora el bake-off puede atribuir diferencias al objeto que quieres evaluar."],
+["Genero diez versiones más de cada proveedor.",-1,"Más volumen antes de controlar el experimento sólo multiplica ruido y coste."]
+]},
+{
+t:"WIND LAB",
+x:"El prototipo funciona. Añades un molino 3D espectacular, pero ahora varios jugadores miran las aspas y no entienden dónde debe entrar el viento.",
+q:"¿Qué decisión protege mejor ISL?",
+opts:[
+["Mantenerlo: el arte final debe impresionar.",-1,"Belleza que destruye affordance y foco no compra calidad real."],
+["Quitar o subordinar el molino y devolver protagonismo al objetivo.",2,"Correcto: figura/fondo, señal/ruido y atención antes que decoración."],
+["Añadir más texto explicando el objetivo.",0,"Puede parchear el síntoma, pero no arregla la jerarquía visual."]
+]},
+{
+t:"REFERENCIAS",
+x:"Una referencia de Art déco te encanta y otra de Gaudí también. El primer asset intenta copiar ornamento de ambas y acaba pareciendo un collage.",
+q:"¿Qué falta?",
+opts:[
+["Más detalle para unir los estilos.",-1,"El problema no es cantidad. Es falta de esencia y reinterpretación."],
+["Referencia → esencia → contraste → reinterpretación propia.",2,"Exacto. Extraer orden/verticalidad frente a crecimiento/curva es más fértil que copiar decoración."],
+["Elegir una referencia y prohibir las demás.",0,"A veces simplifica, pero pierde la oportunidad de crear una tensión propia."]
+]},
+{
+t:"CUIDADO Y MIMO",
+x:"La interfaz ya es clara y agradable. Una octava pasada cambiaría sombras y espaciados que nadie ha detectado como problema.",
+q:"¿Qué ordena el método?",
+opts:[
+["Seguir hasta que sea perfecta.",-1,"Eso es perfeccionismo infinito, no mimo."],
+["Parar y mover la atención a la siguiente incertidumbre real.",2,"Sí: parada por utilidad. La calidad es una curva finita."],
+["Empeorar algo para justificar otra iteración.",-2,"Delito metodológico con agravante."]
+]},
+{
+t:"CREACIÓN POR DIBUJO",
+x:"La IA puede convertir el dibujo del jugador en un objeto precioso, pero todavía no sabemos si la forma dibujada produce una función comprensible.",
+q:"¿Cuál es el test correcto primero?",
+opts:[
+["Image-to-3D final con textura premium.",-1,"Es caro y no falsifica la relación fundamental."],
+["Micro-sim determinista 2D forma→función; IA visual después.",2,"Correcto: resolver barato lo caro antes de producirlo."],
+["Preguntar al jugador si le gusta dibujar.",0,"Mide preferencia, no demuestra causalidad forma→función."]
+]},
+{
+t:"CQC-R",
+x:"Una mecánica funciona sola, pero conectada con vínculos, mundo y mutaciones dispara seis consecuencias a la vez.",
+q:"¿Qué nivel de revisión toca?",
+opts:[
+["Sólo CQC-1: la mecánica ya era buena.",-1,"El problema aparece precisamente en las relaciones."],
+["CQC-2: revisar cruces, interferencias y limitar conexiones.",2,"Sí: una consecuencia principal + pocos ecos suele comunicar mejor que una cascada."],
+["Añadir un tutorial de consecuencias.",0,"Puede explicar el ruido, pero no lo comprime."]
+]}
+];
+let i=0,score=0,answered=false;
+
+function render(){
+  answered=false;
+  const c=cases[i];
+  document.getElementById("caseTitle").textContent=c.t;
+  document.getElementById("caseText").textContent=c.x;
+  document.getElementById("question").textContent=c.q;
+  document.getElementById("feedback").textContent="Elige una respuesta. El objetivo no es adivinar “la correcta”, sino detectar qué decisión protege mejor el experimento.";
+  const ch=document.getElementById("choices"); ch.innerHTML="";
+  c.opts.forEach((o,idx)=>{
+    const b=document.createElement("button"); b.textContent=o[0];
+    b.onclick=()=>{
+      if(answered)return; answered=true; score+=o[1];
+      document.getElementById("score").textContent=score;
+      document.getElementById("feedback").innerHTML="<b>"+(o[1]>0?"CQC: SOBREVIVE":"CQC: REVISAR")+"</b><br>"+o[2];
+      [...ch.children].forEach(x=>x.disabled=true);
+      b.style.borderColor=o[1]>0?"#7aa84c":"#9b5c5c";
+    };
+    ch.appendChild(b);
+  });
+}
+document.getElementById("nextBtn").onclick=()=>{i=(i+1)%cases.length;render()};
+document.getElementById("resetBtn").onclick=()=>{i=0;score=0;document.getElementById("score").textContent=0;render()};
+document.getElementById("copyBtn").onclick=async()=>{
+  const t=document.getElementById("cardText"); await navigator.clipboard.writeText(t.value);
+  document.getElementById("copyBtn").textContent="Copiado"; setTimeout(()=>document.getElementById("copyBtn").textContent="Copiar tarjeta",900);
+};
+document.getElementById("clearBtn").onclick=()=>document.getElementById("cardText").value="";
+render();
+</script>
+</body>
+</html>

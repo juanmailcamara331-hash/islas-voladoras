@@ -1,0 +1,16 @@
+{
+  "version": "0.5",
+  "title": "ISL / Islas Voladoras",
+  "tagline": "Crear es alterar el mundo.",
+  "audio": "assets/airships-last-waltz-pages.mp3",
+  "gallery": [
+    {"id":"isla-a","type":"image","src":"assets/island-a.svg","name":"Isla flotante · A","category":"MUNDO / ISLAS","status":"REFERENCIA","help":"Atmósfera, escala, color y lectura de hogar suspendido."},
+    {"id":"isla-b","type":"image","src":"assets/island-b.svg","name":"Isla flotante · B","category":"MUNDO / ISLAS","status":"ITERACIÓN","help":"Variante para comparar arquitectura, profundidad y foco."},
+    {"id":"previs","type":"video","src":"assets/isl-tv-reel-pages.mp4","poster":"assets/island-a.svg","name":"Previs flotante","category":"VÍDEO / ATMÓSFERA","status":"REFERENCIA","help":"Movimiento, cámara y respiración ambiental."}
+  ],
+  "reel": [
+    {"type":"image","src":"assets/island-a.svg","kicker":"MUNDO","title":"Una ciudad aprende a vivir con el viento.","note":"Referencia fuerte · atmósfera / escala / identidad","seconds":8},
+    {"type":"video","src":"assets/isl-tv-reel-pages.mp4","poster":"assets/island-a.svg","kicker":"PREVIS","title":"El mundo no está quieto.","note":"Cámara, nubes y respiración ambiental","seconds":7},
+    {"type":"image","src":"assets/island-b.svg","kicker":"ITERACIÓN","title":"La belleza también debe dejar jugar.","note":"Comparación visual · no CANON","seconds":8}
+  ]
+}

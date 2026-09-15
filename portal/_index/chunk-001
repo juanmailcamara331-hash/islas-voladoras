@@ -1,0 +1,83 @@
+MENTE VAGOS · CUIDADO Y MIMO</div>
+  <h1>Todo el mundo ISL,<br>sin perder el hilo.</h1>
+  <div class="sub">Arte, criaturas, niveles, herramientas, referencias, calendario, simulaciones, estadísticas, pipelines y decisiones — organizados para producir en meses sin rebajar identidad.</div>
+  <div class="heroQuote">“Automatizar la fricción. <em>No automatizar el criterio.</em>”</div>
+  <div class="actions"><button class="btn primary" onclick="go('gallery')">Entrar en Galería</button><button class="btn gold" onclick="go('roadmap')">Ver Roadmap</button><button class="btn" onclick="go('calendar')">Planificar semana</button></div>
+ </div></div>
+ <div class="grid">
+  <div class="card"><div class="label">Fuente de verdad</div><div class="kpi">v0.13</div><div class="status good">BIBLIA MAESTRA</div></div>
+  <div class="card"><div class="label">Método</div><div class="kpi">R²</div><div class="status good">CQC + BUCLE RECURSIVO</div></div>
+  <div class="card"><div class="label">Galería</div><div class="kpi">OK</div><div class="status good">INTEGRADA · SIN IFRAME</div></div>
+  <div class="card"><div class="label">Unreal</div><div class="kpi">AIRLOCK</div><div class="status warn">SÓLO APPROVED</div></div>
+ </div>
+</section>
+
+<section class="view" id="gallery">
+ <div class="topbar"><div><div class="eyebrow">Forge integrado</div><h2>Galería viva</h2><div class="sub">Filtros, selección y comparación viven dentro del Command Center.</div></div></div>
+ <div class="toolbar"><select id="cat" class="control"><option value="">Todas las categorías</option></select><select id="st" class="control"><option value="">Todos los estados</option></select><input id="search" class="control" placeholder="buscar isla, 3D, viento..."><button class="btn" onclick="go('compare')">Comparar seleccionados</button></div>
+ <div id="galleryGrid" class="gallery"></div>
+</section>
+
+<section class="view" id="compare">
+ <div class="topbar"><div><div class="eyebrow">CQC comparativo</div><h2>Comparador ponderado</h2><div class="sub">Hasta 3 variantes. El score hace explícito el criterio; no decide por nosotros.</div></div></div>
+ <div class="two"><div class="panel"><h3>Pesos</h3><div id="weightsBox"></div></div><div class="panel"><h3>Regla</h3><div class="callout">Si la puntuación contradice nuestro juicio, investigamos qué variable falta o qué peso está mal definido.</div></div></div>
+ <div id="compareGrid" class="compare" style="margin-top:11px"></div>
+</section>
+
+<section class="view" id="roadmap">
+ <div class="topbar"><div><div class="eyebrow">Roadmap ISL</div><h2>Archipiélago de producción</h2><div class="sub">El roadmap se lee como viaje entre islas de incertidumbre, no como hoja de cálculo disfrazada.</div></div></div>
+ <div class="roadmapMap">
+  <div class="bridge" style="left:18%;top:29%;width:26%;transform:rotate(9deg)"></div><div class="bridge" style="left:45%;top:35%;width:25%;transform:rotate(-4deg)"></div><div class="bridge" style="left:61%;top:50%;width:19%;transform:rotate(20deg)"></div><div class="bridge" style="left:25%;top:63%;width:25%;transform:rotate(-16deg)"></div>
+  <div class="island" style="left:5%;top:15%"><span class="num">ISLA 0</span><b>Command Center + Forge</b><span class="status good">EN CURSO</span></div>
+  <div class="island" style="left:32%;top:24%"><span class="num">ISLA 1</span><b>Bake-off 3D</b><span class="status warn">SIGUIENTE</span></div>
+  <div class="island" style="left:62%;top:20%"><span class="num">ISLA 2</span><b>3D Lab / Lookdev</b><span class="status warn">SIGUIENTE</span></div>
+  <div class="island" style="left:72%;top:52%"><span class="num">ISLA 3</span><b>Wind Lab × 3D</b><span class="status">PENDIENTE</span></div>
+  <div class="island" style="left:38%;top:63%"><span class="num">ISLA 4</span><b>Kit modular mínimo</b><span class="status">PENDIENTE</span></div>
+  <div class="island" style="left:8%;top:68%"><span class="num">ISLA 5</span><b>Unreal Handoff</b><span class="status">PENDIENTE</span></div>
+ </div>
+ <div class="grid"><div class="card"><h3>Objetivo próximo</h3><div class="sub">Demostrar lenguaje visual 3D con isla/receptor/puente usando variables controladas.</div></div><div class="card"><h3>Bloqueo actual</h3><div class="sub">No hay assets 3D formalmente APPROVED todavía.</div></div><div class="card"><h3>Regla</h3><div class="sub">No producir una isla completa hasta que tres piezas pequeñas prueben el lenguaje.</div></div></div>
+</section>
+
+<section class="view" id="calendar">
+ <div class="topbar"><div><div class="eyebrow">Planificación</div><h2>Calendario operativo</h2><div class="sub">Local ahora; preparado para sincronización real cuando conectes Google Calendar.</div></div><div class="actions"><button class="btn" id="prevMonth">←</button><button class="btn" id="todayBtn">Hoy</button><button class="btn" id="nextMonth">→</button></div></div>
+ <div class="two"><div class="panel"><div class="label">Mes</div><div class="kpi" id="monthTitle"></div></div><div class="panel"><h3>Integración</h3><div class="callout">Google Calendar está disponible como conector, pero el centro no fingirá sincronización hasta que exista conexión real.</div></div></div>
+ <div class="panel"><div class="calendar" id="calendarGrid"></div></div>
+ <div class="grid"><div class="card"><h3>Ritual semanal</h3><div class="sub">1 bloque producción · 1 bloque CQC · 1 bloque integración/documentación.</div></div><div class="card"><h3>Ritual mensual</h3><div class="sub">Revisar scope, coste hundido, herramientas y automatizaciones que sí ahorraron tiempo.</div></div><div class="card"><h3>Foco</h3><div class="sub">Máximo 3 frentes activos. Lo demás se aparca.</div></div></div>
+</section>
+
+<section class="view" id="inspiration">
+ <div class="topbar"><div><div class="eyebrow">ADN y referencias</div><h2>Inspiraciones</h2><div class="sub">Referencia → esencia → contraste → reinterpretación → prueba → lenguaje ISL.</div></div></div>
+ <div class="grid">
+  <div class="card"><h3>Skies of Arcadia</h3><div class="sub">Maravilla aérea, aventura, tripulación.</div></div><div class="card"><h3>Dark Souls</h3><div class="sub">Conocimiento, lectura del mundo, dominio.</div></div><div class="card"><h3>Hollow Knight</h3><div class="sub">Precisión, elegancia, recontextualización.</div></div><div class="card"><h3>Pilotwings 64</h3><div class="sub">Moverse por aire debe ser placentero.</div></div><div class="card"><h3>Spore</h3><div class="sub">Forma, evolución y posibilidades.</div></div><div class="card"><h3>Pratchett</h3><div class="sub">Filosofía con humanidad y sátira.</div></div><div class="card"><h3>Art Déco × Gaudí</h3><div class="sub">Orden geométrico frente a organicidad viva.</div></div><div class="card"><h3>Jodorowsky × Burton</h3><div class="sub">Símbolo, metamorfosis, melancolía y rareza.</div></div>
+ </div>
+</section>
+
+<section class="view" id="stats">
+ <div class="topbar"><div><div class="eyebrow">Datos</div><h2>Estadísticas con procedencia</h2><div class="sub">REAL, SIMULADO y PLANEADO permanecen separados.</div></div></div>
+ <div class="statsgrid"><div class="card"><span class="realtag">REAL</span><div class="label" style="margin-top:8px">PostHog gameplay</div><div class="kpi">0</div><div class="sub">No hay eventos reales conocidos.</div></div><div class="card"><span class="realtag">REAL</span><div class="label" style="margin-top:8px">Labs</div><div class="kpi">2+</div><div class="sub">Wind + Method; 3D pendiente.</div></div><div class="card"><span class="realtag">REAL</span><div class="label" style="margin-top:8px">Assets 3D aprobados</div><div class="kpi">0</div></div><div class="card"><span class="simtag">SIMULADO</span><div class="label" style="margin-top:8px">Capacidad ejemplo</div><div class="kpi">300h</div></div></div>
+ <div class="panel"><h3>Gráfico futuro · maqueta</h3><div class="chart"><div class="barcol"><div class="barfill" style="height:15%"></div><div class="barlabel">CQC</div></div><div class="barcol"><div class="barfill" style="height:45%"></div><div class="barlabel">3D</div></div><div class="barcol"><div class="barfill" style="height:28%"></div><div class="barlabel">Labs</div></div><div class="barcol"><div class="barfill" style="height:10%"></div><div class="barlabel">Docs</div></div><div class="barcol"><div class="barfill" style="height:25%"></div><div class="barlabel">Unreal</div></div></div><div class="sub" style="margin-top:8px"><span class="plantag">PLANEADO</span> No representa horas reales.</div></div>
+</section>
+
+<section class="view" id="sim">
+ <div class="topbar"><div><div class="eyebrow">Escenarios</div><h2>Simulador de capacidad</h2><div class="sub">Compara supuestos; no predice fechas.</div></div></div>
+ <div class="three"><div class="panel"><h3>Tiempo</h3><div class="metric"><span>horas/día</span><input id="hd" type="range" min="1" max="5" step=".25" value="2.5"><b id="hdv">2.5</b></div><div class="metric"><span>días/semana</span><input id="dw" type="range" min="2" max="7" value="6"><b id="dwv">6</b></div><div class="metric"><span>semanas</span><input id="wk" type="range" min="4" max="40" value="20"><b id="wkv">20</b></div></div><div class="panel"><h3>Apalancamiento</h3><div class="metric"><span>reutilización</span><input id="reuse" type="range" min="0" max="60" value="25"><b id="reusev">25%</b></div><div class="metric"><span>automatización</span><input id="auto" type="range" min="0" max="60" value="20"><b id="autov">20%</b></div><div class="metric"><span>retr. evitado</span><input id="rework" type="range" min="0" max="50" value="20"><b id="reworkv">20%</b></div></div><div class="panel"><h3>Riesgo</h3><div class="metric"><span>incertidumbre</span><input id="risk" type="range" min="0" max="50" value="25"><b id="riskv">25%</b></div><div class="metric"><span>buffer</span><input id="buffer" type="range" min="0" max="40" value="20"><b id="bufferv">20%</b></div><div class="metric"><span>scope</span><input id="scope" type="range" min="100" max="600" step="10" value="300"><b id="scopev">300h</b></div></div></div>
+ <div class="grid"><div class="card"><div class="label">Nominal</div><div class="kpi" id="nominal">—</div></div><div class="card"><div class="label">Efectiva</div><div class="kpi" id="effective">—</div></div><div class="card"><div class="label">Equivalente</div><div class="kpi" id="equiv">—</div></div><div class="card"><div class="label">Margen</div><div class="kpi" id="margin">—</div></div></div><div class="panel"><div id="simRead" class="sub"></div></div>
+</section>
+
+
+<section class="view" id="controls">
+ <div class="topbar"><div><div class="eyebrow">10-foot UI · Input Layer</div><h2>Controles universales</h2>
+ <div class="sub">La interfaz trabaja con acciones ISL, no con dispositivos concretos. Funciona con teclado, mando TV y gamepad en navegadores compatibles.</div></div></div>
+ <div class="grid">
+  <div class="card"><h3>MOVER FOCO</h3><div class="kpi">↑ ↓ ← →</div><div class="sub">Flechas · D-pad · stick.</div></div>
+  <div class="card"><h3>ACEPTAR</h3><div class="kpi">OK / ✕</div><div class="sub">Enter · botón principal.</div></div>
+  <div class="card"><h3>VOLVER</h3><div class="kpi">○</div><div class="sub">Escape · Back · botón B/Circle.</div></div>
+  <div class="card"><h3>SECCIONES</h3><div class="kpi">L1 / R1</div><div class="sub">Salta entre vistas principales.</div></div>
+  <div class="card"><h3>MENÚ</h3><div class="kpi">Options</div><div class="sub">Abre/cierra el cajón lateral.</div></div>
+  <div class="card"><h3>PANTALLA</h3><div class="kpi">TV</div><div class="sub">Modo 10-foot UI, elementos mayores y menos ruido.</div></div>
+ </div>
+ <div class="panel"><h3>PS4</h3><div class="callout">El navegador de PS4 recibe automáticamente la versión Lite. Para presentación perfecta usa el Reel MP4 desde el Reproductor multimedia.</div></div>
+</section>
+
+<section class="view" id="pipelines">
+ <div class="topbar"><div><div class="eyebrow">Producción LEG
