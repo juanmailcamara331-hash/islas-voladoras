@@ -109,3 +109,17 @@ jobs:
           path: build/web
           if-no-files-found: error
           retention-days: 14
+
+      - name: Deploy Web Preview to Netlify
+        shell: bash
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ff2f94b3-0d4c-49bc-957a-b9daafedecf2
+        run: |
+          set -euo pipefail
+          test -n "$NETLIFY_AUTH_TOKEN"
+          npx --yes netlify-cli@latest deploy \
+            --dir=build/web \
+            --site="$NETLIFY_SITE_ID" \
+            --prod \
+            --auth="$NETLIFY_AUTH_TOKEN"
