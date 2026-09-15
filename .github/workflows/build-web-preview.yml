@@ -42,6 +42,23 @@ jobs:
         run: |
           rm -rf "$RUNNER_TEMP/godot-web" build/web
           mkdir -p "$RUNNER_TEMP/godot-web" build/web
+
+          # En Web Pointer Lock solo puede solicitarse tras un gesto del usuario.
+          # Aplicamos el ajuste únicamente al build, sin alterar el código fuente
+          # del juego ni su arte.
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("scripts/player.gd")
+          s = p.read_text(encoding="utf-8")
+          s = s.replace('    if not OS.has_feature("mobile"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n', '    if not OS.has_feature("mobile") and not OS.has_feature("web"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n')
+          marker = 'func _unhandled_input(event: InputEvent) -> void:\n'
+          replacement = '''func _unhandled_input(event: InputEvent) -> void:\n    if event is InputEventMouseButton and event.pressed and not OS.has_feature("mobile"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n        return\n    if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:\n        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE\n        return\n'''
+          if marker not in s:
+              raise SystemExit("No se encontró _unhandled_input")
+          s = s.replace(marker, replacement, 1)
+          p.write_text(s, encoding="utf-8")
+          PY
+
           cat > export_presets.cfg <<'EOF'
           [preset.0]
           name="Web"
@@ -70,12 +87,9 @@ jobs:
           godot --headless --path . --export-release "Web" "$RUNNER_TEMP/godot-web/index.html"
           cp -a "$RUNNER_TEMP/godot-web/." build/web/
 
-          # Inyectamos los scripts como JS real. fullscreen.js ya contiene
-          # etiquetas <script>, por lo que las quitamos antes de insertarlo.
           python3 - <<'PY'
           from pathlib import Path
           import re
-
           p = Path("build/web/index.html")
           html = p.read_text(encoding="utf-8")
           debug = Path("web/debug-boot.js").read_text(encoding="utf-8")
