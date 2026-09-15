@@ -27,12 +27,26 @@ jobs:
         with:
           enablement: true
 
+      - name: Preparar controles Web sin modificar el código del juego
+        shell: bash
+        run: |
+          cp scripts/player.gd /tmp/player.gd
+          sed -i 's/if not OS.has_feature("mobile"):/if not OS.has_feature("mobile") and not OS.has_feature("web"):/1' scripts/player.gd
+          sed -i '/func _unhandled_input(event: InputEvent) -> void:/a\    if event is InputEventMouseButton and event.pressed and not OS.has_feature("mobile"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n        return\n    if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:\n        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE\n        return' scripts/player.gd
+
       - name: Exportar exactamente como en Netlify
         shell: bash
-        run: bash netlify-build.sh
+        run: |
+          bash netlify-build.sh
+          mv /tmp/player.gd scripts/player.gd
+
+      - name: Evitar caché de una exportación Web anterior
+        shell: bash
+        run: |
+          python3 -c 'from pathlib import Path; import os, re; p=Path("build/web/index.html"); s=p.read_text(encoding="utf-8"); v=os.environ["GITHUB_SHA"]; s=re.sub(r"(\\.(?:wasm|pck|js))(\\")", r"\\1?v="+v+r"\\2", s); p.write_text(s, encoding="utf-8")'
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: build/web
 
