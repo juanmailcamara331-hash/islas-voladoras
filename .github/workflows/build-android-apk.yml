@@ -42,6 +42,33 @@ jobs:
             exit 1
           fi
 
+      - name: Patch ZG ramps for Android checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          MAIN="$PROJECT_DIR/scripts/main.gd"
+          test -f "$MAIN"
+          python3 - "$MAIN" <<'PY'
+          import re, sys
+          p=sys.argv[1]
+          s=open(p,encoding='utf-8').read()
+          m=re.search(r'(?m)^func _nav_connector\([^\n]*\):\n(?P<body>(?:\t.*\n|\s*\n)*)',s)
+          if not m:
+              print('ERROR: _nav_connector no encontrado', file=sys.stderr); sys.exit(1)
+          body=m.group('body')
+          # Preserve the checkpoint logic but make every generated connector physically walkable:
+          # add a StaticBody3D collision matching each MeshInstance3D connector if absent.
+          if 'ZG_AUTORAMP_COLLISION_V1' not in s:
+              insert='''\n# ZG_AUTORAMP_COLLISION_V1: physical authority belongs to the mathematical connector.\nfunc _zg_make_ramp_walkable(mesh_node: MeshInstance3D) -> void:\n\tif mesh_node == null or mesh_node.mesh == null:\n\t\treturn\n\tif mesh_node.get_node_or_null("ZG_RampBody") != null:\n\t\treturn\n\tvar body := StaticBody3D.new()\n\tbody.name = "ZG_RampBody"\n\tvar shape := CollisionShape3D.new()\n\tshape.name = "ZG_RampCollision"\n\tshape.shape = mesh_node.mesh.create_trimesh_shape()\n\tbody.add_child(shape)\n\tmesh_node.add_child(body)\n\nfunc _zg_finalize_generated_ramps(root: Node) -> void:\n\tif root is MeshInstance3D:\n\t\tvar mi := root as MeshInstance3D\n\t\tvar n := mi.name.to_lower()\n\t\tif "ramp" in n or "connector" in n or "bridge" in n:\n\t\t\t_zg_make_ramp_walkable(mi)\n\tfor child in root.get_children():\n\t\t_zg_finalize_generated_ramps(child)\n'''
+              s += insert
+          # Call deferred after the level has been generated, without changing controls/camera/player.
+          ready=re.search(r'(?m)^func _ready\(\)[^\n]*:\n',s)
+          if ready and '_zg_finalize_generated_ramps(self)' not in s[:ready.start()+2500]:
+              pos=ready.end()
+              s=s[:pos]+'\tcall_deferred("_zg_finalize_generated_ramps", self)\n'+s[pos:]
+          open(p,'w',encoding='utf-8').write(s)
+          PY
+
       - name: Enable Android texture compression
         shell: bash
         run: |
@@ -49,7 +76,7 @@ jobs:
           PROJECT_FILE="$PROJECT_DIR/project.godot"
           test -f "$PROJECT_FILE"
           if grep -q '^\[rendering\]' "$PROJECT_FILE"; then
-            sed -i '/^renderer\/rendering_method=/d;/^renderer\/rendering_method.mobile=/d;/^textures\/default_filters\/use_nearest_mipmap_filter=/d;/^textures\/vram_compression\/import_etc2_astc=/d' "$PROJECT_FILE"
+            sed -i '/^textures\/vram_compression\/import_etc2_astc=/d' "$PROJECT_FILE"
             sed -i '/^\[rendering\]/a textures/vram_compression/import_etc2_astc=true' "$PROJECT_FILE"
           else
             printf '\n[rendering]\ntextures/vram_compression/import_etc2_astc=true\n' >> "$PROJECT_FILE"
@@ -96,26 +123,16 @@ jobs:
           TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}"
           mkdir -p "$TEMPLATE_DIR"
           cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
-          if [ ! -f "$TEMPLATE_DIR/android_debug.apk" ]; then
-            DEBUG_APK="$(find "$RUNNER_TEMP/templates" -type f -name 'android_debug.apk' -print -quit)"
-            test -n "$DEBUG_APK"
-            cp "$DEBUG_APK" "$TEMPLATE_DIR/android_debug.apk"
-          fi
-          if [ ! -f "$TEMPLATE_DIR/android_release.apk" ]; then
-            RELEASE_APK="$(find "$RUNNER_TEMP/templates" -type f -name 'android_release.apk' -print -quit)"
-            test -n "$RELEASE_APK"
-            cp "$RELEASE_APK" "$TEMPLATE_DIR/android_release.apk"
-          fi
+          if [ ! -f "$TEMPLATE_DIR/android_debug.apk" ]; then DEBUG_APK="$(find "$RUNNER_TEMP/templates" -type f -name 'android_debug.apk' -print -quit)"; test -n "$DEBUG_APK"; cp "$DEBUG_APK" "$TEMPLATE_DIR/android_debug.apk"; fi
+          if [ ! -f "$TEMPLATE_DIR/android_release.apk" ]; then RELEASE_APK="$(find "$RUNNER_TEMP/templates" -type f -name 'android_release.apk' -print -quit)"; test -n "$RELEASE_APK"; cp "$RELEASE_APK" "$TEMPLATE_DIR/android_release.apk"; fi
           godot --version
 
       - name: Configure Android paths for Godot
         shell: bash
         run: |
-          set -euo pipefail
           mkdir -p "$HOME/.config/godot"
           cat > "$HOME/.config/godot/editor_settings-4.7.tres" <<EOF
           [gd_resource type="EditorSettings" format=3]
-
           [resource]
           export/android/java_sdk_path = "${JAVA_HOME}"
           export/android/android_sdk_path = "${ANDROID_SDK_ROOT}"
@@ -124,7 +141,6 @@ jobs:
       - name: Prepare Android export preset
         shell: bash
         run: |
-          set -euo pipefail
           cat > "$PROJECT_DIR/export_presets.cfg" <<EOF
           [preset.0]
           name="Android"
@@ -138,7 +154,6 @@ jobs:
           exclude_filter=""
           export_path="build/android/Islas-Voladoras-debug.apk"
           script_export_mode=2
-
           [preset.0.options]
           custom_template/debug=""
           custom_template/release=""
@@ -157,14 +172,11 @@ jobs:
 
       - name: Import and validate project
         shell: bash
-        run: |
-          set -euo pipefail
-          godot --headless --editor --quit --path "$PROJECT_DIR"
+        run: godot --headless --editor --quit --path "$PROJECT_DIR"
 
       - name: Export debug APK
         shell: bash
         run: |
-          set -euo pipefail
           mkdir -p "$PROJECT_DIR/build/android"
           godot --headless --path "$PROJECT_DIR" --export-debug "Android" "$PROJECT_DIR/build/android/Islas-Voladoras-debug.apk"
           test -s "$PROJECT_DIR/build/android/Islas-Voladoras-debug.apk"
