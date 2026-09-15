@@ -78,6 +78,9 @@ jobs:
           godot --headless --editor --quit --path .
           godot --headless --path . --export-release "Web" build/web/index.html
           test -s build/web/index.html
+          mkdir -p build/web/lab
+          cp web/index.html build/web/lab/index.html
+          cp web/README.md build/web/lab/README.md
           touch build/web/.nojekyll
       - name: Configure Pages
         uses: actions/configure-pages@v5
