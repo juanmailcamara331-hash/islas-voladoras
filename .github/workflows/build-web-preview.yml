@@ -47,17 +47,11 @@ jobs:
         shell: bash
         run: |
           rm -rf build/pages
-          mkdir -p build/pages/game
+          mkdir -p build/pages/game build/pages/assets
           cp portal/index.html portal/styles.css portal/app.js portal/ps4.html portal/reel.html portal/404.html portal/manifest.webmanifest portal/content-manifest.json build/pages/
           cp -a portal/labs build/pages/
-          mkdir -p build/pages/assets
-          cp portal/assets/*.svg build/pages/assets/
+          cp -a portal/assets/. build/pages/assets/
           touch build/pages/.nojekyll
-          cat portal/_payload/chunk-* > /tmp/isl-media.b64
-          base64 -d /tmp/isl-media.b64 > /tmp/isl-media.zip
-          unzip -q /tmp/isl-media.zip -d build/pages
-          if [ -f build/pages/assets/airships-last-waltz.mp3 ]; then cp build/pages/assets/airships-last-waltz.mp3 build/pages/assets/airships-last-waltz-pages.mp3; fi
-          if [ -f build/pages/assets/isl-tv-reel.mp4 ]; then cp build/pages/assets/isl-tv-reel.mp4 build/pages/assets/isl-tv-reel-pages.mp4; fi
           cp -a build/web/. build/pages/game/
       - name: CQC mínimo
         shell: bash
