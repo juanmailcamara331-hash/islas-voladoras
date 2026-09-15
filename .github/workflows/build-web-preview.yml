@@ -1,4 +1,4 @@
-name: Islas Voladoras Web Build and Deploy
+name: Publicar juego Godot automáticamente en GitHub Pages
 
 on:
   push:
@@ -38,8 +38,8 @@ jobs:
 
       - name: Export Godot Web
         run: |
-          rm -rf build/web
-          mkdir -p build/web
+          rm -rf "$RUNNER_TEMP/godot-web" build/web
+          mkdir -p "$RUNNER_TEMP/godot-web" build/web
           cat > export_presets.cfg <<'EOF'
           [preset.0]
           name="Web"
@@ -65,7 +65,8 @@ jobs:
           html/experimental_virtual_keyboard=false
           progressive_web_app/enabled=false
           EOF
-          godot --headless --path . --export-release "Web" build/web/index.html
+          godot --headless --path . --export-release "Web" "$RUNNER_TEMP/godot-web/index.html"
+          cp -a "$RUNNER_TEMP/godot-web/." build/web/
           mkdir -p build/web/lab
           cp web/index.html build/web/lab/index.html
           cp web/README.md build/web/lab/README.md
@@ -77,11 +78,14 @@ jobs:
           path: build/web
 
   deploy:
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
