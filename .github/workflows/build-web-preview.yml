@@ -27,6 +27,39 @@ jobs:
         with:
           enablement: true
 
+      - name: Preparar solo la interacción Web
+        run: |
+          # El juego original funciona como en Netlify. En GitHub Pages,
+          # el navegador exige un gesto antes de activar Pointer Lock.
+          # El parche solo existe durante el build y no modifica player.gd.
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("scripts/player.gd")
+          s = p.read_text(encoding="utf-8")
+          old = '''    if not OS.has_feature("mobile"):
+        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+'''
+          new = '''    if not OS.has_feature("mobile") and not OS.has_feature("web"):
+        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+'''
+          if old not in s:
+              raise SystemExit("No se encontró la captura inicial del ratón")
+          s = s.replace(old, new, 1)
+          marker = 'func _unhandled_input(event: InputEvent) -> void:\n'
+          replacement = '''func _unhandled_input(event: InputEvent) -> void:
+    if event is InputEventMouseButton and event.pressed and not OS.has_feature("mobile"):
+        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+        return
+    if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+        return
+'''
+          if marker not in s:
+              raise SystemExit("No se encontró _unhandled_input")
+          s = s.replace(marker, replacement, 1)
+          p.write_text(s, encoding="utf-8")
+          PY
+
       - name: Export Godot Web exactamente como en Netlify
         run: |
           bash netlify-build.sh
