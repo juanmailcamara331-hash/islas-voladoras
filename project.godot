@@ -2,12 +2,13 @@
 config/name="Isla Cero"
 run/main_scene="res://main.tscn"
 
-[display]
-window/size/viewport_width=960
-window/size/viewport_height=540
-window/size/window_width_override=960
-window/size/window_height_override=540
-window/stretch/mode="canvas_items"
+[display/window]
+size/viewport_width=960
+size/viewport_height=540
+size/window_width_override=960
+size/window_height_override=540
+stretch/mode="canvas_items"
+stretch/aspect="expand"
 
 [rendering]
 renderer/rendering_method="gl_compatibility"
@@ -21,9 +22,3 @@ move_left={"deadzone":0.5,"events":[Object(InputEventKey,"physical_keycode":65),
 move_right={"deadzone":0.5,"events":[Object(InputEventKey,"physical_keycode":68),Object(InputEventKey,"physical_keycode":4194321)]}
 jump={"deadzone":0.5,"events":[Object(InputEventKey,"physical_keycode":32)]}
 sprint={"deadzone":0.5,"events":[Object(InputEventKey,"physical_keycode":4194325)]}
-
-[display/window]
-stretch/aspect="expand"
-stretch/mode="canvas_items"
-size/viewport_height=720
-size/viewport_width=1280
