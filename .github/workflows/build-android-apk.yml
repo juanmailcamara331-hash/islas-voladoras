@@ -83,6 +83,19 @@ jobs:
           TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}"
           mkdir -p "$TEMPLATE_DIR"
           cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
+          # Godot's TPZ stores Android templates with an android_ prefix in some builds.
+          # Normalize them to the filenames the editor expects for export.
+          if [ ! -f "$TEMPLATE_DIR/android_debug.apk" ]; then
+            DEBUG_APK="$(find "$RUNNER_TEMP/templates" -type f -name 'android_debug.apk' -print -quit)"
+            test -n "$DEBUG_APK"
+            cp "$DEBUG_APK" "$TEMPLATE_DIR/android_debug.apk"
+          fi
+          if [ ! -f "$TEMPLATE_DIR/android_release.apk" ]; then
+            RELEASE_APK="$(find "$RUNNER_TEMP/templates" -type f -name 'android_release.apk' -print -quit)"
+            test -n "$RELEASE_APK"
+            cp "$RELEASE_APK" "$TEMPLATE_DIR/android_release.apk"
+          fi
+          ls -lh "$TEMPLATE_DIR/android_debug.apk" "$TEMPLATE_DIR/android_release.apk"
           godot --version
 
       - name: Configure Android paths for Godot
