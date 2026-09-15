@@ -70,16 +70,20 @@ jobs:
           godot --headless --path . --export-release "Web" "$RUNNER_TEMP/godot-web/index.html"
           cp -a "$RUNNER_TEMP/godot-web/." build/web/
 
-          # Diagnóstico Web y pantalla completa: se inyectan después de la exportación,
-          # evitando usar head_include como si aceptara una ruta res://.
+          # Inyectamos los scripts como JS real. fullscreen.js ya contiene
+          # etiquetas <script>, por lo que las quitamos antes de insertarlo.
           python3 - <<'PY'
           from pathlib import Path
+          import re
+
           p = Path("build/web/index.html")
           html = p.read_text(encoding="utf-8")
           debug = Path("web/debug-boot.js").read_text(encoding="utf-8")
           fullscreen = Path("web/fullscreen.js").read_text(encoding="utf-8")
+          fullscreen = re.sub(r'^\s*<script>\s*', '', fullscreen, count=1)
+          fullscreen = re.sub(r'\s*</script>\s*$', '', fullscreen, count=1)
           inject = "<script>" + debug + "</script>\n<script>" + fullscreen + "</script>"
-          html = html.replace("</body>", inject + "\n</body>")
+          html = html.replace("</head>", inject + "\n</head>")
           p.write_text(html, encoding="utf-8")
           PY
 
