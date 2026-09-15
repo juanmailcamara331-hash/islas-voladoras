@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ISL PS4 Lite</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#071017;color:#eef7f4;font-family:Arial,sans-serif}
+header{padding:18px 24px;border-bottom:2px solid #284450;background:#0b171e}
+.logo{font-size:26px;font-weight:bold;color:#8defff}.sub{font-size:14px;color:#aabcc1;margin-top:4px}
+main{padding:24px;max-width:1280px;margin:auto}h1{font-size:46px;line-height:1.05;margin:0 0 12px}p{font-size:19px;line-height:1.45;color:#cad7da}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.card{display:block;border:3px solid #294956;background:#10212a;color:white;text-decoration:none}
+.card:focus,.card:hover{outline:0;border-color:#8defff;background:#17323c}
+.card img{display:block;width:100%;height:220px;object-fit:cover}
+.pad{padding:18px}.title{font-size:22px;font-weight:bold;color:#ffc472}.desc{font-size:16px;color:#c6d5d9;margin-top:8px}
+.menu{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-block;padding:16px 20px;border:3px solid #31505d;background:#10212a;color:white;text-decoration:none;font-size:20px}
+.btn:focus,.btn:hover{border-color:#ffc472;background:#2c251b;outline:0}
+.panel{margin-top:26px;border:2px solid #294956;padding:20px;background:#0d1a21}
+.kbd{display:inline-block;border:2px solid #496975;padding:5px 8px;margin-right:5px}
+.small{font-size:14px;color:#9db0b6}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="logo">ISL // PS4 LITE</div><div class="sub">Vista ligera · sin WebGL · sin dependencias modernas</div></header>
+<main>
+<h1>Islas Voladoras</h1>
+<p>Una cabina reducida para consultar el espíritu del proyecto desde PS4. Para presentación fluida usa el ISL TV Reel en el Reproductor multimedia.</p>
+<div class="menu">
+<a class="btn" href="#galeria">Galería</a><a class="btn" href="assets/isl-tv-reel.mp4">TV Reel</a><a class="btn" href="game/">Juego web</a><a class="btn" href="#roadmap">Roadmap</a><a class="btn" href="#metodo">Método</a><a class="btn" href="#links">Links</a>
+</div>
+<div id="galeria" class="grid">
+<a class="card" href="#0"><img src="assets/island-a.webp"><div class="pad"><div class="title">MUNDO</div><div class="desc">Islas, atmósfera, arquitectura y escalas.</div></div></a><a class="card" href="#1"><img src="assets/island-b.webp"><div class="pad"><div class="title">VARIANTES</div><div class="desc">Comparar versiones antes de producir.</div></div></a><a class="card" href="#2"><img src="assets/pipeline-board.webp"><div class="pad"><div class="title">FÁBRICA 3D</div><div class="desc">Receptor, puente, isla y pipeline.</div></div></a>
+</div>
+<div id="roadmap" class="panel"><div class="title">ROADMAP</div><p>Command Center → Bake-off 3D → 3D Lab → Wind × 3D → kit modular → Unreal Handoff.</p></div>
+<div id="metodo" class="panel"><div class="title">BUCLE MAGISTRAL</div><p>Intención → esencia → hipótesis → test barato → CQC-1 → cruce → CQC-2 → decisión → mimo → fijar.</p></div>
+<div id="links" class="panel"><div class="title">CONTROLES</div><p>La página usa enlaces y botones HTML estándar, grandes y con foco visible. El navegador de PS4 no expone Gamepad API al contenido web, por lo que evitamos controles de mando personalizados.</p><div class="small">Si la navegación del navegador resulta incómoda, usa el Reel MP4 para presentación y el Command Center completo en móvil/TV/PC.</div></div>
+<div class="panel"><div class="title">URL PRINCIPAL</div><p>Esta es la versión ligera. Para forzar el portal completo añade <b>?full=1</b> a la URL principal.</p></div></main>
+</body></html>
