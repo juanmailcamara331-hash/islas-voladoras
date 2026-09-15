@@ -1,0 +1,41 @@
+name: Promote ZG source
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Promote exact ZG checkpoint source
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f scripts/main.gd ]; then
+            echo "ZG source already promoted."
+            exit 0
+          fi
+          test -f ZG_ISLAS_ORIGINAL.zip
+          rm -rf "$RUNNER_TEMP/zg"
+          mkdir -p "$RUNNER_TEMP/zg"
+          unzip -q ZG_ISLAS_ORIGINAL.zip -d "$RUNNER_TEMP/zg"
+          SRC="$(dirname "$(find "$RUNNER_TEMP/zg" -name project.godot -print -quit)")"
+          test -f "$SRC/scripts/main.gd"
+          mkdir -p scripts
+          cp "$SRC/scripts/main.gd" scripts/main.gd
+          cp "$SRC/scripts/player.gd" scripts/player.gd
+          cp "$SRC/scripts/adaptive_input.gd" scripts/adaptive_input.gd
+          cp "$SRC/scripts/adaptive_hud.gd" scripts/adaptive_hud.gd
+          cp "$SRC/main.tscn" main.tscn
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts main.tscn
+          git commit -m "Promote exact ZG checkpoint to editable source"
+          git push
