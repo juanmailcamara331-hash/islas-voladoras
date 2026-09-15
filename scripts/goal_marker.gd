@@ -1,10 +1,22 @@
 extends Node3D
 
 const GOAL_POSITION := Vector3(6.0, 15.0, -62.0)
+var ring: MeshInstance3D
+var ring_base_y: float = 4.7
+var pulse_time: float = 0.0
 
 func _ready() -> void:
 	global_position = GOAL_POSITION
 	_build_goal()
+
+func _process(delta: float) -> void:
+	if ring == null:
+		return
+	pulse_time += delta
+	ring.rotation_degrees.z += delta * 18.0
+	ring.position.y = ring_base_y + sin(pulse_time * 2.0) * 0.16
+	var pulse: float = 1.0 + sin(pulse_time * 2.0) * 0.045
+	ring.scale = Vector3.ONE * pulse
 
 func _build_goal() -> void:
 	var platform := MeshInstance3D.new()
@@ -35,14 +47,14 @@ func _build_goal() -> void:
 		pillar.material_override = pillar_mat
 		add_child(pillar)
 
-	var ring := MeshInstance3D.new()
+	ring = MeshInstance3D.new()
 	var ring_mesh := TorusMesh.new()
 	ring_mesh.inner_radius = 1.55
 	ring_mesh.outer_radius = 1.85
 	ring_mesh.rings = 32
 	ring_mesh.ring_segments = 12
 	ring.mesh = ring_mesh
-	ring.position.y = 4.7
+	ring.position.y = ring_base_y
 	ring.rotation_degrees.x = 90.0
 	var ring_mat := StandardMaterial3D.new()
 	ring_mat.albedo_color = Color("f4d36b")
