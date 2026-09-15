@@ -1,0 +1,85 @@
+name: Build Web Preview
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'main.tscn'
+      - 'project.godot'
+      - '.github/workflows/build-web-preview.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: islas-web-preview
+  cancel-in-progress: true
+
+jobs:
+  web-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Godot 4.7.2 and templates
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="4.7.2-stable"
+          BASE="https://github.com/godotengine/godot-builds/releases/download/${TAG}"
+          curl -fL --retry 3 -o "$RUNNER_TEMP/godot.zip" "${BASE}/Godot_v${TAG}_linux.x86_64.zip"
+          curl -fL --retry 3 -o "$RUNNER_TEMP/templates.tpz" "${BASE}/Godot_v${TAG}_export_templates.tpz"
+          mkdir -p "$RUNNER_TEMP/godot" "$RUNNER_TEMP/templates"
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
+          GODOT_BIN="$(find "$RUNNER_TEMP/godot" -type f -name 'Godot_v*_linux.x86_64' -print -quit)"
+          chmod +x "$GODOT_BIN"
+          sudo ln -sf "$GODOT_BIN" /usr/local/bin/godot
+          unzip -q "$RUNNER_TEMP/templates.tpz" -d "$RUNNER_TEMP/templates"
+          TEMPLATE_SRC="$(find "$RUNNER_TEMP/templates" -type d -name templates -print -quit)"
+          TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/4.7.2.stable"
+          mkdir -p "$TEMPLATE_DIR"
+          cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
+      - name: Prepare web export
+        shell: bash
+        run: |
+          cat > export_presets.cfg <<'EOF'
+          [preset.0]
+          name="Web"
+          platform="Web"
+          runnable=true
+          advanced_options=false
+          dedicated_server=false
+          custom_features=""
+          export_filter="all_resources"
+          include_filter=""
+          exclude_filter=""
+          export_path="build/web/index.html"
+          script_export_mode=2
+          [preset.0.options]
+          custom_template/debug=""
+          custom_template/release=""
+          variant/extensions_support=false
+          variant/thread_support=false
+          vram_texture_compression/for_desktop=true
+          vram_texture_compression/for_mobile=true
+          html/export_icon=true
+          html/custom_html_shell=""
+          html/head_include=""
+          html/canvas_resize_policy=2
+          html/focus_canvas_on_start=true
+          html/experimental_virtual_keyboard=true
+          progressive_web_app/enabled=true
+          progressive_web_app/ensure_cross_origin_isolation_headers=false
+          EOF
+          mkdir -p build/web
+          godot --headless --editor --quit --path .
+          godot --headless --path . --export-debug "Web" build/web/index.html
+          test -s build/web/index.html
+      - name: Upload web preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: Islas-Voladoras-Web-Preview
+          path: build/web
+          retention-days: 30
