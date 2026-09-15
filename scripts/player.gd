@@ -5,13 +5,15 @@ extends CharacterBody3D
 
 var yaw: float = 0.0
 var pitch: float = -0.22
-var max_speed: float = 7.2
-var acceleration: float = 10.0
-var deceleration: float = 13.0
+var max_speed: float = 6.0
+var acceleration: float = 7.0
+var deceleration: float = 10.0
 var gravity: float = 20.0
 
 func _ready() -> void:
-    floor_snap_length = 1.2
+    # Reduce contact jitter on Web, especially on overlapping ramp/floor seams.
+    safe_margin = 0.02
+    floor_snap_length = 0.55
     floor_max_angle = deg_to_rad(58.0)
     if camera != null:
         camera.keep_aspect = Camera3D.KEEP_HEIGHT
@@ -22,7 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
     if event is InputEventMouseMotion:
         if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
             var mouse_event: InputEventMouseMotion = event as InputEventMouseMotion
-            var sensitivity: float = 0.0012 if OS.has_feature("web") else 0.003
+            var sensitivity: float = 0.0010 if OS.has_feature("web") else 0.003
             _apply_look(mouse_event.relative * sensitivity)
 
 func _physics_process(delta: float) -> void:
@@ -34,7 +36,8 @@ func _physics_process(delta: float) -> void:
     if has_meta("touch_look"):
         var mobile_look: Vector2 = get_meta("touch_look")
         if mobile_look.length() > 0.0:
-            _apply_look(mobile_look * 0.0036)
+            _apply_look(mobile_look * 0.0024)
+
     var basis: Basis = global_transform.basis
     if camera != null:
         basis = camera.global_transform.basis
@@ -44,19 +47,23 @@ func _physics_process(delta: float) -> void:
     right.y = 0.0
     forward = forward.normalized()
     right = right.normalized()
-    var direction: Vector3 = (right * input_vector.x + forward * input_vector.y)
+
+    var direction: Vector3 = right * input_vector.x + forward * input_vector.y
     if direction.length() > 1.0:
         direction = direction.normalized()
+
     var target_velocity: Vector3 = direction * max_speed
     var horizontal: Vector3 = Vector3(velocity.x, 0.0, velocity.z)
     var rate: float = acceleration if direction.length() > 0.01 else deceleration
     horizontal = horizontal.move_toward(Vector3(target_velocity.x, 0.0, target_velocity.z), rate * delta)
     velocity.x = horizontal.x
     velocity.z = horizontal.z
+
     if not is_on_floor():
         velocity.y -= gravity * delta
     else:
         velocity.y = min(velocity.y, 0.0)
+
     move_and_slide()
 
 func _apply_look(amount: Vector2) -> void:
