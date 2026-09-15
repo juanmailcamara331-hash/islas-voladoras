@@ -72,4 +72,4 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ff2f94b3-0d4c-49bc-957a-b9daafedecf2
-        run: npx --yes netlify-cli@latest deploy --dir=build/web --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN"
+        run: npx --yes netlify-cli@latest deploy --dir=build/web --site="$NETLIFY_SITE_ID" --prod --auth="$NETLIFY_AUTH_TOKEN"
