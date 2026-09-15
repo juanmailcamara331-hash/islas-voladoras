@@ -42,33 +42,6 @@ jobs:
             exit 1
           fi
 
-      - name: Patch ZG ramps for Android checkpoint
-        shell: bash
-        run: |
-          set -euo pipefail
-          MAIN="$PROJECT_DIR/scripts/main.gd"
-          test -f "$MAIN"
-          python3 - "$MAIN" <<'PY'
-          import re, sys
-          p=sys.argv[1]
-          s=open(p,encoding='utf-8').read()
-          m=re.search(r'(?m)^func _nav_connector\([^\n]*\):\n(?P<body>(?:\t.*\n|\s*\n)*)',s)
-          if not m:
-              print('ERROR: _nav_connector no encontrado', file=sys.stderr); sys.exit(1)
-          body=m.group('body')
-          # Preserve the checkpoint logic but make every generated connector physically walkable:
-          # add a StaticBody3D collision matching each MeshInstance3D connector if absent.
-          if 'ZG_AUTORAMP_COLLISION_V1' not in s:
-              insert='''\n# ZG_AUTORAMP_COLLISION_V1: physical authority belongs to the mathematical connector.\nfunc _zg_make_ramp_walkable(mesh_node: MeshInstance3D) -> void:\n\tif mesh_node == null or mesh_node.mesh == null:\n\t\treturn\n\tif mesh_node.get_node_or_null("ZG_RampBody") != null:\n\t\treturn\n\tvar body := StaticBody3D.new()\n\tbody.name = "ZG_RampBody"\n\tvar shape := CollisionShape3D.new()\n\tshape.name = "ZG_RampCollision"\n\tshape.shape = mesh_node.mesh.create_trimesh_shape()\n\tbody.add_child(shape)\n\tmesh_node.add_child(body)\n\nfunc _zg_finalize_generated_ramps(root: Node) -> void:\n\tif root is MeshInstance3D:\n\t\tvar mi := root as MeshInstance3D\n\t\tvar n := mi.name.to_lower()\n\t\tif "ramp" in n or "connector" in n or "bridge" in n:\n\t\t\t_zg_make_ramp_walkable(mi)\n\tfor child in root.get_children():\n\t\t_zg_finalize_generated_ramps(child)\n'''
-              s += insert
-          # Call deferred after the level has been generated, without changing controls/camera/player.
-          ready=re.search(r'(?m)^func _ready\(\)[^\n]*:\n',s)
-          if ready and '_zg_finalize_generated_ramps(self)' not in s[:ready.start()+2500]:
-              pos=ready.end()
-              s=s[:pos]+'\tcall_deferred("_zg_finalize_generated_ramps", self)\n'+s[pos:]
-          open(p,'w',encoding='utf-8').write(s)
-          PY
-
       - name: Enable Android texture compression
         shell: bash
         run: |
