@@ -8,20 +8,15 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: web-preview
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -47,7 +42,6 @@ jobs:
           rm -rf "$TEMPLATE_DIR"
           mkdir -p "$TEMPLATE_DIR"
           cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
-          ls -lh "$TEMPLATE_DIR"/web*.zip
           godot --version
 
       - name: Export Godot Web
@@ -108,16 +102,10 @@ jobs:
           cp web/README.md build/web/lab/README.md
           touch build/web/.nojekyll
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      - name: Upload Web Preview artifact
+        uses: actions/upload-artifact@v4
         with:
-          enablement: true
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
+          name: islas-voladoras-web-preview
           path: build/web
-
-      - name: Deploy preview
-        id: deployment
-        uses: actions/deploy-pages@v4
+          if-no-files-found: error
+          retention-days: 14
