@@ -18,13 +18,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Install Godot 4.7.2
+
+      - name: Install Godot 4.7.2 and Web export templates
         shell: bash
         run: |
           set -euo pipefail
@@ -32,16 +33,27 @@ jobs:
           BASE="https://github.com/godotengine/godot-builds/releases/download/${TAG}"
           curl -fL --retry 3 -o "$RUNNER_TEMP/godot.zip" "${BASE}/Godot_v${TAG}_linux.x86_64.zip"
           curl -fL --retry 3 -o "$RUNNER_TEMP/templates.tpz" "${BASE}/Godot_v${TAG}_export_templates.tpz"
+
           mkdir -p "$RUNNER_TEMP/godot" "$RUNNER_TEMP/templates"
           unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
           GODOT_BIN="$(find "$RUNNER_TEMP/godot" -type f -name 'Godot_v*_linux.x86_64' -print -quit)"
+          test -n "$GODOT_BIN"
           chmod +x "$GODOT_BIN"
           sudo ln -sf "$GODOT_BIN" /usr/local/bin/godot
+
           unzip -q "$RUNNER_TEMP/templates.tpz" -d "$RUNNER_TEMP/templates"
-          TEMPLATE_SRC="$(find "$RUNNER_TEMP/templates" -type d -name templates -print -quit)"
+          TEMPLATE_SRC="$RUNNER_TEMP/templates/templates"
+          test -f "$TEMPLATE_SRC/web_nothreads_debug.zip"
+          test -f "$TEMPLATE_SRC/web_nothreads_release.zip"
+
           TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/4.7.2.stable"
+          rm -rf "$TEMPLATE_DIR"
           mkdir -p "$TEMPLATE_DIR"
           cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
+
+          echo "Installed Web export templates:"
+          ls -lh "$TEMPLATE_DIR"/web*.zip
+
       - name: Export Godot Web
         shell: bash
         run: |
@@ -82,12 +94,15 @@ jobs:
           cp web/index.html build/web/lab/index.html
           cp web/README.md build/web/lab/README.md
           touch build/web/.nojekyll
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: build/web
+
       - name: Deploy preview
         id: deployment
         uses: actions/deploy-pages@v4
