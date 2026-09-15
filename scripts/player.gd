@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var camera: Camera3D = get_node_or_null("CameraPivot/Camera3D")
 
 var yaw: float = 0.0
-var pitch: float = -0.22
+var pitch: float = -0.05
 var max_speed: float = 6.0
 var acceleration: float = 7.0
 var deceleration: float = 10.0
@@ -20,10 +20,16 @@ func _ready() -> void:
         pivot.rotation.x = pitch
     if camera != null:
         camera.keep_aspect = Camera3D.KEEP_HEIGHT
-    if not OS.has_feature("mobile"):
+    if not OS.has_feature("mobile") and not OS.has_feature("web"):
         Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event: InputEvent) -> void:
+    if event is InputEventMouseButton and event.pressed and not OS.has_feature("mobile"):
+        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+        return
+    if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+        return
     if event is InputEventMouseMotion:
         if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
             var mouse_event: InputEventMouseMotion = event as InputEventMouseMotion
