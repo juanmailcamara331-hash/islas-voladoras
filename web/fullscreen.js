@@ -29,6 +29,20 @@
 
   function init() {
     addButton();
+
+    // Los navegadores bloquean el fullscreen sin gesto del usuario.
+    // Lo solicitamos en el primer toque/click para que quede forzado
+    // desde la primera interacción; el botón sigue siendo el respaldo.
+    var once = function () {
+      enterFullscreen();
+      document.removeEventListener('pointerdown', once, true);
+      document.removeEventListener('touchstart', once, true);
+      document.removeEventListener('keydown', once, true);
+    };
+    document.addEventListener('pointerdown', once, true);
+    document.addEventListener('touchstart', once, true);
+    document.addEventListener('keydown', once, true);
+
     window.addEventListener('fullscreenchange', function () {
       var b = document.getElementById('iv-fullscreen');
       if (b) b.style.display = document.fullscreenElement ? 'none' : 'block';
