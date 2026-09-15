@@ -12,22 +12,20 @@ func _ready() -> void:
 	call_deferred("_apply")
 
 func _apply() -> void:
-	# Aplicar sobre toda la escena principal, no solo sobre la isla.
-	# Así también desaparecen los materiales rojos de personajes y decoración.
 	_recolor(get_parent())
 
 func _recolor(node: Node) -> void:
 	if node is MeshInstance3D:
-		var mat := node.material_override
+		var mat: Material = node.material_override
 		if mat is StandardMaterial3D:
-			var color := mat.albedo_color
+			var standard_mat: StandardMaterial3D = mat
+			var color: Color = standard_mat.albedo_color
 			for old_color in PALETTE:
 				if color.distance_to(old_color) < 0.025:
-					mat.albedo_color = PALETTE[old_color]
-					color = mat.albedo_color
+					standard_mat.albedo_color = PALETTE[old_color]
+					color = standard_mat.albedo_color
 					break
-			# El rojo queda fuera de la paleta del mundo.
 			if color.r > color.g * 1.35 and color.r > color.b * 1.20 and color.r > 0.28:
-				mat.albedo_color = Color("405f5a")
+				standard_mat.albedo_color = Color("405f5a")
 	for child in node.get_children():
 		_recolor(child)
