@@ -1,0 +1,148 @@
+name: Build Islas Voladoras APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: islas-voladoras-android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+
+    env:
+      GODOT_VERSION: "4.7.2"
+      GODOT_STATUS: "stable"
+      PACKAGE_ID: "com.pandaria.islasvoladoras"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Locate ZG project
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f project.godot ] && [ -f scripts/main.gd ]; then
+            echo "PROJECT_DIR=$GITHUB_WORKSPACE" >> "$GITHUB_ENV"
+          elif [ -f ZG_ISLAS_ORIGINAL.zip ]; then
+            mkdir -p "$RUNNER_TEMP/zg"
+            unzip -q ZG_ISLAS_ORIGINAL.zip -d "$RUNNER_TEMP/zg"
+            PROJECT="$(find "$RUNNER_TEMP/zg" -name project.godot -print -quit)"
+            test -n "$PROJECT"
+            echo "PROJECT_DIR=$(dirname "$PROJECT")" >> "$GITHUB_ENV"
+          else
+            echo "ERROR: falta el checkpoint ZG completo. Sube ZG_ISLAS_ORIGINAL.zip a la raíz del repositorio." >&2
+            exit 1
+          fi
+
+      - name: Install Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install Android SDK packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.1"
+
+      - name: Install Godot 4.7.2 and export templates
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${GODOT_VERSION}-${GODOT_STATUS}"
+          BASE="https://github.com/godotengine/godot-builds/releases/download/${TAG}"
+          curl -fL --retry 3 -o "$RUNNER_TEMP/godot.zip" "${BASE}/Godot_v${TAG}_linux.x86_64.zip"
+          curl -fL --retry 3 -o "$RUNNER_TEMP/templates.tpz" "${BASE}/Godot_v${TAG}_export_templates.tpz"
+          mkdir -p "$RUNNER_TEMP/godot" "$RUNNER_TEMP/templates"
+          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
+          GODOT_BIN="$(find "$RUNNER_TEMP/godot" -maxdepth 1 -type f -name 'Godot_v*_linux.x86_64' -print -quit)"
+          test -n "$GODOT_BIN"
+          chmod +x "$GODOT_BIN"
+          sudo ln -sf "$GODOT_BIN" /usr/local/bin/godot
+          unzip -q "$RUNNER_TEMP/templates.tpz" -d "$RUNNER_TEMP/templates"
+          TEMPLATE_SRC="$(find "$RUNNER_TEMP/templates" -type d -name templates -print -quit)"
+          TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}"
+          mkdir -p "$TEMPLATE_DIR"
+          cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
+          godot --version
+
+      - name: Configure Android paths for Godot
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.config/godot"
+          cat > "$HOME/.config/godot/editor_settings-4.7.tres" <<EOF
+          [gd_resource type="EditorSettings" format=3]
+
+          [resource]
+          export/android/java_sdk_path = "${JAVA_HOME}"
+          export/android/android_sdk_path = "${ANDROID_SDK_ROOT}"
+          EOF
+
+      - name: Prepare Android export preset
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > "$PROJECT_DIR/export_presets.cfg" <<EOF
+          [preset.0]
+          name="Android"
+          platform="Android"
+          runnable=true
+          advanced_options=false
+          dedicated_server=false
+          custom_features=""
+          export_filter="all_resources"
+          include_filter=""
+          exclude_filter=""
+          export_path="build/android/Islas-Voladoras-debug.apk"
+          script_export_mode=2
+
+          [preset.0.options]
+          custom_template/debug=""
+          custom_template/release=""
+          gradle_build/use_gradle_build=false
+          gradle_build/export_format=0
+          architectures/armeabi-v7a=false
+          architectures/arm64-v8a=true
+          architectures/x86=false
+          architectures/x86_64=false
+          package/unique_name="${PACKAGE_ID}"
+          package/name="Islas Voladoras"
+          version/code=${GITHUB_RUN_NUMBER}
+          version/name="0.0.${GITHUB_RUN_NUMBER}"
+          package/signed=true
+          EOF
+
+      - name: Import and validate project
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$PROJECT_DIR"
+          godot --headless --editor --quit --path "$PROJECT_DIR"
+
+      - name: Export debug APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$PROJECT_DIR/build/android"
+          godot --headless --path "$PROJECT_DIR" --export-debug "Android" "$PROJECT_DIR/build/android/Islas-Voladoras-debug.apk"
+          test -s "$PROJECT_DIR/build/android/Islas-Voladoras-debug.apk"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Islas-Voladoras-APK-${{ github.run_number }}
+          path: ${{ env.PROJECT_DIR }}/build/android/Islas-Voladoras-debug.apk
+          if-no-files-found: error
+          retention-days: 30
