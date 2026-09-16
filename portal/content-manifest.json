@@ -1,16 +1,31 @@
 {
-  "version": "0.8-hq",
+  "version": "0.6",
+  "updated": "2026-09-16",
   "title": "ISL / Islas Voladoras",
-  "tagline": "Crear es alterar el mundo.",
-  "quality_policy": "PREVIEW_PUEDE_SER_LIGERO_FINAL_NUNCA",
-  "audio": null,
+  "quality_policy": "PREVIEW_LIGERO_FINAL_PREMIUM",
+  "audio": "assets/airships-last-waltz-master.mp3",
   "gallery": [
-    {"id":"isla-a","type":"image","src":"assets/island-a.svg","name":"Isla flotante · A","category":"MUNDO / ISLAS","status":"REFERENCIA","help":"HQ vectorial temporal: atmósfera, escala y lectura de hogar suspendido."},
-    {"id":"isla-b","type":"image","src":"assets/island-b.svg","name":"Isla flotante · B","category":"MUNDO / ISLAS","status":"ITERACIÓN","help":"HQ vectorial temporal: variante para comparar arquitectura, profundidad y foco."}
+    {
+      "id": "a",
+      "name": "Isla A · Master",
+      "cat": "Mundo / Islas",
+      "status": "REFERENCIA",
+      "img": "assets/island-a-master.jpg"
+    },
+    {
+      "id": "b",
+      "name": "Isla B · Master",
+      "cat": "Mundo / Islas",
+      "status": "ITERACIÓN",
+      "img": "assets/island-b-master.jpg"
+    },
+    {
+      "id": "previs",
+      "name": "Previs HD",
+      "cat": "Vídeo / Atmósfera",
+      "status": "REFERENCIA",
+      "video": "assets/previs-premium-1080p-L41.mp4"
+    }
   ],
-  "reel": [
-    {"type":"image","src":"assets/island-a.svg","kicker":"MUNDO","title":"Una ciudad aprende a vivir con el viento.","note":"Visual HQ independiente de resolución · REFERENCIA","seconds":8},
-    {"type":"image","src":"assets/island-b.svg","kicker":"ITERACIÓN","title":"La belleza también debe dejar jugar.","note":"Visual HQ independiente de resolución · no CANON","seconds":8},
-    {"type":"image","src":"assets/island-a.svg","kicker":"CUIDADO Y MIMO","title":"La PS4 pierde tecnología, nunca belleza.","note":"Producción: calidad final no negociable","seconds":8}
-  ]
+  "reel": "assets/isl-tv-reel-premium-1080p.mp4"
 }

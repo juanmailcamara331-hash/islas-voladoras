@@ -1,7 +1,0 @@
-mationFrame(poll);
-  }
-  if(window.requestAnimationFrame) requestAnimationFrame(poll);
-  if(location.search.indexOf('tv=1')>=0) document.body.classList.add('tv');
-})();
-</script>
-</body></html>

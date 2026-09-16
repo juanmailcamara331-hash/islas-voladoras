@@ -1,1 +1,8 @@
-{"name":"ISL Command Center","short_name":"ISL","start_url":"./","display":"standalone","background_color":"#071017","theme_color":"#071017"}
+{
+  "name": "ISL Command Center",
+  "short_name": "ISL",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071017",
+  "theme_color": "#071017"
+}

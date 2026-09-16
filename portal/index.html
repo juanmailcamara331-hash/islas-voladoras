@@ -1,147 +1,364 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ISL · Command Center</title>
-<meta name="theme-color" content="#071017">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="styles.css">
-<script>
-(function(){var u=navigator.userAgent||"";if(/PlayStation 4/i.test(u)&&location.search.indexOf("full=1")<0)location.replace("ps4.html")})();
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ISL Command Center · Portal</title><script>
+(function(){
+  var ua = navigator.userAgent || "";
+  var q = location.search || "";
+  if (/PlayStation 4/i.test(ua) && q.indexOf("full=1") === -1) {
+    location.replace("ps4.html");
+  }
+})();
 </script>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#071017">
+
+<style>
+:root{--bg:#071017;--panel:#10202acc;--line:#294955;--text:#eef8f5;--muted:#91a8ae;--cyan:#87efff;--lime:#dfff7b;--gold:#ffc36e;--rose:#ff9aa5;--violet:#bba4ff;--teal:#73dfc1;--shadow:0 18px 50px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:linear-gradient(180deg,#071017,#0a141c);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 86% 2%,#2a4b64 0,transparent 30%),radial-gradient(circle at 14% 22%,#1c3a32 0,transparent 24%),linear-gradient(#071017,#0a141c)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.07;background-image:linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(#000,transparent 75%)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+.app{display:grid;grid-template-columns:86px 1fr;min-height:100vh}
+.rail{position:sticky;top:0;height:100vh;border-right:1px solid var(--line);background:#071018ee;backdrop-filter:blur(16px);z-index:40;display:flex;flex-direction:column;align-items:center;padding:12px 8px;gap:8px}
+.logo{font-size:12px;font-weight:950;letter-spacing:.12em;color:var(--cyan);writing-mode:vertical-rl;transform:rotate(180deg);margin-bottom:4px}
+.rail button{width:58px;height:54px;border:1px solid transparent;border-radius:14px;background:#0d1820;color:#97abb1;display:grid;place-items:center;font-size:20px}
+.rail button.active,.rail button:hover{border-color:#40606d;color:white;background:#142a35}
+.drawer{position:fixed;left:86px;top:0;bottom:0;width:min(360px,calc(100vw - 86px));transform:translateX(-105%);transition:.25s;z-index:35;background:#0a141cf4;border-right:1px solid var(--line);backdrop-filter:blur(18px);padding:22px;overflow:auto}
+.drawer.open{transform:translateX(0)}.drawer h2{margin:0 0 6px;font-size:22px}.drawer .group{margin:18px 0}.drawer a,.drawer button.item{display:block;width:100%;text-align:left;color:#dbe8eb;background:transparent;border:0;border-bottom:1px solid #203642;padding:10px 0;text-decoration:none}.drawer .tiny{font-size:10px;color:var(--muted);line-height:1.45}
+main{min-width:0;padding:18px 20px 90px;max-width:1680px;width:100%;margin:auto}.view{display:none}.view.active{display:block}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.eyebrow{font-size:9px;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:clamp(32px,6vw,66px);line-height:.95;margin:5px 0 10px;letter-spacing:-.045em}h2{font-size:26px;margin:0}h3{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin:0 0 8px}.sub{color:#bfd0d4;line-height:1.55;font-size:13px}
+.hero{min-height:500px;border:1px solid var(--line);border-radius:22px;overflow:hidden;position:relative;box-shadow:var(--shadow)}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.06)}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#071017f7 0,#071017b8 42%,#07101726 78%),linear-gradient(0deg,#071017e0,transparent 65%)}.heroText{position:relative;z-index:2;max-width:760px;padding:8vh 5vw}.heroQuote{font-size:clamp(18px,3vw,30px);font-weight:860;line-height:1.25;margin:24px 0}.heroQuote em{font-style:normal;color:var(--gold)}
+.actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}.btn{border:1px solid var(--line);border-radius:10px;background:#0d1a22;color:#dce8eb;padding:9px 11px;text-decoration:none}.btn.primary{border-color:#4a8993;background:#15333c}.btn.gold{border-color:#8c6b3d;background:#30271d}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:11px;margin-top:11px}.two{display:grid;grid-template-columns:1fr 1fr;gap:11px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+.card,.panel{background:linear-gradient(180deg,#132731d9,#0d1820e6);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}.card{padding:13px}.panel{padding:14px;margin-top:11px}
+.label{font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}.kpi{font-size:30px;font-weight:950}.status{font-size:9px;font-weight:900;letter-spacing:.07em}.good{color:var(--lime)}.warn{color:var(--gold)}.bad{color:var(--rose)}
+.callout{border-left:3px solid var(--cyan);background:#0d1b23;padding:11px 13px;font-size:12px;line-height:1.55;border-radius:6px}
+.toolbar{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}.control{background:#09151c;border:1px solid var(--line);color:white;padding:9px 10px;border-radius:9px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:11px}.asset{padding:0;overflow:hidden}.thumbwrap{position:relative;aspect-ratio:16/10;background:#081218}.asset img{width:100%;height:100%;object-fit:cover}.badge{position:absolute;left:8px;top:8px;background:#081218dd;border:1px solid #ffffff20;border-radius:999px;padding:5px 7px;font-size:8px;font-weight:900}.check{position:absolute;right:8px;top:8px;width:22px;height:22px;accent-color:var(--cyan)}.pad{padding:12px}.meta{font-size:10px;color:var(--muted);line-height:1.45}.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}.tag{font-size:8px;border:1px solid var(--line);border-radius:999px;padding:3px 5px;color:#c5d6da}
+.metric{display:grid;grid-template-columns:150px 1fr 44px;gap:8px;align-items:center;margin:8px 0;font-size:11px}input[type=range]{width:100%;accent-color:var(--cyan)}
+.compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.compareCard img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:9px}
+.roadmapMap{position:relative;min-height:620px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 50% 70%,#17362f 0,transparent 18%),linear-gradient(#0a1820,#0c1d24 55%,#0b161c)}
+.roadmapMap:before{content:"";position:absolute;inset:0;opacity:.18;background-image:linear-gradient(#ffffff22 1px,transparent 1px),linear-gradient(90deg,#ffffff22 1px,transparent 1px);background-size:36px 36px}
+.island{position:absolute;width:180px;min-height:110px;border:1px solid #476877;background:linear-gradient(180deg,#173340,#10242d);border-radius:48% 52% 44% 56% / 55% 42% 58% 45%;box-shadow:0 18px 35px #0006;padding:18px 14px 14px;text-align:center}.island:after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-28px;border-left:35px solid transparent;border-right:35px solid transparent;border-top:30px solid #10242d;filter:drop-shadow(0 10px 6px #0005)}.island .num{font-size:8px;color:var(--gold)}.island b{display:block;font-size:12px;margin-top:5px}.bridge{position:absolute;height:2px;background:#7cc5d1;transform-origin:left center;opacity:.5}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.dayh{font-size:9px;color:var(--cyan);text-align:center;padding:6px}.day{min-height:104px;border:1px solid var(--line);border-radius:10px;background:#0c1820;padding:6px}.day.other{opacity:.28}.date{font-size:10px;color:#d8e5e8}.event{font-size:8px;margin-top:5px;padding:4px;border-radius:6px;background:#17323a;border-left:2px solid var(--cyan)}.event.gold{border-color:var(--gold);background:#2c261c}.event.violet{border-color:var(--violet);background:#211d31}
+.statsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px}.chart{height:190px;display:flex;align-items:end;gap:7px;border:1px solid var(--line);border-radius:10px;background:#081218;padding:12px}.barcol{flex:1;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:5px;height:100%}.barfill{width:68%;background:linear-gradient(var(--cyan),var(--teal));border-radius:7px 7px 2px 2px;min-height:2px}.barlabel{font-size:8px;color:var(--muted)}
+.pipe{display:flex;align-items:center;gap:5px;overflow:auto;padding:8px 0}.node{white-space:nowrap;border:1px solid var(--line);background:#0b1820;border-radius:8px;padding:8px;font-size:10px}.arrow{color:var(--muted)}
+.simtag,.realtag,.plantag{font-size:8px;border-radius:999px;padding:3px 5px}.simtag{color:var(--gold);border:1px solid #816637}.realtag{color:var(--lime);border:1px solid #4c7549}.plantag{color:var(--violet);border:1px solid #665a8c}
+.track{display:none;position:fixed;right:16px;bottom:16px;width:min(440px,calc(100vw - 32px));z-index:60;background:#08151ded;border:1px solid var(--line);border-radius:14px;padding:9px;backdrop-filter:blur(16px)}.track.show{display:block}audio{width:100%}
+.tv .app{grid-template-columns:1fr}.tv .rail{display:none}.tv main{max-width:none;padding:2.5vw}.tv .hero{min-height:72vh}.tv .gallery{grid-template-columns:repeat(auto-fill,minmax(360px,1fr))}
+@media(max-width:900px){.app{grid-template-columns:1fr}.rail{position:sticky;height:auto;top:0;flex-direction:row;width:100%;padding:7px;overflow:auto;border-right:0;border-bottom:1px solid var(--line)}.logo{writing-mode:horizontal-tb;transform:none;margin:0 6px 0 0}.rail button{min-width:48px;height:44px}.drawer{left:0;top:58px;width:min(360px,100vw)}main{padding:10px 10px 90px}.two,.three{grid-template-columns:1fr}.compare{grid-template-columns:1fr}.hero{min-height:570px}.roadmapMap{min-height:800px}.island{width:150px}.calendar{gap:3px}.day{min-height:84px;padding:4px}.event{font-size:7px}}
+</style>
+
+<style id="isl-v05-polish">
+:root{--ui-scale:1;--accent:#87efff;--accent2:#ffc36e;--ease:cubic-bezier(.2,.75,.18,1)}
+body{font-size:calc(16px * var(--ui-scale))}
+button,a,.card,.island,.node,.event{transition:transform .22s var(--ease),border-color .22s ease,background-color .22s ease,box-shadow .22s ease,opacity .22s ease}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.card:hover,.card:focus-within{transform:translateY(-2px);border-color:#416674}
+.microline{height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);background-size:40% 100%;animation:islSweep 5.6s linear infinite;opacity:.45}
+@keyframes islSweep{from{background-position:-60% 0}to{background-position:160% 0}}
+#bootbar{position:fixed;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:9999;transition:width .28s ease,opacity .4s}#bootbar.go{width:92%}#bootbar.done{width:100%;opacity:0}
+#welcome{position:fixed;inset:0;z-index:9900;background:radial-gradient(circle at 68% 22%,#24485c 0,transparent 28%),radial-gradient(circle at 25% 72%,#17382f 0,transparent 24%),linear-gradient(#061018,#08151c);display:flex;align-items:center;justify-content:center;padding:28px;transition:opacity .7s var(--ease),visibility .7s}
+#welcome.hidden{opacity:0;visibility:hidden;pointer-events:none}.welcome-inner{position:relative;width:min(980px,94vw);text-align:center}
+.isl-logo{position:relative;width:176px;height:176px;margin:0 auto 28px}.isl-logo .ring{position:absolute;inset:13px;border:1px solid #8defff66;border-radius:50%;animation:orbit 10s linear infinite}.isl-logo .ring.r2{inset:32px;border-color:#ffc36e55;animation-duration:7s;animation-direction:reverse}
+.isl-logo .core{position:absolute;inset:46px;border:1px solid #8defff77;display:grid;place-items:center;transform:rotate(45deg);background:#0e2630cc;box-shadow:0 0 42px #72d9e52c}.isl-logo .core b{transform:rotate(-45deg);font-size:34px;letter-spacing:.15em;color:white}
+.isl-logo .speck{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent);animation:floatSpeck 5s ease-in-out infinite}.isl-logo .s1{left:5px;top:85px}.isl-logo .s2{right:2px;top:44px;animation-delay:-1.7s}.isl-logo .s3{left:82px;bottom:0;animation-delay:-3s}
+@keyframes orbit{to{transform:rotate(360deg)}}@keyframes floatSpeck{50%{transform:translateY(-13px);opacity:.45}}
+.welcome-kicker{font-size:10px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase}.welcome-title{font-size:clamp(34px,7vw,78px);font-weight:950;letter-spacing:-.04em;line-height:.96;margin:8px 0 14px}.welcome-quote{font-size:clamp(17px,2.6vw,28px);font-weight:750;line-height:1.35;color:#d9e7e9;max-width:780px;margin:0 auto 26px}.welcome-quote em{font-style:normal;color:var(--accent2)}
+#welcomeWind{position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:.4}.windstroke{position:absolute;height:1px;width:220px;background:linear-gradient(90deg,transparent,#b8f6ffb8,transparent);animation:windFly 7s linear infinite}.windstroke:nth-child(1){top:18%;left:-20%;animation-delay:-1s}.windstroke:nth-child(2){top:63%;left:-25%;animation-delay:-3.4s;width:330px}.windstroke:nth-child(3){top:81%;left:-15%;animation-delay:-5.5s;width:150px}@keyframes windFly{to{transform:translateX(125vw)}}
+#helpTip{position:fixed;z-index:9800;pointer-events:none;max-width:min(330px,72vw);padding:9px 11px;border-radius:9px;background:#061017ef;border:1px solid #45636e;color:#dce9eb;font-size:11px;line-height:1.45;box-shadow:0 12px 38px #0007;opacity:0;transform:translateY(5px);transition:opacity .14s,transform .14s}#helpTip.show{opacity:1;transform:none}body.no-tooltips #helpTip{display:none}
+#lightbox{position:fixed;inset:0;z-index:9850;background:#03080cee;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(12px)}#lightbox.show{display:flex}#lightbox figure{margin:0;max-width:96vw;max-height:94vh;display:flex;flex-direction:column;align-items:center;gap:9px}#lightbox img,#lightbox video{max-width:94vw;max-height:82vh;object-fit:contain;border-radius:10px;box-shadow:0 28px 80px #000b}#lightbox figcaption{color:#d2e1e4;font-size:12px;text-align:center;max-width:800px}#lbClose{position:absolute;right:18px;top:18px;width:46px;height:46px;border-radius:50%;border:1px solid #ffffff35;background:#071018;color:white;font-size:20px}
+#settingsPanel{position:fixed;right:14px;top:14px;z-index:9750;width:min(390px,calc(100vw - 28px));max-height:calc(100vh - 28px);overflow:auto;background:#08141cf5;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:0 25px 70px #000a;backdrop-filter:blur(16px);transform:translateX(calc(100% + 30px));transition:transform .26s var(--ease)}#settingsPanel.open{transform:none}.settingrow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid #203641}
+.toggle{width:44px;height:24px;border-radius:99px;border:1px solid #46616d;background:#09131a;position:relative}.toggle:after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#8fa4aa;transition:.2s}.toggle.on{border-color:#5a96a0;background:#17343d}.toggle.on:after{left:23px;background:var(--accent)}
+body.hide-rail .rail{display:none}body.hide-rail .app{grid-template-columns:1fr}body.compact .card{padding:10px}body.compact .grid{gap:7px}body.compact .panel{padding:11px}body.no-motion *,body.no-motion *:before,body.no-motion *:after{animation:none!important;transition:none!important}
+.mediaCard{position:relative;overflow:hidden}.mediaCard video{display:block;width:100%;height:210px;object-fit:cover;background:#000;cursor:zoom-in}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important}}
+
+body.spectacle header,body.spectacle .rail,body.spectacle .drawer,body.spectacle .track{display:none!important}
+body.spectacle .app{display:block!important}body.spectacle main{max-width:none!important;padding:0!important}
+body.spectacle .view{display:none!important}body.spectacle .view.active{display:block!important}
+body.spectacle #home .grid,body.spectacle #home .section{display:none!important}
+body.spectacle #home .hero{height:100vh!important;min-height:100vh!important;border:0!important;border-radius:0!important}
+body.spectacle #home .heroText{padding-top:18vh!important}
+#lightbox img,#lightbox video{max-width:98vw!important;max-height:90vh!important}
+.asset img,.hero img{image-rendering:auto!important}
+@media(min-width:1400px){.thumb img,.asset img{height:260px!important}}
+</style>
 </head>
 <body>
-<div id="progress"></div>
-<div id="welcome" class="overlay welcome">
- <div class="wind-lines"><i></i><i></i><i></i></div>
- <div class="welcome-inner">
-  <div class="logo-orbit"><i class="ring a"></i><i class="ring b"></i><div class="logo-core"><b>ISL</b></div></div>
-  <div class="eyebrow">ISLAS VOLADORAS · COMMAND CENTER</div>
-  <h1>Crear es alterar el mundo.</h1>
-  <p class="lead">Y todo lo que alteras termina alterándote. <em>Observa. Decide. Construye. Recuerda.</em></p>
-  <div class="actions center"><button class="btn primary" id="enterBtn">Entrar en ISL</button><a class="btn" href="reel.html">Ver Reel</a><a class="btn" href="ps4.html">PS4 Lite</a></div>
- </div>
-</div>
 
-<div id="lightbox" class="overlay hidden"><button class="round close" id="lightboxClose">×</button><figure><div id="lightboxMedia"></div><figcaption id="lightboxCaption"></figcaption></figure></div>
-<div id="tooltip"></div>
-
-<aside id="settings" class="settings">
- <div class="panel-head"><div><span class="eyebrow">PERSONALIZACIÓN</span><h2>Tu cabina ISL</h2></div><button class="round" id="settingsClose">×</button></div>
- <div class="setting"><span>Barra lateral</span><button class="switch on" data-setting="rail"></button></div>
- <div class="setting"><span>Ayudas contextuales</span><button class="switch on" data-setting="tips"></button></div>
- <div class="setting"><span>Microanimaciones</span><button class="switch on" data-setting="motion"></button></div>
- <div class="setting"><span>Densidad compacta</span><button class="switch" data-setting="compact"></button></div>
- <div class="setting"><span>Bienvenida</span><button class="switch on" data-setting="welcome"></button></div>
- <label class="setting"><span>Escala UI</span><input id="scaleRange" type="range" min=".9" max="1.25" step=".05" value="1"></label>
- <label class="setting"><span>Acento</span><select id="accent"><option value="#87efff">Viento cian</option><option value="#ffc36e">Ámbar</option><option value="#73dfc1">Menta</option><option value="#bba4ff">Violeta</option></select></label>
- <p class="note">Preferencias locales del dispositivo. Nunca alteran CANON.</p>
+<div id="bootbar"></div>
+<div id="welcome"><div id="welcomeWind"><i class="windstroke"></i><i class="windstroke"></i><i class="windstroke"></i></div><div class="welcome-inner"><div class="isl-logo"><i class="ring"></i><i class="ring r2"></i><i class="speck s1"></i><i class="speck s2"></i><i class="speck s3"></i><div class="core"><b>ISL</b></div></div><div class="welcome-kicker">Islas Voladoras · Command Center</div><div class="welcome-title">Crear es alterar el mundo.</div><div class="welcome-quote">Y todo lo que alteras termina alterándote. <em>Observa. Decide. Construye. Recuerda.</em></div><div class="actions" style="justify-content:center"><button class="btn primary" id="enterISL">Entrar en ISL</button><a class="btn" href="reel.html">Ver Reel</a><a class="btn" href="ps4.html">PS4 Lite</a></div><div class="microline" style="margin-top:30px"></div></div></div>
+<div id="helpTip"></div>
+<div id="lightbox"><button id="lbClose">×</button><figure><div id="lbMedia"></div><figcaption id="lbCaption"></figcaption></figure></div>
+<div id="settingsPanel"><div class="topbar"><div><div class="eyebrow">Personalización</div><h2 style="font-size:22px">Tu cabina ISL</h2></div><button class="btn" id="settingsClose">×</button></div><div class="settingrow"><span>Mostrar barra lateral</span><button class="toggle on" data-setting="rail"></button></div><div class="settingrow"><span>Cartelitos de ayuda</span><button class="toggle on" data-setting="tooltips"></button></div><div class="settingrow"><span>Microanimaciones</span><button class="toggle on" data-setting="motion"></button></div><div class="settingrow"><span>Modo compacto</span><button class="toggle" data-setting="compact"></button></div><div class="settingrow"><span>Bienvenida al entrar</span><button class="toggle on" data-setting="welcome"></button></div><div class="settingrow"><span>Escala UI</span><input id="uiScale" type="range" min="0.9" max="1.25" step="0.05" value="1"></div><div class="settingrow"><span>Acento</span><select id="accentChoice" class="control"><option value="#87efff">Viento cian</option><option value="#ffc36e">Ámbar</option><option value="#73dfc1">Menta</option><option value="#bba4ff">Violeta</option></select></div></div>
+<div class="app">
+<aside class="rail">
+ <div class="logo">ISL</div>
+ <button class="active" data-view="home" title="Centro" data-help="Vista general del proyecto.">⌂</button>
+ <button data-view="gallery" title="Galería" data-help="Selecciona y compara diseños.">◈</button>
+ <button data-view="roadmap" title="Roadmap" data-help="Archipiélago de producción.">⌁</button>
+ <button data-view="calendar" title="Calendario" data-help="Ritmo operativo.">▦</button>
+ <button data-view="inspiration" title="Inspiraciones" data-help="Esencia de referencias, no copia.">✦</button>
+ <button data-view="stats" title="Estadísticas" data-help="REAL / SIMULADO / PLANEADO.">▥</button>
+ <button data-view="sim" title="Simulaciones" data-help="Escenarios de capacidad.">∿</button>
+ <button data-view="pipelines" title="Pipelines" data-help="Flujos LEGO.">↳</button>
+ <button data-view="controls" title="Controles" data-help="TV, teclado y gamepad.">⌘</button>
+ <button id="spectacleBtn" title="Modo Espectáculo" data-help="Oculta la interfaz y solicita pantalla completa para contemplar ISL.">⛶</button><button data-view="registry" title="Registro" data-help="Inventario de archivos, documentos, Labs e integraciones.">☷</button><button id="settingsBtn" title="Personalizar" data-help="Personaliza la cabina.">⚙</button><button id="menuBtn" title="Menú" data-help="Accesos rápidos e integraciones.">☰</button>
 </aside>
 
-<div class="app">
-<nav class="rail" id="rail">
- <div class="rail-logo">ISL</div>
- <button class="nav active" data-view="home" data-help="Vista general: espíritu, estado y accesos.">⌂</button>
- <button class="nav" data-view="gallery" data-help="Galería viva: ampliar, seleccionar y comparar variantes.">◈</button>
- <button class="nav" data-view="roadmap" data-help="Roadmap como archipiélago de producción.">⌁</button>
- <button class="nav" data-view="calendar" data-help="Ritmo operativo y calendario de trabajo.">▦</button>
- <button class="nav" data-view="inspiration" data-help="Referencias → esencia → reinterpretación.">✦</button>
- <button class="nav" data-view="stats" data-help="Datos reales, simulaciones y métricas futuras.">▥</button>
- <button class="nav" data-view="pipeline" data-help="Pipelines LEGO y handoff a Unreal.">↳</button>
- <button class="nav" data-view="controls" data-help="Teclado, TV, gamepad y PS4.">⌘</button>
- <span class="rail-spacer"></span>
- <button id="settingsBtn" data-help="Personalizar la cabina.">⚙</button>
- <button id="drawerBtn" data-help="Abrir accesos rápidos.">☰</button>
-</nav>
-
-<aside id="drawer" class="drawer">
- <div class="panel-head"><div><span class="eyebrow">ACCESOS</span><h2>ISL</h2></div><button class="round" id="drawerClose">×</button></div>
- <a href="game/">Juego Web</a><a href="reel.html">Reel dinámico</a><a href="assets/isl-tv-reel-pages.mp4">Reel MP4</a>
- <a href="labs/wind.html">Wind Lab</a><a href="labs/method.html">Method Lab</a><a href="ps4.html">PS4 Lite</a>
- <hr><a href="https://github.com/juanmailcamara331-hash/islas-voladoras" target="_blank">GitHub ↗</a>
- <p class="note">Drive · GitHub · Calendar · fal · Lovable · Supabase · PostHog · Jotform.</p>
+<aside class="drawer" id="drawer">
+ <h2>ISL Command Center</h2><div class="tiny">Mapa del proyecto. No sustituye Biblia, Studio ni CQC.</div>
+ <div class="group"><h3>ACCESOS</h3>
+  <a href="https://juanmailcamara331-hash.github.io/islas-voladoras/game/" target="_self">Juego web Godot ↗</a>
+  <a href="assets/isl-tv-reel-premium-1080p.mp4" target="_blank">ISL TV Reel ↗</a>
+  <a href="ps4.html">Modo PS4 Lite ↗</a>
+  <a href="labs/wind.html" target="_blank">Wind Lab v1.6 ↗</a>
+  <a href="labs/method.html" target="_blank">Method Lab v0.1 ↗</a>
+  <button class="item" onclick="go('gallery')">Forge / Galería integrada</button>
+ </div>
+ <div class="group"><h3>INTEGRACIONES</h3>
+  <div class="tiny">Drive · GitHub · fal · Lovable · Supabase · PostHog · Jotform.</div>
+  <div class="tiny" style="margin-top:8px">Google Calendar: conector disponible; sincronización sólo después de que tú lo conectes.</div>
+ </div>
+ <div class="group"><h3>REGLA</h3><div class="tiny">Nada asciende a CANON ni APPROVED por automatización sin decisión humana.</div></div>
 </aside>
 
 <main>
-<section id="home" class="view active">
- <div class="hero zoomable" data-full-src="assets/island-a.svg" data-caption="ISL · referencia visual de mundo flotante.">
-  <img src="assets/island-a.svg" alt="Isla flotante ISL">
-  <div class="hero-shade"></div>
-  <div class="hero-copy"><span class="eyebrow">MAGISTRALMENTE VAGOS · CUIDADO Y MIMO</span><h1>Todo el mundo ISL,<br>sin perder el hilo.</h1><p class="lead">Arte, juego, referencias, Labs, calendario, estadísticas, simulaciones y producción mirando en la misma dirección.</p><blockquote>Automatizar la fricción. <em>No automatizar el criterio.</em></blockquote>
-  <div class="actions"><button class="btn primary" data-go="gallery">Abrir Galería</button><button class="btn gold" data-go="roadmap">Ver Roadmap</button><a class="btn" href="reel.html">Reel</a></div></div>
+<section class="view active" id="home">
+ <div class="topbar"><div class="eyebrow">Islas Voladoras · cabina maestra v0.3</div><div class="actions"><button class="btn" id="musicBtn">♫</button><button class="btn" id="tvBtn">TV</button></div></div>
+ <div class="hero"><img src="assets/island-a-master.jpg"><div class="heroText">
+  <div class="eyebrow">MAGISTRALMENTE VAGOS · CUIDADO Y MIMO</div>
+  <h1>Todo el mundo ISL,<br>sin perder el hilo.</h1>
+  <div class="sub">Arte, criaturas, niveles, herramientas, referencias, calendario, simulaciones, estadísticas, pipelines y decisiones — organizados para producir en meses sin rebajar identidad.</div>
+  <div class="heroQuote">“Automatizar la fricción. <em>No automatizar el criterio.</em>”</div>
+  <div class="actions"><button class="btn primary" onclick="go('gallery')">Entrar en Galería</button><button class="btn gold" onclick="go('roadmap')">Ver Roadmap</button><button class="btn" id="heroSpectacle">⛶ Espectáculo</button><button class="btn" onclick="go('calendar')">Planificar semana</button></div>
+ </div></div>
+ <div class="grid">
+  <div class="card"><div class="label">Fuente de verdad</div><div class="kpi">v0.13</div><div class="status good">BIBLIA MAESTRA</div></div>
+  <div class="card"><div class="label">Método</div><div class="kpi">R²</div><div class="status good">CQC + BUCLE RECURSIVO</div></div>
+  <div class="card"><div class="label">Galería</div><div class="kpi">26</div><div class="status good">MASTERS VISUALES INVENTARIADOS</div></div>
+  <div class="card"><div class="label">Unreal</div><div class="kpi">AIRLOCK</div><div class="status warn">SÓLO APPROVED</div></div>
  </div>
- <div class="kpis"><article><small>FUENTE DE VERDAD</small><b>v0.13</b><span>Biblioteca maestra</span></article><article><small>MÉTODO</small><b>R²</b><span>CQC + bucle recursivo</span></article><article><small>3D APPROVED</small><b>0</b><span>Dato real</span></article><article><small>UNREAL</small><b>AIRLOCK</b><span>Sólo aprobado</span></article></div>
- <div class="section-head"><div><span class="eyebrow">MOVIMIENTO Y ESPÍRITU</span><h2>Ver antes de decidir</h2></div><p>Todo material visual se puede ampliar. Los vídeos también.</p></div>
- <div class="cards">
-  <article class="card media-card" data-help="Previs de cámara, nubes y respiración ambiental."><video data-lightbox-video poster="assets/island-a.svg" muted playsinline preload="metadata"><source src="assets/previs-pages.mp4"></video><div class="pad"><b>Previs flotante</b><span>Vídeo / referencia</span></div></article>
-  <a class="card" href="reel.html" data-help="Presentación automática alimentada por content-manifest.json."><img src="assets/island-b.svg" alt=""><div class="pad"><b>Reel dinámico</b><span>Música + selección visual</span></div></a>
-  <a class="card text-card" href="assets/isl-tv-reel-pages.mp4" data-help="MP4 ligero H.264/AAC para dispositivos y PS4."><span class="eyebrow">PS4 / TV</span><strong>Reel MP4</strong><p>Derivado fiable para pantalla completa.</p></a>
+
+<div class="section"><div><h2>Movimiento y espíritu</h2><div class="sub">Pulsa imágenes o vídeos para verlos a pantalla completa.</div></div></div>
+<div class="grid"><div class="card mediaCard" data-help="Previs de cámara y atmósfera."><video muted playsinline preload="metadata" poster="assets/island-a-master.jpg" data-fullmedia data-caption="Previs visual ISL · cámara, atmósfera y respiración del mundo."><source src="assets/previs-premium-1080p-L41.mp4" type="video/mp4"></video><div class="pad"><h3>Previs flotante</h3><div class="sub">Pantalla completa.</div></div></div>
+<a class="card thumb" href="reel.html" data-help="Reel web dinámico alimentado por el manifiesto."><img src="assets/island-a-master.jpg"><div class="pad"><h3>Reel dinámico</h3><div class="sub">Presentación musical viva.</div></div></a>
+<a class="card" href="assets/isl-tv-reel-premium-1080p.mp4" target="_blank" data-help="MP4 H.264/AAC optimizado para PS4."><h3>Reel MP4 PS4</h3><div class="kpi">H.264</div><div class="sub">Presentación fiable en Reproductor multimedia.</div></a></div>
+</section>
+
+<section class="view" id="gallery">
+ <div class="topbar"><div><div class="eyebrow">Forge integrado</div><h2>Galería viva</h2><div class="sub">Filtros, selección y comparación viven dentro del Command Center.</div></div></div>
+ <div class="toolbar"><select id="cat" class="control"><option value="">Todas las categorías</option></select><select id="st" class="control"><option value="">Todos los estados</option></select><input id="search" class="control" placeholder="buscar isla, 3D, viento..."><button class="btn" onclick="go('compare')">Comparar seleccionados</button></div>
+ <div id="galleryGrid" class="gallery"></div>
+</section>
+
+<section class="view" id="compare">
+ <div class="topbar"><div><div class="eyebrow">CQC comparativo</div><h2>Comparador ponderado</h2><div class="sub">Hasta 3 variantes. El score hace explícito el criterio; no decide por nosotros.</div></div></div>
+ <div class="two"><div class="panel"><h3>Pesos</h3><div id="weightsBox"></div></div><div class="panel"><h3>Regla</h3><div class="callout">Si la puntuación contradice nuestro juicio, investigamos qué variable falta o qué peso está mal definido.</div></div></div>
+ <div id="compareGrid" class="compare" style="margin-top:11px"></div>
+</section>
+
+<section class="view" id="roadmap">
+ <div class="topbar"><div><div class="eyebrow">Roadmap ISL</div><h2>Archipiélago de producción</h2><div class="sub">El roadmap se lee como viaje entre islas de incertidumbre, no como hoja de cálculo disfrazada.</div></div></div>
+ <div class="roadmapMap">
+  <div class="bridge" style="left:18%;top:29%;width:26%;transform:rotate(9deg)"></div><div class="bridge" style="left:45%;top:35%;width:25%;transform:rotate(-4deg)"></div><div class="bridge" style="left:61%;top:50%;width:19%;transform:rotate(20deg)"></div><div class="bridge" style="left:25%;top:63%;width:25%;transform:rotate(-16deg)"></div>
+  <div class="island" style="left:5%;top:15%"><span class="num">ISLA 0</span><b>Command Center + Forge</b><span class="status good">EN CURSO</span></div>
+  <div class="island" style="left:32%;top:24%"><span class="num">ISLA 1</span><b>Bake-off 3D</b><span class="status warn">SIGUIENTE</span></div>
+  <div class="island" style="left:62%;top:20%"><span class="num">ISLA 2</span><b>3D Lab / Lookdev</b><span class="status warn">SIGUIENTE</span></div>
+  <div class="island" style="left:72%;top:52%"><span class="num">ISLA 3</span><b>Wind Lab × 3D</b><span class="status">PENDIENTE</span></div>
+  <div class="island" style="left:38%;top:63%"><span class="num">ISLA 4</span><b>Kit modular mínimo</b><span class="status">PENDIENTE</span></div>
+  <div class="island" style="left:8%;top:68%"><span class="num">ISLA 5</span><b>Unreal Handoff</b><span class="status">PENDIENTE</span></div>
+ </div>
+ <div class="grid"><div class="card"><h3>Objetivo próximo</h3><div class="sub">Demostrar lenguaje visual 3D con isla/receptor/puente usando variables controladas.</div></div><div class="card"><h3>Bloqueo actual</h3><div class="sub">No hay assets 3D formalmente APPROVED todavía.</div></div><div class="card"><h3>Regla</h3><div class="sub">No producir una isla completa hasta que tres piezas pequeñas prueben el lenguaje.</div></div></div>
+</section>
+
+<section class="view" id="calendar">
+ <div class="topbar"><div><div class="eyebrow">Planificación</div><h2>Calendario operativo</h2><div class="sub">Local ahora; preparado para sincronización real cuando conectes Google Calendar.</div></div><div class="actions"><button class="btn" id="prevMonth">←</button><button class="btn" id="todayBtn">Hoy</button><button class="btn" id="nextMonth">→</button></div></div>
+ <div class="two"><div class="panel"><div class="label">Mes</div><div class="kpi" id="monthTitle"></div></div><div class="panel"><h3>Integración</h3><div class="callout">Google Calendar está disponible como conector, pero el centro no fingirá sincronización hasta que exista conexión real.</div></div></div>
+ <div class="panel"><div class="calendar" id="calendarGrid"></div></div>
+ <div class="grid"><div class="card"><h3>Ritual semanal</h3><div class="sub">1 bloque producción · 1 bloque CQC · 1 bloque integración/documentación.</div></div><div class="card"><h3>Ritual mensual</h3><div class="sub">Revisar scope, coste hundido, herramientas y automatizaciones que sí ahorraron tiempo.</div></div><div class="card"><h3>Foco</h3><div class="sub">Máximo 3 frentes activos. Lo demás se aparca.</div></div></div>
+</section>
+
+<section class="view" id="inspiration">
+ <div class="topbar"><div><div class="eyebrow">ADN y referencias</div><h2>Inspiraciones</h2><div class="sub">Referencia → esencia → contraste → reinterpretación → prueba → lenguaje ISL.</div></div></div>
+ <div class="grid">
+  <div class="card"><h3>Skies of Arcadia</h3><div class="sub">Maravilla aérea, aventura, tripulación.</div></div><div class="card"><h3>Dark Souls</h3><div class="sub">Conocimiento, lectura del mundo, dominio.</div></div><div class="card"><h3>Hollow Knight</h3><div class="sub">Precisión, elegancia, recontextualización.</div></div><div class="card"><h3>Pilotwings 64</h3><div class="sub">Moverse por aire debe ser placentero.</div></div><div class="card"><h3>Spore</h3><div class="sub">Forma, evolución y posibilidades.</div></div><div class="card"><h3>Pratchett</h3><div class="sub">Filosofía con humanidad y sátira.</div></div><div class="card"><h3>Art Déco × Gaudí</h3><div class="sub">Orden geométrico frente a organicidad viva.</div></div><div class="card"><h3>Jodorowsky × Burton</h3><div class="sub">Símbolo, metamorfosis, melancolía y rareza.</div></div>
  </div>
 </section>
 
-<section id="gallery" class="view">
- <div class="section-head"><div><span class="eyebrow">FORGE</span><h2>Galería viva</h2></div><p>Selecciona hasta 3 elementos para comparar.</p></div>
- <div class="toolbar"><select id="categoryFilter"><option value="">Todas las categorías</option></select><select id="statusFilter"><option value="">Todos los estados</option></select><input id="searchInput" placeholder="buscar…"><button class="btn" id="compareBtn">Comparar</button></div>
- <div id="galleryGrid" class="cards gallery-grid"></div>
- <div id="comparePanel" class="compare-panel hidden"><div class="panel-head"><div><span class="eyebrow">CQC COMPARATIVO</span><h2>Comparación</h2></div><button class="round" id="compareClose">×</button></div><div id="compareGrid" class="compare-grid"></div></div>
+<section class="view" id="stats">
+ <div class="topbar"><div><div class="eyebrow">Datos</div><h2>Estadísticas con procedencia</h2><div class="sub">REAL, SIMULADO y PLANEADO permanecen separados.</div></div></div>
+ <div class="statsgrid"><div class="card"><span class="realtag">REAL</span><div class="label" style="margin-top:8px">PostHog gameplay</div><div class="kpi">0</div><div class="sub">No hay eventos reales conocidos.</div></div><div class="card"><span class="realtag">REAL</span><div class="label" style="margin-top:8px">Labs</div><div class="kpi">2+</div><div class="sub">Wind + Method; 3D pendiente.</div></div><div class="card"><span class="realtag">REAL</span><div class="label" style="margin-top:8px">Assets 3D aprobados</div><div class="kpi">0</div></div><div class="card"><span class="simtag">SIMULADO</span><div class="label" style="margin-top:8px">Capacidad ejemplo</div><div class="kpi">300h</div></div></div>
+ <div class="panel"><h3>Gráfico futuro · maqueta</h3><div class="chart"><div class="barcol"><div class="barfill" style="height:15%"></div><div class="barlabel">CQC</div></div><div class="barcol"><div class="barfill" style="height:45%"></div><div class="barlabel">3D</div></div><div class="barcol"><div class="barfill" style="height:28%"></div><div class="barlabel">Labs</div></div><div class="barcol"><div class="barfill" style="height:10%"></div><div class="barlabel">Docs</div></div><div class="barcol"><div class="barfill" style="height:25%"></div><div class="barlabel">Unreal</div></div></div><div class="sub" style="margin-top:8px"><span class="plantag">PLANEADO</span> No representa horas reales.</div></div>
 </section>
 
-<section id="roadmap" class="view">
- <div class="section-head"><div><span class="eyebrow">ROADMAP ISL</span><h2>Archipiélago de producción</h2></div><p>Tamaño = coste aproximado · niebla = incertidumbre · puentes = dependencia.</p></div>
- <div class="archipelago">
-  <i class="bridge b1"></i><i class="bridge b2"></i><i class="bridge b3"></i><i class="bridge b4"></i>
-  <article class="island i0"><small>ISLA 0 · EN CURSO</small><b>Command + Forge</b><span>orden / decisión</span></article>
-  <article class="island i1"><small>ISLA 1 · SIGUIENTE</small><b>Bake-off 3D</b><span>isla · receptor · puente</span></article>
-  <article class="island i2"><small>ISLA 2</small><b>3D Lab</b><span>lookdev falso-Unreal</span></article>
-  <article class="island i3"><small>ISLA 3</small><b>Wind × 3D</b><span>belleza que deja jugar</span></article>
-  <article class="island i4"><small>ISLA 4</small><b>Kit modular</b><span>LEGO productivo</span></article>
-  <article class="island i5"><small>ISLA 5</small><b>Unreal Handoff</b><span>airlock aprobado</span></article>
+<section class="view" id="sim">
+ <div class="topbar"><div><div class="eyebrow">Escenarios</div><h2>Simulador de capacidad</h2><div class="sub">Compara supuestos; no predice fechas.</div></div></div>
+ <div class="three"><div class="panel"><h3>Tiempo</h3><div class="metric"><span>horas/día</span><input id="hd" type="range" min="1" max="5" step=".25" value="2.5"><b id="hdv">2.5</b></div><div class="metric"><span>días/semana</span><input id="dw" type="range" min="2" max="7" value="6"><b id="dwv">6</b></div><div class="metric"><span>semanas</span><input id="wk" type="range" min="4" max="40" value="20"><b id="wkv">20</b></div></div><div class="panel"><h3>Apalancamiento</h3><div class="metric"><span>reutilización</span><input id="reuse" type="range" min="0" max="60" value="25"><b id="reusev">25%</b></div><div class="metric"><span>automatización</span><input id="auto" type="range" min="0" max="60" value="20"><b id="autov">20%</b></div><div class="metric"><span>retr. evitado</span><input id="rework" type="range" min="0" max="50" value="20"><b id="reworkv">20%</b></div></div><div class="panel"><h3>Riesgo</h3><div class="metric"><span>incertidumbre</span><input id="risk" type="range" min="0" max="50" value="25"><b id="riskv">25%</b></div><div class="metric"><span>buffer</span><input id="buffer" type="range" min="0" max="40" value="20"><b id="bufferv">20%</b></div><div class="metric"><span>scope</span><input id="scope" type="range" min="100" max="600" step="10" value="300"><b id="scopev">300h</b></div></div></div>
+ <div class="grid"><div class="card"><div class="label">Nominal</div><div class="kpi" id="nominal">—</div></div><div class="card"><div class="label">Efectiva</div><div class="kpi" id="effective">—</div></div><div class="card"><div class="label">Equivalente</div><div class="kpi" id="equiv">—</div></div><div class="card"><div class="label">Margen</div><div class="kpi" id="margin">—</div></div></div><div class="panel"><div id="simRead" class="sub"></div></div>
+</section>
+
+
+
+<section class="view" id="registry">
+ <div class="topbar"><div><div class="eyebrow">Fuente de verdad operativa</div><h2>Registro completo</h2>
+ <div class="sub">El panel distingue contenido, archivos, infraestructura y estado. Duplicado físico no significa elemento nuevo.</div></div></div>
+ <div class="statsgrid">
+  <div class="card"><div class="label">Visuales creativos</div><div class="kpi">26</div><div class="status good">MÁSTER INVENTARIADO</div></div>
+  <div class="card"><div class="label">Labs públicos/locales</div><div class="kpi">3+</div><div class="status good">WIND · METHOD · ACADEMY</div></div>
+  <div class="card"><div class="label">Fuente documental</div><div class="kpi">v0.13</div><div class="status good">BIBLIA MAESTRA</div></div>
+  <div class="card"><div class="label">Netlify</div><div class="kpi">—</div><div class="status warn">PLUGIN NO CONECTADO</div></div>
  </div>
- <div class="cards"><article class="text-card"><span class="eyebrow">REGLA</span><strong>1 → 3 → ∞</strong><p>Primero una prueba. Después tres conexiones. Sólo entonces escala.</p></article><article class="text-card"><span class="eyebrow">PARADA</span><strong>Δ o fuera</strong><p>Otra vuelta debe comprar experiencia, riesgo o decisión.</p></article></div>
+ <div class="panel"><h3>DOCUMENTACIÓN ACTIVA</h3>
+ <table><tr><th>Artefacto</th><th>Estado</th><th>Uso</th></tr>
+ <tr><td>BIBLIA_MAESTRA_JUEGO_v0.13.docx</td><td>ACTUAL</td><td>Fuente de verdad de juego</td></tr>
+ <tr><td>ISL_STUDIO_Y_ACADEMY_v0.13.docx</td><td>ACTUAL</td><td>Studio + Academy</td></tr>
+ <tr><td>METODO_ISL_BUCLE_MAGISTRAL_RECURSIVO_v0.1.docx</td><td>PROVISIONAL FUERTE</td><td>Metodología</td></tr>
+ <tr><td>EXPERIENCIA_LAB_01_EL_MOLINO_QUE_MIENTE_v0.13.docx</td><td>LAB</td><td>Build de la Verdad</td></tr>
+ <tr><td>RUTA_C_CREACION_OPCIONAL_MOLINO_v0.13.docx</td><td>PROVISIONAL</td><td>Dibujo → interpretación</td></tr>
+ </table></div>
+ <div class="panel"><h3>INTEGRACIONES</h3>
+ <div class="pipe"><span class="node">GOOGLE DRIVE · ACTIVO</span><span class="node">GITHUB · ACTIVO</span><span class="node">CALENDAR · CONECTADO</span><span class="node">fal · CONECTADO</span><span class="node">LOVABLE · CRÉDITOS BLOQUEADOS</span><span class="node">SUPABASE · VIA LOVABLE</span><span class="node">POSTHOG · SIN DATOS</span><span class="node">JOTFORM · ACTIVO</span><span class="node">NETLIFY · NO CONECTADO</span></div></div>
+ <div class="panel"><h3>REGLA DE ARCHIVO</h3><div class="callout">REJECTED ≠ DELETED. Todo visual útil conserva procedencia, estado y aprendizaje; sólo APPROVED cruza el airlock hacia producción.</div></div>
 </section>
 
-<section id="calendar" class="view">
- <div class="section-head"><div><span class="eyebrow">RITMO</span><h2>Calendario operativo</h2></div><p>Local en la web; Google Calendar se gestiona mediante la integración conectada.</p></div>
- <div class="calendar-head"><button class="btn" id="prevMonth">←</button><b id="monthTitle"></b><button class="btn" id="nextMonth">→</button></div><div id="calendarGrid" class="calendar"></div>
-</section>
-
-<section id="inspiration" class="view">
- <div class="section-head"><div><span class="eyebrow">ADN</span><h2>Inspiraciones</h2></div><p>La referencia aporta esencia, nunca obediencia.</p></div>
- <div class="cards references">
-  <article data-help="Maravilla aérea, aventura y tripulación."><b>Skies of Arcadia</b><span>Aventura aérea</span></article>
-  <article data-help="Conocimiento del mundo además de estadísticas."><b>Dark Souls</b><span>Dominio / lectura</span></article>
-  <article data-help="Precisión, elegancia y recontextualización."><b>Hollow Knight</b><span>Claridad</span></article>
-  <article data-help="Moverse por aire debe ser placentero."><b>Pilotwings 64</b><span>Vuelo</span></article>
-  <article data-help="Forma y evolución cambian posibilidades."><b>Spore</b><span>Sistemas</span></article>
-  <article data-help="Sátira, humanidad y filosofía sin imitar voz."><b>Pratchett</b><span>Tono</span></article>
-  <article data-help="Orden geométrico frente a vida orgánica."><b>Art Déco × Gaudí</b><span>Forma</span></article>
-  <article data-help="Símbolo, rareza y melancolía dosificada."><b>Jodorowsky × Burton</b><span>Imaginario</span></article>
+<section class="view" id="controls">
+ <div class="topbar"><div><div class="eyebrow">10-foot UI · Input Layer</div><h2>Controles universales</h2>
+ <div class="sub">La interfaz trabaja con acciones ISL, no con dispositivos concretos. Funciona con teclado, mando TV y gamepad en navegadores compatibles.</div></div></div>
+ <div class="grid">
+  <div class="card"><h3>MOVER FOCO</h3><div class="kpi">↑ ↓ ← →</div><div class="sub">Flechas · D-pad · stick.</div></div>
+  <div class="card"><h3>ACEPTAR</h3><div class="kpi">OK / ✕</div><div class="sub">Enter · botón principal.</div></div>
+  <div class="card"><h3>VOLVER</h3><div class="kpi">○</div><div class="sub">Escape · Back · botón B/Circle.</div></div>
+  <div class="card"><h3>SECCIONES</h3><div class="kpi">L1 / R1</div><div class="sub">Salta entre vistas principales.</div></div>
+  <div class="card"><h3>MENÚ</h3><div class="kpi">Options</div><div class="sub">Abre/cierra el cajón lateral.</div></div>
+  <div class="card"><h3>PANTALLA</h3><div class="kpi">TV</div><div class="sub">Modo 10-foot UI, elementos mayores y menos ruido.</div></div>
  </div>
- <div class="pipeline"><span>REFERENCIA</span><i>→</i><span>ESENCIA</span><i>→</i><span>CONTRASTE</span><i>→</i><span>REINTERPRETACIÓN</span><i>→</i><span>PRUEBA</span><i>→</i><span>ISL</span></div>
+ <div class="panel"><h3>PS4</h3><div class="callout">El navegador de PS4 recibe automáticamente la versión Lite. Para presentación perfecta usa el Reel MP4 desde el Reproductor multimedia.</div></div>
 </section>
 
-<section id="stats" class="view">
- <div class="section-head"><div><span class="eyebrow">REAL ≠ SIMULADO</span><h2>Estadísticas y simulaciones</h2></div><p>Una métrica sólo merece existir si puede cambiar una decisión.</p></div>
- <div class="kpis"><article><small>POSTHOG GAMEPLAY</small><b>0</b><span>REAL conocido</span></article><article><small>ASSETS 3D APPROVED</small><b>0</b><span>REAL</span></article><article><small>CAPACIDAD EJEMPLO</small><b id="nominalKpi">300h</b><span>SIMULADO</span></article><article><small>LABS</small><b>2+</b><span>Artefactos existentes</span></article></div>
- <div class="simulator"><label>Horas/día <input id="hoursDay" type="range" min="1" max="5" step=".25" value="2.5"><b id="hoursDayOut">2.5</b></label><label>Días/semana <input id="daysWeek" type="range" min="2" max="7" value="6"><b id="daysWeekOut">6</b></label><label>Semanas <input id="weeks" type="range" min="4" max="40" value="20"><b id="weeksOut">20</b></label><label>Reutilización <input id="reuse" type="range" min="0" max="60" value="25"><b id="reuseOut">25%</b></label><label>Automatización <input id="automation" type="range" min="0" max="60" value="20"><b id="automationOut">20%</b></label><label>Riesgo <input id="risk" type="range" min="0" max="50" value="25"><b id="riskOut">25%</b></label></div>
- <div class="result"><span>Capacidad efectiva equivalente</span><b id="effectiveKpi">—</b><p id="simText"></p></div>
-</section>
-
-<section id="pipeline" class="view">
- <div class="section-head"><div><span class="eyebrow">LEGO</span><h2>Pipelines</h2></div><p>Entrada → transformación → salida → validador → metadatos.</p></div>
- <h3>3D ISL</h3><div class="pipeline"><span>REFERENCIA</span><i>→</i><span>AI 3D</span><i>→</i><span>RAW</span><i>→</i><span>CQC TÉCNICO</span><i>→</i><span>CQC ARTÍSTICO</span><i>→</i><span>LAB</span><i>→</i><span>APPROVED</span><i>→</i><span>UNREAL</span></div>
- <h3>BUCLE MAGISTRAL</h3><div class="pipeline"><span>INTENCIÓN</span><i>→</i><span>ESENCIA</span><i>→</i><span>HIPÓTESIS</span><i>→</i><span>TEST BARATO</span><i>→</i><span>CQC-1</span><i>→</i><span>CQC-2</span><i>→</i><span>MIMO</span><i>→</i><span>FIJAR</span></div>
-</section>
-
-<section id="controls" class="view">
- <div class="section-head"><div><span class="eyebrow">10-FOOT UI</span><h2>Controles universales</h2></div><p>La interfaz conoce acciones, no dispositivos.</p></div>
- <div class="cards controls"><article><b>↑ ↓ ← →</b><span>Mover foco</span></article><article><b>OK / ✕</b><span>Aceptar</span></article><article><b>Esc / ○</b><span>Volver</span></article><article><b>L1 / R1</b><span>Cambiar sección</span></article><article><b>Options</b><span>Menú</span></article><article><b>TV</b><span>?tv=1</span></article></div>
- <div class="note-box"><b>PS4:</b> detectamos la consola y cargamos automáticamente `ps4.html`, que conserva la estética sin depender de APIs modernas.</div>
+<section class="view" id="pipelines">
+ <div class="topbar"><div><div class="eyebrow">Producción LEGO</div><h2>Pipelines</h2><div class="sub">Entrada → transformación → salida → validador → metadatos.</div></div></div>
+ <div class="panel"><h3>3D ISL</h3><div class="pipe"><span class="node">REFERENCIA</span><span class="arrow">→</span><span class="node">PROMPT / IMAGE-TO-3D</span><span class="arrow">→</span><span class="node">RAW</span><span class="arrow">→</span><span class="node">CQC TÉCNICO</span><span class="arrow">→</span><span class="node">CQC ARTÍSTICO</span><span class="arrow">→</span><span class="node">LAB</span><span class="arrow">→</span><span class="node">APPROVED</span><span class="arrow">→</span><span class="node">UNREAL</span></div></div>
+ <div class="panel"><h3>Creación por dibujo</h3><div class="pipe"><span class="node">OBSERVAR</span><span class="arrow">→</span><span class="node">DIBUJAR</span><span class="arrow">→</span><span class="node">INTERPRETAR</span><span class="arrow">→</span><span class="node">VALIDAR</span><span class="arrow">→</span><span class="node">PROBAR</span><span class="arrow">→</span><span class="node">AJUSTAR</span></div></div>
+ <div class="grid"><div class="card"><h3>GitHub</h3><a class="btn" href="https://github.com/juanmailcamara331-hash/islas-voladoras" target="_blank">Repo ↗</a></div><div class="card"><h3>Unreal PCG</h3><a class="btn" href="https://dev.epicgames.com/documentation/unreal-engine/procedural-content-generation-framework-in-unreal-engine" target="_blank">Docs ↗</a></div><div class="card"><h3>Meshy</h3><a class="btn" href="https://docs.meshy.ai/en" target="_blank">Docs ↗</a></div><div class="card"><h3>Rodin</h3><a class="btn" href="https://docs.hyper3d.ai/en" target="_blank">Docs ↗</a></div></div>
 </section>
 </main>
 </div>
+<div class="track" id="track"><div class="eyebrow">Referencia tonal</div><audio controls loop src="assets/airships-last-waltz-master.mp3"></audio></div>
+<script>
+const assets=[{"id":"asset-001","name":"Ciudad del viento entre nubes","cat":"Mundo / Isla 01","status":"REFERENCIA FUERTE","img":"assets/city-wind.png","tags":["ciudad","viento","arquitectura","atmósfera"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-002","name":"Nuestra nave entre islas flotantes","cat":"Nave / Hogar","status":"REFERENCIA","img":"assets/ship-between-islands.png","tags":["nave","hogar","tripulación","mundo"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-003","name":"Viaje épico entre islas flotantes","cat":"Mundo / Viaje","status":"ITERACIÓN","img":"assets/epic-journey.png","tags":["viaje","aventura","islas","escala"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-004","name":"Plano de Nivel: Ruinas Celestes","cat":"Nivel 01 / Layout","status":"ITERACIÓN","img":"assets/level-celestial-ruins.png","tags":["nivel","ruinas","layout","navegación"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-005","name":"Islas flotantes: Mirador del Nivel 01","cat":"Nivel 01 / Mirador","status":"ITERACIÓN","img":"assets/level01-lookout.png","tags":["nivel01","mirador","vista","composición"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-006","name":"Biblia de arte de ISL: Un viaje elevado","cat":"Dirección de arte","status":"REFERENCIA","img":"assets/art-bible-journey.png","tags":["arte","biblia","identidad","lenguaje"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-007","name":"Concepto de nivel: La isla flotante","cat":"Nivel 01 / Isla","status":"ITERACIÓN","img":"assets/floating-island-level.png","tags":["isla","nivel","concepto"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-008","name":"Biblia de diseño de ISL: Un Mundo Flotante","cat":"Dirección de arte","status":"REFERENCIA","img":"assets/world-design-bible.png","tags":["mundo","flotante","biblia","diseño"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-009","name":"Biblia visual de un viaje entre islas flotantes","cat":"Dirección de arte","status":"REFERENCIA","img":"assets/visual-bible-islands.png","tags":["biblia","visual","viaje","islas"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-010","name":"Mapa de Nivel: Islas Flotantes","cat":"Nivel 01 / Mapa","status":"ITERACIÓN","img":"assets/floating-islands-map.png","tags":["mapa","nivel","islas"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-011","name":"Biblia de nivel: Puente entre mundos","cat":"Nivel 01 / Puente","status":"ITERACIÓN","img":"assets/bridge-worlds.png","tags":["puente","mundos","nivel","conexión"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-012","name":"Kit modular de islas flotantes","cat":"Producción / Modular","status":"BAKE-OFF","img":"assets/modular-island-kit.png","tags":["kit","modular","islas","lego"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-013","name":"Mirador de las islas flotantes","cat":"Nivel 01 / Mirador","status":"ITERACIÓN","img":"assets/floating-islands-lookout.png","tags":["mirador","islas","panorama"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-014","name":"Islas voladoras: arte y viento","cat":"Producción / 3D","status":"BAKE-OFF","img":"assets/art-and-wind.png","tags":["3d","arte","viento","receptor"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-015","name":"Guía visual de ruinas flotantes","cat":"Mundo / Ruinas","status":"ITERACIÓN","img":"assets/floating-ruins-guide.png","tags":["ruinas","assets","arquitectura"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-016","name":"Mapa de Nivel: Cascada entre Islas Flotantes","cat":"Nivel 01 / Cascadas","status":"ITERACIÓN","img":"assets/waterfall-level-map.png","tags":["cascada","agua","nivel","navegación"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-017","name":"Kit de Arte para Islas Flotantes","cat":"Producción / Modular","status":"BAKE-OFF","img":"assets/floating-island-art-kit.png","tags":["kit","arte","modular","props"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-018","name":"Panel de diseño: Sendero flotante fantástico","cat":"Nivel 01 / Sendero","status":"ITERACIÓN","img":"assets/floating-path-board.png","tags":["sendero","nivel","navegación"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-019","name":"Guía de nivel: Zona de inicio flotante","cat":"Nivel 01 / Inicio","status":"ITERACIÓN","img":"assets/start-zone-guide.png","tags":["inicio","tutorial","isla"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-020","name":"Nuestra nave, un hogar entre estrellas","cat":"Nave / Hogar","status":"REFERENCIA","img":"assets/ship-home-stars.png","tags":["nave","hogar","memoria","estrellas"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-021","name":"Hoja de personaje: protagonista entre mundos","cat":"Personaje / Protagonista","status":"ITERACIÓN","img":"assets/protagonist-sheet.png","tags":["personaje","protagonista","hoja"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-022","name":"Torre de los Ecos: Ruinas Suspendidas","cat":"Mundo / Landmark","status":"ITERACIÓN","img":"assets/tower-echoes.png","tags":["torre","ecos","ruinas","landmark"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-023","name":"Referencia isla actual A","cat":"Mundo / Isla","status":"ITERACIÓN","img":"assets/island-a-master.jpg","tags":["isla","actual","referencia"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-024","name":"Referencia isla actual B","cat":"Mundo / Isla","status":"ITERACIÓN","img":"assets/island-b-master.jpg","tags":["isla","actual","referencia"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-025","name":"Laboratorio de viento al atardecer","cat":"Lab / Viento","status":"ITERACIÓN","img":"assets/wind-lab-sunset.png","tags":["wind","lab","viento","atmósfera"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."},{"id":"asset-026","name":"ISL 3D Pipeline Concept Board","cat":"Producción / 3D","status":"BAKE-OFF","img":"assets/pipeline-board-current.png","tags":["3d","pipeline","receptor","puente","isla"],"notes":"Inventario recuperado de conversación/Biblioteca ISL. Estado visual; no implica CANON."}];
+const wlabels={identity:'Identidad ISL',beauty:'Belleza',readability:'Legibilidad',function:'Función',coherence:'Coherencia',reuse:'Reutilización',cost:'Coste'};
+let weights=JSON.parse(localStorage.getItem('islcc_weights')||'null')||{identity:24,beauty:18,readability:18,function:16,coherence:12,reuse:8,cost:4};
+let selected=JSON.parse(localStorage.getItem('islcc_selected')||'[]');
+let ratings=JSON.parse(localStorage.getItem('islcc_ratings')||'{}');
+function save(){localStorage.setItem('islcc_weights',JSON.stringify(weights));localStorage.setItem('islcc_selected',JSON.stringify(selected));localStorage.setItem('islcc_ratings',JSON.stringify(ratings))}
+function go(id){document.querySelectorAll('.view,.rail button[data-view]').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');let b=document.querySelector(`[data-view="${id}"]`);if(b)b.classList.add('active');drawer.classList.remove('open');if(id==='compare')renderCompare();window.scrollTo(0,0)}
+document.querySelectorAll('.rail button[data-view]').forEach(b=>b.onclick=()=>go(b.dataset.view));menuBtn.onclick=()=>drawer.classList.toggle('open');musicBtn.onclick=()=>track.classList.toggle('show');tvBtn.onclick=()=>document.body.classList.toggle('tv');
+function initFilters(){[...new Set(assets.map(x=>x.cat))].forEach(x=>cat.innerHTML+=`<option>${x}</option>`);[...new Set(assets.map(x=>x.status))].forEach(x=>st.innerHTML+=`<option>${x}</option>`)}
+function renderGallery(){let q=search.value.toLowerCase();galleryGrid.innerHTML=assets.filter(x=>(!cat.value||x.cat===cat.value)&&(!st.value||x.status===st.value)&&(!q||(x.name+' '+x.tags.join(' ')+' '+x.notes).toLowerCase().includes(q))).map(x=>`<article class="card asset"><div class="thumbwrap"><img src="${x.img}"><span class="badge">${x.status}</span><input type="checkbox" class="check" data-id="${x.id}" ${selected.includes(x.id)?'checked':''}></div><div class="pad"><b>${x.name}</b><div class="meta">${x.cat}</div><div class="tags">${x.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div></div></article>`).join('');document.querySelectorAll('.check').forEach(c=>c.onchange=()=>{if(c.checked){if(selected.length>=3){c.checked=false;alert('Máximo 3 para comparar.');return}selected.push(c.dataset.id)}else selected=selected.filter(x=>x!==c.dataset.id);save()})}
+[cat,st,search].forEach(x=>x.addEventListener('input',renderGallery));initFilters();renderGallery();
+function rate(id,k){return ratings[id]?.[k]??3}function score(id){let n=0,d=0;for(const [k,w] of Object.entries(weights)){n+=rate(id,k)*w;d+=5*w}return d?100*n/d:0}
+function renderCompare(){weightsBox.innerHTML=Object.entries(weights).map(([k,v])=>`<div class="metric"><span>${wlabels[k]}</span><input type="range" min="0" max="40" value="${v}" data-w="${k}"><b>${v}</b></div>`).join('');document.querySelectorAll('[data-w]').forEach(r=>r.oninput=()=>{weights[r.dataset.w]=+r.value;r.nextElementSibling.textContent=r.value;save();renderCompareScores()});let its=selected.map(i=>assets.find(x=>x.id===i)).filter(Boolean);compareGrid.innerHTML=its.length?its.map(x=>`<div class="panel compareCard"><img src="${x.img}"><h3 style="margin-top:8px">${x.name}</h3><div class="kpi" data-score="${x.id}">${score(x.id).toFixed(1)}</div><div class="meta">score auxiliar /100</div>${Object.keys(weights).map(k=>`<div class="metric"><span>${wlabels[k]}</span><input type="range" min="1" max="5" value="${rate(x.id,k)}" data-r="${x.id}|${k}"><b>${rate(x.id,k)}</b></div>`).join('')}</div>`).join(''):'<div class="callout">Selecciona variantes en Galería.</div>';document.querySelectorAll('[data-r]').forEach(r=>r.oninput=()=>{let [id,k]=r.dataset.r.split('|');ratings[id]??={};ratings[id][k]=+r.value;r.nextElementSibling.textContent=r.value;save();renderCompareScores()})}
+function renderCompareScores(){document.querySelectorAll('[data-score]').forEach(e=>e.textContent=score(e.dataset.score).toFixed(1))}
+let calDate=new Date(2026,8,1);
+const fixedEvents={'2026-09-15':[['Command Center v0.3','gold'],['CQC / orden','']],'2026-09-16':[['Bake-off isla 3D','violet']],'2026-09-18':[['3D Lab','']],'2026-09-21':[['Cruce Wind × 3D','gold']]};
+function renderCalendar(){
+ let y=calDate.getFullYear(),m=calDate.getMonth();
+ monthTitle.textContent=calDate.toLocaleDateString('es-ES',{month:'long',year:'numeric'});
+ let first=new Date(y,m,1),start=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate(),prevDays=new Date(y,m,0).getDate();
+ let cells=['L','M','X','J','V','S','D'].map(d=>`<div class="dayh">${d}</div>`);
+ for(let i=0;i<42;i++){
+  let day=i-start+1,yy=y,mm=m,other=false;
+  if(day<1){day=prevDays+day;mm=m-1;other=true;if(mm<0){mm=11;yy--}}
+  else if(day>days){day-=days;mm=m+1;other=true;if(mm>11){mm=0;yy++}}
+  let key=`${yy}-${String(mm+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`,ev=fixedEvents[key]||[];
+  cells.push(`<div class="day ${other?'other':''}"><div class="date">${day}</div>${ev.map(e=>`<div class="event ${e[1]}">${e[0]}</div>`).join('')}</div>`);
+ }
+ calendarGrid.innerHTML=cells.join('');
+}
+prevMonth.onclick=()=>{calDate=new Date(calDate.getFullYear(),calDate.getMonth()-1,1);renderCalendar()};nextMonth.onclick=()=>{calDate=new Date(calDate.getFullYear(),calDate.getMonth()+1,1);renderCalendar()};todayBtn.onclick=()=>{calDate=new Date(2026,8,1);renderCalendar()};renderCalendar();
+['hd','dw','wk','reuse','auto','rework','risk','buffer','scope'].forEach(id=>document.getElementById(id).oninput=sim);
+function sim(){let h=+hd.value,d=+dw.value,w=+wk.value,ru=+reuse.value/100,au=+auto.value/100,rw=+rework.value/100,ri=+risk.value/100,bu=+buffer.value/100,sc=+scope.value;hdv.textContent=h;dwv.textContent=d;wkv.textContent=w;reusev.textContent=Math.round(ru*100)+'%';autov.textContent=Math.round(au*100)+'%';reworkv.textContent=Math.round(rw*100)+'%';riskv.textContent=Math.round(ri*100)+'%';bufferv.textContent=Math.round(bu*100)+'%';scopev.textContent=sc+'h';let nom=h*d*w,lev=1+ru*.55+au*.45+rw*.35,eff=nom*(1-ri)*(1-bu),eq=eff*lev,mg=eq-sc;nominal.textContent=Math.round(nom)+'h';effective.textContent=Math.round(eff)+'h';equiv.textContent=Math.round(eq)+'h';margin.textContent=(mg>=0?'+':'')+Math.round(mg)+'h';margin.className='kpi '+(mg>=0?'good':'bad');simRead.textContent=mg>=0?'El escenario absorbe el scope nominal. No rellenes el margen por ansiedad: úsalo como buffer para iteraciones que demuestren valor.':'El scope no cabe. Antes de ampliar horas, comprime contenido, aumenta reutilización o automatiza fricción.'}
+sim();
+</script>
 
-<div id="musicDock"><span>♫ THE AIRSHIP'S LAST WALTZ</span><audio controls loop src="assets/airships-last-waltz-pages.mp3"></audio></div>
-<script src="app.js"></script>
-</body></html>
+<script>
+(function(){
+  var viewButtons = Array.prototype.slice.call(document.querySelectorAll('.rail button[data-view]'));
+  var lastPad = {}, dead = 0.55;
+
+  function focusables(){
+    var v=document.querySelector('.view.active');
+    if(!v) return [];
+    return Array.prototype.slice.call(v.querySelectorAll('button,a[href],input,select,[tabindex]'))
+      .filter(function(el){ return !el.disabled && el.offsetParent !== null; });
+  }
+  function currentIndex(list){
+    var i=list.indexOf(document.activeElement);
+    return i < 0 ? 0 : i;
+  }
+  function move(delta){
+    var list=focusables();
+    if(!list.length) return;
+    var i=currentIndex(list), n=(i+delta+list.length)%list.length;
+    list[n].focus();
+    try { list[n].scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'}); }
+    catch(e){ list[n].scrollIntoView(); }
+  }
+  function switchView(delta){
+    var cur=document.querySelector('.rail button.active[data-view]');
+    var i=Math.max(0,viewButtons.indexOf(cur));
+    i=(i+delta+viewButtons.length)%viewButtons.length;
+    viewButtons[i].click();
+    setTimeout(function(){var l=focusables(); if(l.length)l[0].focus();},60);
+  }
+  function back(){
+    var d=document.getElementById('drawer');
+    if(d && d.classList.contains('open')){ d.classList.remove('open'); return; }
+    var home=document.getElementById('home');
+    if(home && home.classList.contains('active')) return;
+    if(typeof go==='function') go('home');
+  }
+
+  document.addEventListener('keydown',function(e){
+    var k=e.key || e.keyCode;
+    if(k==='ArrowRight'||k===39){e.preventDefault();move(1);}
+    else if(k==='ArrowLeft'||k===37){e.preventDefault();move(-1);}
+    else if(k==='ArrowDown'||k===40){e.preventDefault();move(1);}
+    else if(k==='ArrowUp'||k===38){e.preventDefault();move(-1);}
+    else if(k==='Escape'||k===27||k===461){e.preventDefault();back();}
+    else if(k==='PageDown'){e.preventDefault();switchView(1);}
+    else if(k==='PageUp'){e.preventDefault();switchView(-1);}
+  });
+
+  function pressed(gp,i){return !!(gp.buttons[i]&&gp.buttons[i].pressed);}
+  function edge(key,val,fn){if(val&&!lastPad[key])fn();lastPad[key]=val;}
+  function poll(){
+    var gps=navigator.getGamepads?navigator.getGamepads():[];
+    var gp=gps&&gps[0];
+    if(gp){
+      edge('a',pressed(gp,0),function(){var a=document.activeElement;if(a&&a.click)a.click();});
+      edge('b',pressed(gp,1),back);
+      edge('l1',pressed(gp,4),function(){switchView(-1);});
+      edge('r1',pressed(gp,5),function(){switchView(1);});
+      edge('opt',pressed(gp,9),function(){var m=document.getElementById('menuBtn');if(m)m.click();});
+      edge('up',pressed(gp,12)||(gp.axes[1]||0)<-dead,function(){move(-1);});
+      edge('down',pressed(gp,13)||(gp.axes[1]||0)>dead,function(){move(1);});
+      edge('left',pressed(gp,14)||(gp.axes[0]||0)<-dead,function(){move(-1);});
+      edge('right',pressed(gp,15)||(gp.axes[0]||0)>dead,function(){move(1);});
+    }
+    requestAnimationFrame(poll);
+  }
+  if(window.requestAnimationFrame) requestAnimationFrame(poll);
+  if(location.search.indexOf('tv=1')>=0) document.body.classList.add('tv');
+})();
+</script>
+
+<script id="isl-v05-js">(function(){var $=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))},settings=JSON.parse(localStorage.getItem('islcc_settings_v05')||'{}');function save(){localStorage.setItem('islcc_settings_v05',JSON.stringify(settings))}function bv(k,d){return typeof settings[k]==='boolean'?settings[k]:d}var boot=$('#bootbar');if(boot){setTimeout(function(){boot.className='go'},30);window.addEventListener('load',function(){boot.className='done'})}var welcome=$('#welcome');function closeW(){if(welcome)welcome.classList.add('hidden')}$('#enterISL').onclick=closeW;if(!bv('welcome',true))closeW();var tip=$('#helpTip'),tt;function showTip(el){if(!bv('tooltips',true))return;var tx=el.getAttribute('data-help')||el.getAttribute('title');if(!tx)return;clearTimeout(tt);tt=setTimeout(function(){tip.textContent=tx;tip.classList.add('show');var r=el.getBoundingClientRect();tip.style.left=Math.min(innerWidth-350,Math.max(10,r.left))+'px';tip.style.top=Math.min(innerHeight-90,r.bottom+9)+'px'},220)}function hideTip(){clearTimeout(tt);tip.classList.remove('show')}document.addEventListener('mouseover',function(e){var el=e.target.closest('[data-help],.rail button[title]');if(el)showTip(el)});document.addEventListener('mouseout',hideTip);document.addEventListener('focusin',function(e){var el=e.target.closest('[data-help],.rail button[title]');if(el)showTip(el)});document.addEventListener('focusout',hideTip);
+var lb=$('#lightbox'),med=$('#lbMedia'),cap=$('#lbCaption');function openLB(src,type,caption){med.innerHTML='';var el=document.createElement(type==='video'?'video':'img');el.src=src;if(type==='video'){el.controls=true;el.autoplay=true;el.playsInline=true}else el.alt=caption||'ISL';med.appendChild(el);cap.textContent=caption||'';lb.classList.add('show');$('#lbClose').focus()}function closeLB(){var v=med.querySelector('video');if(v)v.pause();lb.classList.remove('show');med.innerHTML=''}$('#lbClose').onclick=closeLB;lb.onclick=function(e){if(e.target===lb)closeLB()};document.addEventListener('click',function(e){var v=e.target.closest('[data-fullmedia]');if(v){e.preventDefault();openLB(v.currentSrc||v.src,'video',v.getAttribute('data-caption'));return}var img=e.target.closest('.asset img,.hero img');if(img){e.preventDefault();openLB(img.currentSrc||img.src,'image',img.alt||'ISL')}});
+var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classList.add('open')};$('#settingsClose').onclick=function(){panel.classList.remove('open')};function apply(){document.body.classList.toggle('hide-rail',!bv('rail',true));document.body.classList.toggle('no-tooltips',!bv('tooltips',true));document.body.classList.toggle('no-motion',!bv('motion',true));document.body.classList.toggle('compact',bv('compact',false));document.documentElement.style.setProperty('--ui-scale',settings.scale||1);document.documentElement.style.setProperty('--accent',settings.accent||'#87efff');$$('[data-setting]').forEach(function(b){var k=b.dataset.setting,d=k==='rail'||k==='tooltips'||k==='motion'||k==='welcome';b.classList.toggle('on',bv(k,d))});$('#uiScale').value=settings.scale||1;$('#accentChoice').value=settings.accent||'#87efff'}$$('[data-setting]').forEach(function(b){b.onclick=function(){var k=b.dataset.setting,d=k==='rail'||k==='tooltips'||k==='motion'||k==='welcome';settings[k]=!bv(k,d);save();apply()}});$('#uiScale').oninput=function(){settings.scale=+this.value;save();apply()};$('#accentChoice').onchange=function(){settings.accent=this.value;save();apply()};apply();document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(lb.classList.contains('show')){e.preventDefault();closeLB()}else if(welcome&&!welcome.classList.contains('hidden'))closeW()}if(e.key==='Enter'&&welcome&&!welcome.classList.contains('hidden'))closeW()});})();</script>
+<script>(function(){function spec(){document.body.classList.toggle('spectacle');if(document.body.classList.contains('spectacle')&&document.documentElement.requestFullscreen){document.documentElement.requestFullscreen().catch(function(){})}else if(document.fullscreenElement&&document.exitFullscreen){document.exitFullscreen().catch(function(){})}}var a=document.getElementById('spectacleBtn'),b=document.getElementById('heroSpectacle');if(a)a.onclick=spec;if(b)b.onclick=spec;document.addEventListener('dblclick',function(e){if(e.target.closest&&e.target.closest('#lightbox img,#lightbox video')&&document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().catch(function(){})});})();</script></body></html>

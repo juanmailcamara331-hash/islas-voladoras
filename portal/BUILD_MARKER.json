@@ -1,0 +1,7 @@
+{
+  "build": "ISL_PORTAL_MASTER_v0.7.2",
+  "purpose": "Permanent GitHub/Netlify portal payload",
+  "master_a_sha256": "74e52ade631930542b9e208bcc108f00f1f44bdb5ffdefa1847de084c211af23",
+  "master_b_sha256": "23505997c1c381de0dd142fa88f592385607704ef7126246a766e14e80f96cb2",
+  "previs_sha256": "87a497d5a3665a5bdb2750546657fd9ab372c9aa7064d409a21130a963b2fb65"
+}

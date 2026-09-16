@@ -1,0 +1,408 @@
+{
+  "version": "0.7",
+  "generated_at": "2026-09-16",
+  "rules": [
+    "preview may be light; final viewing never",
+    "REJECTED != DELETED",
+    "no automatic CANON/APPROVED"
+  ],
+  "assets": [
+    {
+      "asset_id": "asset-001",
+      "name": "Ciudad del viento entre nubes",
+      "category": "Mundo / Isla 01",
+      "status": "REFERENCIA FUERTE",
+      "path": "assets/city-wind.png",
+      "tags": [
+        "ciudad",
+        "viento",
+        "arquitectura",
+        "atmósfera"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-002",
+      "name": "Nuestra nave entre islas flotantes",
+      "category": "Nave / Hogar",
+      "status": "REFERENCIA",
+      "path": "assets/ship-between-islands.png",
+      "tags": [
+        "nave",
+        "hogar",
+        "tripulación",
+        "mundo"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-003",
+      "name": "Viaje épico entre islas flotantes",
+      "category": "Mundo / Viaje",
+      "status": "ITERACIÓN",
+      "path": "assets/epic-journey.png",
+      "tags": [
+        "viaje",
+        "aventura",
+        "islas",
+        "escala"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-004",
+      "name": "Plano de Nivel: Ruinas Celestes",
+      "category": "Nivel 01 / Layout",
+      "status": "ITERACIÓN",
+      "path": "assets/level-celestial-ruins.png",
+      "tags": [
+        "nivel",
+        "ruinas",
+        "layout",
+        "navegación"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-005",
+      "name": "Islas flotantes: Mirador del Nivel 01",
+      "category": "Nivel 01 / Mirador",
+      "status": "ITERACIÓN",
+      "path": "assets/level01-lookout.png",
+      "tags": [
+        "nivel01",
+        "mirador",
+        "vista",
+        "composición"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-006",
+      "name": "Biblia de arte de ISL: Un viaje elevado",
+      "category": "Dirección de arte",
+      "status": "REFERENCIA",
+      "path": "assets/art-bible-journey.png",
+      "tags": [
+        "arte",
+        "biblia",
+        "identidad",
+        "lenguaje"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-007",
+      "name": "Concepto de nivel: La isla flotante",
+      "category": "Nivel 01 / Isla",
+      "status": "ITERACIÓN",
+      "path": "assets/floating-island-level.png",
+      "tags": [
+        "isla",
+        "nivel",
+        "concepto"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-008",
+      "name": "Biblia de diseño de ISL: Un Mundo Flotante",
+      "category": "Dirección de arte",
+      "status": "REFERENCIA",
+      "path": "assets/world-design-bible.png",
+      "tags": [
+        "mundo",
+        "flotante",
+        "biblia",
+        "diseño"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-009",
+      "name": "Biblia visual de un viaje entre islas flotantes",
+      "category": "Dirección de arte",
+      "status": "REFERENCIA",
+      "path": "assets/visual-bible-islands.png",
+      "tags": [
+        "biblia",
+        "visual",
+        "viaje",
+        "islas"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-010",
+      "name": "Mapa de Nivel: Islas Flotantes",
+      "category": "Nivel 01 / Mapa",
+      "status": "ITERACIÓN",
+      "path": "assets/floating-islands-map.png",
+      "tags": [
+        "mapa",
+        "nivel",
+        "islas"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-011",
+      "name": "Biblia de nivel: Puente entre mundos",
+      "category": "Nivel 01 / Puente",
+      "status": "ITERACIÓN",
+      "path": "assets/bridge-worlds.png",
+      "tags": [
+        "puente",
+        "mundos",
+        "nivel",
+        "conexión"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-012",
+      "name": "Kit modular de islas flotantes",
+      "category": "Producción / Modular",
+      "status": "BAKE-OFF",
+      "path": "assets/modular-island-kit.png",
+      "tags": [
+        "kit",
+        "modular",
+        "islas",
+        "lego"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-013",
+      "name": "Mirador de las islas flotantes",
+      "category": "Nivel 01 / Mirador",
+      "status": "ITERACIÓN",
+      "path": "assets/floating-islands-lookout.png",
+      "tags": [
+        "mirador",
+        "islas",
+        "panorama"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-014",
+      "name": "Islas voladoras: arte y viento",
+      "category": "Producción / 3D",
+      "status": "BAKE-OFF",
+      "path": "assets/art-and-wind.png",
+      "tags": [
+        "3d",
+        "arte",
+        "viento",
+        "receptor"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-015",
+      "name": "Guía visual de ruinas flotantes",
+      "category": "Mundo / Ruinas",
+      "status": "ITERACIÓN",
+      "path": "assets/floating-ruins-guide.png",
+      "tags": [
+        "ruinas",
+        "assets",
+        "arquitectura"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-016",
+      "name": "Mapa de Nivel: Cascada entre Islas Flotantes",
+      "category": "Nivel 01 / Cascadas",
+      "status": "ITERACIÓN",
+      "path": "assets/waterfall-level-map.png",
+      "tags": [
+        "cascada",
+        "agua",
+        "nivel",
+        "navegación"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-017",
+      "name": "Kit de Arte para Islas Flotantes",
+      "category": "Producción / Modular",
+      "status": "BAKE-OFF",
+      "path": "assets/floating-island-art-kit.png",
+      "tags": [
+        "kit",
+        "arte",
+        "modular",
+        "props"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-018",
+      "name": "Panel de diseño: Sendero flotante fantástico",
+      "category": "Nivel 01 / Sendero",
+      "status": "ITERACIÓN",
+      "path": "assets/floating-path-board.png",
+      "tags": [
+        "sendero",
+        "nivel",
+        "navegación"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-019",
+      "name": "Guía de nivel: Zona de inicio flotante",
+      "category": "Nivel 01 / Inicio",
+      "status": "ITERACIÓN",
+      "path": "assets/start-zone-guide.png",
+      "tags": [
+        "inicio",
+        "tutorial",
+        "isla"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-020",
+      "name": "Nuestra nave, un hogar entre estrellas",
+      "category": "Nave / Hogar",
+      "status": "REFERENCIA",
+      "path": "assets/ship-home-stars.png",
+      "tags": [
+        "nave",
+        "hogar",
+        "memoria",
+        "estrellas"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-021",
+      "name": "Hoja de personaje: protagonista entre mundos",
+      "category": "Personaje / Protagonista",
+      "status": "ITERACIÓN",
+      "path": "assets/protagonist-sheet.png",
+      "tags": [
+        "personaje",
+        "protagonista",
+        "hoja"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-022",
+      "name": "Torre de los Ecos: Ruinas Suspendidas",
+      "category": "Mundo / Landmark",
+      "status": "ITERACIÓN",
+      "path": "assets/tower-echoes.png",
+      "tags": [
+        "torre",
+        "ecos",
+        "ruinas",
+        "landmark"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-023",
+      "name": "Referencia isla actual A",
+      "category": "Mundo / Isla",
+      "status": "ITERACIÓN",
+      "path": "assets/island-a-master.jpg",
+      "tags": [
+        "isla",
+        "actual",
+        "referencia"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-024",
+      "name": "Referencia isla actual B",
+      "category": "Mundo / Isla",
+      "status": "ITERACIÓN",
+      "path": "assets/island-b-master.jpg",
+      "tags": [
+        "isla",
+        "actual",
+        "referencia"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-025",
+      "name": "Laboratorio de viento al atardecer",
+      "category": "Lab / Viento",
+      "status": "ITERACIÓN",
+      "path": "assets/wind-lab-sunset.png",
+      "tags": [
+        "wind",
+        "lab",
+        "viento",
+        "atmósfera"
+      ],
+      "provenance": "conversation/library ISL"
+    },
+    {
+      "asset_id": "asset-026",
+      "name": "ISL 3D Pipeline Concept Board",
+      "category": "Producción / 3D",
+      "status": "BAKE-OFF",
+      "path": "assets/pipeline-board-current.png",
+      "tags": [
+        "3d",
+        "pipeline",
+        "receptor",
+        "puente",
+        "isla"
+      ],
+      "provenance": "conversation/library ISL"
+    }
+  ],
+  "documents": [
+    {
+      "name": "BIBLIA_MAESTRA_JUEGO_v0.13.docx",
+      "state": "ACTUAL"
+    },
+    {
+      "name": "ISL_STUDIO_Y_ACADEMY_v0.13.docx",
+      "state": "ACTUAL"
+    },
+    {
+      "name": "METODO_ISL_BUCLE_MAGISTRAL_RECURSIVO_v0.1.docx",
+      "state": "PROVISIONAL FUERTE"
+    },
+    {
+      "name": "EXPERIENCIA_LAB_01_EL_MOLINO_QUE_MIENTE_v0.13.docx",
+      "state": "LAB"
+    },
+    {
+      "name": "CQC_R_LAB01_EL_MOLINO_QUE_MIENTE_v0.13.docx",
+      "state": "LAB"
+    },
+    {
+      "name": "LAB01_TRES_RESOLUCIONES_JUGABLES_v0.13.docx",
+      "state": "LAB"
+    },
+    {
+      "name": "RUTA_C_CREACION_OPCIONAL_MOLINO_v0.13.docx",
+      "state": "PROVISIONAL"
+    }
+  ],
+  "integrations": {
+    "Google Drive": "connected",
+    "GitHub": "connected",
+    "Google Calendar": "connected",
+    "fal": "connected",
+    "Lovable": "credits_blocked",
+    "Supabase": "via_lovable",
+    "PostHog": "connected_no_events",
+    "Jotform": "connected",
+    "Netlify": "not_connected"
+  }
+}
