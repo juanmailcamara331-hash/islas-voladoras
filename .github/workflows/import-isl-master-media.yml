@@ -1,0 +1,46 @@
+name: Import ISL master media v0.7.2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-isl-master-media.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-masters:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download verified portal payload
+        run: |
+          curl -L --fail --retry 3 -o /tmp/isl-portal.zip 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-4d04-81f4-9bfa-19376376fa0e/raw?se=2026-09-16T03%3A28%3A29Z&sp=r&sv=2026-02-06&sr=b&scid=e3c6a720-51e8-5885-89c0-9ef5a2f74e4e&skoid=7b771594-2b4f-4e93-93be-fdeeeb59aaf9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-15T19%3A07%3A02Z&ske=2026-09-16T19%3A07%3A02Z&sks=b&skv=2026-02-06&sig=wN0b%2BEGYJTa%2BGCye8obteNk/FUUFo9XLO9L7noDekGs%3D'
+          test $(stat -c%s /tmp/isl-portal.zip) -gt 90000000
+      - name: Replace portal with verified payload
+        run: |
+          rm -rf portal
+          mkdir -p portal
+          unzip -q /tmp/isl-portal.zip -d portal
+          test -f portal/BUILD_MARKER.json
+          test $(stat -c%s portal/assets/island-a-master.jpg) -eq 408030
+          test $(stat -c%s portal/assets/island-b-master.jpg) -eq 493778
+          test $(stat -c%s portal/assets/previs-premium-1080p-L41.mp4) -eq 8288164
+          echo '74e52ade631930542b9e208bcc108f00f1f44bdb5ffdefa1847de084c211af23  portal/assets/island-a-master.jpg' | sha256sum -c -
+          echo '23505997c1c381de0dd142fa88f592385607704ef7126246a766e14e80f96cb2  portal/assets/island-b-master.jpg' | sha256sum -c -
+          echo '87a497d5a3665a5bdb2750546657fd9ab372c9aa7064d409a21130a963b2fb65  portal/assets/previs-premium-1080p-L41.mp4' | sha256sum -c -
+      - name: Commit masters permanently
+        run: |
+          git config user.name 'ISL Build Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add -A portal
+          if git diff --cached --quiet; then
+            echo 'No portal changes to commit.'
+            exit 0
+          fi
+          git commit -m 'feat(portal): import verified ISL v0.7.2 master media'
+          git push origin HEAD:main
