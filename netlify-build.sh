@@ -55,14 +55,13 @@ cp web/index.html build/site/game/lab/index.html
 cp web/README.md build/site/game/lab/README.md
 touch build/site/.nojekyll
 
-# Mobile entry hotfix: Chrome/Android was rendering the welcome backdrop while
-# the inner welcome content remained invisible, blocking the whole Command Center.
-# On mobile we bypass that fragile overlay and enter the real portal directly.
+# Android/mobile production hotfixes. Keep them build-time so the canonical portal
+# stays readable while production gets compatibility fixes for Chrome/WebView.
 python3 - <<'PY'
 from pathlib import Path
 p = Path('build/site/index.html')
 s = p.read_text(encoding='utf-8')
-patch = '''
+entry = '''
 <style id="isl-mobile-entry-hotfix">
 @media (max-width: 900px){
   #welcome{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
@@ -71,8 +70,33 @@ patch = '''
 }
 </style>
 '''
-if 'isl-mobile-entry-hotfix' not in s:
-    s = s.replace('</head>', patch + '\n</head>')
+media = '''
+<style id="isl-mobile-media-hotfix">
+#lbMedia{display:flex;align-items:center;justify-content:center;max-width:96vw;max-height:86vh;min-width:0;min-height:0}
+#lbMedia img,#lbMedia video{display:block!important;width:auto!important;height:auto!important;max-width:94vw!important;max-height:82vh!important;object-fit:contain!important;background:#02070b}
+@media(max-width:900px){
+ #lightbox{padding:0!important;background:#02070b!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+ #lightbox figure{width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;justify-content:center!important}
+ #lbMedia{width:100vw!important;height:calc(100dvh - 70px)!important;max-width:none!important;max-height:none!important}
+ #lbMedia img,#lbMedia video{max-width:100vw!important;max-height:calc(100dvh - 70px)!important;border-radius:0!important;box-shadow:none!important}
+}
+</style>
+'''
+script = '''
+<script id="isl-mobile-media-hotfix-js">
+(function(){
+ var lb=document.getElementById('lightbox'),med=document.getElementById('lbMedia'),cap=document.getElementById('lbCaption');
+ if(!lb||!med)return;
+ function showNode(node,caption){med.innerHTML='';node.style.display='block';node.style.objectFit='contain';med.appendChild(node);if(cap)cap.textContent=caption||'';lb.classList.add('show')}
+ function showImage(img){var clone=img.cloneNode(true);clone.removeAttribute('srcset');clone.removeAttribute('sizes');clone.removeAttribute('loading');clone.src=img.getAttribute('src')||img.src;clone.onerror=function(){med.innerHTML='<div style="padding:24px;color:#fff;text-align:center">No se pudo mostrar esta imagen.</div>'};showNode(clone,img.alt||'ISL')}
+ function showVideo(v){var el=document.createElement('video');el.controls=true;el.autoplay=true;el.playsInline=true;el.preload='auto';el.src=v.getAttribute('src')||v.currentSrc||v.src;el.onerror=function(){med.innerHTML='<div style="padding:24px;color:#fff;text-align:center">No se pudo mostrar este vídeo.</div>'};showNode(el,v.getAttribute('data-caption')||'ISL');var pr=el.play();if(pr&&pr.catch)pr.catch(function(){})}
+ document.addEventListener('click',function(e){var v=e.target.closest&&e.target.closest('[data-fullmedia]'),img=e.target.closest&&e.target.closest('.asset img,.hero img');if(!v&&!img)return;e.preventDefault();e.stopImmediatePropagation();if(v)showVideo(v);else showImage(img)},true);
+})();
+</script>
+'''
+if 'isl-mobile-entry-hotfix' not in s: s = s.replace('</head>', entry + '\n</head>')
+if 'isl-mobile-media-hotfix' not in s: s = s.replace('</head>', media + '\n</head>')
+if 'isl-mobile-media-hotfix-js' not in s: s = s.replace('</body>', script + '\n</body>')
 p.write_text(s, encoding='utf-8')
 PY
 
@@ -92,6 +116,8 @@ test "$(stat -c%s build/site/assets/previs-premium-1080p-L41.mp4)" -gt 8000000
 grep -q 'assets/island-a-master.jpg' build/site/index.html
 grep -q 'assets/previs-premium-1080p-L41.mp4' build/site/index.html
 grep -q 'isl-mobile-entry-hotfix' build/site/index.html
+grep -q 'isl-mobile-media-hotfix' build/site/index.html
+grep -q 'isl-mobile-media-hotfix-js' build/site/index.html
 ! grep -R -q "image-rendering:[[:space:]]*pixelated\|image-rendering:[[:space:]]*crisp-edges" build/site/index.html build/site/ps4.html build/site/reel.html
 
-echo "ISL unified Netlify build completed: v0.7.2 master-media CQC + mobile-entry hotfix passed."
+echo "ISL unified Netlify build completed: master media + mobile entry/media CQC passed."
