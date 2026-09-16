@@ -82,6 +82,50 @@ media = '''
 }
 </style>
 '''
+responsive = '''
+<style id="isl-responsive-viewport-hotfix">
+html,body{width:100%!important;max-width:none!important;overflow-x:hidden!important}
+body{min-width:0!important}
+.app{width:100%!important;max-width:none!important;min-width:0!important;grid-template-columns:minmax(0,86px) minmax(0,1fr)!important}
+main{width:100%!important;max-width:none!important;min-width:0!important;margin:0!important}
+.view,.view.active{width:100%!important;max-width:none!important;min-width:0!important}
+.hero,.panel,.card,.gallery,.grid,.two,.three,.statsgrid,.compare{max-width:100%!important;min-width:0!important}
+img,video,canvas,svg{max-width:100%}
+@media(max-width:900px){
+ html,body,.app,main,.view,.view.active{width:100vw!important;max-width:100vw!important;min-width:0!important}
+ .app{display:block!important}
+ .rail{width:100vw!important;max-width:100vw!important;position:sticky!important;top:0!important;left:0!important;right:0!important;display:flex!important;flex-direction:row!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important}
+ main{padding:10px 10px 88px!important}
+ .hero{width:100%!important;min-height:min(72dvh,620px)!important}
+ .heroText{max-width:100%!important;padding:clamp(26px,7dvh,70px) clamp(16px,5vw,52px)!important}
+ .actions{width:100%!important;gap:7px!important}
+ .actions .btn,.toolbar .control{flex:1 1 auto!important;min-width:0!important}
+ .grid,.statsgrid,.gallery{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))!important;width:100%!important}
+ .two,.three,.compare{grid-template-columns:1fr!important;width:100%!important}
+ .thumbwrap{width:100%!important;aspect-ratio:16/10!important}
+ .asset img{width:100%!important;height:100%!important;object-fit:cover!important}
+ .topbar{flex-wrap:wrap!important}
+ .metric{grid-template-columns:minmax(92px,130px) minmax(0,1fr) 42px!important}
+ .calendar{min-width:700px}
+ .roadmapMap{width:100%!important;overflow:auto!important}
+}
+@media(max-width:520px){
+ main{padding-left:8px!important;padding-right:8px!important}
+ .hero{min-height:68dvh!important;border-radius:16px!important}
+ .gallery,.grid,.statsgrid{grid-template-columns:1fr!important}
+ h1{font-size:clamp(30px,12vw,52px)!important}
+ h2{font-size:clamp(21px,7vw,30px)!important}
+ .btn,.control{font-size:12px!important}
+}
+@media(max-height:560px) and (orientation:landscape){
+ .rail{position:relative!important}
+ main{padding-top:8px!important}
+ .hero{min-height:calc(100dvh - 72px)!important}
+ .heroText{padding-top:8dvh!important;padding-bottom:8dvh!important}
+ .gallery,.grid,.statsgrid{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))!important}
+}
+</style>
+'''
 script = '''
 <script id="isl-mobile-media-hotfix-js">
 (function(){
@@ -96,6 +140,7 @@ script = '''
 '''
 if 'isl-mobile-entry-hotfix' not in s: s = s.replace('</head>', entry + '\n</head>')
 if 'isl-mobile-media-hotfix' not in s: s = s.replace('</head>', media + '\n</head>')
+if 'isl-responsive-viewport-hotfix' not in s: s = s.replace('</head>', responsive + '\n</head>')
 if 'isl-mobile-media-hotfix-js' not in s: s = s.replace('</body>', script + '\n</body>')
 p.write_text(s, encoding='utf-8')
 PY
@@ -117,7 +162,8 @@ grep -q 'assets/island-a-master.jpg' build/site/index.html
 grep -q 'assets/previs-premium-1080p-L41.mp4' build/site/index.html
 grep -q 'isl-mobile-entry-hotfix' build/site/index.html
 grep -q 'isl-mobile-media-hotfix' build/site/index.html
+grep -q 'isl-responsive-viewport-hotfix' build/site/index.html
 grep -q 'isl-mobile-media-hotfix-js' build/site/index.html
 ! grep -R -q "image-rendering:[[:space:]]*pixelated\|image-rendering:[[:space:]]*crisp-edges" build/site/index.html build/site/ps4.html build/site/reel.html
 
-echo "ISL unified Netlify build completed: master media + mobile entry/media CQC passed."
+echo "ISL unified Netlify build completed: master media + mobile entry/media + responsive viewport CQC passed."
