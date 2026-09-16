@@ -5,6 +5,8 @@
     .app,main{overflow:visible!important;min-height:0!important}
     .view{position:relative!important;z-index:1!important}
     #welcome.hidden{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+    .drawer{transform:translateX(calc(-100% - 96px))!important;visibility:hidden!important;pointer-events:none!important}
+    .drawer.open{transform:translateX(0)!important;visibility:visible!important;pointer-events:auto!important}
     #track{display:none!important;visibility:hidden!important;pointer-events:none!important}#track audio{display:none!important}
     #lightbox{position:fixed!important;inset:0!important;width:100%!important;height:100dvh!important;z-index:12000!important;margin:0!important;transform:none!important}
     #lightbox.show{display:flex!important;align-items:center!important;justify-content:center!important}
@@ -14,6 +16,7 @@
     #islFsToggle{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:12500;width:44px;height:44px;border:1px solid #ffffff2b;border-radius:999px;background:#071018dd;color:#fff;display:grid;place-items:center;font-size:18px;box-shadow:0 10px 30px #0008;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
     button,.btn,a[role=button],.rail button{position:relative!important;z-index:2!important;pointer-events:auto!important;touch-action:manipulation!important;transform:none!important;will-change:auto!important;transition:box-shadow .14s ease,border-color .14s ease,background-color .14s ease,filter .14s ease!important}
     button:active,.btn:active,a[role=button]:active,.rail button:active,.isl-pressed{transform:none!important;filter:brightness(1.12)!important;box-shadow:inset 0 0 0 1px #8defff55,0 0 0 2px #8defff16!important}
+    @media(max-width:900px){.drawer{transform:translateX(calc(-100% - 24px))!important}.drawer.open{transform:translateX(0)!important}}
     @media(orientation:landscape) and (max-height:700px){html,body,.app,main{overflow-y:auto!important;height:auto!important;min-height:0!important;touch-action:pan-y!important}main{padding-bottom:72px!important}.hero{min-height:0!important;height:auto!important}.heroText{min-height:0!important}}
     @media(prefers-reduced-motion:reduce){button,.btn,a[role=button],.rail button{transition:none!important}.isl-pressed{filter:none!important;box-shadow:none!important}}
   `;document.head.appendChild(style);
@@ -24,8 +27,9 @@
   var track=document.getElementById('track'),audio=track&&track.querySelector('audio'),musicBtn=document.getElementById('musicBtn');var userMuted=false,audioOn=false;if(track)track.classList.remove('show');
   function paintAudio(on){audioOn=!!on;if(!musicBtn)return;musicBtn.textContent=on?'♫':'♩';musicBtn.setAttribute('aria-pressed',on?'true':'false');musicBtn.title=on?'Música activada':'Música desactivada'}
   function playAudio(){if(!audio||userMuted)return Promise.resolve(false);audio.volume=.48;var p;try{p=audio.play()}catch(e){paintAudio(false);return Promise.resolve(false)}return p&&p.then?p.then(function(){paintAudio(true);return true}).catch(function(){paintAudio(false);return false}):Promise.resolve(true)}
-  function stopAudio(){if(audio)audio.pause();paintAudio(false)}
-  if(musicBtn){musicBtn.onclick=function(e){if(e){e.preventDefault();e.stopPropagation()}if(audioOn){userMuted=true;stopAudio()}else{userMuted=false;playAudio()}if(track)track.classList.remove('show')};paintAudio(audio&&!audio.paused)}
+  function stopAudio(){if(audio){audio.pause()}paintAudio(false)}
+  if(audio){audio.addEventListener('play',function(){paintAudio(true)});audio.addEventListener('pause',function(){paintAudio(false)});audio.addEventListener('ended',function(){paintAudio(false)})}
+  if(musicBtn){musicBtn.onclick=function(e){if(e){e.preventDefault();e.stopPropagation()}if(!audio)return;if(!audio.paused){userMuted=true;stopAudio()}else{userMuted=false;playAudio()}if(track)track.classList.remove('show')};paintAudio(audio&&!audio.paused)}
 
   var fsSuppressed=false;function fsEl(){return document.fullscreenElement||document.webkitFullscreenElement}function requestFs(){if(fsSuppressed||fsEl())return;var root=document.documentElement,fn=root.requestFullscreen||root.webkitRequestFullscreen;if(!fn)return;try{var p=fn.call(root);if(p&&p.catch)p.catch(function(){})}catch(e){}}function exitFs(){var fn=document.exitFullscreen||document.webkitExitFullscreen;if(!fn)return;try{var p=fn.call(document);if(p&&p.catch)p.catch(function(){})}catch(e){}}
   var fsButton=document.createElement('button');fsButton.id='islFsToggle';fsButton.type='button';fsButton.setAttribute('aria-label','Alternar pantalla completa');document.body.appendChild(fsButton);function paintFs(){fsButton.textContent=fsEl()?'⤢':'⛶';fsButton.title=fsEl()?'Salir de pantalla completa':'Pantalla completa'}fsButton.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();if(fsEl()){fsSuppressed=true;exitFs()}else{fsSuppressed=false;requestFs();playAudio()}});document.addEventListener('fullscreenchange',paintFs);document.addEventListener('webkitfullscreenchange',paintFs);paintFs();
@@ -38,7 +42,7 @@
   if(enter){enter.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();closeWelcome();gestureBootstrap();requestAnimationFrame(function(){window.scrollTo(0,0)})},true)}
 
   document.addEventListener('click',function(e){var nav=e.target.closest&&e.target.closest('.rail button[data-view]');if(nav)closeWelcome()},true);
-  ['pointerdown','touchstart','keydown'].forEach(function(type){document.addEventListener(type,function(e){if(enter&&(e.target===enter||enter.contains(e.target)))return;gestureBootstrap()},{capture:true,passive:type!=='keydown'})});
+  ['pointerdown','touchstart','keydown'].forEach(function(type){document.addEventListener(type,function(e){var t=e.target;if(enter&&(t===enter||enter.contains(t)))return;if(musicBtn&&(t===musicBtn||musicBtn.contains(t)))return;if(fsButton&&(t===fsButton||fsButton.contains(t)))return;gestureBootstrap()},{capture:true,passive:type!=='keydown'})});
   document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('button,.btn,.rail button,a[role="button"]');if(!el)return;el.classList.add('isl-pressed');setTimeout(function(){el.classList.remove('isl-pressed')},120)},true);
 
   var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(reduced)return;
