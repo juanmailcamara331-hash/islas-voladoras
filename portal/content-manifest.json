@@ -1,16 +1,16 @@
 {
-  "version": "0.5",
+  "version": "0.8-hq",
   "title": "ISL / Islas Voladoras",
   "tagline": "Crear es alterar el mundo.",
-  "audio": "assets/airships-last-waltz-pages.mp3",
+  "quality_policy": "PREVIEW_PUEDE_SER_LIGERO_FINAL_NUNCA",
+  "audio": null,
   "gallery": [
-    {"id":"isla-a","type":"image","src":"assets/island-a.svg","name":"Isla flotante · A","category":"MUNDO / ISLAS","status":"REFERENCIA","help":"Atmósfera, escala, color y lectura de hogar suspendido."},
-    {"id":"isla-b","type":"image","src":"assets/island-b.svg","name":"Isla flotante · B","category":"MUNDO / ISLAS","status":"ITERACIÓN","help":"Variante para comparar arquitectura, profundidad y foco."},
-    {"id":"previs","type":"video","src":"assets/isl-tv-reel-pages.mp4","poster":"assets/island-a.svg","name":"Previs flotante","category":"VÍDEO / ATMÓSFERA","status":"REFERENCIA","help":"Movimiento, cámara y respiración ambiental."}
+    {"id":"isla-a","type":"image","src":"assets/island-a.svg","name":"Isla flotante · A","category":"MUNDO / ISLAS","status":"REFERENCIA","help":"HQ vectorial temporal: atmósfera, escala y lectura de hogar suspendido."},
+    {"id":"isla-b","type":"image","src":"assets/island-b.svg","name":"Isla flotante · B","category":"MUNDO / ISLAS","status":"ITERACIÓN","help":"HQ vectorial temporal: variante para comparar arquitectura, profundidad y foco."}
   ],
   "reel": [
-    {"type":"image","src":"assets/island-a.svg","kicker":"MUNDO","title":"Una ciudad aprende a vivir con el viento.","note":"Referencia fuerte · atmósfera / escala / identidad","seconds":8},
-    {"type":"video","src":"assets/isl-tv-reel-pages.mp4","poster":"assets/island-a.svg","kicker":"PREVIS","title":"El mundo no está quieto.","note":"Cámara, nubes y respiración ambiental","seconds":7},
-    {"type":"image","src":"assets/island-b.svg","kicker":"ITERACIÓN","title":"La belleza también debe dejar jugar.","note":"Comparación visual · no CANON","seconds":8}
+    {"type":"image","src":"assets/island-a.svg","kicker":"MUNDO","title":"Una ciudad aprende a vivir con el viento.","note":"Visual HQ independiente de resolución · REFERENCIA","seconds":8},
+    {"type":"image","src":"assets/island-b.svg","kicker":"ITERACIÓN","title":"La belleza también debe dejar jugar.","note":"Visual HQ independiente de resolución · no CANON","seconds":8},
+    {"type":"image","src":"assets/island-a.svg","kicker":"CUIDADO Y MIMO","title":"La PS4 pierde tecnología, nunca belleza.","note":"Producción: calidad final no negociable","seconds":8}
   ]
 }
