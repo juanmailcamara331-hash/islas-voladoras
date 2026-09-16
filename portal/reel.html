@@ -1,102 +1,16 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ISL Reel</title>
-<style>
-:root{--bg:#03080c;--ink:#fff;--cyan:#8defff;--glass:#071018cc;--line:#ffffff33;--ease:cubic-bezier(.2,.78,.18,1)}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;max-width:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
-body{touch-action:pan-y}#s{position:fixed;inset:0;width:100%;height:100%;overflow:hidden;background:var(--bg)}
-.x{position:absolute;inset:0;width:100%;height:100%;opacity:0;transform:translate3d(2.2%,0,0) scale(1.01);transition:opacity .42s ease,transform .52s var(--ease);pointer-events:none;will-change:opacity,transform}
-.x.on{opacity:1;transform:translate3d(0,0,0) scale(1);pointer-events:auto;z-index:1}
-.x.prev{transform:translate3d(-2.2%,0,0) scale(1.006)}
-.x img,.x video{display:block;width:100%;height:100%;object-fit:cover;background:var(--bg)}
-.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#041017c8,#04101744 45%,transparent),linear-gradient(0deg,#04101799,transparent 55%)}
-.copy{position:absolute;left:max(5vw,env(safe-area-inset-left));right:max(5vw,env(safe-area-inset-right));bottom:max(9vh,calc(env(safe-area-inset-bottom) + 52px));max-width:760px;z-index:2;text-shadow:0 2px 18px #000}
-.k{font-size:11px;letter-spacing:3px;color:var(--cyan)}h1{font-size:clamp(30px,6vw,72px);line-height:.96;margin:8px 0}.n{font-size:clamp(14px,3vw,20px);color:#cfdee1}
-#p{position:fixed;left:max(5vw,env(safe-area-inset-left));right:max(5vw,env(safe-area-inset-right));bottom:max(3vh,calc(env(safe-area-inset-bottom) + 10px));height:4px;border-radius:999px;background:#ffffff14;border:1px solid #ffffff12;overflow:hidden;z-index:8;box-shadow:0 6px 24px #0008}
-#f{height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#66d9ea,#a7f5ff 58%,#ffc36e);box-shadow:0 0 14px #8defff88;transform-origin:left center;transition:width .08s linear}
-#c{position:fixed;right:max(3vw,env(safe-area-inset-right));top:max(3vh,env(safe-area-inset-top));z-index:10;display:flex;gap:5px;padding:4px;border:1px solid #ffffff16;border-radius:12px;background:#02070a66;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-button,a{appearance:none;border:1px solid var(--line);background:var(--glass);color:white;min-width:44px;height:44px;padding:0 12px;text-decoration:none;font-size:16px;display:grid;place-items:center;border-radius:8px;touch-action:manipulation;user-select:none;-webkit-user-select:none}
-button:active,a:active{transform:scale(.96)}button:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
-#err{display:none;position:fixed;inset:0;z-index:20;place-items:center;padding:24px;text-align:center;background:var(--bg);color:#dfeef1}#err.show{display:grid}
-:fullscreen,:-webkit-full-screen{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;overflow:hidden!important;background:var(--bg)}
-:fullscreen #s,:fullscreen .x,:fullscreen .x video,:fullscreen .x img{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important}
-:-webkit-full-screen #s,:-webkit-full-screen .x,:-webkit-full-screen .x video,:-webkit-full-screen .x img{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important}
-@media(max-width:700px){.copy{left:5vw;right:5vw}.k{font-size:9px;letter-spacing:2px}#c{gap:3px}button,a{min-width:40px;height:40px;padding:0 9px;font-size:15px}}
-@media(orientation:landscape) and (max-height:560px){.copy{bottom:13vh;max-width:58vw}.copy h1{font-size:clamp(26px,5.3vw,54px)}.n{font-size:clamp(12px,2vw,17px)}#c{top:10px;right:10px}#p{bottom:9px}}
-@media(prefers-reduced-motion:reduce){.x{transition:none!important;transform:none!important}.x.prev{transform:none!important}#f{transition:none!important}button,a{transition:none!important}}
-</style>
-</head>
-<body>
-<div id="s"></div>
-<div id="c" aria-label="Controles del Reel">
-<button id="b" aria-label="Anterior">←</button>
-<button id="q" aria-label="Pausa">Ⅱ</button>
-<button id="n" aria-label="Siguiente">→</button>
-<button id="fs" aria-label="Pantalla completa">⛶</button>
-<a href="index.html" aria-label="Inicio">⌂</a>
-</div>
-<div id="p" aria-hidden="true"><div id="f"></div></div>
-<div id="err"></div>
-<audio id="m" loop preload="auto"></audio>
-<script>
-(function(){
-  var d,items=[],slides=[],i=0,timer,paused=false,start=0,duration=8000,locked=false,touchX=0,touchY=0;
-  var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var stage=document.getElementById('s'),music=document.getElementById('m'),fill=document.getElementById('f'),err=document.getElementById('err');
-  var prev=document.getElementById('b'),next=document.getElementById('n'),pause=document.getElementById('q'),fs=document.getElementById('fs');
-  function fail(msg){err.textContent=msg;err.className='show'}
-  function normalize(j){
-    if(Array.isArray(j.reel))return j.reel;
-    if(typeof j.reel==='string'&&j.reel)return[{type:'video',src:j.reel,kicker:'ISL',title:'Islas Voladoras',note:'Reel premium · 1080p',seconds:60}];
-    return(j.gallery||[]).map(function(g){return{type:g.video?'video':'image',src:g.video||g.img,kicker:g.cat||'ISL',title:g.name||'Islas Voladoras',note:g.status||'',seconds:8}})
-  }
-  function currentVideo(){return slides[i]&&slides[i].querySelector('video')}
-  function build(o,j){
-    var section=document.createElement('section');section.className='x';
-    var isVideo=o.type==='video'||/\.mp4(?:$|\?)/i.test(o.src||'');
-    var media=document.createElement(isVideo?'video':'img');media.src=o.src;
-    if(isVideo){media.muted=true;media.loop=items.length===1;media.autoplay=true;media.playsInline=true;media.setAttribute('playsinline','');media.setAttribute('webkit-playsinline','');media.preload='auto';if(j.gallery&&j.gallery[0]&&j.gallery[0].img)media.poster=j.gallery[0].img;media.addEventListener('error',function(){fail('No se pudo cargar el vídeo premium. Recarga la página.')})}
-    else{media.alt=o.title||'ISL';media.addEventListener('error',function(){fail('No se pudo cargar la imagen. Recarga la página.')})}
-    var shade=document.createElement('div');shade.className='shade';
-    var copy=document.createElement('div');copy.className='copy';copy.innerHTML='<div class="k">'+(o.kicker||'ISL')+'</div><h1>'+(o.title||'Islas Voladoras')+'</h1><div class="n">'+(o.note||'')+'</div>';
-    section.appendChild(media);section.appendChild(shade);section.appendChild(copy);stage.appendChild(section);slides.push(section)
-  }
-  function setSlide(k,dir){
-    if(!slides.length||locked)return;
-    locked=true;var old=i;i=(k+slides.length)%slides.length;
-    slides.forEach(function(s,idx){var v=s.querySelector('video');if(v)v.pause();s.classList.remove('on','prev')});
-    if(slides[old]&&old!==i)slides[old].classList.add(dir<0?'':'prev');
-    slides[i].classList.add('on');
-    var o=items[i]||{};duration=(o.seconds||8)*1000;
-    var v=currentVideo();if(v){if(isFinite(v.duration)&&v.duration>0)duration=v.duration*1000;v.play().catch(function(){})}
-    start=Date.now();fill.style.width='0%';clearInterval(timer);timer=setInterval(tick,80);
-    setTimeout(function(){locked=false},reduced?0:220)
-  }
-  function tick(){
-    if(paused||!slides.length)return;
-    var v=currentVideo(),x;
-    if(v&&isFinite(v.duration)&&v.duration>0)x=v.currentTime/v.duration;
-    else{x=(Date.now()-start)/duration;if(x>=1){if(items.length>1){setSlide(i+1,1);return}x=0;start=Date.now()}}
-    fill.style.width=(Math.max(0,Math.min(1,x))*100).toFixed(2)+'%'
-  }
-  function move(delta){setSlide(i+delta,delta)}
-  fetch('content-manifest.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('manifest '+r.status);return r.json()}).then(function(j){
-    d=j;items=normalize(j);if(!items.length)throw new Error('reel vacío');if(j.audio){music.src=j.audio;music.volume=.55}
-    items.forEach(function(o){build(o,j)});setSlide(0,1);music.play().catch(function(){})
-  }).catch(function(e){fail('Error cargando el Reel: '+e.message)});
-  prev.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();move(-1)});
-  next.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();move(1)});
-  pause.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();paused=!paused;pause.textContent=paused?'▶':'Ⅱ';var v=currentVideo();if(paused){if(v)v.pause();music.pause()}else{if(v)v.play().catch(function(){});music.play().catch(function(){});start=Date.now()}});
-  document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){e.preventDefault();move(-1)}else if(e.key==='ArrowRight'){e.preventDefault();move(1)}else if(e.key===' '){e.preventDefault();pause.click()}});
-  stage.addEventListener('touchstart',function(e){if(!e.changedTouches||!e.changedTouches[0])return;touchX=e.changedTouches[0].clientX;touchY=e.changedTouches[0].clientY},{passive:true});
-  stage.addEventListener('touchend',function(e){if(!e.changedTouches||!e.changedTouches[0])return;var dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;if(Math.abs(dx)>44&&Math.abs(dx)>Math.abs(dy)*1.15)move(dx<0?1:-1)},{passive:true});
-  fs.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var v=currentVideo();if(v)v.play().catch(function(){});music.play().catch(function(){});var active=document.fullscreenElement||document.webkitFullscreenElement;if(active){var ex=document.exitFullscreen||document.webkitExitFullscreen;if(ex){try{var ep=ex.call(document);if(ep&&ep.catch)ep.catch(function(){})}catch(_){}}return}var req=stage.requestFullscreen||stage.webkitRequestFullscreen;if(req){try{var rp=req.call(stage);if(rp&&rp.catch)rp.catch(function(){})}catch(_){}}});
-  function fsLabel(){fs.textContent=(document.fullscreenElement||document.webkitFullscreenElement)?'⤢':'⛶'}
-  document.addEventListener('fullscreenchange',fsLabel);document.addEventListener('webkitfullscreenchange',fsLabel);
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ISL Reel</title><style>
+:root{--bg:#03080c;--cyan:#8defff;--glass:#071018dd;--line:#ffffff33;--ease:cubic-bezier(.2,.78,.18,1)}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:white;font-family:Arial,Helvetica,sans-serif}body{touch-action:manipulation}#s{position:fixed;inset:0;overflow:hidden;background:var(--bg)}.x{position:absolute;inset:0;opacity:0;transform:translate3d(2%,0,0) scale(1.01);transition:opacity .38s ease,transform .48s var(--ease);pointer-events:none}.x.on{opacity:1;transform:none;pointer-events:auto;z-index:1}.x img,.x video{display:block;width:100%;height:100%;object-fit:cover;background:var(--bg)}.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#041017c8,#04101744 45%,transparent),linear-gradient(0deg,#04101799,transparent 55%)}.copy{position:absolute;left:max(5vw,env(safe-area-inset-left));right:max(5vw,env(safe-area-inset-right));bottom:max(9vh,calc(env(safe-area-inset-bottom) + 50px));max-width:760px;z-index:2;text-shadow:0 2px 18px #000}.k{font-size:11px;letter-spacing:3px;color:var(--cyan)}h1{font-size:clamp(30px,6vw,72px);line-height:.96;margin:8px 0}.n{font-size:clamp(14px,3vw,20px);color:#cfdee1}#p{position:fixed;left:max(5vw,env(safe-area-inset-left));right:max(5vw,env(safe-area-inset-right));bottom:max(3vh,calc(env(safe-area-inset-bottom) + 10px));height:4px;border-radius:999px;background:#ffffff14;overflow:hidden;z-index:8}#f{height:100%;width:0;background:linear-gradient(90deg,#66d9ea,#a7f5ff 58%,#ffc36e);box-shadow:0 0 14px #8defff88;transition:width .08s linear}#c{position:fixed;right:max(3vw,env(safe-area-inset-right));top:max(3vh,env(safe-area-inset-top));z-index:20;display:flex;gap:4px;padding:4px;border:1px solid #ffffff16;border-radius:12px;background:#02070a88;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}button,a{appearance:none;border:1px solid var(--line);background:var(--glass);color:white;min-width:44px;height:44px;padding:0 12px;text-decoration:none;font-size:16px;display:grid;place-items:center;border-radius:8px;touch-action:manipulation;user-select:none;transition:transform .16s var(--ease),background-color .16s ease}button:active,a:active,.pressed{transform:translateY(1px) scale(.965)}#exitFs{display:none}#exitFs.show{display:grid}#err{display:none;position:fixed;inset:0;z-index:30;place-items:center;padding:24px;text-align:center;background:var(--bg)}#err.show{display:grid}:fullscreen,:-webkit-full-screen{width:100%!important;height:100%!important;overflow:hidden!important;background:var(--bg)}@media(max-width:700px){.copy{left:5vw;right:5vw}.k{font-size:9px;letter-spacing:2px}#c{gap:3px}button,a{min-width:40px;height:40px;padding:0 9px;font-size:15px}}@media(orientation:landscape) and (max-height:560px){.copy{bottom:13vh;max-width:58vw}#c{top:8px;right:8px}#p{bottom:8px}}@media(prefers-reduced-motion:reduce){.x,#f,button,a{transition:none!important;transform:none!important}}
+</style></head><body><div id="s"></div><div id="c"><button id="b" aria-label="Anterior o retroceder">←</button><button id="q" aria-label="Pausa">Ⅱ</button><button id="n" aria-label="Siguiente o avanzar">→</button><button id="fs" aria-label="Pantalla completa">⛶</button><button id="exitFs" aria-label="Salir de pantalla completa">✕</button><a href="index.html" aria-label="Inicio">⌂</a></div><div id="p"><div id="f"></div></div><div id="err"></div><audio id="m" loop preload="auto"></audio><script>
+(function(){var items=[],slides=[],i=0,timer,paused=false,start=0,duration=8000,locked=false,touchX=0,touchY=0,fsSuppressed=false;var stage=document.getElementById('s'),music=document.getElementById('m'),fill=document.getElementById('f'),err=document.getElementById('err'),prev=document.getElementById('b'),next=document.getElementById('n'),pause=document.getElementById('q'),fs=document.getElementById('fs'),exitFsBtn=document.getElementById('exitFs');
+function fail(x){err.textContent=x;err.className='show'}function normalize(j){if(Array.isArray(j.reel))return j.reel;if(typeof j.reel==='string'&&j.reel)return[{type:'video',src:j.reel,kicker:'ISL',title:'Islas Voladoras',note:'Reel premium · 1080p',seconds:60}];return(j.gallery||[]).map(function(g){return{type:g.video?'video':'image',src:g.video||g.img,kicker:g.cat||'ISL',title:g.name||'Islas Voladoras',note:g.status||'',seconds:8}})}function currentVideo(){return slides[i]&&slides[i].querySelector('video')}
+function build(o,j){var s=document.createElement('section');s.className='x';var isv=o.type==='video'||/\.mp4(?:$|\?)/i.test(o.src||'');var z=document.createElement(isv?'video':'img');z.src=o.src;if(isv){z.muted=true;z.autoplay=true;z.playsInline=true;z.setAttribute('playsinline','');z.preload='auto';if(j.gallery&&j.gallery[0]&&j.gallery[0].img)z.poster=j.gallery[0].img;z.addEventListener('error',function(){fail('No se pudo cargar el vídeo premium.')})}else{z.alt=o.title||'ISL';z.addEventListener('error',function(){fail('No se pudo cargar la imagen.')})}var sh=document.createElement('div');sh.className='shade';var cp=document.createElement('div');cp.className='copy';cp.innerHTML='<div class=k>'+(o.kicker||'ISL')+'</div><h1>'+(o.title||'Islas Voladoras')+'</h1><div class=n>'+(o.note||'')+'</div>';s.append(z,sh,cp);stage.appendChild(s);slides.push(s)}
+function show(k){if(!slides.length||locked)return;locked=true;slides.forEach(function(s){var v=s.querySelector('video');if(v)v.pause();s.classList.remove('on')});i=(k+slides.length)%slides.length;slides[i].classList.add('on');var o=items[i]||{};duration=(o.seconds||8)*1000;var v=currentVideo();if(v){if(isFinite(v.duration)&&v.duration>0)duration=v.duration*1000;v.play().catch(function(){})}start=Date.now();fill.style.width='0%';clearInterval(timer);timer=setInterval(tick,80);setTimeout(function(){locked=false},180)}
+function tick(){if(paused||!slides.length)return;var v=currentVideo(),x;if(v&&isFinite(v.duration)&&v.duration>0)x=v.currentTime/v.duration;else{x=(Date.now()-start)/duration;if(x>=1){if(items.length>1){show(i+1);return}x=0;start=Date.now()}}fill.style.width=(Math.max(0,Math.min(1,x))*100).toFixed(2)+'%'}
+function step(delta){var v=currentVideo();if(items.length===1&&v&&isFinite(v.duration)){v.currentTime=Math.max(0,Math.min(v.duration-.05,v.currentTime+(delta*10)));tick();return}show(i+delta)}
+function fsEl(){return document.fullscreenElement||document.webkitFullscreenElement}function requestFs(){if(fsSuppressed||fsEl())return;var fn=stage.requestFullscreen||stage.webkitRequestFullscreen;if(fn){try{var p=fn.call(stage);if(p&&p.catch)p.catch(function(){})}catch(e){}}}function exitFs(){var fn=document.exitFullscreen||document.webkitExitFullscreen;if(fn){try{var p=fn.call(document);if(p&&p.catch)p.catch(function(){})}catch(e){}}}function paintFs(){var on=!!fsEl();fs.textContent=on?'⤢':'⛶';exitFsBtn.classList.toggle('show',on)}
+function wake(){var v=currentVideo();if(v)v.play().catch(function(){});music.play().catch(function(){});if(!fsEl()&&!fsSuppressed)requestFs()}
+fetch('content-manifest.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('manifest '+r.status);return r.json()}).then(function(j){items=normalize(j);if(!items.length)throw new Error('reel vacío');if(j.audio){music.src=j.audio;music.volume=.5}items.forEach(function(o){build(o,j)});show(0)}).catch(function(e){fail('Error cargando el Reel: '+e.message)});
+prev.onclick=function(e){e.preventDefault();e.stopPropagation();step(-1);wake()};next.onclick=function(e){e.preventDefault();e.stopPropagation();step(1);wake()};pause.onclick=function(e){e.preventDefault();e.stopPropagation();paused=!paused;pause.textContent=paused?'▶':'Ⅱ';var v=currentVideo();if(paused){if(v)v.pause();music.pause()}else wake()};fs.onclick=function(e){e.preventDefault();e.stopPropagation();if(fsEl()){fsSuppressed=true;exitFs()}else{fsSuppressed=false;requestFs();wake()}};exitFsBtn.onclick=function(e){e.preventDefault();e.stopPropagation();fsSuppressed=true;exitFs()};
+document.addEventListener('fullscreenchange',paintFs);document.addEventListener('webkitfullscreenchange',paintFs);paintFs();document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){e.preventDefault();step(-1)}else if(e.key==='ArrowRight'){e.preventDefault();step(1)}else if(e.key==='Escape'&&fsEl()){fsSuppressed=true;exitFs()}else if(e.key===' '){e.preventDefault();pause.click()}});stage.addEventListener('touchstart',function(e){if(!e.changedTouches||!e.changedTouches[0])return;touchX=e.changedTouches[0].clientX;touchY=e.changedTouches[0].clientY;wake()},{passive:true});stage.addEventListener('touchend',function(e){if(!e.changedTouches||!e.changedTouches[0])return;var dx=e.changedTouches[0].clientX-touchX,dy=e.changedTouches[0].clientY-touchY;if(Math.abs(dx)>44&&Math.abs(dx)>Math.abs(dy)*1.15)step(dx<0?1:-1)},{passive:true});['pointerdown','keydown'].forEach(function(t){document.addEventListener(t,wake,{capture:true,passive:t!=='keydown'})});document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('button,a');if(!el)return;el.classList.add('pressed');setTimeout(function(){el.classList.remove('pressed')},140)},true);
 })();
-</script>
-</body>
-</html>
+</script></body></html>
