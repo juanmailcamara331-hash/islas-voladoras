@@ -5,8 +5,8 @@ VERSION="${GODOT_VERSION:-4.7.2}"
 GODOT_DIR="/tmp/godot"
 TEMPLATES_DIR="$HOME/.local/share/godot/export_templates/${VERSION}.stable"
 
-rm -rf "$GODOT_DIR" build/web /tmp/godot.zip /tmp/templates.tpz /tmp/templates
-mkdir -p "$GODOT_DIR" build/web "$TEMPLATES_DIR"
+rm -rf "$GODOT_DIR" build/web build/site /tmp/godot.zip /tmp/templates.tpz /tmp/templates
+mkdir -p "$GODOT_DIR" build/web build/site/game "$TEMPLATES_DIR"
 
 wget -q "https://github.com/godotengine/godot/releases/download/${VERSION}-stable/Godot_v${VERSION}-stable_linux.x86_64.zip" -O /tmp/godot.zip
 unzip -q /tmp/godot.zip -d "$GODOT_DIR"
@@ -47,9 +47,26 @@ EOF
 cp /tmp/export_presets.cfg export_presets.cfg
 "$GODOT_BIN" --headless --path . --export-release "Web" build/web/index.html
 
-mkdir -p build/web/lab
-cp web/index.html build/web/lab/index.html
-cp web/README.md build/web/lab/README.md
-touch build/web/.nojekyll
+# Portal ISL como raíz pública.
+cp -a portal/. build/site/
 
-echo "Godot Web export completed successfully."
+# Juego Godot dentro del mismo sitio.
+cp -a build/web/. build/site/game/
+
+# Mantener el laboratorio web histórico del proyecto dentro del juego.
+mkdir -p build/site/game/lab
+cp web/index.html build/site/game/lab/index.html
+cp web/README.md build/site/game/lab/README.md
+
+touch build/site/.nojekyll
+
+# CQC mínimo antes de publicar.
+test -f build/site/index.html
+test -f build/site/ps4.html
+test -f build/site/reel.html
+test -f build/site/labs/wind.html
+test -f build/site/labs/method.html
+test -f build/site/game/index.html
+grep -q "ISL" build/site/index.html
+
+echo "ISL unified Netlify build completed successfully."
