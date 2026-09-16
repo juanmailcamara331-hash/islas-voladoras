@@ -1,4 +1,21 @@
 (function(){
+  /* Layout safety runs for everyone, including reduced-motion users. */
+  try{if('scrollRestoration' in history)history.scrollRestoration='manual'}catch(e){}
+  if(window.matchMedia&&window.matchMedia('(max-width: 900px)').matches&&!location.hash){
+    var resetTop=function(){window.scrollTo(0,0)};
+    requestAnimationFrame(resetTop);setTimeout(resetTop,80);
+    window.addEventListener('pageshow',function(){requestAnimationFrame(resetTop)},{once:true});
+  }
+
+  /* Keep the media viewer outside transformed/layout ancestors so fixed means viewport-fixed. */
+  var lb=document.getElementById('lightbox');
+  if(lb){
+    if(lb.parentNode!==document.body)document.body.appendChild(lb);
+    var syncMediaState=function(){document.body.classList.toggle('isl-media-open',lb.classList.contains('show'))};
+    syncMediaState();
+    try{new MutationObserver(syncMediaState).observe(lb,{attributes:true,attributeFilter:['class']})}catch(e){}
+  }
+
   var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduced)return;
 
