@@ -64,10 +64,11 @@ for ident in ['isl-mobile-entry-hotfix','isl-mobile-media-hotfix','isl-responsiv
 s=re.sub(r'<script id="isl-mobile-media-hotfix-js">.*?</script>\s*','',s,flags=re.S)
 s=re.sub(r'<link[^>]+href="isl-polish\.css"[^>]*>\s*','',s)
 s=re.sub(r'<script[^>]+src="isl-polish\.js"[^>]*></script>\s*','',s)
+s=re.sub(r'<script[^>]+src="isl-media-gestures\.js"[^>]*></script>\s*','',s)
 media='''
 <style id="isl-mobile-media-hotfix">
-#lbMedia{display:flex;align-items:center;justify-content:center;max-width:96%;max-height:86vh;min-width:0;min-height:0}
-#lbMedia img,#lbMedia video{display:block!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:82vh!important;object-fit:contain!important;background:#02070b}
+#lbMedia{display:flex;align-items:center;justify-content:center;max-width:96%;max-height:86vh;min-width:0;min-height:0;touch-action:none;overscroll-behavior:contain}
+#lbMedia img,#lbMedia video{display:block!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:82vh!important;object-fit:contain!important;background:#02070b;transform-origin:50% 50%}
 @media(max-width:900px){
  #lightbox{padding:0!important;background:#02070b!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;overflow:hidden!important}
  #lightbox figure{width:100%!important;height:100dvh!important;max-width:100%!important;max-height:100dvh!important;justify-content:center!important;overflow:hidden!important}
@@ -89,7 +90,7 @@ script='''
 </script>
 '''
 s=s.replace('</head>','<link rel="stylesheet" href="isl-polish.css">\n'+media+'\n</head>')
-s=s.replace('</body>',script+'\n<script defer src="isl-polish.js"></script>\n</body>')
+s=s.replace('</body>',script+'\n<script defer src="isl-polish.js"></script>\n<script defer src="isl-media-gestures.js"></script>\n</body>')
 p.write_text(s,encoding='utf-8')
 PY
 
@@ -98,6 +99,7 @@ test -f build/site/ps4.html
 test -f build/site/reel.html
 test -f build/site/isl-polish.css
 test -f build/site/isl-polish.js
+test -f build/site/isl-media-gestures.js
 test -f build/site/labs/wind.html
 test -f build/site/labs/method.html
 test -f build/site/game/index.html
@@ -112,9 +114,11 @@ grep -q 'assets/previs-premium-1080p-L41.mp4' build/site/index.html
 grep -q 'isl-mobile-media-hotfix' build/site/index.html
 grep -q 'isl-polish.css' build/site/index.html
 grep -q 'isl-polish.js' build/site/index.html
+grep -q 'isl-media-gestures.js' build/site/index.html
 grep -q 'prefers-reduced-motion' build/site/isl-polish.css
 grep -q 'islAmbientParticles' build/site/isl-polish.js
+grep -q 'pointerdown' build/site/isl-media-gestures.js
 ! grep -q 'isl-mobile-entry-hotfix' build/site/index.html
 ! grep -R -q "image-rendering:[[:space:]]*pixelated\|image-rendering:[[:space:]]*crisp-edges" build/site/index.html build/site/ps4.html build/site/reel.html
 
-echo "ISL build completed: welcome preserved + responsive scroll + fullscreen controls + ambient polish passed."
+echo "ISL build completed: adaptive responsive + pinch zoom + fullscreen exit placement passed."
