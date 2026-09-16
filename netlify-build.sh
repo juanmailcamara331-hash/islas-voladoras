@@ -55,6 +55,27 @@ cp web/index.html build/site/game/lab/index.html
 cp web/README.md build/site/game/lab/README.md
 touch build/site/.nojekyll
 
+# Mobile entry hotfix: Chrome/Android was rendering the welcome backdrop while
+# the inner welcome content remained invisible, blocking the whole Command Center.
+# On mobile we bypass that fragile overlay and enter the real portal directly.
+python3 - <<'PY'
+from pathlib import Path
+p = Path('build/site/index.html')
+s = p.read_text(encoding='utf-8')
+patch = '''
+<style id="isl-mobile-entry-hotfix">
+@media (max-width: 900px){
+  #welcome{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+  body{overflow:auto!important}
+  .app{visibility:visible!important;opacity:1!important}
+}
+</style>
+'''
+if 'isl-mobile-entry-hotfix' not in s:
+    s = s.replace('</head>', patch + '\n</head>')
+p.write_text(s, encoding='utf-8')
+PY
+
 # Hard CQC: a deploy must fail rather than publish degraded placeholders.
 test -f build/site/index.html
 test -f build/site/ps4.html
@@ -70,6 +91,7 @@ test "$(stat -c%s build/site/assets/island-b-master.jpg)" -gt 300000
 test "$(stat -c%s build/site/assets/previs-premium-1080p-L41.mp4)" -gt 8000000
 grep -q 'assets/island-a-master.jpg' build/site/index.html
 grep -q 'assets/previs-premium-1080p-L41.mp4' build/site/index.html
+grep -q 'isl-mobile-entry-hotfix' build/site/index.html
 ! grep -R -q "image-rendering:[[:space:]]*pixelated\|image-rendering:[[:space:]]*crisp-edges" build/site/index.html build/site/ps4.html build/site/reel.html
 
-echo "ISL unified Netlify build completed: v0.7.2 master-media CQC passed."
+echo "ISL unified Netlify build completed: v0.7.2 master-media CQC + mobile-entry hotfix passed."
