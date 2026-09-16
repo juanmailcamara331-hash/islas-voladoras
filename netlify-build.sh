@@ -47,7 +47,6 @@ EOF
 cp /tmp/export_presets.cfg export_presets.cfg
 "$GODOT_BIN" --headless --path . --export-release "Web" build/web/index.html
 
-# Canonical portal + generated game.
 cp -a portal/. build/site/
 cp -a build/web/. build/site/game/
 mkdir -p build/site/game/lab
@@ -55,28 +54,16 @@ cp web/index.html build/site/game/lab/index.html
 cp web/README.md build/site/game/lab/README.md
 touch build/site/.nojekyll
 
-# Production compatibility layer. Keep this generated so portal/index.html remains readable.
 python3 - <<'PY'
 from pathlib import Path
 import re
 p=Path('build/site/index.html')
 s=p.read_text(encoding='utf-8')
-
-# Remove older generated hotfix blocks if present.
 for ident in ['isl-mobile-entry-hotfix','isl-mobile-media-hotfix','isl-responsive-viewport-hotfix']:
     s=re.sub(r'<style id="'+re.escape(ident)+r'">.*?</style>\s*','',s,flags=re.S)
 s=re.sub(r'<script id="isl-mobile-media-hotfix-js">.*?</script>\s*','',s,flags=re.S)
 s=re.sub(r'<link[^>]+href="isl-polish\.css"[^>]*>\s*','',s)
 s=re.sub(r'<script[^>]+src="isl-polish\.js"[^>]*></script>\s*','',s)
-
-entry='''
-<style id="isl-mobile-entry-hotfix">
-@media(max-width:900px){
- #welcome{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
- body{overflow:auto!important}.app{visibility:visible!important;opacity:1!important}
-}
-</style>
-'''
 media='''
 <style id="isl-mobile-media-hotfix">
 #lbMedia{display:flex;align-items:center;justify-content:center;max-width:96%;max-height:86vh;min-width:0;min-height:0}
@@ -101,13 +88,11 @@ script='''
 })();
 </script>
 '''
-head_extra='''<link rel="stylesheet" href="isl-polish.css">\n'''+entry+'\n'+media
-s=s.replace('</head>',head_extra+'\n</head>')
+s=s.replace('</head>','<link rel="stylesheet" href="isl-polish.css">\n'+media+'\n</head>')
 s=s.replace('</body>',script+'\n<script defer src="isl-polish.js"></script>\n</body>')
 p.write_text(s,encoding='utf-8')
 PY
 
-# Hard CQC: never publish degraded placeholders or broken adaptive assets.
 test -f build/site/index.html
 test -f build/site/ps4.html
 test -f build/site/reel.html
@@ -124,12 +109,12 @@ test "$(stat -c%s build/site/assets/island-b-master.jpg)" -gt 300000
 test "$(stat -c%s build/site/assets/previs-premium-1080p-L41.mp4)" -gt 8000000
 grep -q 'assets/island-a-master.jpg' build/site/index.html
 grep -q 'assets/previs-premium-1080p-L41.mp4' build/site/index.html
-grep -q 'isl-mobile-entry-hotfix' build/site/index.html
 grep -q 'isl-mobile-media-hotfix' build/site/index.html
 grep -q 'isl-polish.css' build/site/index.html
 grep -q 'isl-polish.js' build/site/index.html
 grep -q 'prefers-reduced-motion' build/site/isl-polish.css
 grep -q 'islAmbientParticles' build/site/isl-polish.js
+! grep -q 'isl-mobile-entry-hotfix' build/site/index.html
 ! grep -R -q "image-rendering:[[:space:]]*pixelated\|image-rendering:[[:space:]]*crisp-edges" build/site/index.html build/site/ps4.html build/site/reel.html
 
-echo "ISL build completed: adaptive responsive + fullscreen containment + ambient polish + reel v2 passed."
+echo "ISL build completed: welcome preserved + responsive scroll + fullscreen controls + ambient polish passed."
