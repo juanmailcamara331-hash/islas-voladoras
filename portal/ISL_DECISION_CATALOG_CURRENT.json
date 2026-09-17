@@ -1,5 +1,5 @@
 {
-  "version": "0.1",
+  "version": "0.2",
   "updated_at": "2026-09-18",
   "purpose": "Matriz maestra de decisiones para convertir diseño, validación y producción de ISL en un flujo trazable y exportable a Unreal.",
   "rule": "Ninguna encuesta ni automatización convierte una opción en CANON. La confirmación humana sigue siendo obligatoria.",
@@ -506,6 +506,568 @@
         "ritmo",
         "retornos"
       ]
+    },
+    {
+      "id": "ARCH",
+      "name": "Arquitectura modular del juego",
+      "group": "ARQUITECTURA",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "GameFeaturePlugins",
+        "Subsystems",
+        "Modules",
+        "PrimaryDataAssets"
+      ],
+      "questions": [
+        "límites de módulos",
+        "dependencias",
+        "features activables",
+        "contratos entre sistemas"
+      ]
+    },
+    {
+      "id": "DATA",
+      "name": "Modelo de datos / Data Assets / tablas",
+      "group": "ARQUITECTURA",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "AssetManager",
+        "PrimaryDataAssets",
+        "DataAssets",
+        "DataTables"
+      ],
+      "questions": [
+        "fuente de verdad",
+        "IDs estables",
+        "versionado",
+        "soft references",
+        "carga"
+      ]
+    },
+    {
+      "id": "TAGS",
+      "name": "Gameplay Tags / taxonomía runtime",
+      "group": "ARQUITECTURA",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "GameplayTags",
+        "TagQueries",
+        "GameplayEvents"
+      ],
+      "questions": [
+        "jerarquía",
+        "nombres",
+        "eventos",
+        "estados",
+        "compatibilidad con GAS"
+      ]
+    },
+    {
+      "id": "ASSET",
+      "name": "Gestión de assets / dependencias / naming",
+      "group": "PRODUCCION",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "AssetManager",
+        "PrimaryAssetLabels",
+        "DataValidation",
+        "Redirectors"
+      ],
+      "questions": [
+        "naming",
+        "ownership",
+        "cooking",
+        "referencias",
+        "duplicados",
+        "presupuestos"
+      ]
+    },
+    {
+      "id": "AI",
+      "name": "IA de NPCs / enemigos / compañeros",
+      "group": "GAMEPLAY",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "StateTree",
+        "BehaviorTrees",
+        "Blackboards",
+        "AIController",
+        "AIPerception",
+        "EQS",
+        "SmartObjects"
+      ],
+      "questions": [
+        "percepción",
+        "decisión",
+        "rutinas",
+        "combate",
+        "cooperación",
+        "debug"
+      ]
+    },
+    {
+      "id": "INTERACT",
+      "name": "Interacción / affordances / Smart Objects",
+      "group": "GAMEPLAY",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "SmartObjects",
+        "GameplayTags",
+        "InteractionComponents",
+        "GameplayAbilities"
+      ],
+      "questions": [
+        "qué es interactuable",
+        "prioridad",
+        "contexto",
+        "feedback",
+        "uso por IA"
+      ]
+    },
+    {
+      "id": "INV",
+      "name": "Inventario / objetos / equipo",
+      "group": "SISTEMA",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "PrimaryDataAssets",
+        "InventoryComponent",
+        "GameplayTags",
+        "SaveGame"
+      ],
+      "questions": [
+        "slots",
+        "peso",
+        "stacking",
+        "equipamiento",
+        "objetos narrativos",
+        "persistencia"
+      ]
+    },
+    {
+      "id": "ECON",
+      "name": "Economía / recompensas / loot",
+      "group": "SISTEMA",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "RewardTables",
+        "LootTables",
+        "EconomyData",
+        "GameplayTags"
+      ],
+      "questions": [
+        "monedas",
+        "fuentes",
+        "sumideros",
+        "rareza",
+        "recompensa",
+        "anti-grind"
+      ]
+    },
+    {
+      "id": "CRAFT",
+      "name": "Mejoras / crafting / progresión de equipo",
+      "group": "SISTEMA",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "UpgradeData",
+        "Recipes",
+        "PrimaryDataAssets",
+        "GameplayEffects"
+      ],
+      "questions": [
+        "materiales",
+        "recetas",
+        "mejoras",
+        "coste",
+        "sinergia con barco-hogar"
+      ]
+    },
+    {
+      "id": "PHYS",
+      "name": "Física / colisiones / navegación física",
+      "group": "TECNOLOGIA",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "Chaos",
+        "CollisionProfiles",
+        "PhysicsMaterials",
+        "NavMesh"
+      ],
+      "questions": [
+        "canales",
+        "traces",
+        "masa",
+        "fricción",
+        "estabilidad",
+        "determinismo suficiente"
+      ]
+    },
+    {
+      "id": "DIALOG",
+      "name": "Diálogo / condiciones / barks",
+      "group": "NARRATIVA",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "DialogueData",
+        "GameplayTags",
+        "WorldState",
+        "Localization"
+      ],
+      "questions": [
+        "condiciones",
+        "memoria",
+        "barks",
+        "silencios",
+        "variaciones",
+        "localización"
+      ]
+    },
+    {
+      "id": "CINE",
+      "name": "Cinemáticas / secuencias / puesta en escena",
+      "group": "NARRATIVA",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "Sequencer",
+        "LevelSequence",
+        "CameraCuts",
+        "ControlRig"
+      ],
+      "questions": [
+        "qué merece cinemática",
+        "duración",
+        "skip",
+        "branching",
+        "transición a gameplay"
+      ]
+    },
+    {
+      "id": "ONBOARD",
+      "name": "Onboarding / tutorialización / primeras horas",
+      "group": "UX",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A2",
+      "unreal_targets": [
+        "TutorialData",
+        "GameplayTags",
+        "CommonUI",
+        "AnalyticsHooks"
+      ],
+      "questions": [
+        "enseñar sin popup",
+        "orden",
+        "recuperación",
+        "ayuda contextual",
+        "primeros 30 minutos"
+      ]
+    },
+    {
+      "id": "LOC",
+      "name": "Localización / internacionalización",
+      "group": "PRODUCCION",
+      "priority": "MEDIA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "LocalizationDashboard",
+        "StringTables",
+        "FText",
+        "Commandlets"
+      ],
+      "questions": [
+        "idiomas",
+        "texto fuente",
+        "contexto traductor",
+        "fuentes",
+        "layout",
+        "QA lingüístico"
+      ]
+    },
+    {
+      "id": "PCG",
+      "name": "PCG / biomas / poblamiento procedural",
+      "group": "MUNDO",
+      "priority": "MEDIA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "PCGFramework",
+        "PCGGraphs",
+        "WorldPartition",
+        "DataLayers"
+      ],
+      "questions": [
+        "qué proceduralizar",
+        "semillas",
+        "arte dirigido",
+        "runtime/editor",
+        "presupuesto"
+      ]
+    },
+    {
+      "id": "STREAM",
+      "name": "Streaming / Data Layers / HLOD / fast travel",
+      "group": "MUNDO",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "WorldPartition",
+        "DataLayers",
+        "HLOD",
+        "LevelInstances",
+        "StreamingSources"
+      ],
+      "questions": [
+        "celdas",
+        "capas por estado",
+        "transiciones",
+        "teletransporte",
+        "memoria",
+        "HLOD"
+      ]
+    },
+    {
+      "id": "RENDER",
+      "name": "Rendering / iluminación / materiales",
+      "group": "ARTE",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "Lumen",
+        "Nanite",
+        "Materials",
+        "VirtualTextures",
+        "PostProcess"
+      ],
+      "questions": [
+        "presupuesto visual",
+        "iluminación",
+        "materiales",
+        "distancia",
+        "fallbacks",
+        "legibilidad"
+      ]
+    },
+    {
+      "id": "QA",
+      "name": "QA automatizado / regresión / screenshots",
+      "group": "PRODUCCION",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "AutomationFramework",
+        "FunctionalTests",
+        "Gauntlet",
+        "ScreenshotComparison",
+        "DataValidation"
+      ],
+      "questions": [
+        "smoke",
+        "feature tests",
+        "content stress",
+        "golden paths",
+        "screenshots",
+        "bloqueos de promoción"
+      ]
+    },
+    {
+      "id": "PROFILE",
+      "name": "Profiling / presupuestos CPU GPU memoria",
+      "group": "PRODUCCION",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "UnrealInsights",
+        "StatCommands",
+        "RenderDoc",
+        "MemoryInsights"
+      ],
+      "questions": [
+        "frame budget",
+        "CPU",
+        "GPU",
+        "memoria",
+        "streaming",
+        "telemetría de build"
+      ]
+    },
+    {
+      "id": "BUILD",
+      "name": "Build / cook / package / CI",
+      "group": "PRODUCCION",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "BuildGraph",
+        "UAT",
+        "BuildCookRun",
+        "ProjectLauncher"
+      ],
+      "questions": [
+        "targets",
+        "configuraciones",
+        "automatización",
+        "artefactos",
+        "smoke tests",
+        "promoción de build"
+      ]
+    },
+    {
+      "id": "CRASH",
+      "name": "Crash reporting / diagnóstico",
+      "group": "PRODUCCION",
+      "priority": "MEDIA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "CrashReporter",
+        "Symbols",
+        "Logs",
+        "Telemetry"
+      ],
+      "questions": [
+        "símbolos",
+        "entorno",
+        "repro",
+        "clasificación",
+        "regresión"
+      ]
+    },
+    {
+      "id": "SCAL",
+      "name": "Escalabilidad / perfiles de plataforma",
+      "group": "PRODUCCION",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "Scalability",
+        "DeviceProfiles",
+        "QualitySettings"
+      ],
+      "questions": [
+        "PC tiers",
+        "consolas",
+        "30/60 fps",
+        "sombras",
+        "foliage",
+        "resolution scaling"
+      ]
+    },
+    {
+      "id": "SOURCE",
+      "name": "Source control / trabajo paralelo",
+      "group": "PRODUCCION",
+      "priority": "MEDIA",
+      "pollable": false,
+      "automation": "A2",
+      "unreal_targets": [
+        "OneFilePerActor",
+        "SourceControl",
+        "WorldPartition"
+      ],
+      "questions": [
+        "ownership",
+        "locks",
+        "naming",
+        "branching",
+        "integración"
+      ]
+    },
+    {
+      "id": "TELEM",
+      "name": "Playtest / telemetría / balance",
+      "group": "PRODUCCION",
+      "priority": "MEDIA",
+      "pollable": false,
+      "automation": "A2",
+      "unreal_targets": [
+        "AnalyticsHooks",
+        "GameplayTags",
+        "CSVProfiler",
+        "CustomEvents"
+      ],
+      "questions": [
+        "qué medir",
+        "privacidad",
+        "funnels",
+        "fricción",
+        "balance",
+        "comparativas"
+      ]
+    },
+    {
+      "id": "PLATFORM",
+      "name": "Plataformas / certificación / mandos",
+      "group": "PRODUCCION",
+      "priority": "MEDIA",
+      "pollable": false,
+      "automation": "A2",
+      "unreal_targets": [
+        "EnhancedInput",
+        "CommonUI",
+        "DeviceProfiles",
+        "SaveGame"
+      ],
+      "questions": [
+        "mandos",
+        "suspend/resume",
+        "safe zones",
+        "certificación",
+        "almacenamiento",
+        "idiomas"
+      ]
+    },
+    {
+      "id": "ONLINE",
+      "name": "Online / cooperación futura",
+      "group": "OPCIONAL",
+      "priority": "BAJA",
+      "pollable": false,
+      "automation": "A1",
+      "unreal_targets": [
+        "OnlineSubsystem",
+        "Replication",
+        "ReplicationGraph"
+      ],
+      "questions": [
+        "single-player primero",
+        "co-op posible",
+        "autoridad",
+        "replicación",
+        "save ownership"
+      ]
     }
   ],
   "current_decisions": [
@@ -519,7 +1081,19 @@
       "contrast": "C · Espiral del Horizonte",
       "functional_reference": "A · Velas del Origen",
       "unreal_ready": false,
-      "reason": "Bake-Off visual cerrado; falta integración física/jugable antes de READY_UNREAL."
+      "reason": "Bake-Off visual cerrado; falta integración física/jugable antes de READY_UNREAL.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": true,
+        "cqc_passed": true,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
     },
     {
       "id": "DEC-MOLINO-001",
@@ -529,7 +1103,19 @@
       "author_choice": null,
       "poll_id": "POLL-MOLINO-001",
       "unreal_ready": false,
-      "reason": "Encuesta informa; confirmación humana pendiente."
+      "reason": "Encuesta informa; confirmación humana pendiente.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": false,
+        "cqc_passed": false,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
     },
     {
       "id": "DEC-ADV-001",
@@ -538,7 +1124,19 @@
       "state": "VARIANTES",
       "author_choice": null,
       "unreal_ready": false,
-      "reason": "Fase maestra actual: regiones, ciudades, objetivos y reencuentros."
+      "reason": "Fase maestra actual: regiones, ciudades, objetivos y reencuentros.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": false,
+        "cqc_passed": false,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
     },
     {
       "id": "DEC-MOV-001",
@@ -567,7 +1165,19 @@
           "risk": "Mayor complejidad de animación y tutorialización."
         }
       ],
-      "next_test": "Prototipo gris de 90 segundos por variante con mismo recorrido y métricas de control."
+      "next_test": "Prototipo gris de 90 segundos por variante con mismo recorrido y métricas de control.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": false,
+        "cqc_passed": false,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
     },
     {
       "id": "DEC-MAG-001",
@@ -596,7 +1206,19 @@
           "risk": "Puede parecer sistema elemental clásico si no se diferencia."
         }
       ],
-      "next_test": "Diseñar 3 técnicas por variante y probar combate + exploración."
+      "next_test": "Diseñar 3 técnicas por variante y probar combate + exploración.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": false,
+        "cqc_passed": false,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
     },
     {
       "id": "DEC-ABIL-001",
@@ -625,7 +1247,19 @@
           "risk": "Coste sistémico y de QA mayor."
         }
       ],
-      "next_test": "Una misma barrera con tres soluciones y retorno posterior."
+      "next_test": "Una misma barrera con tres soluciones y retorno posterior.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": false,
+        "cqc_passed": false,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
     },
     {
       "id": "DEC-SYN-001",
@@ -654,7 +1288,19 @@
           "risk": "Complejidad alta."
         }
       ],
-      "next_test": "Simular 6 parejas y comprobar que ninguna sinergia domina siempre."
+      "next_test": "Simular 6 parejas y comprobar que ninguna sinergia domina siempre.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": false,
+        "cqc_passed": false,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
     },
     {
       "id": "DEC-PATH-001",
@@ -683,7 +1329,100 @@
           "risk": "Necesita pacing muy fino."
         }
       ],
-      "next_test": "Aplicar 1 consecuencia principal + hasta 2 ecos a una misión de prueba."
+      "next_test": "Aplicar 1 consecuencia principal + hasta 2 ecos a una misión de prueba.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": false,
+        "cqc_passed": false,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
     }
-  ]
+  ],
+  "pipeline": [
+    {
+      "step": 1,
+      "id": "BANCO",
+      "label": "Idea / necesidad",
+      "gate": "Problema y objetivo definidos"
+    },
+    {
+      "step": 2,
+      "id": "VARIANTES",
+      "label": "Variantes comparables",
+      "gate": "Misma función, restricciones y criterio de comparación"
+    },
+    {
+      "step": 3,
+      "id": "CQC",
+      "label": "CQC",
+      "gate": "Artístico + jugable + técnico + narrativo cuando aplique"
+    },
+    {
+      "step": 4,
+      "id": "ENCUESTA_OPCIONAL",
+      "label": "Segunda opinión",
+      "gate": "Sólo cuando la percepción externa aporte valor"
+    },
+    {
+      "step": 5,
+      "id": "CONFIRMACION_AUTOR",
+      "label": "Confirmación humana",
+      "gate": "Elección y razón explícitas"
+    },
+    {
+      "step": 6,
+      "id": "READY_UNREAL",
+      "label": "Ready Unreal",
+      "gate": "Contrato de datos, targets Unreal, dependencias y aceptación definidos"
+    },
+    {
+      "step": 7,
+      "id": "PRODUCCION",
+      "label": "Producción",
+      "gate": "Implementación + assets + tests + presupuesto"
+    },
+    {
+      "step": 8,
+      "id": "VALIDACION",
+      "label": "Validación",
+      "gate": "Build jugable, regresión, profiling y Data Validation"
+    },
+    {
+      "step": 9,
+      "id": "CANON",
+      "label": "Canon",
+      "gate": "Decisión humana final y aprendizaje archivado"
+    }
+  ],
+  "production_gates": [
+    "author_confirmed",
+    "choice_locked",
+    "cqc_passed",
+    "acceptance_criteria",
+    "unreal_targets",
+    "dependencies",
+    "data_contract",
+    "regression_tests",
+    "performance_budget",
+    "save_migration_impact"
+  ],
+  "production_policy": {
+    "production_lane_states": [
+      "READY_UNREAL",
+      "PRODUCCION",
+      "VALIDACION",
+      "CANON"
+    ],
+    "manifest_rule": "El manifiesto de producción sólo puede contener decisiones en Production Lane y con author_confirmed=true.",
+    "poll_rule": "El resultado de una encuesta nunca satisface author_confirmed.",
+    "regression_rule": "Un BUG_REGRESION bloquea promoción.",
+    "unreal_rule": "Toda decisión READY_UNREAL debe declarar targets Unreal, contrato de datos, dependencias, criterios de aceptación y pruebas.",
+    "data_driven_rule": "Preferir Primary Data Assets/Data Assets, Gameplay Tags y configuración data-driven cuando evite lógica duplicada."
+  }
 }
