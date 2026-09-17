@@ -1,5 +1,5 @@
 [build]
-  command = "bash netlify-build.sh && bash ps4-audio-build.sh"
+  command = "bash netlify-portal-build.sh"
   publish = "build/site"
 
 [build.environment]
