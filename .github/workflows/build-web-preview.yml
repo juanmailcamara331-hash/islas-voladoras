@@ -49,8 +49,18 @@ jobs:
           rm -rf build/pages
           mkdir -p build/pages/game build/pages/assets
           cp portal/index.html portal/styles.css portal/app.js portal/ps4.html portal/reel.html portal/404.html portal/manifest.webmanifest portal/content-manifest.json build/pages/
+          cp portal/decision-engine.html portal/ISL_DECISION_ENGINE_CURRENT.json portal/ps4-runtime-hotfix.js build/pages/
           cp -a portal/labs build/pages/
+          cp -a portal/poll build/pages/
           cp -a portal/assets/. build/pages/assets/
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('build/pages/ps4.html')
+          s=p.read_text(encoding='utf-8')
+          if 'ps4-runtime-hotfix.js' not in s:
+              s=s.replace('</body>','<script defer src="ps4-runtime-hotfix.js"></script>\n</body>')
+          p.write_text(s,encoding='utf-8')
+          PY
           touch build/pages/.nojekyll
           cp -a build/web/. build/pages/game/
       - name: CQC mínimo
@@ -60,12 +70,17 @@ jobs:
           test -f build/pages/styles.css
           test -f build/pages/app.js
           test -f build/pages/ps4.html
+          test -f build/pages/ps4-runtime-hotfix.js
+          test -f build/pages/decision-engine.html
+          test -f build/pages/poll/molino.html
+          test -f build/pages/poll/gracias.html
           test -f build/pages/reel.html
           test -f build/pages/game/index.html
           test -f build/pages/labs/wind.html
           test -f build/pages/labs/method.html
           test -f build/pages/assets/airships-last-waltz-pages.mp3
           test -f build/pages/assets/isl-tv-reel-pages.mp4
+          grep -q "ps4-runtime-hotfix.js" build/pages/ps4.html
           grep -q "Crear es alterar el mundo" build/pages/index.html
           echo "CQC Pages OK"
       - name: Upload Pages artifact
