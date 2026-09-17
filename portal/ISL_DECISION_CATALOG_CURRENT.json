@@ -1,44 +1,689 @@
 {
-  "version":"0.1",
-  "updated_at":"2026-09-18",
-  "purpose":"Matriz maestra de decisiones para convertir diseño, validación y producción de ISL en un flujo trazable y exportable a Unreal.",
-  "rule":"Ninguna encuesta ni automatización convierte una opción en CANON. La confirmación humana sigue siendo obligatoria.",
-  "states":["BANCO","VARIANTES","CQC","ENCUESTA_OPCIONAL","CONFIRMACION_AUTOR","READY_UNREAL","PRODUCCION","CANON","ESPERA","REJECTED_LEARNED"],
-  "automation_levels":{
-    "A0":"Manual creativo",
-    "A1":"Plantillas y checklist automáticos",
-    "A2":"Comparación/CQC/encuesta asistidos",
-    "A3":"Handoff Unreal generable desde decisión aprobada"
-  },
-  "domains":[
-    {"id":"MOV","name":"Movimiento y locomoción","group":"GAMEPLAY","priority":"ALTA","pollable":true,"automation":"A3","unreal_targets":["CharacterMovement","AnimationBlueprint","InputActions"],"questions":["velocidad y aceleración","salto","planeo","trepar","dash","inercia","movimiento contextual"]},
-    {"id":"COMBAT","name":"Combate y ritmo JRPG","group":"GAMEPLAY","priority":"ALTA","pollable":true,"automation":"A3","unreal_targets":["CombatData","Abilities","TurnRules","VFXHooks"],"questions":["ritmo de turnos","acciones base","defensa","riesgo/recompensa","combos de tripulación"]},
-    {"id":"MAG","name":"Magias / técnicas","group":"GAMEPLAY","priority":"ALTA","pollable":true,"automation":"A3","unreal_targets":["GameplayAbilities","DataAssets","VFX","SFX"],"questions":["familias","costes","telegraph","impacto sistémico","uso fuera de combate"]},
-    {"id":"ABIL","name":"Habilidades y capacidades combinadas","group":"GAMEPLAY","priority":"ALTA","pollable":true,"automation":"A3","unreal_targets":["GameplayAbilities","InteractionTags","TraversalRules"],"questions":["habilidades individuales","habilidades combinadas","desbloqueos","retornos a zonas"]},
-    {"id":"PERS","name":"Personalidad emergente del capitán","group":"IDENTIDAD","priority":"ALTA","pollable":false,"automation":"A2","unreal_targets":["WorldState","RelationshipModel","BehaviorTags"],"questions":["qué se observa","qué pesa","anti-farmeo","qué nunca se etiqueta al jugador"]},
-    {"id":"SYN","name":"Sinergias de tripulación","group":"RELACIONES","priority":"ALTA","pollable":true,"automation":"A3","unreal_targets":["PartySynergyData","ComboAbilities","RelationshipHooks"],"questions":["duplas","tríos","sinergias de exploración","sinergias de combate"]},
-    {"id":"EVO","name":"Evolución / mutación","group":"TRANSFORMACION","priority":"ALTA","pollable":false,"automation":"A3","unreal_targets":["EvolutionData","WorldState","AbilityUnlocks","VisualState"],"questions":["señales débiles","hitos","ramas","irreversibilidad","efectos corporales/jugables"]},
-    {"id":"PATH","name":"Caminos y bifurcaciones con consecuencias","group":"NARRATIVA_SISTEMICA","priority":"ALTA","pollable":true,"automation":"A3","unreal_targets":["QuestState","WorldState","SaveGame","LevelVariants"],"questions":["coste","consecuencia principal","ecos","retorno tardío","rutas que se cierran/abren"]},
-    {"id":"REL","name":"Relaciones y memoria","group":"RELACIONES","priority":"ALTA","pollable":false,"automation":"A3","unreal_targets":["RelationshipModel","DialogueConditions","WorldState"],"questions":["gestos","silencios","cooperación","memoria tardía","vida de nave"]},
-    {"id":"SHIP","name":"Barco-hogar y tripulación","group":"MUNDO","priority":"ALTA","pollable":true,"automation":"A3","unreal_targets":["ShipState","HubUpgrades","CrewSlots","WorldPartitionHooks"],"questions":["crecimiento","habitaciones","rutinas","mejoras","cambios por tripulación"]},
-    {"id":"WORLD","name":"Regiones, ciudades e islas","group":"MUNDO","priority":"ALTA","pollable":true,"automation":"A3","unreal_targets":["WorldPartition","LevelData","BiomeData","FastTravel"],"questions":["función de región","silueta","actividad","retorno","identidad cultural"]},
-    {"id":"QUEST","name":"Misiones / actividades / minijuegos","group":"CONTENIDO","priority":"MEDIA","pollable":true,"automation":"A3","unreal_targets":["QuestData","ActivityData","RewardTables"],"questions":["objetivo","bucle","variantes","consecuencia","reutilización"]},
-    {"id":"ENEMY","name":"Enemigos / criaturas / jefes","group":"CONTENIDO","priority":"MEDIA","pollable":true,"automation":"A3","unreal_targets":["EnemyData","BehaviorTrees","Abilities","Loot"],"questions":["silueta","rol táctico","hábitat","telegraph","sinergia con mundo"]},
-    {"id":"WIND","name":"Viento / navegación / receptores","group":"SISTEMA","priority":"ALTA","pollable":true,"automation":"A3","unreal_targets":["WindSystem","PhysicsParameters","TraversalData"],"questions":["captación","dirección","intensidad","estabilidad","lectura"]},
-    {"id":"ART","name":"Arte 2D / 3D / arquitectura","group":"ARTE","priority":"MEDIA","pollable":true,"automation":"A3","unreal_targets":["MeshCatalog","MaterialInstances","LevelArt"],"questions":["silueta","ADN ISL","materiales","LOD","modularidad"]},
-    {"id":"ANIM","name":"Animación / poses / expresividad","group":"ARTE","priority":"MEDIA","pollable":true,"automation":"A3","unreal_targets":["AnimationBlueprint","Montages","StateMachines"],"questions":["idle","locomoción","combate","reacciones","microgestos"]},
-    {"id":"VFX","name":"VFX / feedback","group":"ARTE","priority":"MEDIA","pollable":true,"automation":"A3","unreal_targets":["NiagaraSystems","GameplayCues"],"questions":["legibilidad","intensidad","jerarquía","viento","magia"]},
-    {"id":"AUDIO","name":"Música / SFX / ambiente","group":"AUDIO","priority":"MEDIA","pollable":true,"automation":"A3","unreal_targets":["MetaSounds","SoundCues","MusicState"],"questions":["leitmotifs","feedback","ambiente","transiciones","silencio"]},
-    {"id":"UI","name":"UI / UX / mapa / inventario","group":"UX","priority":"MEDIA","pollable":true,"automation":"A3","unreal_targets":["UMG","CommonUI","InputPrompts"],"questions":["HUD","menús","mapa","inventario","accesibilidad"]},
-    {"id":"CAM","name":"Cámara / sensación / encuadre","group":"UX","priority":"MEDIA","pollable":true,"automation":"A3","unreal_targets":["CameraRig","SpringArm","CameraModifiers"],"questions":["exploración","combate","interiores","cinemática contextual"]},
-    {"id":"SAVE","name":"Huella persistente / guardado / memoria del mundo","group":"TECNOLOGIA","priority":"ALTA","pollable":false,"automation":"A3","unreal_targets":["SaveGame","WorldStateSubsystem","Versioning"],"questions":["qué persiste","granularidad","migraciones","debug","rollback"]},
-    {"id":"PERF","name":"Rendimiento / streaming / escalabilidad","group":"TECNOLOGIA","priority":"MEDIA","pollable":false,"automation":"A2","unreal_targets":["Scalability","WorldPartition","LODs","Profiling"],"questions":["presupuesto","móvil no objetivo","PC/consola","streaming","memoria"]},
-    {"id":"ACCESS","name":"Accesibilidad y opciones","group":"UX","priority":"MEDIA","pollable":true,"automation":"A2","unreal_targets":["Settings","Input","UI"],"questions":["remapeo","tamaño texto","contraste","dificultad","ayudas"]},
-    {"id":"NARR","name":"Aventura principal / sagas / reencuentros","group":"NARRATIVA","priority":"ALTA","pollable":true,"automation":"A2","unreal_targets":["QuestGraph","NarrativeData","WorldState"],"questions":["orden de reencuentros","objetivos intermedios","misterios","ritmo","retornos"]}
+  "version": "0.1",
+  "updated_at": "2026-09-18",
+  "purpose": "Matriz maestra de decisiones para convertir diseño, validación y producción de ISL en un flujo trazable y exportable a Unreal.",
+  "rule": "Ninguna encuesta ni automatización convierte una opción en CANON. La confirmación humana sigue siendo obligatoria.",
+  "states": [
+    "BANCO",
+    "VARIANTES",
+    "CQC",
+    "ENCUESTA_OPCIONAL",
+    "CONFIRMACION_AUTOR",
+    "READY_UNREAL",
+    "PRODUCCION",
+    "CANON",
+    "ESPERA",
+    "REJECTED_LEARNED"
   ],
-  "current_decisions":[
-    {"id":"DEC-WIND-001","domain":"WIND","title":"Receptor del viento · Bake-Off 01","state":"CQC","author_choice":"B","choice_label":"Pétalos Celestes","contrast":"C · Espiral del Horizonte","functional_reference":"A · Velas del Origen","unreal_ready":false,"reason":"Bake-Off visual cerrado; falta integración física/jugable antes de READY_UNREAL."},
-    {"id":"DEC-MOLINO-001","domain":"ART","title":"Molino R1","state":"ENCUESTA_OPCIONAL","author_choice":null,"poll_id":"POLL-MOLINO-001","unreal_ready":false,"reason":"Encuesta informa; confirmación humana pendiente."},
-    {"id":"DEC-ADV-001","domain":"NARR","title":"Columna vertebral de aventura principal","state":"VARIANTES","author_choice":null,"unreal_ready":false,"reason":"Fase maestra actual: regiones, ciudades, objetivos y reencuentros."}
+  "automation_levels": {
+    "A0": "Manual creativo",
+    "A1": "Plantillas y checklist automáticos",
+    "A2": "Comparación/CQC/encuesta asistidos",
+    "A3": "Handoff Unreal generable desde decisión aprobada"
+  },
+  "domains": [
+    {
+      "id": "MOV",
+      "name": "Movimiento y locomoción",
+      "group": "GAMEPLAY",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "CharacterMovement",
+        "AnimationBlueprint",
+        "InputActions"
+      ],
+      "questions": [
+        "velocidad y aceleración",
+        "salto",
+        "planeo",
+        "trepar",
+        "dash",
+        "inercia",
+        "movimiento contextual"
+      ]
+    },
+    {
+      "id": "COMBAT",
+      "name": "Combate y ritmo JRPG",
+      "group": "GAMEPLAY",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "CombatData",
+        "Abilities",
+        "TurnRules",
+        "VFXHooks"
+      ],
+      "questions": [
+        "ritmo de turnos",
+        "acciones base",
+        "defensa",
+        "riesgo/recompensa",
+        "combos de tripulación"
+      ]
+    },
+    {
+      "id": "MAG",
+      "name": "Magias / técnicas",
+      "group": "GAMEPLAY",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "GameplayAbilities",
+        "DataAssets",
+        "VFX",
+        "SFX"
+      ],
+      "questions": [
+        "familias",
+        "costes",
+        "telegraph",
+        "impacto sistémico",
+        "uso fuera de combate"
+      ]
+    },
+    {
+      "id": "ABIL",
+      "name": "Habilidades y capacidades combinadas",
+      "group": "GAMEPLAY",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "GameplayAbilities",
+        "InteractionTags",
+        "TraversalRules"
+      ],
+      "questions": [
+        "habilidades individuales",
+        "habilidades combinadas",
+        "desbloqueos",
+        "retornos a zonas"
+      ]
+    },
+    {
+      "id": "PERS",
+      "name": "Personalidad emergente del capitán",
+      "group": "IDENTIDAD",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A2",
+      "unreal_targets": [
+        "WorldState",
+        "RelationshipModel",
+        "BehaviorTags"
+      ],
+      "questions": [
+        "qué se observa",
+        "qué pesa",
+        "anti-farmeo",
+        "qué nunca se etiqueta al jugador"
+      ]
+    },
+    {
+      "id": "SYN",
+      "name": "Sinergias de tripulación",
+      "group": "RELACIONES",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "PartySynergyData",
+        "ComboAbilities",
+        "RelationshipHooks"
+      ],
+      "questions": [
+        "duplas",
+        "tríos",
+        "sinergias de exploración",
+        "sinergias de combate"
+      ]
+    },
+    {
+      "id": "EVO",
+      "name": "Evolución / mutación",
+      "group": "TRANSFORMACION",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "EvolutionData",
+        "WorldState",
+        "AbilityUnlocks",
+        "VisualState"
+      ],
+      "questions": [
+        "señales débiles",
+        "hitos",
+        "ramas",
+        "irreversibilidad",
+        "efectos corporales/jugables"
+      ]
+    },
+    {
+      "id": "PATH",
+      "name": "Caminos y bifurcaciones con consecuencias",
+      "group": "NARRATIVA_SISTEMICA",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "QuestState",
+        "WorldState",
+        "SaveGame",
+        "LevelVariants"
+      ],
+      "questions": [
+        "coste",
+        "consecuencia principal",
+        "ecos",
+        "retorno tardío",
+        "rutas que se cierran/abren"
+      ]
+    },
+    {
+      "id": "REL",
+      "name": "Relaciones y memoria",
+      "group": "RELACIONES",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "RelationshipModel",
+        "DialogueConditions",
+        "WorldState"
+      ],
+      "questions": [
+        "gestos",
+        "silencios",
+        "cooperación",
+        "memoria tardía",
+        "vida de nave"
+      ]
+    },
+    {
+      "id": "SHIP",
+      "name": "Barco-hogar y tripulación",
+      "group": "MUNDO",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "ShipState",
+        "HubUpgrades",
+        "CrewSlots",
+        "WorldPartitionHooks"
+      ],
+      "questions": [
+        "crecimiento",
+        "habitaciones",
+        "rutinas",
+        "mejoras",
+        "cambios por tripulación"
+      ]
+    },
+    {
+      "id": "WORLD",
+      "name": "Regiones, ciudades e islas",
+      "group": "MUNDO",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "WorldPartition",
+        "LevelData",
+        "BiomeData",
+        "FastTravel"
+      ],
+      "questions": [
+        "función de región",
+        "silueta",
+        "actividad",
+        "retorno",
+        "identidad cultural"
+      ]
+    },
+    {
+      "id": "QUEST",
+      "name": "Misiones / actividades / minijuegos",
+      "group": "CONTENIDO",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "QuestData",
+        "ActivityData",
+        "RewardTables"
+      ],
+      "questions": [
+        "objetivo",
+        "bucle",
+        "variantes",
+        "consecuencia",
+        "reutilización"
+      ]
+    },
+    {
+      "id": "ENEMY",
+      "name": "Enemigos / criaturas / jefes",
+      "group": "CONTENIDO",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "EnemyData",
+        "BehaviorTrees",
+        "Abilities",
+        "Loot"
+      ],
+      "questions": [
+        "silueta",
+        "rol táctico",
+        "hábitat",
+        "telegraph",
+        "sinergia con mundo"
+      ]
+    },
+    {
+      "id": "WIND",
+      "name": "Viento / navegación / receptores",
+      "group": "SISTEMA",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "WindSystem",
+        "PhysicsParameters",
+        "TraversalData"
+      ],
+      "questions": [
+        "captación",
+        "dirección",
+        "intensidad",
+        "estabilidad",
+        "lectura"
+      ]
+    },
+    {
+      "id": "ART",
+      "name": "Arte 2D / 3D / arquitectura",
+      "group": "ARTE",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "MeshCatalog",
+        "MaterialInstances",
+        "LevelArt"
+      ],
+      "questions": [
+        "silueta",
+        "ADN ISL",
+        "materiales",
+        "LOD",
+        "modularidad"
+      ]
+    },
+    {
+      "id": "ANIM",
+      "name": "Animación / poses / expresividad",
+      "group": "ARTE",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "AnimationBlueprint",
+        "Montages",
+        "StateMachines"
+      ],
+      "questions": [
+        "idle",
+        "locomoción",
+        "combate",
+        "reacciones",
+        "microgestos"
+      ]
+    },
+    {
+      "id": "VFX",
+      "name": "VFX / feedback",
+      "group": "ARTE",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "NiagaraSystems",
+        "GameplayCues"
+      ],
+      "questions": [
+        "legibilidad",
+        "intensidad",
+        "jerarquía",
+        "viento",
+        "magia"
+      ]
+    },
+    {
+      "id": "AUDIO",
+      "name": "Música / SFX / ambiente",
+      "group": "AUDIO",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "MetaSounds",
+        "SoundCues",
+        "MusicState"
+      ],
+      "questions": [
+        "leitmotifs",
+        "feedback",
+        "ambiente",
+        "transiciones",
+        "silencio"
+      ]
+    },
+    {
+      "id": "UI",
+      "name": "UI / UX / mapa / inventario",
+      "group": "UX",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "UMG",
+        "CommonUI",
+        "InputPrompts"
+      ],
+      "questions": [
+        "HUD",
+        "menús",
+        "mapa",
+        "inventario",
+        "accesibilidad"
+      ]
+    },
+    {
+      "id": "CAM",
+      "name": "Cámara / sensación / encuadre",
+      "group": "UX",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "CameraRig",
+        "SpringArm",
+        "CameraModifiers"
+      ],
+      "questions": [
+        "exploración",
+        "combate",
+        "interiores",
+        "cinemática contextual"
+      ]
+    },
+    {
+      "id": "SAVE",
+      "name": "Huella persistente / guardado / memoria del mundo",
+      "group": "TECNOLOGIA",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "SaveGame",
+        "WorldStateSubsystem",
+        "Versioning"
+      ],
+      "questions": [
+        "qué persiste",
+        "granularidad",
+        "migraciones",
+        "debug",
+        "rollback"
+      ]
+    },
+    {
+      "id": "PERF",
+      "name": "Rendimiento / streaming / escalabilidad",
+      "group": "TECNOLOGIA",
+      "priority": "MEDIA",
+      "pollable": false,
+      "automation": "A2",
+      "unreal_targets": [
+        "Scalability",
+        "WorldPartition",
+        "LODs",
+        "Profiling"
+      ],
+      "questions": [
+        "presupuesto",
+        "móvil no objetivo",
+        "PC/consola",
+        "streaming",
+        "memoria"
+      ]
+    },
+    {
+      "id": "ACCESS",
+      "name": "Accesibilidad y opciones",
+      "group": "UX",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A2",
+      "unreal_targets": [
+        "Settings",
+        "Input",
+        "UI"
+      ],
+      "questions": [
+        "remapeo",
+        "tamaño texto",
+        "contraste",
+        "dificultad",
+        "ayudas"
+      ]
+    },
+    {
+      "id": "NARR",
+      "name": "Aventura principal / sagas / reencuentros",
+      "group": "NARRATIVA",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A2",
+      "unreal_targets": [
+        "QuestGraph",
+        "NarrativeData",
+        "WorldState"
+      ],
+      "questions": [
+        "orden de reencuentros",
+        "objetivos intermedios",
+        "misterios",
+        "ritmo",
+        "retornos"
+      ]
+    }
+  ],
+  "current_decisions": [
+    {
+      "id": "DEC-WIND-001",
+      "domain": "WIND",
+      "title": "Receptor del viento · Bake-Off 01",
+      "state": "CQC",
+      "author_choice": "B",
+      "choice_label": "Pétalos Celestes",
+      "contrast": "C · Espiral del Horizonte",
+      "functional_reference": "A · Velas del Origen",
+      "unreal_ready": false,
+      "reason": "Bake-Off visual cerrado; falta integración física/jugable antes de READY_UNREAL."
+    },
+    {
+      "id": "DEC-MOLINO-001",
+      "domain": "ART",
+      "title": "Molino R1",
+      "state": "ENCUESTA_OPCIONAL",
+      "author_choice": null,
+      "poll_id": "POLL-MOLINO-001",
+      "unreal_ready": false,
+      "reason": "Encuesta informa; confirmación humana pendiente."
+    },
+    {
+      "id": "DEC-ADV-001",
+      "domain": "NARR",
+      "title": "Columna vertebral de aventura principal",
+      "state": "VARIANTES",
+      "author_choice": null,
+      "unreal_ready": false,
+      "reason": "Fase maestra actual: regiones, ciudades, objetivos y reencuentros."
+    },
+    {
+      "id": "DEC-MOV-001",
+      "domain": "MOV",
+      "title": "Sensación base de locomoción",
+      "state": "VARIANTES",
+      "author_choice": null,
+      "unreal_ready": false,
+      "variants": [
+        {
+          "id": "A",
+          "name": "Ala Ligera",
+          "thesis": "Respuesta inmediata, salto limpio, corrección aérea generosa y lectura arcade elegante.",
+          "risk": "Puede perder peso y sensación de mundo físico."
+        },
+        {
+          "id": "B",
+          "name": "Viento con Peso",
+          "thesis": "Aceleración e inercia moderadas; el viento modifica trayectorias sin quitar control.",
+          "risk": "Puede sentirse lento si el ajuste de respuesta falla."
+        },
+        {
+          "id": "C",
+          "name": "Impulso Orgánico",
+          "thesis": "Movimiento base simple con impulsos contextuales, planeo y microinteracciones con el entorno.",
+          "risk": "Mayor complejidad de animación y tutorialización."
+        }
+      ],
+      "next_test": "Prototipo gris de 90 segundos por variante con mismo recorrido y métricas de control."
+    },
+    {
+      "id": "DEC-MAG-001",
+      "domain": "MAG",
+      "title": "Arquitectura de magias / técnicas",
+      "state": "VARIANTES",
+      "author_choice": null,
+      "unreal_ready": false,
+      "variants": [
+        {
+          "id": "A",
+          "name": "Técnicas de Trayectoria",
+          "thesis": "Las técnicas cambian según hábitos y experiencias acumuladas.",
+          "risk": "Puede resultar opaco."
+        },
+        {
+          "id": "B",
+          "name": "Resonancias de Tripulación",
+          "thesis": "Las técnicas emergen de relaciones y combinaciones entre personajes.",
+          "risk": "Dependencia excesiva del grupo."
+        },
+        {
+          "id": "C",
+          "name": "Afinidades del Mundo",
+          "thesis": "Viento, ruina, materia y criaturas alimentan familias técnicas contextuales.",
+          "risk": "Puede parecer sistema elemental clásico si no se diferencia."
+        }
+      ],
+      "next_test": "Diseñar 3 técnicas por variante y probar combate + exploración."
+    },
+    {
+      "id": "DEC-ABIL-001",
+      "domain": "ABIL",
+      "title": "Capacidades combinadas de exploración",
+      "state": "VARIANTES",
+      "author_choice": null,
+      "unreal_ready": false,
+      "variants": [
+        {
+          "id": "A",
+          "name": "Cadena",
+          "thesis": "Un personaje inicia una acción y otro la completa.",
+          "risk": "Puede sentirse guionizado."
+        },
+        {
+          "id": "B",
+          "name": "Superposición",
+          "thesis": "Dos habilidades independientes se solapan y generan una tercera posibilidad.",
+          "risk": "Más difícil de comunicar."
+        },
+        {
+          "id": "C",
+          "name": "Improvisación",
+          "thesis": "El entorno acepta múltiples combinaciones útiles sin receta fija.",
+          "risk": "Coste sistémico y de QA mayor."
+        }
+      ],
+      "next_test": "Una misma barrera con tres soluciones y retorno posterior."
+    },
+    {
+      "id": "DEC-SYN-001",
+      "domain": "SYN",
+      "title": "Sinergias de tripulación",
+      "state": "VARIANTES",
+      "author_choice": null,
+      "unreal_ready": false,
+      "variants": [
+        {
+          "id": "A",
+          "name": "Química Visible",
+          "thesis": "Sinergias explícitas en combate y exploración, fáciles de leer.",
+          "risk": "Puede sentirse demasiado gamificado."
+        },
+        {
+          "id": "B",
+          "name": "Memoria Compartida",
+          "thesis": "La relación cambia cómo cooperan sin mostrar una barra directa.",
+          "risk": "Menos legible."
+        },
+        {
+          "id": "C",
+          "name": "Roles Mutables",
+          "thesis": "La sinergia depende de contexto, trayectoria y estado del mundo.",
+          "risk": "Complejidad alta."
+        }
+      ],
+      "next_test": "Simular 6 parejas y comprobar que ninguna sinergia domina siempre."
+    },
+    {
+      "id": "DEC-PATH-001",
+      "domain": "PATH",
+      "title": "Bifurcaciones con huella real",
+      "state": "VARIANTES",
+      "author_choice": null,
+      "unreal_ready": false,
+      "variants": [
+        {
+          "id": "A",
+          "name": "Ruta Física",
+          "thesis": "El camino elegido altera accesos, estructuras y navegación futura.",
+          "risk": "Coste alto de variantes de nivel."
+        },
+        {
+          "id": "B",
+          "name": "Ruta Relacional",
+          "thesis": "El camino cambia quién ayuda, quién recuerda y cómo responde la tripulación.",
+          "risk": "Puede sentirse invisible si falta feedback."
+        },
+        {
+          "id": "C",
+          "name": "Ruta Híbrida Tardía",
+          "thesis": "Una consecuencia física inmediata deja un eco relacional o corporal mucho después.",
+          "risk": "Necesita pacing muy fino."
+        }
+      ],
+      "next_test": "Aplicar 1 consecuencia principal + hasta 2 ecos a una misión de prueba."
+    }
   ]
 }
