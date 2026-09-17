@@ -25,6 +25,12 @@ body.isl-media-open{overflow:hidden!important;overscroll-behavior:none!important
 :fullscreen *,:-webkit-full-screen *{max-width:100%!important}
 button,.btn,a,.control{transition:transform .16s cubic-bezier(.2,.78,.18,1),background-color .16s ease,border-color .16s ease!important}
 button:active,.btn:active,a:active,.control:active,.pressed{transform:translateY(1px) scale(.97)!important}
+
+/* Prevent intrinsic media size from expanding the Command Center grid. */
+.grid>*{min-width:0!important;max-width:100%!important}
+.mediaCard{min-width:0!important;max-width:100%!important;width:100%!important;overflow:hidden!important}
+.mediaCard video{display:block!important;width:100%!important;max-width:100%!important;min-width:0!important;height:210px!important;object-fit:cover!important;contain:size layout paint!important}
+
 @media(max-width:900px){
  html{overflow-x:hidden!important;overflow-y:auto!important}
  body{overflow-x:hidden!important;overflow-y:auto!important;min-height:100dvh!important;height:auto!important}
