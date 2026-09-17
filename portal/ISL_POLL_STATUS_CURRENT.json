@@ -1,0 +1,17 @@
+{
+  "updated_at":"2026-09-17T22:04:33Z",
+  "poll_id":"POLL-MOLINO-001",
+  "round":"PUBLICA_01",
+  "title":"Molino R1",
+  "question":"¿Qué molino te convence más?",
+  "url":"poll/molino.html",
+  "total_submissions":6,
+  "technical_tests_excluded":1,
+  "valid_votes":5,
+  "distribution":{"A":0,"B":1,"C":4},
+  "top_option":"C",
+  "top_option_label":"Espiral del Horizonte",
+  "author_confirmation":"PENDIENTE",
+  "promotion_target":"PRODUCCION_O_ESPERA_O_REJECTED_LEARNED",
+  "note":"La opción más votada informa la decisión; no pasa automáticamente a producción."
+}
