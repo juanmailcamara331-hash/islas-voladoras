@@ -8,8 +8,20 @@ mkdir -p build/site
 cp -a portal/. build/site/
 touch build/site/.nojekyll
 
+# Aísla el vídeo de Previs del cálculo de ancho del layout del Centro de Mandos.
+python - <<'PY'
+from pathlib import Path
+p=Path('build/site/index.html')
+s=p.read_text(encoding='utf-8')
+tag='<link rel="stylesheet" href="video-layout-fix.css">'
+if tag not in s:
+    s=s.replace('</head>', tag+'\n</head>')
+p.write_text(s, encoding='utf-8')
+PY
+
 # CQC del Centro de Mandos y de la encuesta pública.
 test -f build/site/index.html
+test -f build/site/video-layout-fix.css
 test -f build/site/ps4.html
 test -f build/site/ps4-runtime-hotfix.js
 test -f build/site/poll/molino.html
@@ -28,4 +40,4 @@ if [ -f build/site/assets/airships-last-waltz-master.mp3 ] && [ -f ps4-audio-bui
   fi
 fi
 
-echo "ISL Command Center build OK: portal completo + encuesta + assets. Godot fuera del pipeline."
+echo "ISL Command Center build OK: portal completo + vídeo aislado + encuesta + assets. Godot fuera del pipeline."
