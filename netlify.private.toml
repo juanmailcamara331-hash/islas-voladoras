@@ -1,0 +1,16 @@
+[build]
+  command = "bash netlify-private-build.sh"
+  publish = "build/private"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    X-Frame-Options = "DENY"
+    X-Permitted-Cross-Domain-Policies = "none"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cache-Control = "no-store, private"
+    X-Robots-Tag = "noindex, nofollow, noarchive"
