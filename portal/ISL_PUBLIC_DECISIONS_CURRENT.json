@@ -1,17 +1,171 @@
 {
-  "version":"0.1",
-  "updated_at":"2026-09-18",
-  "rule":"Las encuestas informan. La decisión final no se automatiza.",
-  "polls":[
-    {"id":"POLL-MOLINO-001","title":"Molino R1","domain":"ART","status":"ABIERTA","url":"molino.html","question":"¿Qué molino te convence más?"},
-    {"id":"QUEUE-MOV","title":"Movimiento","domain":"MOV","status":"PREPARANDO_VARIANTES","question":"¿Qué sensación de movimiento encaja mejor con ISL?"},
-    {"id":"QUEUE-MAG","title":"Magias / técnicas","domain":"MAG","status":"PREPARANDO_VARIANTES","question":"¿Qué familia de técnicas se siente más ISL?"},
-    {"id":"QUEUE-ABIL","title":"Habilidades combinadas","domain":"ABIL","status":"PREPARANDO_VARIANTES","question":"¿Qué combinación de habilidades genera más posibilidades?"},
-    {"id":"QUEUE-SYN","title":"Sinergias de tripulación","domain":"SYN","status":"PREPARANDO_VARIANTES","question":"¿Qué sinergia de compañeros resulta más interesante?"},
-    {"id":"QUEUE-PATH","title":"Caminos y consecuencias","domain":"PATH","status":"PREPARANDO_VARIANTES","question":"¿Qué tipo de bifurcación produce decisiones más interesantes?"},
-    {"id":"QUEUE-EVO","title":"Evolución / mutación","domain":"EVO","status":"INTERNA_NO_PUBLICA","question":"Se valida mediante simulación/CQC, no por popularidad."},
-    {"id":"QUEUE-WORLD","title":"Regiones / ciudades / islas","domain":"WORLD","status":"PREPARANDO_VARIANTES","question":"¿Qué región quieres explorar primero?"},
-    {"id":"QUEUE-ENEMY","title":"Enemigos / criaturas","domain":"ENEMY","status":"PREPARANDO_VARIANTES","question":"¿Qué criatura tiene más identidad y función?"},
-    {"id":"QUEUE-AUDIO","title":"Música / ambiente","domain":"AUDIO","status":"PREPARANDO_VARIANTES","question":"¿Qué dirección sonora pertenece más a este lugar?"}
-  ]
+  "version": "0.2",
+  "updated_at": "2026-09-18",
+  "rule": "Las encuestas informan. La decisión final no se automatiza.",
+  "polls": [
+    {
+      "id": "POLL-MOLINO-001",
+      "title": "Molino R1",
+      "domain": "ART",
+      "status": "ABIERTA",
+      "url": "molino.html",
+      "question": "¿Qué molino te convence más?"
+    },
+    {
+      "id": "QUEUE-MOV",
+      "title": "Movimiento",
+      "domain": "MOV",
+      "status": "PREPARANDO_VARIANTES",
+      "question": "¿Qué sensación de movimiento encaja mejor con ISL?"
+    },
+    {
+      "id": "QUEUE-MAG",
+      "title": "Magias / técnicas",
+      "domain": "MAG",
+      "status": "PREPARANDO_VARIANTES",
+      "question": "¿Qué familia de técnicas se siente más ISL?"
+    },
+    {
+      "id": "QUEUE-ABIL",
+      "title": "Habilidades combinadas",
+      "domain": "ABIL",
+      "status": "PREPARANDO_VARIANTES",
+      "question": "¿Qué combinación de habilidades genera más posibilidades?"
+    },
+    {
+      "id": "QUEUE-SYN",
+      "title": "Sinergias de tripulación",
+      "domain": "SYN",
+      "status": "PREPARANDO_VARIANTES",
+      "question": "¿Qué sinergia de compañeros resulta más interesante?"
+    },
+    {
+      "id": "QUEUE-PATH",
+      "title": "Caminos y consecuencias",
+      "domain": "PATH",
+      "status": "PREPARANDO_VARIANTES",
+      "question": "¿Qué tipo de bifurcación produce decisiones más interesantes?"
+    },
+    {
+      "id": "QUEUE-EVO",
+      "title": "Evolución / mutación",
+      "domain": "EVO",
+      "status": "INTERNA_NO_PUBLICA",
+      "question": "Se valida mediante simulación/CQC, no por popularidad."
+    },
+    {
+      "id": "QUEUE-WORLD",
+      "title": "Regiones / ciudades / islas",
+      "domain": "WORLD",
+      "status": "PREPARANDO_VARIANTES",
+      "question": "¿Qué región quieres explorar primero?"
+    },
+    {
+      "id": "QUEUE-ENEMY",
+      "title": "Enemigos / criaturas",
+      "domain": "ENEMY",
+      "status": "PREPARANDO_VARIANTES",
+      "question": "¿Qué criatura tiene más identidad y función?"
+    },
+    {
+      "id": "QUEUE-AUDIO",
+      "title": "Música / ambiente",
+      "domain": "AUDIO",
+      "status": "PREPARANDO_VARIANTES",
+      "question": "¿Qué dirección sonora pertenece más a este lugar?"
+    },
+    {
+      "id": "QUEUE-NARR-CLARITY",
+      "title": "Aventura principal · claridad",
+      "domain": "NARR",
+      "status": "PREPARANDO_VARIANTES",
+      "audience": "FOCUS_NARRATIVO",
+      "spoiler_risk": "BAJO",
+      "question": "¿Qué versión explica mejor el objetivo emocional sin sobreexplicar el misterio?"
+    },
+    {
+      "id": "QUEUE-NARR-RHYTHM",
+      "title": "Aventura principal · ritmo",
+      "domain": "NARR",
+      "status": "PREPARANDO_VARIANTES",
+      "audience": "FOCUS_NARRATIVO",
+      "spoiler_risk": "MEDIO",
+      "question": "¿Qué estructura mantiene mejor las ganas de seguir buscando a la tripulación?"
+    },
+    {
+      "id": "QUEUE-CHAR",
+      "title": "Personajes / reencuentros",
+      "domain": "NARR",
+      "status": "PREPARANDO_VARIANTES",
+      "audience": "FOCUS_NARRATIVO",
+      "spoiler_risk": "MEDIO",
+      "question": "¿Qué reencuentro genera más curiosidad y emoción sin revelar el arco completo?"
+    },
+    {
+      "id": "QUEUE-COMBAT",
+      "title": "Combate / ritmo",
+      "domain": "COMBAT",
+      "status": "PREPARANDO_VARIANTES",
+      "audience": "JUGADORES_OBJETIVO",
+      "spoiler_risk": "BAJO",
+      "question": "¿Qué ritmo de combate resulta más claro, táctico y satisfactorio?"
+    },
+    {
+      "id": "QUEUE-UI",
+      "title": "UI / lectura",
+      "domain": "UI",
+      "status": "PREPARANDO_VARIANTES",
+      "audience": "PUBLICO_GENERAL",
+      "spoiler_risk": "BAJO",
+      "question": "¿Qué interfaz entiendes antes sin perder identidad?"
+    },
+    {
+      "id": "QUEUE-STORE",
+      "title": "Steam / cápsulas / key art",
+      "domain": "STORE",
+      "status": "FUTURO_VERTICAL_SLICE",
+      "audience": "PUBLICO_GENERAL",
+      "spoiler_risk": "BAJO",
+      "question": "¿Qué imagen comunica mejor ISL en un vistazo?"
+    },
+    {
+      "id": "QUEUE-TRAILER",
+      "title": "Trailer / mensaje",
+      "domain": "MKT",
+      "status": "FUTURO_VERTICAL_SLICE",
+      "audience": "PUBLICO_GENERAL",
+      "spoiler_risk": "BAJO",
+      "question": "¿Qué montaje transmite mejor la promesa del juego?"
+    },
+    {
+      "id": "QUEUE-KS",
+      "title": "Kickstarter / recompensas",
+      "domain": "CROWD",
+      "status": "FUTURO",
+      "audience": "COMUNIDAD",
+      "spoiler_risk": "BAJO",
+      "question": "¿Qué recompensas y niveles resultan atractivos sin inflar costes ni riesgo de entrega?"
+    },
+    {
+      "id": "QUEUE-DEMO",
+      "title": "Demo / slice público",
+      "domain": "DEMO",
+      "status": "FUTURO",
+      "audience": "JUGADORES_OBJETIVO",
+      "spoiler_risk": "BAJO",
+      "question": "¿Qué contenido deja más ganas de continuar sin quemar la aventura?"
+    }
+  ],
+  "governance": {
+    "rule": "Las encuestas informan; la decisión final y el canon siguen siendo humanos.",
+    "cohorts": [
+      "PUBLICO_GENERAL",
+      "JUGADORES_OBJETIVO",
+      "AMIGOS",
+      "FOCUS_NARRATIVO",
+      "EXPERTOS"
+    ],
+    "narrative": "Para argumento se pregunta claridad, interés, emoción, ritmo y comprensión. No se votan spoilers ni giros finales como concurso de popularidad.",
+    "segmentation": "No mezclar cohortes sin etiquetar su procedencia."
+  }
 }
