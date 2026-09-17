@@ -18,7 +18,7 @@ s=p.read_text(encoding='utf-8')
 
 for ident in ['isl-mobile-media-hotfix','isl-responsive-command-center-fix']:
     s=re.sub(r'<style id="'+re.escape(ident)+r'">.*?</style>\s*','',s,flags=re.S)
-for src in ['isl-polish.js','isl-media-gestures.js','media-clean.js','isl-current-state.js']:
+for src in ['isl-polish.js','isl-media-gestures.js','media-clean.js','isl-current-state.js','decision-studio.js']:
     s=re.sub(r'<script[^>]+src="'+re.escape(src)+r'"[^>]*></script>\s*','',s)
 s=re.sub(r'<link[^>]+href="isl-polish\.css"[^>]*>\s*','',s)
 
@@ -50,7 +50,7 @@ media='''
 '''
 
 s=s.replace('</head>','<link rel="stylesheet" href="isl-polish.css">\n'+responsive+'\n'+media+'\n</head>')
-s=s.replace('</body>','<script defer src="isl-polish.js"></script>\n<script defer src="isl-media-gestures.js"></script>\n<script defer src="media-clean.js"></script>\n<script defer src="isl-current-state.js"></script>\n</body>')
+s=s.replace('</body>','<script defer src="isl-polish.js"></script>\n<script defer src="isl-media-gestures.js"></script>\n<script defer src="media-clean.js"></script>\n<script defer src="isl-current-state.js"></script>\n<script defer src="decision-studio.js"></script>\n</body>')
 p.write_text(s,encoding='utf-8')
 
 poll=Path('build/site/poll/molino.html')
@@ -77,12 +77,17 @@ test -f build/site/isl-polish.js
 test -f build/site/isl-media-gestures.js
 test -f build/site/media-clean.js
 test -f build/site/isl-current-state.js
+test -f build/site/decision-studio.js
+test -f build/site/ISL_DECISION_CATALOG_CURRENT.json
+test -f build/site/ISL_PUBLIC_DECISIONS_CURRENT.json
+test -f build/site/poll/index.html
 test -d build/site/assets
 test -f build/site/assets/floating-island-level.png
 test -f build/site/assets/floating-ruins-guide.png
 grep -q 'isl-polish.css' build/site/index.html
 grep -q 'isl-polish.js' build/site/index.html
 grep -q 'isl-current-state.js' build/site/index.html
+grep -q 'decision-studio.js' build/site/index.html
 grep -q 'isl-responsive-command-center-fix' build/site/index.html
 grep -q '../poll-live.js' build/site/poll/molino.html
 grep -q 'ps4-runtime-hotfix.js' build/site/ps4.html
@@ -95,4 +100,4 @@ if [ -f build/site/assets/airships-last-waltz-master.mp3 ] && [ -f ps4-audio-bui
   fi
 fi
 
-echo "ISL Command Center build OK: responsive polish + live poll + portal + assets."
+echo "ISL Command Center build OK: responsive polish + live poll + Decision Studio + Unreal handoff draft + portal + assets."
