@@ -1,5 +1,5 @@
 {
-  "version": "0.2",
+  "version": "0.3",
   "updated_at": "2026-09-18",
   "purpose": "Matriz maestra de decisiones para convertir diseño, validación y producción de ISL en un flujo trazable y exportable a Unreal.",
   "rule": "Ninguna encuesta ni automatización convierte una opción en CANON. La confirmación humana sigue siendo obligatoria.",
@@ -1068,6 +1068,295 @@
         "replicación",
         "save ownership"
       ]
+    },
+    {
+      "id": "MKT",
+      "name": "Marketing / posicionamiento / mensajes",
+      "group": "LANZAMIENTO",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "CapturePipeline",
+        "BuildMetadata"
+      ],
+      "questions": [
+        "promesa",
+        "audiencia",
+        "tagline",
+        "mensajes",
+        "prueba social"
+      ]
+    },
+    {
+      "id": "STORE",
+      "name": "Stores / Steam / páginas de producto",
+      "group": "LANZAMIENTO",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "BuildMetadata",
+        "Versioning"
+      ],
+      "questions": [
+        "capsules",
+        "screenshots",
+        "trailer",
+        "copy",
+        "idiomas",
+        "pricing",
+        "checklists"
+      ]
+    },
+    {
+      "id": "DEMO",
+      "name": "Demo / Steam Playtest / festivales",
+      "group": "LANZAMIENTO",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "BuildGraph",
+        "UAT",
+        "FeatureFlags",
+        "AnalyticsHooks"
+      ],
+      "questions": [
+        "slice",
+        "duración",
+        "onboarding",
+        "telemetría",
+        "wishlist conversion"
+      ]
+    },
+    {
+      "id": "CROWD",
+      "name": "Kickstarter / crowdfunding",
+      "group": "LANZAMIENTO",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A2",
+      "unreal_targets": [
+        "CampaignBuild",
+        "CapturePipeline"
+      ],
+      "questions": [
+        "objetivo",
+        "tiers",
+        "stretch goals",
+        "riesgos",
+        "timeline",
+        "fulfillment"
+      ]
+    },
+    {
+      "id": "PRESS",
+      "name": "Prensa / creadores / review builds",
+      "group": "LANZAMIENTO",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "BuildGraph",
+        "Branching",
+        "CapturePipeline"
+      ],
+      "questions": [
+        "press kit",
+        "review build",
+        "embargo",
+        "creator build",
+        "keys",
+        "FAQ"
+      ]
+    },
+    {
+      "id": "LEGAL",
+      "name": "Legal / ratings / privacidad / licencias",
+      "group": "LANZAMIENTO",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A2",
+      "unreal_targets": [
+        "BuildMetadata",
+        "PrivacySettings"
+      ],
+      "questions": [
+        "licencias",
+        "ratings",
+        "privacy",
+        "attributions",
+        "third-party",
+        "store compliance"
+      ]
+    },
+    {
+      "id": "SUPPORT",
+      "name": "Soporte / hotfix / incidentes",
+      "group": "POSTLAUNCH",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "CrashReporter",
+        "BuildGraph",
+        "Telemetry",
+        "PatchBranches"
+      ],
+      "questions": [
+        "triage",
+        "SLA",
+        "hotfix",
+        "rollback",
+        "known issues",
+        "support docs"
+      ]
+    },
+    {
+      "id": "LIVE",
+      "name": "Post-launch / roadmap / comunidad",
+      "group": "POSTLAUNCH",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A2",
+      "unreal_targets": [
+        "FeatureFlags",
+        "AnalyticsHooks",
+        "ContentPaks"
+      ],
+      "questions": [
+        "patch cadence",
+        "roadmap",
+        "events",
+        "feedback",
+        "community",
+        "retention"
+      ]
+    },
+    {
+      "id": "BIZ",
+      "name": "Presupuesto / scope / ROI de producción",
+      "group": "GESTION",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A2",
+      "unreal_targets": [
+        "BuildMetrics",
+        "AssetMetrics"
+      ],
+      "questions": [
+        "coste por feature",
+        "rework",
+        "reuse",
+        "QA cost",
+        "localization cost",
+        "marketing cost"
+      ]
+    },
+    {
+      "id": "RISK",
+      "name": "Riesgos / dependencias / contingencias",
+      "group": "GESTION",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "BuildGraph",
+        "ValidationReports"
+      ],
+      "questions": [
+        "probabilidad",
+        "impacto",
+        "owner",
+        "mitigación",
+        "fallback",
+        "trigger"
+      ]
+    },
+    {
+      "id": "DOCS",
+      "name": "Documentación / contratos / handoff",
+      "group": "GESTION",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "DataAssets",
+        "BuildMetadata"
+      ],
+      "questions": [
+        "source of truth",
+        "ADRs",
+        "acceptance criteria",
+        "asset specs",
+        "migration notes"
+      ]
+    },
+    {
+      "id": "POLISH",
+      "name": "Pulido / juice / detalles finales",
+      "group": "CALIDAD",
+      "priority": "MEDIA",
+      "pollable": true,
+      "automation": "A2",
+      "unreal_targets": [
+        "Niagara",
+        "Audio",
+        "Animation",
+        "Camera",
+        "UI"
+      ],
+      "questions": [
+        "feedback",
+        "timing",
+        "microanimaciones",
+        "audio",
+        "transiciones",
+        "consistencia"
+      ]
+    },
+    {
+      "id": "BALANCE",
+      "name": "Balance / progresión / dificultad",
+      "group": "CALIDAD",
+      "priority": "ALTA",
+      "pollable": true,
+      "automation": "A3",
+      "unreal_targets": [
+        "DataTables",
+        "GameplayEffects",
+        "AnalyticsHooks"
+      ],
+      "questions": [
+        "curva",
+        "economía",
+        "combate",
+        "fricción",
+        "dificultad adaptativa"
+      ]
+    },
+    {
+      "id": "COMPAT",
+      "name": "Compatibilidad / hardware / periféricos",
+      "group": "CALIDAD",
+      "priority": "ALTA",
+      "pollable": false,
+      "automation": "A3",
+      "unreal_targets": [
+        "DeviceProfiles",
+        "Scalability",
+        "EnhancedInput",
+        "Automation"
+      ],
+      "questions": [
+        "GPU/CPU",
+        "resoluciones",
+        "mandos",
+        "ultrawide",
+        "drivers",
+        "suspend/resume"
+      ]
     }
   ],
   "current_decisions": [
@@ -1342,6 +1631,48 @@
         "performance_budget": false,
         "save_migration_impact": false
       }
+    },
+    {
+      "id": "DEC-NARR-VOTE-001",
+      "domain": "NARR",
+      "title": "Refinar aventura principal con cabezas externas",
+      "state": "VARIANTES",
+      "author_choice": null,
+      "unreal_ready": false,
+      "reason": "Preparar pruebas de claridad, interés, emoción y ritmo por cohortes sin delegar canon ni spoilers.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": false,
+        "cqc_passed": false,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
+    },
+    {
+      "id": "DEC-LAUNCH-001",
+      "domain": "STORE",
+      "title": "Pipeline de store y campañas",
+      "state": "BANCO",
+      "author_choice": null,
+      "unreal_ready": false,
+      "reason": "Se activa en paralelo al vertical slice para reutilizar material real del juego y evitar marketing tardío.",
+      "gates": {
+        "author_confirmed": false,
+        "choice_locked": false,
+        "cqc_passed": false,
+        "acceptance_criteria": false,
+        "unreal_targets": true,
+        "dependencies": false,
+        "data_contract": false,
+        "regression_tests": false,
+        "performance_budget": false,
+        "save_migration_impact": false
+      }
     }
   ],
   "pipeline": [
@@ -1424,5 +1755,6 @@
     "regression_rule": "Un BUG_REGRESION bloquea promoción.",
     "unreal_rule": "Toda decisión READY_UNREAL debe declarar targets Unreal, contrato de datos, dependencias, criterios de aceptación y pruebas.",
     "data_driven_rule": "Preferir Primary Data Assets/Data Assets, Gameplay Tags y configuración data-driven cuando evite lógica duplicada."
-  }
+  },
+  "system_os": "ISL_GAMEDEV_OS_CURRENT.json"
 }
