@@ -62,19 +62,20 @@ s=p.read_text(encoding='utf-8')
 for ident in ['isl-mobile-entry-hotfix','isl-mobile-media-hotfix','isl-responsive-viewport-hotfix']:
     s=re.sub(r'<style id="'+re.escape(ident)+r'">.*?</style>\s*','',s,flags=re.S)
 s=re.sub(r'<script id="isl-mobile-media-hotfix-js">.*?</script>\s*','',s,flags=re.S)
+for src in ['isl-polish.js','isl-media-gestures.js','media-clean.js']:
+    s=re.sub(r'<script[^>]+src="'+re.escape(src)+r'"[^>]*></script>\s*','',s)
 s=re.sub(r'<link[^>]+href="isl-polish\.css"[^>]*>\s*','',s)
-s=re.sub(r'<script[^>]+src="isl-polish\.js"[^>]*></script>\s*','',s)
-s=re.sub(r'<script[^>]+src="isl-media-gestures\.js"[^>]*></script>\s*','',s)
 media='''
 <style id="isl-mobile-media-hotfix">
-#lbMedia{display:flex;align-items:center;justify-content:center;max-width:96%;max-height:86vh;min-width:0;min-height:0;touch-action:none;overscroll-behavior:contain}
-#lbMedia img,#lbMedia video{display:block!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:82vh!important;object-fit:contain!important;background:#02070b;transform-origin:50% 50%}
-@media(max-width:900px){
- #lightbox{padding:0!important;background:#02070b!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;overflow:hidden!important}
- #lightbox figure{width:100%!important;height:100dvh!important;max-width:100%!important;max-height:100dvh!important;justify-content:center!important;overflow:hidden!important}
- #lbMedia{width:100%!important;height:calc(100dvh - 70px)!important;max-width:100%!important;max-height:calc(100dvh - 70px)!important;overflow:hidden!important}
- #lbMedia img,#lbMedia video{max-width:100%!important;max-height:100%!important;border-radius:0!important;box-shadow:none!important}
-}
+#lightbox{padding:0!important;background:#02070b!important;overflow:hidden!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+#lightbox figure{position:absolute!important;inset:0!important;width:100%!important;height:100dvh!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
+#lbMedia{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important;touch-action:none;overscroll-behavior:contain}
+#lbMedia img,#lbMedia video{display:block!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;background:#02070b!important;transform-origin:50% 50%;border:0!important;border-radius:0!important;box-shadow:none!important;margin:0!important}
+#lbCaption{display:none!important;visibility:hidden!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
+#lbClose{position:fixed!important;z-index:2147483646!important;width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important;margin:0!important;padding:0!important;border:1px solid rgba(255,255,255,.24)!important;border-radius:999px!important;background:rgba(3,10,14,.44)!important;color:#fff!important;font:400 24px/32px system-ui,sans-serif!important;display:grid!important;place-items:center!important;box-shadow:0 4px 18px rgba(0,0,0,.28)!important;backdrop-filter:blur(7px)!important;-webkit-backdrop-filter:blur(7px)!important;opacity:.76!important;touch-action:manipulation!important}
+#lbClose:active{opacity:1!important;background:rgba(3,10,14,.78)!important}
+@media(orientation:portrait){#lbClose{top:max(8px,env(safe-area-inset-top))!important;right:max(8px,env(safe-area-inset-right))!important;left:auto!important;bottom:auto!important}}
+@media(orientation:landscape){#lbClose{top:max(8px,env(safe-area-inset-top))!important;left:max(8px,env(safe-area-inset-left))!important;right:auto!important;bottom:auto!important}}
 </style>
 '''
 script='''
@@ -82,15 +83,15 @@ script='''
 (function(){
  var lb=document.getElementById('lightbox'),med=document.getElementById('lbMedia'),cap=document.getElementById('lbCaption');
  if(!lb||!med)return;
- function showNode(node,caption){med.innerHTML='';node.style.display='block';node.style.objectFit='contain';med.appendChild(node);if(cap)cap.textContent=caption||'';lb.classList.add('show')}
- function showImage(img){var clone=img.cloneNode(true);clone.removeAttribute('srcset');clone.removeAttribute('sizes');clone.removeAttribute('loading');clone.src=img.getAttribute('src')||img.src;clone.onerror=function(){med.innerHTML='<div style="padding:24px;color:#fff;text-align:center">No se pudo mostrar esta imagen.</div>'};showNode(clone,img.alt||'ISL')}
- function showVideo(v){var el=document.createElement('video');el.controls=true;el.autoplay=true;el.playsInline=true;el.preload='auto';el.src=v.getAttribute('src')||v.currentSrc||v.src;el.onerror=function(){med.innerHTML='<div style="padding:24px;color:#fff;text-align:center">No se pudo mostrar este vídeo.</div>'};showNode(el,v.getAttribute('data-caption')||'ISL');var pr=el.play();if(pr&&pr.catch)pr.catch(function(){})}
+ function showNode(node){med.innerHTML='';node.style.display='block';node.style.objectFit='contain';med.appendChild(node);if(cap){cap.textContent='';cap.setAttribute('aria-hidden','true')}lb.classList.add('show')}
+ function showImage(img){var clone=img.cloneNode(true);clone.removeAttribute('srcset');clone.removeAttribute('sizes');clone.removeAttribute('loading');clone.src=img.getAttribute('src')||img.src;clone.onerror=function(){med.innerHTML='<div style="padding:24px;color:#fff;text-align:center">No se pudo mostrar esta imagen.</div>'};showNode(clone)}
+ function showVideo(v){var el=document.createElement('video');el.controls=true;el.autoplay=true;el.playsInline=true;el.preload='auto';el.src=v.getAttribute('src')||v.currentSrc||v.src;el.onerror=function(){med.innerHTML='<div style="padding:24px;color:#fff;text-align:center">No se pudo mostrar este vídeo.</div>'};showNode(el);var pr=el.play();if(pr&&pr.catch)pr.catch(function(){})}
  document.addEventListener('click',function(e){var v=e.target.closest&&e.target.closest('[data-fullmedia]'),img=e.target.closest&&e.target.closest('.asset img,.hero img');if(!v&&!img)return;e.preventDefault();e.stopImmediatePropagation();if(v)showVideo(v);else showImage(img)},true);
 })();
 </script>
 '''
 s=s.replace('</head>','<link rel="stylesheet" href="isl-polish.css">\n'+media+'\n</head>')
-s=s.replace('</body>',script+'\n<script defer src="isl-polish.js"></script>\n<script defer src="isl-media-gestures.js"></script>\n</body>')
+s=s.replace('</body>',script+'\n<script defer src="isl-polish.js"></script>\n<script defer src="isl-media-gestures.js"></script>\n<script defer src="media-clean.js"></script>\n</body>')
 p.write_text(s,encoding='utf-8')
 PY
 
@@ -100,6 +101,7 @@ test -f build/site/reel.html
 test -f build/site/isl-polish.css
 test -f build/site/isl-polish.js
 test -f build/site/isl-media-gestures.js
+test -f build/site/media-clean.js
 test -f build/site/labs/wind.html
 test -f build/site/labs/method.html
 test -f build/site/game/index.html
@@ -115,10 +117,12 @@ grep -q 'isl-mobile-media-hotfix' build/site/index.html
 grep -q 'isl-polish.css' build/site/index.html
 grep -q 'isl-polish.js' build/site/index.html
 grep -q 'isl-media-gestures.js' build/site/index.html
+grep -q 'media-clean.js' build/site/index.html
 grep -q 'prefers-reduced-motion' build/site/isl-polish.css
 grep -q 'islAmbientParticles' build/site/isl-polish.js
 grep -q 'pointerdown' build/site/isl-media-gestures.js
+grep -q '#lbCaption' build/site/media-clean.js
 ! grep -q 'isl-mobile-entry-hotfix' build/site/index.html
 ! grep -R -q "image-rendering:[[:space:]]*pixelated\|image-rendering:[[:space:]]*crisp-edges" build/site/index.html build/site/ps4.html build/site/reel.html
 
-echo "ISL build completed: adaptive responsive + pinch zoom + fullscreen exit placement passed."
+echo "ISL build completed: edge-to-edge media + pinch zoom + floating close control passed."
