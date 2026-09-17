@@ -7,7 +7,7 @@
     var fsBtn=document.getElementById('fsBtn');
     var audioBtn=document.getElementById('audioBtn');
     var bootBtn=document.getElementById('bootBtn');
-    var SOURCES=['assets/isl-tv-reel-premium-1080p.mp4','assets/previs-premium-1080p-L41.mp4','assets/airships-last-waltz-master.mp3'];
+    var SOURCES=['assets/airships-last-waltz-ps4.mp4','assets/isl-tv-reel-premium-1080p.mp4','assets/previs-premium-1080p-L41.mp4','assets/airships-last-waltz-master.mp3'];
     var sourceIndex=0,unlocked=false,lastError='';
 
     try{localStorage.setItem('isl_ps4_audio','on')}catch(e){}
@@ -30,7 +30,7 @@
 
     function status(t,c){if(audioState){audioState.textContent=t;audioState.style.color=c||'#ffc36e'}}
     function isPlaying(){return player&&!player.paused&&!player.ended&&player.readyState>=2}
-    function sourceName(){return sourceIndex===0?'AAC REEL':sourceIndex===1?'AAC PREVIS':'MP3'}
+    function sourceName(){return sourceIndex===0?'AAC PS4':sourceIndex===1?'AAC REEL':sourceIndex===2?'AAC PREVIS':'MP3'}
     function paint(){
       if(isPlaying()){status('SONIDO 100% · '+sourceName(),'#dfff7b');if(audioBtn)audioBtn.textContent='♫ 100%'}
       else if(lastError){status(lastError,'#ff9b82');if(audioBtn)audioBtn.textContent='♫ REINTENTAR'}
