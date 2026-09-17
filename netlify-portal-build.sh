@@ -8,21 +8,8 @@ mkdir -p build/site
 cp -a portal/. build/site/
 touch build/site/.nojekyll
 
-# Fail-safe del Centro de Mandos normal: evita quedarse sólo con el fondo
-# si una vista pierde accidentalmente su estado activo durante el arranque.
-python - <<'PY'
-from pathlib import Path
-p=Path('build/site/index.html')
-s=p.read_text(encoding='utf-8')
-tag='<script defer src="command-center-failsafe.js"></script>'
-if tag not in s:
-    s=s.replace('</body>',tag+'\n</body>')
-p.write_text(s,encoding='utf-8')
-PY
-
 # CQC del Centro de Mandos y de la encuesta pública.
 test -f build/site/index.html
-test -f build/site/command-center-failsafe.js
 test -f build/site/ps4.html
 test -f build/site/ps4-runtime-hotfix.js
 test -f build/site/poll/molino.html
@@ -41,4 +28,4 @@ if [ -f build/site/assets/airships-last-waltz-master.mp3 ] && [ -f ps4-audio-bui
   fi
 fi
 
-echo "ISL Command Center build OK: portal completo + fail-safe + encuesta + assets. Godot fuera del pipeline."
+echo "ISL Command Center build OK: portal completo + encuesta + assets. Godot fuera del pipeline."
