@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+python3 scripts/security-gate.py
+
 rm -rf build/site
 mkdir -p build/site
 
