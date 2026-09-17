@@ -1,6 +1,57 @@
 (function(){
   function ready(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn);else fn()}
   ready(function(){
+    /* Final fullscreen/media control separation: media close stays left, app fullscreen toggle stays right. */
+    var controlStyle=document.createElement('style');
+    controlStyle.id='isl-fullscreen-controls-hotfix';
+    controlStyle.textContent=`
+      body.isl-media-open #lbClose{
+        position:fixed!important;
+        top:max(10px,env(safe-area-inset-top))!important;
+        left:max(10px,env(safe-area-inset-left))!important;
+        right:auto!important;
+        bottom:auto!important;
+        z-index:2147483647!important;
+      }
+      body.isl-media-open #islFsToggle{
+        position:fixed!important;
+        top:max(10px,env(safe-area-inset-top))!important;
+        right:max(10px,env(safe-area-inset-right))!important;
+        left:auto!important;
+        bottom:auto!important;
+        z-index:2147483646!important;
+      }
+      body.isl-media-open #lbClose,
+      body.isl-media-open #islFsToggle{
+        width:42px!important;
+        height:42px!important;
+        min-width:42px!important;
+        min-height:42px!important;
+        margin:0!important;
+        transform:none!important;
+      }
+      @media (orientation:landscape) and (max-height:760px){
+        body.isl-media-open #lbClose{
+          left:max(10px,env(safe-area-inset-left))!important;
+          right:auto!important;
+        }
+        body.isl-media-open #islFsToggle{
+          right:max(10px,env(safe-area-inset-right))!important;
+          left:auto!important;
+        }
+      }
+    `;
+    document.head.appendChild(controlStyle);
+
+    var lightbox=document.getElementById('lightbox');
+    function syncMediaOpen(){document.body.classList.toggle('isl-media-open',!!(lightbox&&lightbox.classList.contains('show')))}
+    if(lightbox){
+      syncMediaOpen();
+      new MutationObserver(syncMediaOpen).observe(lightbox,{attributes:true,attributeFilter:['class']});
+    }
+    document.addEventListener('fullscreenchange',syncMediaOpen);
+    document.addEventListener('webkitfullscreenchange',syncMediaOpen);
+
     fetch('ISL_PROJECT_STATE_CURRENT.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('state');return r.json()}).then(function(s){
       var main=document.querySelector('main');
       if(main&&!document.getElementById('islCurrentStateBanner')){
