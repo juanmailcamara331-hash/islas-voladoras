@@ -1,0 +1,485 @@
+{
+  "version": "0.1",
+  "updated_at": "2026-09-18",
+  "simulation_kind": "DESIGN_AND_PRODUCTION_SYSTEM_STRESS_SIMULATION",
+  "note": "Simulación de dependencias, gates y escenarios; no sustituye profiling/runtime tests en Unreal.",
+  "overall_status": "PASS_WITH_ACTIONS",
+  "weights": {
+    "CRITICAL": 100,
+    "HIGH": 75,
+    "MEDIUM": 50,
+    "LOW": 25
+  },
+  "items": [
+    {
+      "id": "CORE-1A1B1C",
+      "name": "1A × 1B × 1C + huella + mutación + consecuencia",
+      "importance": 100,
+      "status": "CONSERVAR_BASE",
+      "stress": "REVALIDAR_EN_PROTOTIPO",
+      "depends": [
+        "SAVE",
+        "REL",
+        "EVO",
+        "PATH",
+        "WORLD"
+      ],
+      "required": [
+        "state-simulation",
+        "save-migration",
+        "narrative-regression",
+        "playtest"
+      ]
+    },
+    {
+      "id": "NARR-SPINE",
+      "name": "La Separación + reencuentros + tripulación + barco-hogar",
+      "importance": 100,
+      "status": "PRIORIDAD_ACTUAL",
+      "stress": "REVALIDAR_AHORA",
+      "depends": [
+        "NARR",
+        "WORLD",
+        "SHIP",
+        "REL",
+        "QUEST"
+      ],
+      "required": [
+        "focus-narrative",
+        "cohort-vote",
+        "continuity-sim",
+        "scope-check"
+      ]
+    },
+    {
+      "id": "WIND-RECEIVER",
+      "name": "Receptor del viento Bake-Off 01",
+      "importance": 78,
+      "status": "CERRADO_VISUAL",
+      "stress": "CONSERVAR_VISUAL_RETEST_GAMEPLAY",
+      "depends": [
+        "WIND",
+        "PHYS",
+        "ART",
+        "VFX"
+      ],
+      "required": [
+        "physics-prototype",
+        "readability",
+        "performance-budget",
+        "regression"
+      ]
+    },
+    {
+      "id": "MOLINO",
+      "name": "Molino R1 / El Molino que Miente",
+      "importance": 86,
+      "status": "ENCUESTA_ACTIVA_PROTO_CONSERVADO",
+      "stress": "REVALIDAR_CONTEXTO_Y_JUGABILIDAD",
+      "depends": [
+        "WIND",
+        "PATH",
+        "WORLD",
+        "NARR",
+        "SAVE"
+      ],
+      "required": [
+        "author-confirmation",
+        "mission-context",
+        "golden-path",
+        "consequence-return"
+      ]
+    },
+    {
+      "id": "WIND-LAB",
+      "name": "Wind Lab v1.x",
+      "importance": 68,
+      "status": "LAB_CONSERVADO",
+      "stress": "REUSAR_COMO_HARNESS",
+      "depends": [
+        "WIND",
+        "PHYS",
+        "UI"
+      ],
+      "required": [
+        "test-harness",
+        "comparison-baseline"
+      ]
+    },
+    {
+      "id": "COMMAND-CENTER",
+      "name": "Centro de Mandos responsive",
+      "importance": 72,
+      "status": "ESTABLE",
+      "stress": "PROTEGER_DE_SCOPE_CREEP",
+      "depends": [
+        "UI",
+        "DATA"
+      ],
+      "required": [
+        "mobile-smoke",
+        "desktop-smoke",
+        "navigation-regression",
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "LIVE-POLLS",
+      "name": "Encuestas vivas + comentarios",
+      "importance": 70,
+      "status": "ACTIVO",
+      "stress": "CONSERVAR_Y_SEGMENTAR_COHORTES",
+      "depends": [
+        "DATA",
+        "MKT"
+      ],
+      "required": [
+        "submission-consistency",
+        "duplicate-awareness",
+        "cohort-tagging",
+        "privacy-check"
+      ]
+    },
+    {
+      "id": "DECISION-STUDIO",
+      "name": "Decision Studio + Production Lane",
+      "importance": 94,
+      "status": "ACTIVO",
+      "stress": "CORE_GOVERNANCE",
+      "depends": [
+        "DATA",
+        "DOCS",
+        "RISK",
+        "QA"
+      ],
+      "required": [
+        "manifest-gates",
+        "no-auto-canon",
+        "dependency-graph",
+        "audit-log"
+      ]
+    },
+    {
+      "id": "LIFECYCLE-OS",
+      "name": "Lifecycle OS",
+      "importance": 88,
+      "status": "ACTIVO",
+      "stress": "CORE_PROCESS",
+      "depends": [
+        "QA",
+        "BUILD",
+        "PROFILE",
+        "STORE",
+        "SUPPORT"
+      ],
+      "required": [
+        "milestone-sim",
+        "rollback-sim",
+        "release-sim"
+      ]
+    },
+    {
+      "id": "VISUAL-ASSETS",
+      "name": "Galería / referencias / assets visuales",
+      "importance": 62,
+      "status": "INVENTARIO_MIXTO",
+      "stress": "NORMALIZAR_ESTADOS",
+      "depends": [
+        "ART",
+        "ASSET",
+        "MKT"
+      ],
+      "required": [
+        "source-build-link",
+        "naming",
+        "license",
+        "production-eligibility"
+      ]
+    },
+    {
+      "id": "AUDIO-REF",
+      "name": "The Airship's Last Waltz referencia tonal",
+      "importance": 54,
+      "status": "REFERENCIA",
+      "stress": "NO_CONFUNDIR_CON_ASSET_FINAL",
+      "depends": [
+        "AUDIO",
+        "MKT"
+      ],
+      "required": [
+        "rights-status",
+        "replacement-plan",
+        "audio-direction-vote"
+      ]
+    },
+    {
+      "id": "PS4-LITE",
+      "name": "PS4 Command Center separado",
+      "importance": 35,
+      "status": "SEPARADO_ESTABLE",
+      "stress": "FREEZE_UNLESS_BUG",
+      "depends": [
+        "UI"
+      ],
+      "required": [
+        "smoke-only"
+      ]
+    },
+    {
+      "id": "UNREAL-HANDOFF",
+      "name": "Handoff Unreal",
+      "importance": 92,
+      "status": "ARQUITECTURA_PREPARADA_NO_IMPLEMENTADA",
+      "stress": "NO_FINGIR_PRODUCCION",
+      "depends": [
+        "ARCH",
+        "DATA",
+        "TAGS",
+        "BUILD",
+        "QA"
+      ],
+      "required": [
+        "vertical-slice-first",
+        "data-contract",
+        "automation",
+        "source-control"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S01",
+      "event": "Cambiar locomoción después de animación avanzada",
+      "impact": [
+        "MOV",
+        "ANIM",
+        "CAM",
+        "ABIL",
+        "ONBOARD",
+        "QA"
+      ],
+      "result": "BLOCK_UNTIL_REGRESSION",
+      "tests": [
+        "movement-golden-path",
+        "camera-motion-sickness",
+        "animation-foot-sliding",
+        "input"
+      ]
+    },
+    {
+      "id": "S02",
+      "event": "Cambiar una bifurcación narrativa con saves existentes",
+      "impact": [
+        "PATH",
+        "SAVE",
+        "DIALOG",
+        "REL",
+        "LOC",
+        "QA"
+      ],
+      "result": "MIGRATION_REQUIRED",
+      "tests": [
+        "old-save-upgrade",
+        "state-continuity",
+        "dialogue-conditions",
+        "localization"
+      ]
+    },
+    {
+      "id": "S03",
+      "event": "Región nueva excede presupuesto",
+      "impact": [
+        "WORLD",
+        "STREAM",
+        "PCG",
+        "RENDER",
+        "PROFILE"
+      ],
+      "result": "BUDGET_GATE",
+      "tests": [
+        "streaming-soak",
+        "GPU",
+        "memory",
+        "HLOD"
+      ]
+    },
+    {
+      "id": "S04",
+      "event": "Habilidad nueva rompe balance y economía",
+      "impact": [
+        "ABIL",
+        "COMBAT",
+        "BALANCE",
+        "ECON",
+        "TELEM"
+      ],
+      "result": "SIMULATE_AND_RETUNE",
+      "tests": [
+        "combat-sim",
+        "reward-loop",
+        "telemetry-cohort"
+      ]
+    },
+    {
+      "id": "S05",
+      "event": "Asset de campaña muestra feature retirada",
+      "impact": [
+        "MKT",
+        "STORE",
+        "DOCS"
+      ],
+      "result": "ASSET_INVALIDATE",
+      "tests": [
+        "claim-vs-build",
+        "capture-source"
+      ]
+    },
+    {
+      "id": "S06",
+      "event": "Localización desborda UI y tutorial",
+      "impact": [
+        "LOC",
+        "UI",
+        "ACCESS",
+        "ONBOARD"
+      ],
+      "result": "LAYOUT_REGRESSION",
+      "tests": [
+        "pseudo-localization",
+        "font-fallback",
+        "controller"
+      ]
+    },
+    {
+      "id": "S07",
+      "event": "Build RC crashea tras suspend/resume",
+      "impact": [
+        "BUILD",
+        "CRASH",
+        "PLATFORM",
+        "SAVE"
+      ],
+      "result": "STOP_SHIP",
+      "tests": [
+        "resume",
+        "crash-report",
+        "save-integrity",
+        "rollback"
+      ]
+    },
+    {
+      "id": "S08",
+      "event": "Hotfix urgente toca sistema de mundo",
+      "impact": [
+        "SUPPORT",
+        "WORLD",
+        "SAVE",
+        "BUILD",
+        "QA"
+      ],
+      "result": "MINIMAL_PATCH_WITH_ROLLBACK",
+      "tests": [
+        "smoke",
+        "save-migration",
+        "golden-path"
+      ]
+    },
+    {
+      "id": "S09",
+      "event": "Kickstarter stretch goal añade online temprano",
+      "impact": [
+        "CROWD",
+        "ONLINE",
+        "BIZ",
+        "RISK",
+        "ARCH"
+      ],
+      "result": "REJECT_OR_RESCOPED",
+      "tests": [
+        "cost-estimate",
+        "architecture-impact",
+        "fulfillment-risk"
+      ]
+    },
+    {
+      "id": "S10",
+      "event": "Encuesta popular contradice playtest experto",
+      "impact": [
+        "NARR",
+        "MKT",
+        "DECISION"
+      ],
+      "result": "HUMAN_REVIEW_NOT_AUTO_WIN",
+      "tests": [
+        "cohort-separation",
+        "evidence-note"
+      ]
+    },
+    {
+      "id": "S11",
+      "event": "Cambio de Gameplay Tags rompe referencias",
+      "impact": [
+        "TAGS",
+        "DATA",
+        "ABIL",
+        "AI",
+        "SAVE"
+      ],
+      "result": "SCHEMA_MIGRATION",
+      "tests": [
+        "tag-audit",
+        "asset-validation",
+        "save-migration"
+      ]
+    },
+    {
+      "id": "S12",
+      "event": "Producción añade detalle visual sin valor y baja FPS",
+      "impact": [
+        "ART",
+        "VFX",
+        "RENDER",
+        "PROFILE",
+        "BIZ"
+      ],
+      "result": "POLISH_BUDGET_REVIEW",
+      "tests": [
+        "A/B-visual",
+        "GPU-budget",
+        "frame-time"
+      ]
+    }
+  ],
+  "current_focus": [
+    {
+      "rank": 1,
+      "id": "NARR-SPINE",
+      "weight": 100,
+      "why": "Define qué juego estamos construyendo y evita producir sistemas sin contexto."
+    },
+    {
+      "rank": 2,
+      "id": "DECISION-STUDIO",
+      "weight": 94,
+      "why": "Evita confundir candidato, voto y producción."
+    },
+    {
+      "rank": 3,
+      "id": "UNREAL-HANDOFF",
+      "weight": 92,
+      "why": "Debe estar preparado, pero sólo después de vertical slice/gates."
+    },
+    {
+      "rank": 4,
+      "id": "LIFECYCLE-OS",
+      "weight": 88,
+      "why": "Reduce retrabajo y coste durante toda la vida del juego."
+    },
+    {
+      "rank": 5,
+      "id": "MOLINO",
+      "weight": 86,
+      "why": "Primer laboratorio donde sistemas y consecuencias se cruzan."
+    }
+  ]
+}
