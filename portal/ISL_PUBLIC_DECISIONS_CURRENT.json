@@ -1,0 +1,17 @@
+{
+  "version":"0.1",
+  "updated_at":"2026-09-18",
+  "rule":"Las encuestas informan. La decisión final no se automatiza.",
+  "polls":[
+    {"id":"POLL-MOLINO-001","title":"Molino R1","domain":"ART","status":"ABIERTA","url":"molino.html","question":"¿Qué molino te convence más?"},
+    {"id":"QUEUE-MOV","title":"Movimiento","domain":"MOV","status":"PREPARANDO_VARIANTES","question":"¿Qué sensación de movimiento encaja mejor con ISL?"},
+    {"id":"QUEUE-MAG","title":"Magias / técnicas","domain":"MAG","status":"PREPARANDO_VARIANTES","question":"¿Qué familia de técnicas se siente más ISL?"},
+    {"id":"QUEUE-ABIL","title":"Habilidades combinadas","domain":"ABIL","status":"PREPARANDO_VARIANTES","question":"¿Qué combinación de habilidades genera más posibilidades?"},
+    {"id":"QUEUE-SYN","title":"Sinergias de tripulación","domain":"SYN","status":"PREPARANDO_VARIANTES","question":"¿Qué sinergia de compañeros resulta más interesante?"},
+    {"id":"QUEUE-PATH","title":"Caminos y consecuencias","domain":"PATH","status":"PREPARANDO_VARIANTES","question":"¿Qué tipo de bifurcación produce decisiones más interesantes?"},
+    {"id":"QUEUE-EVO","title":"Evolución / mutación","domain":"EVO","status":"INTERNA_NO_PUBLICA","question":"Se valida mediante simulación/CQC, no por popularidad."},
+    {"id":"QUEUE-WORLD","title":"Regiones / ciudades / islas","domain":"WORLD","status":"PREPARANDO_VARIANTES","question":"¿Qué región quieres explorar primero?"},
+    {"id":"QUEUE-ENEMY","title":"Enemigos / criaturas","domain":"ENEMY","status":"PREPARANDO_VARIANTES","question":"¿Qué criatura tiene más identidad y función?"},
+    {"id":"QUEUE-AUDIO","title":"Música / ambiente","domain":"AUDIO","status":"PREPARANDO_VARIANTES","question":"¿Qué dirección sonora pertenece más a este lugar?"}
+  ]
+}
