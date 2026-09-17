@@ -1,0 +1,152 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-09-18",
+  "purpose": "Malla de servicios externos para reducir plantilla fija y convertir cada playtest, build, bug y campaña en evidencia accionable.",
+  "principle": "Comprar capacidad puntual y automatizar coordinación; no sustituir criterio creativo humano.",
+  "stack": [
+    {
+      "layer": "BUILD_DEPLOY",
+      "services": [
+        "GitHub Actions",
+        "Netlify",
+        "Unreal BuildGraph/UAT"
+      ],
+      "role": "CI, deploys, artefactos, gates, previews, rollback",
+      "status": "ACTIVO/PREPARADO"
+    },
+    {
+      "layer": "PRODUCT_ANALYTICS",
+      "services": [
+        "PostHog"
+      ],
+      "role": "eventos, funnels, session replay, feature flags, experimentos, errores y surveys",
+      "status": "CONECTOR_INSTALADO; INSTRUMENTACION FUTURA"
+    },
+    {
+      "layer": "QUAL_FEEDBACK",
+      "services": [
+        "Jotform"
+      ],
+      "role": "diarios de playtest, bugs narrados, diversión, descubrimiento, expectativa vs realidad",
+      "status": "ACTIVO"
+    },
+    {
+      "layer": "HUMAN_PLAYTEST",
+      "services": [
+        "Steam Playtest",
+        "PlaytestCloud u otros paneles on-demand"
+      ],
+      "role": "cohortes reales sin contratar plantilla permanente",
+      "status": "FUTURO SEGUN BUILD"
+    },
+    {
+      "layer": "ISSUES",
+      "services": [
+        "GitHub Issues",
+        "Linear opcional"
+      ],
+      "role": "bugs, severidad, owner, regresiones, release gates",
+      "status": "GITHUB ACTIVO"
+    },
+    {
+      "layer": "MARKETING_ANALYTICS",
+      "services": [
+        "Metricool/Windsor.ai/Supermetrics opcional"
+      ],
+      "role": "campañas, canales, ROI, creatividades, publicación",
+      "status": "OPCIONAL AL ENTRAR EN CAMPAÑA"
+    },
+    {
+      "layer": "COMMUNITY",
+      "services": [
+        "Steam Community",
+        "Discord/Reddit/social según fase"
+      ],
+      "role": "reclutamiento de cohortes, feedback, anuncios, devlogs",
+      "status": "FUTURO"
+    },
+    {
+      "layer": "CROWDFUNDING",
+      "services": [
+        "Kickstarter"
+      ],
+      "role": "campaña, updates, rewards, validación de demanda",
+      "status": "FUTURO VERTICAL SLICE"
+    },
+    {
+      "layer": "STORE",
+      "services": [
+        "Steamworks"
+      ],
+      "role": "Playtest, demo, Coming Soon, wishlists, review de store/build, release",
+      "status": "FUTURO"
+    },
+    {
+      "layer": "OBSERVABILITY",
+      "services": [
+        "PostHog Error Tracking",
+        "Crash Reporter/Unreal Insights"
+      ],
+      "role": "crashes, errores, rendimiento, regresión",
+      "status": "FUTURO UNREAL"
+    }
+  ],
+  "human_discovery_loop": [
+    "BUILD_ID",
+    "COHORT_ASSIGNMENT",
+    "UNBRIEFED_TASK",
+    "SESSION_TELEMETRY",
+    "SESSION_REPLAY_WHERE_ALLOWED",
+    "MICRO_SURVEY",
+    "DIALECTICAL_QUESTION_EXPECTED_VS_ACTUAL",
+    "FUN_FRICTION_MAP",
+    "BUG_TRIAGE",
+    "HYPOTHESIS_UPDATE",
+    "NEXT_VARIANT"
+  ],
+  "fun_metrics": [
+    {
+      "id": "CURIOSITY",
+      "question": "¿El jugador quiere ver qué hay después sin pedírselo?"
+    },
+    {
+      "id": "DISCOVERY",
+      "question": "¿Descubre una regla y la reutiliza espontáneamente?"
+    },
+    {
+      "id": "AGENCY",
+      "question": "¿Siente que su acción produjo una respuesta del mundo?"
+    },
+    {
+      "id": "FLOW",
+      "question": "¿Alterna tensión, comprensión y dominio sin atasco largo?"
+    },
+    {
+      "id": "SURPRISE",
+      "question": "¿La sorpresa recontextualiza lo anterior en vez de parecer aleatoria?"
+    },
+    {
+      "id": "RETURN_DESIRE",
+      "question": "¿Quiere volver a una zona/sistema para probar otra posibilidad?"
+    },
+    {
+      "id": "SOCIAL_TELLABILITY",
+      "question": "¿Cuenta espontáneamente una anécdota concreta después de jugar?"
+    }
+  ],
+  "anti_bias": [
+    "No explicar la mecánica que se está probando antes de observar.",
+    "Separar amigos, jugadores objetivo, expertos y público frío.",
+    "No convertir satisfacción declarada en sustituto de conducta observada.",
+    "Comparar builds/variantes con orden aleatorio cuando sea posible.",
+    "Registrar drop-offs y silencios, no sólo comentarios.",
+    "Preguntar primero qué creyó que pasaría; después qué pasó."
+  ],
+  "cost_control": [
+    "Usar tests remotos asíncronos antes de sesiones moderadas.",
+    "Reservar paneles pagados para incertidumbres de alto coste.",
+    "Usar Steam Playtest para escala y hardware cuando exista build suficientemente estable.",
+    "Automatizar etiquetado por build/cohorte antes de analizar.",
+    "Cada bug repetido debe convertirse en test automático cuando sea razonable."
+  ]
+}
