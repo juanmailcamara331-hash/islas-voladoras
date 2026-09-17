@@ -62,7 +62,7 @@ s=p.read_text(encoding='utf-8')
 for ident in ['isl-mobile-entry-hotfix','isl-mobile-media-hotfix','isl-responsive-viewport-hotfix']:
     s=re.sub(r'<style id="'+re.escape(ident)+r'">.*?</style>\s*','',s,flags=re.S)
 s=re.sub(r'<script id="isl-mobile-media-hotfix-js">.*?</script>\s*','',s,flags=re.S)
-for src in ['isl-polish.js','isl-media-gestures.js','media-clean.js']:
+for src in ['isl-polish.js','isl-media-gestures.js','media-clean.js','isl-current-state.js']:
     s=re.sub(r'<script[^>]+src="'+re.escape(src)+r'"[^>]*></script>\s*','',s)
 s=re.sub(r'<link[^>]+href="isl-polish\.css"[^>]*>\s*','',s)
 media='''
@@ -91,7 +91,7 @@ script='''
 </script>
 '''
 s=s.replace('</head>','<link rel="stylesheet" href="isl-polish.css">\n'+media+'\n</head>')
-s=s.replace('</body>',script+'\n<script defer src="isl-polish.js"></script>\n<script defer src="isl-media-gestures.js"></script>\n<script defer src="media-clean.js"></script>\n</body>')
+s=s.replace('</body>',script+'\n<script defer src="isl-polish.js"></script>\n<script defer src="isl-media-gestures.js"></script>\n<script defer src="media-clean.js"></script>\n<script defer src="isl-current-state.js"></script>\n</body>')
 p.write_text(s,encoding='utf-8')
 PY
 
@@ -102,6 +102,8 @@ test -f build/site/isl-polish.css
 test -f build/site/isl-polish.js
 test -f build/site/isl-media-gestures.js
 test -f build/site/media-clean.js
+test -f build/site/isl-current-state.js
+test -f build/site/ISL_PROJECT_STATE_CURRENT.json
 test -f build/site/labs/wind.html
 test -f build/site/labs/method.html
 test -f build/site/game/index.html
@@ -118,6 +120,8 @@ grep -q 'isl-polish.css' build/site/index.html
 grep -q 'isl-polish.js' build/site/index.html
 grep -q 'isl-media-gestures.js' build/site/index.html
 grep -q 'media-clean.js' build/site/index.html
+grep -q 'isl-current-state.js' build/site/index.html
+grep -q 'PROTO 01' build/site/ISL_PROJECT_STATE_CURRENT.json
 grep -q 'prefers-reduced-motion' build/site/isl-polish.css
 grep -q 'islAmbientParticles' build/site/isl-polish.js
 grep -q 'pointerdown' build/site/isl-media-gestures.js
@@ -125,4 +129,4 @@ grep -q '#lbCaption' build/site/media-clean.js
 ! grep -q 'isl-mobile-entry-hotfix' build/site/index.html
 ! grep -R -q "image-rendering:[[:space:]]*pixelated\|image-rendering:[[:space:]]*crisp-edges" build/site/index.html build/site/ps4.html build/site/reel.html
 
-echo "ISL build completed: edge-to-edge media + pinch zoom + floating close control passed."
+echo "ISL build completed: live state + edge-to-edge media + pinch zoom + floating close control passed."
