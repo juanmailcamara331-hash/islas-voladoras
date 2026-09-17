@@ -1,5 +1,5 @@
 {
-  "version": "0.15.1",
+  "version": "0.16.1",
   "updated_at": "2026-09-18",
   "phase": "REVISIÓN DE AVENTURA PRINCIPAL",
   "phase_status": "EN CURSO",
@@ -159,7 +159,7 @@
     "Promover sólo decisiones que superen CQC y confirmación humana a READY_UNREAL"
   ],
   "godot": "NO RUTA PRINCIPAL",
-  "command_center": "INFRAESTRUCTURA",
+  "command_center": "INFRAESTRUCTURA · JERARQUIA CREATIVA ACTIVA",
   "decision_automation": {
     "state": "ACTIVA · INFRAESTRUCTURA",
     "purpose": "Centralizar decisiones creativas y técnicas para reducir fricción de producción y preparar handoff a Unreal.",
@@ -169,5 +169,12 @@
     "flow": "VARIANTES → CQC → ENCUESTA OPCIONAL → CONFIRMACION AUTOR → READY_UNREAL → PRODUCCION",
     "automation_boundary": "La automatización prepara, compara, registra y exporta. Nunca convierte por sí sola una opción en CANON.",
     "unreal_handoff": "El panel puede generar ISL_UNREAL_HANDOFF_DRAFT.json con las elecciones de trabajo; requiere confirmación humana antes de producción."
+  },
+  "stress_audit": {
+    "status": "PASS_WITH_ACTIONS",
+    "source": "ISL_STRESS_AUDIT_CURRENT.json",
+    "rule": "Todo lo ya construido se conserva o revalida según dependencias; no se rehace por defecto.",
+    "top_priority": "REVISIÓN DE AVENTURA PRINCIPAL",
+    "anti_monster": "El Centro de Mandos responde primero a AHORA / BLOQUEO / PRODUCTION LANE / RIESGO. Herramientas secundarias no compiten visualmente."
   }
 }
