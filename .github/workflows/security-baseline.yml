@@ -1,0 +1,26 @@
+name: Security Baseline
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+permissions:
+  contents: read
+jobs:
+  security-baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+        continue-on-error: true
+      - name: Static security gate
+        run: python3 scripts/security-gate.py
+      - name: Resolve dependency graph without install scripts
+        run: npm install --package-lock-only --ignore-scripts
+      - name: Audit dependencies
+        run: npm audit --audit-level=high
+      - name: Portal build regression
+        run: bash netlify-portal-build.sh
