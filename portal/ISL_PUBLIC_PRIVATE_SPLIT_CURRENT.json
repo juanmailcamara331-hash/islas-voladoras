@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-09-18",
+  "public_site": {
+    "current_site_id": "c743d925-3898-45f4-b8f4-b2565f60e8c1",
+    "name": "islas-voladoras-isl",
+    "target_build": "netlify-public-build.sh",
+    "intended_surface": [
+      "public-site/index.html",
+      "portal/reel.html",
+      "portal/poll/",
+      "portal/poll-live.js",
+      "ISL_PUBLIC_DECISIONS_CURRENT.json",
+      "approved public assets only"
+    ],
+    "forbidden": [
+      "Decision Studio",
+      "Lifecycle OS",
+      "Security OS",
+      "Stress Audit",
+      "internal project state",
+      "Unreal manifests",
+      "Decision Engine",
+      "internal registry"
+    ]
+  },
+  "private_site": {
+    "site_id": "f3cb9c63-9ff1-4de2-b6df-c8e6af403a4f",
+    "name": "islas-voladoras-isl-private",
+    "sso_required_for_all_deploys": true,
+    "target_build": "netlify-private-build.sh",
+    "deploy_status": "SITE_CREATED_AND_PROTECTED_BUT_SOURCE_NOT_YET_DEPLOYED",
+    "reason": "Current Netlify connector cannot link repository/source to the new project directly."
+  },
+  "cutover_rule": "Do not switch the existing public site to public-only until the private Command Center has been deployed and verified."
+}
