@@ -1,5 +1,5 @@
 {
-  "version": "0.14.1",
+  "version": "0.14.2",
   "updated_at": "2026-09-17",
   "phase": "PROTO 01 · EL MOLINO QUE MIENTE",
   "phase_status": "EN CURSO",
@@ -7,19 +7,70 @@
   "previous_phase_status": "VISUAL PRELIMINAR CERRADO",
   "base_system": "1A × 1B × 1C + huella + mutación + consecuencia profunda",
   "method": "LAB → CQC → BAKE-OFF → DIORAMA → PROTOTIPO",
+  "taxonomy": {
+    "categories": [
+      "Mundo / Isla-pueblo",
+      "Sistema / Viento",
+      "Mecánica / Molino",
+      "Mecánica / Receptor",
+      "Gameplay / Consecuencia",
+      "Relación / Memoria",
+      "Transformación / Ser",
+      "Arte / Dirección visual",
+      "Producción / Prototipo",
+      "Producción / Bake-Off",
+      "CQC / Artístico",
+      "CQC / Técnico",
+      "CQC / Jugable"
+    ],
+    "states": [
+      "CANON",
+      "PROVISIONAL FUERTE",
+      "EXPERIMENTO",
+      "REJECTED-LEARNED",
+      "CERRADO VISUAL",
+      "EN CURSO"
+    ],
+    "current_tags": [
+      "molino",
+      "viento",
+      "receptor",
+      "isla-pueblo",
+      "puentes",
+      "cultivos",
+      "huella",
+      "consecuencia",
+      "trayectoria",
+      "proto-01"
+    ]
+  },
   "mill": {
     "role": "Molino original conservado como base del laboratorio",
     "setting": "Pequeña isla-pueblo suspendida; el molino regula una corriente que mantiene puentes y cultivos",
-    "rule": "El receptor nuevo transforma el molino; no lo sustituye"
+    "rule": "El receptor nuevo transforma el molino; no lo sustituye",
+    "category": "Mecánica / Molino",
+    "state": "PROVISIONAL FUERTE"
   },
   "wind_receiver": {
+    "category": "Mecánica / Receptor",
+    "bake_off_state": "CERRADO VISUAL",
     "primary_candidate": "B · Alas / Pétalos Celestes",
+    "primary_state": "CANDIDATO PRINCIPAL",
     "primary_reason": "Identidad orgánica ISL, integración visual fuerte y alto potencial jugable",
     "contrast_candidate": "C · Espiral del Horizonte",
+    "contrast_state": "CONTRASTE ACTIVO",
     "contrast_reason": "Silueta icónica y comportamiento multidireccional para contraste",
-    "functional_reference": "A · Raíces / Velas del Origen"
+    "functional_reference": "A · Raíces / Velas del Origen",
+    "functional_state": "REFERENCIA FUNCIONAL",
+    "variants": [
+      {"id":"A","name":"Raíces / Velas del Origen","role":"referencia funcional","status":"ARCHIVADO COMO VARIANTE"},
+      {"id":"B","name":"Alas / Pétalos Celestes","role":"candidato principal","status":"PASA A PROTO 01"},
+      {"id":"C","name":"Espiral del Horizonte","role":"contraste","status":"MANTIENE PRUEBA DE CONTRASTE"}
+    ]
   },
   "proto_01": {
+    "category": "Producción / Prototipo",
+    "state": "EN CURSO",
     "target_duration": "10–15 min",
     "space": "Una isla pequeña con molino, puente afectado, cultivos y zona lateral",
     "core_loop": "leer viento → actuar → asumir coste → percibir consecuencia → regresar",
@@ -35,6 +86,13 @@
       "¿La consecuencia se percibe sin popup ni explicación?"
     ]
   },
+  "roadmap": [
+    {"name":"Command Center + Forge","category":"Infraestructura","status":"INFRAESTRUCTURA"},
+    {"name":"Bake-Off 01 · Receptor del viento","category":"Producción / Bake-Off","status":"CERRADO VISUAL"},
+    {"name":"PROTO 01 · El Molino que Miente","category":"Producción / Prototipo","status":"EN CURSO"},
+    {"name":"CQC PROTO 01","category":"CQC","status":"SIGUIENTE"},
+    {"name":"Bake-Off 02 · Puente modular","category":"Producción / Bake-Off","status":"DESPUÉS"}
+  ],
   "next": [
     "Construir PROTO 01 jugable mínimo",
     "CQC jugable y técnico",
