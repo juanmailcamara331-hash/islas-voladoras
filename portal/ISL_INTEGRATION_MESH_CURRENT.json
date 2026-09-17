@@ -148,5 +148,34 @@
     "Usar Steam Playtest para escala y hardware cuando exista build suficientemente estable.",
     "Automatizar etiquetado por build/cohorte antes de analizar.",
     "Cada bug repetido debe convertirse en test automático cuando sea razonable."
+  ],
+  "playtest_form": {
+    "provider": "Jotform",
+    "title": "ISL · Playtest Dialéctico Continuo",
+    "url": "https://www.jotform.com/build/262597175024057",
+    "status": "ACTIVE",
+    "use": "post-session structured feedback, bugs, fun/friction, expected-vs-actual"
+  },
+  "recommended_next_integrations": [
+    {
+      "service": "PostHog",
+      "status": "INSTALLED_PLUGIN",
+      "use": "telemetry, funnels, replay, experiments, flags, surveys, error tracking"
+    },
+    {
+      "service": "Steam Playtest",
+      "status": "FUTURE_BUILD",
+      "use": "free controlled external playtests at scale without affecting main game's reviews/wishlists"
+    },
+    {
+      "service": "PlaytestCloud",
+      "status": "OPTIONAL_ON_DEMAND",
+      "use": "target-player recruitment, recording, think-aloud, surveys and rapid qualitative insight"
+    },
+    {
+      "service": "Metricool or Windsor.ai",
+      "status": "OPTIONAL_CAMPAIGN_PHASE",
+      "use": "marketing analytics, scheduling and cross-channel campaign feedback"
+    }
   ]
 }
