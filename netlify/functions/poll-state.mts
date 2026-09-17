@@ -17,13 +17,29 @@ function storeForContext(){
     : getDeployStore("isl-polls");
 }
 
+function cleanText(v:unknown,max=180){
+  return String(v??"")
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,"")
+    .replace(/\s+/g," ")
+    .trim()
+    .slice(0,max);
+}
+
+function sameOrigin(req:Request){
+  const url=new URL(req.url);
+  const origin=req.headers.get("origin");
+  if(origin) return origin===url.origin;
+  const referer=req.headers.get("referer");
+  return !!referer && referer.startsWith(url.origin+"/");
+}
+
 async function readLiveVotes(){
   const store=storeForContext();
   const listed=await store.list({prefix:"molino-r1/"});
   const votes=[] as any[];
   for(const b of listed.blobs){
     const v=await store.get(b.key,{type:"json"});
-    if(v)votes.push(v);
+    if(v) votes.push(v);
   }
   return votes;
 }
@@ -46,19 +62,53 @@ function summarize(votes:any[]){
 }
 
 export default async (req:Request, _context:Context) => {
+  const baseHeaders={
+    "Cache-Control":"no-store",
+    "X-Content-Type-Options":"nosniff",
+    "Referrer-Policy":"no-referrer"
+  };
+
   if(req.method==="GET"){
-    return Response.json(summarize(await readLiveVotes()),{headers:{"Cache-Control":"no-store"}});
+    return Response.json(summarize(await readLiveVotes()),{headers:baseHeaders});
   }
-  if(req.method!=="POST") return new Response("Method not allowed",{status:405});
+
+  if(req.method!=="POST"){
+    return new Response("Method not allowed",{status:405,headers:{...baseHeaders,"Allow":"GET, POST"}});
+  }
+
+  if(!sameOrigin(req)){
+    return Response.json({ok:false,error:"forbidden"},{status:403,headers:baseHeaders});
+  }
+
+  const len=Number(req.headers.get("content-length")||"0");
+  if(len>2048){
+    return Response.json({ok:false,error:"payload_too_large"},{status:413,headers:baseHeaders});
+  }
+
+  const type=(req.headers.get("content-type")||"").toLowerCase();
+  if(!type.includes("application/json")){
+    return Response.json({ok:false,error:"unsupported_media_type"},{status:415,headers:baseHeaders});
+  }
+
   const body=await req.json().catch(()=>null) as any;
-  const option=String(body?.molino||"").toUpperCase();
-  if(!["A","B","C"].includes(option)) return Response.json({ok:false,error:"invalid_option"},{status:400});
-  const comment=String(body?.comentario||"").trim().slice(0,180);
+  const option=cleanText(body?.molino,1).toUpperCase();
+  if(!["A","B","C"].includes(option)){
+    return Response.json({ok:false,error:"invalid_option"},{status:400,headers:baseHeaders});
+  }
+
+  const comment=cleanText(body?.comentario,180);
   const created_at=new Date().toISOString();
   const id=crypto.randomUUID();
   const store=storeForContext();
   await store.setJSON(`molino-r1/${created_at}-${id}`,{option,comment,created_at});
-  return Response.json({ok:true,state:summarize(await readLiveVotes())});
+  return Response.json({ok:true,state:summarize(await readLiveVotes())},{headers:baseHeaders});
 };
 
-export const config:Config={path:"/api/poll-state"};
+export const config:Config={
+  path:"/api/poll-state",
+  rateLimit:{
+    windowLimit:20,
+    windowSize:60,
+    aggregateBy:["ip","domain"]
+  }
+};
