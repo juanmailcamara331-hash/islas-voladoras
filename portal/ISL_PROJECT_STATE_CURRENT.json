@@ -1,6 +1,6 @@
 {
-  "version": "0.14.3",
-  "updated_at": "2026-09-17",
+  "version": "0.15.1",
+  "updated_at": "2026-09-18",
   "phase": "REVISIÓN DE AVENTURA PRINCIPAL",
   "phase_status": "EN CURSO",
   "previous_phase": "PROTO 01 · EL MOLINO QUE MIENTE",
@@ -19,14 +19,38 @@
     ]
   },
   "strong_foundations": [
-    {"name":"Reencontrar amigos / formar tripulación","state":"CANON"},
-    {"name":"Barco que crece hasta convertirse en hogar colectivo","state":"PROVISIONAL FUERTE"},
-    {"name":"Combate JRPG por turnos","state":"PROVISIONAL FUERTE"},
-    {"name":"Capacidades combinadas para exploración y retorno","state":"PROVISIONAL FUERTE"},
-    {"name":"Mutaciones condicionadas por trayectoria","state":"CANON / BASE SISTÉMICA"},
-    {"name":"Huella, memoria del mundo y consecuencias tardías","state":"PROVISIONAL FUERTE"},
-    {"name":"Mundo 3D abierto con identidad visual ISL","state":"PRIORIDAD DE MUNDO"},
-    {"name":"Vida cotidiana y memoria acumulada en la nave","state":"PROVISIONAL FUERTE"}
+    {
+      "name": "Reencontrar amigos / formar tripulación",
+      "state": "CANON"
+    },
+    {
+      "name": "Barco que crece hasta convertirse en hogar colectivo",
+      "state": "PROVISIONAL FUERTE"
+    },
+    {
+      "name": "Combate JRPG por turnos",
+      "state": "PROVISIONAL FUERTE"
+    },
+    {
+      "name": "Capacidades combinadas para exploración y retorno",
+      "state": "PROVISIONAL FUERTE"
+    },
+    {
+      "name": "Mutaciones condicionadas por trayectoria",
+      "state": "CANON / BASE SISTÉMICA"
+    },
+    {
+      "name": "Huella, memoria del mundo y consecuencias tardías",
+      "state": "PROVISIONAL FUERTE"
+    },
+    {
+      "name": "Mundo 3D abierto con identidad visual ISL",
+      "state": "PRIORIDAD DE MUNDO"
+    },
+    {
+      "name": "Vida cotidiana y memoria acumulada en la nave",
+      "state": "PROVISIONAL FUERTE"
+    }
   ],
   "taxonomy": {
     "categories": [
@@ -91,19 +115,59 @@
     "functional_reference": "A · Raíces / Velas del Origen"
   },
   "roadmap": [
-    {"name":"Revisión de aventura principal","category":"Argumento","status":"EN CURSO"},
-    {"name":"Estructura de regiones, ciudades y objetivos","category":"Mundo / Narrativa","status":"SIGUIENTE"},
-    {"name":"Bucles secundarios + vida de nave","category":"Gameplay / Mundo","status":"DESPUÉS"},
-    {"name":"PROTO 01 · El Molino que Miente","category":"Producción / Prototipo","status":"CONSERVADO"},
-    {"name":"CQC PROTO 01","category":"CQC","status":"POSTERIOR"},
-    {"name":"Bake-Off 02 · Puente modular","category":"Producción / Bake-Off","status":"POSTERIOR"}
+    {
+      "name": "Decision Studio + matriz de producción Unreal",
+      "category": "Infraestructura",
+      "status": "ACTIVO"
+    },
+    {
+      "name": "Revisión de aventura principal",
+      "category": "Argumento",
+      "status": "EN CURSO"
+    },
+    {
+      "name": "Estructura de regiones, ciudades y objetivos",
+      "category": "Mundo / Narrativa",
+      "status": "SIGUIENTE"
+    },
+    {
+      "name": "Bucles secundarios + vida de nave",
+      "category": "Gameplay / Mundo",
+      "status": "DESPUÉS"
+    },
+    {
+      "name": "PROTO 01 · El Molino que Miente",
+      "category": "Producción / Prototipo",
+      "status": "CONSERVADO"
+    },
+    {
+      "name": "CQC PROTO 01",
+      "category": "CQC",
+      "status": "POSTERIOR"
+    },
+    {
+      "name": "Bake-Off 02 · Puente modular",
+      "category": "Producción / Bake-Off",
+      "status": "POSTERIOR"
+    }
   ],
   "next": [
-    "Definir la columna vertebral completa de la aventura sin sobrecargarla",
-    "Definir regiones/ciudades y qué objetivo fuerte aporta cada una",
-    "Definir bucles secundarios recurrentes y vida de la nave-hogar",
-    "Reintegrar El Molino que Miente como misión/laboratorio dentro del contexto correcto"
+    "Cerrar la columna vertebral de aventura principal y dividirla en decisiones concretas del catálogo",
+    "Preparar variantes comparables de movimiento, combate, magias, habilidades combinadas y sinergias",
+    "Preparar regiones/ciudades y objetivos fuertes para evaluación y encuesta cuando aporte valor",
+    "Reintegrar El Molino que Miente como misión/laboratorio dentro del contexto correcto",
+    "Promover sólo decisiones que superen CQC y confirmación humana a READY_UNREAL"
   ],
   "godot": "NO RUTA PRINCIPAL",
-  "command_center": "INFRAESTRUCTURA"
+  "command_center": "INFRAESTRUCTURA",
+  "decision_automation": {
+    "state": "ACTIVA · INFRAESTRUCTURA",
+    "purpose": "Centralizar decisiones creativas y técnicas para reducir fricción de producción y preparar handoff a Unreal.",
+    "catalog": "ISL_DECISION_CATALOG_CURRENT.json",
+    "public_poll_queue": "ISL_PUBLIC_DECISIONS_CURRENT.json",
+    "command_center_module": "Decision Studio",
+    "flow": "VARIANTES → CQC → ENCUESTA OPCIONAL → CONFIRMACION AUTOR → READY_UNREAL → PRODUCCION",
+    "automation_boundary": "La automatización prepara, compara, registra y exporta. Nunca convierte por sí sola una opción en CANON.",
+    "unreal_handoff": "El panel puede generar ISL_UNREAL_HANDOFF_DRAFT.json con las elecciones de trabajo; requiere confirmación humana antes de producción."
+  }
 }
