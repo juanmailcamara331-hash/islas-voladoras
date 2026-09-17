@@ -1,5 +1,5 @@
 {
-  "version":"0.2",
+  "version":"0.3",
   "updated_at":"2026-09-17",
   "purpose":"Sistema visual y trazable para evaluar cualquier propuesta de ISL antes de producción.",
   "principles":[
@@ -60,13 +60,14 @@
       "source":"Jotform",
       "url":"https://form.jotform.com/262595742284063",
       "opened_at":"2026-09-17",
+      "context":"En ISL viajamos entre islas flotantes después de La Separación, reuniendo a nuestra tripulación y reconstruyendo el mundo. Este molino es una de las primeras piezas jugables donde el viento, las decisiones y sus consecuencias importan de verdad.",
       "options":[
         {"id":"A","label":"A","asset":"assets/art-and-wind.png"},
         {"id":"B","label":"B","asset":"assets/wind-lab-sunset.png"},
         {"id":"C","label":"C","asset":"assets/pipeline-board-current.png"}
       ],
-      "question":"Míralos bien y toca uno.",
-      "optional_comment":"¿Qué te gana de ese?",
+      "question":"Amplía, compara y elige.",
+      "optional_comment":"¿Qué te gusta del que has elegido, zorra?",
       "result":{"total_votes":0,"winner":null,"distribution":{},"comments":[],"closed_at":null},
       "author_confirmation":{"status":"PENDIENTE","decision":null,"reason":null},
       "promotion_target":"PRODUCCION_O_ESPERA_O_REJECTED_LEARNED"
