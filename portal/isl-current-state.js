@@ -1,16 +1,7 @@
 (function(){
   function ready(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn);else fn()}
   ready(function(){
-    /* Decision Engine: expose the production/review board as a first-class Command Center module. */
-    if(!document.getElementById('islDecisionEngineLink')){
-      var host=document.querySelector('main')||document.body;
-      var link=document.createElement('a');
-      link.id='islDecisionEngineLink';
-      link.href='decision-engine.html';
-      link.textContent='DECISION ENGINE · ARGUMENTO / MECÁNICAS / BUGS / CQC';
-      link.style.cssText='display:block;margin:0 0 14px;padding:13px 16px;border:1px solid #4f7d86;background:linear-gradient(135deg,#102833,#171f24);color:#eef7f4;text-decoration:none;font-weight:800;letter-spacing:.04em;box-shadow:0 12px 34px #0004';
-      if(host.firstChild)host.insertBefore(link,host.firstChild);else host.appendChild(link);
-    }
+    /* Decision Engine stays internal to the Command Center; no public portal link. */
 
     /* Final fullscreen/media control separation: media close stays left, app fullscreen toggle stays right. */
     var controlStyle=document.createElement('style');
