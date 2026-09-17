@@ -93,6 +93,12 @@ script='''
 s=s.replace('</head>','<link rel="stylesheet" href="isl-polish.css">\n'+media+'\n</head>')
 s=s.replace('</body>',script+'\n<script defer src="isl-polish.js"></script>\n<script defer src="isl-media-gestures.js"></script>\n<script defer src="media-clean.js"></script>\n<script defer src="isl-current-state.js"></script>\n</body>')
 p.write_text(s,encoding='utf-8')
+
+ps4=Path('build/site/ps4.html')
+ps=ps4.read_text(encoding='utf-8')
+ps=re.sub(r'<script[^>]+src="ps4-runtime-hotfix\.js"[^>]*></script>\s*','',ps)
+ps=ps.replace('</body>','<script defer src="ps4-runtime-hotfix.js"></script>\n</body>')
+ps4.write_text(ps,encoding='utf-8')
 PY
 
 test -f build/site/index.html
@@ -103,7 +109,10 @@ test -f build/site/isl-polish.js
 test -f build/site/isl-media-gestures.js
 test -f build/site/media-clean.js
 test -f build/site/isl-current-state.js
+test -f build/site/ps4-runtime-hotfix.js
 test -f build/site/ISL_PROJECT_STATE_CURRENT.json
+test -f build/site/ISL_DECISION_ENGINE_CURRENT.json
+test -f build/site/decision-engine.html
 test -f build/site/labs/wind.html
 test -f build/site/labs/method.html
 test -f build/site/game/index.html
@@ -121,6 +130,8 @@ grep -q 'isl-polish.js' build/site/index.html
 grep -q 'isl-media-gestures.js' build/site/index.html
 grep -q 'media-clean.js' build/site/index.html
 grep -q 'isl-current-state.js' build/site/index.html
+grep -q 'ps4-runtime-hotfix.js' build/site/ps4.html
+grep -q 'audio.volume=1' build/site/ps4-runtime-hotfix.js
 grep -q 'PROTO 01' build/site/ISL_PROJECT_STATE_CURRENT.json
 grep -q 'prefers-reduced-motion' build/site/isl-polish.css
 grep -q 'islAmbientParticles' build/site/isl-polish.js
@@ -129,4 +140,4 @@ grep -q '#lbCaption' build/site/media-clean.js
 ! grep -q 'isl-mobile-entry-hotfix' build/site/index.html
 ! grep -R -q "image-rendering:[[:space:]]*pixelated\|image-rendering:[[:space:]]*crisp-edges" build/site/index.html build/site/ps4.html build/site/reel.html
 
-echo "ISL build completed: live state + edge-to-edge media + pinch zoom + floating close control passed."
+echo "ISL build completed: live state + Decision Engine + PS4 safe controls/full-volume audio + media checks passed."
