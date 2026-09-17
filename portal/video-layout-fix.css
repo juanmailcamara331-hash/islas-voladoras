@@ -1,0 +1,27 @@
+/* ISL Command Center — isolate embedded preview video from layout sizing */
+.mediaCard[data-help="Previs de cámara y atmósfera."]{
+  position:relative!important;
+  min-width:0!important;
+  width:100%!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+}
+.mediaCard[data-help="Previs de cámara y atmósfera."] > video{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:1px!important;
+  max-height:1px!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  overflow:hidden!important;
+}
+.mediaCard[data-help="Previs de cámara y atmósfera."]::before{
+  content:"";
+  display:block;
+  width:100%;
+  aspect-ratio:16/10;
+  background:#081218 url("assets/island-a-master.jpg") center/cover no-repeat;
+}
