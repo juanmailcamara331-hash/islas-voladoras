@@ -1,0 +1,264 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-09-18",
+  "purpose": "Capa transversal de seguridad, abuso, antifraude y resiliencia para todo ISL.",
+  "doctrine": [
+    "Zero Trust: ningún usuario, dispositivo, build, asset o automatización se considera confiable por ubicación o por ser interno.",
+    "Least privilege: cada cuenta, token, workflow y herramienta recibe sólo el acceso necesario.",
+    "Fail closed para operaciones sensibles; fail safe para experiencia pública.",
+    "Ningún secreto vive en Git, frontend, assets, prompts, logs o documentación pública.",
+    "Seguridad es un gate recursivo del Lifecycle OS, no una revisión al final.",
+    "Las encuestas son evidencia consultiva; nunca se tratan como votación segura de identidad."
+  ],
+  "threat_domains": [
+    {
+      "id": "AUTH",
+      "name": "Identidad y acceso",
+      "controls": [
+        "MFA/passkeys",
+        "sesiones HttpOnly/Secure/SameSite",
+        "separación público/admin",
+        "revocación",
+        "rotación"
+      ]
+    },
+    {
+      "id": "WEB",
+      "name": "Web / Command Center",
+      "controls": [
+        "CSP",
+        "HSTS",
+        "anti-framing",
+        "permissions policy",
+        "no-store admin",
+        "validación input",
+        "rate limiting"
+      ]
+    },
+    {
+      "id": "API",
+      "name": "APIs / Functions",
+      "controls": [
+        "same-origin",
+        "rate limits",
+        "body limits",
+        "allowlists",
+        "generic errors",
+        "abuse logging"
+      ]
+    },
+    {
+      "id": "POLL",
+      "name": "Encuestas / abuso",
+      "controls": [
+        "rate limiting",
+        "cohort tagging",
+        "deduplicación heurística",
+        "honeypot",
+        "comentarios escapados",
+        "resultados no vinculantes"
+      ]
+    },
+    {
+      "id": "REPO",
+      "name": "Código / GitHub",
+      "controls": [
+        "private repo target",
+        "secret scanning",
+        "CodeQL",
+        "Dependabot",
+        "dependency review",
+        "branch protection",
+        "signed releases"
+      ]
+    },
+    {
+      "id": "SUPPLY",
+      "name": "Supply chain",
+      "controls": [
+        "lockfiles",
+        "pinned dependencies",
+        "review automated updates",
+        "SBOM",
+        "checksums",
+        "artifact provenance"
+      ]
+    },
+    {
+      "id": "BUILD",
+      "name": "Build / CI / Unreal",
+      "controls": [
+        "isolated runners",
+        "minimal tokens",
+        "reproducible builds",
+        "signed artifacts",
+        "immutable RC",
+        "rollback"
+      ]
+    },
+    {
+      "id": "GAME",
+      "name": "Runtime / anti-cheat / exploits",
+      "controls": [
+        "server-authoritative when online",
+        "validate client input",
+        "never trust save/client state for competitive authority",
+        "bounds",
+        "anti-tamper where justified"
+      ]
+    },
+    {
+      "id": "SAVE",
+      "name": "Saves / world state",
+      "controls": [
+        "schema version",
+        "migration validation",
+        "integrity checks",
+        "backup",
+        "rollback",
+        "corruption recovery"
+      ]
+    },
+    {
+      "id": "ASSET",
+      "name": "Assets / IP / provenance",
+      "controls": [
+        "license ledger",
+        "source hashes",
+        "watermarked review exports when useful",
+        "separate masters from public captures",
+        "least-privilege storage"
+      ]
+    },
+    {
+      "id": "PRIVACY",
+      "name": "Privacy / telemetry",
+      "controls": [
+        "data minimization",
+        "purpose limitation",
+        "retention",
+        "consent where required",
+        "no sensitive data in logs"
+      ]
+    },
+    {
+      "id": "STORE",
+      "name": "Stores / Kickstarter / creators",
+      "controls": [
+        "separate accounts",
+        "MFA",
+        "role separation",
+        "build hashes",
+        "key handling",
+        "phishing playbook",
+        "claim-vs-build validation"
+      ]
+    },
+    {
+      "id": "INCIDENT",
+      "name": "Incidentes",
+      "controls": [
+        "severity",
+        "contain",
+        "rotate",
+        "preserve evidence",
+        "rollback",
+        "notify",
+        "postmortem",
+        "new regression test"
+      ]
+    },
+    {
+      "id": "BACKUP",
+      "name": "Resiliencia",
+      "controls": [
+        "3-2-1 backups",
+        "restore drills",
+        "checkpoint snapshots",
+        "offline/exported critical docs",
+        "disaster recovery"
+      ]
+    }
+  ],
+  "gates": [
+    "threat_model_updated",
+    "secrets_scan_clean",
+    "dependencies_reviewed",
+    "input_validation",
+    "rate_limits",
+    "access_control",
+    "security_headers",
+    "save_integrity",
+    "artifact_hashes",
+    "privacy_review",
+    "incident_rollback",
+    "backup_restore_test"
+  ],
+  "severity": [
+    "SEC0_ACTIVE_COMPROMISE",
+    "SEC1_CRITICAL",
+    "SEC2_HIGH",
+    "SEC3_MEDIUM",
+    "SEC4_LOW"
+  ],
+  "stop_ship": [
+    "credential leak",
+    "remote code execution",
+    "auth bypass",
+    "arbitrary admin access",
+    "save corruption/data loss",
+    "malicious build or dependency",
+    "store account compromise",
+    "privacy breach",
+    "unbounded cost/abuse endpoint"
+  ],
+  "recursive_flow": [
+    "MODEL",
+    "PREVENT",
+    "DETECT",
+    "LIMIT",
+    "RESPOND",
+    "RECOVER",
+    "LEARN",
+    "RETEST"
+  ],
+  "current_findings": [
+    {
+      "id": "SEC-F01",
+      "severity": "SEC1_CRITICAL",
+      "status": "OPEN_GOVERNANCE",
+      "finding": "Repositorio reportado por Netlify como público; documentos y código no deben considerarse confidenciales.",
+      "action": "Cambiar a privado o separar repos público/privado antes de tratar propiedad intelectual como secreta."
+    },
+    {
+      "id": "SEC-F02",
+      "severity": "SEC1_CRITICAL",
+      "status": "OPEN_ARCHITECTURE",
+      "finding": "Centro de Mandos accesible por URL exacta; ocultar enlaces no es control de acceso.",
+      "action": "Mover Command Center a superficie autenticada/path-protected o sitio privado separado."
+    },
+    {
+      "id": "SEC-F03",
+      "severity": "SEC2_HIGH",
+      "status": "MITIGATING",
+      "finding": "Endpoint de estado de encuesta susceptible a spam directo.",
+      "action": "Same-origin validation + body cap + sanitización + rate limiting."
+    },
+    {
+      "id": "SEC-F04",
+      "severity": "SEC2_HIGH",
+      "status": "MITIGATING",
+      "finding": "Dependencias declaradas como latest y sin lockfile visible.",
+      "action": "Generar lockfile, pin/review updates y Dependabot antes de producción real."
+    }
+  ],
+  "references": [
+    "NIST SP 800-218 SSDF",
+    "NIST SP 800-207 Zero Trust",
+    "OWASP SAMM",
+    "OWASP ASVS",
+    "GitHub Secret Scanning / Code Scanning / Dependency Review",
+    "Netlify CSP / Rate Limiting",
+    "SLSA supply-chain principles"
+  ]
+}
