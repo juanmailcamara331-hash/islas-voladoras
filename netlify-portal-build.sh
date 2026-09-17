@@ -53,6 +53,12 @@ s=s.replace('</head>','<link rel="stylesheet" href="isl-polish.css">\n'+responsi
 s=s.replace('</body>','<script defer src="isl-polish.js"></script>\n<script defer src="isl-media-gestures.js"></script>\n<script defer src="media-clean.js"></script>\n<script defer src="isl-current-state.js"></script>\n</body>')
 p.write_text(s,encoding='utf-8')
 
+poll=Path('build/site/poll/molino.html')
+ps=poll.read_text(encoding='utf-8')
+ps=re.sub(r'<script[^>]+src="\.\./poll-live\.js"[^>]*></script>\s*','',ps)
+ps=ps.replace('</body>','<script defer src="../poll-live.js"></script>\n</body>')
+poll.write_text(ps,encoding='utf-8')
+
 ps4=Path('build/site/ps4.html')
 ps=ps4.read_text(encoding='utf-8')
 ps=re.sub(r'<script[^>]+src="ps4-runtime-hotfix\.js"[^>]*></script>\s*','',ps)
@@ -65,6 +71,7 @@ test -f build/site/ps4.html
 test -f build/site/ps4-runtime-hotfix.js
 test -f build/site/poll/molino.html
 test -f build/site/poll/gracias.html
+test -f build/site/poll-live.js
 test -f build/site/isl-polish.css
 test -f build/site/isl-polish.js
 test -f build/site/isl-media-gestures.js
@@ -77,6 +84,7 @@ grep -q 'isl-polish.css' build/site/index.html
 grep -q 'isl-polish.js' build/site/index.html
 grep -q 'isl-current-state.js' build/site/index.html
 grep -q 'isl-responsive-command-center-fix' build/site/index.html
+grep -q '../poll-live.js' build/site/poll/molino.html
 grep -q 'ps4-runtime-hotfix.js' build/site/ps4.html
 
 if [ -f build/site/assets/airships-last-waltz-master.mp3 ] && [ -f ps4-audio-build.sh ]; then
@@ -87,4 +95,4 @@ if [ -f build/site/assets/airships-last-waltz-master.mp3 ] && [ -f ps4-audio-bui
   fi
 fi
 
-echo "ISL Command Center build OK: responsive polish + portal + encuesta + assets."
+echo "ISL Command Center build OK: responsive polish + live poll + portal + assets."
