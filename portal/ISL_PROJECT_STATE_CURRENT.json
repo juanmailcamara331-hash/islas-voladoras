@@ -1,0 +1,46 @@
+{
+  "version": "0.14.1",
+  "updated_at": "2026-09-17",
+  "phase": "PROTO 01 · EL MOLINO QUE MIENTE",
+  "phase_status": "EN CURSO",
+  "previous_phase": "BAKE-OFF 01 · RECEPTOR DEL VIENTO",
+  "previous_phase_status": "VISUAL PRELIMINAR CERRADO",
+  "base_system": "1A × 1B × 1C + huella + mutación + consecuencia profunda",
+  "method": "LAB → CQC → BAKE-OFF → DIORAMA → PROTOTIPO",
+  "mill": {
+    "role": "Molino original conservado como base del laboratorio",
+    "setting": "Pequeña isla-pueblo suspendida; el molino regula una corriente que mantiene puentes y cultivos",
+    "rule": "El receptor nuevo transforma el molino; no lo sustituye"
+  },
+  "wind_receiver": {
+    "primary_candidate": "B · Alas / Pétalos Celestes",
+    "primary_reason": "Identidad orgánica ISL, integración visual fuerte y alto potencial jugable",
+    "contrast_candidate": "C · Espiral del Horizonte",
+    "contrast_reason": "Silueta icónica y comportamiento multidireccional para contraste",
+    "functional_reference": "A · Raíces / Velas del Origen"
+  },
+  "proto_01": {
+    "target_duration": "10–15 min",
+    "space": "Una isla pequeña con molino, puente afectado, cultivos y zona lateral",
+    "core_loop": "leer viento → actuar → asumir coste → percibir consecuencia → regresar",
+    "routes": [
+      "A · Comprender/reparar el sistema",
+      "B · Forzar temporalmente la corriente",
+      "C · Reinterpretar/redirigir mediante el receptor"
+    ],
+    "questions": [
+      "¿Se entiende jugando que tocar el viento cambia el mundo?",
+      "¿Las tres soluciones se sienten físicamente distintas?",
+      "¿El receptor parece parte del sistema y no decoración?",
+      "¿La consecuencia se percibe sin popup ni explicación?"
+    ]
+  },
+  "next": [
+    "Construir PROTO 01 jugable mínimo",
+    "CQC jugable y técnico",
+    "Decidir qué sobrevive como PROVISIONAL FUERTE / CANON",
+    "BAKE-OFF 02 · Puente modular"
+  ],
+  "godot": "NO RUTA PRINCIPAL",
+  "command_center": "INFRAESTRUCTURA"
+}
