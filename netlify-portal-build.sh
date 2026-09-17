@@ -81,6 +81,7 @@ test -f build/site/decision-studio.js
 test -f build/site/lifecycle-studio.js
 test -f build/site/creative-head.js
 test -f build/site/ISL_STRESS_AUDIT_CURRENT.json
+test -f build/site/ISL_SECURITY_OS_CURRENT.json
 test -f build/site/ISL_GAMEDEV_OS_CURRENT.json
 test -f build/site/ISL_DECISION_CATALOG_CURRENT.json
 test -f build/site/ISL_PUBLIC_DECISIONS_CURRENT.json
