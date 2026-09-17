@@ -1,4 +1,4 @@
-name: Publicar ISL Command Center + juego en GitHub Pages
+name: Publicar ISL Command Center en GitHub Pages
 
 on:
   push:
@@ -6,11 +6,6 @@ on:
       - main
     paths:
       - "portal/**"
-      - "project.godot"
-      - "main.tscn"
-      - "scripts/**"
-      - "web/**"
-      - "netlify-build.sh"
       - ".github/workflows/build-web-preview.yml"
   workflow_dispatch:
 
@@ -33,21 +28,11 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Preparar controles Web sin tocar fuente
-        shell: bash
-        run: |
-          cp scripts/player.gd /tmp/player.gd
-          trap 'cp /tmp/player.gd scripts/player.gd' EXIT
-          sed -i 's/if not OS.has_feature("mobile"):/if not OS.has_feature("mobile") and not OS.has_feature("web"):/1' scripts/player.gd
-          sed -i '/func _unhandled_input(event: InputEvent) -> void:/a\    if event is InputEventMouseButton and event.pressed and not OS.has_feature("mobile"):\n        Input.mouse_mode = Input.MOUSE_MODE_CAPTURED\n        return\n    if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:\n        Input.mouse_mode = Input.MOUSE_MODE_VISIBLE\n        return' scripts/player.gd
-      - name: Exportar juego Web
-        shell: bash
-        run: bash netlify-build.sh
       - name: Componer portal ISL
         shell: bash
         run: |
           rm -rf build/pages
-          mkdir -p build/pages/game build/pages/assets
+          mkdir -p build/pages/assets
           cp portal/index.html portal/styles.css portal/app.js portal/ps4.html portal/reel.html portal/404.html portal/manifest.webmanifest portal/content-manifest.json build/pages/
           cp portal/decision-engine.html portal/ISL_DECISION_ENGINE_CURRENT.json portal/ps4-runtime-hotfix.js build/pages/
           cp -a portal/labs build/pages/
@@ -62,26 +47,16 @@ jobs:
           p.write_text(s,encoding='utf-8')
           PY
           touch build/pages/.nojekyll
-          cp -a build/web/. build/pages/game/
-      - name: CQC mínimo
+      - name: CQC portal
         shell: bash
         run: |
           test -f build/pages/index.html
-          test -f build/pages/styles.css
-          test -f build/pages/app.js
           test -f build/pages/ps4.html
           test -f build/pages/ps4-runtime-hotfix.js
           test -f build/pages/decision-engine.html
           test -f build/pages/poll/molino.html
           test -f build/pages/poll/gracias.html
-          test -f build/pages/reel.html
-          test -f build/pages/game/index.html
-          test -f build/pages/labs/wind.html
-          test -f build/pages/labs/method.html
-          test -f build/pages/assets/airships-last-waltz-pages.mp3
-          test -f build/pages/assets/isl-tv-reel-pages.mp4
           grep -q "ps4-runtime-hotfix.js" build/pages/ps4.html
-          grep -q "Crear es alterar el mundo" build/pages/index.html
           echo "CQC Pages OK"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
