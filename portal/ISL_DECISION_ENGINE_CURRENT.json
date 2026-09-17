@@ -1,0 +1,44 @@
+{
+  "version":"0.1",
+  "updated_at":"2026-09-17",
+  "purpose":"Sistema visual y trazable para evaluar cualquier propuesta de ISL antes de producción.",
+  "principles":[
+    "Nada pasa a CANON automáticamente",
+    "Toda propuesta debe tener tesis, antítesis y prueba falsable",
+    "Las segundas opiniones deben registrar desacuerdo, no borrarlo",
+    "Los bugs y regresiones bloquean promoción de estado",
+    "REJECTED-LEARNED conserva el aprendizaje",
+    "Producción sólo después de prueba mínima y CQC suficiente"
+  ],
+  "states":["BANCO","REVISION","SEGUNDA_OPINION","SIMULACION","CQC","PROVISIONAL_FUERTE","PRODUCCION","ESPERA","REJECTED_LEARNED","BUG_REGRESION","CANON"],
+  "categories":["ARGUMENTO","JUGABILIDAD","MECANICA","MUNDO","CIVILIZACION","ISLA_MAZMORRA","PERSONAJE","BARCO","EVOLUCION","REPUTACION","ACTIVIDAD","ARTE_2D","MODELO_3D","AUDIO","UI_UX","TECNOLOGIA","PRODUCCION"],
+  "pipeline":[
+    {"step":1,"name":"TESIS","requires":["problema","propuesta","valor_jugable_o_narrativo"]},
+    {"step":2,"name":"ANTITESIS","requires":["riesgos","contradicciones","alternativa_fuerte"]},
+    {"step":3,"name":"SEGUNDA OPINION","requires":["revision_externa_o_independiente","desacuerdos","preguntas_abiertas"]},
+    {"step":4,"name":"SIMULACION","requires":["casos_normales","casos_limite","fallos_esperables","impacto_en_sistemas_vecinos"]},
+    {"step":5,"name":"PRUEBA MINIMA","requires":["hipotesis_falsable","criterio_exito","criterio_fracaso"]},
+    {"step":6,"name":"CQC","requires":["artistico","tecnico","jugable","narrativo_si_aplica"]},
+    {"step":7,"name":"REGRESION","requires":["que_funcionaba_antes","que_puede_romperse","pruebas_repetibles"]},
+    {"step":8,"name":"DECISION","requires":["produccion_o_espera_o_rechazo","razon","dependencias"]}
+  ],
+  "bug_method":{
+    "flow":["REPRODUCIR","AISLAR","CLASIFICAR","HIPOTESIS","PRUEBA","FIX","REGRESION","DOCUMENTAR"],
+    "severity":["S0_BLOQUEANTE","S1_CRITICO","S2_ALTO","S3_MEDIO","S4_BAJO"],
+    "dimensions":["jugabilidad","narrativa","arte","rendimiento","compatibilidad","datos_estado","audio","input","ui","pipeline"]
+  },
+  "automation_rules":[
+    "Si falta antitesis no puede avanzar a simulacion",
+    "Si hay BUG_REGRESION abierto no puede avanzar a PRODUCCION",
+    "Si la prueba minima no tiene criterio de fracaso vuelve a REVISION",
+    "Si segunda opinion discrepa fuertemente pasa a SIMULACION_COMPARATIVA",
+    "PROVISIONAL_FUERTE requiere evidencia de prueba, no entusiasmo",
+    "CANON requiere decision humana explicita"
+  ],
+  "starter_proposals":[
+    {"id":"ARG-001","title":"Arquitectura maestra de campaña larga","category":"ARGUMENTO","state":"REVISION","thesis":"Convertir La Separacion y los reencuentros en una gran odisea por sagas, civilizaciones e hitos.","antithesis":"Riesgo de inflar alcance y diluir el nucleo emocional.","next_test":"Mapa de 5 sagas con 25-30 capitulos potenciales y CQC narrativo de dependencias."},
+    {"id":"MECH-001","title":"Reputacion emergente de capitan","category":"MECANICA","state":"SEGUNDA_OPINION","thesis":"Conversaciones y acciones forman perfiles de capitan sin barra moral unica.","antithesis":"Puede volverse opaco o manipulable si los jugadores farmean conductas triviales.","next_test":"Simular 20 decisiones y comprobar si perfiles distintos emergen sin etiquetas obvias."},
+    {"id":"LAB-001","title":"El Molino que Miente","category":"ISLA_MAZMORRA","state":"PROVISIONAL_FUERTE","thesis":"Una mision local demuestra decisiones fisicas, huella y consecuencias.","antithesis":"No debe confundirse con el argumento central ni convertirse en decision moral obvia.","next_test":"PROTO 01 de 10-15 min dentro de contexto de campaña."},
+    {"id":"SYS-001","title":"Galeria/Forge multimodal","category":"PRODUCCION","state":"SIMULACION","thesis":"El Centro de Mandos evalua arte, 3D, argumento, mecanicas, bugs y simulaciones en un mismo flujo.","antithesis":"Una unica interfaz puede saturarse y mezclar decisiones incomparables.","next_test":"Probar tablero por categorias con filtros y estados comunes."}
+  ]
+}
