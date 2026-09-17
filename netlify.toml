@@ -2,10 +2,6 @@
   command = "bash netlify-portal-build.sh"
   publish = "build/site"
 
-[build.environment]
-  GODOT_VERSION = "4.7.2"
-  ISL_MEDIA_POLICY = "hq-final-no-degraded-public-media"
-
 [[headers]]
   for = "/*"
   [headers.values]
