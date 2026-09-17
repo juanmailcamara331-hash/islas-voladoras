@@ -1,0 +1,388 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-09-18",
+  "purpose": "Sistema operativo recursivo para diseño, producción, validación, lanzamiento y postproducción de ISL.",
+  "principles": [
+    "Automatizar preparación, comparación, validación, builds, reporting y handoffs; no automatizar la decisión creativa final.",
+    "Cada sistema importante debe declarar dependencias, sinergias, requisitos, pruebas, presupuesto y criterio de salida.",
+    "Toda salida de una fase alimenta la siguiente y toda regresión puede devolver el elemento a una fase anterior.",
+    "Encuestas, telemetría y playtests aportan evidencia; no sustituyen la confirmación humana.",
+    "Marketing, store assets, crowdfunding y comunidad se producen en paralelo desde material real del juego, no al final."
+  ],
+  "recursive_loop": [
+    "HIPOTESIS",
+    "VARIANTES",
+    "SIMULACION",
+    "CQC",
+    "ENCUESTA_O_REVISION",
+    "CONFIRMACION_AUTOR",
+    "IMPLEMENTACION",
+    "AUTOTEST",
+    "PLAYTEST",
+    "TELEMETRIA",
+    "CORRECCION",
+    "REGRESION",
+    "PROFILE",
+    "VALIDACION",
+    "PRODUCCION",
+    "ARCHIVO_APRENDIZAJE"
+  ],
+  "cross_system_engine": {
+    "purpose": "Detectar sinergias, incompatibilidades y requisitos antes de implementar.",
+    "rules": [
+      "Toda decisión declara consumes, produces, conflicts_with, depends_on y amplifies.",
+      "Cambios en SAVE/WORLD/TAGS/DATA disparan revisión de migración y regresión.",
+      "Cambios en MOV/COMBAT/ABIL/ANIM/CAM disparan suite de sensación jugable.",
+      "Cambios en ART/VFX/RENDER/WORLD disparan screenshot comparison y presupuesto GPU.",
+      "Cambios en NARR/PATH/REL/EVO disparan simulación de estados y continuidad.",
+      "Cambios en UI/ACCESS/LOC disparan matriz de resoluciones, idiomas e input."
+    ],
+    "outputs": [
+      "dependency_graph",
+      "synergy_report",
+      "risk_register",
+      "required_tests",
+      "affected_assets",
+      "estimated_rework"
+    ]
+  },
+  "lifecycle": [
+    {
+      "id": "VISION",
+      "name": "Visión / pilares",
+      "exit": [
+        "promesa jugable",
+        "ADN visual",
+        "audiencia",
+        "scope guardrails"
+      ]
+    },
+    {
+      "id": "PREPROD",
+      "name": "Preproducción",
+      "exit": [
+        "arquitectura",
+        "prototipos de riesgo",
+        "pipeline assets",
+        "presupuesto inicial"
+      ]
+    },
+    {
+      "id": "VERTICAL",
+      "name": "Vertical Slice",
+      "exit": [
+        "calidad objetivo demostrada",
+        "loop completo",
+        "pipeline repetible",
+        "coste medible"
+      ]
+    },
+    {
+      "id": "PRODUCTION",
+      "name": "Producción",
+      "exit": [
+        "features locked por hitos",
+        "contenido escalable",
+        "CI estable",
+        "QA continuo"
+      ]
+    },
+    {
+      "id": "ALPHA",
+      "name": "Alpha",
+      "exit": [
+        "feature complete",
+        "golden path completable",
+        "bugs severos controlados"
+      ]
+    },
+    {
+      "id": "BETA",
+      "name": "Beta",
+      "exit": [
+        "content complete",
+        "optimización",
+        "localización",
+        "compatibilidad",
+        "balance"
+      ]
+    },
+    {
+      "id": "RC",
+      "name": "Release Candidate",
+      "exit": [
+        "cero blockers",
+        "store checklist",
+        "package final",
+        "rollback plan"
+      ]
+    },
+    {
+      "id": "LAUNCH",
+      "name": "Lanzamiento",
+      "exit": [
+        "monitorización",
+        "support",
+        "hotfix lane",
+        "comunicación"
+      ]
+    },
+    {
+      "id": "POST",
+      "name": "Post-launch",
+      "exit": [
+        "patch cadence",
+        "feedback triage",
+        "telemetría",
+        "roadmap",
+        "postmortem"
+      ]
+    }
+  ],
+  "quality_gates": {
+    "severity": [
+      "S0_BLOCKER",
+      "S1_CRITICAL",
+      "S2_MAJOR",
+      "S3_MINOR",
+      "S4_POLISH"
+    ],
+    "required_suites": [
+      "unit_low_level",
+      "feature",
+      "smoke",
+      "functional",
+      "content_stress",
+      "screenshot_comparison",
+      "gauntlet_session",
+      "save_migration",
+      "performance_budget",
+      "localization",
+      "accessibility",
+      "controller",
+      "install_update_uninstall",
+      "store_build",
+      "crash_recovery"
+    ],
+    "stop_ship": [
+      "crash/data loss",
+      "save corruption",
+      "progress blocker",
+      "security/privacy violation",
+      "unrecoverable input/UI",
+      "certification blocker",
+      "store promise mismatch"
+    ]
+  },
+  "playtest_program": [
+    {
+      "stage": "LAB",
+      "audience": "equipo/autor",
+      "goal": "falsar mecánica rápido",
+      "sample": "pequeño"
+    },
+    {
+      "stage": "FRIENDS",
+      "audience": "amigos segmentados",
+      "goal": "comprensión y emoción sin explicar",
+      "sample": "5-15"
+    },
+    {
+      "stage": "CLOSED",
+      "audience": "jugadores objetivo",
+      "goal": "retención/fricción/balance",
+      "sample": "20-100"
+    },
+    {
+      "stage": "STEAM_PLAYTEST",
+      "audience": "público controlado",
+      "goal": "hardware, UX, métricas, estabilidad",
+      "sample": "escalable"
+    },
+    {
+      "stage": "DEMO",
+      "audience": "público",
+      "goal": "conversión/wishlist y claridad de promesa",
+      "sample": "abierto"
+    }
+  ],
+  "voting_governance": {
+    "modes": [
+      {
+        "id": "PUBLIC",
+        "use": "arte, sensación, claridad, preferencia de exploración, marketing",
+        "spoilers": "bajo"
+      },
+      {
+        "id": "BLIND_A_B",
+        "use": "movimiento, UI, audio, balance perceptivo",
+        "spoilers": "bajo"
+      },
+      {
+        "id": "FOCUS_GROUP",
+        "use": "argumento, personajes, ritmo, emoción",
+        "spoilers": "medio",
+        "rule": "segmentar y evitar revelar giros"
+      },
+      {
+        "id": "EXPERT",
+        "use": "arquitectura, rendimiento, accesibilidad, economía, QA",
+        "spoilers": "variable"
+      },
+      {
+        "id": "INTERNAL_SIM",
+        "use": "mutación profunda, sistema de memoria, giros, finales",
+        "spoilers": "alto"
+      }
+    ],
+    "narrative_rule": "Argumento sí puede refinarse por votación/revisión, pero preguntar por claridad, interés, emoción, ritmo y comprensión; no delegar el canon ni revelar misterios clave.",
+    "weighting": "Registrar audiencia y contexto. No mezclar votos de expertos, fans, amigos y jugadores fríos como si fueran la misma señal."
+  },
+  "release_marketing": {
+    "tracks": [
+      {
+        "id": "BRAND",
+        "items": [
+          "logo",
+          "key art",
+          "paleta",
+          "tipografía",
+          "tagline",
+          "brand guide"
+        ]
+      },
+      {
+        "id": "STORE",
+        "items": [
+          "capsules",
+          "screenshots",
+          "trailers",
+          "descripción corta/larga",
+          "features",
+          "idiomas",
+          "rating materials"
+        ]
+      },
+      {
+        "id": "COMMUNITY",
+        "items": [
+          "devlogs",
+          "clips",
+          "GIFs",
+          "behind the scenes",
+          "polls",
+          "FAQ",
+          "press kit"
+        ]
+      },
+      {
+        "id": "STEAM",
+        "items": [
+          "Coming Soon",
+          "wishlists",
+          "demo",
+          "Steam Playtest",
+          "festival assets",
+          "release checklist",
+          "pricing"
+        ]
+      },
+      {
+        "id": "KICKSTARTER",
+        "items": [
+          "campaign story",
+          "goal/budget",
+          "reward tiers",
+          "stretch goals",
+          "risks",
+          "timeline",
+          "fulfillment",
+          "updates"
+        ]
+      },
+      {
+        "id": "PRESS",
+        "items": [
+          "press kit",
+          "fact sheet",
+          "screenshots",
+          "trailer",
+          "contact",
+          "review build",
+          "embargo notes"
+        ]
+      },
+      {
+        "id": "CREATORS",
+        "items": [
+          "creator build",
+          "capture guide",
+          "key distribution plan",
+          "talking points",
+          "disclosure notes"
+        ]
+      },
+      {
+        "id": "LAUNCH",
+        "items": [
+          "launch trailer",
+          "day-1 messaging",
+          "support pages",
+          "known issues",
+          "hotfix comms"
+        ]
+      },
+      {
+        "id": "POST",
+        "items": [
+          "roadmap",
+          "patch notes",
+          "community reports",
+          "sales/wishlist analysis",
+          "postmortem"
+        ]
+      }
+    ],
+    "asset_rule": "Todo asset promocional debe vincularse a una build/feature real y tener estado DRAFT → REVIEW → APPROVED → STORE_READY → ARCHIVED.",
+    "reuse_rule": "Capturas, clips y key art se generan desde hitos aprobados para evitar retrabajo y promesas no implementadas."
+  },
+  "economics": {
+    "controls": [
+      "scope_budget",
+      "feature_cost_estimate",
+      "rework_risk",
+      "asset_reuse",
+      "automation_roi",
+      "platform_cost",
+      "localization_cost",
+      "QA_cost",
+      "marketing_cost",
+      "fulfillment_cost"
+    ],
+    "rule": "Priorizar automatización donde reduzca trabajo repetitivo o detecte errores temprano; no automatizar arte/decisión si empeora calidad o aumenta retrabajo."
+  },
+  "recognized_methods": [
+    "stage-gate / milestone gates",
+    "vertical slice before full production",
+    "risk-first prototyping",
+    "data-driven design",
+    "continuous integration",
+    "automated smoke/regression testing",
+    "playtest cohorts",
+    "golden path",
+    "bug severity triage",
+    "performance budgets",
+    "release candidate / rollback",
+    "postmortem / rejected-learned archive"
+  ],
+  "official_refs": [
+    "Epic Automation Test Framework",
+    "Epic Gauntlet",
+    "Epic BuildGraph",
+    "Epic Data Validation",
+    "Epic Unreal Insights",
+    "Steamworks Release Process",
+    "Steam Playtest",
+    "Kickstarter Creator Handbook"
+  ]
+}
