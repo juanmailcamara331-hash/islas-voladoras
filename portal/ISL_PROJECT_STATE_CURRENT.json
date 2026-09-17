@@ -1,19 +1,45 @@
 {
-  "version": "0.14.2",
+  "version": "0.14.3",
   "updated_at": "2026-09-17",
-  "phase": "PROTO 01 · EL MOLINO QUE MIENTE",
+  "phase": "REVISIÓN DE AVENTURA PRINCIPAL",
   "phase_status": "EN CURSO",
-  "previous_phase": "BAKE-OFF 01 · RECEPTOR DEL VIENTO",
-  "previous_phase_status": "VISUAL PRELIMINAR CERRADO",
+  "previous_phase": "PROTO 01 · EL MOLINO QUE MIENTE",
+  "previous_phase_status": "CONSERVADO · SUBORDINADO A CONTEXTO",
   "base_system": "1A × 1B × 1C + huella + mutación + consecuencia profunda",
-  "method": "LAB → CQC → BAKE-OFF → DIORAMA → PROTOTIPO",
+  "method": "VISIÓN → ESTRUCTURA DE AVENTURA → REGIONES/CIUDADES → BUCLES → LAB/PROTO → CQC → PRODUCCIÓN",
+  "narrative_spine": {
+    "state": "PRIORIDAD MAESTRA",
+    "canon_core": "La Separación dispersa al grupo; reencontrar a los amigos reconstruye relaciones, tripulación y barco-hogar",
+    "emotional_promise": "Aventura luminosa y extraña sobre reencontrar a los amigos y construir un hogar en el cielo",
+    "problem_to_solve": "Convertir la búsqueda de amigos en una gran aventura variada con objetivos intermedios, ciudades, misterios, amenazas, actividades, retornos y vida a bordo",
+    "do_not_promote_yet": [
+      "GIGAS como trama principal",
+      "cosmología final como explicación temprana",
+      "sistemas secundarios sin conexión con la aventura"
+    ]
+  },
+  "strong_foundations": [
+    {"name":"Reencontrar amigos / formar tripulación","state":"CANON"},
+    {"name":"Barco que crece hasta convertirse en hogar colectivo","state":"PROVISIONAL FUERTE"},
+    {"name":"Combate JRPG por turnos","state":"PROVISIONAL FUERTE"},
+    {"name":"Capacidades combinadas para exploración y retorno","state":"PROVISIONAL FUERTE"},
+    {"name":"Mutaciones condicionadas por trayectoria","state":"CANON / BASE SISTÉMICA"},
+    {"name":"Huella, memoria del mundo y consecuencias tardías","state":"PROVISIONAL FUERTE"},
+    {"name":"Mundo 3D abierto con identidad visual ISL","state":"PRIORIDAD DE MUNDO"},
+    {"name":"Vida cotidiana y memoria acumulada en la nave","state":"PROVISIONAL FUERTE"}
+  ],
   "taxonomy": {
     "categories": [
-      "Mundo / Isla-pueblo",
-      "Sistema / Viento",
-      "Mecánica / Molino",
-      "Mecánica / Receptor",
-      "Gameplay / Consecuencia",
+      "Argumento / Aventura principal",
+      "Mundo / Regiones e islas",
+      "Mundo / Ciudades y comunidades",
+      "Nave / Hogar y tripulación",
+      "Exploración / Viento y navegación",
+      "Exploración / Capacidades combinadas",
+      "Combate / JRPG por turnos",
+      "Actividad / Misiones secundarias",
+      "Actividad / Vida de nave y minijuegos",
+      "Gameplay / Huella y consecuencia",
       "Relación / Memoria",
       "Transformación / Ser",
       "Arte / Dirección visual",
@@ -26,78 +52,57 @@
     "states": [
       "CANON",
       "PROVISIONAL FUERTE",
+      "PROVISIONAL",
       "EXPERIMENTO",
+      "APARCADO",
       "REJECTED-LEARNED",
       "CERRADO VISUAL",
       "EN CURSO"
     ],
     "current_tags": [
-      "molino",
-      "viento",
-      "receptor",
-      "isla-pueblo",
-      "puentes",
-      "cultivos",
+      "aventura-principal",
+      "la-separacion",
+      "amigos",
+      "tripulacion",
+      "barco-hogar",
+      "ciudades",
+      "regiones",
+      "misiones-secundarias",
+      "navegacion-celeste",
       "huella",
       "consecuencia",
-      "trayectoria",
-      "proto-01"
+      "trayectoria"
     ]
   },
-  "mill": {
-    "role": "Molino original conservado como base del laboratorio",
-    "setting": "Pequeña isla-pueblo suspendida; el molino regula una corriente que mantiene puentes y cultivos",
-    "rule": "El receptor nuevo transforma el molino; no lo sustituye",
-    "category": "Mecánica / Molino",
-    "state": "PROVISIONAL FUERTE"
+  "proto_01": {
+    "category": "Producción / Prototipo",
+    "state": "CONSERVADO · PAUSA DE CONTEXTO",
+    "name": "El Molino que Miente",
+    "role": "Laboratorio/misión jugable dentro de una aventura mayor; no argumento central",
+    "target_duration": "10–15 min",
+    "core_loop": "leer viento → actuar → asumir coste → percibir consecuencia → regresar",
+    "resume_when": "La columna vertebral de aventura y la función de la región/ciudad estén suficientemente claras"
   },
   "wind_receiver": {
     "category": "Mecánica / Receptor",
     "bake_off_state": "CERRADO VISUAL",
     "primary_candidate": "B · Alas / Pétalos Celestes",
-    "primary_state": "CANDIDATO PRINCIPAL",
-    "primary_reason": "Identidad orgánica ISL, integración visual fuerte y alto potencial jugable",
     "contrast_candidate": "C · Espiral del Horizonte",
-    "contrast_state": "CONTRASTE ACTIVO",
-    "contrast_reason": "Silueta icónica y comportamiento multidireccional para contraste",
-    "functional_reference": "A · Raíces / Velas del Origen",
-    "functional_state": "REFERENCIA FUNCIONAL",
-    "variants": [
-      {"id":"A","name":"Raíces / Velas del Origen","role":"referencia funcional","status":"ARCHIVADO COMO VARIANTE"},
-      {"id":"B","name":"Alas / Pétalos Celestes","role":"candidato principal","status":"PASA A PROTO 01"},
-      {"id":"C","name":"Espiral del Horizonte","role":"contraste","status":"MANTIENE PRUEBA DE CONTRASTE"}
-    ]
-  },
-  "proto_01": {
-    "category": "Producción / Prototipo",
-    "state": "EN CURSO",
-    "target_duration": "10–15 min",
-    "space": "Una isla pequeña con molino, puente afectado, cultivos y zona lateral",
-    "core_loop": "leer viento → actuar → asumir coste → percibir consecuencia → regresar",
-    "routes": [
-      "A · Comprender/reparar el sistema",
-      "B · Forzar temporalmente la corriente",
-      "C · Reinterpretar/redirigir mediante el receptor"
-    ],
-    "questions": [
-      "¿Se entiende jugando que tocar el viento cambia el mundo?",
-      "¿Las tres soluciones se sienten físicamente distintas?",
-      "¿El receptor parece parte del sistema y no decoración?",
-      "¿La consecuencia se percibe sin popup ni explicación?"
-    ]
+    "functional_reference": "A · Raíces / Velas del Origen"
   },
   "roadmap": [
-    {"name":"Command Center + Forge","category":"Infraestructura","status":"INFRAESTRUCTURA"},
-    {"name":"Bake-Off 01 · Receptor del viento","category":"Producción / Bake-Off","status":"CERRADO VISUAL"},
-    {"name":"PROTO 01 · El Molino que Miente","category":"Producción / Prototipo","status":"EN CURSO"},
-    {"name":"CQC PROTO 01","category":"CQC","status":"SIGUIENTE"},
-    {"name":"Bake-Off 02 · Puente modular","category":"Producción / Bake-Off","status":"DESPUÉS"}
+    {"name":"Revisión de aventura principal","category":"Argumento","status":"EN CURSO"},
+    {"name":"Estructura de regiones, ciudades y objetivos","category":"Mundo / Narrativa","status":"SIGUIENTE"},
+    {"name":"Bucles secundarios + vida de nave","category":"Gameplay / Mundo","status":"DESPUÉS"},
+    {"name":"PROTO 01 · El Molino que Miente","category":"Producción / Prototipo","status":"CONSERVADO"},
+    {"name":"CQC PROTO 01","category":"CQC","status":"POSTERIOR"},
+    {"name":"Bake-Off 02 · Puente modular","category":"Producción / Bake-Off","status":"POSTERIOR"}
   ],
   "next": [
-    "Construir PROTO 01 jugable mínimo",
-    "CQC jugable y técnico",
-    "Decidir qué sobrevive como PROVISIONAL FUERTE / CANON",
-    "BAKE-OFF 02 · Puente modular"
+    "Definir la columna vertebral completa de la aventura sin sobrecargarla",
+    "Definir regiones/ciudades y qué objetivo fuerte aporta cada una",
+    "Definir bucles secundarios recurrentes y vida de la nave-hogar",
+    "Reintegrar El Molino que Miente como misión/laboratorio dentro del contexto correcto"
   ],
   "godot": "NO RUTA PRINCIPAL",
   "command_center": "INFRAESTRUCTURA"
