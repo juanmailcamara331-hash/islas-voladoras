@@ -15,10 +15,30 @@
 
     var st=document.createElement('style');
     st.id='isl-ps4-runtime-hotfix-style';
-    st.textContent='#consoleBar{position:fixed!important;top:16px!important;left:50%!important;right:auto!important;bottom:auto!important;transform:translateX(-50%)!important;z-index:2147483000!important;display:flex!important;flex-direction:row!important;align-items:center!important;gap:7px!important;padding:6px 8px!important;border:1px solid #35515d!important;border-radius:14px!important;background:rgba(5,14,20,.96)!important;max-width:calc(100vw - 100px)!important}#consoleBar button{display:block!important;min-width:86px!important;width:auto!important;height:46px!important;padding:0 12px!important;border-radius:10px!important;font-size:13px!important;white-space:nowrap!important}#audioState{display:block!important;min-width:150px!important;max-width:230px!important;font-size:10px!important;line-height:1.15!important;padding:8px 9px!important;border-radius:9px!important;white-space:normal!important;text-align:center!important}#ps4AudioBridge{position:fixed!important;left:2px!important;bottom:2px!important;width:4px!important;height:4px!important;opacity:.01!important;pointer-events:none!important;z-index:1!important}@media(max-width:900px){#consoleBar{top:10px!important;max-width:calc(100vw - 70px)!important}#consoleBar button{min-width:72px!important;padding:0 8px!important}#audioState{min-width:120px!important}}';
+    st.textContent='#consoleBar{position:fixed!important;top:16px!important;left:50%!important;right:auto!important;bottom:auto!important;transform:translateX(-50%)!important;z-index:2147483000!important;display:flex!important;flex-direction:row!important;align-items:center!important;gap:7px!important;padding:6px 8px!important;border:1px solid #35515d!important;border-radius:14px!important;background:rgba(5,14,20,.96)!important;max-width:calc(100vw - 100px)!important}#consoleBar button{display:block!important;min-width:86px!important;width:auto!important;height:46px!important;padding:0 12px!important;border-radius:10px!important;font-size:13px!important;white-space:nowrap!important}#audioState{display:block!important;min-width:150px!important;max-width:230px!important;font-size:10px!important;line-height:1.15!important;padding:8px 9px!important;border-radius:9px!important;white-space:normal!important;text-align:center!important}#ps4AudioBridge{position:fixed!important;left:2px!important;bottom:2px!important;width:4px!important;height:4px!important;opacity:.01!important;pointer-events:none!important;z-index:1!important}#ps4DecisionSummary{margin-top:14px;border:2px solid #34515d;background:#0a161d;padding:15px}#ps4DecisionSummary .dsgrid{display:flex;flex-wrap:wrap;gap:10px}#ps4DecisionSummary .ds{flex:1 1 260px;border:1px solid #294955;background:#0c1a22;padding:12px}#ps4DecisionSummary .dsl{font-size:11px;letter-spacing:2px;color:#8defff}#ps4DecisionSummary .dsv{font-size:17px;font-weight:bold;color:#fff;margin-top:6px;line-height:1.35}#ps4DecisionSummary .pending{color:#ffc36e}@media(max-width:900px){#consoleBar{top:10px!important;max-width:calc(100vw - 70px)!important}#consoleBar button{min-width:72px!important;padding:0 8px!important}#audioState{min-width:120px!important}}';
     document.head.appendChild(st);
 
-    if(menu&&!document.getElementById('ps4DecisionEngine')){var a=document.createElement('a');a.id='ps4DecisionEngine';a.className='btn focusable navsave';a.href='decision-engine.html';a.textContent='DECISION ENGINE';menu.appendChild(a)}
+    if(menu&&!document.getElementById('ps4DecisionEngine')){
+      var a=document.createElement('a');
+      a.id='ps4DecisionEngine';
+      a.className='btn focusable navsave';
+      a.href='decision-engine.html';
+      a.textContent='CENTRO DE DECISIONES · SOLO AUTOR';
+      menu.appendChild(a);
+    }
+
+    if(menu&&!document.getElementById('ps4DecisionSummary')){
+      var summary=document.createElement('div');
+      summary.id='ps4DecisionSummary';
+      summary.innerHTML='<div class="dsl">CENTRO DE DECISIONES · MOLINO R1</div><div class="dsgrid"><div class="ds"><div class="dsl">VOTOS</div><div id="ps4Votes" class="dsv pending">· ganador: pendiente</div></div><div class="ds"><div class="dsl">CONFIRMACIÓN AUTOR</div><div id="ps4Author" class="dsv pending">PENDIENTE → PRODUCCION_O_ESPERA_O_REJECTED_LEARNED</div></div></div>';
+      menu.parentNode.insertBefore(summary,menu.nextSibling);
+      fetch('ISL_DECISION_ENGINE_CURRENT.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(data){
+        var p=data&&data.polls&&data.polls[0];if(!p)return;
+        var votes=document.getElementById('ps4Votes'),author=document.getElementById('ps4Author');
+        if(votes)votes.textContent=String((p.result&&p.result.total_votes)||0)+' · ganador: '+((p.result&&p.result.winner)||'pendiente');
+        if(author)author.textContent=((p.author_confirmation&&p.author_confirmation.status)||'PENDIENTE')+' → '+(p.promotion_target||'PRODUCCION_O_ESPERA_O_REJECTED_LEARNED');
+      }).catch(function(){});
+    }
 
     var player=document.createElement('video');
     player.id='ps4AudioBridge';
