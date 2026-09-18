@@ -357,3 +357,14 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
   4. Referencias
 - Purpose: make current validation surfaces obvious while the user is with friends.
 - Temporary UI by design; remove or reorganize after this validation round.
+
+
+## v0.59 — ANDROID CLEAN START / MOBILE VIEWPORT FIX
+- Native Android wrapper now opens portal with ?app=1.
+- Native app mode hides the legacy welcome before first paint.
+- Android WebView no longer uses overview-mode / wide desktop viewport.
+- Native pinch zoom is disabled to prevent the broken full-canvas zoom-out seen in human testing.
+- Initial scale resets to mobile default.
+- Browser/PWA accessibility zoom remains unchanged.
+- Android workflow now enforces the native viewport rules and app=1 entry.
+- Visual north remains the approved premium ISL Command Center references; no broad redesign is opened in this fix.
