@@ -1,0 +1,13 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+ <path android:fillColor="@android:color/transparent" android:pathData="M0,0h108v108h-108z"/>
+ <path android:strokeColor="#FFC36E" android:strokeWidth="5" android:fillColor="@android:color/transparent" android:pathData="M54,5a49,49 0,1 0,0 98a49,49 0,1 0,0 -98"/>
+ <path android:strokeColor="#87EFFF" android:strokeWidth="1.5" android:fillColor="@android:color/transparent" android:pathData="M54,12a42,42 0,1 0,0 84a42,42 0,1 0,0 -84"/>
+ <path android:fillColor="#FFD98B" android:pathData="M54,0l6,17l-6,7l-6,-7zM108,54l-17,6l-7,-6l7,-6zM54,108l-6,-17l6,-7l6,7zM0,54l17,-6l7,6l-7,6z"/>
+ <path android:fillColor="#315E4A" android:pathData="M25,57c7,-12 18,-18 30,-18c13,0 24,6 29,18c-7,6 -17,8 -29,8c-13,0 -23,-2 -30,-8z"/>
+ <path android:fillColor="#17303A" android:pathData="M28,62c8,4 17,5 27,5c10,0 19,-1 26,-5l-13,30l-13,-10l-13,10z"/>
+ <path android:strokeColor="#87EFFF" android:strokeWidth="3.5" android:strokeLineCap="round" android:fillColor="@android:color/transparent" android:pathData="M48,64l-1,19M56,65l-1,23M64,64l1,17"/>
+ <path android:fillColor="#8A5A2B" android:pathData="M61,39l2,-18h7l3,18z"/>
+ <path android:strokeColor="#F4DFB8" android:strokeWidth="2.8" android:strokeLineCap="round" android:fillColor="@android:color/transparent" android:pathData="M67,24l0,-13M67,24l13,0M67,24l0,13M67,24l-13,0"/>
+ <!-- two negation strokes on the sail -->
+ <path android:strokeColor="#38251A" android:strokeWidth="2.2" android:fillColor="@android:color/transparent" android:pathData="M71,17h5v4M78,17h5v4"/>
+</vector>
