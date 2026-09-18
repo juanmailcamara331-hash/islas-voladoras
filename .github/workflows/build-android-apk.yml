@@ -1,163 +1,77 @@
-name: Build Islas Voladoras APK
+name: Build ISL Web App APK
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths:
+      - "android-web/**"
+      - ".github/workflows/build-android-apk.yml"
 
 permissions:
   contents: read
 
 concurrency:
-  group: islas-voladoras-android-${{ github.ref }}
+  group: isl-web-android-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build-apk:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
-    env:
-      GODOT_VERSION: "4.7.2"
-      GODOT_STATUS: "stable"
-      PACKAGE_ID: "com.pandaria.islasvoladoras"
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Locate ZG project
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [ -f project.godot ] && [ -f scripts/main.gd ]; then
-            echo "PROJECT_DIR=$GITHUB_WORKSPACE" >> "$GITHUB_ENV"
-          elif [ -f ZG_ISLAS_ORIGINAL.zip ]; then
-            mkdir -p "$RUNNER_TEMP/zg"
-            unzip -q ZG_ISLAS_ORIGINAL.zip -d "$RUNNER_TEMP/zg"
-            PROJECT="$(find "$RUNNER_TEMP/zg" -name project.godot -print -quit)"
-            test -n "$PROJECT"
-            echo "PROJECT_DIR=$(dirname "$PROJECT")" >> "$GITHUB_ENV"
-          else
-            echo "ERROR: falta el checkpoint ZG completo." >&2
-            exit 1
-          fi
-
-      - name: Enable Android texture compression
-        shell: bash
-        run: |
-          set -euo pipefail
-          PROJECT_FILE="$PROJECT_DIR/project.godot"
-          test -f "$PROJECT_FILE"
-          if grep -q '^\[rendering\]' "$PROJECT_FILE"; then
-            sed -i '/^textures\/vram_compression\/import_etc2_astc=/d' "$PROJECT_FILE"
-            sed -i '/^\[rendering\]/a textures/vram_compression/import_etc2_astc=true' "$PROJECT_FILE"
-          else
-            printf '\n[rendering]\ntextures/vram_compression/import_etc2_astc=true\n' >> "$PROJECT_FILE"
-          fi
-
-      - name: Install Java 17
+      - name: Java 17
         uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "17"
 
-      - name: Install Android SDK command-line tools
+      - name: Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android 35
         shell: bash
         run: |
-          set -euo pipefail
-          SDK="$RUNNER_TEMP/android-sdk"
-          mkdir -p "$SDK/cmdline-tools"
-          curl -fL --retry 3 -o "$RUNNER_TEMP/cmdline.zip" "https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip"
-          unzip -q "$RUNNER_TEMP/cmdline.zip" -d "$SDK/cmdline-tools"
-          mv "$SDK/cmdline-tools/cmdline-tools" "$SDK/cmdline-tools/latest"
-          echo "ANDROID_SDK_ROOT=$SDK" >> "$GITHUB_ENV"
-          echo "$SDK/cmdline-tools/latest/bin" >> "$GITHUB_PATH"
-          echo "$SDK/platform-tools" >> "$GITHUB_PATH"
-          yes | "$SDK/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$SDK" --licenses >/dev/null || true
-          "$SDK/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$SDK" "platform-tools" "platforms;android-35" "build-tools;35.0.1"
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platforms;android-35" "build-tools;35.0.1"
 
-      - name: Install Godot and export templates
+      - name: Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.9"
+
+      - name: Stamp build version
         shell: bash
         run: |
-          set -euo pipefail
-          TAG="${GODOT_VERSION}-${GODOT_STATUS}"
-          BASE="https://github.com/godotengine/godot-builds/releases/download/${TAG}"
-          curl -fL --retry 3 -o "$RUNNER_TEMP/godot.zip" "${BASE}/Godot_v${TAG}_linux.x86_64.zip"
-          curl -fL --retry 3 -o "$RUNNER_TEMP/templates.tpz" "${BASE}/Godot_v${TAG}_export_templates.tpz"
-          mkdir -p "$RUNNER_TEMP/godot" "$RUNNER_TEMP/templates"
-          unzip -q "$RUNNER_TEMP/godot.zip" -d "$RUNNER_TEMP/godot"
-          GODOT_BIN="$(find "$RUNNER_TEMP/godot" -maxdepth 1 -type f -name 'Godot_v*_linux.x86_64' -print -quit)"
-          test -n "$GODOT_BIN"
-          chmod +x "$GODOT_BIN"
-          sudo ln -sf "$GODOT_BIN" /usr/local/bin/godot
-          unzip -q "$RUNNER_TEMP/templates.tpz" -d "$RUNNER_TEMP/templates"
-          TEMPLATE_SRC="$(find "$RUNNER_TEMP/templates" -type d -name templates -print -quit)"
-          test -n "$TEMPLATE_SRC"
-          TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_STATUS}"
-          mkdir -p "$TEMPLATE_DIR"
-          cp -a "$TEMPLATE_SRC"/. "$TEMPLATE_DIR"/
-          if [ ! -f "$TEMPLATE_DIR/android_debug.apk" ]; then DEBUG_APK="$(find "$RUNNER_TEMP/templates" -type f -name 'android_debug.apk' -print -quit)"; test -n "$DEBUG_APK"; cp "$DEBUG_APK" "$TEMPLATE_DIR/android_debug.apk"; fi
-          if [ ! -f "$TEMPLATE_DIR/android_release.apk" ]; then RELEASE_APK="$(find "$RUNNER_TEMP/templates" -type f -name 'android_release.apk' -print -quit)"; test -n "$RELEASE_APK"; cp "$RELEASE_APK" "$TEMPLATE_DIR/android_release.apk"; fi
-          godot --version
+          sed -i "s/versionCode 1/versionCode ${GITHUB_RUN_NUMBER}/" android-web/app/build.gradle
+          sed -i "s/versionName '1.0'/versionName '1.0.${GITHUB_RUN_NUMBER}'/" android-web/app/build.gradle
 
-      - name: Configure Android paths for Godot
+      - name: Verify web wrapper target
         shell: bash
         run: |
-          mkdir -p "$HOME/.config/godot"
-          cat > "$HOME/.config/godot/editor_settings-4.7.tres" <<EOF
-          [gd_resource type="EditorSettings" format=3]
-          [resource]
-          export/android/java_sdk_path = "${JAVA_HOME}"
-          export/android/android_sdk_path = "${ANDROID_SDK_ROOT}"
-          EOF
+          ! grep -Rqi "project.godot\|scripts/main.gd\|GODOT_VERSION" .github/workflows/build-android-apk.yml android-web
+          grep -q "juanmailcamara331-hash.github.io/islas-voladoras" android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
+          grep -q "com.pandaria.islasvoladoras" android-web/app/build.gradle
 
-      - name: Prepare Android export preset
+      - name: Build APK
+        working-directory: android-web
+        run: gradle --no-daemon assembleDebug
+
+      - name: Validate APK
         shell: bash
         run: |
-          cat > "$PROJECT_DIR/export_presets.cfg" <<EOF
-          [preset.0]
-          name="Android"
-          platform="Android"
-          runnable=true
-          advanced_options=false
-          dedicated_server=false
-          custom_features=""
-          export_filter="all_resources"
-          include_filter=""
-          exclude_filter=""
-          export_path="build/android/Islas-Voladoras-debug.apk"
-          script_export_mode=2
-          [preset.0.options]
-          custom_template/debug=""
-          custom_template/release=""
-          gradle_build/use_gradle_build=false
-          gradle_build/export_format=0
-          architectures/armeabi-v7a=false
-          architectures/arm64-v8a=true
-          architectures/x86=false
-          architectures/x86_64=false
-          package/unique_name="${PACKAGE_ID}"
-          package/name="Islas Voladoras"
-          version/code=${GITHUB_RUN_NUMBER}
-          version/name="0.0.${GITHUB_RUN_NUMBER}"
-          package/signed=true
-          EOF
-
-      - name: Import and validate project
-        shell: bash
-        run: godot --headless --editor --quit --path "$PROJECT_DIR"
-
-      - name: Export debug APK
-        shell: bash
-        run: |
-          mkdir -p "$PROJECT_DIR/build/android"
-          godot --headless --path "$PROJECT_DIR" --export-debug "Android" "$PROJECT_DIR/build/android/Islas-Voladoras-debug.apk"
-          test -s "$PROJECT_DIR/build/android/Islas-Voladoras-debug.apk"
+          APK="android-web/app/build/outputs/apk/debug/app-debug.apk"
+          test -s "$APK"
+          cp "$APK" "ISL-Command-Center.apk"
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Islas-Voladoras-APK-${{ github.run_number }}
-          path: ${{ env.PROJECT_DIR }}/build/android/Islas-Voladoras-debug.apk
+          name: ISL-Command-Center-APK-${{ github.run_number }}
+          path: ISL-Command-Center.apk
           if-no-files-found: error
           retention-days: 30
