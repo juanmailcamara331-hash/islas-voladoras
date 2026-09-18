@@ -25,7 +25,7 @@
       #calendar .routeShell{display:grid;gap:12px}
       #calendar .routeHead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
       #calendar .routeHead h2{font-size:clamp(28px,5vw,50px);letter-spacing:-.035em;margin:3px 0 6px}
-      #calendar .routeLegend{display:flex;gap:6px;flex-wrap:wrap}
+      #calendar .routeLegend{display:flex;gap:6px;flex-wrap:wrap;align-items:center}#calendar .routeProgress{font-size:8px;letter-spacing:.08em;border:1px solid #375863;border-radius:999px;padding:6px 8px;background:#07131a;color:#c8d6d8}
       #calendar .routeLegend span{font-size:8px;letter-spacing:.08em;border:1px solid var(--line);border-radius:999px;padding:5px 7px;background:#08151c}
       #calendar .routeLegend .done{color:var(--lime);border-color:#4b754a}
       #calendar .routeLegend .now{color:var(--gold);border-color:#8b6b39}
@@ -47,8 +47,8 @@
       #calendar .routeTraveler img{width:100%;height:100%;object-fit:cover;object-position:center 22%;image-rendering:pixelated}
       #calendar .routeTraveler:after{content:"";position:absolute;inset:auto 8px 4px;height:2px;background:#ffc36e;box-shadow:0 0 10px #ffc36e}
       @keyframes routePulse{50%{box-shadow:0 16px 38px #0009,0 0 38px #ffc36e46}}
-      #calendar .routeNow{position:absolute;left:4%;right:4%;bottom:4%;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #806538;background:#11140fdd;border-radius:13px;padding:10px 12px;backdrop-filter:blur(10px);z-index:4}
-      #calendar .routeNow b{display:block;color:var(--gold);font-size:12px}.routeNow span{font-size:10px;color:#cfdbd8}
+      #calendar .routeNow{position:absolute;left:4%;right:4%;bottom:4%;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;border:1px solid #806538;background:linear-gradient(180deg,#18170fe8,#0d120ddd);border-radius:14px;padding:11px 12px;backdrop-filter:blur(10px);z-index:4;box-shadow:0 12px 36px #0007}#calendar .routeNowMain{min-width:0}#calendar .routeNowLabel{display:block;font-size:7px;letter-spacing:.12em;color:#98afb4;margin-bottom:3px}#calendar .routeNowNext{display:block;font-size:8px;color:#98afb4;margin-top:4px}#calendar .routeNowAction{border:1px solid #8a6a3d;background:#2a2117;color:#fff;border-radius:10px;padding:9px 11px;font-size:8px;font-weight:900;white-space:nowrap}
+      #calendar .routeNow b{display:block;color:var(--gold);font-size:12px;line-height:1.2}.routeNow span{font-size:9px;color:#cfdbd8;line-height:1.35}
       #calendar .routeDates{border:1px solid #294955;border-radius:14px;background:#08151c;overflow:hidden}
       #calendar .routeDates summary{display:grid;grid-template-columns:auto auto 1fr;gap:8px;align-items:center;padding:12px 13px;cursor:pointer;list-style:none}
       #calendar .routeDates summary::-webkit-details-marker{display:none}
@@ -59,7 +59,7 @@
       #routeModal .routeStatus{font-size:9px;letter-spacing:.11em;color:var(--gold);text-transform:uppercase}
       #routeModal h2{margin:5px 40px 8px 0;font-size:28px}#routeModal p{color:#c4d3d6;line-height:1.55;font-size:12px}#routeModal .routeSceneGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}#routeModal .routeSceneBox{border:1px solid #2f4f5b;border-radius:11px;background:#08151c;padding:10px}#routeModal .routeSceneBox b{display:block;font-size:8px;letter-spacing:.1em;color:var(--cyan);margin-bottom:5px;text-transform:uppercase}#routeModal .routeSceneBox span{display:block;font-size:10px;line-height:1.4;color:#cbd8da}#routeModal .routeLoot{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}#routeModal .routeLoot i{font-style:normal;font-size:8px;border:1px solid #4b6470;border-radius:999px;padding:4px 6px;background:#0c1d25;color:#e7f0f1}
       #routeModal .routeAction{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
-      @media(max-width:680px){#routeModal .routeSceneGrid{grid-template-columns:1fr}
+      @media(max-width:680px){#routeModal .routeSceneGrid{grid-template-columns:1fr}#calendar .routeNow{grid-template-columns:1fr}#calendar .routeNowAction{width:100%}
         #calendar .routeMap{min-height:620px}
         #calendar .routeNode{width:122px;min-height:60px;padding:8px}
         #calendar .routeNode b{font-size:10px}#calendar .routeNode small{font-size:7px}
@@ -82,7 +82,7 @@
     ];
 
     var shell=document.createElement('div');shell.className='routeShell';
-    shell.innerHTML='<div class="routeHead"><div><div class="eyebrow">CENTRO DE MANDOS · INCEPTION</div><h2>RUTA ISL</h2><div class="sub">El proyecto se navega como un viaje. Cada isla es una fase real; el mapa orienta, no maquilla estados.</div></div><div class="routeLegend"><span class="done">✓ recorrido</span><span class="now">◆ ahora importa</span><span>◇ horizonte</span></div></div>';
+    shell.innerHTML='<div class="routeHead"><div><div class="eyebrow">CENTRO DE MANDOS · RUTA VIVA</div><h2>RUTA ISL</h2><div class="sub">Una lectura rápida del proyecto: qué está cerrado, dónde estamos y qué viene después.</div></div><div class="routeLegend"><span class="done">✓ recorrido</span><span class="now">◆ ahora</span><span>◇ después</span><span class="routeProgress" id="routeProgress">0/0</span></div></div>';
     var map=document.createElement('div');map.className='routeMap';
     map.innerHTML='<img src="assets/floating-islands-map.png" alt="Mapa de viaje ISL"><i class="routePath" aria-hidden="true"></i>';
     stops.forEach(function(s){
@@ -117,7 +117,10 @@
       });
       var currentStop=stops.filter(function(x){return x.id===current})[0];
       if(currentStop){traveler.style.left=currentStop.x+'%';traveler.style.top=(currentStop.y-10)+'%'}
-      now.innerHTML='<div><b>◆ '+(routeState.now.label||'AHORA IMPORTA')+' · '+(routeState.now.title||'')+'</b><span>'+(routeState.now.body||'')+'</span></div><span>'+(routeState.next_label||'La revisión actual viaja contigo →')+'</span>';
+      var doneCount=(routeState.completed_stops||[]).length||stops.filter(function(x){return x.state==='done'}).length;
+      var progress=document.getElementById('routeProgress');if(progress)progress.textContent=doneCount+'/'+stops.length+' TRAMOS';
+      now.innerHTML='<div class="routeNowMain"><span class="routeNowLabel">'+(routeState.now.label||'AHORA IMPORTA')+'</span><b>◆ '+(routeState.now.title||'')+'</b><span>'+(routeState.now.body||'')+'</span><span class="routeNowNext">SIGUIENTE · '+(routeState.next_label||'—')+'</span></div><button type="button" class="routeNowAction">VER PARADA ACTUAL</button>';
+      var nowAction=now.querySelector('.routeNowAction');if(nowAction)nowAction.onclick=function(){open(current)};
       syncHome();
     }
     function paint(){var v=read();map.querySelectorAll('.routeNode').forEach(function(n){n.classList.toggle('visited',v.indexOf(n.dataset.route)>=0)})}
