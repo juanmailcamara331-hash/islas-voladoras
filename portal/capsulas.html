@@ -15,10 +15,16 @@ if(/PlayStation 4/i.test(navigator.userAgent))document.body.classList.add('tv');
 const deck=document.getElementById('deck');
 const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 const capsuleArt=['assets/ship-between-islands.png','assets/floating-island-level.png','assets/floating-islands-lookout.png','assets/tower-echoes.png','assets/wind-lab-sunset.png','assets/visual-bible-islands.png','assets/floating-ruins-guide.png','assets/floating-islands-map.png'];
+const isPS4=/PlayStation 4/i.test(navigator.userAgent);
+const onNetlify=/\.netlify\.app$/i.test(location.hostname);
+function artUrl(path,w=800){
+  if(!onNetlify||isPS4)return path;
+  return '/.netlify/images?url=/'+path+'&w='+w+'&q=74';
+}
 function render(items){
  deck.innerHTML=items.map((x,idx)=>{
    const dark=x.tone==='dark'?' dark':'',art=capsuleArt[idx%capsuleArt.length];
-   const head='<div class="visual"><img src="'+art+'" alt="Escena ISL"></div><div class="inner"><div><div class="type">'+esc(x.type)+'</div>';
+   const head='<div class="visual"><img src="'+artUrl(art,800)+'" srcset="'+artUrl(art,480)+' 480w, '+artUrl(art,800)+' 800w, '+artUrl(art,1200)+' 1200w" sizes="(max-width:760px) 94vw, (max-width:1180px) 45vw, 360px" loading="lazy" decoding="async" fetchpriority="low" width="800" height="460" alt="Escena ISL"></div><div class="inner"><div><div class="type">'+esc(x.type)+'</div>';
    if(x.options){
      return '<article class="card decision'+dark+'">'+head+'<div class="copy">'+esc(x.title)+'</div><div class="small">'+esc(x.body)+'</div></div><div>'+x.options.map((o,i)=>'<button data-id="'+esc(x.id)+'" data-choice="'+i+'">'+String.fromCharCode(65+i)+' · '+esc(o)+'</button>').join('')+'</div></div></article>';
    }
@@ -30,7 +36,7 @@ function render(items){
    localStorage.setItem('isl_capsule_'+b.dataset.id,b.textContent);
  });
 }
-fetch('isl-capsules-current.json',{cache:'no-store'}).then(r=>r.json()).then(j=>render(j.capsules||[])).catch(()=>render([
+fetch('isl-capsules-current.json').then(r=>r.json()).then(j=>render(j.capsules||[])).catch(()=>render([
  {type:'CÁPSULAS ISL',title:'El viento se ha llevado el archivo.',body:'Recarga dentro de un rato. Incluso los datos flotan aquí.',note:'',tone:'dark'}
 ]));
 </script></body></html>
