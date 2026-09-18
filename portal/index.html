@@ -250,7 +250,48 @@ body.spectacle #home .heroText{padding-top:18vh!important}
 #welcome.hidden{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
 html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!important;pointer-events:auto!important}
 /* Keep secondary tools in drawer instead of duplicating the primary bar. */
-</style></head>
+</style>
+<style id="isl-v068-reference-layout">
+/* v0.68 · premium command-center hierarchy inspired by approved visual reference */
+.finalNav .navI{display:inline-grid;place-items:center;width:18px;height:18px;margin-right:5px;font-size:13px;line-height:1;color:#e7c078}
+.finalNav button,.finalNav>a:not(.brandLock){gap:2px}
+.quickDock{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;padding:9px 12px 0}
+.quickDock .quickItem{min-height:54px;border:1px solid #365565;border-radius:10px;background:linear-gradient(180deg,#0d2230,#091720);color:#dce9ea;text-decoration:none;display:flex;align-items:center;gap:9px;padding:9px 11px;text-align:left;min-width:0}
+.quickDock .quickIcon{width:30px;height:30px;flex:0 0 30px;border:1px solid #81643c;border-radius:9px;display:grid;place-items:center;color:#f0c97c;background:#171a18;font-size:16px}
+.quickDock b{display:block;font-size:9px;letter-spacing:.06em}.quickDock span{display:block;font-size:7px;color:#93aeb5;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.quickDock .quickItem:hover,.quickDock .quickItem:focus-visible{border-color:#b18448;background:linear-gradient(180deg,#132a38,#0b1d27)}
+.profileStats{display:grid;gap:7px;margin:10px 0 2px;max-width:250px}
+.profileStat{display:grid;grid-template-columns:70px 1fr 30px;align-items:center;gap:7px;font-size:8px;color:#c9d8da;text-transform:uppercase;letter-spacing:.06em}
+.profileStat .track{height:5px;border-radius:99px;background:#152e39;overflow:hidden;border:1px solid #284c5c}.profileStat i{display:block;height:100%;background:linear-gradient(90deg,#7ae9ff,#e1b362);border-radius:99px}.profileStat strong{text-align:right;color:#e5c383;font-size:8px}
+.rpgNote{font-size:7px;color:#7f9da5;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+.routeRail{display:flex;align-items:center;gap:4px;margin:12px 0 4px;max-width:290px}.routeRail i{width:12px;height:12px;border:2px solid #7a633f;border-radius:50%;background:#091821;box-shadow:0 0 0 2px #0b1820}.routeRail i.done{background:#e0b45d;border-color:#f0ca83}.routeRail i.now{background:#88efff;border-color:#d9fbff;box-shadow:0 0 14px #73eaff88}.routeRail b{height:2px;flex:1;background:linear-gradient(90deg,#b78c49,#315764)}
+.routeMeta{display:flex;justify-content:space-between;gap:8px;font-size:7px;color:#87a4ab;letter-spacing:.06em;text-transform:uppercase;max-width:290px}
+.huellasKinds{position:absolute;right:14px;top:14px;z-index:3;display:grid;gap:3px;text-align:right;font-size:7px;letter-spacing:.08em;color:#d4ba86;text-transform:uppercase;opacity:.9}
+.finalCard.profileCard:after{background:linear-gradient(90deg,#07131af4,#07131ab8 70%,#07131a22)}
+.finalCard.routeCard:after{background:linear-gradient(90deg,#07131af4,#07131ab0 70%,#07131a22)}
+.finalCard.compassCard{min-height:200px}
+.finalWorlds{padding-top:2px}
+.worldTile{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.worldTile:hover,.worldTile:focus-visible{transform:translateY(-2px);border-color:#aa8146;box-shadow:0 12px 28px #0007}
+.worldTile .worldArrow{position:absolute;right:9px;bottom:9px;width:25px;height:25px;border:1px solid #9e7944;border-radius:50%;display:grid;place-items:center;color:#ffe0a2;background:#07131bd9;font-size:12px}
+.finalUtilities .util{position:relative;min-height:86px;transition:border-color .16s ease,transform .16s ease}.finalUtilities .util:hover,.finalUtilities .util:focus-visible{border-color:#a47c43;transform:translateY(-1px)}
+.finalUtilities .uIcon{display:block;font-size:20px;color:#e5bd74;margin-bottom:4px}
+.sectionLabelV68{padding:3px 13px 8px;display:flex;align-items:center;gap:10px;color:#8eaab1;font-size:8px;letter-spacing:.12em;text-transform:uppercase}.sectionLabelV68:before,.sectionLabelV68:after{content:"";height:1px;background:#294854;flex:1}.sectionLabelV68:before{max-width:28px}
+@media(max-width:980px){
+ .quickDock{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}.quickDock::-webkit-scrollbar{display:none}
+}
+@media(max-width:620px){
+ .finalNav .navI{margin-right:2px;width:16px;height:16px;font-size:12px}
+ .finalNav button,.finalNav>a:not(.brandLock){gap:1px}
+ .quickDock{padding:8px 8px 0;grid-template-columns:repeat(5,132px)}
+ .quickDock .quickItem{min-height:52px}
+ .finalDeck{gap:8px}
+ .profileStats{max-width:100%}
+ .huellasKinds{font-size:6px}
+}
+@media(prefers-reduced-motion:reduce){.worldTile,.finalUtilities .util{transition:none!important}}
+</style>
+</head>
 <body><div id="bootbar"></div>
 <div id="welcome"><div id="welcomeWind"><i class="windstroke"></i><i class="windstroke"></i><i class="windstroke"></i></div><div class="welcome-inner"><img class="welcomeBrandIcon" src="isl-icon-master.png" alt="ISL · Islas Voladoras"><div class="welcome-kicker">ISLAS VOLADORAS · UN UNIVERSO EN TUS MANOS</div><div class="welcome-title">Explora. Crea. Deja huella.</div><div class="welcome-quote">El mismo cielo, más historias por descubrir. <em>Crear es alterar el mundo.</em></div><div class="actions" style="justify-content:center"><button class="btn primary" id="enterISL" style="font-size:14px;padding:12px 18px;font-weight:950;letter-spacing:.04em">ENTRAR EN ISL</button></div><div class="microline" style="margin-top:30px"></div></div></div>
 <div id="helpTip"></div>
@@ -304,12 +345,13 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 <section class="finalCC" id="finalCommandCenter">
   <nav class="finalNav" aria-label="Centro de Mandos">
     <a class="brandLock" href="#home" aria-label="ISL · Centro"><img src="isl-icon-master.png" alt="ISL"><b>ISL</b></a>
-    <button class="on" type="button" data-main-nav="home">Centro</button>
-    <a href="rpg-home.html">Perfil</a>
-    <button type="button" data-main-nav="calendar">Ruta ISL</button>
-    <a href="rpg-home.html">Aventura</a>
-    <a href="musica.html">Música</a>
-    <button id="moreNavBtn" type="button" aria-expanded="false" aria-controls="drawer">Más</button>
+    <button class="on" type="button" data-main-nav="home"><span class="navI" aria-hidden="true">⌂</span>Centro</button>
+    <a href="rpg-home.html"><span class="navI" aria-hidden="true">♙</span>Perfil RPG</a>
+    <button type="button" data-main-nav="calendar"><span class="navI" aria-hidden="true">⌁</span>Ruta ISL</button>
+    <a href="rpg-home.html"><span class="navI" aria-hidden="true">⚑</span>Aventura</a>
+    <button type="button" data-main-nav="gallery"><span class="navI" aria-hidden="true">▣</span>Galería</button>
+    <a href="musica.html"><span class="navI" aria-hidden="true">♫</span>Música</a>
+    <button id="moreNavBtn" type="button" aria-expanded="false" aria-controls="drawer"><span class="navI" aria-hidden="true">＋</span>Más</button>
   </nav>
   <section class="currentActions" id="currentActions" aria-label="Qué toca ahora">
     <div class="nowBadge">AHORA</div>
@@ -319,29 +361,47 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
       <a href="https://islas-voladoras-isl.netlify.app/poll/referencias-lite-v2.html" target="_blank" rel="noopener">REFERENCIAS LITE ↗</a>
     </div>
   </section>
+  <section class="quickDock" aria-label="Accesos rápidos">
+    <button class="quickItem" type="button" onclick="go('calendar')"><span class="quickIcon" aria-hidden="true">🗓</span><span><b>CALENDARIO</b><span>Fases · hitos · ritmo</span></span></button>
+    <button class="quickItem" type="button" onclick="go('inspiration')"><span class="quickIcon" aria-hidden="true">✦</span><span><b>REFERENCIAS</b><span>Función · contraste · ADN</span></span></button>
+    <a class="quickItem" href="https://islas-voladoras-isl.netlify.app/poll/pilares-lite-v2.html" target="_blank" rel="noopener"><span class="quickIcon" aria-hidden="true">◉</span><span><b>ENCUESTAS</b><span>Evidencia humana actual</span></span></a>
+    <button class="quickItem" type="button" onclick="go('registry')"><span class="quickIcon" aria-hidden="true">☷</span><span><b>REGISTRO</b><span>Docs · assets · integraciones</span></span></button>
+    <button class="quickItem" type="button" onclick="go('stats')"><span class="quickIcon" aria-hidden="true">▥</span><span><b>ESTADO</b><span>Real · simulado · planeado</span></span></button>
+  </section>
   <div class="finalHero">
     <img src="assets/island-a-master.jpg" alt="Islas Voladoras">
     <div class="finalHeroCopy"><div class="k">CENTRO DE MANDOS · ISLAS VOLADORAS</div><h1>Un mundo que recuerda tus pasos</h1><p>Explora · crea · deja huella. La aventura, la memoria y el laboratorio creativo viven en una sola cabina.</p><div class="actions"><a class="cta" href="rpg-home.html">CONTINUAR AVENTURA →</a></div></div>
   </div>
   <div class="finalDeck">
-    <article class="finalCard"><img class="bg" src="assets/protagonist-sheet.png" alt=""><a href="rpg-home.html"><div class="inner"><h2>Tu perfil RPG</h2><p>Cartógrafo · equipo, mapa, botín y compañero.</p><div class="statusLine">CABINA ACTIVA</div><span class="miniAction">VER PERFIL</span></div></a></article>
-    <article class="finalCard"><img class="bg" src="assets/floating-islands-map.png" alt=""><div class="inner"><h2>Ruta ISL</h2><p>Del concepto al universo. La siguiente evidencia sigue siendo humana.</p><div class="statusLine">FASE ACTUAL · PRE50 · PENDING REAL HUMAN</div><button class="miniAction" type="button" onclick="go('calendar')">ABRIR RUTA</button></div></article>
-    <article class="finalCard"><a href="huellas.html"><div class="inner"><h2>La Brújula de las Huellas</h2><p>No señala dónde ir.<br>Señala de dónde vienes.</p><div class="statusLine">FASE C · MEMORIA PERSISTENTE</div><span class="miniAction">ABRIR BRÚJULA</span></div><div class="huellasMini" aria-hidden="true"></div></a></article>
+    <article class="finalCard profileCard"><img class="bg" src="assets/protagonist-sheet.png" alt=""><a href="rpg-home.html"><div class="inner"><h2>Tu perfil RPG</h2><p>Cartógrafo · Nivel 06 · equipo, mapa, botín y compañero.</p>
+      <div class="profileStats" aria-label="Estadísticas RPG visuales">
+        <div class="profileStat"><span>Exploración</span><span class="track"><i style="width:78%"></i></span><strong>78%</strong></div>
+        <div class="profileStat"><span>Creatividad</span><span class="track"><i style="width:92%"></i></span><strong>92%</strong></div>
+        <div class="profileStat"><span>Huella</span><span class="track"><i style="width:85%"></i></span><strong>85%</strong></div>
+      </div>
+      <div class="rpgNote">Indicadores RPG visuales · no analítica real</div><span class="miniAction">VER PERFIL</span></div></a></article>
+    <article class="finalCard routeCard"><img class="bg" src="assets/floating-islands-map.png" alt=""><div class="inner"><h2>Ruta ISL</h2><p>Del concepto al universo. Cada hito necesita evidencia antes de ascender.</p><div class="statusLine">FASE ACTUAL · PRE50 · EVIDENCIA HUMANA</div>
+      <div class="routeRail" aria-label="Progreso visual de la ruta"><i class="done"></i><b></b><i class="done"></i><b></b><i class="now"></i><b></b><i></i><b></b><i></i></div>
+      <div class="routeMeta"><span>concepto</span><span>pre50</span><span>universo</span></div>
+      <button class="miniAction" type="button" onclick="go('calendar')">ABRIR RUTA</button></div></article>
+    <article class="finalCard compassCard"><a href="huellas.html"><div class="inner"><h2>La Brújula de las Huellas</h2><p>No señala dónde ir.<br>Señala de dónde vienes.</p><div class="statusLine">MEMORIA · CONSECUENCIA · PERSISTENCIA</div><span class="miniAction">VER HUELLAS</span></div><div class="huellasKinds" aria-hidden="true"><span>Lugares</span><span>Ideas</span><span>Personas</span><span>Historias</span><span>Tu huella</span></div><div class="huellasMini" aria-hidden="true"></div></a></article>
   </div>
+  <div class="sectionLabelV68">Mundo jugable · cinco puertas</div>
   <div class="finalWorlds">
-    <a class="worldTile" href="rpg-home.html#mapa"><img src="assets/floating-islands-map.png" alt=""><div><b>Islas</b><span>Mundos por descubrir</span></div></a>
-    <a class="worldTile" href="capsulas.html"><img src="assets/wind-lab-sunset.png" alt=""><div><b>Escenas</b><span>Momentos que dejan memoria</span></div></a>
-    <a class="worldTile" href="rpg-home.html"><img src="assets/visual-bible-islands.png" alt=""><div><b>Criaturas</b><span>Vida en las alturas</span></div></a>
-    <a class="worldTile" href="rpg-home.html"><img src="assets/level-celestial-ruins.png" alt=""><div><b>Reliquias</b><span>Artefactos con historia</span></div></a>
-    <a class="worldTile" href="huellas.html"><img src="assets/world-design-bible.png" alt=""><div><b>Dialéctica del mundo</b><span>Ideas · perspectivas · consecuencias</span></div></a>
+    <a class="worldTile" href="rpg-home.html#mapa"><img src="assets/floating-islands-map.png" alt=""><div><b>Islas</b><span>Mundos por descubrir</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
+    <a class="worldTile" href="capsulas.html"><img src="assets/wind-lab-sunset.png" alt=""><div><b>Escenas</b><span>Momentos que dejan memoria</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
+    <a class="worldTile" href="rpg-home.html"><img src="assets/visual-bible-islands.png" alt=""><div><b>Criaturas</b><span>Vida en las alturas</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
+    <a class="worldTile" href="rpg-home.html"><img src="assets/level-celestial-ruins.png" alt=""><div><b>Reliquias</b><span>Artefactos con historia</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
+    <a class="worldTile" href="huellas.html"><img src="assets/world-design-bible.png" alt=""><div><b>Dialéctica del mundo</b><span>Ideas · perspectivas · consecuencias</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
   </div>
+  <div class="sectionLabelV68">Cabina · herramientas y versiones</div>
   <div class="finalUtilities">
-    <button class="util" type="button" onclick="go('gallery')"><b>GALERÍA</b><span>Arte · lore · concepto</span></button>
-    <a class="util" href="ps4.html"><b>PS4 VERSION</b><span>Experiencia optimizada</span></a>
-    <a class="util" href="musica.html"><b>MÚSICA</b><span>Suavidad → crescendo</span></a>
-    <a class="util" href="capsulas.html"><b>COMUNIDAD</b><span>Comparte · colabora</span></a>
-    <button class="util" type="button" onclick="document.getElementById('menuBtn').click()"><b>HERRAMIENTAS</b><span>Recursos · extras</span></button>
-    <a class="util" href="recreo.html"><b>RECREO</b><span>Jugar sin romper el canon</span></a>
+    <button class="util" type="button" onclick="go('gallery')"><span class="uIcon" aria-hidden="true">▣</span><b>GALERÍA</b><span>Arte · lore · concepto</span></button>
+    <a class="util" href="ps4.html"><span class="uIcon" aria-hidden="true">🎮</span><b>PS4 VERSION</b><span>Experiencia optimizada</span></a>
+    <a class="util" href="musica.html"><span class="uIcon" aria-hidden="true">♫</span><b>MÚSICA</b><span>Banda sonora · listas</span></a>
+    <a class="util" href="capsulas.html"><span class="uIcon" aria-hidden="true">●●●</span><b>COMUNIDAD</b><span>Comparte · colabora</span></a>
+    <button class="util" type="button" onclick="document.getElementById('menuBtn').click()"><span class="uIcon" aria-hidden="true">⚒</span><b>HERRAMIENTAS</b><span>Recursos · extras</span></button>
+    <a class="util" href="recreo.html"><span class="uIcon" aria-hidden="true">✦</span><b>RECREO</b><span>Jugar sin romper el canon</span></a>
   </div>
   <div class="finalQuote">“TODA DECISIÓN DEJA UNA ISLA.”</div>
 </section>
