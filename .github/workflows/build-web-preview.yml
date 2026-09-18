@@ -58,6 +58,9 @@ jobs:
           test -f build/pages/recreo-pixel.css
           grep -q 'DISTRITO RECREO' build/pages/recreo.html
           grep -q 'itemCloseX' build/pages/index.html
+          grep -q 'rpgCommandDeck' build/pages/index.html
+          grep -q 'Distrito Recreo' build/pages/recreo.html
+          grep -q 'PERFIL COMPLETO' build/pages/index.html
           test -f build/pages/capsulas.html
           grep -q "Cabina de Expedición" build/pages/index.html
           grep -q 'src="assets/protagonist-sheet.png"' build/pages/index.html
