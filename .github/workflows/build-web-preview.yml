@@ -47,6 +47,9 @@ jobs:
           touch build/pages/.nojekyll
       - name: Cost audit
         run: python3 scripts/asset-budget.py
+      - name: v0.68 UI regression gate
+        run: python3 scripts/portal-v068-ui-gate.py
+
       - name: CQC portal
         shell: bash
         run: |
