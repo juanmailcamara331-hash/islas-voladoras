@@ -637,3 +637,36 @@ Human R2 check still required:
 - quick dock feels clear, not crowded;
 - drawer still closes when tapping outside;
 - primary destinations respond.
+
+
+## v0.68.2 · R1/R2 TECH CLOSURE + LITE v2 LIVE GATE
+Fecha: 2026-09-19
+
+R1:
+- shell/deploy baseline remains GREEN from v0.68.
+- public Netlify project is READY and Forms enabled.
+- private deployment blocker ERR-DEPLOY-011 remains isolated and does not redefine public R1.
+
+R2 technical regression closure:
+- portal-v068-ui-gate now enforces:
+  - one-line nav + mobile viewport contract;
+  - visible quick dock;
+  - Más outside-tap close;
+  - Escape close;
+  - primary destination wiring;
+  - native welcome suppression;
+  - horizontal-overflow / responsive max-width guards.
+- commit: a4918d40685746943403c7eaf31da47ef00c59d0.
+- human-device evidence is still the final authority for tactile/readability checks; no fake GREEN from static checks alone.
+
+Lite v2 live verification:
+- Netlify project islas-voladoras-isl current deploy: READY.
+- Forms detected:
+  - isl-pillars-lite-v2
+  - isl-reference-lite-v2
+- Both have static registered fields + honeypot.
+- Current submission count at verification: 0 / 0.
+- Therefore: colleague round is READY TO OPEN, but dialectical synthesis remains BLOCKED until real responses exist.
+
+Pipeline:
+R1/R2 technical GREEN → human tactile recheck → Lite v2 colleagues → dialectical synthesis → 3 creatures → NUDOS → crossed CQC → human decision.
