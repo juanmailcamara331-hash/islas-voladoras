@@ -8,17 +8,27 @@ h1{font-size:clamp(42px,8vw,90px);line-height:.9;margin:16px 0 12px}.lead{color:
 </style></head><body><div class="wrap">
 <div class="top"><div><div class="k">Modo descanso · ISL</div></div><a class="back" href="index.html">← Centro</a></div>
 <h1>Cápsulas del cielo</h1><p class="lead">Nada que cerrar. Nada que producir. Sólo mirar, reírse un poco, dejar que el mundo se pegue y, como mucho, tomar una decisión pequeña.</p>
-<div class="deck">
-<article class="card"><div><div class="type">Postal del cielo · 01</div><div class="copy">Hay corrientes que sólo aparecen cuando nadie las está buscando.</div></div><div class="small">Los cartógrafos las consideran de mala educación.</div></article>
-<article class="card"><div><div class="type">Decreto · 14-B</div><div class="copy">Queda prohibido que el viento cambie de dirección durante horario comercial.</div></div><div class="small">Las infracciones serán comunicadas al viento cuando sea localizado.</div></article>
-<article class="card"><div><div class="type">Pandilla · cubierta</div><div class="copy">Mara: «¿Quién dejó una taza en el timón?»<br><br>Taro: «Técnicamente estaba navegando.»</div></div><div class="small">Nadie retiró la taza.</div></article>
-<article class="card"><div><div class="type">Objeto del barco · 01</div><div class="copy">La campanilla torcida</div></div><div class="small">Suena sólo cuando el barco está perfectamente quieto. Nadie sabe por qué eso preocupa tanto a Lena.</div></article>
-<article class="card dark"><div><div class="type">Sombra · 01</div><div class="copy">En ciertas islas, las puertas no chirrían al abrirse.</div></div><div class="small">Chirrían un minuto antes.</div></article>
-<article class="card decision"><div><div class="type">Decisión ligera · no canon</div><div class="copy">¿Qué queda colgado en la nave después de La Separación?</div></div><div>
-<button>A · Una campanilla rota</button><button>B · Una cuerda con un nudo por tripulante</button><button>C · Una placa reglamentaria chamuscada</button></div></article>
-</div>
+<div id="deck" class="deck"></div>
 <div class="footer">ISL · cápsulas v0.20 · nada de aquí entra a CANON sin pasar por metodología.</div>
 </div><script>
 if(/PlayStation 4/i.test(navigator.userAgent))document.body.classList.add('tv');
-document.querySelectorAll('.decision button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.decision button').forEach(x=>x.classList.remove('picked'));b.classList.add('picked');localStorage.setItem('isl_capsule_decision_01',b.textContent)});
+const deck=document.getElementById('deck');
+const esc=s=>String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+function render(items){
+ deck.innerHTML=items.map(x=>{
+   const dark=x.tone==='dark'?' dark':'';
+   if(x.options){
+     return '<article class="card decision'+dark+'"><div><div class="type">'+esc(x.type)+'</div><div class="copy">'+esc(x.title)+'</div><div class="small">'+esc(x.body)+'</div></div><div>'+x.options.map((o,i)=>'<button data-id="'+esc(x.id)+'" data-choice="'+i+'">'+String.fromCharCode(65+i)+' · '+esc(o)+'</button>').join('')+'</div></article>';
+   }
+   return '<article class="card'+dark+'"><div><div class="type">'+esc(x.type)+'</div><div class="copy">'+esc(x.title||x.body).replace(/\n/g,'<br>')+'</div></div><div class="small">'+esc(x.title?x.body:x.note).replace(/\n/g,'<br>')+(x.title&&x.note?'<br><br>'+esc(x.note):'')+'</div></article>'
+ }).join('');
+ deck.querySelectorAll('.decision button').forEach(b=>b.onclick=()=>{
+   deck.querySelectorAll('[data-id="'+b.dataset.id+'"]').forEach(x=>x.classList.remove('picked'));
+   b.classList.add('picked');
+   localStorage.setItem('isl_capsule_'+b.dataset.id,b.textContent);
+ });
+}
+fetch('isl-capsules-current.json',{cache:'no-store'}).then(r=>r.json()).then(j=>render(j.capsules||[])).catch(()=>render([
+ {type:'CÁPSULAS ISL',title:'El viento se ha llevado el archivo.',body:'Recarga dentro de un rato. Incluso los datos flotan aquí.',note:'',tone:'dark'}
+]));
 </script></body></html>
