@@ -85,15 +85,13 @@ jobs:
           grep -q 'route-isl.js' build/pages/index.html
           grep -q 'RUTA ISL' build/pages/route-isl.js
           grep -q "ISL_ROUTE_STATE_CURRENT.json" build/pages/route-isl.js
-          grep -q '"current_stop": "pre50"' build/pages/ISL_ROUTE_STATE_CURRENT.json
-          grep -q 'isl-route-v1-visited' build/pages/route-isl.js
-          grep -q 'routeSceneGrid' build/pages/route-isl.js
-          grep -q 'Botín / hitos' build/pages/route-isl.js
-          grep -q 'routeNowAction' build/pages/route-isl.js
-          grep -q 'VER PARADA ACTUAL' build/pages/route-isl.js
-          grep -q 'routeProgress' build/pages/route-isl.js
+          grep -q '"current_stop": "r2-human"' build/pages/ISL_ROUTE_STATE_CURRENT.json
+          grep -q '"route_steps"' build/pages/ISL_ROUTE_STATE_CURRENT.json
+          grep -q 'isl-route-v2-css' build/pages/route-isl.js
+          grep -q 'routeStrip' build/pages/route-isl.js
+          grep -q 'PILARES LITE' build/pages/route-isl.js
+          grep -q 'REFERENCIAS LITE' build/pages/route-isl.js
           node --check build/pages/route-isl.js
-          ! grep -Fq '\\n\\n    var stops' build/pages/route-isl.js
           grep -q '← Cabina RPG' build/pages/musica.html
           grep -q 'itemCloseX' build/pages/rpg-home.html
           grep -q 'rpgCommandDeck' build/pages/rpg-home.html
@@ -114,6 +112,16 @@ jobs:
           ! grep -q 'rpgActivityBar' build/pages/rpg-home.html
           grep -q 'embed=1' build/pages/recreo.html
           test -f build/pages/capsulas.html
+          test -f build/pages/isl-global-shell.css
+          test -f build/pages/isl-global-shell.js
+          grep -q 'isl-global-shell.js' build/pages/index.html
+          grep -q 'isl-global-shell.js' build/pages/rpg-home.html
+          grep -q 'isl-global-shell.js' build/pages/huellas.html
+          grep -q 'isl-global-shell.js' build/pages/capsulas.html
+          grep -q 'isl-global-shell.js' build/pages/recreo.html
+          grep -q 'capsuleModal' build/pages/capsulas.html
+          grep -q 'resume=1' build/pages/index.html
+          node --check build/pages/isl-global-shell.js
           test -f build/pages/huellas.html
           test -f build/pages/salon-cortinas-rojas.html
           test -f build/pages/isla-baile-inagotable.html
