@@ -46,6 +46,8 @@ jobs:
           p.write_text(s,encoding='utf-8')
           PY
           touch build/pages/.nojekyll
+      - name: Cost audit
+        run: python3 scripts/asset-budget.py
       - name: CQC portal
         shell: bash
         run: |
