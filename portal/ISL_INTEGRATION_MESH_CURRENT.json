@@ -177,5 +177,37 @@
       "status": "OPTIONAL_CAMPAIGN_PHASE",
       "use": "marketing analytics, scheduling and cross-channel campaign feedback"
     }
-  ]
+  ],
+  "verified_connections": {
+    "metricool": {
+      "status": "VERIFIED_CONNECTED",
+      "networks": [
+        "instagram",
+        "tiktok",
+        "youtube"
+      ],
+      "role": "social publishing + social analytics + campaign feedback"
+    },
+    "windsor_ai": {
+      "status": "VERIFIED_CONNECTED",
+      "connectors": [
+        "googleanalytics4",
+        "youtube"
+      ],
+      "optional_next": [
+        "searchconsole"
+      ],
+      "role": "cross-channel analytics and marketing data aggregation"
+    },
+    "posthog": {
+      "status": "PLUGIN_INSTALLED",
+      "role": "product analytics, experiments, replay, flags, errors, surveys; instrument when real playable build exists"
+    },
+    "jotform": {
+      "status": "ACTIVE",
+      "role": "qualitative playtest feedback and dialectical discovery loop"
+    }
+  },
+  "toolchain_rule": "Integrate on demand. No tool enters core architecture unless it reduces repeated work, catches expensive errors early, or supplies evidence unavailable elsewhere.",
+  "next_context": "Return to game creation after checkpoint: adventure spine → regions/cities → loops → Molino contextualized → vertical slice."
 }
