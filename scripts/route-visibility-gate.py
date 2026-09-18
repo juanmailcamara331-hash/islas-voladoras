@@ -19,6 +19,10 @@ else:
     private_prefixes=[]
     for item in manifest.get("private_patterns",[]):
         rel=item.removeprefix("portal/")
+        # portal/index.html is private, but public-site/index.html legitimately becomes build/public/index.html.
+        # Check the public landing by content markers instead of basename collision.
+        if rel=="index.html":
+            continue
         if rel.endswith("/**"):
             private_prefixes.append(rel[:-3].rstrip("/"))
         else:
@@ -30,6 +34,12 @@ else:
         for pref in private_prefixes:
             if f==pref or f.startswith(pref+"/"):
                 fail(f"PRIVATE prefix leaked into public build: {f}")
+
+    public_index=public_root/"index.html"
+    if public_index.exists():
+        txt=public_index.read_text(encoding="utf-8",errors="ignore")
+        if 'id="finalCommandCenter"' in txt or "ISL Command Center · Portal" in txt:
+            fail("public landing accidentally contains Command Center markup")
 
     # Internal-state catch-all. Public decisions are the single explicit exception.
     for f in sorted(public_files):
