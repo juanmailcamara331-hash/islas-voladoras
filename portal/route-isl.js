@@ -121,5 +121,10 @@
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('show'))close()});
     modal.querySelector('.routeMark').onclick=function(){if(!selected)return;var v=read();if(v.indexOf(selected.id)<0)v.push(selected.id);try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}paint();close()};
     paint();
+    syncRoute();
+    fetch('ISL_ROUTE_STATE_CURRENT.json',{cache:'no-store'})
+      .then(function(r){if(!r.ok)throw new Error('route state');return r.json()})
+      .then(function(s){routeState=s||routeState;syncRoute()})
+      .catch(function(){});
   });
 })();
