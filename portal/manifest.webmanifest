@@ -1,8 +1,62 @@
 {
   "name": "ISL Command Center",
   "short_name": "ISL",
-  "start_url": "./",
+  "description": "Centro de Mandos de Islas Voladoras: recreo, cápsulas, música, decisiones y estado del proyecto.",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#071017",
-  "theme_color": "#071017"
+  "theme_color": "#071017",
+  "orientation": "any",
+  "categories": [
+    "games",
+    "entertainment",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "isl-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Modo Recreo",
+      "short_name": "Recreo",
+      "url": "recreo.html",
+      "icons": [
+        {
+          "src": "isl-icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Cápsulas TV",
+      "short_name": "TV",
+      "url": "capsulas-tv.html",
+      "icons": [
+        {
+          "src": "isl-icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Playtest",
+      "short_name": "Playtest",
+      "url": "playtest-echo.html",
+      "icons": [
+        {
+          "src": "isl-icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
 }
