@@ -34,7 +34,7 @@ jobs:
           rm -rf build/pages
           mkdir -p build/pages
           cp -a portal/. build/pages/
-          # Entrada única: Centro ISL simplificado. La Cabina RPG vive como vista secundaria.
+          # Entrada pública: Bienvenida ISL → Perfil RPG. command-center.html conserva la vista técnica sin repetir bienvenida.
           cp build/pages/index.html build/pages/command-center.html
           python3 - <<'PY'
           from pathlib import Path
@@ -59,7 +59,11 @@ jobs:
           grep -q 'homeCabin' build/pages/index.html
           grep -q 'AHORA IMPORTA' build/pages/index.html
           grep -q 'REVISIÓN ACTUAL' build/pages/index.html
-          grep -q 'homeHeroIcons' build/pages/index.html
+          grep -q 'id="welcome"' build/pages/index.html
+          grep -q "location.href='rpg-home.html'" build/pages/index.html
+          grep -q 'isTechnical=/command-center\\.html' build/pages/index.html
+          ! grep -q '<div class="homeHeroIcons">' build/pages/index.html
+          ! grep -q 'data-setting="welcome"' build/pages/index.html
           test -f build/pages/route-isl.js
           test -f build/pages/ISL_ROUTE_STATE_CURRENT.json
           grep -q 'route-isl.js' build/pages/index.html
@@ -99,6 +103,31 @@ jobs:
           grep -q 'class="miniMap"' build/pages/rpg-home.html
           grep -q 'assets/floating-islands-map.png' build/pages/rpg-home.html
           grep -q 'class="hudStats"' build/pages/rpg-home.html
+          grep -q 'RUTA v0.39 · PRE50 PENDIENTE' build/pages/rpg-home.html
+          grep -q '<span>Inventario</span>' build/pages/rpg-home.html
+          grep -q '<span>Aventura</span>' build/pages/rpg-home.html
+          grep -q '<span>Centro</span>' build/pages/rpg-home.html
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          idx=Path('build/pages/index.html').read_text(encoding='utf-8')
+          rpg=Path('build/pages/rpg-home.html').read_text(encoding='utf-8')
+          crit=idx.index('No automatizar el criterio.')
+          focus=idx.index('<section class="homeFocus">', crit)
+          assert '<button' not in idx[crit:focus], 'Botón redundante después de criterio'
+          farm=rpg.index('no se pueden “farmear”.')
+          profile=rpg.index('<aside class="profile">', farm)
+          assert '<button' not in rpg[farm:profile] and '<a class="btn' not in rpg[farm:profile], 'Botón redundante después de farmear'
+          assert idx.count('id="enterISL"') == 1
+          assert 'Ver Reel' not in idx[idx.index('id="welcome"'):idx.index('<div id="helpTip">')]
+          assert rpg.index('<span>Inventario</span>') < rpg.index('<span>Aventura</span>') < rpg.index('<span>Recreo</span>') < rpg.index('<span>Música</span>') < rpg.index('<span>Centro</span>')
+          for name,html in [('index',idx),('rpg',rpg)]:
+              scripts='\n'.join(re.findall(r'<script(?:\\s[^>]*)?>([\\s\\S]*?)</script>',html,re.I))
+              Path('/tmp/'+name+'-inline.js').write_text(scripts,encoding='utf-8')
+          print('UX hierarchy audit OK')
+          PY
+          node --check /tmp/index-inline.js
+          node --check /tmp/rpg-inline.js
           test -f build/pages/ps4.html
           test -f build/pages/ps4-runtime-hotfix.js
           test -f build/pages/decision-engine.html
