@@ -161,7 +161,20 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
 <div id="portalState" class="tiny" style="margin-top:8px"></div></div>
     </article>
 
-    <article class="panel" style="grid-column:1/-1">
+    <article class="panel narrow portalCard" id="stormPortalCard">
+      <div class="portalCore">
+        <div class="kicker">D3-REF-05B · Portal de tormenta</div>
+        <h3>La Costura del Cielo</h3>
+        <div style="height:190px;border:1px solid #365865;border-radius:16px;display:grid;place-items:center;background:radial-gradient(circle,#ffc56f18,#071017 64%);position:relative;overflow:hidden">
+          <div style="font-size:64px;color:var(--gold)">✺</div>
+          <div class="tiny" id="stormPortalText" style="position:absolute;bottom:12px">SIN SELLO · INERTE</div>
+        </div>
+        <div class="actions"><button class="btn gold" id="stormPortalBtn" type="button">Intentar abrir</button></div>
+        <div class="tiny" id="stormPortalResult"></div>
+      </div>
+    </article>
+
+    <article class="panel wide">
       <div class="kicker">D3-REF-07 · Boss prototype</div>
       <h3>El Cartógrafo de la Tormenta</h3>
       <div class="three">
@@ -216,12 +229,23 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
     if(cr)cr.textContent=built?'Receptor construido · disponible como herramienta persistente.':(hasRelic?'Material secreto detectado · receta completa.':'Falta el Fragmento de Corriente Inversa del nivel secreto.');
     if(ps)ps.textContent=defeated?'Sello de la Tormenta obtenido · una nueva familia de portales puede activarse.':(built?'Receptor listo · el boss admite una solución por herramienta.':'El portal secreto puede entregar un material de crafting.');
     if(br)br.textContent=defeated?'RECOMPENSA PERSISTENTE · Sello de la Tormenta guardado en mochila.':(built?'Receptor detectado · solución especial disponible en Fase III.':'Sin Receptor: el boss sigue siendo resoluble por lectura/ruta.');
+    var st=document.getElementById('stormPortalText'),sb=document.getElementById('stormPortalBtn');
+    if(st)st.textContent=defeated?'SELLO DETECTADO · UMBRAL RESPONDE':'SIN SELLO · INERTE';
+    if(sb)sb.textContent=defeated?'Abrir Costura del Cielo':'Intentar abrir';
   }
   if(c)c.onclick=function(){
     var out=document.getElementById('craftResult');
     if(localStorage.getItem('isl_secret_relic')!=='fragmento-corriente-inversa'){out.textContent='Falta un material imposible: Fragmento de Corriente Inversa.';return}
     localStorage.setItem('isl_craft_d3ref04','tested');localStorage.setItem('isl_craft_receiver','built');
     out.textContent='Receptor de Corrientes construido. Ya puede alterar rutas y encuentros.';syncPersistentLoot();syncSystemState();
+  };
+  var sp=document.getElementById('stormPortalBtn');
+  if(sp)sp.onclick=function(){
+    var out=document.getElementById('stormPortalResult');
+    if(localStorage.getItem('isl_boss_reward')!=='sello-tormenta'){out.textContent='El aire no reconoce tu firma. Falta el Sello de la Tormenta.';return}
+    localStorage.setItem('isl_storm_portal','discovered');
+    out.textContent='PORTAL DESCUBIERTO · la costura responde al sello. Próximo experimento: ruta de tormenta.';
+    sp.textContent='Portal descubierto ✓';
   };
   syncSystemState();
   if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
