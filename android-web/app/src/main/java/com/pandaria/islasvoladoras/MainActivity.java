@@ -8,7 +8,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
-    private static final String HOME = "https://juanmailcamara331-hash.github.io/islas-voladoras/";
+    private static final String HOME = "https://juanmailcamara331-hash.github.io/islas-voladoras/index.html?v=20260918-2";
     private WebView web;
 
     @Override
@@ -21,10 +21,17 @@ public class MainActivity extends Activity {
         s.setJavaScriptEnabled(true);
         s.setDomStorageEnabled(true);
         s.setMediaPlaybackRequiresUserGesture(false);
-        s.setCacheMode(WebSettings.LOAD_DEFAULT);
+        s.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        s.setBuiltInZoomControls(true);
+        s.setDisplayZoomControls(false);
+        s.setSupportZoom(true);
+        s.setUseWideViewPort(true);
+        s.setLoadWithOverviewMode(true);
         s.setAllowFileAccess(false);
         s.setAllowContentAccess(false);
 
+        web.clearCache(true);
+        web.clearHistory();
         web.setWebChromeClient(new WebChromeClient());
         web.setWebViewClient(new WebViewClient());
         web.loadUrl(HOME);
