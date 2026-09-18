@@ -1,4 +1,4 @@
-const CACHE='isl-center-v033-pixelrecreo';
+const CACHE='isl-center-v034-rpg-unified';
 const HOT=['./','./index.html','./rpg-home.html','./command-center.html','./recreo.html','./capsulas.html','./capsulas-tv.html','./musica.html','./playtest-echo.html','./manifest.webmanifest','./isl-icon.svg','./isl-capsules-current.json','./styles.css','./app.js'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(HOT)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
