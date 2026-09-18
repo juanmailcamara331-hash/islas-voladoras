@@ -182,3 +182,29 @@ Si una falla:
 - se informa estado real;
 - se conserva último artefacto válido;
 - se corrige primero la desincronización.
+
+
+## Addendum v0.62 — DEPLOY COHERENCE
+ERR-ANDROID-001 recurrence_count: 3
+
+Nueva causa operacional confirmada:
+- APK build puede estar verde mientras GitHub Pages está rojo.
+- En wrapper remoto, eso produce falsa sensación de actualización: APK nueva + shell web viejo.
+
+Nueva invariancia de release:
+APK_GREEN && PAGES_GREEN && EXPECTED_PAGE_BUILD
+
+Nuevo guard:
+- build-android-apk.yml consulta el último run de build-web-preview.yml.
+- si Pages no está completed/success, el build APK falla antes de compilar.
+- el log imprime PAGES_STATUS / PAGES_CONCLUSION / PAGES_BUILD_SHA.
+
+Run restaurado:
+- Pages run 432
+- build/CQC: success
+- deploy: success
+- pages_build_version: e10aebfd631d3ac25aa696a072600f5b97c3379f
+- URL: https://juanmailcamara331-hash.github.io/islas-voladoras/
+
+Regla:
+No entregar APK remota basándose sólo en el artefacto Android.
