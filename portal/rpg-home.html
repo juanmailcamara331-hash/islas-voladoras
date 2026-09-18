@@ -146,7 +146,8 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
         <div class="slot book"><span class="rarity">MEMORIA</span><span class="icon">✦</span><b>Nota del Cuaderno</b><small>REGLA APRENDIDA</small></div>
         <div class="slot strange"><span class="rarity">RESULTADO</span><span class="icon">❖</span><b>Receptor de Corrientes</b><small>PROVISIONAL</small></div>
       </div>
-      <div class="actions"><button class="btn primary" id="craftTry">PROBAR COMBINACIÓN</button><span id="craftResult" class="tiny"></span></div>
+      <div class="actions"><button class="btn primary" id="craftTry">ENSAMBLAR RECEPTOR</button><span id="craftResult" class="tiny"></span></div>
+<div class="truth" id="craftNeeds" style="margin-top:10px">Requiere: Tubo de Deriva 01 + Fibra de Vela + Fragmento de Corriente Inversa.</div>
     </article>
 
     <article class="panel narrow portalCard">
@@ -156,7 +157,8 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
         <div style="width:150px;height:190px;border:2px solid #86efff88;border-radius:50% 50% 42% 42%;box-shadow:0 0 34px #86efff44,inset 0 0 34px #b9a5ff22;display:grid;place-items:center;font-size:54px;color:var(--gold)">⌁</div>
         <div class="tiny" style="position:absolute;bottom:12px">FÍSICA ALTERADA · SIN MARCADOR</div>
       </div>
-      <div class="actions"><a class="btn gold" href="secret-level.html">Cruzar portal</a><a class="btn" href="boss-prototype.html">Boss prototype</a></div></div>
+      <div class="actions"><a class="btn gold" id="secretPortalBtn" href="secret-level.html">Cruzar portal</a><a class="btn" id="bossBtn" href="boss-prototype.html">Boss prototype</a></div>
+<div id="portalState" class="tiny" style="margin-top:8px"></div></div>
     </article>
 
     <article class="panel" style="grid-column:1/-1">
@@ -168,6 +170,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
         <div class="loot"><div class="ico">Ⅲ</div><div><b>Decisión final</b><div>Destruir núcleo, desviar tormenta o usar herramienta preparada.</div></div></div>
       </div>
       <div class="truth" style="margin-top:12px">Estado: HIPÓTESIS / PAPER PROTOTYPE. No es CANON ni combate definitivo.</div>
+<div id="bossRewardState" class="tiny" style="margin-top:8px"></div>
     </article>
   </section>
 </main>
@@ -190,10 +193,38 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
   document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});t.classList.add('on')})});
   var modal=document.getElementById('itemModal'),currentItem=null;
   var sr=document.getElementById('secretRelicSlot');
-  if(sr&&localStorage.getItem('isl_secret_relic')==='fragmento-corriente-inversa'){
-    sr.classList.add('strange');sr.dataset.item='Fragmento de Corriente Inversa';sr.dataset.origin='El Nivel que No Existe';sr.dataset.rarity='SECRETA';sr.dataset.real='HIPÓTESIS';sr.dataset.function='Material/llave potencial para portales y crafting';sr.innerHTML='✧<small>1</small>';
-  }document.querySelectorAll('.stashSlot:not([data-item="Slot vacío"]),.eqslot').forEach(function(el){el.addEventListener('click',function(){currentItem=el;var d=el.dataset;document.getElementById('imName').textContent=d.item||el.querySelector('b')?.textContent||'Equipo';document.getElementById('imRarity').textContent='RAREZA · '+(d.rarity||'DIEGÉTICA');document.getElementById('imOrigin').textContent=d.origin||'Perfil del Cartógrafo';document.getElementById('imReal').textContent=d.real||'PROVISIONAL';document.getElementById('imFunction').textContent=d.function||'Equipo de expedición / función en evaluación';modal.classList.add('show')})});document.getElementById('closeItem').onclick=function(){modal.classList.remove('show')};document.getElementById('equipItem').onclick=function(){if(currentItem){localStorage.setItem('isl_equipped_preview',document.getElementById('imName').textContent);document.getElementById('equipItem').textContent='Equipado en perfil ✓'}};
-  var c=document.getElementById('craftTry');if(c)c.onclick=function(){var out=document.getElementById('craftResult');out.textContent='Resultado provisional: Receptor de Corrientes — desbloquea lectura de una corriente, no +stats.';localStorage.setItem('isl_craft_d3ref04','tested')};if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
+  function syncPersistentLoot(){
+    if(sr&&localStorage.getItem('isl_secret_relic')==='fragmento-corriente-inversa'){
+      sr.classList.add('strange');sr.dataset.item='Fragmento de Corriente Inversa';sr.dataset.origin='El Nivel que No Existe';sr.dataset.rarity='SECRETA';sr.dataset.real='HIPÓTESIS';sr.dataset.function='Material-llave para fabricar el Receptor de Corrientes';sr.innerHTML='✧<small>1</small>';
+    }
+    if(localStorage.getItem('isl_craft_receiver')==='built'&&!document.getElementById('receiverSlot')){
+      var b=document.createElement('button');b.className='stashSlot rare';b.id='receiverSlot';b.dataset.item='Receptor de Corrientes';b.dataset.origin='Banco de Deriva';b.dataset.rarity='RARA';b.dataset.real='HIPÓTESIS';b.dataset.function='Herramienta que permite desviar corrientes en encuentros y portales';b.innerHTML='❖<small>1</small>';document.getElementById('stash').appendChild(b);bindItem(b);
+    }
+    if(localStorage.getItem('isl_boss_reward')==='sello-tormenta'&&!document.getElementById('stormSealSlot')){
+      var k=document.createElement('button');k.className='stashSlot strange';k.id='stormSealSlot';k.dataset.item='Sello de la Tormenta';k.dataset.origin='El Cartógrafo de la Tormenta';k.dataset.rarity='RELIQUIA';k.dataset.real='HIPÓTESIS';k.dataset.function='Llave de ruta: habilita portales de tormenta';k.innerHTML='✺<small>1</small>';document.getElementById('stash').appendChild(k);bindItem(k);
+    }
+  }
+  function bindItem(el){el.addEventListener('click',function(){currentItem=el;var d=el.dataset;document.getElementById('imName').textContent=d.item||el.querySelector('b')?.textContent||'Equipo';document.getElementById('imRarity').textContent='RAREZA · '+(d.rarity||'DIEGÉTICA');document.getElementById('imOrigin').textContent=d.origin||'Perfil del Cartógrafo';document.getElementById('imReal').textContent=d.real||'PROVISIONAL';document.getElementById('imFunction').textContent=d.function||'Equipo de expedición / función en evaluación';modal.classList.add('show')})}
+  syncPersistentLoot();
+  document.querySelectorAll('.stashSlot:not([data-item="Slot vacío"]),.eqslot').forEach(bindItem);document.getElementById('closeItem').onclick=function(){modal.classList.remove('show')};document.getElementById('equipItem').onclick=function(){if(currentItem){localStorage.setItem('isl_equipped_preview',document.getElementById('imName').textContent);document.getElementById('equipItem').textContent='Equipado en perfil ✓'}};
+  var c=document.getElementById('craftTry');
+  function syncSystemState(){
+    var hasRelic=localStorage.getItem('isl_secret_relic')==='fragmento-corriente-inversa';
+    var built=localStorage.getItem('isl_craft_receiver')==='built';
+    var defeated=localStorage.getItem('isl_boss_reward')==='sello-tormenta';
+    var cr=document.getElementById('craftNeeds'),ps=document.getElementById('portalState'),br=document.getElementById('bossRewardState');
+    if(cr)cr.textContent=built?'Receptor construido · disponible como herramienta persistente.':(hasRelic?'Material secreto detectado · receta completa.':'Falta el Fragmento de Corriente Inversa del nivel secreto.');
+    if(ps)ps.textContent=defeated?'Sello de la Tormenta obtenido · una nueva familia de portales puede activarse.':(built?'Receptor listo · el boss admite una solución por herramienta.':'El portal secreto puede entregar un material de crafting.');
+    if(br)br.textContent=defeated?'RECOMPENSA PERSISTENTE · Sello de la Tormenta guardado en mochila.':(built?'Receptor detectado · solución especial disponible en Fase III.':'Sin Receptor: el boss sigue siendo resoluble por lectura/ruta.');
+  }
+  if(c)c.onclick=function(){
+    var out=document.getElementById('craftResult');
+    if(localStorage.getItem('isl_secret_relic')!=='fragmento-corriente-inversa'){out.textContent='Falta un material imposible: Fragmento de Corriente Inversa.';return}
+    localStorage.setItem('isl_craft_d3ref04','tested');localStorage.setItem('isl_craft_receiver','built');
+    out.textContent='Receptor de Corrientes construido. Ya puede alterar rutas y encuentros.';syncPersistentLoot();syncSystemState();
+  };
+  syncSystemState();
+  if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
 })();
 </script>
 </body></html>
