@@ -118,6 +118,9 @@ jobs:
           grep -q 'isl-reference-friends-01' build/pages/poll/referencias-amigos.html
           grep -q 'isl-pillars-01' build/pages/poll/pilares-argumento.html
           grep -q 'VALIDACIÓN DIALÉCTICA' build/pages/poll/pilares-argumento.html
+          grep -q 'window.__ISL_NATIVE_APP__=true' build/pages/index.html
+          grep -q "removeChild(w)" build/pages/index.html
+          grep -q 'isl-center-v060-native-regression-guard' build/pages/sw.js
           grep -q 'href="huellas.html"' build/pages/rpg-home.html
           grep -q 'Metrónomo sin Dueño' build/pages/rpg-home.html
           grep -q 'Sello de Barro Vivo' build/pages/rpg-home.html
