@@ -13,7 +13,7 @@
 #status{position:fixed;z-index:4;left:24px;top:22px;font-size:12px;color:#d2dfe2;background:#041017bb;border:1px solid #ffffff22;padding:8px 11px;border-radius:999px}
 @media(max-width:700px){#stage{padding:12vh 6vw 12vh}.title{font-size:14vw}.body{font-size:6vw}.note{font-size:4.4vw}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style></head><body>
+</style><link rel="stylesheet" href="isl-global-shell.css">\n</head><body>
 <div id="bg"></div><div id="shade"></div><div id="status">ISL · MODO TV</div>
 <div id="stage"><div class="k" id="type"></div><div class="title" id="title"></div><div class="body" id="body"></div><div class="note" id="note"></div><div id="choices"></div></div>
 <div id="controls"><button class="ctl" id="prev">←</button><button class="ctl" id="pause">Ⅱ</button><button class="ctl" id="next">→</button><button class="ctl" id="sound">♪</button><button class="ctl" id="fs">⛶</button></div><div id="progress"></div>
@@ -26,4 +26,4 @@ function show(n){if(!items.length)return;i=(n+items.length)%items.length;const x
 function tick(){if(paused||!items.length)return;let p=(Date.now()-start)/duration;if(p>=1){show(i+1);p=0}prog.style.width=Math.min(100,p*100)+'%'}
 fetch('isl-capsules-current.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{items=j.capsules||[];show(0);timer=setInterval(tick,100)});
 document.getElementById('prev').onclick=()=>show(i-1);document.getElementById('next').onclick=()=>{paused=false;pause.textContent='Ⅱ';show(i+1)};pause.onclick=()=>{paused=!paused;pause.textContent=paused?'▶':'Ⅱ';start=Date.now()};sound.onclick=()=>{if(audio.paused){audio.volume=.45;audio.play().catch(()=>{});sound.textContent='♫'}else{audio.pause();sound.textContent='♪'}};document.getElementById('fs').onclick=()=>{const d=document.documentElement;if(!document.fullscreenElement)(d.requestFullscreen||d.webkitRequestFullscreen)?.call(d);else(document.exitFullscreen||document.webkitExitFullscreen)?.call(document)};addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1);if(e.key===' ')pause.click()});
-})();</script></body></html>
+})();</script><script defer src="isl-global-shell.js"></script>\n</body></html>
