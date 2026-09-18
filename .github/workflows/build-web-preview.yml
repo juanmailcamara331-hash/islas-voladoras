@@ -54,6 +54,14 @@ jobs:
           trap 'rc=$?; echo "::error::CQC failed rc=$rc line=$LINENO command=$BASH_COMMAND"; exit $rc' ERR
           echo "CQC_DIAG_VERSION=v0.62"
           test -f build/pages/index.html
+          test -f build/pages/poll/pilares-lite-v2.html
+          test -f build/pages/poll/referencias-lite-v2.html
+          grep -q 'name="isl-pillars-lite-v2"' build/pages/poll/pilares-lite-v2.html
+          grep -q 'name="isl-reference-lite-v2"' build/pages/poll/referencias-lite-v2.html
+          grep -q 'name="survey_version" value="v0.66-lite"' build/pages/poll/pilares-lite-v2.html
+          grep -q 'name="survey_version" value="v0.66-lite"' build/pages/poll/referencias-lite-v2.html
+          grep -q 'id="f_que_es"' build/pages/poll/pilares-lite-v2.html
+          grep -q 'id="f_tipo_ref"' build/pages/poll/referencias-lite-v2.html
           test -f build/pages/rpg-home.html
           test -f build/pages/command-center.html
           test -f build/pages/secret-level.html
