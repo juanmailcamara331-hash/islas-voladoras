@@ -25,6 +25,19 @@ Capas:
 - descubrimiento;
 - silencio y respiración.
 
+## MACROARCO DE INTENSIDAD
+CANON DE DIRECCIÓN (no de audio final):
+1. APERTURA — suavidad, nobleza, espacio, horizonte contenido.
+2. DESPERTAR — el motivo gana movimiento y curiosidad.
+3. APERTURA DEL MUNDO — crecen capas y amplitud; sigue habiendo aire.
+4. AVENTURA — pulso más definido, contrapunto, metales cálidos y percusión orgánica.
+5. RIESGO / CONTRADICCIÓN — tensión, desajuste, ruptura o densidad según sistema.
+6. CRESCENDO — escala emocional ganada por lo vivido, no épica automática.
+7. DESPUÉS — memoria: el material inicial vuelve transformado, a veces reducido a muy pocas notas.
+
+Referencia funcional para la apertura: elegancia, melodía y amplitud de gran cine de aventura 60–70, sin imitación de películas, compositores o partituras concretas.
+Regla: **identidad antes que volumen; emoción antes que espectacularidad**.
+
 ## 8 LISTAS / ESTADOS
 
 ### 01 · CIELO ABIERTO
