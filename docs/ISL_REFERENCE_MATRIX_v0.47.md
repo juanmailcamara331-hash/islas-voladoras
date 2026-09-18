@@ -60,3 +60,22 @@ Nueva candidata:
 - Regla: extraer función y contraste, nunca copiar expresión protegida.
 - Evidencia social: FRIENDS_SAMPLE mediante docs/ISL_REFERENCE_INTAKE_SURVEY_METHOD_v0.49.md.
 - Ascenso a B/50 sólo con 2+ funciones fuertes, prototipo barato, CQC anti-collage y aprobación humana.
+
+
+## Addendum v0.52 — Shin-chan / contradicción Asia-Europa
+Nueva candidata:
+- Shin-chan / contradicción Asia-Europa — C/25 provisional.
+- Funciones fuertes candidatas:
+  - humor irreverente que rompe solemnidad;
+  - mirada infantil que expone contradicciones adultas;
+  - vida cotidiana como microcosmos social;
+  - tensión protocolo/espontaneidad;
+  - disciplina/deseo;
+  - decoro/pulsión;
+  - comunidad/individualismo;
+  - ligereza con poso crítico.
+- Uso recomendado ISL: subreferencia tonal/narrativa, cápsulas, tripulación, barrio, escenas de recreo, microconflictos sociales y rupturas controladas de solemnidad.
+- Riesgo: alto si deriva en clon de personaje, voz, diseño, chistes, gestos o escenas reconocibles.
+- Guardrail: abstraer función y contradicción; nunca copiar expresión distintiva.
+- Ascenso posible a B/50 sólo si un prototipo barato demuestra 2+ funciones fuertes, pasa anti-collage/CQC y mantiene identidad ISL.
+- Contradicción Asia-Europa debe tratarse como fricción de sistemas sociales y tonos, nunca como caricatura cultural ni bloque homogéneo.
