@@ -10,11 +10,12 @@
       "status": "ABIERTA",
       "audience": "AMIGOS / JUGADORES_OBJETIVO",
       "spoiler_risk": "BAJO",
-      "url": "poll/pilares-argumento.html",
+      "url": "https://islas-voladoras-isl.netlify.app/poll/pilares-argumento.html",
       "question": "¿Se entiende y tira lo suficiente el núcleo de ISL antes de seguir ampliando sistemas?",
       "methodology": "TESIS → ANTÍTESIS → EVIDENCIA EXTERNA → SÍNTESIS → PROTOTIPO → CQC → DECISIÓN HUMANA",
       "backend_backup": "https://form.jotform.com/262606707094056",
-      "backend_status": "JOTFORM_BACKEND_ACTIVE_UNTIL_NETLIFY_NATIVE_FORM_REDEPLOY"
+      "backend_status": "NATIVE_ISL_VISUAL_PRIMARY",
+      "backend": "NETLIFY_FORMS"
     },
     {
       "id": "POLL-REF-FRIENDS-001",
@@ -23,11 +24,12 @@
       "status": "ABIERTA",
       "audience": "AMIGOS",
       "spoiler_risk": "BAJO",
-      "url": "poll/referencias-amigos.html",
+      "url": "https://islas-voladoras-isl.netlify.app/poll/referencias-amigos.html",
       "question": "¿Qué función creativa de una referencia merece ser reinterpretada en ISL sin copiarla?",
       "methodology": "FRIENDS_SAMPLE · función > personaje · anti-collage · CQC · confirmación humana",
       "backend_backup": "https://form.jotform.com/262605579068063",
-      "backend_status": "JOTFORM_BACKEND_ACTIVE_UNTIL_NETLIFY_NATIVE_FORM_REDEPLOY"
+      "backend_status": "NATIVE_ISL_VISUAL_PRIMARY",
+      "backend": "NETLIFY_FORMS"
     },
     {
       "id": "POLL-MOLINO-001",
