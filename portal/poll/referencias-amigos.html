@@ -16,7 +16,12 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;ba
 form{margin-top:20px}.q{border:1px solid var(--line);background:#09161de8;border-radius:16px;padding:16px;margin:10px 0}.q h2{font-size:15px;margin:0 0 6px}.q p{font-size:11px;color:var(--muted);line-height:1.45;margin:0 0 12px}.opts{display:grid;gap:7px}.opt{display:flex;gap:9px;align-items:flex-start;border:1px solid #294652;background:#07131a;border-radius:10px;padding:11px;cursor:pointer}.opt input{margin-top:2px;accent-color:#8defff}.opt span{font-size:12px;line-height:1.35}.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.scale label{border:1px solid #34525e;border-radius:10px;text-align:center;padding:11px 4px;background:#07131a;font-weight:900;cursor:pointer}.scale input{display:none}.scale label:has(input:checked){border-color:var(--cyan);box-shadow:0 0 0 2px #8defff22;color:var(--cyan)}
 textarea,input[type=text]{width:100%;border:1px solid #33515d;background:#061219;color:#fff;border-radius:10px;padding:12px;font:inherit;outline:none}.submit{width:100%;margin-top:14px;border:1px solid #c99f51;background:linear-gradient(#5a4425,#302515);color:#fff3d2;border-radius:13px;padding:16px;font-weight:950;font-size:15px;letter-spacing:.07em;cursor:pointer}.tiny{text-align:center;color:#71868c;font-size:9px;line-height:1.5;margin-top:10px}
 @media(max-width:700px){.examples{grid-template-columns:1fr}.ex{min-height:auto}.wrap{width:min(94vw,880px)}.brand{align-items:flex-start}.hero{padding-top:18px}}
-</style>
+
+<style id="isl-submit-feedback">
+.submitStatus{margin:10px 0 0;padding:10px 12px;border:1px solid #385662;border-radius:10px;background:#08151c;color:#b9cacf;font-size:11px;display:none}
+.submitStatus.show{display:block}.submitStatus.error{border-color:#9a5555;color:#ffd0d0;background:#231214}.submitStatus.ok{border-color:#477b6d;color:#c9ffef;background:#0d201b}
+.q.invalid{border-color:#a85858!important;box-shadow:0 0 0 2px #a8585822}
+</style></style>
 </head>
 <body>
 <main class="wrap">
@@ -90,9 +95,53 @@ textarea,input[type=text]{width:100%;border:1px solid #33515d;background:#061219
     </div></section>
     <section class="q"><h2>9 · Suéltame una locura útil</h2><textarea name="locura_util" maxlength="500" rows="4" placeholder="La idea que normalmente no pondrías en una reunión seria. Aquí sí."></textarea></section>
 
-    <button class="submit" type="submit">DEJAR TU HUELLA →</button>
+    <button class="submit" id="leaveTraceSubmit" type="submit">DEJAR TU HUELLA →</button>
+    <div class="submitStatus" id="submitStatus" role="status" aria-live="polite"></div>
     <div class="tiny">FRIENDS_SAMPLE · Las respuestas informan. Ninguna votación convierte algo en CANON automáticamente. ISL roba funciones a la realidad, no identidades a las obras.</div>
   </form>
+<script>
+(function(){
+  var form=document.querySelector('form[name="isl-reference-friends-01"]');
+  var btn=document.getElementById('leaveTraceSubmit');
+  var status=document.getElementById('submitStatus');
+  if(!form||!btn||!status)return;
+  function show(msg,type){
+    status.textContent=msg;
+    status.className='submitStatus show '+(type||'');
+  }
+  function clearInvalid(){
+    form.querySelectorAll('.q.invalid').forEach(function(q){q.classList.remove('invalid')});
+  }
+  form.addEventListener('submit',function(e){
+    clearInvalid();
+    if(!form.checkValidity()){
+      e.preventDefault();
+      var bad=form.querySelector(':invalid');
+      var q=bad&&bad.closest('.q');
+      if(q)q.classList.add('invalid');
+      show('Te falta una respuesta obligatoria. Te llevo a ella ↑','error');
+      if(bad){
+        bad.scrollIntoView({behavior:'smooth',block:'center'});
+        setTimeout(function(){try{bad.focus({preventScroll:true})}catch(_){bad.focus()}},350);
+      }
+      return;
+    }
+    btn.disabled=true;
+    btn.textContent='GUARDANDO HUELLA…';
+    show('Guardando tu huella…','ok');
+  });
+  btn.addEventListener('click',function(){
+    setTimeout(function(){
+      if(!form.checkValidity()){
+        var bad=form.querySelector(':invalid');
+        var q=bad&&bad.closest('.q');
+        if(q)q.classList.add('invalid');
+        show('Hay una respuesta obligatoria pendiente.','error');
+      }
+    },0);
+  });
+})();
+</script>
 </main>
 </body>
 </html>
