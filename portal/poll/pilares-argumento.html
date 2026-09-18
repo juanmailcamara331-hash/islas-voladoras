@@ -4,7 +4,11 @@
 :root{--bg:#071017;--p:#0b171e;--l:#31505c;--c:#8defff;--g:#d4ae62;--m:#9aadb2;--i:#eef6f3}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--i);font-family:Inter,ui-sans-serif,system-ui,sans-serif}body{background:radial-gradient(circle at 72% 0,#163746 0,transparent 28%),linear-gradient(#071017,#09151b)}
 .w{width:min(880px,94vw);margin:auto;padding:18px 0 54px}.k{font-size:9px;letter-spacing:.16em;color:var(--c);font-weight:900}.h{padding:20px 0 8px}.h h1{font-family:Georgia,serif;font-size:clamp(36px,7vw,68px);line-height:.98;margin:7px 0 12px}.lead{font-size:16px;line-height:1.5;color:#ccd7d8}.call{margin:16px 0;padding:14px 16px;border-left:3px solid var(--g);background:#15130d;font-weight:800;line-height:1.4}.q{border:1px solid var(--l);border-radius:15px;background:#0a151be8;padding:15px;margin:10px 0}.q h2{font-size:14px;margin:0 0 5px}.q p{font-size:10px;color:var(--m);line-height:1.45;margin:0 0 10px}.opts{display:grid;gap:7px}.opt{display:flex;gap:8px;align-items:flex-start;border:1px solid #294650;border-radius:9px;padding:10px;background:#071219}.opt input{accent-color:#8defff}.opt span{font-size:11px;line-height:1.35}.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.scale label{border:1px solid #34525d;border-radius:9px;padding:10px 3px;text-align:center;font-weight:900;background:#071219}.scale input{display:none}.scale label:has(input:checked){border-color:var(--c);color:var(--c)}textarea,input[type=text]{width:100%;border:1px solid #34525d;background:#061219;color:#fff;border-radius:9px;padding:11px;font:inherit}.btn{width:100%;margin-top:12px;border:1px solid #9b7740;background:#3d2b18;color:#ffe7b8;border-radius:11px;padding:15px;font-weight:950;letter-spacing:.05em}.tiny{text-align:center;font-size:9px;color:#70848a;margin-top:9px;line-height:1.5}
-</style></head><body><main class="w">
+<style id="isl-submit-feedback">
+.submitStatus{margin:10px 0 0;padding:10px 12px;border:1px solid #385662;border-radius:10px;background:#08151c;color:#b9cacf;font-size:11px;display:none}
+.submitStatus.show{display:block}.submitStatus.error{border-color:#9a5555;color:#ffd0d0;background:#231214}.submitStatus.ok{border-color:#477b6d;color:#c9ffef;background:#0d201b}
+.q.invalid{border-color:#a85858!important;box-shadow:0 0 0 2px #a8585822}
+</style></style></head><body><main class="w">
 <div class="k">ISL // VALIDACIÓN DIALÉCTICA · PILARES</div>
 <header class="h"><h1>Antes de construir más,<br>vamos a comprobar qué sostiene el barco.</h1><div class="lead">No estamos preguntando “¿te gusta?”. Queremos saber si el argumento se entiende, si la promesa jugable tiene fuerza y dónde hay contradicciones que merecen una prueba real.</div><div class="call">La opción más votada NO gana automáticamente. Esto sirve para encontrar fricción, claridad y puntos ciegos.</div></header>
 <form name="isl-pillars-01" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/poll/gracias.html">
@@ -56,6 +60,29 @@
 <section class="q"><h2>9 · ¿Qué frase te gustaría poder decir después de 2 horas?</h2><textarea name="frase_2h" rows="3" maxlength="320" placeholder="Ej.: 'quiero encontrar al siguiente amigo', 'quiero volver a esa isla', 'quiero saber qué cambió por mi culpa'..."></textarea></section>
 <section class="q"><h2>10 · Algo que no entiendas o te chirríe</h2><textarea name="chirria" rows="3" maxlength="420" placeholder="Confusión, contradicción, algo que te suene genérico o demasiado cargado."></textarea></section>
 
-<button class="btn" type="submit">DEJAR EVIDENCIA →</button>
+<button class="btn" id="leaveEvidenceSubmit" type="submit">DEJAR EVIDENCIA →</button>
+<div class="submitStatus" id="submitStatus" role="status" aria-live="polite"></div>
 <div class="tiny">Encuesta de claridad y pilares. La síntesis final se hará junto a prototipo, CQC y decisión humana.</div>
+<script>
+(function(){
+  var form=document.querySelector('form[name="isl-pillars-01"]');
+  var btn=document.getElementById('leaveEvidenceSubmit');
+  var status=document.getElementById('submitStatus');
+  if(!form||!btn||!status)return;
+  function show(msg,type){status.textContent=msg;status.className='submitStatus show '+(type||'')}
+  function clearInvalid(){form.querySelectorAll('.q.invalid').forEach(function(q){q.classList.remove('invalid')})}
+  form.addEventListener('submit',function(e){
+    clearInvalid();
+    if(!form.checkValidity()){
+      e.preventDefault();
+      var bad=form.querySelector(':invalid'),q=bad&&bad.closest('.q');
+      if(q)q.classList.add('invalid');
+      show('Te falta una respuesta obligatoria. Te llevo a ella ↑','error');
+      if(bad){bad.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){try{bad.focus({preventScroll:true})}catch(_){bad.focus()}},350)}
+      return;
+    }
+    btn.disabled=true;btn.textContent='GUARDANDO EVIDENCIA…';show('Guardando evidencia…','ok');
+  });
+})();
+</script>
 </form></main></body></html>
