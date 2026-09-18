@@ -109,3 +109,24 @@ R2 static/CI: PASS provisional.
 - focus-visible + reduced-motion presentes.
 
 Ambos quedan AMBER únicamente por gates humanos/dispositivo exigidos por la metodología.
+
+
+## R3 closure evidence · v0.65.2
+Estado: GREEN.
+
+Producción:
+- Netlify deploy 6aadaaa8426764ffe5174cb3 = ready.
+- commit_ref = ffd0ff33d8d65968336198883abaa5fad4c773b0.
+- Pilares y Referencias publicadas en producción.
+
+Validación de formularios:
+- isl-pillars-01: 1 submission de prueba recuperada.
+- isl-reference-friends-01: 1 submission de prueba recuperada.
+- ambas contienen cohort=friends-01.
+- ambas contienen survey_version=v0.65-r3.
+- ambas contienen survey_source=isl-native-netlify.
+- honeypot activo.
+- Jotform permanece documentado como backup silencioso; Netlify Forms es backend primario.
+
+Decisión:
+R3 pasa a GREEN. No borrar las respuestas de prueba: sirven como evidencia de cierre técnico y deben excluirse de síntesis de colegas por estar marcadas como test humano interno.
