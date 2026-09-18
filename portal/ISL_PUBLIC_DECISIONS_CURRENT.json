@@ -4,6 +4,17 @@
   "rule": "Las encuestas informan. La decisión final no se automatiza.",
   "polls": [
     {
+      "id": "POLL-PILLARS-001",
+      "title": "Pilares y argumento · Validación dialéctica 01",
+      "domain": "CORE",
+      "status": "ABIERTA",
+      "audience": "AMIGOS / JUGADORES_OBJETIVO",
+      "spoiler_risk": "BAJO",
+      "url": "poll/pilares-argumento.html",
+      "question": "¿Se entiende y tira lo suficiente el núcleo de ISL antes de seguir ampliando sistemas?",
+      "methodology": "TESIS → ANTÍTESIS → EVIDENCIA EXTERNA → SÍNTESIS → PROTOTIPO → CQC → DECISIÓN HUMANA"
+    },
+    {
       "id": "POLL-REF-FRIENDS-001",
       "title": "Referencias que dejan huella · Amigos 01",
       "domain": "REF",
