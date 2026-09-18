@@ -39,11 +39,11 @@ iframe{display:block;width:100%;height:720px;border:0;background:white}
 <h2>Una última regla.</h2>
 <p class="hint"><strong>Responde de memoria.</strong> La huella de tu partida se revela después. Así no contaminamos lo que realmente recordaste.</p>
 <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
-<button id="openForm" class="btn primary">DEJAR MI ECO</button>
+<a id="openForm" class="btn primary" href="https://form.jotform.com/262601759318057" target="_blank" rel="noopener">DEJAR MI ECO ↗</a>
 <a class="btn gold" href="capsulas.html">Prefiero dar una vuelta por ISL</a>
 </div>
 </div>
-<div id="formWrap">
+<div style="padding:14px 20px;border-top:1px solid var(--line)"><button id="embedForm" class="btn">Abrir formulario dentro de ISL</button></div><div id="formWrap">
 <div style="padding:12px 14px;background:#0b1820;color:#dbe7e9;border-bottom:1px solid #ffffff22;font-size:13px">Si el formulario no carga aquí, <a href="https://form.jotform.com/262601759318057" target="_blank" rel="noopener" style="color:#8defff">ábrelo directamente</a>.</div>
 <iframe title="ISL · Lo que se quedó contigo" src="https://form.jotform.com/262601759318057" loading="eager" allow="clipboard-write"></iframe>
 </div>
@@ -51,7 +51,7 @@ iframe{display:block;width:100%;height:720px;border:0;background:white}
 </main>
 <script>
 const p=document.getElementById('panel'),a=document.getElementById('ambience'),b=document.getElementById('audioBtn');
-document.getElementById('openForm').onclick=()=>{p.classList.add('open');window.scrollTo({top:p.offsetTop-8,behavior:'smooth'})};
-function paint(){b.textContent=a.paused?'♪':'♫'} b.onclick=()=>{if(a.paused){a.volume=.42;a.play().catch(()=>{})}else a.pause();paint()};a.addEventListener('play',paint);a.addEventListener('pause',paint);paint();
+document.getElementById('openForm').addEventListener('click',()=>{localStorage.setItem('isl_echo_opened_at',new Date().toISOString())});
+document.getElementById('embedForm').onclick=()=>{p.classList.add('open');window.scrollTo({top:p.offsetTop-8,behavior:'smooth'})};function paint(){b.textContent=a.paused?'♪':'♫'} b.onclick=()=>{if(a.paused){a.volume=.42;a.play().catch(()=>{})}else a.pause();paint()};a.addEventListener('play',paint);a.addEventListener('pause',paint);paint();
 </script>
 </body></html>
