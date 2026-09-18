@@ -1,0 +1,24 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ISL · Cápsulas</title>
+<style>
+:root{--bg:#061018;--fg:#f4efe7;--mut:#a8bac0;--cyan:#8defff;--gold:#ffc36e;--line:#ffffff22}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 70% 10%,#24475a 0,transparent 28%),linear-gradient(#061018,#0a141c);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+.wrap{width:min(1180px,94vw);margin:auto;padding:28px 0 80px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center}.k{font-size:11px;letter-spacing:.2em;color:var(--cyan);text-transform:uppercase}.back{color:var(--fg);text-decoration:none;border:1px solid var(--line);padding:10px 13px;border-radius:10px;background:#0b1820}
+h1{font-size:clamp(42px,8vw,90px);line-height:.9;margin:16px 0 12px}.lead{color:#d5e0e2;max-width:760px;line-height:1.55}
+.deck{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:28px}.card{min-height:240px;border:1px solid var(--line);background:#0b1820dd;border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 60px #0005}.type{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}.copy{font-size:clamp(20px,3vw,32px);line-height:1.18;font-weight:750;margin:24px 0}.small{color:var(--mut);line-height:1.5}.dark{background:linear-gradient(180deg,#17131a,#090b0f)}.decision button{width:100%;margin-top:7px;padding:12px;border:1px solid #ffffff28;background:#10232c;color:white;border-radius:10px;text-align:left}.decision button:focus{outline:3px solid var(--cyan);outline-offset:2px}.picked{border-color:var(--gold)!important;color:var(--gold)!important}.footer{margin-top:28px;color:var(--mut);font-size:12px}.tv .wrap{width:min(1500px,96vw)}.tv .deck{grid-template-columns:repeat(3,1fr)}@media(max-width:760px){.top{align-items:flex-start}.deck{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<div class="top"><div><div class="k">Modo descanso · ISL</div></div><a class="back" href="index.html">← Centro</a></div>
+<h1>Cápsulas del cielo</h1><p class="lead">Nada que cerrar. Nada que producir. Sólo mirar, reírse un poco, dejar que el mundo se pegue y, como mucho, tomar una decisión pequeña.</p>
+<div class="deck">
+<article class="card"><div><div class="type">Postal del cielo · 01</div><div class="copy">Hay corrientes que sólo aparecen cuando nadie las está buscando.</div></div><div class="small">Los cartógrafos las consideran de mala educación.</div></article>
+<article class="card"><div><div class="type">Decreto · 14-B</div><div class="copy">Queda prohibido que el viento cambie de dirección durante horario comercial.</div></div><div class="small">Las infracciones serán comunicadas al viento cuando sea localizado.</div></article>
+<article class="card"><div><div class="type">Pandilla · cubierta</div><div class="copy">Mara: «¿Quién dejó una taza en el timón?»<br><br>Taro: «Técnicamente estaba navegando.»</div></div><div class="small">Nadie retiró la taza.</div></article>
+<article class="card"><div><div class="type">Objeto del barco · 01</div><div class="copy">La campanilla torcida</div></div><div class="small">Suena sólo cuando el barco está perfectamente quieto. Nadie sabe por qué eso preocupa tanto a Lena.</div></article>
+<article class="card dark"><div><div class="type">Sombra · 01</div><div class="copy">En ciertas islas, las puertas no chirrían al abrirse.</div></div><div class="small">Chirrían un minuto antes.</div></article>
+<article class="card decision"><div><div class="type">Decisión ligera · no canon</div><div class="copy">¿Qué queda colgado en la nave después de La Separación?</div></div><div>
+<button>A · Una campanilla rota</button><button>B · Una cuerda con un nudo por tripulante</button><button>C · Una placa reglamentaria chamuscada</button></div></article>
+</div>
+<div class="footer">ISL · cápsulas v0.20 · nada de aquí entra a CANON sin pasar por metodología.</div>
+</div><script>
+if(/PlayStation 4/i.test(navigator.userAgent))document.body.classList.add('tv');
+document.querySelectorAll('.decision button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.decision button').forEach(x=>x.classList.remove('picked'));b.classList.add('picked');localStorage.setItem('isl_capsule_decision_01',b.textContent)});
+</script></body></html>
