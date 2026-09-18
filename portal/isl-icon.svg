@@ -1,9 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<defs><radialGradient id="g" cx="70%" cy="20%"><stop stop-color="#2a5366"/><stop offset="1" stop-color="#071017"/></radialGradient></defs>
-<rect width="512" height="512" rx="112" fill="url(#g)"/>
-<circle cx="256" cy="256" r="162" fill="none" stroke="#87efff" stroke-width="10" opacity=".55"/>
-<circle cx="256" cy="256" r="112" fill="none" stroke="#ffc36e" stroke-width="8" opacity=".6"/>
-<path d="M168 288c58-74 118-107 182-98-14 57-52 104-118 142-25 14-48 8-64-11-9-11-9-22 0-33z" fill="#102d38" stroke="#87efff" stroke-width="8"/>
-<path d="M211 213c18-35 43-56 75-63 24 20 39 46 44 77" fill="none" stroke="#f7e8c7" stroke-width="8" stroke-linecap="round"/>
-<text x="256" y="388" text-anchor="middle" font-family="system-ui,sans-serif" font-size="78" font-weight="900" fill="#f5f0e8">ISL</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="t d">
+<title id="t">ISL · Islas Voladoras</title><desc id="d">Brújula dorada, isla flotante, molino y doble negación.</desc>
+<defs>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0ae"/><stop offset=".34" stop-color="#ffc36e"/><stop offset=".72" stop-color="#a96825"/><stop offset="1" stop-color="#ffe4a0"/></linearGradient>
+ <linearGradient id="rock" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#3d5360"/><stop offset=".55" stop-color="#172d38"/><stop offset="1" stop-color="#071017"/></linearGradient>
+ <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b8d97b"/><stop offset=".45" stop-color="#557d49"/><stop offset="1" stop-color="#1c4738"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity=".5"/></filter>
+</defs>
+<!-- transparent canvas; artwork intentionally fills the safe area -->
+<g filter="url(#shadow)">
+ <circle cx="256" cy="252" r="213" fill="none" stroke="#523a22" stroke-width="28" opacity=".8"/>
+ <circle cx="256" cy="252" r="213" fill="none" stroke="url(#gold)" stroke-width="18"/>
+ <circle cx="256" cy="252" r="181" fill="none" stroke="#87efff" stroke-width="3" opacity=".65"/>
+ <g fill="url(#gold)">
+  <path d="M256 3l27 75-27 31-27-31z"/><path d="M509 252l-75 27-31-27 31-27z"/>
+  <path d="M256 501l-27-75 27-31 27 31z"/><path d="M3 252l75-27 31 27-31 27z"/>
+ </g>
+ <!-- island -->
+ <path d="M121 267c27-43 76-68 137-67 66 1 112 24 135 66-22 21-50 31-84 35l-50 126-52-126c-34-4-63-14-86-34z" fill="url(#rock)" stroke="#87efff" stroke-width="4"/>
+ <path d="M133 262c31-34 75-49 126-48 51 1 94 16 121 49-24 19-57 28-108 29-59 1-105-7-139-30z" fill="url(#green)"/>
+ <path d="M229 284c7 31 9 68 6 113M257 286c1 34 0 72-5 119M286 282c-5 34-6 67-4 101" fill="none" stroke="#9cefff" stroke-width="9" stroke-linecap="round" opacity=".9"/>
+ <!-- small windmill -->
+ <g transform="translate(281 130)">
+  <path d="M-22 78L-10 6H18L28 78z" fill="#6f4928" stroke="#ffc36e" stroke-width="3"/>
+  <circle cx="4" cy="19" r="8" fill="#071017" stroke="#ffc36e" stroke-width="3"/>
+  <g stroke="#f3dfb8" stroke-width="7" stroke-linecap="round">
+   <path d="M4 19L4-39"/><path d="M4 19L62 19"/><path d="M4 19L4 77"/><path d="M4 19L-54 19"/>
+  </g>
+  <!-- sail / dialectic mark -->
+  <path d="M11-34L50-25L55 3L13-3z" fill="#e8d0a6" stroke="#725034" stroke-width="2"/>
+  <text x="32" y="-8" text-anchor="middle" font-family="serif" font-size="23" font-weight="900" fill="#38251a">¬¬</text>
+ </g>
+ <!-- floating shards -->
+ <g fill="#294a54" stroke="#87efff" stroke-width="2" opacity=".95">
+  <path d="M90 188l34-19 28 18-29 45z"/><path d="M392 171l29-15 25 17-25 38z"/>
+ </g>
+ <!-- ISL monogram -->
+ <text x="256" y="365" text-anchor="middle" font-family="Georgia,serif" font-size="115" font-weight="900" letter-spacing="-10" fill="url(#gold)" stroke="#4c301d" stroke-width="4">ISL</text>
+ <path d="M146 389c58 22 162 24 222 0" fill="none" stroke="#f4dfb2" stroke-width="9" stroke-linecap="round"/>
+ <text x="256" y="420" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-weight="700" letter-spacing="4" fill="#f8e7c3">ISLAS VOLADORAS</text>
+</g>
+<circle cx="256" cy="47" r="7" fill="#fff" filter="url(#glow)"/>
 </svg>
