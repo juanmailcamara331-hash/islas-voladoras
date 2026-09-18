@@ -146,3 +146,22 @@ Scientific rigor protects creative brutality.
 - Private host project exists with SSO all-routes, but content deployment is blocked by ERR-DEPLOY-011.
 - GitHub NETLIFY_AUTH_TOKEN is non-empty yet Netlify CLI returns 404/Project not found.
 - Auto retries paused; workflow manual-only until credential rotation.
+
+
+## PORTAL v0.68 · PREMIUM COMMAND CENTER
+- Approved visual reference translated into functional portal hierarchy.
+- Single-line icon nav retained; no duplicate primary menu.
+- Quick dock restored: Calendario / Referencias / Encuestas / Registro / Estado.
+- Main composition locked:
+  - 3 primary cards: Perfil RPG / Ruta / Brújula.
+  - 5 world gates: Islas / Escenas / Criaturas / Reliquias / Dialéctica.
+  - utility band includes PS4 Version.
+- RPG stats marked explicitly as visual RPG indicators.
+- Route progress reads ISL_ROUTE_STATE_CURRENT.json and computes percentage from pipeline state.
+- UI architecture doc: docs/ISL_PORTAL_V068_UI_ARCHITECTURE.md.
+- Regression script: scripts/portal-v068-ui-gate.py.
+- Branch audit SUCCESS: 35402646874.
+- Main audit SUCCESS: 35402740138.
+- Pages deploy SUCCESS: 35402742611.
+- Merge: f99ee66f0050dcdb741b2acf986efb6d1bdc12fa.
+- R2 remains AMBER until physical Android visual/touch verification.
