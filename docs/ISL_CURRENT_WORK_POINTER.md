@@ -345,3 +345,15 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
   - they wait briefly for core pillar evidence/synthesis;
   - then continue under the validated base.
 - Decision rule remains: poll results inform; they never auto-promote CANON.
+
+
+## v0.58 — FRIENDS TEST LAUNCHPAD
+- Temporary high-visibility block added at the top of Command Center.
+- Label: 🚨 PRUEBA CON COLEGAS · TEMPORAL
+- Order:
+  1. Pilares y argumento
+  2. Salón de las Cortinas Rojas
+  3. Isla del Baile Inagotable
+  4. Referencias
+- Purpose: make current validation surfaces obvious while the user is with friends.
+- Temporary UI by design; remove or reorganize after this validation round.
