@@ -21,7 +21,7 @@ iframe{display:block;width:100%;height:720px;border:0;background:white}
 @media(max-width:700px){iframe{height:780px}.hero{min-height:40vh}.top{align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){.wind{display:none}}
 </style>
-</head>
+<link rel="stylesheet" href="isl-global-shell.css">\n</head>
 <body>
 <div class="wind"><i></i><i></i><i></i></div>
 <audio id="ambience" loop preload="none" src="assets/airships-last-waltz-master.mp3"></audio>
@@ -54,4 +54,4 @@ const p=document.getElementById('panel'),a=document.getElementById('ambience'),b
 document.getElementById('openForm').addEventListener('click',()=>{localStorage.setItem('isl_echo_opened_at',new Date().toISOString())});
 document.getElementById('embedForm').onclick=()=>{p.classList.add('open');window.scrollTo({top:p.offsetTop-8,behavior:'smooth'})};function paint(){b.textContent=a.paused?'♪':'♫'} b.onclick=()=>{if(a.paused){a.volume=.42;a.play().catch(()=>{})}else a.pause();paint()};a.addEventListener('play',paint);a.addEventListener('pause',paint);paint();
 </script>
-</body></html>
+<script defer src="isl-global-shell.js"></script>\n</body></html>
