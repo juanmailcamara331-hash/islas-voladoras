@@ -1,0 +1,83 @@
+{
+  "version": "0.20.1",
+  "updated": "2026-09-18",
+  "policy": "LIGHT_IMMERSION_NON_CANON",
+  "capsules": [
+    {
+      "id": "postal-01",
+      "type": "POSTAL DEL CIELO",
+      "title": "El cielo cambia de opinión",
+      "body": "Hay corrientes que sólo aparecen cuando nadie las está buscando.",
+      "note": "Los cartógrafos las consideran de mala educación.",
+      "tone": "warm"
+    },
+    {
+      "id": "decreto-14b",
+      "type": "DECRETO · 14-B",
+      "title": "Aviso meteorológico",
+      "body": "Queda prohibido que el viento cambie de dirección durante horario comercial.",
+      "note": "Las infracciones serán comunicadas al viento cuando sea localizado.",
+      "tone": "absurd"
+    },
+    {
+      "id": "pandilla-01",
+      "type": "PANDILLA · CUBIERTA",
+      "title": "La taza navegante",
+      "body": "Mara: «¿Quién dejó una taza en el timón?»\n\nTaro: «Técnicamente estaba navegando.»",
+      "note": "Nadie retiró la taza.",
+      "tone": "warm"
+    },
+    {
+      "id": "objeto-01",
+      "type": "OBJETO DEL BARCO",
+      "title": "La campanilla torcida",
+      "body": "Suena sólo cuando el barco está perfectamente quieto.",
+      "note": "Nadie sabe por qué eso preocupa tanto a Lena.",
+      "tone": "mystery"
+    },
+    {
+      "id": "sombra-01",
+      "type": "SOMBRA",
+      "title": "La puerta puntual",
+      "body": "En ciertas islas, las puertas no chirrían al abrirse.",
+      "note": "Chirrían un minuto antes.",
+      "tone": "dark"
+    },
+    {
+      "id": "rumor-01",
+      "type": "RUMOR",
+      "title": "La isla que cobra alquiler",
+      "body": "Dicen que hay una isla que exige una moneda a toda nave que proyecte sombra sobre ella.",
+      "note": "Nadie se pone de acuerdo sobre dónde deja la factura.",
+      "tone": "absurd"
+    },
+    {
+      "id": "lore-01",
+      "type": "LORE SNACK",
+      "title": "Nudos de regreso",
+      "body": "Algunas tripulaciones atan un nudo nuevo por cada persona que debería volver al barco.",
+      "note": "Deshacer uno sin permiso trae muy mala suerte. O una bronca peor.",
+      "tone": "warm"
+    },
+    {
+      "id": "sombra-02",
+      "type": "SOMBRA",
+      "title": "El ascensor",
+      "body": "Un ascensor abandonado sigue llegando a pisos que ya no existen.",
+      "note": "A veces vuelve con barro en el suelo.",
+      "tone": "dark"
+    },
+    {
+      "id": "decision-01",
+      "type": "DECISIÓN LIGERA",
+      "title": "Después de La Separación",
+      "body": "¿Qué queda colgado en la nave?",
+      "options": [
+        "Una campanilla rota",
+        "Una cuerda con un nudo por tripulante",
+        "Una placa reglamentaria chamuscada"
+      ],
+      "tone": "decision"
+    }
+  ]
+}
