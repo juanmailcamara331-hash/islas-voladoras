@@ -15,6 +15,10 @@ La música no decora el mapa: ayuda a reconocer cultura, materialidad, historia 
 6. MEMORIA — qué ha sobrevivido del pasado.
 7. CONTRADICCIÓN — qué desea la civilización y qué sacrifica.
 
+## RELACIÓN CON EL MACROARCO
+El ADN regional no sustituye el arco global de intensidad del juego. En la apertura, incluso una región con gran escala debe entrar con respiración y legibilidad; el crecimiento se gana según descubrimiento, conflicto y viaje.
+La referencia histórica aprobada es funcional: lirismo y amplitud orquestal asociables al cine de aventura 60–70, sin imitar obras ni compositores concretos.
+
 ## REGLA DE MOTIVO
 Una región puede tener un motivo base que reaparece en:
 - llegada;
