@@ -54,71 +54,8 @@
     Netlify-CDN-Cache-Control = "public, durable, s-maxage=300, stale-while-revalidate=86400"
 
 
-# GITHUB PAGES STATIC OFFLOAD
-# Keep Netlify for dynamic/forms/backend; send heavy static UI to free Pages.
-[[redirects]]
-  from = "/"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/"
-  status = 302
-  force = true
+# PUBLIC SITE POLICY
+# No redirect from public Netlify to the internal GitHub Pages Command Center.
+# Public Netlify serves only the explicit allowlist produced by netlify-public-build.sh.
+# The Android app remains on its existing Pages URL until PRIVATE_WEB_GREEN.
 
-[[redirects]]
-  from = "/rpg-home.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/command-center.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/command-center.html"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/capsulas.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/capsulas.html"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/capsulas-tv.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/capsulas-tv.html"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/musica.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/musica.html"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/recreo.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/recreo.html"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/boss-prototype.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/boss-prototype.html"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/secret-level.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/secret-level.html"
-  status = 302
-  force = true
-
-
-[[redirects]]
-  from = "/ps4.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/ps4.html"
-  status = 302
-  force = true
-
-[[redirects]]
-  from = "/reel.html"
-  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/reel.html"
-  status = 302
-  force = true
