@@ -123,7 +123,11 @@ jobs:
           grep -q 'isl-pillars-01' build/pages/poll/pilares-argumento.html
           grep -q 'VALIDACIÓN DIALÉCTICA' build/pages/poll/pilares-argumento.html
           grep -q 'window.__ISL_NATIVE_APP__=true' build/pages/index.html
-          grep -q "removeChild(w)" build/pages/index.html
+          grep -q 'isl_native_entered_v063' build/pages/index.html
+          grep -q 'id="moreNavBtn"' build/pages/index.html
+          grep -q 'data-main-nav="home"' build/pages/index.html
+          grep -q '.rail{display:none!important}' build/pages/index.html
+          grep -q 'flex-wrap:nowrap!important' build/pages/index.html
           grep -q 'isl-center-v060-native-regression-guard' build/pages/sw.js
           test -f docs/ISL_BUILD_SCIENCE_v0.61.md
           test -f docs/ISL_ERROR_TAXONOMY_v0.61.json
