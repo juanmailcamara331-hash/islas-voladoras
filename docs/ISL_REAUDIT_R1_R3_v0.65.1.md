@@ -130,3 +130,22 @@ Validación de formularios:
 
 Decisión:
 R3 pasa a GREEN. No borrar las respuestas de prueba: sirven como evidencia de cierre técnico y deben excluirse de síntesis de colegas por estar marcadas como test humano interno.
+
+
+## R2 human evidence update · v0.66
+Hallazgos físicos reportados:
+- Drawer Más no cerraba al tocar fuera → ERR-UI-007, fix aplicado.
+- Acciones temporales importantes no estaban visibles → ERR-UX-008, bloque #currentActions añadido.
+- Al volver atrás desde encuestas aparecía un flash de bienvenida → ERR-ANDROID-009, fix aplicado pre-render.
+- Las encuestas actuales son legibles y funcionales, pero las imágenes-resumen nuevas aún no están integradas en producción.
+
+Estado R2: AMBER.
+Para GREEN falta validar en APK publicada:
+1. drawer cierra fuera;
+2. bloque AHORA visible;
+3. Atrás desde encuesta vuelve a Centro sin flash;
+4. destinos primarios siguen respondiendo;
+5. sin wrap en navegación principal.
+
+Deploy trigger del fix de flash:
+- d210db54935a3971b0640f2c956ab244395c6d7a
