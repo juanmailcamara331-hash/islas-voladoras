@@ -134,6 +134,32 @@ jobs:
           test -f build/pages/poll/molino.html
           test -f build/pages/poll/gracias.html
           grep -q "ps4-runtime-hotfix.js" build/pages/ps4.html
+          grep -q 'welcomeBrandIcon' build/pages/index.html
+          grep -q 'railBrandIcon' build/pages/index.html
+          grep -q 'isl-icon.svg' build/pages/rpg-home.html
+          grep -q 'isl-icon.svg' build/pages/ps4.html
+          grep -q 'PRE50 · EVIDENCIA HUMANA REAL' build/pages/ps4.html
+          grep -q 'FIRST PLAYABLE' build/pages/ps4.html
+          grep -q 'VERTICAL SLICE' build/pages/ps4.html
+          grep -q '¬¬' build/pages/ps4.html
+          grep -q '¬¬' build/pages/poll/molino.html
+          grep -q '¬¬' build/pages/isl-icon.svg
+          grep -q '"purpose": "any"' build/pages/manifest.webmanifest
+          ! grep -q '<div class="logo">ISL</div>' build/pages/ps4.html
+          python3 - <<'PY'
+          from pathlib import Path
+          checks={
+            'index.html':['ENTRAR EN ISL','rpg-home.html','welcomeBrandIcon','railBrandIcon'],
+            'rpg-home.html':['RUTA v0.40 · PRE50 PENDIENTE','Inventario','Aventura','Recreo','Música','Centro'],
+            'ps4.html':['PRE50 · EVIDENCIA HUMANA REAL','PRE60','FIRST PLAYABLE','VERTICAL SLICE','Alpha → Beta → Master']
+          }
+          root=Path('build/pages')
+          for name,needles in checks.items():
+              t=(root/name).read_text(encoding='utf-8')
+              missing=[n for n in needles if n not in t]
+              assert not missing, f'{name}: missing {missing}'
+          print('Brand / flow / PS4 sync audit OK')
+          PY
           echo "CQC Pages OK"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
