@@ -1,6 +1,6 @@
 [build]
-  command = "bash netlify-portal-build.sh"
-  publish = "build/site"
+  command = "bash netlify-public-build.sh"
+  publish = "build/public"
   # COST AIRLOCK: normal commits NEVER deploy production.
   # To intentionally release, modify NETLIFY_DEPLOY_v0.7.2.md in that release commit.
   # Netlify's ignore command exits 0 when the release marker did not change, so the build is skipped.
@@ -107,5 +107,18 @@
 [[redirects]]
   from = "/secret-level.html"
   to = "https://juanmailcamara331-hash.github.io/islas-voladoras/secret-level.html"
+  status = 302
+  force = true
+
+
+[[redirects]]
+  from = "/ps4.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/ps4.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/reel.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/reel.html"
   status = 302
   force = true
