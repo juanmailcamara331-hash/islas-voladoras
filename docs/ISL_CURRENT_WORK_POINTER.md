@@ -85,3 +85,26 @@ playlist → capsules → 0–1 light decision → stop freely.
 
 TANDA DURA:
 method → research → implementation → audit → checkpoint.
+
+
+## DD v0.22 — DISCOVERY / COMMUNITY / FUNDING / DISTRIBUTION
+Status: ACTIVE CROSS-CUTTING PILLAR.
+
+Core docs:
+- docs/ISL_DD_GLOBAL_ECOSYSTEM_MATRIX_v0.22.md
+- docs/ISL_DD_RETROFIT_AUDIT_v0.22.md
+- docs/ISL_CROWDFUNDING_COMMUNITY_EVIDENCE_v0.22.md
+
+Rules:
+- no marketing-at-the-end;
+- own site/email are portable audience foundations;
+- crowdfunding requires CF-20 audience/community PASS;
+- Steam/itch/crowdfunding pages must not freeze unvalidated design;
+- every public asset gets intent + metadata + provenance + next action;
+- third-party platforms obey Olympus Rule.
+
+Retrofit status:
+KEEP: identity/tone/capsules/music lab/PS4/playtest method.
+TUNE: public Netlify metadata/indexability/README/poll framing.
+MISSING LATER: email waitlist/press kit/Steam kit/creator outreach/crowdfunding prelaunch model.
+BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype gates.
