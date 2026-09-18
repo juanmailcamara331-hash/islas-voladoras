@@ -50,3 +50,13 @@ Una referencia necesita al menos dos funciones fuertes; si no, cameo o descarte.
 - usar artistas/autores como función, no imitación literal;
 - toda referencia nueva registra fuente, peso, funciones y riesgo;
 - si una referencia domina perceptiblemente una escena, activar revisión anti-collage.
+
+
+## Addendum v0.49 — intake social de referencias
+Nueva candidata:
+- Holandés Errante / fantasma marítimo absurdo — C/25 provisional.
+- Funciones candidatas: humor marítimo absurdo; presencia espectral; amenaza+comedia; aparición imprevisible; barco/niebla/umbral; entidad con reglas propias.
+- Riesgo: alto si se aproxima a personaje, voz, diseño, chistes o iconografía reconocible.
+- Regla: extraer función y contraste, nunca copiar expresión protegida.
+- Evidencia social: FRIENDS_SAMPLE mediante docs/ISL_REFERENCE_INTAKE_SURVEY_METHOD_v0.49.md.
+- Ascenso a B/50 sólo con 2+ funciones fuertes, prototipo barato, CQC anti-collage y aprobación humana.
