@@ -555,3 +555,24 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - v1 surveys remain in drawer as rollback.
 - Two generated poster assets are approved visually but binary repo integration remains pending.
 - DO NOT begin major new systems until R1/R2 human gates are GREEN.
+
+
+## SECURITY UPDATE v0.67 · PUBLIC / PRIVATE SPLIT
+- Public build is explicit allowlist only.
+- Public Netlify no longer redirects to internal GitHub Pages routes.
+- GitHub Pages Command Center marked noindex/nofollow/noarchive and robots.txt Disallow: /.
+- Neutral public 404 added.
+- Route visibility manifest:
+  - docs/ISL_ROUTE_VISIBILITY_v0.67.json
+- Security architecture:
+  - docs/ISL_PUBLIC_PRIVATE_SECURITY_v0.67.md
+- Dedicated private Netlify project provisioned:
+  - islas-voladoras-isl-private-i1oq
+  - site_id 6182a9ad-e228-41b9-816a-1cf7d750e7e7
+  - SSO team login required for all routes at creation.
+- Dedicated private config:
+  - netlify-private.toml
+- Private build audit workflow:
+  - .github/workflows/private-build-audit.yml
+- Current Android APK still points to GitHub Pages and MUST NOT move until private host deploy is GREEN + physical regression tests pass.
+- Public Netlify release airlock v0.67 triggered via NETLIFY_DEPLOY_v0.7.2.md.
