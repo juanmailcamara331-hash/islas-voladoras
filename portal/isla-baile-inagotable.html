@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes">
+<meta name="theme-color" content="#081119">
+<title>ISL · Isla del Baile Inagotable</title>
+<style>
+:root{--bg:#071017;--panel:#0c171d;--line:#31505c;--cyan:#8defff;--gold:#d7b26a;--rose:#d45c77;--ink:#eef7f4;--muted:#97aab0}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+body{background:radial-gradient(circle at 72% 0,#1c3c4b 0,transparent 28%),radial-gradient(circle at 18% 22%,#2d1834 0,transparent 24%),linear-gradient(#071017,#09141a)}
+.wrap{width:min(1180px,94vw);margin:auto;padding:16px 0 58px}.top{display:flex;align-items:center;gap:12px}.top img{width:50px;height:50px;object-fit:contain}.top h1{margin:2px 0 0;font-family:Georgia,serif;font-size:clamp(25px,4vw,44px)}.k{font-size:9px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.back{margin-left:auto;color:#fff;text-decoration:none;border:1px solid #3b5964;border-radius:10px;padding:10px 12px;font-size:10px;font-weight:900;background:#0a151b}
+.hero{margin-top:14px;border:1px solid var(--line);border-radius:18px;padding:18px;background:linear-gradient(135deg,#0d1c24,#11151a)}.hero p{margin:7px 0 0;color:#c2cfd2;font-size:13px;line-height:1.55}.pulsebar{margin-top:12px;display:grid;grid-template-columns:repeat(12,1fr);gap:4px;height:26px;align-items:end}.pulsebar i{display:block;background:#456b76;height:20%;border-radius:4px;transition:.35s}.pulsebar.live i:nth-child(3n){height:90%;background:var(--cyan)}.pulsebar.live i:nth-child(2n){height:58%;background:var(--gold)}.pulsebar.tired i:nth-child(odd){height:32%;background:#a65c63}.pulsebar.rested i{height:44%;background:#7bd4b0}.district{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.node{border:1px solid var(--line);border-radius:16px;padding:15px;background:#0b171de8;min-height:220px;display:flex;flex-direction:column}.node h2{font-size:16px;margin:7px 0 6px}.node p{font-size:11px;line-height:1.5;color:#aebec2;margin:0}.node .ico{font-size:28px}.node .status{margin-top:auto;padding-top:12px;font-size:9px;color:#789097}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.btn{border:1px solid #35505b;background:#0a151b;color:#eaf3f1;border-radius:9px;padding:10px 11px;font-size:9px;font-weight:900;cursor:pointer}.btn.gold{border-color:#7d633a;background:#2f2415;color:#f8e4b6}.btn.cyan{border-color:#38616e;background:#0d2028;color:#c7f7ff}.btn.rose{border-color:#71404c;background:#271117;color:#ffd4dc}.btn:disabled{opacity:.4}.panel{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:#09141a;padding:15px}.panel h3{margin:0 0 6px;font-size:13px}.panel p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}.memory{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.mem{border:1px solid #29434e;border-radius:10px;background:#071118;padding:10px;font-size:10px;color:#aab9bd}.mem b{display:block;color:#fff;margin-bottom:4px}.secret{display:none;margin-top:10px;border-left:3px solid var(--gold);padding:11px;background:#15130d;font-size:10px;line-height:1.5}.secret.show{display:block}.footer{text-align:center;color:#6f8389;font-size:9px;margin-top:11px}
+@media(max-width:780px){.district{grid-template-columns:1fr}.memory{grid-template-columns:1fr}.node{min-height:auto}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top">
+  <img src="isl-icon-master.png" alt="ISL"><div><div class="k">FASE C · DISTRITO MÍNIMO JUGABLE · PROVISIONAL FUERTE</div><h1>Isla del Baile Inagotable</h1></div>
+  <a class="back" href="rpg-home.html">← CABINA RPG</a>
+</header>
+
+<section class="hero">
+  <div class="k">REGLA LOCAL</div>
+  <p>La isla obtiene energía de patrones coordinados. Puedes sumarte, variar el patrón, redistribuir el esfuerzo o abrir descanso. El objetivo no es “bailar bien”: es descubrir qué sostiene realmente a una comunidad que nunca para.</p>
+  <div id="pulsebar" class="pulsebar"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</section>
+
+<section class="district">
+  <article class="node">
+    <div class="ico">◉</div><div class="k">NODO 01 · PULSO LOCAL</div><h2>Plaza del Compás</h2>
+    <p>La plaza coordina movimiento y luz. Sumarte da energía inmediata. Introducir una variación puede abrir una ruta lateral o tensar a quienes llevan horas sosteniendo el patrón.</p>
+    <div class="actions">
+      <button class="btn gold" data-a="join">SUMARME</button>
+      <button class="btn cyan" data-a="vary">INTRODUCIR VARIACIÓN</button>
+    </div>
+    <div id="s1" class="status">Sin intervención.</div>
+  </article>
+
+  <article class="node">
+    <div class="ico">☾</div><div class="k">NODO 02 · DESCANSO</div><h2>Patio de las Hamacas Quietas</h2>
+    <p>El descanso no es una salida del sistema: redistribuye carga. Abrir este nodo baja la intensidad global pero evita que unas pocas personas carguen con todo.</p>
+    <div class="actions">
+      <button class="btn" data-a="rest">ABRIR DESCANSO</button>
+      <button class="btn rose" data-a="ignore-rest">SEGUIR SIN PARAR</button>
+    </div>
+    <div id="s2" class="status">El patio permanece cerrado.</div>
+  </article>
+
+  <article class="node">
+    <div class="ico">↝</div><div class="k">NODO 03 · CARGA</div><h2>Pasarela de los Turnos</h2>
+    <p>Hay quienes sostienen el ritmo mientras otros disfrutan. Puedes redistribuir turnos o dejar intacta la costumbre.</p>
+    <div class="actions">
+      <button class="btn cyan" data-a="redistribute">REDISTRIBUIR ESFUERZO</button>
+      <button class="btn" data-a="keep">DEJARLO COMO ESTÁ</button>
+    </div>
+    <div id="s3" class="status">La carga sigue desigual.</div>
+  </article>
+</section>
+
+<section class="panel">
+  <h3>Memoria de compás</h3>
+  <p>La isla recuerda una intervención importante entre visitas. No guarda partículas ni decoración: guarda cambios que afectan cómo se vive aquí.</p>
+  <div class="memory">
+    <div class="mem"><b>Pulso</b><span id="pulseText">estable / sin lectura</span></div>
+    <div class="mem"><b>Carga</b><span id="burdenText">sin redistribuir</span></div>
+    <div class="mem"><b>Descanso</b><span id="restText">cerrado</span></div>
+    <div class="mem"><b>Ruta alternativa</b><span id="routeText">oculta</span></div>
+  </div>
+  <div id="secret" class="secret"></div>
+</section>
+
+<div class="footer">Tensiones activas: deseo/disciplina · intimidad/multitud · rito/improvisación · cuidado/explotación. Mismas reglas en todos los tiers.</div>
+</main>
+
+<script>
+(()=>{'use strict';
+const EKEY='isl_huellas_events_v2', SKEY='isl_dance_island_v1';
+const state=load();
+const $=id=>document.getElementById(id);
+function load(){try{return JSON.parse(localStorage.getItem(SKEY)||'{}')}catch(e){return{}}}
+function save(){localStorage.setItem(SKEY,JSON.stringify(state));render()}
+function evs(){try{const a=JSON.parse(localStorage.getItem(EKEY)||'[]');return Array.isArray(a)?a:[]}catch(e){return[]}}
+function trace(action,delta,tags,cost,witness,relations=[]){
+ const a=evs(), repeats=a.filter(e=>e.action_class===action&&e.context_id==='isla_baile').length;
+ a.push({event_id:'baile_'+Date.now()+'_'+action,context_id:'isla_baile',actor:'player',action_class:action,cost,reversibility:1,witness_scope:witness,relation_ids:relations,world_state_delta:delta,timestamp:new Date().toISOString(),significance_band:Math.max(1,cost+2-Math.min(3,repeats)),tags});
+ localStorage.setItem(EKEY,JSON.stringify(a.slice(-64)));
+}
+function act(a){
+ if(a==='join'){state.pulse='joined';state.energy=(state.energy||0)+2;trace('sumarse_pulso','energia_subida',['contagio','deseo'],2,'multitud',['baile_plaza'])}
+ if(a==='vary'){state.pulse='varied';state.route=true;state.energy=(state.energy||0)+1;trace('variar_pulso','ruta_variacion_abierta',['umbral','contagio'],3,'multitud',['baile_plaza'])}
+ if(a==='rest'){state.rest='open';state.energy=Math.max(0,(state.energy||1)-1);state.burden='easing';trace('abrir_descanso','nodo_descanso_activo',['cuidado','memoria'],3,'multitud',['baile_cuidadores'])}
+ if(a==='ignore-rest'){state.rest='ignored';state.energy=(state.energy||0)+2;state.fatigue=(state.fatigue||0)+2;trace('ignorar_descanso','fatiga_acumulada',['deseo','explotacion'],3,'multitud',['baile_cuidadores'])}
+ if(a==='redistribute'){state.burden='shared';state.energy=Math.max(0,(state.energy||1)-1);trace('redistribuir_esfuerzo','turnos_repartidos',['cuidado','poder'],4,'multitud',['baile_turnos'])}
+ if(a==='keep'){state.burden='uneven';state.fatigue=(state.fatigue||0)+1;trace('mantener_carga','carga_desigual_preservada',['poder','memoria'],2,'multitud',['baile_turnos'])}
+ state.last=a;state.at=new Date().toISOString();save();
+}
+function render(){
+ document.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>act(b.dataset.a));
+ $('s1').textContent=state.pulse==='joined'?'Te has sumado al patrón: la plaza responde con fuerza.':state.pulse==='varied'?'La variación abrió una lectura lateral del distrito.':'Sin intervención.';
+ $('s2').textContent=state.rest==='open'?'El descanso está abierto y la carga empieza a repartirse.':state.rest==='ignored'?'El patio sigue cerrado; la energía sube, la fatiga también.':'El patio permanece cerrado.';
+ $('s3').textContent=state.burden==='shared'?'Los turnos se han redistribuido.':state.burden==='easing'?'La carga empieza a aflojar gracias al descanso.':state.burden==='uneven'?'Has dejado intacta la desigualdad de turnos.':'La carga sigue desigual.';
+ $('pulseText').textContent=state.pulse==='varied'?'variado / ruta lateral abierta':state.pulse==='joined'?'alto / sincronizado':'estable / sin lectura';
+ $('burdenText').textContent=state.burden==='shared'?'repartida':state.burden==='easing'?'aliviándose':state.burden==='uneven'?'desigual':'sin redistribuir';
+ $('restText').textContent=state.rest==='open'?'abierto':state.rest==='ignored'?'ignorado':'cerrado';
+ $('routeText').textContent=state.route?'visible':'oculta';
+ const bar=$('pulsebar');bar.className='pulsebar '+(state.rest==='open'?'rested':state.fatigue>=2?'tired':(state.pulse?'live':''));
+ const sec=$('secret');
+ const unlock=state.route&&state.rest==='open'&&state.burden==='shared';
+ if(unlock){sec.className='secret show';sec.innerHTML='<b>SECRETO · JARDÍN SILENCIOSO</b><br>Has abierto una ruta que no produce energía. Aquí el baile deja de ser obligación y vuelve a ser elección. La isla recuerda esta posibilidad.';state.secret='silent_garden';localStorage.setItem(SKEY,JSON.stringify(state))}
+ else if(state.route&&state.burden==='shared'){sec.className='secret show';sec.innerHTML='<b>RUTA TÉCNICA</b><br>La variación y el reparto revelan una escalera bajo la pista. El archivo de patrones anteriores queda cerca, pero todavía no has creado espacio para escucharlo.'}
+ else {sec.className='secret';sec.textContent=''}
+}
+render();
+})();
+</script>
+</body>
+</html>
