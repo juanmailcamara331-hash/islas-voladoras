@@ -1,0 +1,29 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ISL · Cápsulas TV</title>
+<style>
+:root{--fg:#f5f0e8;--mut:#afbec2;--cyan:#8defff;--gold:#ffc36e}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05090d;color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+#bg{position:fixed;inset:0;background:#071017 center/cover no-repeat;transition:background-image .7s ease;filter:saturate(.8) contrast(1.08)}
+#shade{position:fixed;inset:0;background:linear-gradient(90deg,#020609ee 0,#020609b8 48%,#02060955 78%,#02060922),linear-gradient(0deg,#020609d9,transparent 60%)}
+#stage{position:relative;z-index:2;height:100%;display:grid;align-content:end;padding:7vh 7vw 9vh;max-width:1200px}
+.k{font-size:clamp(11px,1.5vw,18px);letter-spacing:.2em;color:var(--cyan);text-transform:uppercase}.title{font-size:clamp(44px,7.5vw,108px);font-weight:950;line-height:.9;letter-spacing:-.05em;margin:12px 0 18px}
+.body{font-size:clamp(20px,3vw,42px);line-height:1.25;font-weight:650;max-width:980px;white-space:pre-line}.note{font-size:clamp(15px,2vw,26px);color:var(--mut);margin-top:18px;max-width:900px}
+#controls{position:fixed;z-index:4;right:24px;top:22px;display:flex;gap:8px}.ctl{width:52px;height:52px;border-radius:50%;border:1px solid #ffffff33;background:#041017cc;color:#fff;font-size:20px}
+#progress{position:fixed;left:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--cyan),var(--gold));width:0;z-index:5}
+#choices{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.choice{padding:14px 18px;border:1px solid #ffffff35;background:#0a1820dd;color:#fff;border-radius:12px;font-size:clamp(16px,1.6vw,22px)}.choice.on{border-color:var(--gold);color:var(--gold)}
+#status{position:fixed;z-index:4;left:24px;top:22px;font-size:12px;color:#d2dfe2;background:#041017bb;border:1px solid #ffffff22;padding:8px 11px;border-radius:999px}
+@media(max-width:700px){#stage{padding:12vh 6vw 12vh}.title{font-size:14vw}.body{font-size:6vw}.note{font-size:4.4vw}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div id="bg"></div><div id="shade"></div><div id="status">ISL · MODO TV</div>
+<div id="stage"><div class="k" id="type"></div><div class="title" id="title"></div><div class="body" id="body"></div><div class="note" id="note"></div><div id="choices"></div></div>
+<div id="controls"><button class="ctl" id="prev">←</button><button class="ctl" id="pause">Ⅱ</button><button class="ctl" id="next">→</button><button class="ctl" id="sound">♪</button><button class="ctl" id="fs">⛶</button></div><div id="progress"></div>
+<audio id="audio" loop preload="auto" src="assets/airships-last-waltz-master.mp3"></audio>
+<script>
+(()=>{const bg=document.getElementById('bg'),type=document.getElementById('type'),title=document.getElementById('title'),body=document.getElementById('body'),note=document.getElementById('note'),choices=document.getElementById('choices'),prog=document.getElementById('progress'),audio=document.getElementById('audio'),pause=document.getElementById('pause'),sound=document.getElementById('sound');
+let items=[],i=0,paused=false,start=Date.now(),duration=9000,timer;const images=['assets/island-a-master.jpg','assets/island-b-master.jpg','assets/ship-home-stars.png','assets/city-wind.png','assets/wind-lab-sunset.png','assets/tower-echoes.png'];
+function esc(s){return String(s??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+function show(n){if(!items.length)return;i=(n+items.length)%items.length;const x=items[i];type.textContent=x.type||'ISL';title.textContent=x.title||'';body.textContent=x.body||'';note.textContent=x.note||'';choices.innerHTML='';bg.style.backgroundImage='url("'+images[i%images.length]+'")';if(x.options){paused=true;pause.textContent='▶';x.options.forEach((o,k)=>{const b=document.createElement('button');b.className='choice';b.textContent=String.fromCharCode(65+k)+' · '+o;b.onclick=()=>{choices.querySelectorAll('.choice').forEach(z=>z.classList.remove('on'));b.classList.add('on');localStorage.setItem('isl_tv_'+x.id,o)};choices.appendChild(b)})}else{start=Date.now()} prog.style.width='0%'}
+function tick(){if(paused||!items.length)return;let p=(Date.now()-start)/duration;if(p>=1){show(i+1);p=0}prog.style.width=Math.min(100,p*100)+'%'}
+fetch('isl-capsules-current.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{items=j.capsules||[];show(0);timer=setInterval(tick,100)});
+document.getElementById('prev').onclick=()=>show(i-1);document.getElementById('next').onclick=()=>{paused=false;pause.textContent='Ⅱ';show(i+1)};pause.onclick=()=>{paused=!paused;pause.textContent=paused?'▶':'Ⅱ';start=Date.now()};sound.onclick=()=>{if(audio.paused){audio.volume=.45;audio.play().catch(()=>{});sound.textContent='♫'}else{audio.pause();sound.textContent='♪'}};document.getElementById('fs').onclick=()=>{const d=document.documentElement;if(!document.fullscreenElement)(d.requestFullscreen||d.webkitRequestFullscreen)?.call(d);else(document.exitFullscreen||document.webkitExitFullscreen)?.call(document)};addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1);if(e.key===' ')pause.click()});
+})();</script></body></html>
