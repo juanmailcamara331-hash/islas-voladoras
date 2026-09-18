@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ISL · Deja tu eco</title>
+<style>
+:root{--bg:#061018;--fg:#f4efe7;--mut:#a8bac0;--cyan:#8defff;--gold:#ffc36e;--line:#ffffff22}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body{background:radial-gradient(circle at 70% 15%,#24475a 0,transparent 27%),radial-gradient(circle at 20% 75%,#26331f 0,transparent 22%),linear-gradient(#061018,#09131a)}
+.wind{position:fixed;inset:0;pointer-events:none;opacity:.32;overflow:hidden}.wind i{position:absolute;width:36vw;max-width:480px;height:1px;background:linear-gradient(90deg,transparent,#bff8ff,transparent);animation:fly 9s linear infinite}.wind i:nth-child(1){top:18%;left:-40vw}.wind i:nth-child(2){top:54%;left:-50vw;animation-delay:-3s}.wind i:nth-child(3){top:78%;left:-35vw;animation-delay:-6s}@keyframes fly{to{transform:translateX(150vw)}}
+.shell{position:relative;z-index:1;width:min(1100px,94vw);margin:auto;padding:28px 0 70px}
+.top{display:flex;justify-content:space-between;gap:14px;align-items:center}.k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
+.btn{appearance:none;border:1px solid var(--line);background:#0d1b23;color:var(--fg);padding:11px 14px;border-radius:11px;text-decoration:none;font-weight:750;cursor:pointer}
+.btn.primary{border-color:#4a8993;background:#123440}.btn.gold{border-color:#8a6a3d;background:#2c241b}
+.hero{min-height:44vh;display:grid;align-content:center;max-width:860px}.hero h1{font-size:clamp(48px,9vw,104px);line-height:.86;letter-spacing:-.055em;margin:18px 0}.lead{font-size:clamp(18px,3vw,28px);line-height:1.4;color:#d7e2e4;max-width:760px}.hint{color:var(--mut);line-height:1.55;max-width:720px}
+.panel{border:1px solid var(--line);background:#071018d9;border-radius:20px;overflow:hidden;box-shadow:0 22px 70px #0007}.gate{padding:20px}.gate strong{color:var(--gold)}
+#formWrap{display:none;border-top:1px solid var(--line);background:#fff}.open #formWrap{display:block}.open .gate{display:none}
+iframe{display:block;width:100%;height:720px;border:0;background:white}
+#audioBar{position:fixed;right:16px;bottom:16px;z-index:5}.audioBtn{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:#071018e8;color:white;font-size:20px;cursor:pointer}
+@media(max-width:700px){iframe{height:780px}.hero{min-height:40vh}.top{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.wind{display:none}}
+</style>
+</head>
+<body>
+<div class="wind"><i></i><i></i><i></i></div>
+<audio id="ambience" loop preload="auto" src="assets/airships-last-waltz-master.mp3"></audio>
+<div id="audioBar"><button id="audioBtn" class="audioBtn" aria-label="Sonido">♪</button></div>
+<main class="shell">
+<div class="top"><div class="k">ISLAS VOLADORAS · ECO DE PLAYTEST</div><a class="btn" href="index.html">Centro</a></div>
+<section class="hero">
+<h1>¿Qué se quedó contigo?</h1>
+<p class="lead">No queremos que nos expliques el juego. Queremos saber qué sobrevivió en tu cabeza cuando dejaste de jugar.</p>
+<p class="hint">No vuelvas atrás. No busques la respuesta “correcta”. Si algo te confundió, también nos sirve. Si algo te hizo gracia, daño o curiosidad, mejor todavía.</p>
+</section>
+<section id="panel" class="panel">
+<div class="gate">
+<div class="k">ANTES DE ABRIR</div>
+<h2>Una última regla.</h2>
+<p class="hint"><strong>Responde de memoria.</strong> La huella de tu partida se revela después. Así no contaminamos lo que realmente recordaste.</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+<button id="openForm" class="btn primary">DEJAR MI ECO</button>
+<a class="btn gold" href="capsulas.html">Prefiero dar una vuelta por ISL</a>
+</div>
+</div>
+<div id="formWrap">
+<iframe title="ISL · Lo que se quedó contigo" src="https://form.jotform.com/262601759318057" loading="eager" allow="clipboard-write"></iframe>
+</div>
+</section>
+</main>
+<script>
+const p=document.getElementById('panel'),a=document.getElementById('ambience'),b=document.getElementById('audioBtn');
+document.getElementById('openForm').onclick=()=>{p.classList.add('open');window.scrollTo({top:p.offsetTop-8,behavior:'smooth'})};
+function paint(){b.textContent=a.paused?'♪':'♫'} b.onclick=()=>{if(a.paused){a.volume=.42;a.play().catch(()=>{})}else a.pause();paint()};a.addEventListener('play',paint);a.addEventListener('pause',paint);paint();
+</script>
+</body></html>
