@@ -1,101 +1,47 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ISL · Recreo</title>
-<style>
-:root{--bg:#061018;--fg:#f4efe7;--mut:#9fb2b7;--cyan:#8defff;--gold:#ffc36e;--vio:#b9a5ff;--rose:#ff9aaa;--line:#ffffff24}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 74% 12%,#24475a 0,transparent 30%),radial-gradient(circle at 18% 84%,#25351f 0,transparent 24%),linear-gradient(#061018,#08131a);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
-.wrap{width:min(1180px,94vw);margin:auto;padding:28px 0 76px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center}.k{font-size:10px;letter-spacing:.19em;color:var(--cyan);text-transform:uppercase}.back,.btn{color:var(--fg);text-decoration:none;border:1px solid var(--line);padding:10px 13px;border-radius:10px;background:#0b1820;font-weight:800}.btn.gold{border-color:#896a3f;background:#30271d}.btn.vio{border-color:#665b8d;background:#191426}.btn:disabled{opacity:.45}
-h1{font-size:clamp(48px,9vw,108px);line-height:.86;letter-spacing:-.05em;margin:18px 0 12px}.lead{max-width:830px;color:#d6e1e3;font-size:clamp(17px,2.3vw,26px);line-height:1.45}
-.play{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:24px}.panel{border:1px solid var(--line);border-radius:20px;padding:18px;background:#0b1820dd;box-shadow:0 20px 60px #0005}.heroGame{min-height:390px;position:relative;overflow:hidden}.sky{position:absolute;inset:0;background:radial-gradient(circle at 70% 28%,#8defff18,transparent 24%),linear-gradient(180deg,#0a1b25,#08131a 70%)}.float{position:absolute;border:1px solid #ffffff20;border-radius:50%;background:#ffffff06}.f1{width:180px;height:80px;left:8%;top:22%;transform:rotate(-8deg)}.f2{width:140px;height:60px;right:8%;top:42%;transform:rotate(7deg)}.f3{width:90px;height:45px;left:38%;bottom:14%}.avatar{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);font-size:70px;filter:drop-shadow(0 0 20px #8defff44)}.pet{position:absolute;left:58%;top:58%;font-size:34px;filter:drop-shadow(0 0 14px #ffc36e55)}.storm{position:absolute;right:8%;top:11%;font-size:42px;opacity:.4}.hud{position:relative;z-index:2;display:flex;gap:8px;flex-wrap:wrap}.pill{font-size:9px;border:1px solid #34535e;border-radius:999px;padding:6px 9px;background:#071017cc}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.log{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;border-left:3px solid var(--gold);background:#071017dd;padding:12px;border-radius:8px;min-height:68px;color:#cbd7d9;line-height:1.45}.sideGrid{display:grid;gap:12px}.stat{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid #ffffff12}.stat:last-child{border-bottom:0}.stat span{color:var(--mut)}.loot{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}.slot{aspect-ratio:1;border:1px solid #2e4d58;border-radius:10px;background:#07131a;display:grid;place-items:center;font-size:24px;position:relative}.slot small{position:absolute;bottom:3px;right:4px;font-size:7px;color:#9fb2b7}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.card{border:1px solid var(--line);border-radius:18px;padding:16px;background:#0a161d}.card b{display:block;font-size:18px;margin:4px 0}.card small{color:var(--mut);line-height:1.4}.rarity{font-size:9px;color:var(--gold);letter-spacing:.14em}.event{margin-top:10px;padding:12px;border:1px dashed #436370;border-radius:12px;background:#08151c;color:#cdd9db;min-height:52px}.footer{margin-top:18px;color:var(--mut);font-size:11px}
-.flash{animation:flash .5s ease}.wiggle{animation:wiggle .5s ease}@keyframes flash{50%{box-shadow:0 0 40px #8defff55}}@keyframes wiggle{25%{transform:translate(-50%,-50%) rotate(-6deg)}75%{transform:translate(-50%,-50%) rotate(6deg)}}@media(max-width:860px){.play{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.heroGame{min-height:430px}}@media(max-width:520px){.loot{grid-template-columns:repeat(3,1fr)}}
-</style></head><body><main class="wrap">
-<div class="top"><div class="k">ISL · MODO RECREO · HIPÓTESIS</div><a class="back" href="rpg-home.html">← Cabina RPG</a></div>
-<h1>Hoy sí podemos hacer el idiota.</h1>
-<p class="lead">Una sesión de cinco minutos sin objetivos serios: la mascota rebusca, el cielo hace cosas raras, fabricas cacharros inútiles hasta que dejan de ser inútiles y, con suerte, aparece algo que nadie debería haber dejado flotando ahí.</p>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ISL · Distrito Recreo</title><link rel="stylesheet" href="recreo-pixel.css"></head>
+<body class="pixel-isl"><main class="pixelShell">
+<div class="pixelTop"><div class="pixelBrand">ISL // DISTRITO RECREO // NO CANON</div><div class="pixelNav"><a class="pixelBtn" href="rpg-home.html">← CABINA RPG</a><a class="pixelBtn" href="command-center.html?full=1">CENTRO DE MANDOS</a></div></div>
+<section class="pixelPanel"><div class="pixelBrand">MAPA VIVO DE RECREO</div><h1 class="pixelTitle">Distrito Recreo</h1><p class="pixelLead">Un rincón del archipiélago para jugar sin deberle productividad a nadie. Entras por una isla, haces una tontería, pescas algo imposible, truecas basura o descubres una zona que no debería existir. Todo deja huella local en tu perfil RPG.</p></section>
 
-<section class="play">
-  <article class="panel heroGame" id="game">
-    <div class="sky"></div><i class="float f1"></i><i class="float f2"></i><i class="float f3"></i>
-    <div class="storm">☁</div><div class="avatar" id="avatar">🧭</div><div class="pet" id="pet">◔</div>
-    <div class="hud"><span class="pill" id="turn">RECREO · 0</span><span class="pill" id="mood">CIELO · TRANQUILO</span><span class="pill" id="luck">SUERTE · ?</span></div>
-    <div class="actions" style="position:relative;z-index:3">
-      <button class="btn" id="wander">Dar una vuelta</button>
-      <button class="btn gold" id="petSearch">Mandar a la mascota</button>
-      <button class="btn vio" id="oddPortal">Tirar de la cuerda sospechosa</button>
-    </div>
-    <div class="log" id="gameLog">No pasa nada importante. Esa es la gracia.</div>
-  </article>
+<div class="pixelHud">
+  <div class="pixelStat"><b>VUELTAS</b><span id="turn">0</span></div>
+  <div class="pixelStat"><b>MASCOTA</b><span id="petRank">NOVATA</span></div>
+  <div class="pixelStat"><b>CAPTURAS</b><span id="fishCount">0</span></div>
+  <div class="pixelStat"><b>PORTAL TONTO</b><span id="portalState">???</span></div>
+</div>
 
-  <aside class="sideGrid">
-    <article class="panel">
-      <div class="k">Bolsillos del recreo</div>
-      <div class="stat"><span>Chatarra amable</span><b id="junk">0</b></div>
-      <div class="stat"><span>Semillas de nube</span><b id="cloud">0</b></div>
-      <div class="stat"><span>Rumores imposibles</span><b id="rumor">0</b></div>
-      <div class="stat"><span>Hallazgos de mascota</span><b id="petFinds">0</b></div><div class="stat"><span>Olfato de mascota</span><b id="petRank">NOVATA</b></div>
-      <div class="loot" id="loot"></div>
-    </article>
-    <article class="panel">
-      <div class="k">Crafting de recreo</div>
-      <div class="event" id="craftInfo">Receta rápida: 2 chatarra + 1 semilla de nube → algo que probablemente no hacía falta.</div>
-      <div class="actions"><button class="btn" id="craft">Improvisar cacharro</button></div>
-    </article>
-  </aside>
+<section class="pixelMap" aria-label="Mapa del Distrito Recreo">
+  <a class="pixelIsland i1" href="air-fishing.html"><span class="ico">🎣</span><b>MUELLE DEL CIELO</b><small>Pesca Aérea · timing corto · botín raro.</small></a>
+  <a class="pixelIsland i2" href="sunday-market.html"><span class="ico">🏮</span><b>MERCADO DEL DOMINGO</b><small>Trueque sin monedas · ofertas según mochila.</small></a>
+  <a class="pixelIsland i3" href="ningun-sitio.html"><span class="ico">▱</span><b>NINGÚN SITIO</b><small>Zona secreta. El billete sabe más que tú.</small></a>
+  <a class="pixelIsland i4" href="capsulas-tv.html"><span class="ico">📺</span><b>TELE DEL PUERTO</b><small>Cápsulas TV · ambiente, humor y lore.</small></a>
+  <button class="pixelIsland i5" id="wander" type="button"><span class="ico">◔</span><b>PASEO CON MASCOTA</b><small>Evento rápido · materiales · rumores · rarezas.</small></button>
 </section>
 
-<section class="cards">
-  <article class="card"><div class="rarity">AZAR RARO</div><b>Evento del cielo</b><small>Cada paseo puede cambiar el humor del cielo, dejar material o activar una escena absurda breve.</small><div class="event" id="skyEvent">Todavía nada.</div></article>
-  <article class="card"><div class="rarity">MASCOTA</div><b>No es decorativa</b><small>Puede traer materiales, detectar un rumor y, a veces, volver con algo que claramente no era suyo.</small><div class="event" id="petEvent">Está mirando algo detrás de ti.</div></article>
-  <article class="card"><div class="rarity">PORTAL TONTO</div><b>La cuerda sospechosa</b><small>Si insistes lo suficiente, quizá no sea una cuerda.</small><div class="event" id="portalEvent">Parece una cuerda. Demasiado cuerda.</div></article>
+<section class="pixelGrid" style="margin-top:12px">
+  <article class="pixelCard"><div class="pixelBrand">PASEO RÁPIDO</div><b>La mascota huele cosas</b><small>Una pulsación = un pequeño evento. Puede traer chatarra, semillas, rumores u objetos raros.</small><div class="pixelLog" id="walkLog">Hoy el cielo se está portando demasiado bien.</div></article>
+  <article class="pixelCard"><div class="pixelBrand">CRAFTING TONTO</div><b>Banco de chapuzas</b><small>2 chatarra + 1 semilla de nube. Nada de +5 DPS.</small><div class="pixelLog" id="craftLog">Todavía no has construido nada cuestionable.</div><div style="margin-top:10px"><button class="pixelBtn gold" id="craft" type="button">IMPROVISAR</button></div></article>
+  <article class="pixelCard"><div class="pixelBrand">BOLSILLOS</div><b>Materiales de recreo</b><small>Persisten en este navegador y reaparecen en la Cabina RPG.</small><div class="pixelLog"><span id="junk">0</span> chatarra · <span id="cloud">0</span> semillas · <span id="rumor">0</span> rumores</div></article>
 </section>
-
-<section class="cards">
-  <article class="card"><div class="rarity">MINIJUEGO · 30–60 S</div><b>Pesca Aérea</b><small>Lanza al cielo, recoge en el momento bueno y pesca cosas que no deberían existir.</small><div class="actions"><a class="btn gold" href="air-fishing.html">Ir a pescar</a></div></article>
-  <article class="card"><div class="rarity">TRUEQUE · SIN DINERO</div><b>Mercado del Domingo</b><small>Cambia hallazgos raros por objetos aún más sospechosos. Las ofertas dependen de tu mochila.</small><div class="actions"><a class="btn vio" href="sunday-market.html">Ir al mercado</a></div></article>
-  <article class="card"><div class="rarity">SECRETO</div><b>Ningún Sitio</b><small>Si ya encontraste el Billete a Ningún Sitio, vuelve cuando quieras.</small><div class="actions"><a class="btn" href="ningun-sitio.html">Intentar entrar</a></div></article>
-</section>
-
-<div class="footer">RECREO ≠ CANON. Sus recompensas son persistencia local de laboratorio D3-REF/HIPÓTESIS. Si algo funciona, luego se somete a CQC de verdad.</div>
 </main>
 <script>
 (function(){
-  const S={
-    turn:+localStorage.getItem('isl_recreo_turn')||0,
-    junk:+localStorage.getItem('isl_recreo_junk')||0,
-    cloud:+localStorage.getItem('isl_recreo_cloud')||0,
-    rumor:+localStorage.getItem('isl_recreo_rumor')||0,
-    pet:+localStorage.getItem('isl_recreo_pet')||0
-  };
-  const lootMap=[
-    ['boton-norte','Botón que señala al norte cuando le apetece','◉'],
-    ['tornillo-tibio','Tornillo todavía tibio','⌁'],
-    ['pluma-pesada','Pluma demasiado pesada','✦'],
-    ['ticket-ningun-sitio','Billete a Ningún Sitio','▱'],
-    ['campanilla-muda','Campanilla muda','◇'],
-    ['migaja-celeste','Migaja celeste','·']
-  ];
-  function save(){for(const k in S)localStorage.setItem('isl_recreo_'+(k==='pet'?'pet':k),S[k])}
-  function inv(){try{return JSON.parse(localStorage.getItem('isl_recreo_loot')||'[]')}catch(e){return[]}}
-  function setInv(a){localStorage.setItem('isl_recreo_loot',JSON.stringify(a))}
-  function addLoot(x){let a=inv();if(!a.includes(x))a.push(x);setInv(a);renderLoot()}
-  function renderLoot(){let a=inv(),el=document.getElementById('loot');el.innerHTML=a.map(id=>{let x=lootMap.find(v=>v[0]===id);return x?'<div class="slot" title="'+x[1]+'">'+x[2]+'<small>1</small></div>':''}).join('')||'<div class="slot">·</div>'}
-  function render(){turn.textContent='RECREO · '+S.turn;junk.textContent=S.junk;cloud.textContent=S.cloud;rumor.textContent=S.rumor;petFinds.textContent=S.pet;petRank.textContent=S.pet>=12?'LEGENDARIA':S.pet>=6?'CURIOSA':S.pet>=3?'DESPIERTA':'NOVATA';renderLoot();if(localStorage.getItem('isl_recreo_portal')==='found'){portalEvent.innerHTML='Portal del Recreo abierto · <a href="ningun-sitio.html" style="color:var(--cyan)">usar Billete a Ningún Sitio</a>';}}
-  function pulse(el,cls='flash'){el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls)}
-  const skies=['TRANQUILO','AZUL SOSPECHOSO','VIENTO DE LADO','NUBE EDUCADA','AMANECER A DESHORA','CASI TORMENTA'];
-  const wanderEvents=[
-    ()=>{S.junk++;skyEvent.textContent='Encuentras una pieza de metal que suena a lluvia cuando la giras.'},
-    ()=>{S.cloud++;skyEvent.textContent='Una nube deja caer una semilla y luego finge que no ha sido ella.'},
-    ()=>{S.rumor++;skyEvent.textContent='Oyes a dos corrientes discutir sobre una isla que no existe.'},
-    ()=>{addLoot('tornillo-tibio');skyEvent.textContent='Tornillo tibio. No preguntas.'},
-    ()=>{addLoot('pluma-pesada');skyEvent.textContent='Una pluma cae hacia arriba. Pesa demasiado.'},
-    ()=>{skyEvent.textContent='Nada. Pero durante tres segundos todas las sombras apuntan al mismo sitio.'}
-  ];
-  wander.onclick=function(){S.turn++;mood.textContent='CIELO · '+skies[Math.floor(Math.random()*skies.length)];luck.textContent='SUERTE · '+(1+Math.floor(Math.random()*9));wanderEvents[Math.floor(Math.random()*wanderEvents.length)]();gameLog.textContent='Has dado una vuelta sin propósito productivo. Excelente.';pulse(game);save();render()};
-  petSearch.onclick=function(){S.turn++;S.pet++;let r=Math.random();if(r<.35){S.junk++;petEvent.textContent='La mascota trae chatarra y parece orgullosísima.'}else if(r<.65){S.cloud++;petEvent.textContent='Vuelve con una semilla de nube húmeda.'}else if(r<.86){S.rumor++;petEvent.textContent='No trae objeto. Trae un rumor. Peor.'}else{let pool=S.pet>=6?lootMap:lootMap.slice(0,4);let x=pool[Math.floor(Math.random()*pool.length)];addLoot(x[0]);petEvent.textContent='Ha robado/encontrado: '+x[1]+'. No vamos a preguntar de dónde.'}gameLog.textContent='Mascota enviada. Responsabilidad jurídica: discutible.';pulse(pet,'wiggle');save();render()};
-  craft.onclick=function(){if(S.junk<2||S.cloud<1){craftInfo.textContent='Te faltan 2 chatarra y 1 semilla de nube. La ingeniería protesta.';return}S.junk-=2;S.cloud-=1;S.turn++;let crafts=[
-    ['silbato-viento-torcido','Silbato de Viento Torcido','⌁'],
-    ['brujula-desobediente','Brújula Desobediente','◇'],
-    ['taza-niebla','Taza para guardar niebla','◌']
-  ];let c=crafts[Math.floor(Math.random()*crafts.length)];let a=inv();if(!a.includes(c[0]))a.push(c[0]);setInv(a);localStorage.setItem('isl_recreo_craft',c[0]);craftInfo.textContent='Has creado: '+c[1]+'. Su utilidad es dudosa, por tanto prometedora.';gameLog.textContent='Crafting completado sin una sola estadística +5.';save();render()};
-  oddPortal.onclick=function(){S.turn++;let n=+(localStorage.getItem('isl_recreo_rope')||0)+1;localStorage.setItem('isl_recreo_rope',n);if(n<3){portalEvent.textContent='Tiras. Algo tira desde el otro lado. Eso complica la teoría de la cuerda.';gameLog.textContent='La cuerda responde.'}else{portalEvent.innerHTML='La cuerda se abre como una cremallera en el aire. <b>Has encontrado el Portal del Recreo.</b>';localStorage.setItem('isl_recreo_portal','found');addLoot('ticket-ningun-sitio');gameLog.textContent='PORTAL TONTO DESCUBIERTO · Billete a Ningún Sitio añadido al botín.'}save();render()};
-  render();
+var S={turn:+localStorage.getItem('isl_recreo_turn')||0,junk:+localStorage.getItem('isl_recreo_junk')||0,cloud:+localStorage.getItem('isl_recreo_cloud')||0,rumor:+localStorage.getItem('isl_recreo_rumor')||0,pet:+localStorage.getItem('isl_recreo_pet')||0};
+function save(){localStorage.setItem('isl_recreo_turn',S.turn);localStorage.setItem('isl_recreo_junk',S.junk);localStorage.setItem('isl_recreo_cloud',S.cloud);localStorage.setItem('isl_recreo_rumor',S.rumor);localStorage.setItem('isl_recreo_pet',S.pet)}
+function inv(){try{return JSON.parse(localStorage.getItem('isl_recreo_loot')||'[]')}catch(e){return[]}}
+function addLoot(x){var a=inv();if(a.indexOf(x)<0)a.push(x);localStorage.setItem('isl_recreo_loot',JSON.stringify(a))}
+function rank(){return S.pet>=12?'LEGENDARIA':S.pet>=6?'CURIOSA':S.pet>=3?'DESPIERTA':'NOVATA'}
+function paint(){document.getElementById('turn').textContent=S.turn;document.getElementById('petRank').textContent=rank();document.getElementById('fishCount').textContent=+localStorage.getItem('isl_air_fishing_catches')||0;document.getElementById('portalState').textContent=localStorage.getItem('isl_recreo_portal')==='found'?'ABIERTO':'???';document.getElementById('junk').textContent=S.junk;document.getElementById('cloud').textContent=S.cloud;document.getElementById('rumor').textContent=S.rumor}
+var events=[
+ function(){S.junk++;return 'La mascota encuentra un tornillo que sigue tibio.'},
+ function(){S.cloud++;return 'Una nube deja una semilla y se hace la despistada.'},
+ function(){S.rumor++;return 'Dos corrientes discuten sobre una isla que no figura en el mapa.'},
+ function(){addLoot('pluma-pesada');return 'Encuentras una pluma demasiado pesada para ser pluma.'},
+ function(){addLoot('campanilla-muda');return 'La mascota trae una campanilla muda. Parece contenta.'},
+ function(){var n=+(localStorage.getItem('isl_recreo_rope')||0)+1;localStorage.setItem('isl_recreo_rope',n);if(n>=3){localStorage.setItem('isl_recreo_portal','found');addLoot('ticket-ningun-sitio');return 'El aire se abre como una cremallera. Portal del Recreo descubierto.'}return 'Una cuerda invisible tira desde algún lugar. Muy normal todo.'}
+];
+document.getElementById('wander').onclick=function(){S.turn++;S.pet++;document.getElementById('walkLog').textContent=events[Math.floor(Math.random()*events.length)]();save();paint()};
+document.getElementById('craft').onclick=function(){if(S.junk<2||S.cloud<1){document.getElementById('craftLog').textContent='Faltan 2 chatarra y 1 semilla de nube.';return}S.junk-=2;S.cloud--;S.turn++;var c=[['silbato-viento-torcido','Silbato de Viento Torcido'],['brujula-desobediente','Brújula Desobediente'],['taza-niebla','Taza para guardar niebla']][Math.floor(Math.random()*3)];addLoot(c[0]);document.getElementById('craftLog').textContent='Has fabricado: '+c[1]+'. Su utilidad sigue siendo sospechosa.';save();paint()};
+paint();
 })();
 </script></body></html>
