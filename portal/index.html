@@ -12,6 +12,7 @@
 })();
 </script>
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="isl-icon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#071017">
 
 <style>
@@ -128,15 +129,21 @@ body.spectacle #home .heroText{padding-top:18vh!important}
   .card,.panel,.focusCard{border-radius:18px}
   @media(max-width:680px){h1{font-size:clamp(2.15rem,13vw,4.25rem)}h2{font-size:clamp(1.55rem,8vw,2.55rem)}.sub,p{font-size:.96rem}}
 </style>
+<style id="isl-brand-v041">
+.welcomeBrandIcon{width:min(286px,62vw);height:auto;display:block;margin:0 auto 22px;filter:drop-shadow(0 18px 32px #0009)}
+.railBrandIcon{width:52px;height:52px;object-fit:contain;display:block;margin:0 auto 4px;filter:drop-shadow(0 6px 12px #0007)}
+.drawerBrand{display:flex;align-items:center;gap:10px}.drawerBrand img{width:42px;height:42px;object-fit:contain}
+@media(max-width:900px){.railBrandIcon{width:42px;height:42px;margin:0 3px 0 0}.welcomeBrandIcon{width:min(250px,66vw)}}
+</style>
 </head>
 <body><div id="bootbar"></div>
-<div id="welcome"><div id="welcomeWind"><i class="windstroke"></i><i class="windstroke"></i><i class="windstroke"></i></div><div class="welcome-inner"><div class="isl-logo"><i class="ring"></i><i class="ring r2"></i><i class="speck s1"></i><i class="speck s2"></i><i class="speck s3"></i><div class="core"><b>ISL</b></div></div><div class="welcome-kicker">Islas Voladoras · Command Center</div><div class="welcome-title">Crear es alterar el mundo.</div><div class="welcome-quote">Y todo lo que alteras termina alterándote. <em>Observa. Decide. Construye. Recuerda.</em></div><div class="actions" style="justify-content:center"><button class="btn primary" id="enterISL" style="font-size:14px;padding:12px 18px;font-weight:950;letter-spacing:.04em">ENTRAR EN ISL</button></div><div class="microline" style="margin-top:30px"></div></div></div>
+<div id="welcome"><div id="welcomeWind"><i class="windstroke"></i><i class="windstroke"></i><i class="windstroke"></i></div><div class="welcome-inner"><img class="welcomeBrandIcon" src="isl-icon.svg" alt="ISL · Islas Voladoras"><div class="welcome-kicker">Islas Voladoras · Command Center</div><div class="welcome-title">Crear es alterar el mundo.</div><div class="welcome-quote">Y todo lo que alteras termina alterándote. <em>Observa. Decide. Construye. Recuerda.</em></div><div class="actions" style="justify-content:center"><button class="btn primary" id="enterISL" style="font-size:14px;padding:12px 18px;font-weight:950;letter-spacing:.04em">ENTRAR EN ISL</button></div><div class="microline" style="margin-top:30px"></div></div></div>
 <div id="helpTip"></div>
 <div id="lightbox"><button id="lbClose">×</button><figure><div id="lbMedia"></div><figcaption id="lbCaption"></figcaption></figure></div>
 <div id="settingsPanel"><div class="topbar"><div><div class="eyebrow">Personalización</div><h2 style="font-size:22px">Tu cabina ISL</h2></div><button class="btn" id="settingsClose">×</button></div><div class="settingrow"><span>Mostrar barra lateral</span><button class="toggle on" data-setting="rail"></button></div><div class="settingrow"><span>Cartelitos de ayuda</span><button class="toggle on" data-setting="tooltips"></button></div><div class="settingrow"><span>Microanimaciones</span><button class="toggle on" data-setting="motion"></button></div><div class="settingrow"><span>Modo compacto</span><button class="toggle" data-setting="compact"></button></div><div class="settingrow"><span>Escala UI</span><input id="uiScale" type="range" min="0.9" max="1.25" step="0.05" value="1"></div><div class="settingrow"><span>Acento</span><select id="accentChoice" class="control"><option value="#87efff">Viento cian</option><option value="#ffc36e">Ámbar</option><option value="#73dfc1">Menta</option><option value="#bba4ff">Violeta</option></select></div></div>
 <div class="app">
 <aside class="rail">
- <div class="logo">ISL</div>
+ <img class="railBrandIcon" src="isl-icon.svg" alt="ISL">
  <button class="active" data-view="home" title="Centro" data-help="Vista general del proyecto.">⌂</button>
  <button data-view="calendar" title="RUTA ISL" data-help="Dónde estamos, qué está cerrado y qué viene después.">🧭</button>
  <button data-view="gallery" title="Galería" data-help="Selecciona y compara diseños.">◈</button>
@@ -153,7 +160,7 @@ body.spectacle #home .heroText{padding-top:18vh!important}
 </aside>
 
 <aside class="drawer" id="drawer">
- <h2>ISL Command Center</h2><div class="tiny">Mapa del proyecto. No sustituye Biblia, Studio ni CQC.</div>
+ <div class="drawerBrand"><img src="isl-icon.svg" alt=""><h2>ISL Command Center</h2></div><div class="tiny">Mapa del proyecto. No sustituye Biblia, Studio ni CQC.</div>
  <div class="group"><h3>ACCESOS PRINCIPALES</h3>
   <a href="rpg-home.html">Perfil RPG del Cartógrafo ↗</a>
   <button class="item" onclick="go('calendar')">RUTA ISL · ahora y siguiente</button>
