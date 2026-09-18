@@ -107,3 +107,39 @@ Modo descanso:
 2. abrir una cápsula visual;
 3. tomar 0–1 decisión ligera;
 4. cerrar sin obligación de producir.
+
+
+## FAMILIA "AIRSHIPS LAST WALTZ"
+Objetivo: generar temas hermanos del master actual sin copiar ninguna obra externa.
+
+Regla de continuidad:
+- conservar un aire de vals o balanceo ternario cuando encaje;
+- mezcla de aventura aérea + hogar + melancolía;
+- instrumentación orgánica e imperfecta;
+- melodía memorable pero contenida;
+- evitar épica de tráiler;
+- evitar exceso sinfónico;
+- dejar aire y pequeños ruidos/texturas de mundo;
+- cada tema debe poder sentirse como otra habitación del mismo universo.
+
+### 01 · AIRSHIPS LAST WALTZ — MORNING DECK
+"Create an original instrumental game soundtrack that feels like a sister piece to a warm airship waltz from the same fictional world. Gentle 3/4 or lilting 6/8 pulse, handcrafted fantasy feeling, intimate wooden ship atmosphere, soft strings, imperfect piano, light plucked instruments, tiny percussive object sounds, distant airy flute, subtle wind texture. Adventurous but domestic, nostalgic without sadness, memorable small melody, human timing, no vocals, no trailer crescendos, no imitation of any existing composer."
+
+### 02 · AIRSHIPS LAST WALTZ — SUNSET RETURN
+"Original instrumental game cue from the same musical family as a warm airship-home waltz. Slower ternary pulse, golden-hour feeling, cello and viola warmth, sparse piano, brushed wooden percussion, faint bell harmonics, soft wind ambience. The melody should feel like returning home after a difficult expedition: relief, fatigue, affection, unresolved distance. Elegant, restrained, handcrafted, no vocals, no cinematic bombast."
+
+### 03 · AIRSHIPS LAST WALTZ — CREW MISCHIEF
+"Original playful instrumental variation from the same airship-waltz musical family. Keep a light 3/4 or bouncing 6/8 skeleton, but add nimble bass, dry percussion, plucked strings, slightly cheeky clarinet or flute fragments, tiny household-object rhythms. Friendship, banter, improvised repairs, mild chaos on deck. Warm and witty rather than comedic-cartoon music. No vocals, no slapstick stingers, no reference imitation."
+
+### 04 · AIRSHIPS LAST WALTZ — SKY DOESN'T FIT
+"Original dark variation from the same airship-home waltz motif. Begin recognizable, warm and stable in 3/4, then gradually let layers drift into conflicting meters and slightly displaced downbeats. Keep strings, piano, wood, bells and wind, but introduce stretched harmonics, reversed textures, mechanical anchor pulses and notes that sustain too long. The listener should feel that reality is becoming incompatible with itself. End in near-silence. No horror cliché, no generic impact boom, no vocals."
+
+### 05 · AIRSHIPS LAST WALTZ — AFTER THE SEPARATION
+"Original sparse instrumental aftermath cue from the same musical family as an airship waltz. Almost no rhythm at first. A broken fragment of the original melody played by solo piano or a single string instrument, large spaces between notes, faint wind, distant wood creaks, one unresolved harmonic tone. Grief without melodrama, curiosity beneath loss, a sense that the journey has only begun. No vocals, no lush orchestral swell."
+
+### 06 · AIRSHIPS LAST WALTZ — VELARIA
+"Original city variation from the same airship-waltz world. Preserve a subtle ternary sway but make it more regulated and mechanical: tensioned strings, wooden counterweight percussion, small bells, muted low brass, wind resonance, clockwork-like ostinato with tiny drift. The city wants stability but the music keeps breathing around the grid. Elegant, warm, slightly absurd, faintly oppressive. No vocals, no trailer music."
+
+### GEMINI ITERATION INSTRUCTION
+After generating one promising version:
+"Keep the same melodic DNA, emotional world, instrumentation family and handcrafted character. Do not make it bigger. Make it more specific. Reduce generic fantasy gestures by 30%. Increase air, asymmetry, small acoustic imperfections and memorable motif clarity. Preserve the sense of a flying ship that is also a home."
