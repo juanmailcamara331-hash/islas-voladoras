@@ -57,9 +57,9 @@
       #routeModal.show{display:flex}#routeModal .routeModalCard{width:min(560px,94vw);border:1px solid #456775;border-radius:18px;background:linear-gradient(180deg,#10242d,#08151c);box-shadow:0 28px 80px #000c;padding:18px;position:relative}
       #routeModal .routeClose{position:absolute;right:10px;top:10px;width:36px;height:36px;border:1px solid #ffffff29;border-radius:50%;background:#071018;color:#fff}
       #routeModal .routeStatus{font-size:9px;letter-spacing:.11em;color:var(--gold);text-transform:uppercase}
-      #routeModal h2{margin:5px 40px 8px 0;font-size:28px}#routeModal p{color:#c4d3d6;line-height:1.55;font-size:12px}
+      #routeModal h2{margin:5px 40px 8px 0;font-size:28px}#routeModal p{color:#c4d3d6;line-height:1.55;font-size:12px}#routeModal .routeSceneGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}#routeModal .routeSceneBox{border:1px solid #2f4f5b;border-radius:11px;background:#08151c;padding:10px}#routeModal .routeSceneBox b{display:block;font-size:8px;letter-spacing:.1em;color:var(--cyan);margin-bottom:5px;text-transform:uppercase}#routeModal .routeSceneBox span{display:block;font-size:10px;line-height:1.4;color:#cbd8da}#routeModal .routeLoot{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}#routeModal .routeLoot i{font-style:normal;font-size:8px;border:1px solid #4b6470;border-radius:999px;padding:4px 6px;background:#0c1d25;color:#e7f0f1}
       #routeModal .routeAction{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
-      @media(max-width:680px){
+      @media(max-width:680px){#routeModal .routeSceneGrid{grid-template-columns:1fr}
         #calendar .routeMap{min-height:620px}
         #calendar .routeNode{width:122px;min-height:60px;padding:8px}
         #calendar .routeNode b{font-size:10px}#calendar .routeNode small{font-size:7px}
@@ -73,12 +73,12 @@
     var routeState={current_stop:'pre50',now:{label:'AHORA IMPORTA',title:'PRE50 · evidencia humana real',body:'Conseguir evidencia humana real sin abrir más infraestructura.'},review:{label:'REVISIÓN ACTUAL',title:'RUTA ISL · una sola experiencia',body:'Home única, Cabina RPG integrada y mapa de viaje sincronizados.'},next_stop:'pre60',next_label:'PRE60 · sintetizar feedback y decidir nueva variante'};
 
     var stops=[
-      {id:'base',x:13,y:68,state:'done',sig:'✓',name:'Base ISL',sub:'1A × 1B × 1C · huella · mutación',status:'TRAMO SUPERADO',body:'La base sistémica está conservada. No se reinicia: sirve de suelo para los experimentos posteriores.'},
-      {id:'labs',x:28,y:55,state:'done',sig:'✓',name:'Labs de viento',sub:'Wind Lab · receptor · CQC',status:'TRAMO SUPERADO',body:'Los laboratorios demostraron cómo experimentar pequeño antes de construir grande.'},
-      {id:'molino',x:44,y:47,state:'done',sig:'✓',name:'Molino que Miente',sub:'Decisión física · tres rutas',status:'REVISIÓN VIVA',body:'Se conserva como laboratorio narrativo-jugable. Debe revalidarse integrado, no convertirse en menú moral.'},
-      {id:'pre50',x:61,y:36,state:'current',sig:'◆',name:'PRE50',sub:'Gate humano real pendiente',status:'AHORA IMPORTA',body:'PRE50 sigue siendo el gate humano real. No se falsifica playtest ni se asciende nada a CANON automáticamente.'},
-      {id:'pre60',x:75,y:28,state:'future',sig:'◇',name:'PRE60',sub:'Síntesis · nueva variante',status:'SIGUIENTE HORIZONTE',body:'Se abre después de feedback humano real: sintetizar evidencia, corregir y decidir una nueva variante.'},
-      {id:'slice',x:88,y:19,state:'future',sig:'◇',name:'Vertical Slice',sub:'Cruce jugable · telemetría',status:'HORIZONTE',body:'Sólo cuando los gates previos sobrevivan CQC y confirmación humana. Entonces toca experiencia pequeña real e instrumentación.'}
+      {id:'base',x:13,y:68,state:'done',sig:'✓',name:'Base ISL',sub:'1A × 1B × 1C · huella · mutación',status:'TRAMO SUPERADO',body:'La base sistémica está conservada. No se reinicia: sirve de suelo para los experimentos posteriores.',occurred:'Se cerró la base sistémica y la regla de persistencia.',loot:['Huella','Mutación','Consecuencia'],pending:'No reabrir decisiones ya cerradas sin evidencia nueva.',unlocks:'Permite construir Labs pequeños sin perder identidad.'},
+      {id:'labs',x:28,y:55,state:'done',sig:'✓',name:'Labs de viento',sub:'Wind Lab · receptor · CQC',status:'TRAMO SUPERADO',body:'Los laboratorios demostraron cómo experimentar pequeño antes de construir grande.',occurred:'Se probaron piezas concretas antes de comprometer una isla completa.',loot:['Receptor','CQC visual','Lenguaje de viento'],pending:'Revalidar sólo lo que tenga impacto real en la aventura.',unlocks:'Abre misiones-prototipo como El Molino que Miente.'},
+      {id:'molino',x:44,y:47,state:'done',sig:'✓',name:'Molino que Miente',sub:'Decisión física · tres rutas',status:'REVISIÓN VIVA',body:'Se conserva como laboratorio narrativo-jugable. Debe revalidarse integrado, no convertirse en menú moral.',occurred:'Se demostró una decisión física con rutas y consecuencia perceptible.',loot:['Decisión situada','Tres rutas','Consecuencia'],pending:'Integrarlo en contexto sin convertirlo en tesis separada.',unlocks:'Prepara la prueba con personas reales en PRE50.'},
+      {id:'pre50',x:61,y:36,state:'current',sig:'◆',name:'PRE50',sub:'Gate humano real pendiente',status:'AHORA IMPORTA',body:'PRE50 sigue siendo el gate humano real. No se falsifica playtest ni se asciende nada a CANON automáticamente.',occurred:'Todo lo anterior desemboca aquí: comprobar qué entiende, siente y hace una persona real.',loot:['Build jugable','Ruta visible','Preguntas de observación'],pending:'Conseguir evidencia humana real y registrar fricción, descubrimiento, agencia y deseo de retorno.',unlocks:'Sólo la evidencia real abre PRE60.'},
+      {id:'pre60',x:75,y:28,state:'future',sig:'◇',name:'PRE60',sub:'Síntesis · nueva variante',status:'SIGUIENTE HORIZONTE',body:'Se abre después de feedback humano real: sintetizar evidencia, corregir y decidir una nueva variante.',occurred:'Todavía no ha ocurrido: depende de PRE50.',loot:['—'],pending:'Esperar feedback real, no anticipar conclusiones.',unlocks:'Puede abrir una nueva variante o confirmar dirección.'},
+      {id:'slice',x:88,y:19,state:'future',sig:'◇',name:'Vertical Slice',sub:'Cruce jugable · telemetría',status:'HORIZONTE',body:'Sólo cuando los gates previos sobrevivan CQC y confirmación humana. Entonces toca experiencia pequeña real e instrumentación.',occurred:'Horizonte, no fase activa.',loot:['—'],pending:'No entrar hasta superar gates previos.',unlocks:'Instrumentación, cruce jugable real y producción controlada.'}
     ];
 
     var shell=document.createElement('div');shell.className='routeShell';
@@ -97,7 +97,7 @@
     view.appendChild(details);
 
     var modal=document.createElement('div');modal.id='routeModal';modal.setAttribute('aria-hidden','true');
-    modal.innerHTML='<div class="routeModalCard" role="dialog" aria-modal="true" aria-labelledby="routeModalTitle"><button class="routeClose" type="button" aria-label="Cerrar">×</button><div class="routeStatus"></div><h2 id="routeModalTitle"></h2><p></p><div class="routeAction"><button class="btn primary routeMark" type="button">DEJAR HUELLA</button><button class="btn routeDismiss" type="button">CERRAR</button></div></div>';
+    modal.innerHTML='<div class="routeModalCard" role="dialog" aria-modal="true" aria-labelledby="routeModalTitle"><button class="routeClose" type="button" aria-label="Cerrar">×</button><div class="routeStatus"></div><h2 id="routeModalTitle"></h2><p></p><div class="routeSceneGrid"><div class="routeSceneBox"><b>Qué ocurrió aquí</b><span data-scene="occurred"></span></div><div class="routeSceneBox"><b>Botín / hitos</b><div class="routeLoot" data-scene="loot"></div></div><div class="routeSceneBox"><b>Pendiente</b><span data-scene="pending"></span></div><div class="routeSceneBox"><b>Qué desbloquea</b><span data-scene="unlocks"></span></div></div><div class="routeAction"><button class="btn primary routeMark" type="button">DEJAR HUELLA</button><button class="btn routeDismiss" type="button">CERRAR</button></div></div>';
     document.body.appendChild(modal);
     var selected=null,key='isl-route-v1-visited';
     function read(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return[]}}
@@ -122,7 +122,17 @@
     }
     function paint(){var v=read();map.querySelectorAll('.routeNode').forEach(function(n){n.classList.toggle('visited',v.indexOf(n.dataset.route)>=0)})}
     function close(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');selected=null}
-    function open(id){var s=stops.filter(function(x){return x.id===id})[0];if(!s)return;selected=s;modal.querySelector('.routeStatus').textContent=s.status;modal.querySelector('h2').textContent=s.name;modal.querySelector('p').textContent=s.body;modal.classList.add('show');modal.setAttribute('aria-hidden','false')}
+    function open(id){
+      var s=stops.filter(function(x){return x.id===id})[0];if(!s)return;selected=s;
+      modal.querySelector('.routeStatus').textContent=s.status;
+      modal.querySelector('h2').textContent=s.name;
+      modal.querySelector('p').textContent=s.body;
+      modal.querySelector('[data-scene="occurred"]').textContent=s.occurred||'—';
+      modal.querySelector('[data-scene="pending"]').textContent=s.pending||'—';
+      modal.querySelector('[data-scene="unlocks"]').textContent=s.unlocks||'—';
+      var loot=modal.querySelector('[data-scene="loot"]');loot.innerHTML='';(s.loot||['—']).forEach(function(x){var i=document.createElement('i');i.textContent=x;loot.appendChild(i)});
+      modal.classList.add('show');modal.setAttribute('aria-hidden','false')
+    }
     map.addEventListener('click',function(e){var n=e.target.closest('.routeNode');if(n)open(n.dataset.route)});
     modal.querySelector('.routeClose').onclick=close;modal.querySelector('.routeDismiss').onclick=close;
     modal.addEventListener('click',function(e){if(e.target===modal)close()});
