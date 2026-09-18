@@ -30,7 +30,7 @@ h1{font-size:clamp(48px,9vw,108px);line-height:.86;letter-spacing:-.05em;margin:
       <div class="stat"><span>Chatarra amable</span><b id="junk">0</b></div>
       <div class="stat"><span>Semillas de nube</span><b id="cloud">0</b></div>
       <div class="stat"><span>Rumores imposibles</span><b id="rumor">0</b></div>
-      <div class="stat"><span>Hallazgos de mascota</span><b id="petFinds">0</b></div>
+      <div class="stat"><span>Hallazgos de mascota</span><b id="petFinds">0</b></div><div class="stat"><span>Olfato de mascota</span><b id="petRank">NOVATA</b></div>
       <div class="loot" id="loot"></div>
     </article>
     <article class="panel">
@@ -71,7 +71,7 @@ h1{font-size:clamp(48px,9vw,108px);line-height:.86;letter-spacing:-.05em;margin:
   function setInv(a){localStorage.setItem('isl_recreo_loot',JSON.stringify(a))}
   function addLoot(x){let a=inv();if(!a.includes(x))a.push(x);setInv(a);renderLoot()}
   function renderLoot(){let a=inv(),el=document.getElementById('loot');el.innerHTML=a.map(id=>{let x=lootMap.find(v=>v[0]===id);return x?'<div class="slot" title="'+x[1]+'">'+x[2]+'<small>1</small></div>':''}).join('')||'<div class="slot">·</div>'}
-  function render(){turn.textContent='RECREO · '+S.turn;junk.textContent=S.junk;cloud.textContent=S.cloud;rumor.textContent=S.rumor;petFinds.textContent=S.pet;renderLoot()}
+  function render(){turn.textContent='RECREO · '+S.turn;junk.textContent=S.junk;cloud.textContent=S.cloud;rumor.textContent=S.rumor;petFinds.textContent=S.pet;petRank.textContent=S.pet>=12?'LEGENDARIA':S.pet>=6?'CURIOSA':S.pet>=3?'DESPIERTA':'NOVATA';renderLoot();if(localStorage.getItem('isl_recreo_portal')==='found'){portalEvent.innerHTML='Portal del Recreo abierto · <a href="ningun-sitio.html" style="color:var(--cyan)">usar Billete a Ningún Sitio</a>';}}
   function pulse(el,cls='flash'){el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls)}
   const skies=['TRANQUILO','AZUL SOSPECHOSO','VIENTO DE LADO','NUBE EDUCADA','AMANECER A DESHORA','CASI TORMENTA'];
   const wanderEvents=[
@@ -83,7 +83,7 @@ h1{font-size:clamp(48px,9vw,108px);line-height:.86;letter-spacing:-.05em;margin:
     ()=>{skyEvent.textContent='Nada. Pero durante tres segundos todas las sombras apuntan al mismo sitio.'}
   ];
   wander.onclick=function(){S.turn++;mood.textContent='CIELO · '+skies[Math.floor(Math.random()*skies.length)];luck.textContent='SUERTE · '+(1+Math.floor(Math.random()*9));wanderEvents[Math.floor(Math.random()*wanderEvents.length)]();gameLog.textContent='Has dado una vuelta sin propósito productivo. Excelente.';pulse(game);save();render()};
-  petSearch.onclick=function(){S.turn++;S.pet++;let r=Math.random();if(r<.35){S.junk++;petEvent.textContent='La mascota trae chatarra y parece orgullosísima.'}else if(r<.65){S.cloud++;petEvent.textContent='Vuelve con una semilla de nube húmeda.'}else if(r<.86){S.rumor++;petEvent.textContent='No trae objeto. Trae un rumor. Peor.'}else{let x=lootMap[Math.floor(Math.random()*lootMap.length)];addLoot(x[0]);petEvent.textContent='Ha robado/encontrado: '+x[1]+'. No vamos a preguntar de dónde.'}gameLog.textContent='Mascota enviada. Responsabilidad jurídica: discutible.';pulse(pet,'wiggle');save();render()};
+  petSearch.onclick=function(){S.turn++;S.pet++;let r=Math.random();if(r<.35){S.junk++;petEvent.textContent='La mascota trae chatarra y parece orgullosísima.'}else if(r<.65){S.cloud++;petEvent.textContent='Vuelve con una semilla de nube húmeda.'}else if(r<.86){S.rumor++;petEvent.textContent='No trae objeto. Trae un rumor. Peor.'}else{let pool=S.pet>=6?lootMap:lootMap.slice(0,4);let x=pool[Math.floor(Math.random()*pool.length)];addLoot(x[0]);petEvent.textContent='Ha robado/encontrado: '+x[1]+'. No vamos a preguntar de dónde.'}gameLog.textContent='Mascota enviada. Responsabilidad jurídica: discutible.';pulse(pet,'wiggle');save();render()};
   craft.onclick=function(){if(S.junk<2||S.cloud<1){craftInfo.textContent='Te faltan 2 chatarra y 1 semilla de nube. La ingeniería protesta.';return}S.junk-=2;S.cloud-=1;S.turn++;let crafts=[
     ['silbato-viento-torcido','Silbato de Viento Torcido','⌁'],
     ['brujula-desobediente','Brújula Desobediente','◇'],
