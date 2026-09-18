@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes">
+<meta name="theme-color" content="#071017">
+<link rel="preload" as="image" href="../assets/wind-lab-sunset.png">
+<title>ISL · Laboratorio de referencias</title>
+<style>
+:root{--bg:#050b10;--panel:#0b1820;--line:#31505c;--cyan:#8defff;--gold:#e0b45d;--ink:#f3ead7;--muted:#9cb0b5;--ok:#73dfc1;--red:#e85d5d}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:#eef7f4;font-family:Inter,ui-sans-serif,system-ui,Arial,sans-serif}
+body{background:radial-gradient(circle at 80% 0,#173a4a 0,transparent 28%),radial-gradient(circle at 15% 30%,#26151e 0,transparent 23%),linear-gradient(#061017,#071017 58%,#03070a)}
+.wrap{width:min(760px,94vw);margin:auto;min-height:100svh;padding:14px 0 24px;display:grid;grid-template-rows:auto 1fr auto}
+.top{display:grid;gap:8px}.brand{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:9px;letter-spacing:.14em;color:var(--cyan);font-weight:900}
+.progress{height:6px;border-radius:999px;background:#132630;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold),var(--cyan));transition:width .2s ease}
+.stage{display:grid;align-items:center;min-height:70svh}.screen{display:none;animation:in .18s ease}.screen.active{display:block}
+.hero{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#0b1820;box-shadow:0 24px 60px #0008}
+.heroArt{aspect-ratio:16/10;min-height:0;background-color:#0a1820;background-image:linear-gradient(180deg,#0002,#061017dd),url('../assets/wind-lab-sunset.png');background-position:center;background-size:cover;background-repeat:no-repeat;display:grid;align-items:end;padding:22px;contain:layout paint}
+.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);font-weight:950}.hero h1,.q h1{font-family:Georgia,serif;color:var(--ink);margin:8px 0 10px;line-height:.98}.hero h1{font-size:clamp(42px,10vw,70px)}.q h1{font-size:clamp(34px,8vw,58px)}
+.lead{font-size:15px;line-height:1.5;color:#d9e2df}.tiny{font-size:10px;color:var(--muted);line-height:1.45}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.card,.chip{appearance:none;border:1px solid #294652;background:#08151c;color:#eef7f4;border-radius:15px;min-height:98px;padding:15px;text-align:left;font:inherit;cursor:pointer;transition:.15s transform,.15s border-color,.15s background}
+.card b{display:block;font-size:14px}.card span{display:block;font-size:26px;margin-bottom:8px}.card.selected,.chip.selected{border-color:var(--gold);background:#1c1a11;box-shadow:0 0 0 2px #e0b45d22;transform:translateY(-1px)}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.chip{min-height:48px;padding:11px 13px;border-radius:999px}
+input[type=text]{width:100%;border:1px solid #34525d;background:#061219;color:#fff;border-radius:14px;padding:16px;font:inherit;font-size:16px;margin-top:15px}
+.nav{display:flex;gap:8px;position:sticky;bottom:0;padding-top:10px;background:linear-gradient(transparent,#061017 28%)}
+.btn{flex:1;border:1px solid #56727c;border-radius:14px;padding:15px 14px;background:#0b1820;color:#fff;font-weight:950}.btn.primary{border-color:#9b7740;background:#3d2b18;color:#ffe7b8}.btn:disabled{opacity:.35}
+.feedback{height:22px;color:var(--ok);font-size:11px;font-weight:850;margin-top:10px}.done{display:grid;place-items:center;text-align:center;min-height:66svh}.seal{width:112px;height:112px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;font-size:46px;box-shadow:0 0 45px #e0b45d22;margin:auto auto 18px}
+@keyframes in{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
+@media(max-width:560px){.split{grid-template-columns:1fr}.card{min-height:82px}.heroArt{aspect-ratio:4/3}.stage{min-height:68svh}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+</style>
+</head>
+<body>
+<form class="wrap" name="isl-reference-lite-v2" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/poll/gracias.html">
+<input type="hidden" name="form-name" value="isl-reference-lite-v2">
+<input type="hidden" name="cohort" value="friends-01">
+<input type="hidden" name="survey_version" value="v0.66-lite">
+<input type="hidden" name="survey_source" value="isl-native-netlify">
+<input type="hidden" name="started_at" id="startedAt">
+<input type="hidden" name="completed_at" id="completedAt">
+<input type="hidden" name="completion_time_band" id="timeBand">
+<p hidden><input name="bot-field"></p>
+<header class="top"><div class="brand"><span>ISL // LABORATORIO DE REFERENCIAS</span><span id="stepLabel">0/5</span></div><div class="progress"><div class="bar" id="bar"></div></div></header>
+<main class="stage">
+<section class="screen active" data-step="0"><article class="hero"><div class="heroArt"><div><div class="k">NO COPIAMOS · MUTAMOS</div><h1>Trae energía útil, no disfraces.</h1><div class="lead">Mira una referencia, extrae lo que funciona y deja el resto atrás.</div></div></div></article></section>
+<section class="screen" data-step="1" data-name="tipo_ref" data-type="single"><div class="q"><div class="k">1 · FUNCIÓN</div><h1>¿Qué tipo de referencia te activa?</h1><div class="split">
+<button type="button" class="card" data-value="jugabilidad"><span>🎮</span><b>Jugabilidad</b></button><button type="button" class="card" data-value="narrativa"><span>📖</span><b>Narrativa / emoción</b></button><button type="button" class="card" data-value="visual"><span>🎨</span><b>Visual / espacio</b></button><button type="button" class="card" data-value="musica"><span>🎵</span><b>Música / atmósfera</b></button><button type="button" class="card" data-value="humor"><span>🎭</span><b>Humor / tono</b></button><button type="button" class="card" data-value="rareza"><span>🌀</span><b>Rareza difícil de explicar</b></button></div><div class="feedback" aria-live="polite"></div></div></section>
+<section class="screen" data-step="2" data-name="fantasma_funcion" data-type="multi" data-max="2"><div class="q"><div class="k">2 · EXTRACCIÓN</div><h1>Del fantasma marítimo absurdo, ¿qué salvarías?</h1><div class="tiny">Elige máximo 2 funciones.</div><div class="chips">
+<button type="button" class="chip" data-value="presencia-espectral">👻 Presencia espectral</button><button type="button" class="chip" data-value="humor-absurdo">😂 Humor absurdo</button><button type="button" class="chip" data-value="amenaza-comedia">⚡ Amenaza + comedia</button><button type="button" class="chip" data-value="niebla-umbral">🌫️ Niebla / umbral</button><button type="button" class="chip" data-value="barco-maldito">🚢 Barco maldito</button><button type="button" class="chip" data-value="reglas-propias">📜 Reglas propias</button></div><div class="feedback" aria-live="polite"></div></div></section>
+<section class="screen" data-step="3" data-name="entrada_isl" data-type="single"><div class="q"><div class="k">3 · MUTACIÓN</div><h1>¿Cómo debería entrar eso en ISL?</h1><div class="split">
+<button type="button" class="card" data-value="pincelada"><span>✦</span><b>Pincelada pequeña</b></button><button type="button" class="card" data-value="recurrente"><span>♻</span><b>Evento / criatura recurrente</b></button><button type="button" class="card" data-value="regla"><span>⚙</span><b>Regla del mundo</b></button><button type="button" class="card" data-value="tono"><span>🌫️</span><b>Tono / vibe</b></button><button type="button" class="card" data-value="fuera"><span>✖</span><b>Mejor fuera</b></button></div><div class="feedback" aria-live="polite"></div></div></section>
+<section class="screen" data-step="4" data-name="no_copiar" data-type="text"><div class="q"><div class="k">4 · LÍMITE</div><h1>¿Qué NO deberíamos copiar nunca?</h1><input type="text" maxlength="160" placeholder="No copiaría…" autocomplete="off"></div></section>
+<section class="screen" data-step="5" data-name="referencia" data-type="pair"><div class="q"><div class="k">5 · SEMILLA</div><h1>Suelta una referencia útil</h1><input type="text" maxlength="120" data-field="referencia_nombre" placeholder="Referencia" autocomplete="off"><input type="text" maxlength="180" data-field="referencia_funcion" placeholder="Lo útil de ella es…" autocomplete="off"></div></section>
+<section class="screen" data-step="6"><div class="done"><div><div class="seal">🌀</div><div class="k">MUTACIÓN REGISTRADA</div><h1 style="font-family:Georgia,serif;font-size:42px;margin:8px 0">Gracias.</h1><p class="lead">ISL roba funciones a la realidad, no identidades a las obras.</p></div></div></section>
+</main>
+<footer class="nav"><button type="button" class="btn" id="back">← Atrás</button><button type="button" class="btn primary" id="next">Mutar →</button></footer>
+</form>
+<script>
+(function(){
+const form=document.querySelector('form'),screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar'),label=document.getElementById('stepLabel'),back=document.getElementById('back'),next=document.getElementById('next');let step=0;const started=Date.now();document.getElementById('startedAt').value=new Date(started).toISOString();
+function current(){return screens[step]}function sels(s){return [...s.querySelectorAll('.selected')].map(x=>x.dataset.value)}
+function add(name,value){form.querySelectorAll('input[data-generated="'+name+'"]').forEach(x=>x.remove());const h=document.createElement('input');h.type='hidden';h.name=name;h.value=value;h.dataset.generated=name;form.appendChild(h)}
+function sync(s){const name=s.dataset.name,type=s.dataset.type;if(!name)return;if(type==='text'){add(name,s.querySelector('input[type=text]').value);return}if(type==='pair'){s.querySelectorAll('[data-field]').forEach(el=>add(el.dataset.field,el.value));return}form.querySelectorAll('input[data-generated="'+name+'"]').forEach(x=>x.remove());sels(s).forEach(v=>{const h=document.createElement('input');h.type='hidden';h.name=type==='multi'?name+'[]':name;h.value=v;h.dataset.generated=name;form.appendChild(h)})}
+function valid(s){if(!s.dataset.type)return true;if(s.dataset.type==='text'||s.dataset.type==='pair')return true;return sels(s).length>0}
+function paint(){screens.forEach((s,i)=>s.classList.toggle('active',i===step));const q=Math.min(step,5);bar.style.width=(q/5*100)+'%';label.textContent=step===0?'0/5':step>=6?'5/5':step+'/5';back.style.visibility=step===0?'hidden':'visible';next.textContent=step===0?'Mutar →':step===5?'Registrar mutación →':step>=6?'Listo':'Siguiente →';next.style.display=step>=6?'none':'block';next.disabled=!valid(current());window.scrollTo({top:0,behavior:'smooth'})}
+form.addEventListener('click',e=>{const b=e.target.closest('.card,.chip');if(!b)return;const s=current(),type=s.dataset.type;if(type==='single'){s.querySelectorAll('.selected').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');s.querySelector('.feedback').textContent='Función capturada.'}else if(type==='multi'){const max=Number(s.dataset.max||99);if(b.classList.contains('selected'))b.classList.remove('selected');else if(sels(s).length<max)b.classList.add('selected');else s.querySelector('.feedback').textContent='Máximo '+max+'.'}sync(s);next.disabled=!valid(s)});
+form.addEventListener('input',e=>{if(e.target.matches('input[type=text]'))sync(current())});
+back.onclick=()=>{if(step>0){step--;paint()}};
+next.onclick=()=>{const s=current();sync(s);if(step===5){const end=Date.now(),sec=(end-started)/1000;document.getElementById('completedAt').value=new Date(end).toISOString();document.getElementById('timeBand').value=sec<=45?'<=45s':sec<=70?'46-70s':sec<=120?'71-120s':'>120s';form.requestSubmit();return}if(step<6){step++;paint()}};
+paint();
+})();
+</script>
+</body></html>
