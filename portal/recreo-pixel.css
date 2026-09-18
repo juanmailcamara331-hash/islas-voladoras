@@ -29,3 +29,13 @@ body.pixel-isl .scene,body.pixel-isl .sky,body.pixel-isl .arena{border-radius:0!
 body.pixel-isl h1{font-family:"Courier New",monospace!important;text-transform:uppercase;letter-spacing:-.05em}
 body.pixel-isl .log{border-radius:0!important;border-left:4px solid var(--px-gold)!important;background:#101710!important}
 body.pixel-isl button,body.pixel-isl a{touch-action:manipulation}
+
+body.embed .pixelTop{display:none!important}
+body.embed .pixelShell{padding-top:8px}
+body.embed .w{padding-top:8px}
+body.embed .p{margin-top:0}
+body.embed a[href="rpg-home.html"],body.embed a[href="recreo.html"].back{display:none!important}
+@keyframes pxFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pxBlink{0%,85%,100%{opacity:1}90%,95%{opacity:.35}}
+@keyframes pxPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.35)}}
+.fxFloat{animation:pxFloat 2.6s steps(4,end) infinite}.fxBlink{animation:pxBlink 3.5s steps(2,end) infinite}.fxPulse{animation:pxPulse 1.8s steps(3,end) infinite}
