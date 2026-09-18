@@ -28,6 +28,8 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradie
 .columns{display:grid;grid-template-columns:1fr 1fr;gap:10px}.traceBox{border:1px solid #2f4c57;background:#07131a;border-radius:11px;padding:12px;min-height:150px}.traceBox h2{font-size:11px;letter-spacing:.12em;color:var(--cyan);margin:0 0 10px}.trace{font-size:11px;color:#c7d4d6;padding:7px 0;border-top:1px solid #ffffff0c}.trace:first-of-type{border-top:0}.trace strong{color:#f0d49a}.trace small{display:block;color:#7f979e;margin-top:2px}
 .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.btn{border:1px solid #8e6d3e;background:linear-gradient(#46351f,#281f16);color:#fff0cf;border-radius:10px;padding:12px 14px;font-weight:950;letter-spacing:.05em;cursor:pointer}.btn.secondary{border-color:#395966;background:#0b1b23;color:#dce8e9}.btn:disabled{opacity:.45;cursor:not-allowed}.tiny{margin-top:10px;font-size:9px;line-height:1.5;color:#7f959b}
 .echoes{margin-top:14px;border-top:1px solid #ffffff12;padding-top:12px;font-size:10px;color:#aabbbf}
+.modebar{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}.mode{border:1px solid #355462;background:#08171f;color:#bcd0d4;border-radius:999px;padding:8px 10px;font-size:9px;font-weight:900;letter-spacing:.08em;cursor:pointer}.mode.active{border-color:var(--gold);color:#ffe8b4;background:#2b2217}
+.lab{margin-top:14px;border:1px solid #294754;background:#07131a;border-radius:12px;padding:13px}.lab h2{font-size:11px;letter-spacing:.12em;color:var(--gold);margin:0 0 8px}.lab p{font-size:10px;color:#9fb4b9;line-height:1.5}.scenario{border-top:1px solid #ffffff10;padding:10px 0}.scenario:first-of-type{border-top:0}.scenario b{display:block;font-size:11px;margin-bottom:6px}.choices{display:flex;gap:6px;flex-wrap:wrap}.choice{border:1px solid #385764;background:#0a1a22;color:#d8e7e9;border-radius:8px;padding:8px 9px;font-size:9px;font-weight:850;cursor:pointer}.choice:disabled{opacity:.42}.modeRead{font-size:11px;line-height:1.55;color:#d9e2df;border:1px solid #46391f;background:#17150f;border-radius:10px;padding:11px;margin-top:8px}.badge{display:inline-block;margin-right:6px;border:1px solid #40616e;border-radius:999px;padding:2px 6px;font-size:8px;color:#9edbea}
 @media(max-width:860px){.hero{grid-template-columns:1fr}.compassPanel{min-height:auto}.readPanel{padding:16px}.columns{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:480px){.top{align-items:flex-start}.top img{width:46px;height:46px}.back{padding:8px}.stats{grid-template-columns:1fr}.compassPanel{padding:10px}.quote{font-size:32px}}
 </style>
@@ -56,9 +58,26 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradie
       <p class="intro">La brújula lee únicamente rastros persistentes que ya existen en este dispositivo. No puntúa, no juzga y no inventa decisiones. Una aguja reúne lo inscrito; la otra hace visible el hueco de los sistemas que todavía no han dejado señal.</p>
       <div class="stats"><div class="stat"><b id="traceCount">0</b><span>huellas reales</span></div><div class="stat"><b id="silenceCount">0</b><span>silencios visibles</span></div><div class="stat"><b id="echoCount">0</b><span>ecos voluntarios</span></div></div>
       <div id="reading" class="reading">Leyendo memoria local…</div>
+      <div class="modebar" id="modebar">
+        <button class="mode active" data-mode="sendero">SENDERO</button>
+        <button class="mode" data-mode="eco">ECO</button>
+        <button class="mode" data-mode="mascara">MÁSCARA</button>
+        <button class="mode" data-mode="consejo">CONSEJO</button>
+        <button class="mode" data-mode="trance">TRANCE</button>
+        <button class="mode" data-mode="umbral">UMBRAL</button>
+      </div>
+      <div id="modeRead" class="modeRead">Preparando lectura v2…</div>
       <div class="columns"><section class="traceBox"><h2>LO QUE QUEDÓ</h2><div id="didList"></div></section><section class="traceBox"><h2>LO QUE AÚN NO ESTÁ INSCRITO</h2><div id="silentList"></div></section></div>
-      <div class="actions"><button id="leaveEcho" class="btn" type="button">DEJAR ECO</button><button id="refresh" class="btn secondary" type="button">VOLVER A LEER</button></div>
-      <div class="tiny">“Dejar eco” es deliberado: registra una firma de esta lectura en <code>localStorage</code>. No borra, corrige ni reescribe huellas previas.</div>
+      <section class="lab">
+        <h2>LABORATORIO DE HUELLA · EXPERIMENTO BARATO v2</h2>
+        <p>Estas acciones no representan “bien/mal”: prueban coste, omisión, testigos, contagio y causalidad. Repetir la misma acción pierde significancia.</p>
+        <div class="scenario"><b>01 · Cruce expuesto</b><div class="choices"><button class="choice" data-event="cross_slow">Estudiar el viento</button><button class="choice" data-event="cross_force">Cruzar forzando</button><button class="choice" data-event="cross_detour">Buscar otra geometría</button></div></div>
+        <div class="scenario"><b>02 · Un compañero pide ayuda mientras se abre una ruta</b><div class="choices"><button class="choice" data-event="help_now">Quedarte</button><button class="choice" data-event="route_now">Ir tras la ruta</button><button class="choice" data-event="share_task">Repartir la tarea</button></div></div>
+        <div class="scenario"><b>03 · Sala rítmica</b><div class="choices"><button class="choice" data-event="sync">Sincronizar</button><button class="choice" data-event="breakbeat">Descompasar</button><button class="choice" data-event="redirect">Redirigir el pulso</button></div></div>
+        <div class="scenario"><b>04 · Omisión significativa</b><div class="choices"><button class="choice" data-event="omit">Dejar pasar el momento</button></div></div>
+      </section>
+      <div class="actions"><button id="leaveEcho" class="btn" type="button">DEJAR ECO</button><button id="refresh" class="btn secondary" type="button">VOLVER A LEER</button><button id="resetLab" class="btn secondary" type="button">REINICIAR LAB v2</button></div>
+      <div class="tiny">“Dejar eco” conserva compatibilidad con la v1. El laboratorio v2 registra hechos versionados; no guarda una personalidad ni reescribe huellas anteriores.</div>
       <div id="echoes" class="echoes"></div>
     </article>
   </section>
@@ -66,48 +85,78 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradie
 <script>
 (()=>{'use strict';
 const ECHO_KEY='isl_huellas_echoes_v1';
+const V2_KEY='isl_huellas_events_v2';
+const MODE_KEY='isl_huellas_mode_v2';
 const known=[
- ['isl_ps4_entered','Cabina PS4','presencia'],
- ['isl_boss_resolution','Tormenta','resolución'],
- ['isl_boss_reward','Sello de la Tormenta','reliquia'],
- ['isl_storm_route_reward','Ruta imposible','reliquia'],
- ['isl_secret_level_echo','Eco del nivel imposible','secreto'],
- ['isl_craft_receiver','Receptor de Corrientes','construcción'],
+ ['isl_ps4_entered','Cabina PS4','presencia'],['isl_boss_resolution','Tormenta','resolución'],
+ ['isl_boss_reward','Sello de la Tormenta','reliquia'],['isl_storm_route_reward','Ruta imposible','reliquia'],
+ ['isl_secret_level_echo','Eco del nivel imposible','secreto'],['isl_craft_receiver','Receptor de Corrientes','construcción'],
  ['isl_recreo_nowhere_reward','Ningún Sitio','encuentro']
 ];
-const noise=/(_scroll|_page|_audio|_fs)$/;
-const nice=k=>k.replace(/^isl_/,'').replaceAll('_',' ');
-function allKeys(){const out=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('isl_')&&!noise.test(k)&&k!==ECHO_KEY)out.push(k)}return out.sort()}
+const defs={
+ cross_slow:{context:'cruce',action:'estudiar',cost:2,rev:1,witness:'privado',tags:['memoria','deseo'],delta:'comprension_viento'},
+ cross_force:{context:'cruce',action:'forzar',cost:3,rev:0,witness:'privado',tags:['memoria','umbral'],delta:'estructura_tensionada'},
+ cross_detour:{context:'cruce',action:'reinterpretar',cost:2,rev:1,witness:'privado',tags:['deseo','umbral'],delta:'ruta_alternativa'},
+ help_now:{context:'vinculo',action:'quedarse',cost:3,rev:0,witness:'vinculo',tags:['memoria','deseo'],delta:'ruta_perdida'},
+ route_now:{context:'vinculo',action:'priorizar_ruta',cost:3,rev:0,witness:'vinculo',tags:['memoria','mascara'],delta:'ayuda_omitida'},
+ share_task:{context:'vinculo',action:'repartir',cost:2,rev:1,witness:'vinculo',tags:['memoria','poder'],delta:'carga_compartida'},
+ sync:{context:'ritmo',action:'sincronizar',cost:2,rev:1,witness:'multitud',tags:['contagio','mascara'],delta:'acceso_social'},
+ breakbeat:{context:'ritmo',action:'descompasar',cost:2,rev:1,witness:'multitud',tags:['contagio','umbral'],delta:'fisura_ritmica'},
+ redirect:{context:'ritmo',action:'redirigir',cost:3,rev:0,witness:'multitud',tags:['contagio','poder'],delta:'pulso_recoreografiado'},
+ omit:{context:'umbral',action:'omitir',cost:3,rev:0,witness:'ninguno',tags:['memoria','deseo'],delta:'oportunidad_ausente'}
+};
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
 function echoes(){try{const a=JSON.parse(localStorage.getItem(ECHO_KEY)||'[]');return Array.isArray(a)?a:[]}catch(e){return[]}}
-function classify(k){if(k.startsWith('isl_capsule_')||k.startsWith('isl_tv_')||k.includes('resolution'))return'decisión';if(k.includes('loot')||k.includes('reward')||k.includes('craft'))return'reliquia';if(k.includes('route')||k.includes('visited')||k.includes('entered'))return'ruta';if(k.includes('recreo'))return'recreo';return'huella'}
-function safeValue(k){let v=localStorage.getItem(k)||'';if(v.length>56)v=v.slice(0,53)+'…';return v}
+function events(){try{const a=JSON.parse(localStorage.getItem(V2_KEY)||'[]');return Array.isArray(a)?a:[]}catch(e){return[]}}
+function saveEvents(a){localStorage.setItem(V2_KEY,JSON.stringify(a.slice(-64)))}
+function allLegacy(){const out=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('isl_')&&!/(_scroll|_page|_audio|_fs)$/.test(k)&&![ECHO_KEY,V2_KEY,MODE_KEY].includes(k))out.push(k)}return out.sort()}
+function addEvent(id){
+ const d=defs[id]; if(!d)return;
+ const a=events(), repeats=a.filter(e=>e.action===d.action&&e.context===d.context).length;
+ const significance=Math.max(1,d.cost+(!d.rev?2:0)+(d.witness==='multitud'?1:0)-Math.min(3,repeats));
+ a.push({event_id:'ev_'+Date.now()+'_'+id,context_id:d.context,actor:'player',action_class:d.action,cost:d.cost,reversibility:d.rev,witness_scope:d.witness,relation_ids:d.context==='vinculo'?['companion_lab']:[],world_state_delta:d.delta,timestamp:new Date().toISOString(),significance_band:significance,tags:d.tags});
+ saveEvents(a); render();
+}
+function clusters(a){
+ const m={}; a.forEach(e=>(e.tags||[]).forEach(t=>{(m[t]??=[]).push(e)}));
+ return Object.entries(m).map(([tag,x])=>({tag,events:x,score:x.reduce((s,e)=>s+e.significance_band,0)})).sort((a,b)=>b.score-a.score);
+}
+function modeText(mode,a,cl){
+ if(!a.length)return 'La v2 aún no tiene hechos. La brújula no rellena el silencio.';
+ const last=a[a.length-1], top=cl[0];
+ if(mode==='sendero')return 'Sendero · '+a.slice(-4).map(e=>e.action_class+' → '+e.world_state_delta).join(' · ');
+ if(mode==='eco')return 'Eco · la consecuencia más reciente ya inscrita es «'+last.world_state_delta+'». No predice lo siguiente.';
+ if(mode==='mascara'){const pub=a.filter(e=>e.witness_scope==='multitud'||e.witness_scope==='vinculo').length, priv=a.length-pub;return 'Máscara · '+pub+' hechos tuvieron testigos y '+priv+' ocurrieron fuera de mirada relevante. Es contraste, no juicio.'}
+ if(mode==='consejo'){const rel=a.filter(e=>e.relation_ids&&e.relation_ids.length);return rel.length?'Consejo · hay '+rel.length+' huella(s) ligadas a un vínculo. La lectura conserva el desacuerdo entre coste personal y coste relacional.':'Consejo · todavía no hay suficiente evidencia relacional.'}
+ if(mode==='trance'){const r=a.filter(e=>e.context_id==='ritmo');return r.length?'Trance · '+r.map(e=>e.action_class).join(' → ')+'; el patrón colectivo cambió por acciones reales.':'Trance · aún no has dejado una huella rítmica.'}
+ const intense=cl.filter(x=>x.score>=6);return intense.length?'Umbral · '+intense.map(x=>x.tag).join(' + ')+' ya acumula suficiente tensión para abrir una pregunta nueva; no una respuesta.':'Umbral · todavía no hay contradicción de intensidad suficiente.';
+}
 function render(){
- const keys=allKeys(), es=echoes(), missing=known.filter(([k])=>!localStorage.getItem(k));
- const didSig=keys.map(k=>k+'='+safeValue(k)).join('|')||'sin-huellas';
- const missSig=missing.map(x=>x[0]).join('|')||'sin-silencios';
- const a=(hash(didSig)%360), b=(hash(missSig)%360);
- document.getElementById('didNeedle').style.transform='translateX(-50%) rotate('+a+'deg)';
- document.getElementById('silentNeedle').style.transform='translateX(-50%) rotate('+b+'deg)';
- document.getElementById('traceCount').textContent=keys.length;
+ const a=events(), legacy=allLegacy(), es=echoes(), missing=known.filter(([k])=>!localStorage.getItem(k)), cl=clusters(a);
+ const sig=(legacy.join('|')+'::'+a.map(e=>e.action_class+e.significance_band).join('|'));
+ document.getElementById('didNeedle').style.transform='translateX(-50%) rotate('+(hash(sig||'silencio')%360)+'deg)';
+ document.getElementById('silentNeedle').style.transform='translateX(-50%) rotate('+(hash(missing.map(x=>x[0]).join('|')||'completo')%360)+'deg)';
+ document.getElementById('traceCount').textContent=a.length+legacy.length;
  document.getElementById('silenceCount').textContent=missing.length;
  document.getElementById('echoCount').textContent=es.length;
- const did=document.getElementById('didList'), sil=document.getElementById('silentList');
- did.innerHTML=keys.length?keys.slice(0,14).map(k=>'<div class="trace"><strong>'+classify(k).toUpperCase()+'</strong> · '+nice(k)+'<small>'+safeValue(k).replace(/[<&]/g,m=>m==='<'?'&lt;':'&amp;')+'</small></div>').join(''):'<div class="trace">Todavía no hay huellas persistentes suficientes. La aguja permanece, pero no finge memoria.</div>';
- sil.innerHTML=missing.length?missing.map(x=>'<div class="trace"><strong>'+x[2].toUpperCase()+'</strong> · '+x[1]+'<small>Aún no hay una clave persistente asociada en este dispositivo.</small></div>').join(''):'<div class="trace">Los hitos observables de esta lectura ya tienen rastro. Eso no significa que el viaje esté completo.</div>';
- let read;
- if(!keys.length)read='La brújula encuentra silencio. No lo rellena: espera a que el mundo deje huellas reales.';
- else if(missing.length)read='Hay memoria y hueco en la misma cartografía. La contradicción no es un error: es lo que la brújula hace visible.';
- else read='La memoria local está muy marcada. La segunda aguja ya no apunta a una ausencia concreta; sólo conserva la tensión entre lo hecho y lo posible.';
- document.getElementById('reading').textContent=read;
- document.getElementById('echoes').textContent=es.length?'Último eco: '+new Date(es[es.length-1].at).toLocaleString()+' · firma '+es[es.length-1].signature:'Aún no has dejado ningún eco voluntario en la brújula.';
- document.getElementById('leaveEcho').disabled=false;
- return {keys,missing,a,b};
+ const did=document.getElementById('didList');
+ did.innerHTML=a.length? a.slice(-10).reverse().map(e=>'<div class="trace"><strong>'+esc(e.action_class.toUpperCase())+'</strong> · '+esc(e.context_id)+'<small><span class="badge">sig '+e.significance_band+'</span>'+esc(e.world_state_delta)+'</small></div>').join('') : (legacy.length?'<div class="trace">Hay memoria v1 compatible, pero aún no hay eventos explícitos v2.</div>':'<div class="trace">Todavía no hay huellas persistentes suficientes. La aguja no finge memoria.</div>');
+ const sil=document.getElementById('silentList');
+ sil.innerHTML=missing.length?missing.map(x=>'<div class="trace"><strong>'+x[2].toUpperCase()+'</strong> · '+x[1]+'<small>Aún no existe rastro persistente asociado.</small></div>').join(''):'<div class="trace">Los hitos observables ya tienen rastro; eso no significa viaje completo.</div>';
+ document.getElementById('reading').textContent=a.length?'La v2 está leyendo hechos versionados, costes, testigos y consecuencias. Las repeticiones triviales pesan menos.':'La brújula conserva lo anterior y espera hechos v2; no inventa intención retroactiva.';
+ const mode=localStorage.getItem(MODE_KEY)||'sendero';
+ document.querySelectorAll('.mode').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));
+ document.getElementById('modeRead').textContent=modeText(mode,a,cl);
+ document.getElementById('echoes').textContent=es.length?'Último eco v1 compatible: '+new Date(es[es.length-1].at).toLocaleString()+' · firma '+es[es.length-1].signature:'Aún no has dejado eco voluntario.';
 }
+document.querySelectorAll('.choice').forEach(b=>b.addEventListener('click',()=>addEvent(b.dataset.event)));
+document.querySelectorAll('.mode').forEach(b=>b.addEventListener('click',()=>{localStorage.setItem(MODE_KEY,b.dataset.mode);render()}));
 document.getElementById('refresh').onclick=render;
+document.getElementById('resetLab').onclick=()=>{localStorage.removeItem(V2_KEY);localStorage.removeItem(MODE_KEY);render()};
 document.getElementById('leaveEcho').onclick=()=>{
- const state=render(), es=echoes(), signature=(hash(state.keys.join('|')+'::'+state.missing.map(x=>x[0]).join('|'))>>>0).toString(16).padStart(8,'0');
- es.push({at:new Date().toISOString(),signature,traceCount:state.keys.length,silenceCount:state.missing.length});
+ const a=events(), es=echoes(), signature=hash(a.map(e=>e.event_id+e.world_state_delta).join('|')+'::'+allLegacy().join('|')).toString(16).padStart(8,'0');
+ es.push({at:new Date().toISOString(),signature,traceCount:a.length+allLegacy().length,silenceCount:known.filter(([k])=>!localStorage.getItem(k)).length});
  localStorage.setItem(ECHO_KEY,JSON.stringify(es.slice(-32)));render();
 };
 render();
