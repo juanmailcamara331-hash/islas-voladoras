@@ -132,6 +132,8 @@ jobs:
           grep -q "setDrawer(false)" build/pages/index.html
           grep -q 'name="survey_version" value="v0.65-r3"' build/pages/poll/pilares-argumento.html
           grep -q 'window.__ISL_NATIVE_APP__=true' build/pages/index.html
+          grep -q "document.documentElement.classList.add('native-entered')" build/pages/index.html
+          grep -q 'html.native-app.native-entered #welcome{display:none!important' build/pages/index.html
           grep -q 'isl_native_entered_v063' build/pages/index.html
           grep -q 'id="moreNavBtn"' build/pages/index.html
           grep -q 'data-main-nav="home"' build/pages/index.html
