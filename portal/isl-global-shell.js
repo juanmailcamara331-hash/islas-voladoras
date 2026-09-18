@@ -2,7 +2,7 @@
 if(document.getElementById('islGlobalShell'))return;
 try{sessionStorage.setItem('isl_native_entered_v063','1');sessionStorage.setItem('isl_center_entered','1')}catch(e){}
 var path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
-function href(file,hash){return file+(hash||'')+(file.indexOf('?')>=0?'&':'?')+'resume=1'}
+function href(file,hash){return file+(file.indexOf('?')>=0?'&':'?')+'resume=1'+(hash||'')}
 var items=[
  ['ISL',href('index.html?full=1','#home'),'igsBrand','Centro'],
  ['Centro',href('index.html?full=1','#home'),'','Centro'],
