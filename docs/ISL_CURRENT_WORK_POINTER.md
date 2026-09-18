@@ -236,3 +236,22 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - CI guards page, state key and recoreography route.
 - Status remains PROVISIONAL FUERTE pending human playtest/CQC.
 - Next: minimal playable district for Isla del Baile Inagotable.
+
+
+## v0.52 — SHIN-CHAN FUNCTION / ASIA-EUROPE TENSION
+- Reference matrix updated with Shin-chan / Asia-Europe contradiction as provisional C/25 candidate.
+- Functional extraction:
+  - irreverent humor that punctures solemnity;
+  - childlike perspective exposing adult contradiction;
+  - everyday life as social microcosm;
+  - protocol/spontaneity;
+  - discipline/desire;
+  - decorum/impulse;
+  - community/individualism;
+  - lightness with critical aftertaste.
+- Guardrail: no character, visual, voice, jokes, gestures or recognizable scene copying.
+- Asia/Europe is treated as tension between social systems/tones, never homogeneous cultural caricature.
+- Cheap falsifiable microtest: docs/ISL_MICROTEST_SHINCHAN_FUNCTION_v0.52.md
+- Best lanes: capsules, Recreo, crew microevents, tonal breathers.
+- Promotion to B/50 requires 2+ strong functions + cheap prototype + anti-collage CQC + human approval.
+- Production order remains unchanged: next major playable block = Isla del Baile Inagotable.
