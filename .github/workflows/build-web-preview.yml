@@ -6,7 +6,9 @@ on:
       - main
     paths:
       - "portal/**"
-      - ".github/workflows/build-web-preview.yml"\n      - "scripts/navigation-link-gate.py"\n      - "scripts/portal-v068-ui-gate.py"
+      - ".github/workflows/build-web-preview.yml"
+      - "scripts/navigation-link-gate.py"
+      - "scripts/portal-v068-ui-gate.py"
   workflow_dispatch:
 
 permissions:
