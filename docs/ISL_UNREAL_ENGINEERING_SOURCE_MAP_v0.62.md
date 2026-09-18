@@ -208,3 +208,86 @@ Crear:
 ## Principio
 La vanguardia no es acumular herramientas.
 Es saber qué problema resuelve cada una, cómo se mide y cómo se revierte.
+
+
+## L. SOURCE GOVERNANCE
+Cada fuente técnica nueva se registra con:
+- source_id
+- dominio
+- URL
+- versión UE afectada
+- fecha de revisión
+- autoridad S/A/B/C
+- pregunta que responde
+- patrón adoptable
+- riesgos / límites
+- test ISL relacionado
+- estado ACTIVE / WATCH / DEPRECATED
+
+### Regla de autoridad
+S — Epic oficial / especificaciones / papers peer-reviewed.
+A — Epic/GDC talks, documentación de vendors, postmortems verificables.
+B — OSS maduro, blogs técnicos de estudios/autores reconocidos.
+C — Reddit, forums, Discord, issues: señal y edge cases, nunca única base de una decisión crítica.
+
+### Regla de actualización
+Antes de migrar a Unreal:
+1. fijar versión exacta de UE;
+2. revisar breaking changes/deprecations;
+3. revalidar todas las fuentes ACTIVE;
+4. degradar fuentes obsoletas a WATCH/DEPRECATED;
+5. mapear cada subsistema ISL a fuente + patrón + test.
+
+## M. DOMINIOS A COMPLETAR ANTES DE MIGRACIÓN
+- C++ / UObject / reflection / GC
+- Gameplay Framework
+- Blueprints / Data Assets / Gameplay Tags
+- Automation / Gauntlet / Horde
+- UBT / UAT / BuildGraph / Cooking / Packaging
+- Unreal Insights / Memory Insights / GPU profiling
+- Lumen / Nanite / VSM / TSR / scalability
+- World Partition / Data Layers / HLOD / streaming
+- AI: Navigation / Behavior Trees / StateTree / EQS / Mass
+- GAS / Enhanced Input
+- MetaSounds / Audio Mixer / Soundscape
+- Chaos / Control Rig / Animation Blueprints / Motion Matching
+- replication / Iris / Online Services
+- SaveGame / serialization / versioning / migrations
+- UMG / CommonUI / accessibility / localization
+- platform certification constraints
+- source control / asset provenance / LFS or Perforce
+- PCG / editor scripting / Python / commandlets
+- security / privacy / trust boundaries
+- agent-assisted engineering / evals
+
+## N. FRONTIER LANE
+Toda técnica “de vanguardia” debe pasar:
+FUENTE → MADUREZ → BENEFICIO → COSTE → RIESGO → PROTOTIPO → PERF/EVIDENCIA → ADOPTAR/NO ADOPTAR
+
+No usar:
+- Lumen, Nanite, Mass, Iris, Motion Matching, PCG, GAS, agentes o cualquier novedad sólo porque exista.
+Sí usar:
+- cuando mejora experiencia, velocidad de autor, robustez o escalabilidad de ISL y lo demuestra un test.
+
+## O. TEST MAPPING
+Cada dominio Unreal debe mapear a ISL_BUILD_SCIENCE:
+- arquitectura → T1/T4/T7
+- UI/input → T2/T4/T6/T7/T8
+- rendering → T5/T6/T7
+- performance → T5/T7
+- networking → T4/T5/T7
+- save → T1/T4/T7 + rollback
+- gameplay/AI → T2/T4/T5/T8
+- build/deploy → T0/T3/T7
+- experiencia → T8/CQC
+
+## P. MIGRATION GATE
+No migrar a Unreal hasta:
+- vertical slice y tesis estables;
+- save/world model documentado;
+- source map actualizado a versión UE elegida;
+- riesgo de migración estimado;
+- automation scaffold elegido;
+- packaged test funcionando;
+- rollback/export de datos posible;
+- SAME WORLD / SAME RULES preservado.
