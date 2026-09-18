@@ -333,3 +333,38 @@ Fix:
 status: FIXED_PENDING_HUMAN
 first_seen: 2026-09-19
 recurrence_count: 1
+
+
+## ERR-DEPLOY-011 · Netlify token cannot resolve deploy target
+Síntoma:
+- private/public build audits GREEN;
+- NETLIFY_AUTH_TOKEN secret exists;
+- CLI deploy reaches Netlify but returns Project not found / JSONHTTPError 404.
+
+Evidence:
+- run 35401769862: private site id -> Project not found.
+- run 35401899060: hard-linked private site -> Project not found.
+- run 35402175539: authorized public project alias -> JSONHTTPError: Not Found.
+
+What is NOT broken:
+- security gate;
+- private build;
+- PUBLIC/PRIVATE boundary;
+- access headers;
+- Netlify public production deploys via connected provider integration.
+
+Likely cause:
+- GitHub secret NETLIFY_AUTH_TOKEN is stale, scoped to a different identity/context, or otherwise cannot access current projects through Netlify CLI.
+
+Decision:
+- stop automatic retries;
+- deploy-private workflow becomes manual-only until token is rotated/re-authorized;
+- never embed token in repo or APK.
+
+Severity:
+- S2 MAJOR for private-host migration;
+- does not block current public surveys or existing APK.
+
+status: OPEN_EXTERNAL_CREDENTIAL
+first_seen: 2026-09-19
+recurrence_count: 3
