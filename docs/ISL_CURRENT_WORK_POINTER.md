@@ -255,3 +255,15 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Best lanes: capsules, Recreo, crew microevents, tonal breathers.
 - Promotion to B/50 requires 2+ strong functions + cheap prototype + anti-collage CQC + human approval.
 - Production order remains unchanged: next major playable block = Isla del Baile Inagotable.
+
+
+## v0.53 — ARTEFACTO · MEDALLA DEL PROTOCOLO ROTO
+- New experimental artifact: docs/ISL_ARTEFACTO_MEDALLA_PROTOCOLO_ROTO_v0.53.md
+- Functional origin: Shin-chan / Asia-Europe tension abstracted into gameplay.
+- Purpose: expose active social protocol and reveal one normally hidden alternative conduct.
+- No rebellion score, no moral reward, no guaranteed positive outcome.
+- Breaking protocol can create intimacy, friction, offense, humor, access loss or truth exposure.
+- Brújula integration targets: MÁSCARA, DESEO, PODER, MEMORIA.
+- Candidate uses: Salón de las Cortinas Rojas, Recreo, crew dinners, ceremonies and overly solemn speeches.
+- Visual identity is original; no recognizable Shin-chan iconography.
+- Status: EXPERIMENTO / C25. Production order unchanged.
