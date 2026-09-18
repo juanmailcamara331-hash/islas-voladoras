@@ -1,0 +1,53 @@
+name: Deploy private ISL Command Center
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "PRIVATE_DEPLOY_TRIGGER.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-private:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Require Netlify token
+        shell: bash
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "::error::NETLIFY_AUTH_TOKEN secret is not configured."
+            exit 9
+          fi
+
+      - name: Security gate
+        run: python3 scripts/security-gate.py
+
+      - name: Build private Command Center
+        run: bash netlify-private-build.sh
+
+      - name: Verify deploy artifact
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test -f build/private/index.html
+          test -f build/private/command-center.html
+          test -f build/private/access-probe.html
+          test -f build/private/_headers
+          grep -q "X-Robots-Tag: noindex" build/private/_headers
+          grep -q "Cache-Control: no-store, private" build/private/_headers
+
+      - name: Deploy to private Netlify project
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          npx -y netlify-cli@latest deploy             --dir=build/private             --prod             --site=6182a9ad-e228-41b9-816a-1cf7d750e7e7             --auth="$NETLIFY_AUTH_TOKEN"
+
+      - name: Deployment gate
+        run: echo "PRIVATE_NETLIFY_DEPLOY=GREEN"
