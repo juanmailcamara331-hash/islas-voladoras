@@ -27,6 +27,32 @@ Antes de promover cualquier cambio relevante, revisar:
 - ¿una nueva mecánica reabre o transforma contenido previo cuando corresponde?
 - ¿el playtest demuestra comprensión sin intervención?
 
+### 3B. MÚSICA / ARCO EMOCIONAL
+- ¿la apertura respira antes de crecer?;
+- ¿la escala orquestal aumenta por función narrativa/jugable y no por costumbre?;
+- ¿el crescendo conserva motivos y memoria del inicio?;
+- ¿se evita trailerización y bombasto constante?;
+- ¿la referencia histórica se abstrae como función, no como imitación estilística?
+
+
+## DIRECCIÓN MUSICAL TRANSVERSAL — APERTURA → CRESCENDO
+Regla aprobada para el arranque y el arco de intensidad del juego:
+- ISL no comienza con épica máxima. El inicio debe respirar: suavidad, nobleza, espacio, melodía clara y sensación de mundo aún por descubrir.
+- Referencia funcional: cierta amplitud, elegancia orquestal y lirismo del cine de aventura de los años 60–70, **sin imitar ninguna película, compositor ni partitura concreta**.
+- El crecimiento musical debe ganarse con el juego: intimidad / asombro → apertura del horizonte → descubrimiento → aventura → riesgo → crescendo.
+- El crescendo no significa "más volumen siempre": puede crecer por orquestación, registro, contrapunto, densidad, pulso, metales cálidos, percusión y amplitud armónica.
+- Conservar humanidad y aire incluso en estados grandes; evitar trailerización genérica, bombazos automáticos y grandilocuencia permanente.
+- La música del barco-hogar, la Brújula de las Huellas y los primeros compases de exploración son el suelo emocional desde el que debe crecer la escala.
+- Cualquier región puede tener su ADN propio, pero debe respetar la macrocurva de intensidad cuando forma parte de la apertura del juego.
+
+CQC musical mínimo:
+1. ¿la música deja espacio al mundo y al jugador al principio?;
+2. ¿el crescendo está motivado por un cambio real de experiencia?;
+3. ¿aumenta identidad antes que volumen?;
+4. ¿evita sonar a trailer genérico?;
+5. ¿el motivo inicial puede sobrevivir transformado en estados posteriores?;
+6. ¿la transición emocional es legible sin imagen?;
+
 ### 4. ESTRUCTURA / SCOPE
 - ¿esto pertenece al vertical slice actual?
 - ¿estamos abriendo infraestructura sin necesidad demostrada?
