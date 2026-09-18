@@ -46,7 +46,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
     <aside class="profile">
       <div class="portrait"><img data-isl-src="assets/protagonist-sheet.png" data-isl-w="720" fetchpriority="high" decoding="async" width="768" height="1024" alt="Protagonista ISL"><i class="hudmark a">⌁</i><i class="hudmark b">◇</i><i class="hudmark c">∴</i><div class="companion"><img src="assets/rpg-mascot-provisional.svg" loading="lazy" decoding="async" alt="Mascota provisional ISL"><span>MASCOTA · PROVISIONAL</span></div></div>
       <h2>Cartógrafo</h2>
-      <div class="rank">RANGO · NAVEGANTE DE CORRIENTES</div>
+      <div class="rank">RANGO · NAVEGANTE DE CORRIENTES</div><div id="equippedProfileTag" class="tiny" style="margin-top:4px;color:var(--cyan)">EQUIPAMIENTO PREVIEW</div>
       <div class="xp"><i></i></div>
       <div class="tiny">Nivel de Expedición 06 · XP visual vinculado a hitos reales, no a clics.</div>
       <div style="margin-top:12px" class="tiny"><b style="color:#eef8f5">Región actual:</b> Cabina / Archivo de Corrientes<br><b style="color:#eef8f5">Último checkpoint:</b> v0.29<br><b style="color:#eef8f5">Gate real:</b> PRE50 · PENDING REAL HUMAN</div>
@@ -194,7 +194,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
   <a href="musica.html" title="Música">🎵</a>
   <a href="command-center.html?full=1" title="Centro técnico">⚙️</a>
 </nav>
-<div class="itemModal" id="itemModal"><div class="itemSheet"><div class="kicker">Ficha de objeto</div><h2 id="imName">Objeto</h2><div class="rank" id="imRarity">Rareza</div><div class="itemMeta"><div><b>PROCEDENCIA</b><span id="imOrigin"></span></div><div><b>ESTADO REAL</b><span id="imReal"></span></div><div style="grid-column:1/-1"><b>FUNCIÓN</b><span id="imFunction"></span></div></div><div class="actions"><button class="btn primary" id="equipItem">Equipar visualmente</button><button class="btn" id="closeItem">Cerrar</button></div><div class="tiny">Equipar aquí sólo cambia la presentación RPG local; nunca cambia CANON ni estados de producción.</div></div></div>
+<div class="itemModal" id="itemModal"><div class="itemSheet"><div class="kicker">Ficha de objeto</div><h2 id="imName">Objeto</h2><div class="rank" id="imRarity">Rareza</div><div class="itemMeta"><div><b>PROCEDENCIA</b><span id="imOrigin"></span></div><div><b>ESTADO REAL</b><span id="imReal"></span></div><div style="grid-column:1/-1"><b>FUNCIÓN</b><span id="imFunction"></span></div><div style="grid-column:1/-1"><b>COMPARACIÓN</b><span id="imCompare">Sin objeto equipado comparable.</span></div></div><div class="actions"><button class="btn primary" id="equipItem">Equipar visualmente</button><button class="btn" id="closeItem">Cerrar</button></div><div class="tiny">Equipar aquí sólo cambia la presentación RPG local; nunca cambia CANON ni estados de producción.</div></div></div>
 <script>
 (function(){
   var isPS4=/PlayStation 4/i.test(navigator.userAgent),onNetlify=/\.netlify\.app$/i.test(location.hostname);
@@ -217,9 +217,16 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
       var k=document.createElement('button');k.className='stashSlot strange';k.id='stormSealSlot';k.dataset.item='Sello de la Tormenta';k.dataset.origin='El Cartógrafo de la Tormenta';k.dataset.rarity='RELIQUIA';k.dataset.real='HIPÓTESIS';k.dataset.function='Llave de ruta: habilita portales de tormenta';k.innerHTML='✺<small>1</small>';document.getElementById('stash').appendChild(k);bindItem(k);
     }
   }
-  function bindItem(el){el.addEventListener('click',function(){currentItem=el;var d=el.dataset;document.getElementById('imName').textContent=d.item||el.querySelector('b')?.textContent||'Equipo';document.getElementById('imRarity').textContent='RAREZA · '+(d.rarity||'DIEGÉTICA');document.getElementById('imOrigin').textContent=d.origin||'Perfil del Cartógrafo';document.getElementById('imReal').textContent=d.real||'PROVISIONAL';document.getElementById('imFunction').textContent=d.function||'Equipo de expedición / función en evaluación';modal.classList.add('show')})}
+  function bindItem(el){el.addEventListener('click',function(){currentItem=el;var d=el.dataset;var name=d.item||el.querySelector('b')?.textContent||'Equipo';document.getElementById('imName').textContent=name;document.getElementById('imRarity').textContent='RAREZA · '+(d.rarity||'DIEGÉTICA');document.getElementById('imOrigin').textContent=d.origin||'Perfil del Cartógrafo';document.getElementById('imReal').textContent=d.real||'PROVISIONAL';document.getElementById('imFunction').textContent=d.function||'Equipo de expedición / función en evaluación';var eq=localStorage.getItem('isl_equipped_preview');document.getElementById('imCompare').textContent=eq?('Equipado: '+eq+' · compara función/uso, no DPS.'):'Nada equipado todavía.';modal.classList.add('show')})}
   syncPersistentLoot();
-  document.querySelectorAll('.stashSlot:not([data-item="Slot vacío"]),.eqslot').forEach(bindItem);document.getElementById('closeItem').onclick=function(){modal.classList.remove('show')};document.getElementById('equipItem').onclick=function(){if(currentItem){localStorage.setItem('isl_equipped_preview',document.getElementById('imName').textContent);document.getElementById('equipItem').textContent='Equipado en perfil ✓'}};
+  document.querySelectorAll('.stashSlot:not([data-item="Slot vacío"]),.eqslot').forEach(bindItem);document.getElementById('closeItem').onclick=function(){modal.classList.remove('show')};function applyEquipped(){
+    var eq=localStorage.getItem('isl_equipped_preview'),tag=document.getElementById('equippedProfileTag');
+    document.querySelectorAll('.eqslot').forEach(function(x){x.style.outline='';});
+    if(tag)tag.textContent=eq?('EQUIPADO · '+eq):'EQUIPAMIENTO PREVIEW';
+    if(eq){document.querySelectorAll('.eqslot').forEach(function(x){var b=x.querySelector('b');if(b&&b.textContent===eq)x.style.outline='2px solid var(--gold)';});}
+  }
+  document.getElementById('equipItem').onclick=function(){if(currentItem){localStorage.setItem('isl_equipped_preview',document.getElementById('imName').textContent);document.getElementById('equipItem').textContent='Equipado en perfil ✓';applyEquipped()}};
+  applyEquipped();
   var c=document.getElementById('craftTry');
   function syncSystemState(){
     var hasRelic=localStorage.getItem('isl_secret_relic')==='fragmento-corriente-inversa';
