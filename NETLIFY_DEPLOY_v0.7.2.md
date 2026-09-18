@@ -17,3 +17,15 @@ Motivo:
 - publicar encuesta visual ISL de Referencias;
 - registrar ambos formularios en Netlify Forms;
 - mantener Jotform sólo como backup técnico.
+
+
+## Release trigger · v0.67 public/private security + Lite v2
+Fecha: 2026-09-19
+Motivo:
+- publicar Pilares Lite v2 y Referencias Lite v2;
+- mantener v1 como rollback;
+- eliminar redirects públicos hacia el Command Center interno;
+- aplicar allowlist pública reforzada;
+- publicar 404 pública neutra;
+- preparar separación PUBLIC / PRIVATE;
+- conservar Command Center completo fuera del build público.
