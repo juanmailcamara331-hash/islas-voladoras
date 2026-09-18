@@ -132,3 +132,13 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - PWA install + Avisos + Music Hub implemented.
 - vidIQ SEO research: lead with relaxing/cozy fantasy intent; do not lead with 'airship music'.
 - PRE50 remains pending real human playtest; no CANON promotion.
+
+
+## v0.45 — CROSSPLAY / DEVICE CEILINGS / CABARET-ENTROPY
+- Active method: docs/ISL_CROSSPLAY_DEVICE_SCALABILITY_METHOD_v0.45.md
+- Machine-readable matrix: docs/ISL_PLATFORM_CAPABILITY_MATRIX_v0.45.json
+- Creative lens: docs/ISL_CABARET_ENTROPY_METHOD_v0.44.md
+- CI guard: .github/workflows/platform-capability-gate.yml
+- Rule: SAME WORLD / SAME RULES / DIFFERENT CEILINGS.
+- Crossplay PS5/Xbox is architecture target only, NOT IMPLEMENTED until partner/SDK/hardware/certification gates are real.
+- Re-audit Brújula → reliquias → escenas → islas → criaturas → dialéctica under CAB-10..50 and P-00..P-100.
