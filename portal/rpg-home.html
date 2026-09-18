@@ -122,6 +122,41 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
       </div>
     </article>
   </section>
+  <section class="grid">
+    <article class="panel wide">
+      <div class="kicker">D3-REF-04 · Crafting Lab</div>
+      <h3>Banco de Deriva</h3>
+      <div class="truth">EXPERIMENTO. Transformar recursos debe cambiar una herramienta o una decisión, no sólo subir una cifra.</div>
+      <div class="inv" style="margin-top:12px">
+        <div class="slot sky"><span class="rarity">MATERIAL</span><span class="icon">◌</span><b>Tubo de Deriva</b><small>SEÑAL / FLUJO</small></div>
+        <div class="slot relic"><span class="rarity">MATERIAL</span><span class="icon">⌁</span><b>Fibra de Vela</b><small>TENSIÓN / VIENTO</small></div>
+        <div class="slot book"><span class="rarity">MEMORIA</span><span class="icon">✦</span><b>Nota del Cuaderno</b><small>REGLA APRENDIDA</small></div>
+        <div class="slot strange"><span class="rarity">RESULTADO</span><span class="icon">❖</span><b>Receptor de Corrientes</b><small>PROVISIONAL</small></div>
+      </div>
+      <div class="actions"><button class="btn primary" id="craftTry">PROBAR COMBINACIÓN</button><span id="craftResult" class="tiny"></span></div>
+    </article>
+
+    <article class="panel narrow">
+      <div class="kicker">D3-REF-05 · Portal raro</div>
+      <h3>El Umbral que No Figura</h3>
+      <div style="height:230px;border:1px solid #365865;border-radius:16px;display:grid;place-items:center;background:radial-gradient(circle,#7defff22,#071017 62%);position:relative;overflow:hidden">
+        <div style="width:150px;height:190px;border:2px solid #86efff88;border-radius:50% 50% 42% 42%;box-shadow:0 0 34px #86efff44,inset 0 0 34px #b9a5ff22;display:grid;place-items:center;font-size:54px;color:var(--gold)">⌁</div>
+        <div class="tiny" style="position:absolute;bottom:12px">FÍSICA ALTERADA · SIN MARCADOR</div>
+      </div>
+      <div class="actions"><a class="btn gold" href="secret-level.html">Cruzar portal</a></div>
+    </article>
+
+    <article class="panel" style="grid-column:1/-1">
+      <div class="kicker">D3-REF-07 · Boss prototype</div>
+      <h3>El Cartógrafo de la Tormenta</h3>
+      <div class="three">
+        <div class="loot"><div class="ico">Ⅰ</div><div><b>Leer las corrientes</b><div>Evitar sellos y descubrir el patrón espacial.</div></div></div>
+        <div class="loot"><div class="ico">Ⅱ</div><div><b>Mapa roto</b><div>El escenario reordena rutas y plataformas.</div></div></div>
+        <div class="loot"><div class="ico">Ⅲ</div><div><b>Decisión final</b><div>Destruir núcleo, desviar tormenta o usar herramienta preparada.</div></div></div>
+      </div>
+      <div class="truth" style="margin-top:12px">Estado: HIPÓTESIS / PAPER PROTOTYPE. No es CANON ni combate definitivo.</div>
+    </article>
+  </section>
 </main>
 <nav class="dock" aria-label="Accesos RPG">
   <a href="#" title="Perfil">🧭</a>
@@ -137,7 +172,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
   enter.addEventListener('click',startMusic);
   if(localStorage.getItem('isl_rpg_entered')==='1'){music.volume=.34;music.play().then(function(){gate.style.display='none'}).catch(function(){})}
   document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});t.classList.add('on')})});
-  if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
+  var c=document.getElementById('craftTry');if(c)c.onclick=function(){var out=document.getElementById('craftResult');out.textContent='Resultado provisional: Receptor de Corrientes — desbloquea lectura de una corriente, no +stats.';localStorage.setItem('isl_craft_d3ref04','tested')};if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
 })();
 </script>
 </body></html>
