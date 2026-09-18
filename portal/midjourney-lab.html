@@ -30,7 +30,7 @@ items.forEach((x,i)=>{
  const key="isl_mj_"+i, st=localStorage.getItem(key)||"PENDIENTE";
  const el=document.createElement("section");el.className="card";
  el.innerHTML=`<div class="num">${x[0]}</div><div class="title">${x[1]}</div><div class="role">${x[2]}</div><div class="prompt">${x[3]}</div>
- <div class="row"><button data-copy>Copiar prompt</button><button class="secondary" data-status>Cambiar estado</button></div>
+ <div class="row"><button data-copy>Copiar prompt</button><a class="secondary" href="https://discord.com/app" target="_blank" rel="noopener" style="text-decoration:none;border-radius:999px;padding:9px 12px;font-weight:800;background:#182c35;color:#eef5f4;border:1px solid #31515c">Abrir Discord</a><button class="secondary" data-status>Cambiar estado</button></div>
  <div class="status">Estado: <b>${st}</b></div>`;
  el.querySelector("[data-copy]").onclick=async()=>{await navigator.clipboard.writeText(x[3]);el.querySelector("[data-copy]").textContent="Copiado ✓";setTimeout(()=>el.querySelector("[data-copy]").textContent="Copiar prompt",1200)};
  el.querySelector("[data-status]").onclick=()=>{let cur=localStorage.getItem(key)||"PENDIENTE";let n=(statuses.indexOf(cur)+1)%statuses.length;localStorage.setItem(key,statuses[n]);el.querySelector(".status b").textContent=statuses[n]};
