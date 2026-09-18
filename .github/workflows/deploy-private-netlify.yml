@@ -13,6 +13,8 @@ permissions:
 jobs:
   deploy-private:
     runs-on: ubuntu-latest
+    env:
+      NETLIFY_SITE_ID: 6182a9ad-e228-41b9-816a-1cf7d750e7e7
     steps:
       - uses: actions/checkout@v4
 
@@ -43,11 +45,22 @@ jobs:
           grep -q "X-Robots-Tag: noindex" build/private/_headers
           grep -q "Cache-Control: no-store, private" build/private/_headers
 
+      - name: Link private Netlify project
+        shell: bash
+        run: |
+          mkdir -p .netlify
+          printf '{"siteId":"%s"}\n' "$NETLIFY_SITE_ID" > .netlify/state.json
+          test -s .netlify/state.json
+          cat .netlify/state.json
+
       - name: Deploy to private Netlify project
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: |
-          npx -y netlify-cli@latest deploy             --dir=build/private             --prod             --site=6182a9ad-e228-41b9-816a-1cf7d750e7e7             --auth="$NETLIFY_AUTH_TOKEN"
+          npx -y netlify-cli@latest deploy \
+            --dir=build/private \
+            --prod \
+            --auth="$NETLIFY_AUTH_TOKEN"
 
       - name: Deployment gate
         run: echo "PRIVATE_NETLIFY_DEPLOY=GREEN"
