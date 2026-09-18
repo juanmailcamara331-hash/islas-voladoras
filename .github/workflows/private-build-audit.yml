@@ -7,7 +7,7 @@ on:
       - "portal/**"
       - "netlify-private-build.sh"
       - "netlify-portal-build.sh"
-      - "netlify-private.toml"
+      - "netlify.private.toml"
       - "scripts/security-gate.py"
       - ".github/workflows/private-build-audit.yml"
   workflow_dispatch:
@@ -39,9 +39,9 @@ jobs:
           grep -q 'id="finalCommandCenter"' build/private/index.html
           grep -q 'name="robots" content="noindex' build/private/index.html
           grep -q 'id="currentActions"' build/private/index.html
-          test -f netlify-private.toml
-          grep -q 'X-Robots-Tag' netlify-private.toml
-          grep -q 'Cache-Control = "no-store, private"' netlify-private.toml
+          test -f netlify.private.toml
+          grep -q 'X-Robots-Tag' netlify.private.toml
+          grep -q 'Cache-Control = "no-store, private"' netlify.private.toml
           echo "PRIVATE_BUILD_AUDIT=GREEN"
 
       - name: Upload private build artifact
