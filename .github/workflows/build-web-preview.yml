@@ -69,6 +69,9 @@ jobs:
           grep -q 'isl-route-v1-visited' build/pages/route-isl.js
           grep -q 'routeSceneGrid' build/pages/route-isl.js
           grep -q 'Botín / hitos' build/pages/route-isl.js
+          grep -q 'routeNowAction' build/pages/route-isl.js
+          grep -q 'VER PARADA ACTUAL' build/pages/route-isl.js
+          grep -q 'routeProgress' build/pages/route-isl.js
           node --check build/pages/route-isl.js
           ! grep -Fq '\\n\\n    var stops' build/pages/route-isl.js
           grep -q '← Cabina RPG' build/pages/musica.html
