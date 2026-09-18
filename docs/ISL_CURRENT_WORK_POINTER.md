@@ -537,3 +537,21 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Backup policy split into:
   code / save-state / design-canon / deploy / assets.
 - No major new system expansion until R1 shell/deploy, R2 UI/navigation, and R3 surveys/evidence are GREEN.
+
+
+## UPDATE v0.66.1 · SURVEYS LITE + R2 PHYSICAL
+- R3 v1 backend: GREEN, 1/1 test submissions recovered for both surveys with cohort/version/source metadata.
+- Physical Android BACK from survey → Command Center: VERIFIED GOOD.
+- ERR-ANDROID-009 welcome flash: FIXED_VERIFIED.
+- ERR-UI-007 drawer outside-close: fix present, human recheck pending.
+- ERR-UX-008 current action visibility: #currentActions present, human recheck pending.
+- ERR-FORM-010 silent submit UX: fixed in v1 surveys with explicit invalid-field feedback.
+- Pilares Lite v2 published in main alongside v1:
+  - portal/poll/pilares-lite-v2.html
+- Referencias Lite v2 published in main alongside v1:
+  - portal/poll/referencias-lite-v2.html
+- Lite forms use survey_version=v0.66-lite and static Netlify-detectable fields.
+- Command Center #currentActions points to Lite v2.
+- v1 surveys remain in drawer as rollback.
+- Two generated poster assets are approved visually but binary repo integration remains pending.
+- DO NOT begin major new systems until R1/R2 human gates are GREEN.
