@@ -1,8 +1,19 @@
 {
-  "version": "0.2",
+  "version": "0.3",
   "updated_at": "2026-09-18",
   "rule": "Las encuestas informan. La decisión final no se automatiza.",
   "polls": [
+    {
+      "id": "POLL-REF-FRIENDS-001",
+      "title": "Referencias que dejan huella · Amigos 01",
+      "domain": "REF",
+      "status": "ABIERTA",
+      "audience": "AMIGOS",
+      "spoiler_risk": "BAJO",
+      "url": "https://form.jotform.com/262605579068063",
+      "question": "¿Qué función creativa de una referencia merece ser reinterpretada en ISL sin copiarla?",
+      "methodology": "FRIENDS_SAMPLE · función > personaje · anti-collage · CQC · confirmación humana"
+    },
     {
       "id": "POLL-MOLINO-001",
       "title": "Molino R1",
