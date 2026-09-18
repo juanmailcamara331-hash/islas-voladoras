@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes">
+<meta name="theme-color" content="#071017">
+<title>ISL · Brújula de las Huellas</title>
+<link rel="icon" href="isl-icon-canon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#050b10;--deep:#071017;--panel:#0a1821e8;--line:#31505c;--cyan:#87efff;--gold:#e4b865;--ink:#efe3ca;--muted:#9fb4b9;--vio:#b9a5ff}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:#f2f7f5;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+body{min-height:100vh;background:radial-gradient(circle at 72% 12%,#153446 0,transparent 30%),linear-gradient(#061018,#071017 52%,#03070a)}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(90deg,#041018f2 0,#061018b8 46%,#07101766),url("assets/island-a-master.jpg") center/cover no-repeat;opacity:.35;filter:saturate(.75)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 50% 42%,transparent 0 18%,#02070b99 72%)}
+.shell{width:min(1180px,94vw);margin:auto;padding:18px 0 64px}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:16px}.top img{width:58px;height:58px;object-fit:contain;filter:drop-shadow(0 8px 20px #000a)}.topMeta{flex:1}.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.top h1{margin:3px 0 0;font-size:clamp(24px,4vw,40px)}.back{border:1px solid #456674;background:#091820;color:#fff;text-decoration:none;border-radius:9px;padding:10px 12px;font-size:11px;font-weight:900}
+.hero{display:grid;grid-template-columns:minmax(300px,520px) 1fr;gap:18px;align-items:stretch}.compassPanel,.readPanel{border:1px solid var(--line);background:linear-gradient(180deg,#0d1d27e8,#07131ae8);border-radius:18px;box-shadow:0 24px 70px #0008}
+.compassPanel{padding:18px;display:grid;place-items:center;min-height:580px}.readPanel{padding:22px}
+.compass{position:relative;width:min(440px,80vw);aspect-ratio:1;border-radius:50%;border:3px solid #8e7148;background:radial-gradient(circle,#132934 0 20%,#0a1922 21% 48%,#071017 49% 100%);box-shadow:inset 0 0 0 8px #d2aa6112,inset 0 0 0 10px #6c53362e,0 24px 60px #0009}
+.compass:before,.compass:after{content:"";position:absolute;inset:8%;border:1px solid #d9b56b66;border-radius:50%}.compass:after{inset:20%;border-color:#87efff30}
+.tick{position:absolute;left:50%;top:50%;width:1px;height:46%;transform-origin:50% 0;background:linear-gradient(#d9b56b55,transparent)}
+.cardinal{position:absolute;font-family:Georgia,serif;color:#d8b36b;font-weight:900;letter-spacing:.08em;text-shadow:0 2px 8px #000}.n{left:50%;top:4%;transform:translateX(-50%)}.s{left:50%;bottom:4%;transform:translateX(-50%)}.e{right:5%;top:50%;transform:translateY(-50%)}.w{left:5%;top:50%;transform:translateY(-50%)}
+.core{position:absolute;left:50%;top:50%;width:54px;height:54px;border-radius:50%;transform:translate(-50%,-50%);display:grid;place-items:center;background:#09131a;border:2px solid #d0a45d;color:#f4d28e;font-weight:950;box-shadow:0 0 0 8px #071017aa,0 0 40px #e4b86525;z-index:7}
+.needle{position:absolute;left:50%;top:50%;width:4px;height:39%;transform-origin:50% 0;border-radius:99px;z-index:5;transition:transform 1.2s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 12px currentColor}.needle:after{content:"";position:absolute;left:50%;top:-12px;transform:translateX(-50%);border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:18px solid currentColor}
+.did{color:var(--gold);background:linear-gradient(currentColor,transparent)}.silent{color:var(--cyan);background:linear-gradient(currentColor,transparent);width:3px;z-index:4}
+.legend{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px;font-size:10px;color:#c8d5d8}.legend span:before{content:"";display:inline-block;width:18px;height:3px;margin-right:6px;vertical-align:middle;background:var(--gold)}.legend .ls:before{background:var(--cyan)}
+.quote{font-family:Georgia,serif;font-size:clamp(28px,4vw,52px);line-height:1.02;margin:8px 0 18px;color:#f4ead7}.quote em{color:var(--gold);font-style:normal}.intro{color:#b8c9cd;line-height:1.6;max-width:720px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.stat{border:1px solid #294754;background:#07131a;padding:12px;border-radius:10px}.stat b{display:block;font-size:26px;color:#fff}.stat span{font-size:9px;letter-spacing:.09em;color:#95abb1;text-transform:uppercase}.reading{border-left:3px solid var(--gold);padding:12px 14px;background:#0e1919;border-radius:8px;margin:14px 0;line-height:1.55;color:#d6dfdd}
+.columns{display:grid;grid-template-columns:1fr 1fr;gap:10px}.traceBox{border:1px solid #2f4c57;background:#07131a;border-radius:11px;padding:12px;min-height:150px}.traceBox h2{font-size:11px;letter-spacing:.12em;color:var(--cyan);margin:0 0 10px}.trace{font-size:11px;color:#c7d4d6;padding:7px 0;border-top:1px solid #ffffff0c}.trace:first-of-type{border-top:0}.trace strong{color:#f0d49a}.trace small{display:block;color:#7f979e;margin-top:2px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.btn{border:1px solid #8e6d3e;background:linear-gradient(#46351f,#281f16);color:#fff0cf;border-radius:10px;padding:12px 14px;font-weight:950;letter-spacing:.05em;cursor:pointer}.btn.secondary{border-color:#395966;background:#0b1b23;color:#dce8e9}.btn:disabled{opacity:.45;cursor:not-allowed}.tiny{margin-top:10px;font-size:9px;line-height:1.5;color:#7f959b}
+.echoes{margin-top:14px;border-top:1px solid #ffffff12;padding-top:12px;font-size:10px;color:#aabbbf}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.compassPanel{min-height:auto}.readPanel{padding:16px}.columns{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.top{align-items:flex-start}.top img{width:46px;height:46px}.back{padding:8px}.stats{grid-template-columns:1fr}.compassPanel{padding:10px}.quote{font-size:32px}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="top">
+    <img src="isl-icon-canon.svg" alt="ISL">
+    <div class="topMeta"><div class="k">FASE C · ARTEFACTO 01 · MEMORIA PERSISTENTE</div><h1>Brújula de las Huellas</h1></div>
+    <a class="back" href="rpg-home.html">← CABINA RPG</a>
+  </header>
+  <section class="hero">
+    <div class="compassPanel">
+      <div>
+        <div class="compass" aria-label="Brújula de las Huellas">
+          <i class="tick" style="transform:rotate(0deg)"></i><i class="tick" style="transform:rotate(45deg)"></i><i class="tick" style="transform:rotate(90deg)"></i><i class="tick" style="transform:rotate(135deg)"></i><i class="tick" style="transform:rotate(180deg)"></i><i class="tick" style="transform:rotate(225deg)"></i><i class="tick" style="transform:rotate(270deg)"></i><i class="tick" style="transform:rotate(315deg)"></i>
+          <b class="cardinal n">RECUERDO</b><b class="cardinal e">HORIZONTE</b><b class="cardinal s">RUPTURA</b><b class="cardinal w">VÍNCULO</b>
+          <div id="didNeedle" class="needle did"></div><div id="silentNeedle" class="needle silent"></div><div class="core">¬¬</div>
+        </div>
+        <div class="legend"><span>LO QUE HICISTE</span><span class="ls">LO QUE AÚN NO DEJÓ HUELLA</span></div>
+      </div>
+    </div>
+    <article class="readPanel">
+      <div class="k">RELIQUIA DE NAVEGACIÓN · NO DA ÓRDENES</div>
+      <div class="quote">No señala dónde ir.<br><em>Señala de dónde vienes.</em></div>
+      <p class="intro">La brújula lee únicamente rastros persistentes que ya existen en este dispositivo. No puntúa, no juzga y no inventa decisiones. Una aguja reúne lo inscrito; la otra hace visible el hueco de los sistemas que todavía no han dejado señal.</p>
+      <div class="stats"><div class="stat"><b id="traceCount">0</b><span>huellas reales</span></div><div class="stat"><b id="silenceCount">0</b><span>silencios visibles</span></div><div class="stat"><b id="echoCount">0</b><span>ecos voluntarios</span></div></div>
+      <div id="reading" class="reading">Leyendo memoria local…</div>
+      <div class="columns"><section class="traceBox"><h2>LO QUE QUEDÓ</h2><div id="didList"></div></section><section class="traceBox"><h2>LO QUE AÚN NO ESTÁ INSCRITO</h2><div id="silentList"></div></section></div>
+      <div class="actions"><button id="leaveEcho" class="btn" type="button">DEJAR ECO</button><button id="refresh" class="btn secondary" type="button">VOLVER A LEER</button></div>
+      <div class="tiny">“Dejar eco” es deliberado: registra una firma de esta lectura en <code>localStorage</code>. No borra, corrige ni reescribe huellas previas.</div>
+      <div id="echoes" class="echoes"></div>
+    </article>
+  </section>
+</main>
+<script>
+(()=>{'use strict';
+const ECHO_KEY='isl_huellas_echoes_v1';
+const known=[
+ ['isl_ps4_entered','Cabina PS4','presencia'],
+ ['isl_boss_resolution','Tormenta','resolución'],
+ ['isl_boss_reward','Sello de la Tormenta','reliquia'],
+ ['isl_storm_route_reward','Ruta imposible','reliquia'],
+ ['isl_secret_level_echo','Eco del nivel imposible','secreto'],
+ ['isl_craft_receiver','Receptor de Corrientes','construcción'],
+ ['isl_recreo_nowhere_reward','Ningún Sitio','encuentro']
+];
+const noise=/(_scroll|_page|_audio|_fs)$/;
+const nice=k=>k.replace(/^isl_/,'').replaceAll('_',' ');
+function allKeys(){const out=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('isl_')&&!noise.test(k)&&k!==ECHO_KEY)out.push(k)}return out.sort()}
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function echoes(){try{const a=JSON.parse(localStorage.getItem(ECHO_KEY)||'[]');return Array.isArray(a)?a:[]}catch(e){return[]}}
+function classify(k){if(k.startsWith('isl_capsule_')||k.startsWith('isl_tv_')||k.includes('resolution'))return'decisión';if(k.includes('loot')||k.includes('reward')||k.includes('craft'))return'reliquia';if(k.includes('route')||k.includes('visited')||k.includes('entered'))return'ruta';if(k.includes('recreo'))return'recreo';return'huella'}
+function safeValue(k){let v=localStorage.getItem(k)||'';if(v.length>56)v=v.slice(0,53)+'…';return v}
+function render(){
+ const keys=allKeys(), es=echoes(), missing=known.filter(([k])=>!localStorage.getItem(k));
+ const didSig=keys.map(k=>k+'='+safeValue(k)).join('|')||'sin-huellas';
+ const missSig=missing.map(x=>x[0]).join('|')||'sin-silencios';
+ const a=(hash(didSig)%360), b=(hash(missSig)%360);
+ document.getElementById('didNeedle').style.transform='translateX(-50%) rotate('+a+'deg)';
+ document.getElementById('silentNeedle').style.transform='translateX(-50%) rotate('+b+'deg)';
+ document.getElementById('traceCount').textContent=keys.length;
+ document.getElementById('silenceCount').textContent=missing.length;
+ document.getElementById('echoCount').textContent=es.length;
+ const did=document.getElementById('didList'), sil=document.getElementById('silentList');
+ did.innerHTML=keys.length?keys.slice(0,14).map(k=>'<div class="trace"><strong>'+classify(k).toUpperCase()+'</strong> · '+nice(k)+'<small>'+safeValue(k).replace(/[<&]/g,m=>m==='<'?'&lt;':'&amp;')+'</small></div>').join(''):'<div class="trace">Todavía no hay huellas persistentes suficientes. La aguja permanece, pero no finge memoria.</div>';
+ sil.innerHTML=missing.length?missing.map(x=>'<div class="trace"><strong>'+x[2].toUpperCase()+'</strong> · '+x[1]+'<small>Aún no hay una clave persistente asociada en este dispositivo.</small></div>').join(''):'<div class="trace">Los hitos observables de esta lectura ya tienen rastro. Eso no significa que el viaje esté completo.</div>';
+ let read;
+ if(!keys.length)read='La brújula encuentra silencio. No lo rellena: espera a que el mundo deje huellas reales.';
+ else if(missing.length)read='Hay memoria y hueco en la misma cartografía. La contradicción no es un error: es lo que la brújula hace visible.';
+ else read='La memoria local está muy marcada. La segunda aguja ya no apunta a una ausencia concreta; sólo conserva la tensión entre lo hecho y lo posible.';
+ document.getElementById('reading').textContent=read;
+ document.getElementById('echoes').textContent=es.length?'Último eco: '+new Date(es[es.length-1].at).toLocaleString()+' · firma '+es[es.length-1].signature:'Aún no has dejado ningún eco voluntario en la brújula.';
+ document.getElementById('leaveEcho').disabled=false;
+ return {keys,missing,a,b};
+}
+document.getElementById('refresh').onclick=render;
+document.getElementById('leaveEcho').onclick=()=>{
+ const state=render(), es=echoes(), signature=(hash(state.keys.join('|')+'::'+state.missing.map(x=>x[0]).join('|'))>>>0).toString(16).padStart(8,'0');
+ es.push({at:new Date().toISOString(),signature,traceCount:state.keys.length,silenceCount:state.missing.length});
+ localStorage.setItem(ECHO_KEY,JSON.stringify(es.slice(-32)));render();
+};
+render();
+})();
+</script>
+</body></html>
