@@ -391,3 +391,34 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Android entry bumped to ?app=1&native=060&v=20260918-7.
 - CI now guards native startup markers and SW cache generation.
 - Technical CQC now explicitly requires 3 cold starts before calling APK clean.
+
+
+## v0.61 — BUILD SCIENCE / CREATIVE ENGINEERING
+- Construction method upgraded after cross-checking:
+  - Unreal Automation / Gauntlet / Horde;
+  - OpenAI eval methodology;
+  - Anthropic eval-driven development / property testing;
+  - academic game-bug taxonomies and regression testing;
+  - practitioner reports from game-dev communities.
+- New mandatory method: docs/ISL_BUILD_SCIENCE_v0.61.md
+- Machine-readable taxonomy: docs/ISL_ERROR_TAXONOMY_v0.61.json
+- Change template: docs/ISL_CHANGE_IMPACT_CARD_TEMPLATE_v0.61.md
+- Research ledger: docs/ISL_ENGINEERING_RESEARCH_LEDGER_v0.61.md
+- Every significant change now declares:
+  - intent;
+  - affected entities;
+  - dependencies;
+  - failure categories;
+  - known regressions;
+  - required tests;
+  - human gate;
+  - rollback.
+- Two permanent suites:
+  - CAPABILITY — proves the new thing works;
+  - REGRESSION — proves old things still work.
+- Test ladder T0–T8:
+  static → unit/property → feature → smoke → integration → content stress → visual → packaged/device → human/CQC.
+- Change-impact selection prevents blindly running everything while forcing relevant historical regressions.
+- Error registry recurrence now increases criticality and triggers review of why previous guard failed.
+- Metamorphic invariants protect SAME WORLD / SAME RULES across visual tiers and creative systems.
+- Rule: methodology protects creativity; it must reduce rework, not sterilize design.
