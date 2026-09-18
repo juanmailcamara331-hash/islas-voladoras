@@ -53,6 +53,23 @@ CQC musical mínimo:
 5. ¿el motivo inicial puede sobrevivir transformado en estados posteriores?;
 6. ¿la transición emocional es legible sin imagen?;
 
+### 3C. CROSSPLAY / CAPABILITY CEILINGS
+- ¿gameplay/progresión/consecuencias son invariantes entre plataformas?
+- ¿el feature nuevo declara qué escala y qué no escala?
+- ¿hay fallback para Series S / mobile / low-PC antes de añadir coste?
+- ¿se protege frame-pacing/input antes que resolución/RT?
+- ¿crossplay respeta privilegios, privacidad, comunicación y bloqueo nativo?
+- ¿latencia/fairness se mide por input/mecánica y no por marca de dispositivo?
+- ¿save/cross-progression tiene versión, migración y conflicto explícito?
+- ¿PS5/Xbox siguen marcados BLOCKED mientras falten SDK/hardware/certificación?
+
+### 3D. CABARET / ENTROPÍA / ECO HISTÓRICO
+- aplicar CAB-10..50 de docs/ISL_CABARET_ENTROPY_METHOD_v0.44.md;
+- sensualidad debe sumar función/tensión, no ser skin;
+- referencias históricas deben conservar contexto y evitar explotación superficial;
+- ancla/entropía/cambio de fase deben mejorar lectura jugable;
+- esta capa no puede romper A/B congelada ni el macroarco musical aprobado.
+
 ### 4. ESTRUCTURA / SCOPE
 - ¿esto pertenece al vertical slice actual?
 - ¿estamos abriendo infraestructura sin necesidad demostrada?
