@@ -308,3 +308,27 @@ Regression guard:
 status: FIXED_PENDING_HUMAN
 first_seen: 2026-09-18
 recurrence_count: 1
+
+
+## ERR-FORM-010 · submit parece muerto cuando falta un required
+Síntoma:
+- usuario pulsa “Dejar tu huella” / “Dejar evidencia”;
+- no ve transición ni confirmación;
+- si falta un required fuera de viewport, el navegador puede bloquear submit sin feedback útil.
+
+Severidad:
+- S2 MAJOR para evidencia humana.
+
+Causa:
+- dependencia exclusiva de validación HTML nativa en formularios largos mobile-first.
+
+Fix:
+- feedback inline aria-live;
+- resaltar primera pregunta inválida;
+- scroll/focus a :invalid;
+- estado “GUARDANDO…” durante submit válido;
+- mismo patrón en Pilares y Referencias.
+
+status: FIXED_PENDING_HUMAN
+first_seen: 2026-09-19
+recurrence_count: 1
