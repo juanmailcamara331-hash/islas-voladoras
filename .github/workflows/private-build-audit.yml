@@ -1,0 +1,52 @@
+name: Audit private ISL Command Center build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "portal/**"
+      - "netlify-private-build.sh"
+      - "netlify-portal-build.sh"
+      - "netlify-private.toml"
+      - "scripts/security-gate.py"
+      - ".github/workflows/private-build-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  private-build-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Security gate
+        run: python3 scripts/security-gate.py
+
+      - name: Build private Command Center
+        run: bash netlify-private-build.sh
+
+      - name: Verify private surface
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test -f build/private/index.html
+          test -f build/private/rpg-home.html
+          test -f build/private/huellas.html
+          test -f build/private/route-isl.js
+          test -f build/private/secret-level.html
+          grep -q 'id="finalCommandCenter"' build/private/index.html
+          grep -q 'name="robots" content="noindex' build/private/index.html
+          grep -q 'id="currentActions"' build/private/index.html
+          test -f netlify-private.toml
+          grep -q 'X-Robots-Tag' netlify-private.toml
+          grep -q 'Cache-Control = "no-store, private"' netlify-private.toml
+          echo "PRIVATE_BUILD_AUDIT=GREEN"
+
+      - name: Upload private build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: isl-private-command-center
+          path: build/private
+          retention-days: 7
