@@ -52,3 +52,60 @@
   [headers.values]
     Cache-Control = "public, max-age=300, stale-while-revalidate=86400"
     Netlify-CDN-Cache-Control = "public, durable, s-maxage=300, stale-while-revalidate=86400"
+
+
+# GITHUB PAGES STATIC OFFLOAD
+# Keep Netlify for dynamic/forms/backend; send heavy static UI to free Pages.
+[[redirects]]
+  from = "/"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/rpg-home.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/command-center.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/command-center.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/capsulas.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/capsulas.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/capsulas-tv.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/capsulas-tv.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/musica.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/musica.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/recreo.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/recreo.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/boss-prototype.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/boss-prototype.html"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/secret-level.html"
+  to = "https://juanmailcamara331-hash.github.io/islas-voladoras/secret-level.html"
+  status = 302
+  force = true
