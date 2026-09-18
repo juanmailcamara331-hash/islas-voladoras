@@ -70,7 +70,9 @@
     `;
     document.head.appendChild(style);
 
-    var routeState={current_stop:'pre50',now:{label:'AHORA IMPORTA',title:'PRE50 · evidencia humana real',body:'Conseguir evidencia humana real sin abrir más infraestructura.'},review:{label:'REVISIÓN ACTUAL',title:'RUTA ISL · una sola experiencia',body:'Home única, Cabina RPG integrada y mapa de viaje sincronizados.'},next_stop:'pre60',next_label:'PRE60 · sintetizar feedback y decidir nueva variante'};\n\n    var stops=[
+    var routeState={current_stop:'pre50',now:{label:'AHORA IMPORTA',title:'PRE50 · evidencia humana real',body:'Conseguir evidencia humana real sin abrir más infraestructura.'},review:{label:'REVISIÓN ACTUAL',title:'RUTA ISL · una sola experiencia',body:'Home única, Cabina RPG integrada y mapa de viaje sincronizados.'},next_stop:'pre60',next_label:'PRE60 · sintetizar feedback y decidir nueva variante'};
+
+    var stops=[
       {id:'base',x:13,y:68,state:'done',sig:'✓',name:'Base ISL',sub:'1A × 1B × 1C · huella · mutación',status:'TRAMO SUPERADO',body:'La base sistémica está conservada. No se reinicia: sirve de suelo para los experimentos posteriores.'},
       {id:'labs',x:28,y:55,state:'done',sig:'✓',name:'Labs de viento',sub:'Wind Lab · receptor · CQC',status:'TRAMO SUPERADO',body:'Los laboratorios demostraron cómo experimentar pequeño antes de construir grande.'},
       {id:'molino',x:44,y:47,state:'done',sig:'✓',name:'Molino que Miente',sub:'Decisión física · tres rutas',status:'REVISIÓN VIVA',body:'Se conserva como laboratorio narrativo-jugable. Debe revalidarse integrado, no convertirse en menú moral.'},
