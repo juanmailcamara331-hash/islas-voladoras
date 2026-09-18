@@ -130,7 +130,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
         <div style="position:absolute;inset:0;background:linear-gradient(90deg,#071017ed 0,#07101788 40%,transparent 75%),linear-gradient(0deg,#071017cc,transparent 70%);padding:24px;display:flex;flex-direction:column;justify-content:flex-end">
           <div class="kicker">Mapa de expedición</div>
           <h3 style="font-size:28px;margin:5px 0">Archipiélago vivo</h3>
-          <div class="tiny" style="max-width:560px;font-size:11px">Mapa visual de ruta. Los marcadores RPG son navegación diegética; los estados reales siguen viniendo del Lifecycle / PRE / CQC.</div>
+          <div class="tiny" id="mapReading" style="max-width:560px;font-size:11px">Mapa visual de ruta. Los marcadores RPG son navegación diegética; los estados reales siguen viniendo del Lifecycle / PRE / CQC.</div>
         </div>
       </div>
     </article>
@@ -216,6 +216,9 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
     if(localStorage.getItem('isl_boss_reward')==='sello-tormenta'&&!document.getElementById('stormSealSlot')){
       var k=document.createElement('button');k.className='stashSlot strange';k.id='stormSealSlot';k.dataset.item='Sello de la Tormenta';k.dataset.origin='El Cartógrafo de la Tormenta';k.dataset.rarity='RELIQUIA';k.dataset.real='HIPÓTESIS';k.dataset.function='Llave de ruta: habilita portales de tormenta';k.innerHTML='✺<small>1</small>';document.getElementById('stash').appendChild(k);bindItem(k);
     }
+    if(localStorage.getItem('isl_storm_route_reward')==='carta-corrientes-imposibles'&&!document.getElementById('impossibleChartSlot')){
+      var q=document.createElement('button');q.className='stashSlot strange';q.id='impossibleChartSlot';q.dataset.item='Carta de Corrientes Imposibles';q.dataset.origin='La Costura del Cielo';q.dataset.rarity='SECRETA';q.dataset.real='HIPÓTESIS';q.dataset.function='Nueva capa de lectura: revela rutas que no se comportan como rutas normales';q.innerHTML='🗺<small>1</small>';document.getElementById('stash').appendChild(q);bindItem(q);
+    }
   }
   function bindItem(el){el.addEventListener('click',function(){currentItem=el;var d=el.dataset;var name=d.item||el.querySelector('b')?.textContent||'Equipo';document.getElementById('imName').textContent=name;document.getElementById('imRarity').textContent='RAREZA · '+(d.rarity||'DIEGÉTICA');document.getElementById('imOrigin').textContent=d.origin||'Perfil del Cartógrafo';document.getElementById('imReal').textContent=d.real||'PROVISIONAL';document.getElementById('imFunction').textContent=d.function||'Equipo de expedición / función en evaluación';var eq=localStorage.getItem('isl_equipped_preview');document.getElementById('imCompare').textContent=eq?('Equipado: '+eq+' · compara función/uso, no DPS.'):'Nada equipado todavía.';modal.classList.add('show')})}
   syncPersistentLoot();
@@ -238,6 +241,8 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
     if(br)br.textContent=defeated?'RECOMPENSA PERSISTENTE · Sello de la Tormenta guardado en mochila.':(built?'Receptor detectado · solución especial disponible en Fase III.':'Sin Receptor: el boss sigue siendo resoluble por lectura/ruta.');
     var st=document.getElementById('stormPortalText'),sb=document.getElementById('stormPortalBtn');
     if(st)st.textContent=defeated?'SELLO DETECTADO · UMBRAL RESPONDE':'SIN SELLO · INERTE';
+    var mr=document.getElementById('mapReading');
+    if(mr&&localStorage.getItem('isl_storm_route_reward')==='carta-corrientes-imposibles')mr.textContent='Nueva capa activa: Carta de Corrientes Imposibles. El mapa ahora puede señalar rutas que alteran reglas, no sólo destinos.';
     if(sb)sb.textContent=defeated?'Abrir Costura del Cielo':'Intentar abrir';
   }
   if(c)c.onclick=function(){
@@ -251,7 +256,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
     var out=document.getElementById('stormPortalResult');
     if(localStorage.getItem('isl_boss_reward')!=='sello-tormenta'){out.textContent='El aire no reconoce tu firma. Falta el Sello de la Tormenta.';return}
     localStorage.setItem('isl_storm_portal','discovered');
-    out.textContent='PORTAL DESCUBIERTO · la costura responde al sello. Próximo experimento: ruta de tormenta.';
+    out.innerHTML='PORTAL DESCUBIERTO · <a href="storm-route.html" style="color:var(--cyan);text-decoration:underline">entrar en La Costura del Cielo</a>.';
     sp.textContent='Portal descubierto ✓';
   };
   syncSystemState();
