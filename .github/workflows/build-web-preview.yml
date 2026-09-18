@@ -100,6 +100,7 @@ jobs:
           test -f build/pages/capsulas.html
           test -f build/pages/huellas.html
           test -f build/pages/salon-cortinas-rojas.html
+          test -f build/pages/isla-baile-inagotable.html
           test -f build/pages/poll/referencias-amigos.html
           grep -q 'No señala dónde ir. Señala de dónde vienes.' build/pages/huellas.html
           grep -q 'isl_huellas_echoes_v1' build/pages/huellas.html
@@ -109,6 +110,9 @@ jobs:
           grep -q 'Salón de las Cortinas Rojas' build/pages/salon-cortinas-rojas.html
           grep -q 'isl_red_room_state_v1' build/pages/salon-cortinas-rojas.html
           grep -q 'recoreografiar' build/pages/salon-cortinas-rojas.html
+          grep -q 'Isla del Baile Inagotable' build/pages/isla-baile-inagotable.html
+          grep -q 'isl_dance_island_v1' build/pages/isla-baile-inagotable.html
+          grep -q 'JARDÍN SILENCIOSO' build/pages/isla-baile-inagotable.html
           grep -q 'NO COPIAMOS, MUTAMOS' build/pages/poll/referencias-amigos.html
           grep -q 'isl-reference-friends-01' build/pages/poll/referencias-amigos.html
           grep -q 'href="huellas.html"' build/pages/rpg-home.html
