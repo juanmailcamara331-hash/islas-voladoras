@@ -1,0 +1,114 @@
+{
+  "version": "0.1",
+  "updated_at": "2026-09-18",
+  "canon_invariants": [
+    "La Separación dispersa al grupo.",
+    "El objetivo emocional central es reencontrar a los amigos, no salvar el universo de entrada.",
+    "Cada amigo ha cambiado durante la separación.",
+    "La nave crece hacia hogar colectivo.",
+    "Las decisiones se leen por trayectoria y dejan huella.",
+    "El mundo recuerda y devuelve consecuencias más tarde.",
+    "La explicación cosmológica nunca debe eclipsar la aventura humana.",
+    "El final debe reflejar en qué se convirtió el grupo, no sólo qué opción eligió al final."
+  ],
+  "variants": [
+    {
+      "id": "A",
+      "name": "La Ruta de los Reencuentros",
+      "thesis": "Campaña clara y emocional: cada gran región contiene un reencuentro decisivo, pero cada amigo cambia las reglas del viaje y reabre el mundo anterior.",
+      "structure": [
+        "ACTO I · Sobrevivir a La Separación y conseguir una nave mínima.",
+        "ACTO II · Tres regiones principales, cada una con ciudad/civilización + amigo transformado + crisis local.",
+        "ACTO III · El grupo incompleto descubre que los reencuentros han alterado también al capitán y al propio barco.",
+        "ACTO IV · Regiones anteriores regresan con consecuencias visibles; las capacidades combinadas abren rutas nuevas.",
+        "ACTO V · Reunión incompleta o completa según trayectoria; resolución centrada en qué hogar se construyó y en qué se convirtió el grupo."
+      ],
+      "strengths": [
+        "Claridad de objetivo",
+        "Ritmo emocional fuerte",
+        "Ideal para vertical slices por región",
+        "Cada amigo puede introducir un sistema jugable real"
+      ],
+      "risks": [
+        "Puede sentirse episódico si las regiones no se contaminan entre sí",
+        "El orden de amigos puede parecer demasiado predecible"
+      ],
+      "signature": "Cada reencuentro modifica la nave, una relación y al menos una región ya visitada."
+    },
+    {
+      "id": "B",
+      "name": "El Archipiélago Resonante",
+      "thesis": "Campaña semiabierta: varias pistas de amigos aparecen a la vez; el jugador decide qué civilización investigar primero y el orden cambia relaciones, amenazas y mutaciones.",
+      "structure": [
+        "ACTO I · La nave consigue capacidad de cruzar tres corrientes del cielo.",
+        "ACTO II · Tres regiones abiertas en orden flexible; cada una contiene pistas cruzadas sobre varios amigos.",
+        "ACTO III · El primer reencuentro altera las condiciones de los otros dos y cambia la lectura de La Separación.",
+        "ACTO IV · El mundo responde al orden seguido: ciudades recuerdan, rutas se cierran/abren y algunos amigos llegan transformados de forma distinta.",
+        "ACTO V · Convergencia en una región frontera que refleja la trayectoria acumulada, no una simple elección final."
+      ],
+      "strengths": [
+        "Agencia real",
+        "Gran rejugabilidad",
+        "Consecuencias orgánicas",
+        "Encaja muy bien con huella/memoria"
+      ],
+      "risks": [
+        "Más caro de escribir, probar y localizar",
+        "Riesgo alto de estados combinatorios y pérdida de claridad"
+      ],
+      "signature": "El orden de búsqueda es una decisión jugable con ecos narrativos, físicos y relacionales."
+    },
+    {
+      "id": "C",
+      "name": "La Espiral del Hogar",
+      "thesis": "La nave-hogar es el corazón de la campaña. Cada expedición nace de una necesidad del barco o de la tripulación; cada regreso transforma físicamente el hogar y revela nuevas rutas.",
+      "structure": [
+        "ACTO I · Refugio improvisado después de La Separación.",
+        "ACTO II · Salidas cortas a regiones cercanas para recursos, pistas y primeros aliados.",
+        "ACTO III · Reencuentros convierten el barco en comunidad; aparecen conflictos cotidianos y capacidades colectivas.",
+        "ACTO IV · El hogar móvil empieza a alterar regiones enteras y a ser reconocido, temido o necesitado por civilizaciones.",
+        "ACTO V · La última gran expedición no pregunta sólo a quién salvar, sino qué clase de hogar merece seguir existiendo en el cielo."
+      ],
+      "strengths": [
+        "Identidad muy propia",
+        "Vida de nave integrada en aventura",
+        "Excelente para retornos, memoria y Cuidado y Mimo",
+        "Permite alternar épica y cotidianeidad"
+      ],
+      "risks": [
+        "Puede perder sensación de viaje si el hub domina demasiado",
+        "Necesita una nave muy viva para no sentirse menú glorificado"
+      ],
+      "signature": "Salir cambia el mundo; volver cambia el hogar; el hogar cambiado redefine la siguiente salida."
+    }
+  ],
+  "common_campaign_rhythm": [
+    "DESCUBRIR una necesidad/pista",
+    "VIAJAR atravesando una regla de mundo",
+    "ENTRAR en una comunidad con contradicción propia",
+    "INVESTIGAR/JUGAR una crisis local",
+    "REENCONTRAR o acercarse a un amigo cambiado",
+    "PAGAR un coste / dejar una huella",
+    "REGRESAR y ver una consecuencia",
+    "RECONFIGURAR nave, relaciones y posibilidades"
+  ],
+  "region_contract": {
+    "must_have": [
+      "Una silueta y regla física reconocible",
+      "Una civilización/comunidad con deseo y contradicción",
+      "Un objetivo local comprensible",
+      "Una actividad o bucle que no exista igual en otra región",
+      "Una relación concreta con La Separación",
+      "Un secreto o capa que sólo se entiende al regresar",
+      "Una consecuencia tardía",
+      "Un motivo para volver con otra capacidad o compañero"
+    ],
+    "must_not_be": [
+      "bioma decorativo sin función narrativa",
+      "ciudad-hub genérica",
+      "pasillo a jefe/reencuentro",
+      "colección de quests inconexas"
+    ]
+  },
+  "next_design_step": "Elegir o hibridar arquitectura de campaña y diseñar 3 primeras regiones usando el contrato de región."
+}
