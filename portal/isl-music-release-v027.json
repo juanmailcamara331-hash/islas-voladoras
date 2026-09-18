@@ -1,0 +1,49 @@
+{
+  "collection": "ISL — Cielo y Descenso v0.3",
+  "status": "candidate_release_pack",
+  "release_gate": "rights+cover_cqc+metadata",
+  "tracks": [
+    {
+      "n": 1,
+      "title": "Above the Sleeping Coast",
+      "youtube_title": "Above the Sleeping Coast — Relaxing Fantasy Music for Reading | ISL",
+      "role": "horizonte / primera salida",
+      "mood": "spacious, warm, aerial"
+    },
+    {
+      "n": 2,
+      "title": "Tea Above the Clouds",
+      "youtube_title": "Tea Above the Clouds — Cozy Fantasy Music for Quiet Work | ISL",
+      "role": "recreo / intimidad",
+      "mood": "cozy, playful, domestic"
+    },
+    {
+      "n": 3,
+      "title": "The Mahogany Deck",
+      "youtube_title": "The Mahogany Deck — Cozy Fantasy Ambience for Reading | ISL",
+      "role": "hogar / rutina",
+      "mood": "tactile, warm, lived-in"
+    },
+    {
+      "n": 4,
+      "title": "Lanterns in the Mist",
+      "youtube_title": "Lanterns in the Mist — Mystical Fantasy Ambience | ISL",
+      "role": "descubrimiento / Nácar",
+      "mood": "misty, safe, mysterious"
+    },
+    {
+      "n": 5,
+      "title": "Where the Current Ends",
+      "youtube_title": "Where the Current Ends — Liminal Fantasy Music for Focus | ISL",
+      "role": "límite / corriente imposible",
+      "mood": "liminal, calm, uncertain"
+    },
+    {
+      "n": 6,
+      "title": "A Waltz for the Slow Descent",
+      "youtube_title": "A Waltz for the Slow Descent — Calm Melancholic Fantasy Music | ISL",
+      "role": "regreso / memoria",
+      "mood": "melancholic, intimate, descending"
+    }
+  ]
+}
