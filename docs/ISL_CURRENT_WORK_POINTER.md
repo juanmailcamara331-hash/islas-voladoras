@@ -301,3 +301,22 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Large ideas still go to PARKING / BACKLOG for later review.
 - Existing references remain available as seasoning; they are not all activated at once.
 - Goal: preserve surprise, personality and authorial texture while keeping production velocity.
+
+
+## v0.56 — ISLA DEL BAILE INAGOTABLE · DISTRITO JUGABLE
+- New playable page: portal/isla-baile-inagotable.html
+- Three live nodes:
+  1. Plaza del Compás — join or vary the pulse.
+  2. Patio de las Hamacas Quietas — open rest or continue without stopping.
+  3. Pasarela de los Turnos — redistribute effort or preserve current burden.
+- Persistence key: isl_dance_island_v1.
+- Every intervention writes to isl_huellas_events_v2.
+- Route variation, rest state and burden distribution persist between visits.
+- Secret causal route:
+  - technical route appears through variation + shared burden;
+  - Jardín Silencioso appears through variation + rest + shared burden.
+- Same rules across tiers; only visual/audio density is scalable later.
+- Linked from RPG home.
+- CI guards page, persistence key and Jardín Silencioso.
+- Status remains PROVISIONAL FUERTE pending human playtest/CQC.
+- Next fixed block: first 3 creatures interaction test.
