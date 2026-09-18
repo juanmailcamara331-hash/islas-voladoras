@@ -37,6 +37,14 @@ jobs:
           # Preview gratuito: misma entrada RPG que la release, sin tocar Netlify.
           cp build/pages/index.html build/pages/command-center.html
           cp build/pages/rpg-home.html build/pages/index.html
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('build/pages/ps4.html')
+          s=p.read_text(encoding='utf-8')
+          if 'ps4-runtime-hotfix.js' not in s:
+              s=s.replace('</body>','<script defer src="ps4-runtime-hotfix.js"></script>\n</body>')
+          p.write_text(s,encoding='utf-8')
+          PY
           touch build/pages/.nojekyll
       - name: CQC portal
         shell: bash
