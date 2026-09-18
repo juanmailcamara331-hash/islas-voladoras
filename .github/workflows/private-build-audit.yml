@@ -19,7 +19,7 @@ jobs:
   private-build-audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Security gate
         run: python3 scripts/security-gate.py
