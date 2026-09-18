@@ -1,5 +1,5 @@
 {
-  "version": "0.20.1",
+  "version": "0.20.2",
   "updated": "2026-09-18",
   "policy": "LIGHT_IMMERSION_NON_CANON",
   "capsules": [
@@ -76,6 +76,58 @@
         "Una campanilla rota",
         "Una cuerda con un nudo por tripulante",
         "Una placa reglamentaria chamuscada"
+      ],
+      "tone": "decision"
+    },
+    {
+      "id": "postal-02",
+      "type": "POSTAL DEL CIELO",
+      "title": "La sombra que llega antes",
+      "body": "En algunas rutas, la sombra del barco toca la isla varios segundos antes que el barco.",
+      "note": "Los pilotos veteranos lo llaman cortesía del cielo.",
+      "tone": "mystery"
+    },
+    {
+      "id": "decreto-22c",
+      "type": "DECRETO · 22-C",
+      "title": "Silencio reglamentario",
+      "body": "Todo mecanismo con más de tres chirridos consecutivos deberá declarar intención.",
+      "note": "La mayoría de las máquinas se niegan por escrito.",
+      "tone": "absurd"
+    },
+    {
+      "id": "pandilla-02",
+      "type": "PANDILLA · COCINA",
+      "title": "El guiso",
+      "body": "Lena: «¿Esto era sopa?»\n\nMara: «Era una hipótesis.»",
+      "note": "Taro pidió repetir.",
+      "tone": "warm"
+    },
+    {
+      "id": "objeto-02",
+      "type": "OBJETO DEL BARCO",
+      "title": "El mapa mordido",
+      "body": "Una esquina del mapa desaparece un poco más cada vez que alguien miente sobre saber dónde está.",
+      "note": "Nadie admite haber empezado.",
+      "tone": "mystery"
+    },
+    {
+      "id": "sombra-03",
+      "type": "SOMBRA",
+      "title": "El espejo",
+      "body": "Hay espejos que reflejan la habitación correctamente.",
+      "note": "Sólo se equivocan contigo.",
+      "tone": "dark"
+    },
+    {
+      "id": "decision-02",
+      "type": "DECISIÓN LIGERA",
+      "title": "Rincón favorito del barco",
+      "body": "¿Dónde debería esconderse alguien cuando necesita estar solo?",
+      "options": [
+        "Bajo la cubierta de proa",
+        "Junto al motor dormido",
+        "En una red colgada bajo el casco"
       ],
       "tone": "decision"
     }
