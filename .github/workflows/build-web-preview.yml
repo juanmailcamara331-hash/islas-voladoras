@@ -65,6 +65,11 @@ jobs:
           grep -q 'gameHudBar' build/pages/index.html
           grep -q 'ACTIVAR MÚSICA' build/pages/index.html
           grep -q '← Cabina RPG' build/pages/musica.html
+          grep -q 'class="gameMenu"' build/pages/index.html
+          grep -q 'class="sceneWindow"' build/pages/index.html
+          grep -q 'id="useItem"' build/pages/index.html
+          grep -q 'class="deckItem"' build/pages/index.html
+          grep -q 'embed=1' build/pages/recreo.html
           test -f build/pages/capsulas.html
           grep -q "Cabina de Expedición" build/pages/index.html
           grep -q 'src="assets/protagonist-sheet.png"' build/pages/index.html
