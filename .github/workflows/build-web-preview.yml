@@ -69,6 +69,10 @@ jobs:
           grep -q 'class="sceneWindow"' build/pages/index.html
           grep -q 'id="useItem"' build/pages/index.html
           grep -q 'class="deckItem"' build/pages/index.html
+          grep -q 'isl-cabin-fab' build/pages/command-center.html
+          grep -q '100dvh' build/pages/command-center.html
+          ! grep -q 'rpg-control-strip' build/pages/command-center.html
+          ! grep -q 'rpgActivityBar' build/pages/index.html
           grep -q 'embed=1' build/pages/recreo.html
           test -f build/pages/capsulas.html
           grep -q "Cabina de Expedición" build/pages/index.html
