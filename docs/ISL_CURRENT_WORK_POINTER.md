@@ -492,3 +492,30 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
   - migration gate.
 - Current human gate:
   re-open app after restored Pages deploy and perform 3 cold starts.
+
+
+## v0.64 — SURVEY BACKEND RELIABILITY + PILLARS SYNTHESIS
+- Active friend surveys audited for real response persistence.
+- Important finding:
+  - native survey pages use Netlify Forms markup;
+  - current public app is served by GitHub Pages;
+  - GitHub Pages does not process Netlify Forms submissions.
+- Existing public Netlify project confirmed:
+  - islas-voladoras-isl
+  - Forms enabled
+  - legacy molino form has real submissions.
+- Until current portal is redeployed to Netlify with the new forms detected, active friend-test buttons use reliable Jotform backends.
+- PILLARS backend created and active:
+  https://form.jotform.com/262606707094056
+- REFERENCES backend retained:
+  https://form.jotform.com/262605579068063
+- Command Center Friends Test block now routes Pilares and Referencias to reliable response backends.
+- portal/ISL_PUBLIC_DECISIONS_CURRENT.json records backend status explicitly.
+- New analysis template:
+  docs/ISL_PILLARS_SYNTHESIS_TEMPLATE_v0.64.md
+- Synthesis rule:
+  no majority auto-winner; analyze dominant pattern, dissent, confusion, cohort differences and contradictions.
+- Stop criteria remain active before adding systems.
+- Next order:
+  human responses → dialectical synthesis → 3 creatures → persistent NUDOS → crossed CQC → human promotion decision.
+- GitHub Pages deploy run 438: build/CQC/deploy SUCCESS.
