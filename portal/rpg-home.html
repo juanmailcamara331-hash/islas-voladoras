@@ -20,6 +20,8 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
 .tabs{display:flex;gap:6px;overflow:auto;margin-bottom:10px}.tab{border:1px solid var(--line);background:#08131a;color:#abc0c6;border-radius:999px;padding:6px 9px;font-size:8px;white-space:nowrap}.tab.on{color:#fff;border-color:#638894;background:#17303a}.log{display:grid;gap:8px}.loot{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;padding:9px;border:1px solid #25424e;border-radius:12px;background:#09161d}.loot .ico{width:42px;height:42px;border-radius:10px;background:#132631;display:grid;place-items:center;font-size:22px}.loot b{font-size:11px}.loot div div{font-size:8px;color:var(--muted);margin-top:3px}.truth{border-left:3px solid var(--gold);padding:10px 12px;background:#131914;border-radius:7px;font-size:10px;line-height:1.55;color:#c7d4d6}
 .dock{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:30;display:flex;gap:6px;padding:7px;background:#061018df;border:1px solid var(--line);border-radius:15px;backdrop-filter:blur(16px);box-shadow:var(--shadow)}.dock a{width:48px;height:42px;border:1px solid transparent;border-radius:10px;display:grid;place-items:center;font-size:18px}.dock a:hover{background:#11262f;border-color:#355664}
 @media(max-width:980px){.hero{grid-template-columns:1fr}.panel,.panel.wide,.panel.narrow{grid-column:1/-1}.inv{grid-template-columns:repeat(3,1fr)}.paperdoll{grid-template-columns:94px minmax(150px,1fr) 94px}.eqslot{height:62px;padding:5px}.eqslot .sicon{width:36px;height:36px}}@media(max-width:560px){.shell{padding-left:9px;padding-right:9px}.hero{border-radius:18px}.inv{grid-template-columns:repeat(2,1fr)}.paperdoll{grid-template-columns:76px minmax(120px,1fr) 76px;grid-template-rows:repeat(6,60px);gap:5px}.eqslot{height:54px}.eqslot .sicon{width:32px;height:32px;font-size:16px}.eqslot b{font-size:7px}.eqslot small{display:none}.top{align-items:flex-start}.live{font-size:8px}h1{font-size:45px}.profile{padding:12px}}
+
+.itemModal{position:fixed;inset:0;z-index:9998;background:#02070bcc;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(12px)}.itemModal.show{display:flex}.itemSheet{width:min(560px,94vw);border:1px solid #496875;border-radius:18px;background:linear-gradient(180deg,#10232c,#071017);box-shadow:0 30px 100px #000c;padding:18px}.itemSheet h2{margin:4px 0 6px}.itemMeta{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:12px}.itemMeta div{border:1px solid #294755;border-radius:9px;padding:8px;background:#08151c}.itemMeta b{display:block;font-size:8px;color:var(--cyan);letter-spacing:.08em}.itemMeta span{font-size:10px;color:#d7e4e7}.stash{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px;margin-top:12px}.stashSlot{aspect-ratio:1;border:1px solid #2d4b57;border-radius:8px;background:#07131a;display:grid;place-items:center;font-size:18px;position:relative;cursor:pointer}.stashSlot.rare{border-color:#8d6b3f;box-shadow:inset 0 0 18px #ffc56f11}.stashSlot.strange{border-color:#665a8c;box-shadow:inset 0 0 18px #b9a5ff11}.stashSlot small{position:absolute;right:3px;bottom:2px;font-size:6px;color:#9bb0b5}.portalCard{position:relative;overflow:hidden}.portalCard:before{content:"";position:absolute;inset:-35%;background:conic-gradient(from 0deg,transparent,#86efff18,transparent,#b9a5ff18,transparent);animation:portalSpin 12s linear infinite}.portalCore{position:relative;z-index:1}@keyframes portalSpin{to{transform:rotate(360deg)}}@media(max-width:650px){.stash{grid-template-columns:repeat(6,1fr)}}
 </style>
 </head>
 <body>
@@ -80,6 +82,17 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
         <div class="slot sky"><span class="rarity">RARO</span><span class="icon">🧪</span><b>Tubo de Deriva 01</b><small>SEÑAL · CORRIENTES</small></div>
         <div class="slot book"><span class="rarity">RELIQUIA</span><span class="icon">📓</span><b>Cuaderno de Navegación 001</b><small>DOCUMENTO · ACTIVO</small></div>
       </div>
+      <div class="kicker" style="margin-top:16px">Mochila del Cartógrafo</div>
+      <div class="stash" id="stash">
+        <button class="stashSlot rare" data-item="Camisa de Babor" data-origin="Caza 001" data-rarity="RARA" data-real="EXPERIMENTO" data-function="Equipo físico de expedición">👕<small>1</small></button>
+        <button class="stashSlot rare" data-item="Abrigo de Corriente Fría" data-origin="Caza 001" data-rarity="ÉPICA" data-real="EXPERIMENTO" data-function="Protección / clima / identidad">🧥<small>1</small></button>
+        <button class="stashSlot strange" data-item="Muestra de Cielo 01" data-origin="Caza 001" data-rarity="EXTRAÑA" data-real="PROVISIONAL" data-function="Muestra / señal / crafting">◈<small>1</small></button>
+        <button class="stashSlot" data-item="Tubo de Deriva 01" data-origin="Caza 001" data-rarity="RARA" data-real="EXPERIMENTO" data-function="Receptor de corrientes">◌<small>1</small></button>
+        <button class="stashSlot rare" data-item="Cuaderno de Navegación 001" data-origin="Archivo de Corrientes" data-rarity="RELIQUIA" data-real="PROVISIONAL" data-function="Memoria / pistas / registro">📓<small>1</small></button>
+        <button class="stashSlot" data-item="Fibra de Vela" data-origin="Banco de Deriva" data-rarity="COMÚN" data-real="EXPERIMENTO" data-function="Material de crafting">⌁<small>3</small></button>
+        <button class="stashSlot strange" data-item="Eco del Nivel que No Existe" data-origin="Portal raro" data-rarity="SECRETA" data-real="HIPÓTESIS" data-function="Huella persistente">✦<small>?</small></button>
+        <button class="stashSlot" data-item="Slot vacío" data-origin="—" data-rarity="—" data-real="—" data-function="Esperando botín">·</button>
+      </div>
       <div class="truth" style="margin-top:12px"><b>Regla de verdad:</b> “ÉPICO”, “RARO” o “RELIQUIA” son rarezas diegéticas. No significan CANON. Los estados CANON / PROVISIONAL / EXPERIMENTO / REJECTED-LEARNED sólo cambian por gates reales.</div>
     </article>
 
@@ -136,14 +149,14 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
       <div class="actions"><button class="btn primary" id="craftTry">PROBAR COMBINACIÓN</button><span id="craftResult" class="tiny"></span></div>
     </article>
 
-    <article class="panel narrow">
-      <div class="kicker">D3-REF-05 · Portal raro</div>
+    <article class="panel narrow portalCard">
+      <div class="portalCore"><div class="kicker">D3-REF-05 · Portal raro</div>
       <h3>El Umbral que No Figura</h3>
       <div style="height:230px;border:1px solid #365865;border-radius:16px;display:grid;place-items:center;background:radial-gradient(circle,#7defff22,#071017 62%);position:relative;overflow:hidden">
         <div style="width:150px;height:190px;border:2px solid #86efff88;border-radius:50% 50% 42% 42%;box-shadow:0 0 34px #86efff44,inset 0 0 34px #b9a5ff22;display:grid;place-items:center;font-size:54px;color:var(--gold)">⌁</div>
         <div class="tiny" style="position:absolute;bottom:12px">FÍSICA ALTERADA · SIN MARCADOR</div>
       </div>
-      <div class="actions"><a class="btn gold" href="secret-level.html">Cruzar portal</a></div>
+      <div class="actions"><a class="btn gold" href="secret-level.html">Cruzar portal</a></div></div>
     </article>
 
     <article class="panel" style="grid-column:1/-1">
@@ -165,6 +178,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
   <a href="musica.html" title="Música">🎵</a>
   <a href="command-center.html?full=1" title="Centro técnico">⚙️</a>
 </nav>
+<div class="itemModal" id="itemModal"><div class="itemSheet"><div class="kicker">Ficha de objeto</div><h2 id="imName">Objeto</h2><div class="rank" id="imRarity">Rareza</div><div class="itemMeta"><div><b>PROCEDENCIA</b><span id="imOrigin"></span></div><div><b>ESTADO REAL</b><span id="imReal"></span></div><div style="grid-column:1/-1"><b>FUNCIÓN</b><span id="imFunction"></span></div></div><div class="actions"><button class="btn primary" id="equipItem">Equipar visualmente</button><button class="btn" id="closeItem">Cerrar</button></div><div class="tiny">Equipar aquí sólo cambia la presentación RPG local; nunca cambia CANON ni estados de producción.</div></div></div>
 <script>
 (function(){
   var gate=document.getElementById('rpgEnter'),music=document.getElementById('rpgMusic'),enter=document.getElementById('enterCabin');
@@ -172,6 +186,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
   enter.addEventListener('click',startMusic);
   if(localStorage.getItem('isl_rpg_entered')==='1'){music.volume=.34;music.play().then(function(){gate.style.display='none'}).catch(function(){})}
   document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});t.classList.add('on')})});
+  var modal=document.getElementById('itemModal'),currentItem=null;document.querySelectorAll('.stashSlot:not([data-item="Slot vacío"]),.eqslot').forEach(function(el){el.addEventListener('click',function(){currentItem=el;var d=el.dataset;document.getElementById('imName').textContent=d.item||el.querySelector('b')?.textContent||'Equipo';document.getElementById('imRarity').textContent='RAREZA · '+(d.rarity||'DIEGÉTICA');document.getElementById('imOrigin').textContent=d.origin||'Perfil del Cartógrafo';document.getElementById('imReal').textContent=d.real||'PROVISIONAL';document.getElementById('imFunction').textContent=d.function||'Equipo de expedición / función en evaluación';modal.classList.add('show')})});document.getElementById('closeItem').onclick=function(){modal.classList.remove('show')};document.getElementById('equipItem').onclick=function(){if(currentItem){localStorage.setItem('isl_equipped_preview',document.getElementById('imName').textContent);document.getElementById('equipItem').textContent='Equipado en perfil ✓'}};
   var c=document.getElementById('craftTry');if(c)c.onclick=function(){var out=document.getElementById('craftResult');out.textContent='Resultado provisional: Receptor de Corrientes — desbloquea lectura de una corriente, no +stats.';localStorage.setItem('isl_craft_d3ref04','tested')};if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
 })();
 </script>
