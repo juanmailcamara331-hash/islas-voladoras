@@ -1,0 +1,13 @@
+:root{--isl-shell-bg:#07131af2;--isl-shell-line:#36525d;--isl-shell-fg:#eef5f3;--isl-shell-mut:#9db1b6;--isl-shell-cyan:#8defff;--isl-shell-gold:#ffc36e}
+body{padding-bottom:76px!important}
+#islGlobalShell{position:fixed;left:50%;bottom:max(10px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:2147482000;width:min(980px,calc(100vw - 18px));border:1px solid var(--isl-shell-line);border-radius:16px;background:var(--isl-shell-bg);box-shadow:0 16px 44px #000a;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+#islGlobalShell .igsRow{display:flex;align-items:center;gap:4px;padding:6px;overflow-x:auto;scrollbar-width:none}
+#islGlobalShell .igsRow::-webkit-scrollbar{display:none}
+#islGlobalShell a,#islGlobalShell button{flex:0 0 auto;min-width:78px;border:0;border-radius:10px;background:transparent;color:var(--isl-shell-fg);text-decoration:none;text-align:center;padding:8px 9px;font-size:9px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+#islGlobalShell a:hover,#islGlobalShell button:hover,#islGlobalShell .active{background:#10242d;color:#fff;border-bottom:2px solid var(--isl-shell-gold)}
+#islGlobalShell .igsBrand{min-width:52px!important;color:var(--isl-shell-gold)!important;font-family:Georgia,serif;font-size:15px!important}
+#islGlobalMore{position:fixed;right:10px;bottom:88px;z-index:2147481999;width:min(320px,calc(100vw - 20px));display:none;border:1px solid var(--isl-shell-line);border-radius:14px;background:#07131af7;box-shadow:0 18px 50px #000b;padding:8px}
+#islGlobalMore.open{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+#islGlobalMore a{border:1px solid #29434d;border-radius:10px;padding:10px;color:var(--isl-shell-fg);text-decoration:none;font:800 9px system-ui;text-transform:uppercase;background:#0a1a22}
+#islGlobalHomePulse{position:fixed;left:10px;bottom:94px;z-index:2147481998;font:800 8px system-ui;color:var(--isl-shell-mut);background:#07131acc;border:1px solid #27434d;border-radius:999px;padding:6px 8px;pointer-events:none}
+@media(max-width:640px){#islGlobalShell{width:calc(100vw - 10px);bottom:max(5px,env(safe-area-inset-bottom));border-radius:13px}#islGlobalShell a,#islGlobalShell button{min-width:64px;padding:8px 7px;font-size:8px}#islGlobalHomePulse{display:none}body{padding-bottom:72px!important}}
