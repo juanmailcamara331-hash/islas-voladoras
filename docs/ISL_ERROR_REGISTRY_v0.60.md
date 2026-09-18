@@ -208,3 +208,71 @@ Run restaurado:
 
 Regla:
 No entregar APK remota basándose sólo en el artefacto Android.
+
+
+## ERR-UI-007 · drawer Más no se cierra al tocar fuera
+Síntoma:
+- en móvil el menú lateral permanece abierto al tocar fuera;
+- obliga a buscar el mismo botón de apertura para cerrarlo.
+
+Entidad:
+- NAVIGATION
+- INPUT
+- UI_LAYOUT
+
+Categoría:
+- J INPUT
+- T PLAYER_EXPERIENCE_CLARITY
+
+Severidad:
+- S2 MAJOR para claridad móvil.
+
+Causa:
+- el drawer sólo alternaba estado desde los botones de apertura;
+- no existía outside-click/pointerdown ni cierre al seleccionar destino.
+
+Fix:
+- helper setDrawer(open);
+- cierre por pointerdown fuera del drawer;
+- cierre al seleccionar link/item;
+- Escape cierra y aria-expanded vuelve a false.
+
+Regression guard:
+- portal/index.html debe contener setDrawer(false) en outside-click y current drawer controls.
+
+status: FIXED_PENDING_HUMAN
+first_seen: 2026-09-18
+recurrence_count: 1
+
+## ERR-UX-008 · acciones temporales importantes no visibles
+Síntoma:
+- encuestas, pruebas humanas o siguiente acción existen pero quedan enterradas;
+- el usuario no sabe qué debe hacer “ahora” desde el Centro de Mandos.
+
+Entidad:
+- UI_LAYOUT
+- NAVIGATION
+- PLAYER_EXPERIENCE_CLARITY
+
+Severidad:
+- S2 MAJOR para el Command Center como herramienta operativa.
+
+Causa:
+- navegación permanente y acciones temporales compartían la misma jerarquía;
+- no existía un slot operativo de fase actual.
+
+Fix:
+- bloque reusable #currentActions encima del hero;
+- etiqueta AHORA;
+- copy de fase actual;
+- enlaces temporales visibles sin convertirlos en navegación permanente.
+
+Regla:
+- currentActions cambia con la fase;
+- no acumular tareas viejas;
+- máximo 2–3 acciones de alta prioridad;
+- lo permanente sigue en navegación/drawer.
+
+status: FIXED_PENDING_HUMAN
+first_seen: 2026-09-18
+recurrence_count: 1
