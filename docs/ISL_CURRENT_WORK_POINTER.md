@@ -108,3 +108,13 @@ KEEP: identity/tone/capsules/music lab/PS4/playtest method.
 TUNE: public Netlify metadata/indexability/README/poll framing.
 MISSING LATER: email waitlist/press kit/Steam kit/creator outreach/crowdfunding prelaunch model.
 BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype gates.
+
+
+## 2026-09-18 · v0.27 SIDEQUEST / PHYSICAL + MUSIC
+- Visual Campaign Lab active (VIS-00 / DD-VIS-01).
+- 6-track collection locked as candidates: Cielo y Descenso v0.3.
+- Reprography HD image artifact generated: ISL_IMAGENES_HD_001.zip.
+- Physical layer started: Cabina de Cartógrafo / Archivo de Corrientes.
+- PWA install + Avisos + Music Hub implemented.
+- vidIQ SEO research: lead with relaxing/cozy fantasy intent; do not lead with 'airship music'.
+- PRE50 remains pending real human playtest; no CANON promotion.
