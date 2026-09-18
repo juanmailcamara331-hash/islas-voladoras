@@ -23,7 +23,7 @@ Access control observed at creation:
 
 ## Build
 Config:
-netlify-private.toml
+netlify.private.toml
 
 Command:
 bash netlify-private-build.sh
