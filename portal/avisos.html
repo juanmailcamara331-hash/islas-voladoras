@@ -22,7 +22,7 @@ function paintStatus(){
  status.textContent='Notificaciones: '+n+'. Los avisos programados con la app cerrada requieren push/Calendar; aquí funcionan feed + avisos nativos bajo interacción.';
 }
 allow.onclick=async()=>{if(!('Notification'in window)){paintStatus();return}await Notification.requestPermission();paintStatus()};
-test.onclick=async()=>{if(!('Notification'in window))return;if(Notification.permission!=='granted'){await Notification.requestPermission()}if(Notification.permission==='granted'){const reg=await navigator.serviceWorker.ready;reg.showNotification('ISL · El viento ha cambiado de idea',{body:'Aviso de prueba. Si lees esto, el Centro puede hablarte.',icon:'isl-icon-canon.svg',badge:'isl-icon-canon.svg',data:{url:'recreo.html'}})}paintStatus()};
+test.onclick=async()=>{if(!('Notification'in window))return;if(Notification.permission!=='granted'){await Notification.requestPermission()}if(Notification.permission==='granted'){const reg=await navigator.serviceWorker.ready;reg.showNotification('ISL · El viento ha cambiado de idea',{body:'Aviso de prueba. Si lees esto, el Centro puede hablarte.',icon:'isl-icon-master.png',badge:'isl-icon-master.png',data:{url:'recreo.html'}})}paintStatus()};
 fetch('isl-notices-current.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{grid.innerHTML=(j.notices||[]).map(x=>'<article class="card"><div class="kind">'+x.kind+'</div><div class="title">'+x.title+'</div><div class="body">'+x.body+'</div><div class="row"><a class="btn" href="'+x.url+'">ABRIR</a></div></article>').join('')});
 paintStatus();
 </script></body></html>
