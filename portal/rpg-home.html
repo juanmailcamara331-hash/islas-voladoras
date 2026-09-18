@@ -14,7 +14,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
 .hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,#122832dd,#081319ee);box-shadow:var(--shadow);padding:clamp(18px,4vw,46px);min-height:310px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:22px;align-items:center}
 .hero:after{content:"";position:absolute;right:-80px;top:-120px;width:430px;height:430px;border:1px solid #7be7ff35;border-radius:50%;box-shadow:0 0 0 45px #7be7ff08,0 0 0 90px #ffc56f08}
 .eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}h1{font-size:clamp(38px,7vw,82px);line-height:.9;letter-spacing:-.05em;margin:8px 0 13px}.subtitle{max-width:760px;color:#bfd0d4;line-height:1.55}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.btn{border:1px solid var(--line);background:#0a1720;padding:10px 13px;border-radius:11px;font-weight:800;font-size:12px}.btn.primary{background:#17333d;border-color:#4a8892;color:white}.btn.gold{background:#30271d;border-color:#8d6b3f}
-.profile{position:relative;z-index:2;border:1px solid #42616e;background:#071218c9;border-radius:18px;padding:15px}.portrait{width:72px;height:72px;border:1px solid #63808a;border-radius:17px;display:grid;place-items:center;font-size:30px;background:linear-gradient(135deg,#12313a,#111b24);box-shadow:inset 0 0 28px #74eaff10}.profile h2{margin:10px 0 3px;font-size:22px}.rank{color:var(--gold);font-size:11px;font-weight:900}.xp{height:8px;background:#071016;border:1px solid #294854;border-radius:99px;overflow:hidden;margin:12px 0 5px}.xp>i{display:block;width:62%;height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold))}.tiny{font-size:9px;color:var(--muted);line-height:1.5}
+.profile{position:relative;z-index:2;border:1px solid #42616e;background:#071218e8;border-radius:18px;padding:12px;overflow:hidden}.portrait{position:relative;height:210px;border:1px solid #63808a;border-radius:14px;overflow:hidden;background:#071016}.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 24%;filter:saturate(.82) contrast(1.08)}.portrait:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,#071218dd 100%);pointer-events:none}.hudmark{position:absolute;z-index:2;width:28px;height:28px;border:1px solid #77e9ff88;background:#061017cc;color:var(--cyan);display:grid;place-items:center;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-size:11px}.hudmark.a{left:9px;top:9px}.hudmark.b{right:9px;top:9px;color:var(--gold);border-color:#ffc56f88}.hudmark.c{right:9px;bottom:9px;color:var(--violet);border-color:#b9a5ff88}.companion{position:absolute;left:10px;bottom:9px;z-index:2;width:72px;height:72px;border-radius:50%;border:1px solid #ffc56f88;background:radial-gradient(circle at 40% 35%,#8defff35,#0b1820 62%);box-shadow:0 0 24px #86efff22;display:grid;place-items:center;overflow:hidden}.companion:before{content:"◈";font-size:34px;color:var(--gold);text-shadow:0 0 16px #ffc56f55}.companion span{position:absolute;bottom:4px;font-size:6px;letter-spacing:.12em;color:#dfe9ea;background:#061017cc;padding:2px 4px;border-radius:4px}.profile h2{margin:10px 0 3px;font-size:22px}.rank{color:var(--gold);font-size:11px;font-weight:900}.xp{height:8px;background:#071016;border:1px solid #294854;border-radius:99px;overflow:hidden;margin:12px 0 5px}.xp>i{display:block;width:62%;height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold))}.tiny{font-size:9px;color:var(--muted);line-height:1.5}
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:12px}.panel{grid-column:span 6;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#10242dd8,#09141be8);box-shadow:var(--shadow);padding:16px}.panel.wide{grid-column:span 8}.panel.narrow{grid-column:span 4}.kicker{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}h3{font-size:20px;margin:5px 0 12px}.mission{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #1e3540}.mission:last-child{border-bottom:0}.sigil{width:38px;height:38px;border:1px solid #395966;border-radius:10px;display:grid;place-items:center;background:#0c1a21}.mission b{display:block;font-size:12px}.mission small{color:var(--muted);font-size:9px}.state{font-size:8px;border:1px solid #6c5b36;color:var(--gold);border-radius:999px;padding:4px 6px;white-space:nowrap}.state.real{color:var(--rose);border-color:#6e4148}
 .inv{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.slot{min-width:0;border:1px solid #2a4a57;border-radius:13px;background:#08151c;padding:9px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.slot:before{content:"";position:absolute;inset:6px;border:1px dashed #36586555;border-radius:9px}.slot .icon,.slot b,.slot small,.rarity{position:relative;z-index:1}.icon{font-size:26px}.slot b{font-size:10px;line-height:1.2}.slot small{font-size:7px;color:var(--muted)}.rarity{position:absolute;right:7px;top:7px;font-size:7px;color:var(--gold);letter-spacing:.07em}.slot.relic{box-shadow:inset 0 0 24px #ffc36e08}.slot.sky{box-shadow:inset 0 0 24px #87efff0d}.slot.book{box-shadow:inset 0 0 24px #bba4ff0d}
 .tabs{display:flex;gap:6px;overflow:auto;margin-bottom:10px}.tab{border:1px solid var(--line);background:#08131a;color:#abc0c6;border-radius:999px;padding:6px 9px;font-size:8px;white-space:nowrap}.tab.on{color:#fff;border-color:#638894;background:#17303a}.log{display:grid;gap:8px}.loot{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;padding:9px;border:1px solid #25424e;border-radius:12px;background:#09161d}.loot .ico{width:42px;height:42px;border-radius:10px;background:#132631;display:grid;place-items:center;font-size:22px}.loot b{font-size:11px}.loot div div{font-size:8px;color:var(--muted);margin-top:3px}.truth{border-left:3px solid var(--gold);padding:10px 12px;background:#131914;border-radius:7px;font-size:10px;line-height:1.55;color:#c7d4d6}
@@ -23,6 +23,10 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
 </style>
 </head>
 <body>
+<div id="rpgEnter" style="position:fixed;inset:0;z-index:9999;background:radial-gradient(circle at 50% 35%,#183b46,#050b10 62%);display:grid;place-items:center;padding:24px">
+  <button id="enterCabin" class="btn primary" style="font-size:16px;padding:15px 20px;box-shadow:0 0 38px #86efff22">ENTRAR EN LA CABINA · ACTIVAR MÚSICA</button>
+</div>
+<audio id="rpgMusic" src="assets/airships-last-waltz-master.mp3" preload="auto" loop></audio>
 <main class="shell">
   <div class="top"><div class="brand">ISL · EXPEDITION OS</div><div class="live">● CHECKPOINT v0.29 · PRE50 PENDIENTE</div></div>
   <section class="hero">
@@ -38,7 +42,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
       </div>
     </div>
     <aside class="profile">
-      <div class="portrait">🧭</div>
+      <div class="portrait"><img src="assets/protagonist-sheet.png" alt="Protagonista ISL"><i class="hudmark a">⌁</i><i class="hudmark b">◇</i><i class="hudmark c">∴</i><div class="companion"><span>MASCOTA</span></div></div>
       <h2>Cartógrafo</h2>
       <div class="rank">RANGO · NAVEGANTE DE CORRIENTES</div>
       <div class="xp"><i></i></div>
@@ -90,6 +94,17 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
       <div class="actions"><a class="btn gold" href="musica.html">Ver las 6 pistas</a></div>
     </article>
   </section>
+    <article class="panel" style="grid-column:1/-1;padding:0;overflow:hidden">
+      <div style="position:relative;min-height:300px">
+        <img src="assets/floating-islands-map.png" alt="Mapa de Islas Voladoras" style="width:100%;height:360px;object-fit:cover;display:block;filter:saturate(.78) contrast(1.05)">
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,#071017ed 0,#07101788 40%,transparent 75%),linear-gradient(0deg,#071017cc,transparent 70%);padding:24px;display:flex;flex-direction:column;justify-content:flex-end">
+          <div class="kicker">Mapa de expedición</div>
+          <h3 style="font-size:28px;margin:5px 0">Archipiélago vivo</h3>
+          <div class="tiny" style="max-width:560px;font-size:11px">Mapa visual de ruta. Los marcadores RPG son navegación diegética; los estados reales siguen viniendo del Lifecycle / PRE / CQC.</div>
+        </div>
+      </div>
+    </article>
+  </section>
 </main>
 <nav class="dock" aria-label="Accesos RPG">
   <a href="#" title="Perfil">🧭</a>
@@ -100,6 +115,10 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
 </nav>
 <script>
 (function(){
+  var gate=document.getElementById('rpgEnter'),music=document.getElementById('rpgMusic'),enter=document.getElementById('enterCabin');
+  function startMusic(){music.volume=.34;var p=music.play();if(p&&p.catch)p.catch(function(){});gate.style.display='none';localStorage.setItem('isl_rpg_entered','1')}
+  enter.addEventListener('click',startMusic);
+  if(localStorage.getItem('isl_rpg_entered')==='1'){music.volume=.34;music.play().then(function(){gate.style.display='none'}).catch(function(){})}
   document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});t.classList.add('on')})});
   if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
 })();
