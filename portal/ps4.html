@@ -12,7 +12,7 @@ body{background:radial-gradient(circle at 72% 8%,#18364a 0,transparent 30%),line
 .menu{padding:9px;border:1px solid #304b58;background:#061018d9;border-radius:10px;backdrop-filter:blur(12px)}
 .btn{background:linear-gradient(180deg,#10222d,#091720);border-color:#365462;border-radius:7px}.btn:hover,.btn:focus{border-color:#a27b45;background:#172b34}
 .panel,.card{border-color:#304b58;background:linear-gradient(180deg,#0f222ce6,#08151de6)}
-</style></head><body>
+</style><link rel="stylesheet" href="isl-global-shell.css">\n</head><body>
 <div id="boot" class="boot"><div class="bootBox"><div class="k">ISLAS VOLADORAS · PS4</div><div class="bootTitle">Centro de Mandos</div><div class="bootHint">Pulsa X / Enter una vez. Después recordaremos tu posición, página de galería y preferencias para que al volver no aparezca esta bienvenida.</div><button id="bootBtn" class="bootBtn">X · ENTRAR</button></div></div>
 <audio id="ambience" loop preload="none" src="assets/airships-last-waltz-master.mp3"></audio><a id="inicio" class="hiddenAnchor"></a>
 <div class="wrap"><div class="top"><div><div class="brand">ISL <b>// PS4 COMMAND CENTER</b></div><div class="small">Mando · galería completa · estado persistente · audio · fullscreen</div></div><div class="small">ISLAS VOLADORAS · 2026</div></div>
@@ -51,4 +51,4 @@ function geom(dir){refresh();var cur=document.activeElement;if(nodes.indexOf(cur
 document.addEventListener('keydown',function(ev){if(boot.className.indexOf('hidden')<0&&(ev.key==='Enter'||ev.keyCode===13||ev.keyCode===32)){ev.preventDefault();enter();return}if(boot.className.indexOf('hidden')<0)return;retryMedia();var k=ev.key||ev.keyCode;if(k==='ArrowLeft'||k===37){ev.preventDefault();geom('left')}else if(k==='ArrowRight'||k===39){ev.preventDefault();geom('right')}else if(k==='ArrowUp'||k===38){ev.preventDefault();geom('up')}else if(k==='ArrowDown'||k===40){ev.preventDefault();geom('down')}});
 document.addEventListener('click',function(){if(boot.className.indexOf('hidden')>=0)retryMedia()},true);window.addEventListener('beforeunload',savePos);window.addEventListener('pagehide',savePos);window.addEventListener('pageshow',function(){if(localStorage.getItem(K_ENTER)==='1'){boot.className='boot hidden';restoreState(80)}});window.addEventListener('load',function(){bindSaveLinks();if(localStorage.getItem(K_ENTER)==='1'){boot.className='boot hidden';restoreState(120)}else{renderGallery();bootBtn.focus()}paint()});window.addEventListener('resize',refresh);
 })();
-</script></body></html>
+</script><script defer src="isl-global-shell.js"></script>\n</body></html>
