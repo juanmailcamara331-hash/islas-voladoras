@@ -166,3 +166,20 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
   - docs/ISL_REFERENCE_MATRIX_v0.47.md
 - Next build: cheap prototype Brújula v2 → 3 initial relics → logical greybox Salón → minimal Isla district → 3 creatures → persistent knots → crossed CQC B×A.
 - PRE50 remains PENDING REAL HUMAN; no CANON promotion from this package alone.
+
+
+## v0.48 — BRÚJULA v2 + 3 RELIQUIAS · PROTOTIPO REAL
+- portal/huellas.html upgraded in place; no shell reset.
+- Brújula v2 now stores explicit versioned events in isl_huellas_events_v2.
+- Six live reading modes: Sendero, Eco, Máscara, Consejo, Trance, Umbral.
+- Cheap lab covers: 3 physical approaches, one relational tradeoff, rhythmic contagion, and a meaningful omission.
+- Anti-farming: repeated equivalent events lose significance.
+- v1 echo key remains compatible.
+- RPG inventory now includes:
+  - Metrónomo sin Dueño
+  - Sello de Barro Vivo
+  - Media Máscara del Aplauso
+- Using those relics writes compatible v2 traces; none grants moral score or hardware advantage.
+- CI guards added for v2 keys/modes/lab and the 3 relic prototypes.
+- Status remains PROVISIONAL FUERTE pending human playtest/CQC.
+- Next: logical greybox of Salón de las Cortinas Rojas wired to these systems.
