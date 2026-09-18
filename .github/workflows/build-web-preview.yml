@@ -127,6 +127,10 @@ jobs:
           grep -q 'name="cohort" value="friends-01"' build/pages/poll/referencias-amigos.html
           grep -q 'name="cohort" value="friends-01"' build/pages/poll/pilares-argumento.html
           grep -q 'name="survey_version" value="v0.65-r3"' build/pages/poll/referencias-amigos.html
+          grep -q 'id="leaveTraceSubmit"' build/pages/poll/referencias-amigos.html
+          grep -q 'Guardando tu huella' build/pages/poll/referencias-amigos.html
+          grep -q 'id="leaveEvidenceSubmit"' build/pages/poll/pilares-argumento.html
+          grep -q 'Guardando evidencia' build/pages/poll/pilares-argumento.html
           grep -q 'id="currentActions"' build/pages/index.html
           grep -q 'function setDrawer(open)' build/pages/index.html
           grep -q "setDrawer(false)" build/pages/index.html
