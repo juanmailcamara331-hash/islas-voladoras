@@ -44,7 +44,7 @@
     player.id='ps4AudioBridge';
     player.setAttribute('playsinline','playsinline');
     player.setAttribute('webkit-playsinline','webkit-playsinline');
-    player.setAttribute('preload','auto');
+    player.setAttribute('preload','none');
     player.loop=true;player.autoplay=false;player.controls=false;player.volume=1;player.muted=false;
     document.body.appendChild(player);
 
