@@ -1,0 +1,38 @@
+name: Audit ISL Portal v0.68
+
+on:
+  push:
+    branches:
+      - portal-v068-command-center
+    paths:
+      - "portal/**"
+      - "scripts/portal-v068-ui-gate.py"
+      - "docs/ISL_PORTAL_V068_UI_ARCHITECTURE.md"
+      - ".github/workflows/portal-v068-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portal-v068:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: v0.68 static UI gate
+        run: python3 scripts/portal-v068-ui-gate.py
+
+      - name: Build full portal
+        run: bash netlify-portal-build.sh
+
+      - name: Validate composed Command Center
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test -f build/site/command-center.html
+          grep -q 'id="isl-v068-reference-layout"' build/site/command-center.html
+          grep -q 'class="quickDock"' build/site/command-center.html
+          grep -q 'id="isl-v068-route-live"' build/site/command-center.html
+          grep -q 'PS4 VERSION' build/site/command-center.html
+          echo "PORTAL_V068_BUILD=GREEN"
