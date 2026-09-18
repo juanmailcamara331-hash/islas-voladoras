@@ -519,3 +519,21 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Next order:
   human responses → dialectical synthesis → 3 creatures → persistent NUDOS → crossed CQC → human promotion decision.
 - GitHub Pages deploy run 438: build/CQC/deploy SUCCESS.
+
+
+## v0.65 — NATIVE VISUAL SURVEYS + RETROACTIVE RE-AUDIT
+- Decision: Jotform is backup only, never the intended primary UX.
+- Native ISL surveys are primary visual surfaces.
+- Netlify production build now includes:
+  - poll/pilares-argumento.html
+  - poll/referencias-amigos.html
+- Command Center Friends Test buttons point to native ISL visual surveys on Netlify.
+- Netlify Forms is intended primary backend; Jotform remains silent backup.
+- Production deploy airlock triggered by updating NETLIFY_DEPLOY_v0.7.2.md.
+- New mandatory retrospective audit:
+  docs/ISL_RETROACTIVE_REAUDIT_MASTER_v0.65.md
+- All existing work will be reclassified through:
+  entities → dependencies → known bugs → severity → regressions → T0–T8 tests → backup/rollback → human evidence → decision.
+- Backup policy split into:
+  code / save-state / design-canon / deploy / assets.
+- No major new system expansion until R1 shell/deploy, R2 UI/navigation, and R3 surveys/evidence are GREEN.
