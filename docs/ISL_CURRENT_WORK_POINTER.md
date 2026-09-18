@@ -670,3 +670,54 @@ Lite v2 live verification:
 
 Pipeline:
 R1/R2 technical GREEN → human tactile recheck → Lite v2 colleagues → dialectical synthesis → 3 creatures → NUDOS → crossed CQC → human decision.
+
+
+## v0.69 · GLOBAL COMMAND CENTER CONTINUITY / NAVIGATION PASS
+Fecha: 2026-09-19
+Estado: IMPLEMENTADO · CI/PAGES EN VALIDACIÓN
+
+Objetivo:
+- todas las superficies internas deben sentirse como el mismo Centro de Mandos;
+- menú global persistente;
+- enlaces auditables;
+- Atrás/retorno no debe resucitar la bienvenida;
+- Ruta ISL debe explicar AHORA → SIGUIENTE → DESPUÉS sin solapamiento visual;
+- Cápsulas deben responder al click.
+
+Implementación:
+- nuevo portal/isl-global-shell.css
+- nuevo portal/isl-global-shell.js
+- shell global añadido a:
+  index / rpg-home / huellas / salón rojo / isla baile / recreo / cápsulas / cápsulas TV / música / PS4.
+- accesos globales:
+  Centro / Ruta / Perfil / Brújula / Cápsulas / Recreo / Más.
+- Más expone Cápsulas TV / PS4 / Música / Salón Rojo / Isla Baile / Centro técnico.
+- resume=1 + session marker evita reentrada por welcome al volver al Centro.
+- index entiende #home y #calendar como reanudación interna.
+
+Cápsulas:
+- las tarjetas son ahora focuseables y abribles.
+- modal de lectura real.
+- acción GUARDAR ECO.
+- salto a Modo TV.
+- cierre tocando fuera.
+
+Ruta ISL:
+- route state actualizado a v0.69.
+- current_stop = r2-human.
+- pipeline visible:
+  R1 → R2 → Lite v2 colegas → síntesis → 3 criaturas → NUDOS → CQC B×A → decisión humana.
+- route-isl.js reemplaza el mapa superpuesto por lectura secuencial.
+- calendario queda como capa secundaria desplegable.
+
+Regresión:
+- nuevo scripts/navigation-link-gate.py.
+- audita destinos href/action internos.
+- exige shell global en superficies principales.
+- exige contrato resume/welcome.
+- exige interacción Cápsulas.
+- exige claridad de Ruta.
+- build-web-preview ejecuta el gate en cada Pages build.
+
+Regla:
+No declarar R2 HUMAN GREEN hasta comprobar esta versión en Android físico.
