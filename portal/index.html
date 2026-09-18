@@ -223,6 +223,11 @@ body.spectacle #home .heroText{padding-top:18vh!important}
   font-size:9px!important;
 }
 #moreNavBtn{border:1px solid #675236!important;border-radius:999px!important;padding-inline:12px!important;color:#f4ddb0!important}
+.currentActions{margin:10px 12px 0;border:1px solid #4b6670;background:linear-gradient(135deg,#0d2028,#101b19);border-radius:12px;padding:10px;display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;box-shadow:0 12px 26px #0004}
+.currentActions .nowBadge{font-size:8px;font-weight:950;letter-spacing:.14em;color:#071017;background:#8defff;border-radius:999px;padding:7px 9px;white-space:nowrap}
+.currentActions .nowCopy{min-width:0}.currentActions .nowCopy b{display:block;font-size:11px;color:#f5ead2}.currentActions .nowCopy span{display:block;font-size:8px;color:#a9bcc0;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.currentActions .nowLinks{display:flex;gap:6px;flex-wrap:nowrap}.currentActions .nowLinks a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:8px 10px;border:1px solid #6f5a35;border-radius:9px;background:#241b10;color:#ffe5af;text-decoration:none;font-size:8px;font-weight:900;white-space:nowrap}
+@media(max-width:620px){.currentActions{grid-template-columns:auto 1fr;gap:8px}.currentActions .nowLinks{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.currentActions .nowLinks a{min-height:42px;font-size:9px}}
 @media(max-width:620px){
   .finalNav .brandLock b{display:none!important}
   .finalNav .brandLock img{width:36px!important;height:36px!important}
@@ -295,6 +300,14 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <a href="musica.html">Música</a>
     <button id="moreNavBtn" type="button" aria-expanded="false" aria-controls="drawer">Más</button>
   </nav>
+  <section class="currentActions" id="currentActions" aria-label="Qué toca ahora">
+    <div class="nowBadge">AHORA</div>
+    <div class="nowCopy"><b>R1/R2 · prueba física + encuestas listas</b><span>Acciones temporales importantes. Cambian con la fase; no ensucian el menú permanente.</span></div>
+    <div class="nowLinks">
+      <a href="https://islas-voladoras-isl.netlify.app/poll/pilares-argumento.html" target="_blank" rel="noopener">PILARES ↗</a>
+      <a href="https://islas-voladoras-isl.netlify.app/poll/referencias-amigos.html" target="_blank" rel="noopener">REFERENCIAS ↗</a>
+    </div>
+  </section>
   <div class="finalHero">
     <img src="assets/island-a-master.jpg" alt="Islas Voladoras">
     <div class="finalHeroCopy"><div class="k">CENTRO DE MANDOS · ISLAS VOLADORAS</div><h1>Un mundo que recuerda tus pasos</h1><p>Explora · crea · deja huella. La aventura, la memoria y el laboratorio creativo viven en una sola cabina.</p><div class="actions"><a class="cta" href="rpg-home.html">CONTINUAR AVENTURA →</a></div></div>
@@ -468,12 +481,29 @@ let weights=JSON.parse(localStorage.getItem('islcc_weights')||'null')||{identity
 let selected=JSON.parse(localStorage.getItem('islcc_selected')||'[]');
 let ratings=JSON.parse(localStorage.getItem('islcc_ratings')||'{}');
 function save(){localStorage.setItem('islcc_weights',JSON.stringify(weights));localStorage.setItem('islcc_selected',JSON.stringify(selected));localStorage.setItem('islcc_ratings',JSON.stringify(ratings))}
-function go(id){document.querySelectorAll('.view,.rail button[data-view]').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');let b=document.querySelector(`[data-view="${id}"]`);if(b)b.classList.add('active');drawer.classList.remove('open');if(id==='compare')renderCompare();window.scrollTo(0,0)}
+function go(id){document.querySelectorAll('.view,.rail button[data-view]').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');let b=document.querySelector(`[data-view="${id}"]`);if(b)b.classList.add('active');setDrawer(false);if(id==='compare')renderCompare();window.scrollTo(0,0)}
 document.querySelectorAll('.rail button[data-view]').forEach(b=>b.onclick=()=>go(b.dataset.view));
 document.querySelectorAll('[data-main-nav]').forEach(function(b){b.onclick=function(){go(b.dataset.mainNav)}});
-if(menuBtn)menuBtn.onclick=()=>drawer.classList.toggle('open');
+function setDrawer(open){
+  drawer.classList.toggle('open',!!open);
+  if(moreNavBtn)moreNavBtn.setAttribute('aria-expanded',open?'true':'false');
+}
+if(menuBtn)menuBtn.onclick=function(e){e.stopPropagation();setDrawer(!drawer.classList.contains('open'))};
 var moreNavBtn=document.getElementById('moreNavBtn');
-if(moreNavBtn)moreNavBtn.onclick=function(){var open=drawer.classList.toggle('open');moreNavBtn.setAttribute('aria-expanded',open?'true':'false')};
+if(moreNavBtn)moreNavBtn.onclick=function(e){e.stopPropagation();setDrawer(!drawer.classList.contains('open'))};
+document.addEventListener('pointerdown',function(e){
+  if(!drawer.classList.contains('open'))return;
+  if(drawer.contains(e.target))return;
+  if(moreNavBtn&&moreNavBtn.contains(e.target))return;
+  if(menuBtn&&menuBtn.contains(e.target))return;
+  setDrawer(false);
+});
+drawer.addEventListener('click',function(e){
+  if(e.target.closest('a,.item'))setDrawer(false);
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'&&drawer.classList.contains('open'))setDrawer(false);
+});
 if(musicBtn)musicBtn.onclick=()=>track.classList.toggle('show');
 if(tvBtn)tvBtn.onclick=()=>document.body.classList.toggle('tv');
 function initFilters(){[...new Set(assets.map(x=>x.cat))].forEach(x=>cat.innerHTML+=`<option>${x}</option>`);[...new Set(assets.map(x=>x.status))].forEach(x=>st.innerHTML+=`<option>${x}</option>`)}
