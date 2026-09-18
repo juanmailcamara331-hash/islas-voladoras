@@ -14,7 +14,8 @@ jobs:
   deploy-private:
     runs-on: ubuntu-latest
     env:
-      NETLIFY_SITE_ID: 6182a9ad-e228-41b9-816a-1cf7d750e7e7
+      NETLIFY_SITE_ID: c743d925-3898-45f4-b8f4-b2565f60e8c1
+      PRIVATE_ALIAS: private-command
     steps:
       - uses: actions/checkout@v4
 
@@ -45,22 +46,23 @@ jobs:
           grep -q "X-Robots-Tag: noindex" build/private/_headers
           grep -q "Cache-Control: no-store, private" build/private/_headers
 
-      - name: Link private Netlify project
+      - name: Link authorized Netlify project
         shell: bash
         run: |
           mkdir -p .netlify
           printf '{"siteId":"%s"}\n' "$NETLIFY_SITE_ID" > .netlify/state.json
           test -s .netlify/state.json
-          cat .netlify/state.json
 
-      - name: Deploy to private Netlify project
+      - name: Deploy private SSO alias
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: |
           npx -y netlify-cli@latest deploy \
             --dir=build/private \
-            --prod \
+            --alias="$PRIVATE_ALIAS" \
             --auth="$NETLIFY_AUTH_TOKEN"
 
       - name: Deployment gate
-        run: echo "PRIVATE_NETLIFY_DEPLOY=GREEN"
+        run: |
+          echo "PRIVATE_NETLIFY_ALIAS=GREEN"
+          echo "Expected protected alias: https://private-command--islas-voladoras-isl.netlify.app"
