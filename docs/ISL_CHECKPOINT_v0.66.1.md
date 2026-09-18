@@ -124,3 +124,16 @@ After R1/R2 GREEN:
 
 ## Principle
 Scientific rigor protects creative brutality.
+
+
+## SECURITY v0.67
+- Public surface uses allowlist; private-by-default policy documented.
+- Public Netlify redirects to internal GitHub Pages removed.
+- Command Center Pages: noindex/nofollow/noarchive + robots Disallow all.
+- Private Netlify project provisioned: islas-voladoras-isl-private-i1oq.
+- Private site ID: 6182a9ad-e228-41b9-816a-1cf7d750e7e7.
+- SSO team access required for all private project routes at creation.
+- netlify-private.toml added with no-store/private and X-Robots-Tag.
+- private-build-audit GitHub workflow added.
+- APK migration BLOCKED until PRIVATE_WEB_GREEN + PRIVATE_ACCESS_GREEN + HUMAN_DEVICE_GREEN.
+- Public release marker v0.67 triggered; last observed public deploy still old 6aadaaa8426764ffe5174cb3.
