@@ -35,9 +35,20 @@ for path in [
 ]:
     need(Path(path).exists(), f"missing security artifact: {path}")
 
+# PUBLIC/PRIVATE build separation
+pub_build=Path("netlify-public-build.sh").read_text(encoding="utf-8")
+need("pilares-lite-v2.html" in pub_build, "public build missing Pilares Lite v2")
+need("referencias-lite-v2.html" in pub_build, "public build missing Referencias Lite v2")
+for forbidden in ["command-center.html","rpg-home.html","route-isl.js","huellas.html","secret-level.html"]:
+    need(forbidden in pub_build, f"public build must explicitly forbid private surface: {forbidden}")
+
+portal_index=Path("portal/index.html").read_text(encoding="utf-8")
+need('name="robots" content="noindex' in portal_index, "Command Center must be noindex")
+need(Path("portal/robots.txt").exists(), "missing portal robots.txt")
+
 if errors:
     print("SECURITY GATE FAILED")
     for e in errors: print(" -",e)
     sys.exit(1)
 
-print("SECURITY GATE OK: pinned deps + headers + poll abuse controls + security artifacts")
+print("SECURITY GATE OK: pinned deps + headers + poll abuse controls + security artifacts + PUBLIC/PRIVATE build separation")
