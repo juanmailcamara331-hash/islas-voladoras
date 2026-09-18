@@ -1,5 +1,5 @@
 {
-  "version": "0.16.1",
+  "version": "0.17.0",
   "updated_at": "2026-09-18",
   "phase": "REVISIÓN DE AVENTURA PRINCIPAL",
   "phase_status": "EN CURSO",
@@ -176,5 +176,14 @@
     "rule": "Todo lo ya construido se conserva o revalida según dependencias; no se rehace por defecto.",
     "top_priority": "REVISIÓN DE AVENTURA PRINCIPAL",
     "anti_monster": "El Centro de Mandos responde primero a AHORA / BLOQUEO / PRODUCTION LANE / RIESGO. Herramientas secundarias no compiten visualmente."
+  },
+  "toolchain": {
+    "checkpoint": "OLYMPUS_TOOLCHAIN_DISCOVERY_OS",
+    "metricool": "CONNECTED_VERIFIED: Instagram + TikTok + YouTube",
+    "windsor": "CONNECTED_VERIFIED: GA4 + YouTube; Search Console optional",
+    "posthog": "INSTALLED; instrument at playable build",
+    "jotform": "ACTIVE human discovery form",
+    "public_private_split": "ARCHITECTURE_PREPARED; private Netlify site created with SSO, source deploy still pending",
+    "rule": "Integration on demand; avoid accumulation."
   }
 }
