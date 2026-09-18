@@ -1,0 +1,47 @@
+name: ISL Platform Capability Gate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/ISL_CROSSPLAY_DEVICE_SCALABILITY_METHOD_v0.45.md"
+      - "docs/ISL_PLATFORM_CAPABILITY_MATRIX_v0.45.json"
+      - "docs/ISL_CABARET_ENTROPY_METHOD_v0.44.md"
+      - ".github/workflows/platform-capability-gate.yml"
+  pull_request:
+    paths:
+      - "docs/ISL_CROSSPLAY_DEVICE_SCALABILITY_METHOD_v0.45.md"
+      - "docs/ISL_PLATFORM_CAPABILITY_MATRIX_v0.45.json"
+      - "docs/ISL_CABARET_ENTROPY_METHOD_v0.44.md"
+
+permissions:
+  contents: read
+
+jobs:
+  platform-methodology-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate capability matrix
+        shell: bash
+        run: |
+          set -euo pipefail
+          M=docs/ISL_PLATFORM_CAPABILITY_MATRIX_v0.45.json
+          jq -e '.version=="0.45"' "$M"
+          jq -e '.gameplay_core_invariant==true' "$M"
+          jq -e '.crossplay_real_status=="NOT_IMPLEMENTED"' "$M"
+          jq -e '.platforms.ps5.status|contains("BLOCKED")' "$M"
+          jq -e '.platforms.ps5_pro.status|contains("BLOCKED")' "$M"
+          jq -e '.platforms.xbox_series_s.status|contains("BLOCKED")' "$M"
+          jq -e '.platforms.xbox_series_x.status|contains("BLOCKED")' "$M"
+          jq -e '.invariants|index("same_gameplay_rules")' "$M"
+          jq -e '.scalable|index("internal_resolution")' "$M"
+          jq -e '.never_sacrifice_first|index("ui_readability")' "$M"
+      - name: Validate methodology locks
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "SAME WORLD / SAME RULES / DIFFERENT CEILINGS" docs/ISL_CROSSPLAY_DEVICE_SCALABILITY_METHOD_v0.45.md
+          grep -q "Crossplay real: NOT IMPLEMENTED" docs/ISL_CROSSPLAY_DEVICE_SCALABILITY_METHOD_v0.45.md
+          grep -q "Sensualidad sí; pornografía no" docs/ISL_CABARET_ENTROPY_METHOD_v0.44.md
+          echo "ISL platform/methodology gate: OK"
