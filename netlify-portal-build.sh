@@ -6,16 +6,21 @@ python3 scripts/security-gate.py
 rm -rf build/site
 mkdir -p build/site
 
-# Publica el Centro de Mandos completo tal como vive en /portal.
+# Publica el portal completo tal como vive en /portal.
 cp -a portal/. build/site/
 touch build/site/.nojekyll
 
-# Recupera la capa responsive/interaction del Centro de Mandos normal.
+# RPG HOME v1 pasa a ser la entrada principal.
+# Conservamos el Centro de Mandos técnico intacto en command-center.html.
+cp build/site/index.html build/site/command-center.html
+cp build/site/rpg-home.html build/site/index.html
+
+# Recupera la capa responsive/interaction del Centro de Mandos técnico.
 python3 - <<'PY'
 from pathlib import Path
 import re
 
-p=Path('build/site/index.html')
+p=Path('build/site/command-center.html')
 s=p.read_text(encoding='utf-8')
 
 for ident in ['isl-mobile-media-hotfix','isl-responsive-command-center-fix']:
@@ -69,6 +74,8 @@ ps4.write_text(ps,encoding='utf-8')
 PY
 
 test -f build/site/index.html
+test -f build/site/rpg-home.html
+test -f build/site/command-center.html
 test -f build/site/ps4.html
 test -f build/site/ps4-runtime-hotfix.js
 test -f build/site/poll/molino.html
@@ -91,13 +98,14 @@ test -f build/site/poll/index.html
 test -d build/site/assets
 test -f build/site/assets/floating-island-level.png
 test -f build/site/assets/floating-ruins-guide.png
-grep -q 'isl-polish.css' build/site/index.html
-grep -q 'isl-polish.js' build/site/index.html
-grep -q 'isl-current-state.js' build/site/index.html
-grep -q 'decision-studio.js' build/site/index.html
-grep -q 'lifecycle-studio.js' build/site/index.html
-grep -q 'creative-head.js' build/site/index.html
-grep -q 'isl-responsive-command-center-fix' build/site/index.html
+grep -q 'Cabina de Expedición' build/site/index.html
+grep -q 'isl-polish.css' build/site/command-center.html
+grep -q 'isl-polish.js' build/site/command-center.html
+grep -q 'isl-current-state.js' build/site/command-center.html
+grep -q 'decision-studio.js' build/site/command-center.html
+grep -q 'lifecycle-studio.js' build/site/command-center.html
+grep -q 'creative-head.js' build/site/command-center.html
+grep -q 'isl-responsive-command-center-fix' build/site/command-center.html
 grep -q '../poll-live.js' build/site/poll/molino.html
 grep -q 'ps4-runtime-hotfix.js' build/site/ps4.html
 
@@ -109,4 +117,4 @@ if [ -f build/site/assets/airships-last-waltz-master.mp3 ] && [ -f ps4-audio-bui
   fi
 fi
 
-echo "ISL Command Center build OK: responsive polish + live poll + Decision Studio + Unreal handoff draft + portal + assets."
+echo "ISL build OK: RPG HOME v1 + Command Center técnico + responsive polish + live poll + Decision Studio + portal + assets."
