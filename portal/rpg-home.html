@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071017">
+<link rel="manifest" href="manifest.webmanifest">
+<title>ISL · Perfil del Cartógrafo</title>
+<style>
+:root{--bg:#050b10;--panel:#0b1821e8;--line:#294755;--text:#eef8f5;--muted:#8ea7ae;--cyan:#86efff;--gold:#ffc56f;--lime:#dfff7b;--violet:#b9a5ff;--rose:#ff9aaa;--shadow:0 22px 60px #0008}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#050b10;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,sans-serif}body{overflow-x:hidden;background:radial-gradient(circle at 80% 5%,#183547 0,transparent 30%),radial-gradient(circle at 8% 35%,#102d29 0,transparent 25%),linear-gradient(#061018,#09131a 60%,#050b10)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(#000,transparent 80%)}
+a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;padding:clamp(12px,2.5vw,28px) clamp(10px,2.5vw,28px) 90px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.brand{font-weight:950;letter-spacing:.16em;color:var(--cyan);font-size:12px}.live{font-size:10px;color:var(--lime);border:1px solid #55724c;border-radius:999px;padding:6px 9px;background:#111b12}
+.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,#122832dd,#081319ee);box-shadow:var(--shadow);padding:clamp(18px,4vw,46px);min-height:310px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:22px;align-items:center}
+.hero:after{content:"";position:absolute;right:-80px;top:-120px;width:430px;height:430px;border:1px solid #7be7ff35;border-radius:50%;box-shadow:0 0 0 45px #7be7ff08,0 0 0 90px #ffc56f08}
+.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}h1{font-size:clamp(38px,7vw,82px);line-height:.9;letter-spacing:-.05em;margin:8px 0 13px}.subtitle{max-width:760px;color:#bfd0d4;line-height:1.55}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.btn{border:1px solid var(--line);background:#0a1720;padding:10px 13px;border-radius:11px;font-weight:800;font-size:12px}.btn.primary{background:#17333d;border-color:#4a8892;color:white}.btn.gold{background:#30271d;border-color:#8d6b3f}
+.profile{position:relative;z-index:2;border:1px solid #42616e;background:#071218c9;border-radius:18px;padding:15px}.portrait{width:72px;height:72px;border:1px solid #63808a;border-radius:17px;display:grid;place-items:center;font-size:30px;background:linear-gradient(135deg,#12313a,#111b24);box-shadow:inset 0 0 28px #74eaff10}.profile h2{margin:10px 0 3px;font-size:22px}.rank{color:var(--gold);font-size:11px;font-weight:900}.xp{height:8px;background:#071016;border:1px solid #294854;border-radius:99px;overflow:hidden;margin:12px 0 5px}.xp>i{display:block;width:62%;height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold))}.tiny{font-size:9px;color:var(--muted);line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px;margin-top:12px}.panel{grid-column:span 6;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#10242dd8,#09141be8);box-shadow:var(--shadow);padding:16px}.panel.wide{grid-column:span 8}.panel.narrow{grid-column:span 4}.kicker{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}h3{font-size:20px;margin:5px 0 12px}.mission{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #1e3540}.mission:last-child{border-bottom:0}.sigil{width:38px;height:38px;border:1px solid #395966;border-radius:10px;display:grid;place-items:center;background:#0c1a21}.mission b{display:block;font-size:12px}.mission small{color:var(--muted);font-size:9px}.state{font-size:8px;border:1px solid #6c5b36;color:var(--gold);border-radius:999px;padding:4px 6px;white-space:nowrap}.state.real{color:var(--rose);border-color:#6e4148}
+.inv{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.slot{min-width:0;border:1px solid #2a4a57;border-radius:13px;background:#08151c;padding:9px;aspect-ratio:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.slot:before{content:"";position:absolute;inset:6px;border:1px dashed #36586555;border-radius:9px}.slot .icon,.slot b,.slot small,.rarity{position:relative;z-index:1}.icon{font-size:26px}.slot b{font-size:10px;line-height:1.2}.slot small{font-size:7px;color:var(--muted)}.rarity{position:absolute;right:7px;top:7px;font-size:7px;color:var(--gold);letter-spacing:.07em}.slot.relic{box-shadow:inset 0 0 24px #ffc36e08}.slot.sky{box-shadow:inset 0 0 24px #87efff0d}.slot.book{box-shadow:inset 0 0 24px #bba4ff0d}
+.tabs{display:flex;gap:6px;overflow:auto;margin-bottom:10px}.tab{border:1px solid var(--line);background:#08131a;color:#abc0c6;border-radius:999px;padding:6px 9px;font-size:8px;white-space:nowrap}.tab.on{color:#fff;border-color:#638894;background:#17303a}.log{display:grid;gap:8px}.loot{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;padding:9px;border:1px solid #25424e;border-radius:12px;background:#09161d}.loot .ico{width:42px;height:42px;border-radius:10px;background:#132631;display:grid;place-items:center;font-size:22px}.loot b{font-size:11px}.loot div div{font-size:8px;color:var(--muted);margin-top:3px}.truth{border-left:3px solid var(--gold);padding:10px 12px;background:#131914;border-radius:7px;font-size:10px;line-height:1.55;color:#c7d4d6}
+.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:30;display:flex;gap:6px;padding:7px;background:#061018df;border:1px solid var(--line);border-radius:15px;backdrop-filter:blur(16px);box-shadow:var(--shadow)}.dock a{width:48px;height:42px;border:1px solid transparent;border-radius:10px;display:grid;place-items:center;font-size:18px}.dock a:hover{background:#11262f;border-color:#355664}
+@media(max-width:980px){.hero{grid-template-columns:1fr}.panel,.panel.wide,.panel.narrow{grid-column:1/-1}.inv{grid-template-columns:repeat(3,1fr)}}@media(max-width:560px){.shell{padding-left:9px;padding-right:9px}.hero{border-radius:18px}.inv{grid-template-columns:repeat(2,1fr)}.top{align-items:flex-start}.live{font-size:8px}h1{font-size:45px}.profile{padding:12px}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <div class="top"><div class="brand">ISL · EXPEDITION OS</div><div class="live">● CHECKPOINT v0.29 · PRE50 PENDIENTE</div></div>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Perfil del Cartógrafo</div>
+      <h1>Cabina de Expedición</h1>
+      <p class="subtitle">Tu entrada diegética a Islas Voladoras. El botín, las misiones y la expedición se presentan como RPG; los gates reales de producción siguen siendo reales y no se pueden “farmear”.</p>
+      <div class="actions">
+        <a class="btn primary" href="command-center.html?full=1">Entrar al Centro de Mandos</a>
+        <a class="btn gold" href="musica.html">Abrir Música</a>
+        <a class="btn" href="capsulas.html">Explorar Cápsulas</a>
+        <a class="btn" href="playtest-echo.html">PRE50 Playtest</a>
+      </div>
+    </div>
+    <aside class="profile">
+      <div class="portrait">🧭</div>
+      <h2>Cartógrafo</h2>
+      <div class="rank">RANGO · NAVEGANTE DE CORRIENTES</div>
+      <div class="xp"><i></i></div>
+      <div class="tiny">Nivel de Expedición 06 · XP visual vinculado a hitos reales, no a clics.</div>
+      <div style="margin-top:12px" class="tiny"><b style="color:#eef8f5">Región actual:</b> Cabina / Archivo de Corrientes<br><b style="color:#eef8f5">Último checkpoint:</b> v0.29<br><b style="color:#eef8f5">Gate real:</b> PRE50 · PENDING REAL HUMAN</div>
+    </aside>
+  </section>
+
+  <section class="grid">
+    <article class="panel wide">
+      <div class="kicker">Inventario · Botín 001</div>
+      <h3>Equipo recuperado</h3>
+      <div class="tabs"><span class="tab on">Todo</span><span class="tab">Equipado</span><span class="tab">Reliquias</span><span class="tab">Muestras</span><span class="tab">Documentos</span></div>
+      <div class="inv">
+        <div class="slot relic"><span class="rarity">RARO</span><span class="icon">👕</span><b>Camisa de Babor</b><small>EQUIPADO · EXPEDICIÓN</small></div>
+        <div class="slot relic"><span class="rarity">ÉPICO</span><span class="icon">🧥</span><b>Abrigo de Corriente Fría</b><small>EQUIPADO · CLIMA</small></div>
+        <div class="slot sky"><span class="rarity">EXTRAÑO</span><span class="icon">🔹</span><b>Muestra de Cielo 01</b><small>MUESTRA · ARCHIVO</small></div>
+        <div class="slot sky"><span class="rarity">RARO</span><span class="icon">🧪</span><b>Tubo de Deriva 01</b><small>SEÑAL · CORRIENTES</small></div>
+        <div class="slot book"><span class="rarity">RELIQUIA</span><span class="icon">📓</span><b>Cuaderno de Navegación 001</b><small>DOCUMENTO · ACTIVO</small></div>
+      </div>
+      <div class="truth" style="margin-top:12px"><b>Regla de verdad:</b> “ÉPICO”, “RARO” o “RELIQUIA” son rarezas diegéticas. No significan CANON. Los estados CANON / PROVISIONAL / EXPERIMENTO / REJECTED-LEARNED sólo cambian por gates reales.</div>
+    </article>
+
+    <article class="panel narrow">
+      <div class="kicker">Misiones activas</div>
+      <h3>Bitácora</h3>
+      <div class="mission"><div class="sigil">🧪</div><div><b>PRE50 · Playtest humano</b><small>Gate principal de producto</small></div><span class="state real">PENDIENTE REAL</span></div>
+      <div class="mission"><div class="sigil">🏹</div><div><b>Misión de Caza 002</b><small>Botín físico / Archivo</small></div><span class="state">ABIERTA</span></div>
+      <div class="mission"><div class="sigil">🎨</div><div><b>6 Covers · Cielo y Descenso</b><small>VIS-00 / CQC</small></div><span class="state">EN CURSO</span></div>
+      <div class="mission"><div class="sigil">🎵</div><div><b>Derechos de música</b><small>Gate para distribución pública</small></div><span class="state real">BLOQUEO</span></div>
+    </article>
+
+    <article class="panel">
+      <div class="kicker">Botín reciente</div>
+      <h3>Archivo de Corrientes · 001</h3>
+      <div class="log">
+        <div class="loot"><div class="ico">📓</div><div><b>Cuaderno de Navegación 001</b><div>Primer artefacto de archivo vivo.</div></div></div>
+        <div class="loot"><div class="ico">🧥</div><div><b>Abrigo de Corriente Fría</b><div>Equipo físico de expedición.</div></div></div>
+        <div class="loot"><div class="ico">🔹</div><div><b>Muestra de Cielo 01</b><div>Muestra catalogada, función por descubrir.</div></div></div>
+      </div>
+    </article>
+
+    <article class="panel">
+      <div class="kicker">Música</div>
+      <h3>Cielo y Descenso v0.3</h3>
+      <div class="mission"><div class="sigil">01</div><div><b>Above the Sleeping Coast</b><small>Horizonte</small></div><span class="state">CANDIDATA</span></div>
+      <div class="mission"><div class="sigil">04</div><div><b>Lanterns in the Mist</b><small>Descubrimiento</small></div><span class="state">CANDIDATA</span></div>
+      <div class="mission"><div class="sigil">06</div><div><b>A Waltz for the Slow Descent</b><small>Descenso / regreso</small></div><span class="state">CANDIDATA</span></div>
+      <div class="actions"><a class="btn gold" href="musica.html">Ver las 6 pistas</a></div>
+    </article>
+  </section>
+</main>
+<nav class="dock" aria-label="Accesos RPG">
+  <a href="#" title="Perfil">🧭</a>
+  <a href="#inventory" onclick="document.querySelector('.panel.wide').scrollIntoView({behavior:'smooth'})" title="Inventario">🎒</a>
+  <a href="#missions" onclick="document.querySelector('.panel.narrow').scrollIntoView({behavior:'smooth'})" title="Misiones">📜</a>
+  <a href="musica.html" title="Música">🎵</a>
+  <a href="command-center.html?full=1" title="Centro técnico">⚙️</a>
+</nav>
+<script>
+(function(){
+  document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});t.classList.add('on')})});
+  if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
+})();
+</script>
+</body></html>
