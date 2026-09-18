@@ -1,0 +1,3 @@
+ISL Pages rebuild trigger
+reason=R2 drawer outside-close + current actions visibility
+expected_fix_commit=9d7caf024daddd7a239d724940c8482d0d22befa
