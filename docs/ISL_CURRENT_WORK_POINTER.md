@@ -208,3 +208,31 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Command Center Encuestas now opens the native ISL page.
 - CI guards verify native page, form name and anti-copy framing.
 - Governance unchanged: FRIENDS_SAMPLE informs; no automatic CANON promotion.
+
+
+## v0.51 — SALÓN DE LAS CORTINAS ROJAS · SLICE JUGABLE
+- New playable page: portal/salon-cortinas-rojas.html
+- Flow implemented:
+  1. ANCLA
+  2. CAMPO ENTRÓPICO
+  3. ZONA NULA
+  4. TRIGGER
+  5. CAMBIO DE FASE
+  6. CONSECUENCIA / HUELLA
+- Live routes:
+  - SINCRONIZAR
+  - DESCOMPASAR
+  - RECOREOGRAFIAR
+  - OBSERVAR
+  - MARCHARSE / omisión significativa
+- Every result writes a compatible event to isl_huellas_events_v2.
+- Room persistence key: isl_red_room_state_v1.
+- Consequence model preserves 1 principal consequence + up to 2 echoes.
+- Initial relic integration:
+  - Metrónomo sin Dueño reduces comprehension cost for recoreography.
+  - Sello de Barro Vivo verifies state alteration.
+  - Media Máscara del Aplauso changes social reading, not physical action cost.
+- Linked from RPG home.
+- CI guards page, state key and recoreography route.
+- Status remains PROVISIONAL FUERTE pending human playtest/CQC.
+- Next: minimal playable district for Isla del Baile Inagotable.
