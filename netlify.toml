@@ -1,6 +1,7 @@
 [build]
   command = "bash netlify-portal-build.sh"
   publish = "build/site"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- portal netlify netlify.toml netlify-portal-build.sh netlify-public-build.sh netlify-private-build.sh ps4-audio-build.sh package.json package-lock.json scripts/security-gate.py"
 
 [[headers]]
   for = "/*"
