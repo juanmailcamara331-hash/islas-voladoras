@@ -5,7 +5,6 @@ rm -rf build/public
 mkdir -p build/public/poll build/public/assets
 
 cp public-site/index.html build/public/index.html
-cp portal/reel.html build/public/reel.html
 cp portal/poll/index.html build/public/poll/index.html
 cp portal/poll/molino.html build/public/poll/molino.html
 cp portal/poll/gracias.html build/public/poll/gracias.html
@@ -23,4 +22,10 @@ for forbidden in   ISL_PROJECT_STATE_CURRENT.json ISL_DECISION_CATALOG_CURRENT.j
   test ! -e "build/public/$forbidden"
 done
 
-echo "ISL PUBLIC build OK: landing + reel + polls only."
+bytes=$(du -sb build/public | cut -f1)
+echo "ISL PUBLIC build size: $bytes bytes"
+if [ "$bytes" -gt 5000000 ]; then
+  echo "ERROR: public Netlify payload exceeds 5 MB budget" >&2
+  exit 3
+fi
+echo "ISL PUBLIC build OK: minimal landing + polls only."
