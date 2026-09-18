@@ -1,82 +1,50 @@
 {
-  "version": "0.40.0",
-  "updated_at": "2026-09-18",
-  "current_stop": "pre50",
+  "version": "0.69.0",
+  "updated_at": "2026-09-19",
+  "current_stop": "r2-human",
   "now": {
-    "label": "AHORA IMPORTA",
-    "title": "PRE50 · evidencia humana real",
-    "body": "Conseguir evidencia humana real sin abrir más infraestructura. Observar conducta, fricción, descubrimiento, agencia y deseo de retorno antes de promover nada.",
-    "status": "PENDING REAL HUMAN"
+    "label": "AHORA",
+    "title": "R2 · navegación global + recheck físico",
+    "body": "Confirmar en Android que menú, Atrás, Cápsulas y Ruta se sienten como una sola experiencia.",
+    "status": "HUMAN RECHECK"
   },
   "review": {
     "label": "REVISIÓN ACTUAL",
-    "title": "PIPELINE ISL · producción limpia",
-    "body": "Visión y Labs alimentan PRE50. La evidencia humana abre PRE60; después se consolida un First Playable integrado antes de aspirar a Vertical Slice."
+    "title": "R1 GREEN · R2 TECH GREEN",
+    "body": "Infraestructura cerrada. El siguiente paso real es validar navegación física y abrir Lite v2 a colegas."
   },
-  "next_stop": "pre60",
-  "next_label": "PRE60 · sintetizar evidencia y decidir",
+  "next_stop": "colleagues",
+  "next_label": "Lite v2 · ronda de colegas",
   "calendar_role": "SECONDARY_DATE_LAYER",
-  "canon_rule": "Nada asciende a CANON automáticamente; CQC + evidencia + confirmación humana siguen mandando.",
-  "completed_stops": [
-    "base",
-    "labs",
-    "molino"
-  ],
+  "canon_rule": "Las encuestas informan; ninguna mayoría asciende automáticamente a CANON.",
+  "completed_stops": ["r1", "r2-tech", "lite-v2-ready"],
   "route_inventory": [
-    {
-      "id": "relic-base",
-      "icon": "✦",
-      "name": "Núcleo de Huella",
-      "origin": "Base ISL",
-      "rarity": "RELIQUIA",
-      "truth": "HITO REAL",
-      "function": "Memoria sistémica · huella · mutación",
-      "state": "EARNED"
-    },
-    {
-      "id": "relic-wind",
-      "icon": "◌",
-      "name": "Receptor de Corrientes",
-      "origin": "Labs de viento",
-      "rarity": "ÉPICO",
-      "truth": "HITO REAL",
-      "function": "Lectura de viento · prueba pequeña · CQC",
-      "state": "EARNED"
-    },
-    {
-      "id": "relic-mill",
-      "icon": "⌁",
-      "name": "Astilla del Molino",
-      "origin": "El Molino que Miente",
-      "rarity": "RELIQUIA",
-      "truth": "HITO REAL",
-      "function": "Decisión situada · rutas · consecuencia",
-      "state": "EARNED"
-    }
+    {"id":"relic-base","icon":"✦","name":"Núcleo de Huella","origin":"Base ISL","rarity":"RELIQUIA","truth":"HITO REAL","function":"Memoria sistémica · huella · mutación","state":"EARNED"},
+    {"id":"relic-wind","icon":"◌","name":"Receptor de Corrientes","origin":"Labs de viento","rarity":"ÉPICO","truth":"HITO REAL","function":"Lectura de viento · prueba pequeña · CQC","state":"EARNED"},
+    {"id":"relic-mill","icon":"⌁","name":"Astilla del Molino","origin":"El Molino que Miente","rarity":"RELIQUIA","truth":"HITO REAL","function":"Decisión situada · rutas · consecuencia","state":"EARNED"}
   ],
   "active_mission_item": {
-    "id": "mission-pre50",
-    "icon": "◆",
-    "name": "Kit PRE50",
-    "origin": "RUTA ISL",
-    "rarity": "MISIÓN",
-    "truth": "PENDIENTE HUMANO",
-    "function": "Observación · fricción · descubrimiento · agencia · retorno",
-    "state": "ACTIVE_NOT_EARNED"
+    "id":"mission-r2-human","icon":"◆","name":"Recheck de Navegación","origin":"RUTA ISL","rarity":"MISIÓN","truth":"PENDIENTE HUMANO","function":"Menús · enlaces · Atrás · Cápsulas · Ruta clara","state":"ACTIVE_NOT_EARNED"
   },
   "pipeline_master": [
-    "Visión / mandato",
-    "Core experience",
-    "Prototipos de riesgo",
-    "PRE50 · playtest humano",
-    "PRE60 · síntesis",
-    "First Playable integrado",
-    "Vertical Slice",
-    "Pipeline de producción",
-    "Producción",
-    "Alpha",
-    "Beta",
-    "Master"
+    "R1 · shell/deploy",
+    "R2 · navegación global",
+    "Lite v2 · colegas",
+    "Síntesis dialéctica",
+    "3 criaturas",
+    "NUDOS persistentes",
+    "CQC cruzado B×A",
+    "Decisión humana"
   ],
-  "production_rule": "No escalar contenido ni metajuego antes de que sobrevivan los gates anteriores. Command Center y RPG presentan el trabajo; no sustituyen al juego."
+  "route_steps": [
+    {"id":"r1","title":"R1 · Shell / deploy","status":"done","note":"GREEN. Baseline v0.68 preservado."},
+    {"id":"r2-human","title":"R2 · Navegación global","status":"now","note":"Ahora: menú global, Atrás coherente, Cápsulas y Ruta."},
+    {"id":"colleagues","title":"Lite v2 · colegas","status":"next","note":"Abrir Pilares + Referencias y recoger evidencia real."},
+    {"id":"synthesis","title":"Síntesis dialéctica","status":"later","note":"Patrón, disenso, confusión y contradicciones; sin ganador automático."},
+    {"id":"creatures","title":"3 criaturas","status":"later","note":"Prototipos de interacción bajo la base validada."},
+    {"id":"nudos","title":"NUDOS","status":"later","note":"Persistencia y consecuencias conectadas."},
+    {"id":"cqc","title":"CQC cruzado B×A","status":"later","note":"Cruzar sistemas y referencias antes de promoción."},
+    {"id":"human","title":"Decisión humana","status":"later","note":"La autoría decide qué sobrevive."}
+  ],
+  "production_rule": "Command Center, RPG y navegación presentan el trabajo; no sustituyen al juego."
 }
