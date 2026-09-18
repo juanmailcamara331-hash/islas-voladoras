@@ -42,4 +42,5 @@ if [ "$bytes" -gt 5000000 ]; then
   echo "ERROR: public Netlify payload exceeds 5 MB budget" >&2
   exit 3
 fi
+python3 scripts/route-visibility-gate.py
 echo "ISL PUBLIC build OK: minimal landing + polls only."
