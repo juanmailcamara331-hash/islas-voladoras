@@ -40,6 +40,12 @@ Toda intro candidata se compara por:
 - emotional_memory_after_30m;
 - handoff_strength_to_first_region.
 
+## ARCO MUSICAL PRE-GAME
+La entrada debe empezar íntima, noble y aireada. La música deja que el jugador mire, habite y entienda antes de pedirle grandeza.
+El crescendo se activa con apertura real del mundo, descubrimiento, viaje y riesgo; nunca por reloj o por convención de trailer.
+Referencia funcional: lirismo y amplitud orquestal de cierto cine de aventura 60–70, sin imitar obras ni autores concretos.
+La Separación puede romper o deformar ese ADN, pero debe ser reconocible como el mismo mundo emocional transformado.
+
 ## TONO
 Para referencias autorales/literarias:
 - abstraer mecanismos, no reproducir voz;
