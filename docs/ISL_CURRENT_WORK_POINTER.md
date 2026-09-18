@@ -464,3 +464,31 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
   - validate APK: SUCCESS
   - artifact upload: SUCCESS
 - Deliverable: ISL-Command-Center-v0.62.apk
+
+
+## v0.62 — DEPLOY COHERENCE + UNREAL SOURCE GOVERNANCE
+- Root cause confirmed for recurring Android blank/legacy shell:
+  - Android APK could be green while GitHub Pages was failing;
+  - remote wrapper then loaded an older deployed shell.
+- GitHub Pages restored:
+  - Pages run 432
+  - CQC success
+  - deploy success
+  - pages_build_version e10aebfd631d3ac25aa696a072600f5b97c3379f
+  - public URL https://juanmailcamara331-hash.github.io/islas-voladoras/
+- Incident recorded:
+  - docs/incidents/ERR_ANDROID_001_RECURRENCE_3_v0.62.md
+- Error registry updated with deployment-coherence rule.
+- New release invariant:
+  APK_GREEN && PAGES_GREEN && EXPECTED_PAGE_BUILD
+- Android workflow now blocks APK build if latest Pages run is not completed/success.
+- Android log records PAGES_STATUS, PAGES_CONCLUSION and PAGES_BUILD_SHA.
+- Unreal engineering source map strengthened:
+  - source authority S/A/B/C;
+  - versioning and deprecation state;
+  - domain coverage;
+  - frontier-tech adoption gate;
+  - mapping to T0–T8 tests;
+  - migration gate.
+- Current human gate:
+  re-open app after restored Pages deploy and perform 3 cold starts.
