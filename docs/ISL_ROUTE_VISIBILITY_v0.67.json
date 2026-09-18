@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.67",
+  "policy": "default_private",
+  "public": [
+    "public-site/index.html",
+    "portal/poll/index.html",
+    "portal/poll/molino.html",
+    "portal/poll/pilares-argumento.html",
+    "portal/poll/referencias-amigos.html",
+    "portal/poll/pilares-lite-v2.html",
+    "portal/poll/referencias-lite-v2.html",
+    "portal/poll/gracias.html"
+  ],
+  "private_patterns": [
+    "portal/index.html",
+    "portal/command-center.html",
+    "portal/rpg-home.html",
+    "portal/route-isl.js",
+    "portal/ISL_ROUTE_STATE_CURRENT.json",
+    "portal/huellas.html",
+    "portal/salon-cortinas-rojas.html",
+    "portal/isla-baile-inagotable.html",
+    "portal/secret-level.html",
+    "portal/boss-prototype.html",
+    "portal/labs/**",
+    "portal/ISL_*CURRENT*.json"
+  ],
+  "rules": [
+    "PUBLIC build uses explicit allowlist.",
+    "Anything not explicitly public is private by default.",
+    "Private route hiding/noindex is not authentication.",
+    "Real privacy requires separate authenticated host before public release.",
+    "APK host migration only after private host + rollback + human device test."
+  ]
+}
