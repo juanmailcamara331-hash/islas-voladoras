@@ -1,0 +1,17 @@
+{
+  "version":"0.31",
+  "principle":"hot shell small; cold media on demand",
+  "hot":[
+    "index.html","rpg-home.html","command-center.html","capsulas.html","musica.html","playtest-echo.html",
+    "manifest.webmanifest","isl-icon.svg","styles.css","app.js","isl-capsules-current.json"
+  ],
+  "cold_patterns":["assets/**","*.mp3","*.mp4","large PNG/JPG art"],
+  "rules":{
+    "audio_preload":"none unless user explicitly activates playback",
+    "video_preload":"metadata or none; never autoplay heavy media",
+    "below_fold_images":"loading=lazy + decoding=async",
+    "modern_netlify_images":"use /.netlify/images responsive transformations",
+    "ps4_fallback":"serve original compatible assets",
+    "downloads":"prefer GitHub Releases/artifacts or platform hosting"
+  }
+}
