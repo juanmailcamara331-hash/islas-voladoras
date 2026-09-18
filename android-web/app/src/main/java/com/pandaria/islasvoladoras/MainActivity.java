@@ -8,7 +8,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
-    private static final String HOME = "https://juanmailcamara331-hash.github.io/islas-voladoras/index.html?app=1&native=060&v=20260918-7";
+    private static final String HOME = "https://juanmailcamara331-hash.github.io/islas-voladoras/index.html?app=1&native=062&v=20260918-8";
     private WebView web;
 
     @Override
