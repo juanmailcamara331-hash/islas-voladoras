@@ -1,0 +1,77 @@
+{
+  "version": "0.45",
+  "principle": "SAME_WORLD_SAME_RULES_DIFFERENT_CEILINGS",
+  "gameplay_core_invariant": true,
+  "crossplay_real_status": "NOT_IMPLEMENTED",
+  "platforms": {
+    "web": {
+      "status": "ACTIVE",
+      "tier": "LOW_TO_MID",
+      "crossplay": "N/A_CURRENT"
+    },
+    "android": {
+      "status": "ACTIVE_WRAPPER",
+      "tier": "LOW_TO_HIGH",
+      "crossplay": "N/A_CURRENT"
+    },
+    "pc": {
+      "status": "TARGET",
+      "tier": "SCALABLE",
+      "crossplay": "PLANNED"
+    },
+    "xbox_series_s": {
+      "status": "TARGET_BLOCKED_SDK",
+      "tier": "CONSOLE_BASELINE",
+      "crossplay": "PLANNED"
+    },
+    "xbox_series_x": {
+      "status": "TARGET_BLOCKED_SDK",
+      "tier": "CONSOLE_HIGH",
+      "crossplay": "PLANNED"
+    },
+    "ps5": {
+      "status": "TARGET_BLOCKED_PARTNER_SDK",
+      "tier": "CONSOLE_HIGH",
+      "crossplay": "PLANNED"
+    },
+    "ps5_pro": {
+      "status": "TARGET_BLOCKED_PARTNER_SDK",
+      "tier": "CONSOLE_ENHANCED",
+      "crossplay": "PLANNED"
+    }
+  },
+  "invariants": [
+    "same_gameplay_rules",
+    "same_progression_schema",
+    "same_content_logic",
+    "same_ai_relevant_behavior",
+    "same_hitboxes_telegraphs",
+    "same_consequence_model"
+  ],
+  "scalable": [
+    "internal_resolution",
+    "upscaling",
+    "ray_tracing",
+    "shadow_quality",
+    "reflection_quality",
+    "secondary_animation",
+    "cosmetic_crowd_density",
+    "foliage_density",
+    "particle_density",
+    "lod_distance",
+    "texture_streaming_budget",
+    "audio_voice_count",
+    "haptic_detail"
+  ],
+  "never_sacrifice_first": [
+    "ui_readability",
+    "navigation_clarity",
+    "critical_audio_cues",
+    "critical_animation",
+    "gameplay_ai",
+    "hitboxes",
+    "secret_availability",
+    "story_consequences",
+    "save_integrity"
+  ]
+}
