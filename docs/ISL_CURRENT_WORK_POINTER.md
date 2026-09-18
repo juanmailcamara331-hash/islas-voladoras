@@ -144,3 +144,9 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Re-audit Brújula → reliquias → escenas → islas → criaturas → dialéctica under CAB-10..50 and P-00..P-100.
 
 - Global retrospective audit: docs/ISL_V045_GLOBAL_REAUDIT.md
+
+
+## v0.46 — WEIGHTED CREATIVE MASTER
+- Canon operativo: docs/ISL_MASTER_CREATIVO_OPERATIVO_v0.46.md
+- 1A/1B re-audited: PASS, no reset.
+- Next build order: Brújula v2 → Reliquias → Escena vertical slice → Isla del Baile Inagotable → Criaturas → Dialéctica → Reference Matrix.
