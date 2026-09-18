@@ -60,6 +60,11 @@ jobs:
           grep -q 'AHORA IMPORTA' build/pages/index.html
           grep -q 'REVISIÓN ACTUAL' build/pages/index.html
           grep -q 'homeHeroIcons' build/pages/index.html
+          test -f build/pages/route-isl.js
+          grep -q 'route-isl.js' build/pages/index.html
+          grep -q 'RUTA ISL' build/pages/route-isl.js
+          grep -q 'AHORA IMPORTA · PRE50' build/pages/route-isl.js
+          grep -q 'isl-route-v1-visited' build/pages/route-isl.js
           grep -q '← Cabina RPG' build/pages/musica.html
           grep -q 'itemCloseX' build/pages/rpg-home.html
           grep -q 'rpgCommandDeck' build/pages/rpg-home.html
