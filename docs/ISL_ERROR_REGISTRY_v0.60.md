@@ -122,3 +122,50 @@ Todo bug crítico nuevo pasa:
 ## Regla magistral
 Un bug conocido que reaparece es una regresión de proceso, no “mala suerte”.
 La solución no termina cuando se arregla: termina cuando queda registrada y protegida.
+
+
+## ERR-DEPLOY-006 · APK verde pero Pages viejo por CQC obsoleto
+Síntoma:
+- APK nueva compila y valida correctamente;
+- la app sigue mostrando comportamiento viejo;
+- cambios web recientes no aparecen.
+
+Contexto:
+- 2026-09-18, builds Android 513/514 verdes.
+- Workflow GitHub Pages fallaba en CQC antes de Upload Pages artifact.
+- El wrapper Android cargaba por tanto la última publicación vieja.
+
+Entidad:
+- BUILD_CI
+- DEPLOYMENT
+- WEB_PWA
+- ANDROID_WRAPPER
+
+Categoría:
+- M BUILD_PACKAGING
+- L CACHE_VERSIONING
+- T PLAYER_EXPERIENCE_CLARITY
+
+Severidad:
+- S0 BLOCKER para validación humana de APK, porque invalida la correspondencia build↔web publicada.
+
+Causa raíz:
+- guard textual obsoleto exigía la frase de Brújula en una sola cadena:
+  No señala dónde ir. Señala de dónde vienes.
+- el HTML real introducía <br><em> entre ambas frases;
+- grep literal fallaba, bloqueando el deploy.
+
+Fix:
+- dividir el guard en dos comprobaciones semánticas;
+- añadir trap de shell para imprimir línea/comando exactos del próximo fallo CQC.
+
+Regression test:
+- Pages build debe llegar a Upload Pages artifact + Deploy;
+- Android build verde NO cuenta como release usable si Pages deploy correspondiente no está verde;
+- antes de entregar APK wrapper, verificar par:
+  APK_BUILD_GREEN + WEB_DEPLOY_GREEN.
+
+first_seen: 2026-09-18
+last_seen: 2026-09-18
+recurrence_count: 1
+status: FIXED_PENDING_DEPLOY_VERIFY
