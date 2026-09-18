@@ -1,0 +1,50 @@
+name: Audit ISL public private boundary
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "portal/**"
+      - "public-site/**"
+      - "docs/ISL_ROUTE_VISIBILITY_v0.67.json"
+      - "scripts/route-visibility-gate.py"
+      - "scripts/security-gate.py"
+      - "netlify-public-build.sh"
+      - "netlify-private-build.sh"
+      - "netlify.toml"
+      - "netlify.private.toml"
+      - ".github/workflows/public-private-boundary.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Security baseline
+        run: python3 scripts/security-gate.py
+
+      - name: Build PUBLIC
+        run: bash netlify-public-build.sh
+
+      - name: Verify PUBLIC has no PRIVATE routes
+        run: python3 scripts/route-visibility-gate.py
+
+      - name: Build PRIVATE
+        run: bash netlify-private-build.sh
+
+      - name: Verify PRIVATE operational surface
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test -f build/private/index.html
+          test -f build/private/rpg-home.html
+          test -f build/private/huellas.html
+          test -f build/private/secret-level.html
+          test -f build/private/route-isl.js
+          grep -q 'id="finalCommandCenter"' build/private/index.html
+          echo "PUBLIC_PRIVATE_BOUNDARY=GREEN"
