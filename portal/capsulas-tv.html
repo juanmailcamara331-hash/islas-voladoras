@@ -17,7 +17,7 @@
 <div id="bg"></div><div id="shade"></div><div id="status">ISL · MODO TV</div>
 <div id="stage"><div class="k" id="type"></div><div class="title" id="title"></div><div class="body" id="body"></div><div class="note" id="note"></div><div id="choices"></div></div>
 <div id="controls"><button class="ctl" id="prev">←</button><button class="ctl" id="pause">Ⅱ</button><button class="ctl" id="next">→</button><button class="ctl" id="sound">♪</button><button class="ctl" id="fs">⛶</button></div><div id="progress"></div>
-<audio id="audio" loop preload="auto" src="assets/airships-last-waltz-master.mp3"></audio>
+<audio id="audio" loop preload="none" src="assets/airships-last-waltz-master.mp3"></audio>
 <script>
 (()=>{const bg=document.getElementById('bg'),type=document.getElementById('type'),title=document.getElementById('title'),body=document.getElementById('body'),note=document.getElementById('note'),choices=document.getElementById('choices'),prog=document.getElementById('progress'),audio=document.getElementById('audio'),pause=document.getElementById('pause'),sound=document.getElementById('sound');
 let items=[],i=0,paused=false,start=Date.now(),duration=9000,timer;const images=['assets/island-a-master.jpg','assets/island-b-master.jpg','assets/ship-home-stars.png','assets/city-wind.png','assets/wind-lab-sunset.png','assets/tower-echoes.png'];
