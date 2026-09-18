@@ -70,6 +70,25 @@
       });
     }
 
+    (function installFriendsTestBlock(){
+      var main=document.querySelector('main');
+      if(!main||document.getElementById('islFriendsTestBlock'))return;
+      var box=document.createElement('section');
+      box.id='islFriendsTestBlock';box.className='panel';
+      box.style.cssText='border:1px solid #a57a3d;background:linear-gradient(135deg,#2a1d0f,#10232b);margin:0 0 16px;padding:16px;border-radius:18px;box-shadow:0 18px 48px #0007';
+      box.innerHTML='<div class="eyebrow" style="color:#ffd27a">🚨 PRUEBA CON COLEGAS · TEMPORAL</div>'+
+        '<h2 style="margin:5px 0 7px;font-size:clamp(24px,4vw,38px)">ENSÉÑALES ESTO AHORA</h2>'+
+        '<div class="sub" style="margin-bottom:12px">Primero pilares. Luego dos prototipos. Termina con referencias si todavía hay ganas.</div>'+
+        '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px">'+
+          '<a class="btn primary" style="padding:14px;text-align:center;font-weight:900" href="poll/pilares-argumento.html">1 · PILARES Y ARGUMENTO</a>'+
+          '<a class="btn" style="padding:14px;text-align:center;font-weight:900" href="salon-cortinas-rojas.html">2 · SALÓN ROJO</a>'+
+          '<a class="btn" style="padding:14px;text-align:center;font-weight:900" href="isla-baile-inagotable.html">3 · ISLA DEL BAILE</a>'+
+          '<a class="btn" style="padding:14px;text-align:center;font-weight:900" href="poll/referencias-amigos.html">4 · REFERENCIAS</a>'+
+        '</div>'+
+        '<div class="callout" style="margin-top:11px"><b>Regla:</b> no les expliques demasiado. Que entren, jueguen y te digan dónde se pierden. Esa confusión también cuenta como evidencia.</div>';
+      main.insertBefore(box,main.firstChild);
+    })();
+
     installPollsModule();
     loadPollState();
     // Cost-control: live poll state loads on page open and via the ACTUALIZAR button.
