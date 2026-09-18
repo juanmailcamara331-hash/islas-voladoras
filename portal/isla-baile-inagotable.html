@@ -13,7 +13,7 @@ body{background:radial-gradient(circle at 72% 0,#1c3c4b 0,transparent 28%),radia
 .hero{margin-top:14px;border:1px solid var(--line);border-radius:18px;padding:18px;background:linear-gradient(135deg,#0d1c24,#11151a)}.hero p{margin:7px 0 0;color:#c2cfd2;font-size:13px;line-height:1.55}.pulsebar{margin-top:12px;display:grid;grid-template-columns:repeat(12,1fr);gap:4px;height:26px;align-items:end}.pulsebar i{display:block;background:#456b76;height:20%;border-radius:4px;transition:.35s}.pulsebar.live i:nth-child(3n){height:90%;background:var(--cyan)}.pulsebar.live i:nth-child(2n){height:58%;background:var(--gold)}.pulsebar.tired i:nth-child(odd){height:32%;background:#a65c63}.pulsebar.rested i{height:44%;background:#7bd4b0}.district{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.node{border:1px solid var(--line);border-radius:16px;padding:15px;background:#0b171de8;min-height:220px;display:flex;flex-direction:column}.node h2{font-size:16px;margin:7px 0 6px}.node p{font-size:11px;line-height:1.5;color:#aebec2;margin:0}.node .ico{font-size:28px}.node .status{margin-top:auto;padding-top:12px;font-size:9px;color:#789097}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.btn{border:1px solid #35505b;background:#0a151b;color:#eaf3f1;border-radius:9px;padding:10px 11px;font-size:9px;font-weight:900;cursor:pointer}.btn.gold{border-color:#7d633a;background:#2f2415;color:#f8e4b6}.btn.cyan{border-color:#38616e;background:#0d2028;color:#c7f7ff}.btn.rose{border-color:#71404c;background:#271117;color:#ffd4dc}.btn:disabled{opacity:.4}.panel{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:#09141a;padding:15px}.panel h3{margin:0 0 6px;font-size:13px}.panel p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}.memory{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.mem{border:1px solid #29434e;border-radius:10px;background:#071118;padding:10px;font-size:10px;color:#aab9bd}.mem b{display:block;color:#fff;margin-bottom:4px}.secret{display:none;margin-top:10px;border-left:3px solid var(--gold);padding:11px;background:#15130d;font-size:10px;line-height:1.5}.secret.show{display:block}.footer{text-align:center;color:#6f8389;font-size:9px;margin-top:11px}
 @media(max-width:780px){.district{grid-template-columns:1fr}.memory{grid-template-columns:1fr}.node{min-height:auto}}
 </style>
-</head>
+<link rel="stylesheet" href="isl-global-shell.css">\n</head>
 <body>
 <main class="wrap">
 <header class="top">
@@ -115,5 +115,5 @@ function render(){
 render();
 })();
 </script>
-</body>
+<script defer src="isl-global-shell.js"></script>\n</body>
 </html>
