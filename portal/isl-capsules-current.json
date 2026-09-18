@@ -1,5 +1,5 @@
 {
-  "version": "0.20.2",
+  "version": "0.20.3",
   "updated": "2026-09-18",
   "policy": "LIGHT_IMMERSION_NON_CANON",
   "capsules": [
@@ -128,6 +128,58 @@
         "Bajo la cubierta de proa",
         "Junto al motor dormido",
         "En una red colgada bajo el casco"
+      ],
+      "tone": "decision"
+    },
+    {
+      "id": "postal-03",
+      "type": "POSTAL DEL CIELO",
+      "title": "La lluvia horizontal",
+      "body": "En Velaria, algunas lluvias llegan de lado y terminan en otra ciudad.",
+      "note": "Los paraguas llevan timón.",
+      "tone": "absurd"
+    },
+    {
+      "id": "rumor-02",
+      "type": "RUMOR",
+      "title": "El pasajero número cero",
+      "body": "Hay capitanes que dejan un asiento vacío incluso cuando la nave va completa.",
+      "note": "Dicen que ya viaja alguien allí. Sólo que todavía no ha ocurrido.",
+      "tone": "mystery"
+    },
+    {
+      "id": "pandilla-03",
+      "type": "PANDILLA · TALLER",
+      "title": "La pieza sobrante",
+      "body": "Taro: «Todo montaje serio acaba con una pieza que nadie recuerda haber quitado.»\n\nLena: «¿Y si era importante?»",
+      "note": "Taro miró la pieza. La pieza no colaboró.",
+      "tone": "warm"
+    },
+    {
+      "id": "sombra-04",
+      "type": "SOMBRA",
+      "title": "El pasillo corto",
+      "body": "Hay un pasillo del barco que algunas noches tarda demasiado en terminar.",
+      "note": "Por la mañana vuelve a medir tres metros.",
+      "tone": "dark"
+    },
+    {
+      "id": "lore-02",
+      "type": "LORE SNACK",
+      "title": "Campanas de niebla",
+      "body": "En Nácar de Niebla, cada barrio afina sus campanas distinto para que la gente sepa dónde está sin ver nada.",
+      "note": "Los forasteros tardan semanas en distinguir una calle de una despedida.",
+      "tone": "mystery"
+    },
+    {
+      "id": "decision-03",
+      "type": "DECISIÓN LIGERA",
+      "title": "Nombre informal del comedor",
+      "body": "¿Cómo debería llamar la tripulación al comedor?",
+      "options": [
+        "La Cubierta de Migas",
+        "El Ministerio del Guiso",
+        "La Mesa que Sobrevivió"
       ],
       "tone": "decision"
     }
