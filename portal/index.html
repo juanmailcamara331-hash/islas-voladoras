@@ -127,26 +127,33 @@ body.spectacle #home .heroText{padding-top:18vh!important}
 <aside class="rail">
  <div class="logo">ISL</div>
  <button class="active" data-view="home" title="Centro" data-help="Vista general del proyecto.">⌂</button>
+ <button data-view="calendar" title="RUTA ISL" data-help="Dónde estamos, qué está cerrado y qué viene después.">🧭</button>
  <button data-view="gallery" title="Galería" data-help="Selecciona y compara diseños.">◈</button>
  <button data-view="roadmap" title="Roadmap" data-help="Archipiélago de producción.">⌁</button>
- <button data-view="calendar" title="Calendario" data-help="Ritmo operativo.">▦</button>
  <button data-view="inspiration" title="Inspiraciones" data-help="Esencia de referencias, no copia.">✦</button>
+ <button id="spectacleBtn" title="Modo Espectáculo" data-help="Oculta la interfaz y solicita pantalla completa para contemplar ISL.">⛶</button>
  <button data-view="stats" title="Estadísticas" data-help="REAL / SIMULADO / PLANEADO.">▥</button>
  <button data-view="sim" title="Simulaciones" data-help="Escenarios de capacidad.">∿</button>
  <button data-view="pipelines" title="Pipelines" data-help="Flujos LEGO.">↳</button>
+ <button data-view="registry" title="Registro" data-help="Inventario de archivos, documentos, Labs e integraciones.">☷</button>
  <button data-view="controls" title="Controles" data-help="TV, teclado y gamepad.">⌘</button>
- <button id="spectacleBtn" title="Modo Espectáculo" data-help="Oculta la interfaz y solicita pantalla completa para contemplar ISL.">⛶</button><button data-view="registry" title="Registro" data-help="Inventario de archivos, documentos, Labs e integraciones.">☷</button><button id="settingsBtn" title="Personalizar" data-help="Personaliza la cabina.">⚙</button><button id="menuBtn" title="Menú" data-help="Accesos rápidos e integraciones.">☰</button>
+ <button id="settingsBtn" title="Personalizar" data-help="Personaliza la cabina.">⚙</button>
+ <button id="menuBtn" title="Menú" data-help="Accesos rápidos e integraciones.">☰</button>
 </aside>
 
 <aside class="drawer" id="drawer">
  <h2>ISL Command Center</h2><div class="tiny">Mapa del proyecto. No sustituye Biblia, Studio ni CQC.</div>
- <div class="group"><h3>ACCESOS</h3>
-  <a href="https://juanmailcamara331-hash.github.io/islas-voladoras/game/" target="_self">Juego web Godot ↗</a>
+ <div class="group"><h3>ACCESOS PRINCIPALES</h3>
+  <a href="rpg-home.html">Perfil RPG del Cartógrafo ↗</a>
+  <button class="item" onclick="go('calendar')">RUTA ISL · ahora y siguiente</button>
+  <button class="item" onclick="go('gallery')">Galería / Forge integrado</button>
+  <a href="capsulas.html">Cápsulas ISL ↗</a>
+ </div>
+ <div class="group"><h3>LABS Y PRESENTACIÓN</h3>
+  <a href="labs/wind.html" target="_blank">Wind Lab v1.6 ↗</a>
+  <a href="labs/method.html" target="_blank">Method Lab v0.1 ↗</a>
   <a href="assets/isl-tv-reel-premium-1080p.mp4" target="_blank">ISL TV Reel ↗</a>
   <a href="ps4.html">Modo PS4 Lite ↗</a>
-  <a href="labs/wind.html" target="_blank">Wind Lab v1.6 ↗</a>
-  <a href="labs/method.html" target="_blank">Method Lab v0.1 ↗</a>\n  <a href="capsulas.html">Cápsulas ISL · modo descanso ↗</a>
-  <button class="item" onclick="go('gallery')">Forge / Galería integrada</button>
  </div>
  <div class="group"><h3>INTEGRACIONES</h3>
   <div class="tiny">Drive · GitHub · fal · Lovable · Supabase · PostHog · Jotform.</div>
