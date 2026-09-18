@@ -3,7 +3,9 @@
     <application
         android:allowBackup="true"
         android:usesCleartextTraffic="false"
-        android:label="Islas Voladoras"\n        android:icon="@mipmap/ic_launcher"\n        android:roundIcon="@mipmap/ic_launcher"
+        android:label="Islas Voladoras"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
         android:theme="@android:style/Theme.Material.NoActionBar">
         <activity
             android:name=".MainActivity"
