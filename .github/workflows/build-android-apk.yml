@@ -62,6 +62,10 @@ jobs:
           ! grep -Rqi "project.godot\|scripts/main.gd\|GODOT_VERSION" .github/workflows/build-android-apk.yml android-web
           grep -q "juanmailcamara331-hash.github.io/islas-voladoras" android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q "com.pandaria.islasvoladoras" android-web/app/build.gradle
+          grep -q '@drawable/isl_launcher' android-web/app/src/main/AndroidManifest.xml
+          test -s android-web/app/src/main/res/drawable/isl_launcher.xml
+          grep -q 'FFC36E' android-web/app/src/main/res/drawable/isl_launcher.xml
+          echo "official ISL launcher: OK"
 
       - name: Build APK
         working-directory: android-web
