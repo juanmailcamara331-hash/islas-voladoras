@@ -137,3 +137,12 @@ Scientific rigor protects creative brutality.
 - private-build-audit GitHub workflow added.
 - APK migration BLOCKED until PRIVATE_WEB_GREEN + PRIVATE_ACCESS_GREEN + HUMAN_DEVICE_GREEN.
 - Public release marker v0.67 triggered; last observed public deploy still old 6aadaaa8426764ffe5174cb3.
+
+
+## PRIVATE DEPLOY CREDENTIAL GATE · v0.67.1
+- Public/private build boundary CI = GREEN.
+- Private build audit CI = GREEN.
+- Netlify public production = READY with Lite v2 forms.
+- Private host project exists with SSO all-routes, but content deployment is blocked by ERR-DEPLOY-011.
+- GitHub NETLIFY_AUTH_TOKEN is non-empty yet Netlify CLI returns 404/Project not found.
+- Auto retries paused; workflow manual-only until credential rotation.
