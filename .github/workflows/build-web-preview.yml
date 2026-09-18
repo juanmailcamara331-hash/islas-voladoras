@@ -105,6 +105,10 @@ jobs:
           grep -q 'data-mode="trance"' build/pages/huellas.html
           grep -q 'LABORATORIO DE HUELLA' build/pages/huellas.html
           grep -q 'href="huellas.html"' build/pages/rpg-home.html
+          grep -q 'Metrónomo sin Dueño' build/pages/rpg-home.html
+          grep -q 'Sello de Barro Vivo' build/pages/rpg-home.html
+          grep -q 'Media Máscara del Aplauso' build/pages/rpg-home.html
+          grep -q 'isl_huellas_events_v2' build/pages/rpg-home.html
           grep -q "Cabina de Expedición" build/pages/rpg-home.html
           grep -q 'src="assets/protagonist-sheet.png"' build/pages/rpg-home.html
           grep -q 'class="miniMap"' build/pages/rpg-home.html
