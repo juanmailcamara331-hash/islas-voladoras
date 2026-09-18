@@ -276,3 +276,35 @@ Regla:
 status: FIXED_PENDING_HUMAN
 first_seen: 2026-09-18
 recurrence_count: 1
+
+
+## ERR-ANDROID-009 · flash de bienvenida al volver atrás
+Síntoma:
+- tras abrir una encuesta u otra vista y usar Atrás, aparece durante un frame la bienvenida antes del Centro de Mandos.
+
+Entidad:
+- APP_SHELL
+- NAVIGATION
+- ANDROID_WRAPPER
+- PLAYER_EXPERIENCE_CLARITY
+
+Severidad:
+- S2 MAJOR visual/navigation regression.
+
+Causa:
+- native-app se detectaba en <head>, pero el estado de sesión ya-entered se aplicaba a #welcome después de DOMContentLoaded/pageshow;
+- el navegador podía pintar #welcome antes de stabilize().
+
+Fix:
+- leer isl_native_entered_v063 en <head>;
+- añadir html.native-entered antes del primer render;
+- CSS crítico oculta #welcome en native-entered con display:none;
+- al pulsar ENTRAR, sincronizar native-entered inmediatamente;
+- pageshow/stabilize mantiene la clase como fallback.
+
+Regression guard:
+- CI exige native-entered y CSS crítico de welcome.
+
+status: FIXED_PENDING_HUMAN
+first_seen: 2026-09-18
+recurrence_count: 1
