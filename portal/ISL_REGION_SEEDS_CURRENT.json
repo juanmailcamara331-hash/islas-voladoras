@@ -1,0 +1,80 @@
+{
+  "version": "0.1",
+  "updated_at": "2026-09-18",
+  "design_rule": "Cada región debe ser simultáneamente lugar, cultura, problema jugable, reencuentro y futura memoria.",
+  "regions": [
+    {
+      "id": "R1",
+      "name": "VELARIA · La Ciudad que Ata el Cielo",
+      "role": "Primera gran ciudad / aprendizaje de civilización",
+      "fantasy": "Una ciudad colgada de enormes velas, contrapesos y raíces aéreas que intenta permanecer inmóvil en un mundo que nunca deja de desplazarse.",
+      "civilization": {
+        "desire": "Estabilidad, previsibilidad y conservar rutas seguras.",
+        "contradiction": "Para no perder nada han empezado a inmovilizar también aquello que debería cambiar.",
+        "everyday": "Mercados suspendidos, casas que se reajustan con cabos, pequeños rituales para medir la deriva diaria."
+      },
+      "gameplay": [
+        "leer corrientes",
+        "reconfigurar contrapesos",
+        "rutas verticales",
+        "transportar objetos/personas con viento",
+        "primeros atajos por compañero"
+      ],
+      "local_goal": "Restablecer una ruta comunitaria cortada sin aceptar automáticamente el método de la autoridad local.",
+      "friend_function": "Primer amigo encontrado parcialmente integrado en la ciudad; ya no quiere simplemente volver contigo.",
+      "return_hook": "Al regresar, la ciudad habrá cambiado según qué estructuras estabilizaste, liberaste o forzaste.",
+      "molino_fit": "ALTO: El Molino que Miente puede ser una instalación periférica que falsea el viento para proteger una ruta comercial, convirtiendo el prototipo en una misión con conflicto real."
+    },
+    {
+      "id": "R2",
+      "name": "NÁCAR DE NIEBLA · Las Campanas de los Ausentes",
+      "role": "Región de memoria / orientación / relaciones",
+      "fantasy": "Archipiélago cubierto por nieblas vivas donde campanas y resonancias permiten navegar por ecos de lugares que ya no están donde se recuerdan.",
+      "civilization": {
+        "desire": "No olvidar a quienes desaparecieron durante La Separación.",
+        "contradiction": "Han convertido la memoria en mapa, pero empiezan a confundir recordar con impedir que las personas cambien.",
+        "everyday": "Cartógrafos de sonido, plazas silenciosas, mensajes acústicos dejados para viajeros futuros."
+      },
+      "gameplay": [
+        "navegación por sonido",
+        "ecos temporales",
+        "seguir pistas contradictorias",
+        "puzzles de memoria espacial",
+        "diálogos que cambian según recuerdos previos"
+      ],
+      "local_goal": "Encontrar una ruta que sólo existe cuando varias versiones contradictorias del pasado se aceptan a la vez.",
+      "friend_function": "Un amigo puede estar presente mediante rastros y consecuencias antes de aparecer físicamente.",
+      "return_hook": "Viejos ecos cambian de significado después de nuevos reencuentros; rutas antes falsas pueden volverse verdaderas.",
+      "molino_fit": "MEDIO: útil como contraste, pero no debería repetirse aquí si ya se usa en Velaria."
+    },
+    {
+      "id": "R3",
+      "name": "BRASA ERRANTE · La Ciudad que se Alimenta del Cambio",
+      "role": "Región de riesgo / transformación / consecuencia corporal",
+      "fantasy": "Islas volcánicas móviles mantenidas a flote por hornos biológicos y minerales que mutan cuanto absorben.",
+      "civilization": {
+        "desire": "Prosperar adaptándose más rápido que el entorno.",
+        "contradiction": "Celebran la transformación hasta que alguien cambia de una forma que la comunidad no sabe aceptar.",
+        "everyday": "Talleres vivos, cultivos térmicos, barrios que migran con el calor, fiestas donde se intercambian piezas y técnicas."
+      },
+      "gameplay": [
+        "calor como recurso",
+        "mutaciones temporales",
+        "combate JRPG con entorno reactivo",
+        "crafting contextual",
+        "rutas que sólo existen bajo ciertos estados corporales"
+      ],
+      "local_goal": "Resolver una crisis energética donde reparar, forzar o reinterpretar el sistema produce consecuencias distintas y visibles.",
+      "friend_function": "Aquí encaja un amigo profundamente cambiado física o conductualmente, haciendo imposible el reencuentro nostálgico.",
+      "return_hook": "La región recuerda qué procesos aceleraste; puede prosperar, degradarse o convertirse en algo inesperado.",
+      "molino_fit": "BAJO: mejor reservar su identidad para Velaria."
+    }
+  ],
+  "proposed_order": [
+    "VELARIA",
+    "NÁCAR DE NIEBLA",
+    "BRASA ERRANTE"
+  ],
+  "note": "Orden propuesto sólo para pruebas; no CANON.",
+  "molino_context_candidate": "VELARIA · instalación periférica que falsea el viento para proteger una ruta comercial."
+}
