@@ -36,7 +36,9 @@ for p in html_files:
 global_pages=[
  "index.html","rpg-home.html","huellas.html","salon-cortinas-rojas.html",
  "isla-baile-inagotable.html","recreo.html","capsulas.html","capsulas-tv.html",
- "musica.html","ps4.html"
+ "musica.html","ps4.html","air-fishing.html","avisos.html","boss-prototype.html",
+ "decision-engine.html","midjourney-lab.html","ningun-sitio.html","playtest-echo.html",
+ "reel.html","secret-level.html","storm-route.html","sunday-market.html"
 ]
 for rel in global_pages:
     p=ROOT/rel
