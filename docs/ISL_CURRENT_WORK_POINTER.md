@@ -576,3 +576,14 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
   - .github/workflows/private-build-audit.yml
 - Current Android APK still points to GitHub Pages and MUST NOT move until private host deploy is GREEN + physical regression tests pass.
 - Public Netlify release airlock v0.67 triggered via NETLIFY_DEPLOY_v0.7.2.md.
+
+
+## v0.67.1 · PRIVATE DEPLOY CREDENTIAL GATE
+- PUBLIC/PRIVATE CI boundary: GREEN.
+- Private Command Center build audit: GREEN.
+- Public Netlify v0.67 deploy: READY; Lite v2 forms detected.
+- Automatic private Netlify deploy attempted 3 times and stopped.
+- ERR-DEPLOY-011: GitHub NETLIFY_AUTH_TOKEN exists but CLI cannot resolve current Netlify projects (404 / Project not found).
+- Private deploy workflow is manual-only until token rotation/re-authorization.
+- Do not expose or embed any Netlify token in repo/APK.
+- Current private site remains provisioned with SSO but has no deployed content yet.
