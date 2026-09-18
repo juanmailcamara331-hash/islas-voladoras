@@ -1,0 +1,163 @@
+{
+  "version": "0.61",
+  "updated_at": "2026-09-18",
+  "status": "ACTIVE",
+  "entities": [
+    "APP_SHELL",
+    "NAVIGATION",
+    "UI_LAYOUT",
+    "INPUT",
+    "VIEWPORT",
+    "CACHE_SW",
+    "BUILD_CI",
+    "ANDROID_WRAPPER",
+    "WEB_PWA",
+    "SAVE_PERSISTENCE",
+    "MIGRATION",
+    "GAMEPLAY",
+    "AI_CREATURE",
+    "COMBAT",
+    "WORLD_STATE",
+    "BRUJULA_HUELLAS",
+    "RELIC",
+    "NUDO",
+    "AUDIO",
+    "MEDIA",
+    "ART_ASSET",
+    "PERFORMANCE",
+    "NETWORK",
+    "SECURITY_PRIVACY",
+    "ACCESSIBILITY",
+    "PLATFORM",
+    "CONTENT_NARRATIVE",
+    "TOOLING_AGENT",
+    "DEPLOYMENT"
+  ],
+  "categories": [
+    {
+      "id": "A",
+      "name": "CRASH_BOOT"
+    },
+    {
+      "id": "B",
+      "name": "NAVIGATION"
+    },
+    {
+      "id": "C",
+      "name": "IMPLEMENTATION_RESPONSE"
+    },
+    {
+      "id": "D",
+      "name": "TEMPORAL_RACE_TIMING"
+    },
+    {
+      "id": "E",
+      "name": "NON_TEMPORAL_LOGIC"
+    },
+    {
+      "id": "F",
+      "name": "NETWORK"
+    },
+    {
+      "id": "G",
+      "name": "SOUND"
+    },
+    {
+      "id": "H",
+      "name": "GAME_BALANCE"
+    },
+    {
+      "id": "I",
+      "name": "VISUAL_RENDER"
+    },
+    {
+      "id": "J",
+      "name": "INPUT_INTERACTION"
+    },
+    {
+      "id": "K",
+      "name": "STATE_PERSISTENCE"
+    },
+    {
+      "id": "L",
+      "name": "CACHE_VERSIONING"
+    },
+    {
+      "id": "M",
+      "name": "BUILD_PACKAGING"
+    },
+    {
+      "id": "N",
+      "name": "PERFORMANCE_MEMORY"
+    },
+    {
+      "id": "O",
+      "name": "PLATFORM_COMPAT"
+    },
+    {
+      "id": "P",
+      "name": "ACCESSIBILITY"
+    },
+    {
+      "id": "Q",
+      "name": "SECURITY_PRIVACY"
+    },
+    {
+      "id": "R",
+      "name": "CONTENT_DATA"
+    },
+    {
+      "id": "S",
+      "name": "AI_AGENT_TOOLING"
+    },
+    {
+      "id": "T",
+      "name": "PLAYER_EXPERIENCE_CLARITY"
+    }
+  ],
+  "severities": {
+    "S0": "BLOCKER",
+    "S1": "CRITICAL",
+    "S2": "MAJOR",
+    "S3": "MINOR",
+    "S4": "POLISH"
+  },
+  "test_levels": [
+    "T0_STATIC_CONTRACT",
+    "T1_UNIT_PROPERTY",
+    "T2_FEATURE",
+    "T3_SMOKE",
+    "T4_INTEGRATION",
+    "T5_CONTENT_STRESS",
+    "T6_VISUAL_REGRESSION",
+    "T7_DEVICE_PACKAGED",
+    "T8_HUMAN_CQC"
+  ],
+  "required_change_fields": [
+    "change_id",
+    "intent",
+    "entities",
+    "dependencies",
+    "risks",
+    "known_regressions",
+    "required_tests",
+    "human_gate",
+    "rollback"
+  ],
+  "required_error_fields": [
+    "error_id",
+    "symptom",
+    "context",
+    "entity",
+    "category",
+    "platform",
+    "severity",
+    "root_cause",
+    "fix",
+    "regression_test",
+    "first_seen",
+    "last_seen",
+    "recurrence_count",
+    "status"
+  ]
+}
