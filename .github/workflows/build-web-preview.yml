@@ -63,7 +63,9 @@ jobs:
           grep -q 'AHORA IMPORTA' build/pages/index.html
           grep -q 'REVISIÓN ACTUAL' build/pages/index.html
           grep -q 'id="welcome"' build/pages/index.html
-          grep -q "location.href='rpg-home.html'" build/pages/index.html
+          grep -q "sessionStorage.setItem('isl_native_entered_v063','1')" build/pages/index.html
+          grep -q "closeW();" build/pages/index.html
+          grep -q "go('home');" build/pages/index.html
           grep -q 'isTechnical=/command-center\\.html' build/pages/index.html
           ! grep -q '<div class="homeHeroIcons">' build/pages/index.html
           ! grep -q 'data-setting="welcome"' build/pages/index.html
