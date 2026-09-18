@@ -80,6 +80,11 @@ jobs:
           grep -q 'class="sceneWindow"' build/pages/rpg-home.html
           grep -q 'id="useItem"' build/pages/rpg-home.html
           grep -q 'class="deckItem"' build/pages/rpg-home.html
+          grep -q 'routeInventoryPanel' build/pages/rpg-home.html
+          grep -q 'ISL_ROUTE_STATE_CURRENT.json' build/pages/rpg-home.html
+          grep -q 'RELIQUIAS DE RUTA' build/pages/rpg-home.html
+          grep -q '"route_inventory"' build/pages/ISL_ROUTE_STATE_CURRENT.json
+          grep -q '"active_mission_item"' build/pages/ISL_ROUTE_STATE_CURRENT.json
           grep -q 'isl-cabin-fab' build/pages/command-center.html
           grep -q '100dvh' build/pages/command-center.html
           ! grep -q 'rpg-control-strip' build/pages/command-center.html
