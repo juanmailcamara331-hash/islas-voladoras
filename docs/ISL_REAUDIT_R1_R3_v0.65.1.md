@@ -149,3 +149,22 @@ Para GREEN falta validar en APK publicada:
 
 Deploy trigger del fix de flash:
 - d210db54935a3971b0640f2c956ab244395c6d7a
+
+
+## R2 verification update · v0.66.1
+Human evidence:
+- BACK from survey to Command Center: VERIFIED GOOD on physical Android.
+- ERR-ANDROID-009 status → FIXED_VERIFIED.
+
+Survey rollout:
+- Pilares Lite v2 published alongside v1.
+- Referencias Lite v2 published alongside v1.
+- currentActions now points to Lite v2.
+- v1 stable surveys remain reachable in drawer as rollback.
+- CI guards Lite form names, v0.66-lite metadata and static Netlify fields.
+
+R2 remains AMBER only for:
+- drawer closes by outside tap;
+- currentActions visible/clear in physical APK;
+- primary nav destinations respond;
+- no wrapping in main nav.
