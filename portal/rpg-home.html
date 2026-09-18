@@ -91,7 +91,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
         <button class="stashSlot rare" data-item="Cuaderno de Navegación 001" data-origin="Archivo de Corrientes" data-rarity="RELIQUIA" data-real="PROVISIONAL" data-function="Memoria / pistas / registro">📓<small>1</small></button>
         <button class="stashSlot" data-item="Fibra de Vela" data-origin="Banco de Deriva" data-rarity="COMÚN" data-real="EXPERIMENTO" data-function="Material de crafting">⌁<small>3</small></button>
         <button class="stashSlot strange" data-item="Eco del Nivel que No Existe" data-origin="Portal raro" data-rarity="SECRETA" data-real="HIPÓTESIS" data-function="Huella persistente">✦<small>?</small></button>
-        <button class="stashSlot" data-item="Slot vacío" data-origin="—" data-rarity="—" data-real="—" data-function="Esperando botín">·</button>
+        <button class="stashSlot" id="secretRelicSlot" data-item="Slot vacío" data-origin="—" data-rarity="—" data-real="—" data-function="Esperando botín">·</button>
       </div>
       <div class="truth" style="margin-top:12px"><b>Regla de verdad:</b> “ÉPICO”, “RARO” o “RELIQUIA” son rarezas diegéticas. No significan CANON. Los estados CANON / PROVISIONAL / EXPERIMENTO / REJECTED-LEARNED sólo cambian por gates reales.</div>
     </article>
@@ -156,7 +156,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
         <div style="width:150px;height:190px;border:2px solid #86efff88;border-radius:50% 50% 42% 42%;box-shadow:0 0 34px #86efff44,inset 0 0 34px #b9a5ff22;display:grid;place-items:center;font-size:54px;color:var(--gold)">⌁</div>
         <div class="tiny" style="position:absolute;bottom:12px">FÍSICA ALTERADA · SIN MARCADOR</div>
       </div>
-      <div class="actions"><a class="btn gold" href="secret-level.html">Cruzar portal</a></div></div>
+      <div class="actions"><a class="btn gold" href="secret-level.html">Cruzar portal</a><a class="btn" href="boss-prototype.html">Boss prototype</a></div></div>
     </article>
 
     <article class="panel" style="grid-column:1/-1">
@@ -186,7 +186,11 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
   enter.addEventListener('click',startMusic);
   if(localStorage.getItem('isl_rpg_entered')==='1'){music.volume=.34;music.play().then(function(){gate.style.display='none'}).catch(function(){})}
   document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});t.classList.add('on')})});
-  var modal=document.getElementById('itemModal'),currentItem=null;document.querySelectorAll('.stashSlot:not([data-item="Slot vacío"]),.eqslot').forEach(function(el){el.addEventListener('click',function(){currentItem=el;var d=el.dataset;document.getElementById('imName').textContent=d.item||el.querySelector('b')?.textContent||'Equipo';document.getElementById('imRarity').textContent='RAREZA · '+(d.rarity||'DIEGÉTICA');document.getElementById('imOrigin').textContent=d.origin||'Perfil del Cartógrafo';document.getElementById('imReal').textContent=d.real||'PROVISIONAL';document.getElementById('imFunction').textContent=d.function||'Equipo de expedición / función en evaluación';modal.classList.add('show')})});document.getElementById('closeItem').onclick=function(){modal.classList.remove('show')};document.getElementById('equipItem').onclick=function(){if(currentItem){localStorage.setItem('isl_equipped_preview',document.getElementById('imName').textContent);document.getElementById('equipItem').textContent='Equipado en perfil ✓'}};
+  var modal=document.getElementById('itemModal'),currentItem=null;
+  var sr=document.getElementById('secretRelicSlot');
+  if(sr&&localStorage.getItem('isl_secret_relic')==='fragmento-corriente-inversa'){
+    sr.classList.add('strange');sr.dataset.item='Fragmento de Corriente Inversa';sr.dataset.origin='El Nivel que No Existe';sr.dataset.rarity='SECRETA';sr.dataset.real='HIPÓTESIS';sr.dataset.function='Material/llave potencial para portales y crafting';sr.innerHTML='✧<small>1</small>';
+  }document.querySelectorAll('.stashSlot:not([data-item="Slot vacío"]),.eqslot').forEach(function(el){el.addEventListener('click',function(){currentItem=el;var d=el.dataset;document.getElementById('imName').textContent=d.item||el.querySelector('b')?.textContent||'Equipo';document.getElementById('imRarity').textContent='RAREZA · '+(d.rarity||'DIEGÉTICA');document.getElementById('imOrigin').textContent=d.origin||'Perfil del Cartógrafo';document.getElementById('imReal').textContent=d.real||'PROVISIONAL';document.getElementById('imFunction').textContent=d.function||'Equipo de expedición / función en evaluación';modal.classList.add('show')})});document.getElementById('closeItem').onclick=function(){modal.classList.remove('show')};document.getElementById('equipItem').onclick=function(){if(currentItem){localStorage.setItem('isl_equipped_preview',document.getElementById('imName').textContent);document.getElementById('equipItem').textContent='Equipado en perfil ✓'}};
   var c=document.getElementById('craftTry');if(c)c.onclick=function(){var out=document.getElementById('craftResult');out.textContent='Resultado provisional: Receptor de Corrientes — desbloquea lectura de una corriente, no +stats.';localStorage.setItem('isl_craft_d3ref04','tested')};if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
 })();
 </script>
