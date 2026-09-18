@@ -368,3 +368,26 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Browser/PWA accessibility zoom remains unchanged.
 - Android workflow now enforces the native viewport rules and app=1 entry.
 - Visual north remains the approved premium ISL Command Center references; no broad redesign is opened in this fix.
+
+
+## v0.60 — REGRESSION REGISTRY + NATIVE COLD START HARDENING
+- Recurring-error registry added: docs/ISL_ERROR_REGISTRY_v0.60.md
+- Known native startup bug formally documented:
+  - legacy welcome flash;
+  - dark/blank shell with hero/background but no useful UI.
+- Prior proven fixes preserved:
+  - stale service-worker cache invalidation;
+  - remove hidden welcome physically, not opacity-only;
+  - force HOME/finalCommandCenter visible;
+  - avoid aggressive viewport patches before ruling out cache/layers.
+- Native cold start now:
+  - unregisters service workers;
+  - clears Cache Storage only (not localStorage/save);
+  - removes #welcome from DOM;
+  - forces #home + #finalCommandCenter visible;
+  - scrolls to 0,0;
+  - disables native SW registration.
+- SW cache bumped to isl-center-v060-native-regression-guard.
+- Android entry bumped to ?app=1&native=060&v=20260918-7.
+- CI now guards native startup markers and SW cache generation.
+- Technical CQC now explicitly requires 3 cold starts before calling APK clean.
