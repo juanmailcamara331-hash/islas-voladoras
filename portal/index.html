@@ -8,6 +8,11 @@
   var app=new URLSearchParams(location.search).get('app')==='1';
   if(!app)return;
   document.documentElement.classList.add('native-app');
+  try{
+    if(sessionStorage.getItem('isl_native_entered_v063')==='1'){
+      document.documentElement.classList.add('native-entered');
+    }
+  }catch(e){}
   window.__ISL_NATIVE_APP__=true;
   // Native wrapper must not inherit stale PWA state.
   if('serviceWorker' in navigator){
@@ -17,7 +22,7 @@
     caches.keys().then(function(keys){keys.forEach(function(k){caches.delete(k)})}).catch(function(){});
   }
 })();
-</script><style>html.native-app body{overflow-x:hidden!important}html.native-app #home{display:block!important;visibility:visible!important;opacity:1!important}html.native-app #finalCommandCenter{display:block!important;visibility:visible!important;opacity:1!important}</style><script>
+</script><style>html.native-app body{overflow-x:hidden!important}html.native-app.native-entered #welcome{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}html.native-app #home{display:block!important;visibility:visible!important;opacity:1!important}html.native-app #finalCommandCenter{display:block!important;visibility:visible!important;opacity:1!important}</style><script>
 (function(){
   var ua = navigator.userAgent || "";
   var q = location.search || "";
@@ -608,6 +613,7 @@ sim();
 
 <script id="isl-v05-js">(function(){var $=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))},settings=JSON.parse(localStorage.getItem('islcc_settings_v05')||'{}');function save(){localStorage.setItem('islcc_settings_v05',JSON.stringify(settings))}function bv(k,d){return typeof settings[k]==='boolean'?settings[k]:d}var boot=$('#bootbar');if(boot){setTimeout(function(){boot.className='go'},30);window.addEventListener('load',function(){boot.className='done'})}var welcome=$('#welcome');function closeW(){if(welcome)welcome.classList.add('hidden')}var isTechnical=/command-center\.html$/i.test(location.pathname);if(isTechnical)closeW();$('#enterISL').onclick=function(){
   try{sessionStorage.setItem('isl_native_entered_v063','1')}catch(e){}
+  if(window.__ISL_NATIVE_APP__)document.documentElement.classList.add('native-entered');
   closeW();
   go('home');
 };var tip=$('#helpTip'),tt;function showTip(el){if(!bv('tooltips',true))return;var tx=el.getAttribute('data-help')||el.getAttribute('title');if(!tx)return;clearTimeout(tt);tt=setTimeout(function(){tip.textContent=tx;tip.classList.add('show');var r=el.getBoundingClientRect();tip.style.left=Math.min(innerWidth-350,Math.max(10,r.left))+'px';tip.style.top=Math.min(innerHeight-90,r.bottom+9)+'px'},220)}function hideTip(){clearTimeout(tt);tip.classList.remove('show')}document.addEventListener('mouseover',function(e){var el=e.target.closest('[data-help],.rail button[title]');if(el)showTip(el)});document.addEventListener('mouseout',hideTip);document.addEventListener('focusin',function(e){var el=e.target.closest('[data-help],.rail button[title]');if(el)showTip(el)});document.addEventListener('focusout',hideTip);
@@ -625,7 +631,10 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
     if(fc){fc.style.display='block';fc.style.visibility='visible';fc.style.opacity='1'}
     var entered=false;try{entered=sessionStorage.getItem('isl_native_entered_v063')==='1'}catch(e){}
     var w=document.getElementById('welcome');
-    if(entered&&w){w.classList.add('hidden');w.style.pointerEvents='none'}
+    if(entered){
+      document.documentElement.classList.add('native-entered');
+      if(w){w.classList.add('hidden');w.style.pointerEvents='none'}
+    }
     window.scrollTo(0,0);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',stabilize,{once:true}); else stabilize();
