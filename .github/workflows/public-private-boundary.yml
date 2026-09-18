@@ -46,5 +46,8 @@ jobs:
           test -f build/private/huellas.html
           test -f build/private/secret-level.html
           test -f build/private/route-isl.js
-          grep -q 'id="finalCommandCenter"' build/private/index.html
+          grep -q 'rpgCommandDeck' build/private/index.html
+          test -f build/private/command-center.html
+          grep -q 'id="finalCommandCenter"' build/private/command-center.html
+          test -f build/private/access-probe.html
           echo "PUBLIC_PRIVATE_BOUNDARY=GREEN"
