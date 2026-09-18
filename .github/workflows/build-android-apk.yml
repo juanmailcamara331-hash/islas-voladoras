@@ -62,10 +62,10 @@ jobs:
           ! grep -Rqi "project.godot\|scripts/main.gd\|GODOT_VERSION" .github/workflows/build-android-apk.yml android-web
           grep -q "juanmailcamara331-hash.github.io/islas-voladoras" android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q "com.pandaria.islasvoladoras" android-web/app/build.gradle
-          grep -q '@drawable/isl_launcher' android-web/app/src/main/AndroidManifest.xml
+          grep -q '@drawable/isl_launcher_final' android-web/app/src/main/AndroidManifest.xml
           test -s android-web/app/src/main/res/drawable/isl_launcher.xml
           grep -q 'ISL monogram lock v0.42' android-web/app/src/main/res/drawable/isl_launcher.xml
-          echo "official ISL launcher: OK"
+          echo "exact ISL launcher master: OK"
           grep -q 'setBuiltInZoomControls(true)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'setSupportZoom(true)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'LOAD_NO_CACHE' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
