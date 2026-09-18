@@ -1,154 +1,63 @@
 (function(){
-  function ready(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn);else fn()}
-  ready(function(){
-    var view=document.getElementById('calendar');
-    if(!view||view.dataset.islRouteInstalled==='1')return;
-    view.dataset.islRouteInstalled='1';
+function ready(fn){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fn);else fn()}
+ready(function(){
+  var view=document.getElementById('calendar');
+  if(!view||view.dataset.islRouteInstalled==='2')return;
+  view.dataset.islRouteInstalled='2';
 
-    var nav=document.querySelector('.rail button[data-view="calendar"]');
-    if(nav){nav.title='RUTA ISL';nav.setAttribute('data-help','Viaje por el mapa del proyecto: destino actual, hitos y huella.');nav.textContent='🧭'}
+  var old=Array.prototype.slice.call(view.children);
+  var dates=document.createElement('details');dates.className='routeDates';
+  dates.innerHTML='<summary><b>▦ Calendario operativo</b><span>Fechas concretas sólo cuando importen</span></summary><div class="routeDatesInner"></div>';
+  var holder=dates.querySelector('.routeDatesInner');old.forEach(function(n){holder.appendChild(n)});
 
-    var oldKids=Array.prototype.slice.call(view.children);
-    var details=document.createElement('details');
-    details.className='routeDates';
-    var sum=document.createElement('summary');
-    sum.innerHTML='<span>▦</span><b>Fechas concretas</b><small>Calendario operativo, sólo cuando importe una fecha.</small>';
-    details.appendChild(sum);
-    var oldWrap=document.createElement('div');
-    oldWrap.className='routeDatesInner';
-    oldKids.forEach(function(n){oldWrap.appendChild(n)});
-    details.appendChild(oldWrap);
+  var style=document.createElement('style');style.id='isl-route-v2-css';style.textContent=`
+  #calendar .routeV2{display:grid;gap:12px;max-width:980px;margin:0 auto}
+  #calendar .routeHero{border:1px solid #355660;border-radius:18px;background:linear-gradient(135deg,#0b1c24,#07131a);padding:18px;box-shadow:0 18px 50px #0008}
+  #calendar .routeEyebrow{font-size:9px;letter-spacing:.14em;color:#8defff;font-weight:900}
+  #calendar .routeHero h2{font-size:clamp(34px,7vw,64px);line-height:.94;margin:6px 0 9px}
+  #calendar .routeHero p{margin:0;color:#b9c9cc;line-height:1.5;max-width:720px}
+  #calendar .routeFocus{display:grid;grid-template-columns:1.2fr .8fr;gap:10px}
+  #calendar .routeCard{border:1px solid #2e4c56;border-radius:15px;background:#081820;padding:14px}
+  #calendar .routeCard.now{border-color:#9a783e;background:linear-gradient(180deg,#1b180f,#0c1717)}
+  #calendar .routeCard.next{border-color:#3e6b76}
+  #calendar .routeLabel{font-size:8px;letter-spacing:.14em;color:#98adb2;font-weight:900}
+  #calendar .routeCard.now .routeLabel{color:#ffc36e}
+  #calendar .routeCard h3{margin:5px 0 6px;font-size:20px}
+  #calendar .routeCard p{margin:0;color:#b7c7ca;font-size:11px;line-height:1.45}
+  #calendar .routeStrip{display:grid;gap:7px}
+  #calendar .routeStep{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;border:1px solid #284650;border-radius:12px;background:#08151c;padding:10px 11px}
+  #calendar .routeStep .sig{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1px solid #42616a;color:#9db3b8}
+  #calendar .routeStep.done .sig{color:#8fe1b0;border-color:#47725b}
+  #calendar .routeStep.now{border-color:#9a783e;background:#16150f}
+  #calendar .routeStep.now .sig{color:#ffc36e;border-color:#9a783e}
+  #calendar .routeStep.next{border-color:#3c6671}
+  #calendar .routeStep b{display:block;font-size:11px}
+  #calendar .routeStep small{display:block;color:#91a5aa;font-size:9px;line-height:1.35;margin-top:2px}
+  #calendar .routeStep em{font-style:normal;font-size:8px;color:#87999e;text-transform:uppercase}
+  #calendar .routeActions{display:flex;gap:8px;flex-wrap:wrap}
+  #calendar .routeActions a{border:1px solid #355660;border-radius:10px;background:#0a1b23;color:#fff;padding:10px 12px;text-decoration:none;font-size:9px;font-weight:900}
+  #calendar .routeActions a.primary{border-color:#8b6b39;background:#2a2117;color:#ffe3aa}
+  #calendar .routeDates{border:1px solid #294955;border-radius:14px;background:#08151c;overflow:hidden}
+  #calendar .routeDates summary{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 13px;cursor:pointer}
+  #calendar .routeDates summary span{font-size:9px;color:#91a5aa}
+  #calendar .routeDatesInner{padding:0 12px 12px}
+  @media(max-width:680px){#calendar .routeFocus{grid-template-columns:1fr}#calendar .routeStep{grid-template-columns:28px minmax(0,1fr)}#calendar .routeStep em{grid-column:2}.routeDates summary{align-items:flex-start!important;flex-direction:column}}
+  `;document.head.appendChild(style);
 
-    var style=document.createElement('style');
-    style.id='isl-route-v1-css';
-    style.textContent=`
-      #calendar .routeShell{display:grid;gap:12px}
-      #calendar .routeHead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
-      #calendar .routeHead h2{font-size:clamp(28px,5vw,50px);letter-spacing:-.035em;margin:3px 0 6px}
-      #calendar .routeLegend{display:flex;gap:6px;flex-wrap:wrap;align-items:center}#calendar .routeProgress{font-size:8px;letter-spacing:.08em;border:1px solid #375863;border-radius:999px;padding:6px 8px;background:#07131a;color:#c8d6d8}
-      #calendar .routeLegend span{font-size:8px;letter-spacing:.08em;border:1px solid var(--line);border-radius:999px;padding:5px 7px;background:#08151c}
-      #calendar .routeLegend .done{color:var(--lime);border-color:#4b754a}
-      #calendar .routeLegend .now{color:var(--gold);border-color:#8b6b39}
-      #calendar .routeMap{position:relative;min-height:clamp(440px,62vw,760px);overflow:hidden;border:1px solid #365b68;border-radius:20px;background:#061017;box-shadow:var(--shadow);isolation:isolate}
-      #calendar .routeMap>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.75) contrast(1.05) brightness(.58);z-index:-3}
-      #calendar .routeMap:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#06101728,#061017c9 96%),radial-gradient(circle at 62% 38%,transparent,#06101788 70%);z-index:-2}
-      #calendar .routeMap:after{content:"";position:absolute;inset:0;opacity:.13;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(#000,transparent 90%);z-index:-1}
-      #calendar .routePath{position:absolute;left:13%;top:66%;width:72%;height:2px;background:linear-gradient(90deg,#73dfc155,#87efff99,#ffc36e99,#6b748066);transform:rotate(-16deg);transform-origin:left center;box-shadow:0 0 14px #87efff55}
-      #calendar .routeNode{position:absolute;transform:translate(-50%,-50%);width:min(142px,24vw);min-height:66px;border:1px solid #456775;border-radius:18px;background:#08151ce8;color:#eef8f5;padding:9px 10px;text-align:left;box-shadow:0 14px 34px #0008;backdrop-filter:blur(8px);z-index:3}
-      #calendar .routeNode:hover,#calendar .routeNode:focus-visible{border-color:#87efff;box-shadow:0 16px 38px #0009,0 0 0 2px #87efff22;outline:none}
-      #calendar .routeNode b{display:block;font-size:11px;line-height:1.15;margin-top:2px}
-      #calendar .routeNode small{display:block;margin-top:4px;font-size:8px;line-height:1.25;color:#9db2b8}
-      #calendar .routeNode .routeSig{font-size:13px}
-      #calendar .routeNode.done{border-color:#4d7651}.routeNode.done .routeSig{color:var(--lime)}
-      #calendar .routeNode.current{border-color:#9a783e;background:#19170fe9;box-shadow:0 16px 38px #0009,0 0 28px #ffc36e24;animation:routePulse 2.8s ease-in-out infinite}.routeNode.current .routeSig{color:var(--gold)}
-      #calendar .routeNode.future{opacity:.72}
-      #calendar .routeNode.visited:after{content:"✦";position:absolute;right:7px;top:5px;font-size:9px;color:var(--cyan)}
-      #calendar .routeTraveler{position:absolute;width:52px;height:52px;border:2px solid #ffc36e;border-radius:50%;overflow:hidden;background:#08151c;box-shadow:0 0 0 5px #ffc36e22,0 12px 24px #0009;transform:translate(-50%,-50%);z-index:5;transition:left .55s ease,top .55s ease}
-      #calendar .routeTraveler img{width:100%;height:100%;object-fit:cover;object-position:center 22%;image-rendering:pixelated}
-      #calendar .routeTraveler:after{content:"";position:absolute;inset:auto 8px 4px;height:2px;background:#ffc36e;box-shadow:0 0 10px #ffc36e}
-      @keyframes routePulse{50%{box-shadow:0 16px 38px #0009,0 0 38px #ffc36e46}}
-      #calendar .routeNow{position:absolute;left:4%;right:4%;bottom:4%;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;border:1px solid #806538;background:linear-gradient(180deg,#18170fe8,#0d120ddd);border-radius:14px;padding:11px 12px;backdrop-filter:blur(10px);z-index:4;box-shadow:0 12px 36px #0007}#calendar .routeNowMain{min-width:0}#calendar .routeNowLabel{display:block;font-size:7px;letter-spacing:.12em;color:#98afb4;margin-bottom:3px}#calendar .routeNowNext{display:block;font-size:8px;color:#98afb4;margin-top:4px}#calendar .routeNowAction{border:1px solid #8a6a3d;background:#2a2117;color:#fff;border-radius:10px;padding:9px 11px;font-size:8px;font-weight:900;white-space:nowrap}
-      #calendar .routeNow b{display:block;color:var(--gold);font-size:12px;line-height:1.2}.routeNow span{font-size:9px;color:#cfdbd8;line-height:1.35}
-      #calendar .routeDates{border:1px solid #294955;border-radius:14px;background:#08151c;overflow:hidden}
-      #calendar .routeDates summary{display:grid;grid-template-columns:auto auto 1fr;gap:8px;align-items:center;padding:12px 13px;cursor:pointer;list-style:none}
-      #calendar .routeDates summary::-webkit-details-marker{display:none}
-      #calendar .routeDates summary small{color:var(--muted);font-size:9px}.routeDatesInner{padding:0 12px 12px}
-      #routeModal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:18px;background:#02070bc7;z-index:16000;backdrop-filter:blur(12px)}
-      #routeModal.show{display:flex}#routeModal .routeModalCard{width:min(560px,94vw);border:1px solid #456775;border-radius:18px;background:linear-gradient(180deg,#10242d,#08151c);box-shadow:0 28px 80px #000c;padding:18px;position:relative}
-      #routeModal .routeClose{position:absolute;right:10px;top:10px;width:36px;height:36px;border:1px solid #ffffff29;border-radius:50%;background:#071018;color:#fff}
-      #routeModal .routeStatus{font-size:9px;letter-spacing:.11em;color:var(--gold);text-transform:uppercase}
-      #routeModal h2{margin:5px 40px 8px 0;font-size:28px}#routeModal p{color:#c4d3d6;line-height:1.55;font-size:12px}#routeModal .routeSceneGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}#routeModal .routeSceneBox{border:1px solid #2f4f5b;border-radius:11px;background:#08151c;padding:10px}#routeModal .routeSceneBox b{display:block;font-size:8px;letter-spacing:.1em;color:var(--cyan);margin-bottom:5px;text-transform:uppercase}#routeModal .routeSceneBox span{display:block;font-size:10px;line-height:1.4;color:#cbd8da}#routeModal .routeLoot{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}#routeModal .routeLoot i{font-style:normal;font-size:8px;border:1px solid #4b6470;border-radius:999px;padding:4px 6px;background:#0c1d25;color:#e7f0f1}
-      #routeModal .routeAction{margin-top:12px;display:flex;gap:7px;flex-wrap:wrap}
-      @media(max-width:680px){#routeModal .routeSceneGrid{grid-template-columns:1fr}#calendar .routeNow{grid-template-columns:1fr}#calendar .routeNowAction{width:100%}
-        #calendar .routeMap{min-height:620px}
-        #calendar .routeNode{width:122px;min-height:60px;padding:8px}
-        #calendar .routeNode b{font-size:10px}#calendar .routeNode small{font-size:7px}
-        #calendar .routeNow{left:3%;right:3%;bottom:2.5%;align-items:flex-start;flex-direction:column}
-        #calendar .routeDates summary{grid-template-columns:auto 1fr}#calendar .routeDates summary small{grid-column:1/-1}
-      }
-      @media(prefers-reduced-motion:reduce){#calendar .routeNode.current{animation:none}}
-    `;
-    document.head.appendChild(style);
+  var shell=document.createElement('div');shell.className='routeV2';
+  shell.innerHTML='<section class="routeHero"><div class="routeEyebrow">CENTRO DE MANDOS · RUTA VIVA</div><h2>RUTA ISL</h2><p>Una sola lectura: qué está cerrado, qué hacemos ahora y qué viene después. El calendario queda debajo como capa secundaria.</p></section><section class="routeFocus"><article class="routeCard now" id="routeNowCard"><div class="routeLabel">AHORA</div><h3>...</h3><p>...</p></article><article class="routeCard next" id="routeNextCard"><div class="routeLabel">SIGUIENTE</div><h3>...</h3><p>...</p></article></section><section class="routeStrip" id="routeStrip"></section><div class="routeActions"><a class="primary" href="https://islas-voladoras-isl.netlify.app/poll/pilares-lite-v2.html" target="_blank" rel="noopener">PILARES LITE ↗</a><a href="https://islas-voladoras-isl.netlify.app/poll/referencias-lite-v2.html" target="_blank" rel="noopener">REFERENCIAS LITE ↗</a><a href="huellas.html?resume=1">BRÚJULA</a><a href="rpg-home.html?resume=1">PERFIL RPG</a></div>';
+  view.insertBefore(shell,view.firstChild);view.appendChild(dates);
 
-    var routeState={current_stop:'pre50',now:{label:'AHORA IMPORTA',title:'PRE50 · evidencia humana real',body:'Conseguir evidencia humana real sin abrir más infraestructura.'},review:{label:'REVISIÓN ACTUAL',title:'PIPELINE ISL · producción limpia',body:'La evidencia humana abre PRE60; después se consolida un First Playable integrado antes de Vertical Slice.'},next_stop:'pre60',next_label:'PRE60 · sintetizar evidencia y decidir'};
-
-    var stops=[
-      {id:'base',x:10,y:70,state:'done',sig:'✓',name:'Base ISL',sub:'Visión · huella · mutación',status:'TRAMO SUPERADO',body:'La base sistémica está conservada. No se reinicia: sirve de suelo para los experimentos posteriores.',occurred:'Se cerró la base sistémica y la regla de persistencia.',loot:['Huella','Mutación','Consecuencia'],pending:'No reabrir decisiones ya cerradas sin evidencia nueva.',unlocks:'Permite construir Labs pequeños sin perder identidad.'},
-      {id:'labs',x:24,y:59,state:'done',sig:'✓',name:'Labs de riesgo',sub:'Viento · receptor · CQC',status:'TRAMO SUPERADO',body:'Los laboratorios prueban riesgos concretos antes de comprometer una isla completa.',occurred:'Se probaron piezas concretas antes de construir grande.',loot:['Receptor','CQC visual','Lenguaje de viento'],pending:'Revalidar sólo lo que tenga impacto real en la aventura.',unlocks:'Abre misiones-prototipo como El Molino que Miente.'},
-      {id:'molino',x:39,y:50,state:'done',sig:'✓',name:'Molino que Miente',sub:'Decisión situada · rutas',status:'REVISIÓN VIVA',body:'Se conserva como laboratorio narrativo-jugable. Debe revalidarse integrado, no convertirse en menú moral.',occurred:'Se demostró una decisión física con rutas y consecuencia perceptible.',loot:['Decisión situada','Tres rutas','Consecuencia'],pending:'Integrarlo en contexto sin convertirlo en tesis separada.',unlocks:'Prepara la prueba con personas reales en PRE50.'},
-      {id:'pre50',x:55,y:40,state:'current',sig:'◆',name:'PRE50',sub:'Playtest humano real',status:'AHORA IMPORTA',body:'PRE50 es el gate humano real. No se falsifica playtest ni se asciende nada a CANON automáticamente.',occurred:'Todo lo anterior desemboca aquí: comprobar qué entiende, siente y hace una persona real.',loot:['Build jugable','Ruta visible','Preguntas de observación'],pending:'Registrar fricción, descubrimiento, agencia y deseo de retorno.',unlocks:'Sólo la evidencia real abre PRE60.'},
-      {id:'pre60',x:68,y:31,state:'future',sig:'◇',name:'PRE60',sub:'Síntesis · decisión',status:'SIGUIENTE',body:'Sintetizar evidencia real, corregir y decidir qué sobrevive. No anticipar conclusiones.',occurred:'Todavía no ha ocurrido: depende de PRE50.',loot:['—'],pending:'Esperar feedback real y convertirlo en decisiones concretas.',unlocks:'Abre la consolidación del First Playable.'},
-      {id:'firstplay',x:81,y:23,state:'future',sig:'◇',name:'First Playable',sub:'Experiencia integrada',status:'GATE DE PREPRODUCCIÓN',body:'Una experiencia corta de principio a fin que ya deja sentir el juego, aunque todavía no tenga calidad final.',occurred:'Horizonte posterior a PRE60.',loot:['—'],pending:'Integrar core loop, navegación, consecuencia, UI y audio sin escalar contenido.',unlocks:'Demuestra que el juego funciona como experiencia completa y permite aspirar a Vertical Slice.'},
-      {id:'slice',x:92,y:17,state:'future',sig:'◇',name:'Vertical Slice',sub:'Calidad objetivo · pipeline',status:'HORIZONTE',body:'Un segmento pequeño a calidad casi final que demuestra gameplay, arte, audio, UI, rendimiento y cómo producir el resto.',occurred:'Horizonte, no fase activa.',loot:['—'],pending:'No entrar hasta superar PRE50, PRE60 y First Playable.',unlocks:'Pipeline de producción → Producción → Alpha → Beta → Master.'}
-    ];
-
-    var shell=document.createElement('div');shell.className='routeShell';
-    shell.innerHTML='<div class="routeHead"><div><div class="eyebrow">CENTRO DE MANDOS · RUTA VIVA</div><h2>RUTA ISL</h2><div class="sub">Visión → riesgo → evidencia humana → First Playable → Vertical Slice.</div></div><div class="routeLegend"><span class="done">✓ recorrido</span><span class="now">◆ ahora</span><span>◇ después</span><span class="routeProgress" id="routeProgress">0/0</span></div></div>';
-    var map=document.createElement('div');map.className='routeMap';
-    map.innerHTML='<img src="assets/floating-islands-map.png" alt="Mapa de viaje ISL"><i class="routePath" aria-hidden="true"></i>';
-    stops.forEach(function(s){
-      var b=document.createElement('button');b.type='button';b.className='routeNode '+s.state;b.dataset.route=s.id;b.style.left=s.x+'%';b.style.top=s.y+'%';
-      b.innerHTML='<span class="routeSig">'+s.sig+'</span><b>'+s.name+'</b><small>'+s.sub+'</small>';
-      map.appendChild(b);
-    });
-    var traveler=document.createElement('div');traveler.className='routeTraveler';traveler.setAttribute('aria-label','Posición actual del Cartógrafo');traveler.innerHTML='<img src="assets/protagonist-sheet.png" alt="">';map.appendChild(traveler);
-    var now=document.createElement('div');now.className='routeNow';map.appendChild(now);
-    shell.appendChild(map);
-    view.insertBefore(shell,view.firstChild);
-    view.appendChild(details);
-
-    var modal=document.createElement('div');modal.id='routeModal';modal.setAttribute('aria-hidden','true');
-    modal.innerHTML='<div class="routeModalCard" role="dialog" aria-modal="true" aria-labelledby="routeModalTitle"><button class="routeClose" type="button" aria-label="Cerrar">×</button><div class="routeStatus"></div><h2 id="routeModalTitle"></h2><p></p><div class="routeSceneGrid"><div class="routeSceneBox"><b>Qué ocurrió aquí</b><span data-scene="occurred"></span></div><div class="routeSceneBox"><b>Botín / hitos</b><div class="routeLoot" data-scene="loot"></div></div><div class="routeSceneBox"><b>Pendiente</b><span data-scene="pending"></span></div><div class="routeSceneBox"><b>Qué desbloquea</b><span data-scene="unlocks"></span></div></div><div class="routeAction"><button class="btn primary routeMark" type="button">DEJAR HUELLA</button><button class="btn routeDismiss" type="button">CERRAR</button></div></div>';
-    document.body.appendChild(modal);
-    var selected=null,key='isl-route-v1-visited';
-    function read(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return[]}}
-    function syncHome(){
-      var nowCard=document.querySelector('.focusCard.now'),reviewCard=document.querySelector('.focusCard.review');
-      if(nowCard){var e=nowCard.querySelector('.eyebrow'),h=nowCard.querySelector('h2'),p=nowCard.querySelector('p');if(e)e.textContent=routeState.now.label||'AHORA IMPORTA';if(h)h.textContent=routeState.now.title||'';if(p)p.textContent=routeState.now.body||''}
-      if(reviewCard){var e2=reviewCard.querySelector('.eyebrow'),h2=reviewCard.querySelector('h2'),p2=reviewCard.querySelector('p');if(e2)e2.textContent=routeState.review.label||'REVISIÓN ACTUAL';if(h2)h2.textContent=routeState.review.title||'';if(p2)p2.textContent=routeState.review.body||''}
-      var heroBtn=document.querySelector('.homeHeroIcons button[onclick*="calendar"]');if(heroBtn){heroBtn.title='RUTA ISL';var sp=heroBtn.querySelector('span');if(sp)sp.textContent='RUTA'}
-    }
-    function syncRoute(){
-      var current=routeState.current_stop||'pre50';
-      stops.forEach(function(s){s.state=(s.id===current)?'current':(s.state==='current'?'future':s.state)});
-      map.querySelectorAll('.routeNode').forEach(function(n){
-        var s=stops.filter(function(x){return x.id===n.dataset.route})[0];
-        n.classList.remove('done','current','future');
-        if(s)n.classList.add(s.state);
-      });
-      var currentStop=stops.filter(function(x){return x.id===current})[0];
-      if(currentStop){traveler.style.left=currentStop.x+'%';traveler.style.top=(currentStop.y-10)+'%'}
-      var doneCount=(routeState.completed_stops||[]).length||stops.filter(function(x){return x.state==='done'}).length;
-      var progress=document.getElementById('routeProgress');if(progress)progress.textContent=doneCount+'/'+stops.length+' TRAMOS';
-      now.innerHTML='<div class="routeNowMain"><span class="routeNowLabel">'+(routeState.now.label||'AHORA IMPORTA')+'</span><b>◆ '+(routeState.now.title||'')+'</b><span>'+(routeState.now.body||'')+'</span><span class="routeNowNext">SIGUIENTE · '+(routeState.next_label||'—')+'</span></div><button type="button" class="routeNowAction">VER PARADA ACTUAL</button>';
-      var nowAction=now.querySelector('.routeNowAction');if(nowAction)nowAction.onclick=function(){open(current)};
-      syncHome();
-    }
-    function paint(){var v=read();map.querySelectorAll('.routeNode').forEach(function(n){n.classList.toggle('visited',v.indexOf(n.dataset.route)>=0)})}
-    function close(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');selected=null}
-    function open(id){
-      var s=stops.filter(function(x){return x.id===id})[0];if(!s)return;selected=s;
-      modal.querySelector('.routeStatus').textContent=s.status;
-      modal.querySelector('h2').textContent=s.name;
-      modal.querySelector('p').textContent=s.body;
-      modal.querySelector('[data-scene="occurred"]').textContent=s.occurred||'—';
-      modal.querySelector('[data-scene="pending"]').textContent=s.pending||'—';
-      modal.querySelector('[data-scene="unlocks"]').textContent=s.unlocks||'—';
-      var loot=modal.querySelector('[data-scene="loot"]');loot.innerHTML='';(s.loot||['—']).forEach(function(x){var i=document.createElement('i');i.textContent=x;loot.appendChild(i)});
-      modal.classList.add('show');modal.setAttribute('aria-hidden','false')
-    }
-    map.addEventListener('click',function(e){var n=e.target.closest('.routeNode');if(n)open(n.dataset.route)});
-    modal.querySelector('.routeClose').onclick=close;modal.querySelector('.routeDismiss').onclick=close;
-    modal.addEventListener('click',function(e){if(e.target===modal)close()});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('show'))close()});
-    modal.querySelector('.routeMark').onclick=function(){if(!selected)return;var v=read();if(v.indexOf(selected.id)<0)v.push(selected.id);try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}paint();close()};
-    var cabinMap=document.querySelector('.homeCabinMap');
-    if(cabinMap){cabinMap.setAttribute('role','button');cabinMap.setAttribute('tabindex','0');cabinMap.setAttribute('aria-label','Abrir RUTA ISL');cabinMap.style.cursor='pointer';var openRoute=function(){if(typeof window.go==='function')window.go('calendar')};cabinMap.addEventListener('click',openRoute);cabinMap.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openRoute()}})}
-    paint();
-    syncRoute();
-    fetch('ISL_ROUTE_STATE_CURRENT.json',{cache:'no-store'})
-      .then(function(r){if(!r.ok)throw new Error('route state');return r.json()})
-      .then(function(s){routeState=s||routeState;syncRoute()})
-      .catch(function(){});
-  });
+  function paint(s){
+    var now=s.now||{}, steps=Array.isArray(s.route_steps)?s.route_steps:[];
+    var nc=document.getElementById('routeNowCard');nc.querySelector('h3').textContent=now.title||s.current_stop||'Ruta actual';nc.querySelector('p').textContent=now.body||'';
+    var next=document.getElementById('routeNextCard');next.querySelector('h3').textContent=s.next_label||'Siguiente gate';next.querySelector('p').textContent=(steps.find(function(x){return x.status==='next'})||{}).note||'Se abrirá al cerrar el gate actual.';
+    var strip=document.getElementById('routeStrip');strip.innerHTML=steps.map(function(x){
+      var sig=x.status==='done'?'✓':x.status==='now'?'◆':x.status==='next'?'→':'·';
+      var lab=x.status==='done'?'Cerrado':x.status==='now'?'Ahora':x.status==='next'?'Siguiente':'Después';
+      return '<article class="routeStep '+x.status+'"><span class="sig">'+sig+'</span><div><b>'+x.title+'</b><small>'+x.note+'</small></div><em>'+lab+'</em></article>'
+    }).join('');
+  }
+  fetch('ISL_ROUTE_STATE_CURRENT.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('state');return r.json()}).then(paint).catch(function(){paint({now:{title:'Ruta no disponible',body:'Recarga el Centro de Mandos.'},next_label:'—',route_steps:[]})});
+});
 })();
