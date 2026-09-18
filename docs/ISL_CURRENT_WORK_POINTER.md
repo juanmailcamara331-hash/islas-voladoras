@@ -46,6 +46,20 @@ Use:
 - reference family for future soundtrack;
 - no imitation prompts.
 
+Opening arc:
+- soft / noble / airy opening;
+- lyrical expansion as the world opens;
+- adventure and risk add layers progressively;
+- crescendo is earned by play, not triggered by convention;
+- functional reference: orchestral elegance and breadth associated with adventure cinema of the 1960s–70s, without imitating any specific composer, film or score;
+- identity before volume; avoid generic trailer bombast.
+
+Primary direction remains:
+`docs/ISL_SOUNDTRACK_PLAYLIST_BIBLE_v0.20.md`
+Cross-check methodology:
+`docs/ISL_PRE_GAME_METHODOLOGY_ADDENDUM_v0.19.md`
+`docs/ISL_CONTINUOUS_METHODOLOGY_REVIEWER_v0.18.md`
+
 ## Latest checkpoint
 Drive:
 `ISL_CHECKPOINT_v0.19.0_PRE50_READY_2026-09-18`
