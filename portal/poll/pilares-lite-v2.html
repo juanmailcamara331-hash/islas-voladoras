@@ -42,6 +42,10 @@ input[type=text]{width:100%;border:1px solid #34525d;background:#061219;color:#f
 <input type="hidden" name="started_at" id="startedAt">
 <input type="hidden" name="completed_at" id="completedAt">
 <input type="hidden" name="completion_time_band" id="timeBand">
+<input type="hidden" name="que_es" id="f_que_es">
+<input type="hidden" name="tiron" id="f_tiron">
+<input type="hidden" name="vibra" id="f_vibra">
+<input type="hidden" name="preocupacion" id="f_preocupacion">
 <p hidden><input name="bot-field"></p>
 <header class="top"><div class="brand"><span>ISL // HUELLA RÁPIDA</span><span id="stepLabel">0/6</span></div><div class="progress"><div class="bar" id="bar"></div></div></header>
 <main class="stage">
@@ -60,8 +64,8 @@ input[type=text]{width:100%;border:1px solid #34525d;background:#061219;color:#f
 <button type="button" class="card" data-value="aventura-poetica"><span>🌤️</span><b>Aventura poética</b></button><button type="button" class="card" data-value="raro-encanto"><span>🌀</span><b>Raro con encanto</b></button><button type="button" class="card" data-value="humor-extraño"><span>👻</span><b>Humor extraño</b></button><button type="button" class="card" data-value="misterio-belleza"><span>🌫️</span><b>Misterio y belleza</b></button><button type="button" class="card" data-value="mezcla"><span>🎨</span><b>Mezcla de todo</b></button></div><div class="feedback" aria-live="polite"></div></div></section>
 <section class="screen" data-step="4" data-name="preocupacion" data-type="single"><div class="q"><div class="k">4 · FRICCIÓN</div><h1>¿Qué te preocupa más?</h1><div class="grid">
 <button type="button" class="card" data-value="demasiadas-cosas"><span>🧱</span><b>Demasiadas cosas</b></button><button type="button" class="card" data-value="no-entender"><span>❓</span><b>No entenderlo</b></button><button type="button" class="card" data-value="idea-poco-juego"><span>🎮</span><b>Mucha idea y poco juego</b></button><button type="button" class="card" data-value="tono-mezclado"><span>🎭</span><b>Tono demasiado mezclado</b></button><button type="button" class="card" data-value="nada"><span>✅</span><b>Nada especial</b></button></div><div class="feedback" aria-live="polite"></div></div></section>
-<section class="screen" data-step="5" data-name="no_quitar" data-type="text"><div class="q"><div class="k">5 · SALVAR</div><h1>¿Qué NO quitarías?</h1><input type="text" maxlength="160" placeholder="Yo salvaría…" autocomplete="off"></div></section>
-<section class="screen" data-step="6" data-name="recortar" data-type="text"><div class="q"><div class="k">6 · CUCHILLO</div><h1>¿Qué recortarías sin piedad?</h1><input type="text" maxlength="160" placeholder="Yo cortaría…" autocomplete="off"></div></section>
+<section class="screen" data-step="5" data-name="no_quitar" data-type="text"><div class="q"><div class="k">5 · SALVAR</div><h1>¿Qué NO quitarías?</h1><input type="text" name="no_quitar" maxlength="160" placeholder="Yo salvaría…" autocomplete="off"></div></section>
+<section class="screen" data-step="6" data-name="recortar" data-type="text"><div class="q"><div class="k">6 · CUCHILLO</div><h1>¿Qué recortarías sin piedad?</h1><input type="text" name="recortar" maxlength="160" placeholder="Yo cortaría…" autocomplete="off"></div></section>
 <section class="screen" data-step="7"><div class="done"><div><div class="seal">✦</div><div class="k">HUELLA GUARDADA</div><h1 style="font-family:Georgia,serif;font-size:44px;margin:8px 0">Gracias.</h1><p class="lead">Tu respuesta no decide el canon. Nos ayuda a hacer mejores preguntas.</p></div></div></section>
 </main>
 <footer class="nav"><button type="button" class="btn" id="back">← Atrás</button><button type="button" class="btn primary" id="next">Empezar →</button></footer>
@@ -70,11 +74,16 @@ input[type=text]{width:100%;border:1px solid #34525d;background:#061219;color:#f
 (function(){
 const form=document.querySelector('form'),screens=[...document.querySelectorAll('.screen')],bar=document.getElementById('bar'),label=document.getElementById('stepLabel'),back=document.getElementById('back'),next=document.getElementById('next');let step=0;const started=Date.now();document.getElementById('startedAt').value=new Date(started).toISOString();
 function current(){return screens[step]}function selections(s){return [...s.querySelectorAll('.selected')].map(x=>x.dataset.value)}
-function syncHidden(s){const name=s.dataset.name,type=s.dataset.type;if(!name)return;form.querySelectorAll('input[data-generated="'+name+'"]').forEach(x=>x.remove());if(type==='text'){const el=s.querySelector('input[type=text]');const h=document.createElement('input');h.type='hidden';h.name=name;h.value=el.value;h.dataset.generated=name;form.appendChild(h);return}selections(s).forEach(v=>{const h=document.createElement('input');h.type='hidden';h.name=type==='multi'?name+'[]':name;h.value=v;h.dataset.generated=name;form.appendChild(h)})}
+function syncHidden(s){
+  const name=s.dataset.name,type=s.dataset.type;if(!name)return;
+  if(type==='text')return;
+  const el=document.getElementById('f_'+name);if(!el)return;
+  el.value=selections(s).join(',');
+}
 function valid(s){if(!s.dataset.type)return true;if(s.dataset.type==='text')return true;return selections(s).length>0}
 function paint(){screens.forEach((s,i)=>s.classList.toggle('active',i===step));const q=Math.min(step,6);bar.style.width=(q/6*100)+'%';label.textContent=(step===0?'0/6':step>=7?'6/6':step+'/6');back.style.visibility=step===0?'hidden':'visible';next.textContent=step===0?'Empezar →':step===6?'Guardar huella →':step>=7?'Listo':'Siguiente →';next.style.display=step>=7?'none':'block';next.disabled=!valid(current());window.scrollTo({top:0,behavior:'smooth'})}
 form.addEventListener('click',e=>{const b=e.target.closest('.card,.chip');if(!b)return;const s=current(),type=s.dataset.type;if(type==='single'){s.querySelectorAll('.selected').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');s.querySelector('.feedback').textContent='Huella capturada.'}else if(type==='multi'){const max=Number(s.dataset.max||99);if(b.classList.contains('selected'))b.classList.remove('selected');else if(selections(s).length<max)b.classList.add('selected');else s.querySelector('.feedback').textContent='Máximo '+max+'.';}syncHidden(s);next.disabled=!valid(s)});
-form.addEventListener('input',e=>{if(e.target.matches('input[type=text]'))syncHidden(current())});
+
 back.onclick=()=>{if(step>0){step--;paint()}};
 next.onclick=()=>{const s=current();syncHidden(s);if(step===6){const end=Date.now(),sec=(end-started)/1000;document.getElementById('completedAt').value=new Date(end).toISOString();document.getElementById('timeBand').value=sec<=45?'<=45s':sec<=70?'46-70s':sec<=120?'71-120s':'>120s';form.requestSubmit();return}if(step<7){step++;paint()}};
 paint();
