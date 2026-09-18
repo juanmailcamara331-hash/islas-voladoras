@@ -66,6 +66,11 @@ jobs:
           test -s android-web/app/src/main/res/drawable/isl_launcher.xml
           grep -q 'FFC36E' android-web/app/src/main/res/drawable/isl_launcher.xml
           echo "official ISL launcher: OK"
+          grep -q 'setBuiltInZoomControls(true)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
+          grep -q 'setSupportZoom(true)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
+          grep -q 'LOAD_NO_CACHE' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
+          grep -q 'clearCache(true)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
+          echo "zoom/cache wrapper: OK"
 
       - name: Build APK
         working-directory: android-web
