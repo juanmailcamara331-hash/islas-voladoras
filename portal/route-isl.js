@@ -43,6 +43,9 @@
       #calendar .routeNode.current{border-color:#9a783e;background:#19170fe9;box-shadow:0 16px 38px #0009,0 0 28px #ffc36e24;animation:routePulse 2.8s ease-in-out infinite}.routeNode.current .routeSig{color:var(--gold)}
       #calendar .routeNode.future{opacity:.72}
       #calendar .routeNode.visited:after{content:"✦";position:absolute;right:7px;top:5px;font-size:9px;color:var(--cyan)}
+      #calendar .routeTraveler{position:absolute;width:52px;height:52px;border:2px solid #ffc36e;border-radius:50%;overflow:hidden;background:#08151c;box-shadow:0 0 0 5px #ffc36e22,0 12px 24px #0009;transform:translate(-50%,-50%);z-index:5;transition:left .55s ease,top .55s ease}
+      #calendar .routeTraveler img{width:100%;height:100%;object-fit:cover;object-position:center 22%;image-rendering:pixelated}
+      #calendar .routeTraveler:after{content:"";position:absolute;inset:auto 8px 4px;height:2px;background:#ffc36e;box-shadow:0 0 10px #ffc36e}
       @keyframes routePulse{50%{box-shadow:0 16px 38px #0009,0 0 38px #ffc36e46}}
       #calendar .routeNow{position:absolute;left:4%;right:4%;bottom:4%;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #806538;background:#11140fdd;border-radius:13px;padding:10px 12px;backdrop-filter:blur(10px);z-index:4}
       #calendar .routeNow b{display:block;color:var(--gold);font-size:12px}.routeNow span{font-size:10px;color:#cfdbd8}
@@ -85,6 +88,7 @@
       b.innerHTML='<span class="routeSig">'+s.sig+'</span><b>'+s.name+'</b><small>'+s.sub+'</small>';
       map.appendChild(b);
     });
+    var traveler=document.createElement('div');traveler.className='routeTraveler';traveler.setAttribute('aria-label','Posición actual del Cartógrafo');traveler.innerHTML='<img src="assets/protagonist-sheet.png" alt="">';map.appendChild(traveler);
     var now=document.createElement('div');now.className='routeNow';map.appendChild(now);
     shell.appendChild(map);
     view.insertBefore(shell,view.firstChild);
@@ -109,6 +113,8 @@
         n.classList.remove('done','current','future');
         if(s)n.classList.add(s.state);
       });
+      var currentStop=stops.filter(function(x){return x.id===current})[0];
+      if(currentStop){traveler.style.left=currentStop.x+'%';traveler.style.top=(currentStop.y-10)+'%'}
       now.innerHTML='<div><b>◆ '+(routeState.now.label||'AHORA IMPORTA')+' · '+(routeState.now.title||'')+'</b><span>'+(routeState.now.body||'')+'</span></div><span>'+(routeState.next_label||'La revisión actual viaja contigo →')+'</span>';
       syncHome();
     }
@@ -120,6 +126,8 @@
     modal.addEventListener('click',function(e){if(e.target===modal)close()});
     document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('show'))close()});
     modal.querySelector('.routeMark').onclick=function(){if(!selected)return;var v=read();if(v.indexOf(selected.id)<0)v.push(selected.id);try{localStorage.setItem(key,JSON.stringify(v))}catch(e){}paint();close()};
+    var cabinMap=document.querySelector('.homeCabinMap');
+    if(cabinMap){cabinMap.setAttribute('role','button');cabinMap.setAttribute('tabindex','0');cabinMap.setAttribute('aria-label','Abrir RUTA ISL');cabinMap.style.cursor='pointer';var openRoute=function(){if(typeof window.go==='function')window.go('calendar')};cabinMap.addEventListener('click',openRoute);cabinMap.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openRoute()}})}
     paint();
     syncRoute();
     fetch('ISL_ROUTE_STATE_CURRENT.json',{cache:'no-store'})
