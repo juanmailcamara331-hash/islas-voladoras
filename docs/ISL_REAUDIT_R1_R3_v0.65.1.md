@@ -83,3 +83,29 @@ Sí se puede preparar material de envío a colegas, pero el envío real espera R
 
 ## Principio preservado
 La auditoría no altera contenido creativo ni canon. Sólo añade trazabilidad, guardrails y evidencia.
+
+
+## Addendum · force-deploy attempt
+- Commit trigger creado: 28c72b94b186d84368ffda90a6f4d839f5b7d313
+- Netlify current deploy permaneció en 6aada7d9ad9db00008c5f7cd (ready).
+- GitHub no reportó workflow asociado al commit de trigger.
+- Diagnóstico: el proyecto Netlify no está reaccionando automáticamente a pushes de main desde la conexión actual.
+- Consecuencia: R3 sigue AMBER por deploy, no por código.
+- Acción externa mínima restante: Netlify > islas-voladoras-isl > Deploys > Trigger deploy > Deploy site.
+- Después del deploy: releer Forms y verificar cohort / survey_version / survey_source + 1 submission de prueba por formulario.
+
+## R1/R2 static closeout
+R1 static/CI: PASS provisional.
+- cache/SW guards presentes;
+- native wrapper sin zoom/overview;
+- Pages coherence gate presente;
+- known regressions cubiertas en registro.
+
+R2 static/CI: PASS provisional.
+- una sola navegación pública visible;
+- legacy rail oculto;
+- secondary tools concentradas en drawer;
+- finalNav nowrap + horizontal overflow;
+- focus-visible + reduced-motion presentes.
+
+Ambos quedan AMBER únicamente por gates humanos/dispositivo exigidos por la metodología.
