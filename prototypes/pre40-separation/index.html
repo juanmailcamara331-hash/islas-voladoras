@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ISL · PC-PRE40 · El Ancla Perfecta</title>
+<style>
+:root{--bg:#071018;--fg:#f3eee4;--mut:#a7b7bd;--line:#ffffff22;--acc:#9ce7ef;--warm:#f0c27b;--danger:#f08a8a}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+body{overflow:hidden}.screen{position:fixed;inset:0;display:none}.screen.on{display:grid}.center{place-items:center;padding:24px}
+.panel{width:min(760px,94vw);max-height:92vh;overflow:auto;border:1px solid var(--line);background:#09151dcc;padding:22px;border-radius:18px;backdrop-filter:blur(14px)}
+h1,h2,p{margin-top:0}.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc)}
+.sub{color:var(--mut);line-height:1.5}.row{display:flex;gap:10px;flex-wrap:wrap}.btn{appearance:none;border:1px solid var(--line);background:#10202a;color:var(--fg);padding:13px 16px;border-radius:12px;font-weight:700;cursor:pointer}
+.btn:focus{outline:3px solid var(--acc);outline-offset:2px}.btn.primary{border-color:var(--acc);background:#123440}.btn.warn{border-color:#9a5555;background:#321d24}
+.field{margin:12px 0}.field label{display:block;margin-bottom:6px}.field input{width:100%}
+#game{background:radial-gradient(circle at 70% 20%,#163846,#071018 58%,#030609)}
+#sky{position:absolute;inset:0;width:100%;height:100%}.hud{position:absolute;inset:0;pointer-events:none}.top{position:absolute;left:18px;top:18px;right:18px;display:flex;justify-content:space-between;gap:12px}
+.badge{padding:8px 10px;border-radius:999px;background:#071018cc;border:1px solid var(--line);font-size:12px}
+.dialog{position:absolute;left:50%;transform:translateX(-50%);bottom:max(18px,env(safe-area-inset-bottom));width:min(820px,94vw);background:#071018e8;border:1px solid var(--line);border-radius:16px;padding:16px;pointer-events:auto}
+.name{font-size:12px;color:var(--warm);font-weight:800;letter-spacing:.08em}.line{font-size:clamp(17px,3.6vw,24px);line-height:1.35;margin:7px 0 12px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}.prompt{font-size:12px;color:var(--mut)}
+#logoMark{font-size:clamp(54px,14vw,120px);letter-spacing:.08em;font-weight:900;text-align:center;line-height:.8}
+#logoTag{margin-top:18px;color:var(--mut);text-align:center}
+.glitch{animation:gl 1.1s steps(2,end) infinite}@keyframes gl{0%,92%,100%{transform:none}94%{transform:translateX(3px) skewX(-2deg)}96%{transform:translateX(-4px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<section id="access" class="screen on center"><div class="panel">
+<div class="eyebrow">ISL · PC-PRE40</div><h1>Antes de empezar</h1>
+<p class="sub">Prototipo de apertura. Ajusta lo esencial antes de cualquier escena.</p>
+<div class="field"><label><input id="subs" type="checkbox" checked> Subtítulos</label></div>
+<div class="field"><label>Tamaño de texto <input id="txt" type="range" min="90" max="140" value="100"></label></div>
+<div class="field"><label>Movimiento de cámara <input id="motion" type="range" min="0" max="100" value="65"></label></div>
+<div class="field"><label>Volumen ambiente <input id="vol" type="range" min="0" max="100" value="55"></label></div>
+<button class="btn primary" id="accessGo">Continuar</button>
+</div></section>
+
+<section id="title" class="screen center"><div>
+<div id="logoMark">ISL</div><div id="logoTag">ISLAS VOLADORAS</div>
+<div style="text-align:center;margin-top:34px"><button class="btn primary" id="start">PULSA / START</button></div>
+</div></section>
+
+<section id="game" class="screen">
+<canvas id="sky"></canvas>
+<div class="hud">
+<div class="top"><div class="badge" id="beat">PRÓLOGO</div><div class="badge" id="state">Nave estable</div></div>
+<div class="dialog"><div class="name" id="speaker"></div><div class="line" id="line"></div><div class="actions" id="actions"></div><div class="prompt" id="prompt"></div></div>
+</div>
+</section>
+
+<section id="end" class="screen center"><div class="panel">
+<div class="eyebrow">PC-PRE40 · FIN</div><h2>Lo que quedó contigo</h2>
+<p id="summary" class="sub"></p>
+<div class="row"><button class="btn primary" id="replay">Repetir</button><button class="btn" id="results">Ver test</button></div>
+<div id="test" style="display:none;margin-top:16px">
+<p><b>Preguntas de playtest:</b></p>
+<ol>
+<li>¿Quién era al menos uno de tus compañeros?</li>
+<li>¿Qué estabais intentando hacer cuando todo se rompió?</li>
+<li>¿Qué priorizaste?</li>
+<li>¿Qué perdiste?</li>
+<li>¿Qué quieres hacer ahora?</li>
+</ol>
+</div>
+</div></section>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s), screens=[...document.querySelectorAll('.screen')];
+function show(id){screens.forEach(x=>x.classList.toggle('on',x.id===id))}
+const canvas=$('#sky'),ctx=canvas.getContext('2d');let W,H,t=0,phase=0,motion=.65,vol=.55,raf;
+function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight}addEventListener('resize',resize);resize();
+const stars=Array.from({length:90},()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.4}));
+function draw(){
+ t+=.016;ctx.clearRect(0,0,W,H);
+ let g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#153949');g.addColorStop(1,'#05090d');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ ctx.fillStyle='#d9f7ff';for(const s of stars){let dx=phase>3?Math.sin(t*2+s.y*8)*motion*18:0;ctx.globalAlpha=.35+s.r/3;ctx.beginPath();ctx.arc(s.x*W+dx,s.y*H,s.r,0,7);ctx.fill()}ctx.globalAlpha=1;
+ // ship deck
+ ctx.save();let shake=phase>=5?Math.sin(t*18)*motion*3:0;ctx.translate(shake,0);ctx.fillStyle='#493b34';ctx.fillRect(W*.13,H*.50,W*.74,H*.16);
+ ctx.strokeStyle='#c7a96a';ctx.lineWidth=5;for(let i=0;i<4;i++){let x=W*(.22+i*.18);ctx.beginPath();ctx.moveTo(x,H*.50);ctx.lineTo(x+Math.sin(t+i)*12,H*.20);ctx.stroke()}
+ // anchors/cables
+ if(phase>=3){ctx.strokeStyle=phase>=5?'#ff9b91':'#9ce7ef';ctx.lineWidth=3;for(let i=0;i<3;i++){let x=W*(.28+i*.22);ctx.beginPath();ctx.moveTo(x,H*.56);ctx.lineTo(x+(i-1)*W*.18,H*.12+(phase>=5?Math.sin(t*6+i)*30:0));ctx.stroke()}}
+ ctx.restore();
+ if(phase>=6){ctx.fillStyle='rgba(190,225,255,.12)';for(let i=0;i<6;i++){ctx.save();ctx.translate((i-2)*W*.17,0);ctx.rotate((i-2)*.01*Math.sin(t*2));ctx.fillRect(W*.15,H*.1,W*.7,H*.75);ctx.restore()}}
+ raf=requestAnimationFrame(draw)
+}
+draw();
+
+const beats=[
+{b:'S01 · NAVE VIVA',s:'Mara',l:'Si ese cubo vuelve a rodar por cubierta, queda oficialmente ascendido a marinero.',a:[['Devolver el cubo','next']]},
+{b:'S02 · TAREA ABSURDA',s:'Taro',l:'Tres anclas nuevas. Según el manual, ahora el cielo tiene la obligación administrativa de quedarse quieto.',a:[['Ayudar a tensar cable','next'],['Preguntar si eso es legal','joke']]},
+{b:'S03 · ANOMALÍA',s:'Lena',l:'¿Habéis visto eso? La veleta dice oeste. La tela dice otra cosa.',a:[['Mirar las telas','wind'],['Ignorarlo y seguir','next']]},
+{b:'S04 · ANCLAS',s:'Taro',l:'A la de tres. Si funciona, nadie vuelve a burlarse de mis diagramas.',a:[['Fijar ancla de proa','anchor']]},
+{b:'S05 · INCOMPATIBILIDAD',s:'Mara',l:'Taro… la popa se está quedando quieta. La proa también. En sitios distintos.',a:[['Soltar tensión','strain'],['Sujetar estructura','strain']]},
+{b:'S06 · PRIORIDAD',s:'',l:'El cable canta como si fuese a partirse. Una voz llega de babor. El núcleo de la nave pierde sujeción. Una señal aparece donde no debería haber ruta.',a:[['SUJETAR A ALGUIEN','person'],['MANTENER EL NÚCLEO','core'],['SEGUIR LA SEÑAL','signal']]},
+{b:'S07 · RUPTURA',s:'',l:'El cielo no explota. Se desacuerda.',a:[['…','rupture']]},
+{b:'S08 · ECO',s:'Voz distante',l:'…no estamos lejos. Estamos… mal colocados.',a:[['Escuchar','silence']]},
+{b:'S09 · SILENCIO',s:'',l:'',a:[['Continuar','wake']]},
+{b:'S10 · DESPERTAR',s:'',l:'El cielo vuelve a parecer normal. Eso es lo peor.',a:[['Levantarse','end']]}
+];
+let i=0,choice='',loss='';
+function render(){
+ const q=beats[i];$('#beat').textContent=q.b;$('#speaker').textContent=q.s;$('#line').textContent=q.l;$('#actions').innerHTML='';
+ q.a.forEach(([txt,act])=>{const b=document.createElement('button');b.className='btn'+(i===5?' warn':'');b.textContent=txt;b.onclick=()=>actDo(act);$('#actions').appendChild(b)});
+ $('#prompt').textContent=i===2?'No hay modo visión: lee el mundo.':'';
+ phase=i;
+ $('#state').textContent=i<4?'Nave estable':i<6?'Tensión creciente':'Referencia imposible';
+}
+function actDo(act){
+ if(act==='joke'){beats[i].l='Taro: Legal no sé. Sellado por tres oficinas distintas, sí.';beats[i].a=[['Tensar cable','next']];render();return}
+ if(act==='wind'){beats[i].l='La tela tira al noroeste. Las partículas van al oeste. Algo ya no coincide.';beats[i].a=[['Avisar','next']];render();return}
+ if(act==='anchor'){beats[i].l='El ancla entra. Por un instante, todo queda demasiado quieto.';beats[i].a=[['Soltar manos','next']];render();return}
+ if(act==='strain'){i++;render();return}
+ if(['person','core','signal'].includes(act)){choice=act;loss=act==='person'?'el núcleo quedó dañado':act==='core'?'una voz se perdió entre rutas':'alguien quedó fuera de alcance';i++;render();return}
+ if(act==='rupture'){phase=7;document.body.classList.add('glitch');setTimeout(()=>{document.body.classList.remove('glitch');i++;render()},950);return}
+ if(act==='silence'){i++;render();return}
+ if(act==='wake'){i++;render();return}
+ if(act==='end'){finish();return}
+ i++;render()
+}
+function finish(){
+ show('end');cancelAnimationFrame(raf);
+ const kept=choice==='person'?'una correa marcada con el nombre de Mara':choice==='core'?'el núcleo auxiliar aún caliente':choice==='signal'?'una coordenada que no existe':'nada identificable';
+ $('#summary').textContent='Priorizaste '+({person:'a una persona',core:'el núcleo de la nave',signal:'una señal imposible'}[choice]||'algo')+'. Conservas '+kept+'; '+(loss||'algo importante se perdió')+'.';
+}
+$('#accessGo').onclick=()=>{motion=$('#motion').value/100;vol=$('#vol').value/100;document.documentElement.style.fontSize=$('#txt').value+'%';show('title')};
+$('#start').onclick=()=>{show('game');i=0;render()};
+$('#replay').onclick=()=>location.reload();$('#results').onclick=()=>{$('#test').style.display='block'};
+addEventListener('keydown',e=>{if(e.key==='Enter'&&$('#title').classList.contains('on'))$('#start').click()});
+})();
+</script>
+</body></html>
