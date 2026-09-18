@@ -50,7 +50,9 @@ jobs:
       - name: CQC portal
         shell: bash
         run: |
-          trap 'echo "::error::CQC failed at line $LINENO: $BASH_COMMAND"' ERR
+          set -Eeuo pipefail
+          trap 'rc=$?; echo "::error::CQC failed rc=$rc line=$LINENO command=$BASH_COMMAND"; exit $rc' ERR
+          echo "CQC_DIAG_VERSION=v0.62"
           test -f build/pages/index.html
           test -f build/pages/rpg-home.html
           test -f build/pages/command-center.html
