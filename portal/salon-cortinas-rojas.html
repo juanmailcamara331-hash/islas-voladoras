@@ -19,7 +19,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;background:repeating-lin
 .controls{margin-top:14px;border:1px solid var(--line);background:#0b1115e8;border-radius:16px;padding:15px}.controls h3{margin:0 0 5px;font-size:12px}.controls p{margin:0 0 11px;color:var(--muted);font-size:10px;line-height:1.5}.actions{display:flex;gap:7px;flex-wrap:wrap}.btn{border:1px solid #5a4650;background:#171218;color:#eadfe2;border-radius:10px;padding:11px 12px;font-weight:900;font-size:10px;cursor:pointer}.btn.primary{border-color:#a9793e;background:#3d2b19;color:#ffe8ba}.btn.cyan{border-color:#38616e;background:#0d2028;color:#c7f7ff}.btn:disabled{opacity:.4;cursor:not-allowed}.relics{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.relic{border:1px solid #514b35;background:#14130d;color:#d6c89e;border-radius:999px;padding:7px 9px;font-size:9px}.relic.off{opacity:.35}.result{margin-top:12px;border-left:3px solid var(--gold);background:#15140f;border-radius:8px;padding:12px;font-size:11px;line-height:1.5;color:#dbe1dd;display:none}.result.show{display:block}.trace{margin-top:9px;color:#8ea1a5;font-size:9px}.footer{margin-top:10px;text-align:center;color:#68797e;font-size:9px}
 @media(max-width:650px){.micro{grid-template-columns:1fr}.stage{min-height:600px}.room{padding-top:68px}.top{align-items:flex-start}.back{padding:8px}.controls{padding:12px}}
 </style>
-</head>
+<link rel="stylesheet" href="isl-global-shell.css">\n</head>
 <body>
 <main class="wrap">
 <header class="top">
@@ -141,5 +141,5 @@ function choose(kind){
 $('advance').onclick=next;
 })();
 </script>
-</body>
+<script defer src="isl-global-shell.js"></script>\n</body>
 </html>
