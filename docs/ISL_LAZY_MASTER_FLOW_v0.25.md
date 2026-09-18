@@ -67,6 +67,13 @@ Colección actual:
 Paquete maestro:
 ISL_Cielo_y_Descenso_v03_6_tracks.zip
 
+## ARCO MUSICAL APROBADO
+- Inicio: suave, noble, aireado, melódico y cinematográfico.
+- Referencia funcional: amplitud/lirismo de aventura de los 60–70 sin copiar ninguna obra concreta.
+- Desarrollo: cada apertura del mundo añade identidad y capas.
+- Crescendo: progresivo y ganado por aventura/riesgo; nunca trailer genérico desde el minuto uno.
+- Cierre/retorno: recuperar el ADN inicial transformado por lo vivido.
+
 ## PUBLICACIÓN
 Privado/personal:
 - YouTube Music upload manual desde navegador de escritorio si sólo quieres escuchar tú.
