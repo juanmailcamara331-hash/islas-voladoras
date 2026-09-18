@@ -48,7 +48,8 @@
         '<div class="callout" style="margin-top:11px"><b>Más votada ahora:</b> '+esc(p.top_option||'—')+' · '+esc(p.top_option_label||'pendiente')+'<br><b>CONFIRMACIÓN AUTOR:</b> '+esc(p.author_confirmation||'PENDIENTE')+' → '+esc(p.promotion_target||'PRODUCCION_O_ESPERA_O_REJECTED_LEARNED')+'</div>'+
         '<div class="label" style="margin-top:14px">COMENTARIOS</div><div class="pollComments">'+commentsHtml+'</div>'+
         '<div class="pollSync">Actualizado: '+esc(p.updated_at||'')+'</div>'+
-        '<div class="pollActions"><a class="btn primary" href="poll/molino.html">ABRIR ENCUESTA</a><a class="btn" href="reel.html">VER REEL PÚBLICO</a><button class="btn" id="refreshPoll" type="button">ACTUALIZAR</button></div></div>';
+        '<div class="pollActions"><a class="btn primary" href="poll/molino.html">ABRIR ENCUESTA</a><a class="btn" href="reel.html">VER REEL PÚBLICO</a><button class="btn" id="refreshPoll" type="button">ACTUALIZAR</button></div></div>'+
+        '<div class="panel" style="margin-top:12px;border-color:#6e5f85;background:linear-gradient(135deg,#171526,#101820)"><div class="label">FRIENDS_SAMPLE · REFERENCIAS</div><h2 style="margin:4px 0 7px">Referencias que dejan huella · Amigos 01</h2><div class="sub">No vota qué copiar: mide qué funciones, contrastes y sensaciones merecen pasar a prototipo + CQC.</div><div class="callout" style="margin-top:11px"><b>Candidato inicial:</b> fantasma marítimo absurdo / presencia espectral · peso provisional C/25.<br><b>Regla:</b> función &gt; personaje · anti-collage · decisión final humana.</div><div class="pollActions"><a class="btn primary" target="_blank" rel="noopener" href="https://form.jotform.com/262605579068063">ABRIR ENCUESTA DE REFERENCIAS</a></div></div>';
       var rb=document.getElementById('refreshPoll');if(rb)rb.onclick=loadPollState;
     }
 
