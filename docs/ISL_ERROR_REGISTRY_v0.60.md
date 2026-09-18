@@ -168,4 +168,17 @@ Regression test:
 first_seen: 2026-09-18
 last_seen: 2026-09-18
 recurrence_count: 1
-status: FIXED_PENDING_DEPLOY_VERIFY
+status: FIXED_VERIFIED
+
+
+## RELEASE GATE añadido tras ERR-DEPLOY-006
+Ninguna APK web-wrapper se considera entregable sólo porque Android compile.
+Debe existir evidencia doble:
+- APK_BUILD_GREEN
+- WEB_DEPLOY_GREEN
+
+Si una falla:
+- no se entrega como “corregida”;
+- se informa estado real;
+- se conserva último artefacto válido;
+- se corrige primero la desincronización.
