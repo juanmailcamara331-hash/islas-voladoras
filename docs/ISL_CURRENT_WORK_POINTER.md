@@ -142,3 +142,5 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Rule: SAME WORLD / SAME RULES / DIFFERENT CEILINGS.
 - Crossplay PS5/Xbox is architecture target only, NOT IMPLEMENTED until partner/SDK/hardware/certification gates are real.
 - Re-audit Brújula → reliquias → escenas → islas → criaturas → dialéctica under CAB-10..50 and P-00..P-100.
+
+- Global retrospective audit: docs/ISL_V045_GLOBAL_REAUDIT.md
