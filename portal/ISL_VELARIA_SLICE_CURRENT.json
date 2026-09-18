@@ -1,0 +1,140 @@
+{
+  "version": "0.1",
+  "updated_at": "2026-09-18",
+  "name": "VELARIA · Vertical Narrative Slice de Papel",
+  "status": "BORRADOR JUGABLE / NO CANON",
+  "target_duration": "35–50 min en papel; 12–20 min para primer prototipo físico",
+  "purpose": "Probar en una sola pieza la promesa ISL: viajar, leer una cultura, tomar una decisión física, reencontrar a alguien cambiado, regresar y ver memoria/consecuencia.",
+  "beats": [
+    {
+      "id": "B01",
+      "name": "Aproximación",
+      "duration": "3–5 min",
+      "player_goal": "Entrar en Velaria atravesando una corriente inestable.",
+      "learns": [
+        "lectura de viento",
+        "silueta de ciudad",
+        "regla de estabilidad"
+      ],
+      "emotion": "curiosidad"
+    },
+    {
+      "id": "B02",
+      "name": "La ciudad que no quiere moverse",
+      "duration": "6–8 min",
+      "player_goal": "Encontrar una ruta hacia el distrito superior.",
+      "learns": [
+        "vida cotidiana",
+        "contrapesos",
+        "autoridad local",
+        "primeros rumores del amigo"
+      ],
+      "emotion": "extrañeza cálida"
+    },
+    {
+      "id": "B03",
+      "name": "La ruta cortada",
+      "duration": "5–7 min",
+      "player_goal": "Descubrir por qué una vía comunitaria ha quedado inutilizada.",
+      "learns": [
+        "la estabilidad tiene coste",
+        "conflicto entre seguridad y cambio"
+      ],
+      "emotion": "sospecha"
+    },
+    {
+      "id": "B04",
+      "name": "El amigo que ya eligió quedarse",
+      "duration": "5–8 min",
+      "player_goal": "Reencontrar al primer amigo y entender por qué no vuelve inmediatamente.",
+      "learns": [
+        "los amigos han cambiado",
+        "reencuentro no equivale a reclutamiento automático"
+      ],
+      "emotion": "alegría incómoda"
+    },
+    {
+      "id": "B05",
+      "name": "El Molino que Miente",
+      "duration": "8–12 min",
+      "player_goal": "Resolver el receptor que falsifica la lectura del viento para mantener una ruta comercial estable.",
+      "learns": [
+        "leer viento",
+        "actuar físicamente",
+        "coste",
+        "huella"
+      ],
+      "emotion": "descubrimiento"
+    },
+    {
+      "id": "B06",
+      "name": "Consecuencia inmediata",
+      "duration": "3–5 min",
+      "player_goal": "Salir de la instalación y ver qué parte de Velaria ha cambiado.",
+      "learns": [
+        "la solución física altera relaciones/rutas"
+      ],
+      "emotion": "responsabilidad"
+    },
+    {
+      "id": "B07",
+      "name": "Regreso al barco",
+      "duration": "4–6 min",
+      "player_goal": "Volver y descubrir una modificación en la nave, relación o mapa causada por lo ocurrido.",
+      "learns": [
+        "el mundo recuerda",
+        "el hogar también cambia"
+      ],
+      "emotion": "anticipación"
+    }
+  ],
+  "molino_routes": [
+    {
+      "id": "UNDERSTAND_REPAIR",
+      "label": "Comprender / reparar",
+      "immediate": "Restablece lectura honesta del viento y ralentiza la ruta.",
+      "cost": "Comerciantes pierden velocidad/beneficio.",
+      "echo": "Más adelante aparecen rutas seguras y confianza local."
+    },
+    {
+      "id": "FORCE",
+      "label": "Forzar",
+      "immediate": "Mantiene productividad y abre paso rápido.",
+      "cost": "Daña mecanismos y agrava deriva.",
+      "echo": "Una zona posterior de Velaria se desplaza o queda inaccesible temporalmente."
+    },
+    {
+      "id": "REINTERPRET",
+      "label": "Reinterpretar",
+      "immediate": "Convierte el sistema en otra función aprovechando viento/creación.",
+      "cost": "Resultado menos predecible y exige capacidad/contexto.",
+      "echo": "Aparece una ruta o actividad que no existía en el diseño original."
+    }
+  ],
+  "friend_arc": {
+    "placeholder_name": "AMIGO 01",
+    "before_separation": "Era quien siempre empujaba al grupo a moverse.",
+    "now": "Se ha convertido en defensor de la estabilidad porque vio lo que la deriva hizo a otros.",
+    "contradiction": "Quiere proteger a la gente, pero ha empezado a protegerla también de cualquier cambio.",
+    "gameplay_unlock": "Una capacidad de anclaje/contrapeso que modifica exploración y permite volver a zonas anteriores.",
+    "recruitment_rule": "No se une por ganar una conversación; necesita ver una consecuencia real de cómo actuamos en Velaria."
+  },
+  "first_return_echo": {
+    "trigger": "Volver a Velaria tras conseguir una nueva capacidad o compañero.",
+    "variants": [
+      "Una ruta antes segura se ha desplazado.",
+      "Una familia comerciante recuerda cómo resolviste el Molino.",
+      "El amigo aparece en un lugar distinto o con otra disposición.",
+      "Un contrapeso urbano que parecía decorado se convierte en nueva ruta."
+    ]
+  },
+  "success_test": [
+    "El jugador entiende qué quiere Velaria sin una explicación enciclopédica.",
+    "El reencuentro produce emoción y fricción, no una simple recompensa.",
+    "El Molino se siente parte del mundo y no minijuego incrustado.",
+    "La decisión cambia algo visible antes de abandonar la región.",
+    "El regreso al barco demuestra memoria.",
+    "El jugador puede contar una anécdota concreta de lo que hizo y lo que pasó."
+  ],
+  "next": "Convertir estos beats en mapa gris + flujo de interacción y elegir qué versión de aventura macro los enmarca."
+}
