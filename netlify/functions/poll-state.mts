@@ -63,13 +63,16 @@ function summarize(votes:any[]){
 
 export default async (req:Request, _context:Context) => {
   const baseHeaders={
-    "Cache-Control":"no-store",
     "X-Content-Type-Options":"nosniff",
     "Referrer-Policy":"no-referrer"
   };
 
   if(req.method==="GET"){
-    return Response.json(summarize(await readLiveVotes()),{headers:baseHeaders});
+    return Response.json(summarize(await readLiveVotes()),{headers:{
+      ...baseHeaders,
+      "Cache-Control":"public, max-age=0, must-revalidate",
+      "Netlify-CDN-Cache-Control":"public, durable, s-maxage=60, stale-while-revalidate=300"
+    }});
   }
 
   if(req.method!=="POST"){
@@ -101,7 +104,7 @@ export default async (req:Request, _context:Context) => {
   const id=crypto.randomUUID();
   const store=storeForContext();
   await store.setJSON(`molino-r1/${created_at}-${id}`,{option,comment,created_at});
-  return Response.json({ok:true,state:summarize(await readLiveVotes())},{headers:baseHeaders});
+  return Response.json({ok:true},{headers:{...baseHeaders,"Cache-Control":"no-store"}});
 };
 
 export const config:Config={
