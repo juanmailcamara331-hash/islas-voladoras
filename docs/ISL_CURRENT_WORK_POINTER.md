@@ -183,3 +183,16 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - CI guards added for v2 keys/modes/lab and the 3 relic prototypes.
 - Status remains PROVISIONAL FUERTE pending human playtest/CQC.
 - Next: logical greybox of Salón de las Cortinas Rojas wired to these systems.
+
+
+## v0.49 — REFERENCE INTAKE SURVEY
+- New method: docs/ISL_REFERENCE_INTAKE_SURVEY_METHOD_v0.49.md
+- Friends survey live: https://form.jotform.com/262605579068063
+- Sample label: FRIENDS_SAMPLE.
+- New candidate subreference: spectral maritime absurdity / Flying Dutchman functional inspiration, provisional C/25.
+- Candidate functions: maritime absurd humor, spectral presence, threat+comedy, unpredictable appearances, cursed-ship/fog threshold, entity with its own rules.
+- Guardrail: extract function only; do not copy character, design, voice, jokes, plot or distinctive iconography.
+- Promotion to B/50 requires 2+ strong functions + cheap prototype + anti-collage CQC + human approval.
+- portal/ISL_PUBLIC_DECISIONS_CURRENT.json now registers the reference survey.
+- Command Center Encuestas module exposes the survey directly.
+- Poll popularity never promotes CANON automatically.
