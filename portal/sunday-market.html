@@ -9,4 +9,4 @@ const deals=[
 function render(){let a=inv(),box=document.getElementById('offers');box.innerHTML=deals.map((d,i)=>'<article class="offer"><b>'+d.g+' → '+d.t+'</b><small>'+(a.includes(d.give)?'Tienes el objeto requerido.':'No llevas '+d.g+'.')+'</small><button class="btn" data-i="'+i+'" '+(a.includes(d.give)?'':'disabled')+'>Intercambiar</button></article>').join('');box.querySelectorAll('button[data-i]').forEach(b=>b.onclick=()=>trade(+b.dataset.i))}
 function trade(i){let d=deals[i],a=inv(),ix=a.indexOf(d.give);if(ix<0)return;a.splice(ix,1);if(!a.includes(d.take))a.push(d.take);setInv(a);localStorage.setItem('isl_market_trade','done');log.textContent='Trato cerrado: '+d.t+' ya está en tu mochila. El tendero parece demasiado satisfecho.';render()}
 render();
-</script></body></html>
+</script><script>(function(){if(location.search.indexOf('embed=1')>=0)document.body.classList.add('embed')})();</script></body></html>
