@@ -9,6 +9,7 @@ errors=[]
 def need(cond,msg):
     if not cond: errors.append(msg)
 
+# v0.68 hierarchy / truth model
 need('id="isl-v068-reference-layout"' in s,"missing v0.68 style layer")
 need('class="quickDock"' in s,"missing quick dock")
 for label in ["CALENDARIO","REFERENCIAS","ENCUESTAS","REGISTRO","ESTADO"]:
@@ -16,6 +17,7 @@ for label in ["CALENDARIO","REFERENCIAS","ENCUESTAS","REGISTRO","ESTADO"]:
 
 need(len(re.findall(r'class="navI"',s)) >= 7,"main nav icons missing")
 need("flex-wrap:nowrap!important" in s,"main nav nowrap guard missing")
+need('name="viewport"' in s and "width=device-width" in s,"mobile viewport contract missing")
 
 need('class="finalCard profileCard"' in s,"Profile RPG primary card missing")
 need('class="finalCard routeCard"' in s,"Route primary card missing")
@@ -36,9 +38,33 @@ need(len(re.findall(r'class="util"',s)) == 6,"expected 6 utility modules")
 need('id="currentActions"' in s,"current actions block missing")
 need('id="moreNavBtn"' in s,"single More drawer control missing")
 
+# R2 interaction regression guards
+need("document.addEventListener('pointerdown',function(e){" in s,"outside-tap listener missing")
+need("if(!drawer.classList.contains('open'))return;" in s,"outside-tap open-state guard missing")
+need("if(drawer.contains(e.target))return;" in s,"outside-tap drawer exclusion missing")
+need("if(moreNavBtn&&moreNavBtn.contains(e.target))return;" in s,"outside-tap More exclusion missing")
+need("setDrawer(false);" in s,"drawer close action missing")
+need("if(e.key==='Escape'&&drawer.classList.contains('open'))setDrawer(false);" in s,"Escape drawer close missing")
+
+# Primary destinations must remain wired and reachable
+for token,label in [
+    ('data-main-nav="home"',"Centro"),
+    ('href="rpg-home.html"',"Perfil/Aventura"),
+    ('data-main-nav="calendar"',"Ruta ISL"),
+    ('data-main-nav="gallery"',"Galería"),
+    ('id="musicBtn"',"Música"),
+]:
+    need(token in s,f"primary destination missing: {label}")
+
+# Native return / no legacy welcome / no desktop-canvas regression
+need("isl_native_entered_v063" in s,"native entered-state guard missing")
+need("html.native-app.native-entered #welcome{display:none!important" in s,"native welcome suppression missing")
+need("overflow-x:hidden" in s,"horizontal overflow guard missing")
+need("max-width:100%" in s,"responsive max-width guard missing")
+
 if errors:
     print("ISL PORTAL v0.68 UI GATE FAILED")
     for e in errors: print(" -",e)
     sys.exit(1)
 
-print("ISL PORTAL v0.68 UI GATE GREEN")
+print("ISL PORTAL v0.68 UI GATE GREEN · R2 REGRESSION GUARDS PRESENT")
