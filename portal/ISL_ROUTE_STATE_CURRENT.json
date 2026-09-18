@@ -1,5 +1,5 @@
 {
-  "version": "0.39.0",
+  "version": "0.40.0",
   "updated_at": "2026-09-18",
   "current_stop": "pre50",
   "now": {
@@ -10,11 +10,11 @@
   },
   "review": {
     "label": "REVISIÓN ACTUAL",
-    "title": "RUTA ISL · una sola experiencia",
-    "body": "Home única, Cabina RPG integrada, mapa de viaje, iconos compactos, ventanas flotantes, ítems funcionales y recreo visual. El sistema técnico queda debajo y no compite con el mundo."
+    "title": "PIPELINE ISL · producción limpia",
+    "body": "Visión y Labs alimentan PRE50. La evidencia humana abre PRE60; después se consolida un First Playable integrado antes de aspirar a Vertical Slice."
   },
   "next_stop": "pre60",
-  "next_label": "PRE60 · sintetizar feedback y decidir nueva variante",
+  "next_label": "PRE60 · sintetizar evidencia y decidir",
   "calendar_role": "SECONDARY_DATE_LAYER",
   "canon_rule": "Nada asciende a CANON automáticamente; CQC + evidencia + confirmación humana siguen mandando.",
   "completed_stops": [
@@ -63,5 +63,20 @@
     "truth": "PENDIENTE HUMANO",
     "function": "Observación · fricción · descubrimiento · agencia · retorno",
     "state": "ACTIVE_NOT_EARNED"
-  }
+  },
+  "pipeline_master": [
+    "Visión / mandato",
+    "Core experience",
+    "Prototipos de riesgo",
+    "PRE50 · playtest humano",
+    "PRE60 · síntesis",
+    "First Playable integrado",
+    "Vertical Slice",
+    "Pipeline de producción",
+    "Producción",
+    "Alpha",
+    "Beta",
+    "Master"
+  ],
+  "production_rule": "No escalar contenido ni metajuego antes de que sobrevivan los gates anteriores. Command Center y RPG presentan el trabajo; no sustituyen al juego."
 }
