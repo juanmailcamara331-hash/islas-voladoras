@@ -16,5 +16,52 @@
   "next_stop": "pre60",
   "next_label": "PRE60 · sintetizar feedback y decidir nueva variante",
   "calendar_role": "SECONDARY_DATE_LAYER",
-  "canon_rule": "Nada asciende a CANON automáticamente; CQC + evidencia + confirmación humana siguen mandando."
+  "canon_rule": "Nada asciende a CANON automáticamente; CQC + evidencia + confirmación humana siguen mandando.",
+  "completed_stops": [
+    "base",
+    "labs",
+    "molino"
+  ],
+  "route_inventory": [
+    {
+      "id": "relic-base",
+      "icon": "✦",
+      "name": "Núcleo de Huella",
+      "origin": "Base ISL",
+      "rarity": "RELIQUIA",
+      "truth": "HITO REAL",
+      "function": "Memoria sistémica · huella · mutación",
+      "state": "EARNED"
+    },
+    {
+      "id": "relic-wind",
+      "icon": "◌",
+      "name": "Receptor de Corrientes",
+      "origin": "Labs de viento",
+      "rarity": "ÉPICO",
+      "truth": "HITO REAL",
+      "function": "Lectura de viento · prueba pequeña · CQC",
+      "state": "EARNED"
+    },
+    {
+      "id": "relic-mill",
+      "icon": "⌁",
+      "name": "Astilla del Molino",
+      "origin": "El Molino que Miente",
+      "rarity": "RELIQUIA",
+      "truth": "HITO REAL",
+      "function": "Decisión situada · rutas · consecuencia",
+      "state": "EARNED"
+    }
+  ],
+  "active_mission_item": {
+    "id": "mission-pre50",
+    "icon": "◆",
+    "name": "Kit PRE50",
+    "origin": "RUTA ISL",
+    "rarity": "MISIÓN",
+    "truth": "PENDIENTE HUMANO",
+    "function": "Observación · fricción · descubrimiento · agencia · retorno",
+    "state": "ACTIVE_NOT_EARNED"
+  }
 }
