@@ -10,9 +10,10 @@
       "status": "ABIERTA",
       "audience": "AMIGOS",
       "spoiler_risk": "BAJO",
-      "url": "https://form.jotform.com/262605579068063",
+      "url": "poll/referencias-amigos.html",
       "question": "¿Qué función creativa de una referencia merece ser reinterpretada en ISL sin copiarla?",
-      "methodology": "FRIENDS_SAMPLE · función > personaje · anti-collage · CQC · confirmación humana"
+      "methodology": "FRIENDS_SAMPLE · función > personaje · anti-collage · CQC · confirmación humana",
+      "backend_backup": "https://form.jotform.com/262605579068063"
     },
     {
       "id": "POLL-MOLINO-001",
