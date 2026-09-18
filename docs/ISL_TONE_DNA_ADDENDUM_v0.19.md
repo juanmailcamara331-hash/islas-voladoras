@@ -202,3 +202,123 @@ No aprobar diálogo final si:
 - la poesía explica la moraleja;
 - la crítica institucional reemplaza el conflicto humano;
 - el tono 90s se reduce a estética superficial.
+
+
+## CAPA OSCURA ADULTA
+
+ISL no es infantil aunque tenga humor, pandilla, color o ternura.
+Debe poder entrar en zonas verdaderamente inquietantes sin traicionar su identidad.
+
+### Gótico expresionista / cuento oscuro
+Tomar:
+- siluetas deformadas;
+- arquitectura con personalidad;
+- belleza torcida;
+- melancolía;
+- humor negro;
+- personajes excéntricos con vulnerabilidad real;
+- contraste entre lo adorable y lo perturbador;
+- escenarios que parecen tener intención.
+
+Aplicación ISL:
+- ciudades que parecen sonreír o encogerse;
+- maquinaria que parece orgánica;
+- sombras y estructuras con lectura emocional;
+- cementerios aéreos, ruinas, talleres y barrios con belleza incómoda;
+- criaturas memorables por silueta antes que por detalle gore.
+
+No copiar:
+- diseños, personajes, paletas o composiciones reconocibles de un autor concreto.
+
+### Horror de mecanismo / pruebas crueles
+Tomar:
+- tensión de una regla física que el jugador entiende;
+- espacios diseñados como máquinas;
+- decisiones bajo presión;
+- coste tangible;
+- sensación de que el escenario "te está haciendo una pregunta";
+- revelación de que una solución fácil puede tener otro precio.
+
+Aplicación ISL:
+- islas/mazmorras que funcionan como sistemas coherentes;
+- mecanismos que obligan a observar antes de actuar;
+- consecuencias físicas visibles;
+- dilemas de tiempo, espacio, recursos o cooperación;
+- máquinas antiguas que no son malignas, pero sí indiferentes.
+
+No copiar:
+- trampas concretas, iconografía, personajes, frases o estructura de la saga Saw.
+
+## REGLA DE OSCURIDAD
+Oscuridad = vulnerabilidad + consecuencia + incertidumbre.
+No = sangre por decoración.
+
+Se permite:
+- horror ambiental;
+- body horror moderado cuando la transformación tenga sentido;
+- heridas y consecuencias visibles;
+- espacios opresivos;
+- muerte o pérdida cuando sea significativa;
+- decisiones incómodas;
+- criaturas inquietantes;
+- humor negro.
+
+Evitar:
+- gore fetichista;
+- tortura prolongada como espectáculo;
+- shock repetido sin función;
+- sadismo del autor hacia el jugador;
+- convertir cada zona oscura en "edgy".
+
+## CURVA TONAL
+ISL debe respirar:
+CALIDEZ
+→ EXTRAÑEZA
+→ HUMOR
+→ TENSIÓN
+→ OSCURIDAD
+→ CONSECUENCIA
+→ SILENCIO
+→ ALIVIO / HUMANIDAD.
+
+La oscuridad funciona porque existen hogar, amistad y humor.
+Sin contraste, deja de doler.
+
+## APLICACIÓN A LA SEPARACIÓN
+La Separación puede contener:
+- geometría imposible;
+- cuerpos/objetos casi alcanzables que se alejan;
+- crujidos de estructura;
+- manos, cabos o puertas que no aguantan;
+- una decisión físicamente incómoda;
+- silencio posterior.
+
+No necesita gore para ser adulta.
+
+## APLICACIÓN A ISLAS-MAZMORRA
+Algunas zonas futuras pueden pasar a REGISTRO OSCURO:
+- arquitectura hostil;
+- reglas físicas cerradas;
+- pérdida de luz/espacio;
+- mecanismos que obligan a sacrificar comodidad o recursos;
+- consecuencias corporales/jugables;
+- humor negro puntual como válvula.
+
+## NUEVO CQC OSCURO
+Evaluar:
+- TENSIÓN;
+- INQUIETUD;
+- LEGIBILIDAD;
+- CONSECUENCIA;
+- MADUREZ;
+- GORE NECESARIO/INNECESARIO;
+- FATIGA;
+- CONTRASTE CON CALIDEZ;
+- IDENTIDAD ISL.
+
+ROJO si:
+- parece terror genérico;
+- la crueldad existe sólo para impresionar;
+- el jugador no entiende la regla;
+- el humor destruye una escena que debía doler;
+- todo se vuelve sombrío y desaparece el mundo vivo.
