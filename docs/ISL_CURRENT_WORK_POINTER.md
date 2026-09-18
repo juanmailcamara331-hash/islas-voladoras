@@ -587,3 +587,53 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Private deploy workflow is manual-only until token rotation/re-authorization.
 - Do not expose or embed any Netlify token in repo/APK.
 - Current private site remains provisioned with SSO but has no deployed content yet.
+
+
+## v0.68 · PREMIUM COMMAND CENTER HIERARCHY
+Status: MERGED + PAGES GREEN.
+
+Reference logic adopted from approved visual composition:
+- icon-based single-line nav;
+- visible quick actions;
+- 3 primary cards;
+- 5 world gates;
+- lower platform/utilities band;
+- RPG-style percentages with truth labels;
+- Route ISL percentage derived from real route state.
+
+Main portal now includes:
+- nav icons: Centro / Perfil RPG / Ruta ISL / Aventura / Galería / Música / Más;
+- quick dock: Calendario / Referencias / Encuestas / Registro / Estado;
+- primary 3:
+  1. Perfil RPG,
+  2. Ruta ISL,
+  3. Brújula de las Huellas;
+- world 5:
+  1. Islas,
+  2. Escenas,
+  3. Criaturas,
+  4. Reliquias,
+  5. Dialéctica del mundo;
+- utilities:
+  Galería / PS4 Version / Música / Comunidad / Herramientas / Recreo.
+
+Truth model:
+- RPG percentages explicitly labeled as visual RPG indicators, not real analytics.
+- Route percentage is live and calculated from ISL_ROUTE_STATE_CURRENT.json.
+
+Regression controls:
+- scripts/portal-v068-ui-gate.py
+- .github/workflows/portal-v068-audit.yml
+- build-web-preview.yml now runs the v0.68 UI gate before Pages CQC.
+
+Evidence:
+- feature branch audit run 35402646874 = SUCCESS.
+- main v0.68 audit run 35402740138 = SUCCESS.
+- GitHub Pages run 35402742611 = SUCCESS.
+- merge commit f99ee66f0050dcdb741b2acf986efb6d1bdc12fa.
+
+Human R2 check still required:
+- menu remains one line on physical Android;
+- quick dock feels clear, not crowded;
+- drawer still closes when tapping outside;
+- primary destinations respond.
