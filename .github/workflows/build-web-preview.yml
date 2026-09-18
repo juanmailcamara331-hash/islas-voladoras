@@ -139,7 +139,9 @@ jobs:
           test -f build/pages/poll/gracias.html
           grep -q "ps4-runtime-hotfix.js" build/pages/ps4.html
           grep -q 'welcomeBrandIcon' build/pages/index.html
-          grep -q 'railBrandIcon' build/pages/index.html\n          grep -q 'id=\"finalCommandCenter\"' build/pages/index.html\n          grep -q 'La Brújula de las Huellas' build/pages/index.html
+          grep -q 'railBrandIcon' build/pages/index.html
+          grep -q 'id=\"finalCommandCenter\"' build/pages/index.html
+          grep -q 'La Brújula de las Huellas' build/pages/index.html
           grep -q 'isl-icon-master.png' build/pages/rpg-home.html
           grep -q 'isl-icon-master.png' build/pages/ps4.html
           grep -q 'PRE50 · EVIDENCIA HUMANA REAL' build/pages/ps4.html
