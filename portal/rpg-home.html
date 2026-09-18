@@ -39,7 +39,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
       <div class="actions">
         <a class="btn primary" href="command-center.html?full=1">Entrar al Centro de Mandos</a>
         <a class="btn gold" href="musica.html">Abrir Música</a>
-        <a class="btn" href="capsulas.html">Explorar Cápsulas</a>
+        <a class="btn" href="capsulas.html">Explorar Cápsulas</a><a class="btn gold" href="recreo.html">Entrar en Recreo</a>
         <a class="btn" href="playtest-echo.html">PRE50 Playtest</a>
       </div>
     </div>
@@ -227,6 +227,21 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
     if(localStorage.getItem('isl_storm_route_reward')==='carta-corrientes-imposibles'&&!document.getElementById('impossibleChartSlot')){
       var q=document.createElement('button');q.className='stashSlot strange';q.id='impossibleChartSlot';q.dataset.item='Carta de Corrientes Imposibles';q.dataset.origin='La Costura del Cielo';q.dataset.rarity='SECRETA';q.dataset.real='HIPÓTESIS';q.dataset.function='Nueva capa de lectura: revela rutas que no se comportan como rutas normales';q.innerHTML='🗺<small>1</small>';document.getElementById('stash').appendChild(q);bindItem(q);
     }
+    try{
+      var rl=JSON.parse(localStorage.getItem('isl_recreo_loot')||'[]');
+      var defs={
+        'boton-norte':['Botón que señala al norte cuando le apetece','RECREO','EXTRAÑA','Objeto anecdótico / posible detector de rutas','◉'],
+        'tornillo-tibio':['Tornillo todavía tibio','RECREO','COMÚN','Material absurdo de crafting','⌁'],
+        'pluma-pesada':['Pluma demasiado pesada','RECREO','RARA','Objeto que contradice reglas de peso','✦'],
+        'ticket-ningun-sitio':['Billete a Ningún Sitio','Portal del Recreo','SECRETA','Llave narrativa para un destino todavía inexistente','▱'],
+        'campanilla-muda':['Campanilla muda','RECREO','EXTRAÑA','Señal silenciosa / detector potencial','◇'],
+        'migaja-celeste':['Migaja celeste','RECREO','COMÚN','Muestra de cielo ridículamente pequeña','·'],
+        'silbato-viento-torcido':['Silbato de Viento Torcido','Crafting de Recreo','RARA','Altera una corriente menor','⌁'],
+        'brujula-desobediente':['Brújula Desobediente','Crafting de Recreo','RARA','Señala lo interesante, no el norte','◇'],
+        'taza-niebla':['Taza para guardar niebla','Crafting de Recreo','EXTRAÑA','Contenedor provisional de niebla','◌']
+      };
+      rl.forEach(function(id){if(defs[id]&&!document.getElementById('recreo_'+id)){var d=defs[id],z=document.createElement('button');z.className='stashSlot '+(d[2]==='RARA'?'rare':'strange');z.id='recreo_'+id;z.dataset.item=d[0];z.dataset.origin=d[1];z.dataset.rarity=d[2];z.dataset.real='HIPÓTESIS';z.dataset.function=d[3];z.innerHTML=d[4]+'<small>R</small>';document.getElementById('stash').appendChild(z);bindItem(z)}})
+    }catch(e){}
   }
   function bindItem(el){el.addEventListener('click',function(){currentItem=el;var d=el.dataset;var name=d.item||el.querySelector('b')?.textContent||'Equipo';document.getElementById('imName').textContent=name;document.getElementById('imRarity').textContent='RAREZA · '+(d.rarity||'DIEGÉTICA');document.getElementById('imOrigin').textContent=d.origin||'Perfil del Cartógrafo';document.getElementById('imReal').textContent=d.real||'PROVISIONAL';document.getElementById('imFunction').textContent=d.function||'Equipo de expedición / función en evaluación';var eq=localStorage.getItem('isl_equipped_preview');document.getElementById('imCompare').textContent=eq?('Equipado: '+eq+' · compara función/uso, no DPS.'):'Nada equipado todavía.';modal.classList.add('show')})}
   syncPersistentLoot();
@@ -248,6 +263,8 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
     rows.push(['Cartógrafo de la Tormenta',localStorage.getItem('isl_boss_reward')==='sello-tormenta'?('RESUELTO · '+(localStorage.getItem('isl_boss_resolution')||'método desconocido')):'PENDIENTE']);
     rows.push(['Costura del Cielo',localStorage.getItem('isl_storm_portal')==='discovered'?'DESCUBIERTA':'—']);
     rows.push(['Carta imposible',localStorage.getItem('isl_storm_route_reward')==='carta-corrientes-imposibles'?'RECUPERADA':'—']);
+    rows.push(['Recreo',localStorage.getItem('isl_recreo_turn')?('SESIONES · '+localStorage.getItem('isl_recreo_turn')):'SIN JUGAR']);
+    rows.push(['Portal del Recreo',localStorage.getItem('isl_recreo_portal')==='found'?'DESCUBIERTO':'—']);
     j.innerHTML=rows.map(function(x){return '<div class="loot"><div class="ico">·</div><div><b>'+x[0]+'</b><div>'+x[1]+'</div></div></div>'}).join('');
   }
   function syncSystemState(){
