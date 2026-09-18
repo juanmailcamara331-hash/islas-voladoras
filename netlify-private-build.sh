@@ -4,4 +4,5 @@ set -euo pipefail
 bash netlify-portal-build.sh
 rm -rf build/private
 mv build/site build/private
+cp private-site/access-probe.html build/private/access-probe.html
 echo "ISL PRIVATE build OK: full Command Center."
