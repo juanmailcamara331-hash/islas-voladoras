@@ -267,3 +267,17 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Candidate uses: Salón de las Cortinas Rojas, Recreo, crew dinners, ceremonies and overly solemn speeches.
 - Visual identity is original; no recognizable Shin-chan iconography.
 - Status: EXPERIMENTO / C25. Production order unchanged.
+
+
+## v0.54 — CREATIVE FREEZE / PRODUCTION PUSH
+- Temporary creative-intake freeze activated.
+- No new references, subreferences, artifacts, systems or thematic layers enter active production until the next production batch is complete.
+- New ideas go to PARKING only; they do not alter weights, roadmap or current playable scope.
+- Immediate execution order:
+  1. Isla del Baile Inagotable — minimal playable district
+  2. First 3 creatures — interaction test
+  3. Persistent NUDOS integration
+  4. Crossed CQC B × A
+  5. Human review
+- Existing v0.47–v0.53 references remain preserved and available; nothing is deleted.
+- Goal: reduce creative sprawl and convert accumulated design into playable evidence.
