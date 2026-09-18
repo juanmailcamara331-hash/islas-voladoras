@@ -305,9 +305,10 @@ Fix:
 Regression guard:
 - CI exige native-entered y CSS crítico de welcome.
 
-status: FIXED_PENDING_HUMAN
+status: FIXED_VERIFIED
 first_seen: 2026-09-18
 recurrence_count: 1
+verified_on_physical_android: 2026-09-19
 
 
 ## ERR-FORM-010 · submit parece muerto cuando falta un required
