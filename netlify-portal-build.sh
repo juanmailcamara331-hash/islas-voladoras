@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+python3 scripts/asset-budget.py
 
 python3 scripts/security-gate.py
 
