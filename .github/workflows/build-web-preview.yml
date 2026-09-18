@@ -34,9 +34,8 @@ jobs:
           rm -rf build/pages
           mkdir -p build/pages
           cp -a portal/. build/pages/
-          # Preview gratuito: misma entrada RPG que la release, sin tocar Netlify.
+          # Entrada única: Centro ISL simplificado. La Cabina RPG vive como vista secundaria.
           cp build/pages/index.html build/pages/command-center.html
-          cp build/pages/rpg-home.html build/pages/index.html
           python3 - <<'PY'
           from pathlib import Path
           p=Path('build/pages/ps4.html')
@@ -57,29 +56,30 @@ jobs:
           test -f build/pages/secret-level.html
           test -f build/pages/recreo-pixel.css
           grep -q 'DISTRITO RECREO' build/pages/recreo.html
-          grep -q 'itemCloseX' build/pages/index.html
-          grep -q 'rpgCommandDeck' build/pages/index.html
-          grep -q 'Distrito Recreo' build/pages/recreo.html
-          grep -q 'PERFIL COMPLETO' build/pages/index.html
-          grep -q 'sceneOverlay' build/pages/index.html
-          grep -q 'gameHudBar' build/pages/index.html
-          grep -q 'ACTIVAR MÚSICA' build/pages/index.html
+          grep -q 'homeCabin' build/pages/index.html
+          grep -q 'AHORA IMPORTA' build/pages/index.html
+          grep -q 'REVISIÓN ACTUAL' build/pages/index.html
+          grep -q 'homeHeroIcons' build/pages/index.html
           grep -q '← Cabina RPG' build/pages/musica.html
-          grep -q 'class="gameMenu"' build/pages/index.html
-          grep -q 'class="sceneWindow"' build/pages/index.html
-          grep -q 'id="useItem"' build/pages/index.html
-          grep -q 'class="deckItem"' build/pages/index.html
+          grep -q 'itemCloseX' build/pages/rpg-home.html
+          grep -q 'rpgCommandDeck' build/pages/rpg-home.html
+          grep -q 'sceneOverlay' build/pages/rpg-home.html
+          grep -q 'gameHudBar' build/pages/rpg-home.html
+          grep -q 'class="gameMenu"' build/pages/rpg-home.html
+          grep -q 'class="sceneWindow"' build/pages/rpg-home.html
+          grep -q 'id="useItem"' build/pages/rpg-home.html
+          grep -q 'class="deckItem"' build/pages/rpg-home.html
           grep -q 'isl-cabin-fab' build/pages/command-center.html
           grep -q '100dvh' build/pages/command-center.html
           ! grep -q 'rpg-control-strip' build/pages/command-center.html
-          ! grep -q 'rpgActivityBar' build/pages/index.html
+          ! grep -q 'rpgActivityBar' build/pages/rpg-home.html
           grep -q 'embed=1' build/pages/recreo.html
           test -f build/pages/capsulas.html
-          grep -q "Cabina de Expedición" build/pages/index.html
-          grep -q 'src="assets/protagonist-sheet.png"' build/pages/index.html
-          grep -q 'class="miniMap"' build/pages/index.html
-          grep -q 'assets/floating-islands-map.png' build/pages/index.html
-          grep -q 'class="hudStats"' build/pages/index.html
+          grep -q "Cabina de Expedición" build/pages/rpg-home.html
+          grep -q 'src="assets/protagonist-sheet.png"' build/pages/rpg-home.html
+          grep -q 'class="miniMap"' build/pages/rpg-home.html
+          grep -q 'assets/floating-islands-map.png' build/pages/rpg-home.html
+          grep -q 'class="hudStats"' build/pages/rpg-home.html
           test -f build/pages/ps4.html
           test -f build/pages/ps4-runtime-hotfix.js
           test -f build/pages/decision-engine.html
