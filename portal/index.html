@@ -12,7 +12,7 @@
 })();
 </script>
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="isl-icon-canon.svg" type="image/svg+xml">
+<link rel="icon" href="isl-icon-master.png" type="image/svg+xml">
 <meta name="theme-color" content="#071017">
 
 <style>
@@ -156,15 +156,29 @@ body.spectacle #home .heroText{padding-top:18vh!important}
  .rail button.active:after,.rail button:hover:after{color:#f3dfb8}
  .drawer{left:172px}
 }
+</style><style id="isl-v043-final-command-center">
+:root{--isl-gold:#e5b767;--isl-blue:#071824;--isl-blue2:#0d2636;--isl-line:#36586a;--isl-cream:#f1e4c6}
+@media(min-width:901px){.app{grid-template-columns:1fr!important}.rail{display:none!important}.drawer{left:14px!important}}
+#home>.topbar,#home>.homeCabin,#home>.hero,#home>.homeFocus,#home>.grid,#home>.section{display:none!important}
+.finalCC{display:block;min-height:100%;background:linear-gradient(180deg,#06111ae8,#07131ae8);border:1px solid #263f4d;border-radius:18px;overflow:hidden;box-shadow:0 30px 90px #0009}
+.finalNav{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #4b3d2c;background:linear-gradient(180deg,#0b1e2b,#07141e);position:sticky;top:0;z-index:40}
+.finalNav .brandLock{display:flex;align-items:center;gap:9px;margin-right:auto;min-width:180px}.finalNav .brandLock img{width:42px;height:42px;object-fit:cover;border-radius:9px;box-shadow:0 0 0 1px #80643d,0 7px 20px #0009}.finalNav .brandLock b{font-family:Georgia,serif;color:#f0d49b;font-size:22px;letter-spacing:.08em}.finalNav button,.finalNav a{border:0;background:transparent;color:#c5d2d6;text-decoration:none;font-size:9px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:9px 8px;border-bottom:2px solid transparent;cursor:pointer}.finalNav button:hover,.finalNav a:hover,.finalNav .on{color:#fff0ca;border-bottom-color:#d8a65a}
+.finalHero{position:relative;min-height:290px;overflow:hidden;border-bottom:1px solid #314f5f}.finalHero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.04) brightness(.88)}.finalHero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#061018ef 0,#061018bd 37%,#0610182c 75%),linear-gradient(0deg,#07131ab8,transparent 52%)}.finalHeroCopy{position:relative;z-index:2;padding:38px 34px;max-width:610px}.finalHeroCopy .k{font-size:10px;color:#e3bc79;letter-spacing:.14em}.finalHeroCopy h1{font-family:Georgia,serif;font-size:clamp(38px,6vw,70px);line-height:.92;letter-spacing:.01em;margin:8px 0;color:#f4ead4;text-shadow:0 4px 18px #000}.finalHeroCopy p{max-width:540px;color:#d0d9d8;line-height:1.45}.finalHeroCopy .actions{margin-top:16px}.finalHeroCopy .cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(#f1c776,#c38a39);color:#17110a;border:1px solid #f4dca4;border-radius:8px;padding:12px 17px;font-weight:950;text-decoration:none;box-shadow:0 9px 24px #0007}
+.finalDeck{padding:12px;display:grid;grid-template-columns:1.05fr 1.2fr 1.2fr;gap:10px}.finalCard{position:relative;min-height:180px;border:1px solid #355668;border-radius:11px;background:linear-gradient(180deg,#102431e8,#091720ee);overflow:hidden;box-shadow:inset 0 0 0 1px #ffffff05}.finalCard>a{color:inherit;text-decoration:none;display:block;height:100%}.finalCard .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.36;filter:saturate(.76) contrast(1.08)}.finalCard:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#07131af0,#07131a8a 62%,transparent);pointer-events:none}.finalCard .inner{position:relative;z-index:2;padding:16px}.finalCard h2{font-family:Georgia,serif;font-size:20px;margin:0 0 8px;color:#f4ead4}.finalCard p{font-size:11px;color:#c3d0d3;line-height:1.45;margin:5px 0}.finalCard .statusLine{font-size:9px;letter-spacing:.1em;color:#e4b865;text-transform:uppercase;margin-top:12px}.finalCard .miniAction{display:inline-block;margin-top:12px;border:1px solid #987443;border-radius:999px;padding:7px 11px;font-size:9px;font-weight:900;color:#ffe4ad;background:#0b1820cc}
+.huellasMini{position:absolute;right:18px;bottom:12px;z-index:2;width:106px;height:106px;border:5px double #9b7745;border-radius:50%;box-shadow:0 0 28px #0008,inset 0 0 24px #0008;background:radial-gradient(circle,#1c3441 0 17%,#0a1922 18% 52%,#071017 53%)}.huellasMini:before,.huellasMini:after{content:"";position:absolute;left:50%;top:50%;width:3px;height:42%;transform-origin:50% 0;border-radius:9px}.huellasMini:before{background:#e3b861;transform:translateX(-50%) rotate(33deg)}.huellasMini:after{background:#87efff;transform:translateX(-50%) rotate(214deg)}
+.finalWorlds{padding:0 12px 12px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.worldTile{position:relative;min-height:126px;border:1px solid #315261;border-radius:10px;overflow:hidden;text-decoration:none;color:#fff;background:#08151d}.worldTile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.66;filter:saturate(.82) contrast(1.05)}.worldTile:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#061018f2 0,#0610182d 75%)}.worldTile div{position:absolute;z-index:2;left:11px;right:11px;bottom:10px}.worldTile b{display:block;font-family:Georgia,serif;font-size:16px;color:#f5ead2}.worldTile span{display:block;font-size:8px;color:#c7d5d7;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.finalUtilities{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;padding:0 12px 14px}.util{min-height:78px;border:1px solid #2f4f5f;background:linear-gradient(#0b1d28,#08151d);border-radius:9px;color:#e8eeee;text-decoration:none;display:grid;place-items:center;text-align:center;padding:8px}.util b{display:block;font-size:10px}.util span{display:block;font-size:7px;color:#9eb4b9;margin-top:3px}.finalQuote{margin:0 12px 14px;padding:13px;text-align:center;border:1px solid #55462f;background:#0d1718;font-family:Georgia,serif;color:#e9d4a7;letter-spacing:.08em}
+@media(max-width:980px){.finalNav{overflow-x:auto}.finalNav .brandLock{min-width:155px}.finalDeck{grid-template-columns:1fr 1fr}.finalDeck .finalCard:last-child{grid-column:1/-1}.finalWorlds{grid-template-columns:repeat(2,1fr)}.finalUtilities{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){main{padding:0!important}.finalCC{border-radius:0;border-left:0;border-right:0}.finalNav{padding:7px;gap:3px}.finalNav .brandLock{min-width:126px}.finalNav .brandLock img{width:34px;height:34px}.finalNav .brandLock b{font-size:16px}.finalNav button,.finalNav a{font-size:7px;padding:8px 6px}.finalHero{min-height:420px}.finalHeroCopy{padding:32px 20px;max-width:92%}.finalHeroCopy h1{font-size:44px}.finalDeck{grid-template-columns:1fr;padding:8px}.finalDeck .finalCard:last-child{grid-column:auto}.finalWorlds{grid-template-columns:1fr 1fr;padding:0 8px 8px}.finalUtilities{grid-template-columns:repeat(2,1fr);padding:0 8px 10px}.worldTile{min-height:112px}.finalQuote{margin:0 8px 90px}}
 </style></head>
 <body><div id="bootbar"></div>
-<div id="welcome"><div id="welcomeWind"><i class="windstroke"></i><i class="windstroke"></i><i class="windstroke"></i></div><div class="welcome-inner"><img class="welcomeBrandIcon" src="isl-icon-canon.svg" alt="ISL · Islas Voladoras"><div class="welcome-kicker">Islas Voladoras · Command Center</div><div class="welcome-title">Crear es alterar el mundo.</div><div class="welcome-quote">Y todo lo que alteras termina alterándote. <em>Observa. Decide. Construye. Recuerda.</em></div><div class="actions" style="justify-content:center"><button class="btn primary" id="enterISL" style="font-size:14px;padding:12px 18px;font-weight:950;letter-spacing:.04em">ENTRAR EN ISL</button></div><div class="microline" style="margin-top:30px"></div></div></div>
+<div id="welcome"><div id="welcomeWind"><i class="windstroke"></i><i class="windstroke"></i><i class="windstroke"></i></div><div class="welcome-inner"><img class="welcomeBrandIcon" src="isl-icon-master.png" alt="ISL · Islas Voladoras"><div class="welcome-kicker">ISLAS VOLADORAS · UN UNIVERSO EN TUS MANOS</div><div class="welcome-title">Explora. Crea. Deja huella.</div><div class="welcome-quote">El mismo cielo, más historias por descubrir. <em>Crear es alterar el mundo.</em></div><div class="actions" style="justify-content:center"><button class="btn primary" id="enterISL" style="font-size:14px;padding:12px 18px;font-weight:950;letter-spacing:.04em">ENTRAR EN ISL</button></div><div class="microline" style="margin-top:30px"></div></div></div>
 <div id="helpTip"></div>
 <div id="lightbox"><button id="lbClose">×</button><figure><div id="lbMedia"></div><figcaption id="lbCaption"></figcaption></figure></div>
 <div id="settingsPanel"><div class="topbar"><div><div class="eyebrow">Personalización</div><h2 style="font-size:22px">Tu cabina ISL</h2></div><button class="btn" id="settingsClose">×</button></div><div class="settingrow"><span>Mostrar barra lateral</span><button class="toggle on" data-setting="rail"></button></div><div class="settingrow"><span>Cartelitos de ayuda</span><button class="toggle on" data-setting="tooltips"></button></div><div class="settingrow"><span>Microanimaciones</span><button class="toggle on" data-setting="motion"></button></div><div class="settingrow"><span>Modo compacto</span><button class="toggle" data-setting="compact"></button></div><div class="settingrow"><span>Escala UI</span><input id="uiScale" type="range" min="0.9" max="1.25" step="0.05" value="1"></div><div class="settingrow"><span>Acento</span><select id="accentChoice" class="control"><option value="#87efff">Viento cian</option><option value="#ffc36e">Ámbar</option><option value="#73dfc1">Menta</option><option value="#bba4ff">Violeta</option></select></div></div>
 <div class="app">
 <aside class="rail">
- <img class="railBrandIcon" src="isl-icon-canon.svg" alt="ISL">
+ <img class="railBrandIcon" src="isl-icon-master.png" alt="ISL">
  <button class="active" data-view="home" title="Centro" data-help="Vista general del proyecto.">⌂</button>
  <button data-view="calendar" title="RUTA ISL" data-help="Dónde estamos, qué está cerrado y qué viene después.">🧭</button>
  <button data-view="gallery" title="Galería" data-help="Selecciona y compara diseños.">◈</button>
@@ -181,7 +195,7 @@ body.spectacle #home .heroText{padding-top:18vh!important}
 </aside>
 
 <aside class="drawer" id="drawer">
- <div class="drawerBrand"><img src="isl-icon-canon.svg" alt=""><h2>ISL Command Center</h2></div><div class="tiny">Mapa del proyecto. No sustituye Biblia, Studio ni CQC.</div>
+ <div class="drawerBrand"><img src="isl-icon-master.png" alt=""><h2>ISL Command Center</h2></div><div class="tiny">Mapa del proyecto. No sustituye Biblia, Studio ni CQC.</div>
  <div class="group"><h3>ACCESOS PRINCIPALES</h3>
   <a href="rpg-home.html">Perfil RPG del Cartógrafo ↗</a>
   <button class="item" onclick="go('calendar')">RUTA ISL · ahora y siguiente</button>
@@ -202,7 +216,44 @@ body.spectacle #home .heroText{padding-top:18vh!important}
 </aside>
 
 <main>
-<section class="view active" id="home">
+<section class="view active" id="home">\n<section class="finalCC" id="finalCommandCenter">
+  <nav class="finalNav" aria-label="Centro de Mandos">
+    <div class="brandLock"><img src="isl-icon-master.png" alt="ISL"><b>ISL</b></div>
+    <button class="on" type="button" onclick="go('home')">Centro</button>
+    <a href="rpg-home.html">Perfil RPG</a>
+    <button type="button" onclick="go('calendar')">Ruta ISL</button>
+    <a href="rpg-home.html">Aventura</a>
+    <button type="button" onclick="go('gallery')">Galería</button>
+    <a href="musica.html">Música</a>
+    <a href="capsulas.html">Comunidad</a>
+    <button type="button" onclick="document.getElementById('menuBtn').click()">Herramientas</button>
+  </nav>
+  <div class="finalHero">
+    <img src="assets/island-a-master.jpg" alt="Islas Voladoras">
+    <div class="finalHeroCopy"><div class="k">CENTRO DE MANDOS · ISLAS VOLADORAS</div><h1>Un mundo que recuerda tus pasos</h1><p>Explora · crea · deja huella. La aventura, la memoria y el laboratorio creativo viven en una sola cabina.</p><div class="actions"><a class="cta" href="rpg-home.html">CONTINUAR AVENTURA →</a></div></div>
+  </div>
+  <div class="finalDeck">
+    <article class="finalCard"><img class="bg" src="assets/protagonist-sheet.png" alt=""><a href="rpg-home.html"><div class="inner"><h2>Tu perfil RPG</h2><p>Cartógrafo · equipo, mapa, botín y compañero.</p><div class="statusLine">CABINA ACTIVA</div><span class="miniAction">VER PERFIL</span></div></a></article>
+    <article class="finalCard"><img class="bg" src="assets/floating-islands-map.png" alt=""><div class="inner"><h2>Ruta ISL</h2><p>Del concepto al universo. La siguiente evidencia sigue siendo humana.</p><div class="statusLine">FASE ACTUAL · PRE50 · PENDING REAL HUMAN</div><button class="miniAction" type="button" onclick="go('calendar')">ABRIR RUTA</button></div></article>
+    <article class="finalCard"><a href="huellas.html"><div class="inner"><h2>La Brújula de las Huellas</h2><p>No señala dónde ir.<br>Señala de dónde vienes.</p><div class="statusLine">FASE C · MEMORIA PERSISTENTE</div><span class="miniAction">ABRIR BRÚJULA</span></div><div class="huellasMini" aria-hidden="true"></div></a></article>
+  </div>
+  <div class="finalWorlds">
+    <a class="worldTile" href="rpg-home.html#mapa"><img src="assets/floating-islands-map.png" alt=""><div><b>Islas</b><span>Mundos por descubrir</span></div></a>
+    <a class="worldTile" href="capsulas.html"><img src="assets/wind-lab-sunset.png" alt=""><div><b>Escenas</b><span>Momentos que dejan memoria</span></div></a>
+    <a class="worldTile" href="rpg-home.html"><img src="assets/visual-bible-islands.png" alt=""><div><b>Criaturas</b><span>Vida en las alturas</span></div></a>
+    <a class="worldTile" href="rpg-home.html"><img src="assets/level-celestial-ruins.png" alt=""><div><b>Reliquias</b><span>Artefactos con historia</span></div></a>
+    <a class="worldTile" href="huellas.html"><img src="assets/world-design-bible.png" alt=""><div><b>Dialéctica del mundo</b><span>Ideas · perspectivas · consecuencias</span></div></a>
+  </div>
+  <div class="finalUtilities">
+    <button class="util" type="button" onclick="go('gallery')"><b>GALERÍA</b><span>Arte · lore · concepto</span></button>
+    <a class="util" href="ps4.html"><b>PS4 VERSION</b><span>Experiencia optimizada</span></a>
+    <a class="util" href="musica.html"><b>MÚSICA</b><span>Suavidad → crescendo</span></a>
+    <a class="util" href="capsulas.html"><b>COMUNIDAD</b><span>Comparte · colabora</span></a>
+    <button class="util" type="button" onclick="document.getElementById('menuBtn').click()"><b>HERRAMIENTAS</b><span>Recursos · extras</span></button>
+    <a class="util" href="recreo.html"><b>RECREO</b><span>Jugar sin romper el canon</span></a>
+  </div>
+  <div class="finalQuote">“TODA DECISIÓN DEJA UNA ISLA.”</div>
+</section>
  <div class="topbar"><div class="eyebrow">Islas Voladoras · cabina maestra v0.3</div><div class="actions"><button class="btn" id="musicBtn">♫</button><button class="btn" id="tvBtn">TV</button></div></div>
 <section class="homeCabin" id="homeCabin">
   <div class="homeCabinHero">
