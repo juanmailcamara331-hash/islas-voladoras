@@ -150,3 +150,19 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Canon operativo: docs/ISL_MASTER_CREATIVO_OPERATIVO_v0.46.md
 - 1A/1B re-audited: PASS, no reset.
 - Next build order: Brújula v2 → Reliquias → Escena vertical slice → Isla del Baile Inagotable → Criaturas → Dialéctica → Reference Matrix.
+
+
+## v0.47 — B EXECUTED + FORMAL REFERENCE MATRIX
+- Master: docs/ISL_MASTER_CREATIVO_OPERATIVO_v0.47.md
+- A/B remains frozen; 1A/1B PASS; no reset.
+- B design package completed as PROVISIONAL FUERTE:
+  - docs/ISL_BRUJULA_HUELLAS_v2.md
+  - docs/ISL_RELIQUIAS_v1.md
+  - docs/ISL_SALON_CORTINAS_ROJAS_VERTICAL_SLICE_v1.md
+  - docs/ISL_ISLA_BAILE_INAGOTABLE_v1.md
+  - docs/ISL_CRIATURAS_v1.md
+  - docs/ISL_DIALECTICA_PERSISTENTE_v1.md
+- A formal matrix active:
+  - docs/ISL_REFERENCE_MATRIX_v0.47.md
+- Next build: cheap prototype Brújula v2 → 3 initial relics → logical greybox Salón → minimal Isla district → 3 creatures → persistent knots → crossed CQC B×A.
+- PRE50 remains PENDING REAL HUMAN; no CANON promotion from this package alone.
