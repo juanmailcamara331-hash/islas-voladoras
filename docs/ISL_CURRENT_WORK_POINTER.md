@@ -281,3 +281,23 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
   5. Human review
 - Existing v0.47–v0.53 references remain preserved and available; nothing is deleted.
 - Goal: reduce creative sprawl and convert accumulated design into playable evidence.
+
+
+## v0.55 — COLOR LANE / FOCUS WITHOUT STERILITY
+- Replaces the overly strict interpretation of v0.54 PARKING.
+- Principle: do not stop color; stop derailment.
+- Two active lanes:
+  1. PRODUCTION LANE — fixed order: Isla del Baile Inagotable → 3 creatures → NUDOS → CQC → human review.
+  2. COLOR LANE — small identity-rich additions may enter immediately if they do NOT:
+     - create a new core system;
+     - change the roadmap;
+     - require a new major dependency;
+     - invalidate current CQC;
+     - expand scope enough to delay the next playable milestone.
+- Color Lane budget:
+  - max 1–2 small additions per major playable block;
+  - each addition must have a clear function and reuse existing systems;
+  - preferred forms: dialogue beat, visual motif, micro-event, secret, sound cue, tiny relic affordance, environmental joke, short capsule.
+- Large ideas still go to PARKING / BACKLOG for later review.
+- Existing references remain available as seasoning; they are not all activated at once.
+- Goal: preserve surprise, personality and authorial texture while keeping production velocity.
