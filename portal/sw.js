@@ -1,26 +1,20 @@
-const CACHE='isl-center-v034-rpg-unified';
-const HOT=['./','./index.html','./rpg-home.html','./command-center.html','./recreo.html','./capsulas.html','./capsulas-tv.html','./musica.html','./playtest-echo.html','./manifest.webmanifest','./isl-icon.svg','./isl-capsules-current.json','./styles.css','./app.js'];
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(HOT)).then(()=>self.skipWaiting())));
-self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-function isColdAsset(req){
-  const u=new URL(req.url);
-  return u.origin===location.origin && (/\/assets\//.test(u.pathname)||/\.(?:png|jpe?g|webp|avif|svg|mp3|mp4|woff2?)$/i.test(u.pathname));
-}
-self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET')return;
-  if(isColdAsset(e.request)){
-    const u=new URL(e.request.url);
-  const isNav=e.request.mode==='navigate'||/\.html$/i.test(u.pathname)||u.pathname.endsWith('/');
-  if(isNav){
-    e.respondWith(caches.match(e.request).then(hit=>{
-      const fresh=fetch(e.request).then(r=>{if(r&&r.ok){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));}return r}).catch(()=>hit);
-      return hit||fresh;
-    }));
+const CACHE='isl-center-v035-game-shell';
+const HOT=['./','./index.html','./rpg-home.html','./command-center.html','./recreo.html','./air-fishing.html','./sunday-market.html','./ningun-sitio.html','./boss-prototype.html','./storm-route.html','./secret-level.html','./capsulas.html','./capsulas-tv.html','./musica.html','./manifest.webmanifest','./isl-icon.svg','./recreo-pixel.css'];
+self.addEventListener('install',function(e){e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(HOT)}).then(function(){return self.skipWaiting()}))});
+self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(keys){return Promise.all(keys.filter(function(k){return k!==CACHE}).map(function(k){return caches.delete(k)}))}).then(function(){return self.clients.claim()}))});
+function sameOrigin(req){try{return new URL(req.url).origin===self.location.origin}catch(e){return false}}
+function coldAsset(req){if(!sameOrigin(req))return false;var p=new URL(req.url).pathname;return /\/assets\//.test(p)||/\.(png|jpe?g|webp|avif|svg|mp3|mp4|woff2?)$/i.test(p)}
+function isNavigation(req){if(!sameOrigin(req))return false;var p=new URL(req.url).pathname;return req.mode==='navigate'||/\.html$/i.test(p)||p.endsWith('/')}
+self.addEventListener('fetch',function(e){
+  var req=e.request;if(req.method!=='GET')return;
+  if(isNavigation(req)){
+    e.respondWith(fetch(req).then(function(r){if(r&&r.ok){var cp=r.clone();caches.open(CACHE).then(function(c){c.put(req,cp)})}return r}).catch(function(){return caches.match(req)}));
     return;
   }
-  e.respondWith(caches.match(e.request).then(hit=>hit||fetch(e.request).then(r=>{if(r&&r.ok){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));}return r})));
+  if(coldAsset(req)){
+    e.respondWith(caches.match(req).then(function(hit){return hit||fetch(req).then(function(r){if(r&&r.ok){var cp=r.clone();caches.open(CACHE).then(function(c){c.put(req,cp)})}return r})}));
     return;
   }
-  e.respondWith(caches.match(e.request).then(hit=>hit||fetch(e.request).then(r=>{if(r&&r.ok){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));}return r})));
+  e.respondWith(fetch(req).catch(function(){return caches.match(req)}));
 });
-self.addEventListener('notificationclick',e=>{e.notification.close();const url=e.notification.data&&e.notification.data.url||'./index.html';e.waitUntil(clients.matchAll({type:'window',includeUncontrolled:true}).then(ws=>{for(const w of ws){if('focus'in w){w.navigate(url);return w.focus()}}return clients.openWindow(url)}))});
+self.addEventListener('notificationclick',function(e){e.notification.close();var url=e.notification.data&&e.notification.data.url||'./index.html';e.waitUntil(clients.matchAll({type:'window',includeUncontrolled:true}).then(function(ws){for(var i=0;i<ws.length;i++){if('focus'in ws[i]){ws[i].navigate(url);return ws[i].focus()}}return clients.openWindow(url)}))});
