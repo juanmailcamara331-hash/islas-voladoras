@@ -7,6 +7,8 @@ mkdir -p build/public/poll build/public/assets
 cp public-site/index.html build/public/index.html
 cp portal/poll/index.html build/public/poll/index.html
 cp portal/poll/molino.html build/public/poll/molino.html
+cp portal/poll/pilares-argumento.html build/public/poll/pilares-argumento.html
+cp portal/poll/referencias-amigos.html build/public/poll/referencias-amigos.html
 cp portal/poll/gracias.html build/public/poll/gracias.html
 cp portal/poll-live.js build/public/poll-live.js
 cp portal/ISL_PUBLIC_DECISIONS_CURRENT.json build/public/ISL_PUBLIC_DECISIONS_CURRENT.json
