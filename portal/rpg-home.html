@@ -22,6 +22,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
 @media(max-width:980px){.hero{grid-template-columns:1fr}.panel,.panel.wide,.panel.narrow{grid-column:1/-1}.inv{grid-template-columns:repeat(3,1fr)}.paperdoll{grid-template-columns:94px minmax(150px,1fr) 94px}.eqslot{height:62px;padding:5px}.eqslot .sicon{width:36px;height:36px}}@media(max-width:560px){.shell{padding-left:9px;padding-right:9px}.hero{border-radius:18px}.inv{grid-template-columns:repeat(2,1fr)}.paperdoll{grid-template-columns:76px minmax(120px,1fr) 76px;grid-template-rows:repeat(6,60px);gap:5px}.eqslot{height:54px}.eqslot .sicon{width:32px;height:32px;font-size:16px}.eqslot b{font-size:7px}.eqslot small{display:none}.top{align-items:flex-start}.live{font-size:8px}h1{font-size:45px}.profile{padding:12px}}
 
 .itemModal{position:fixed;inset:0;z-index:9998;background:#02070bcc;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(12px)}.itemModal.show{display:flex}.itemSheet{width:min(560px,94vw);max-height:88vh;overflow:auto;position:relative;border:1px solid #496875;border-radius:18px;background:linear-gradient(180deg,#10232c,#071017);box-shadow:0 30px 100px #000c;padding:24px 18px 18px}.itemCloseX{position:sticky;float:right;top:0;z-index:3;width:44px;height:44px;border:1px solid #6b8a96;border-radius:10px;background:#081218;color:#fff;font-size:28px;line-height:1;cursor:pointer;display:grid;place-items:center;margin:-6px -2px 6px 12px}.itemSheet h2{margin:4px 0 6px}.itemMeta{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:12px}.itemMeta div{border:1px solid #294755;border-radius:9px;padding:8px;background:#08151c}.itemMeta b{display:block;font-size:8px;color:var(--cyan);letter-spacing:.08em}.itemMeta span{font-size:10px;color:#d7e4e7}.stash{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px;margin-top:12px}.stashSlot{aspect-ratio:1;border:1px solid #2d4b57;border-radius:8px;background:#07131a;display:grid;place-items:center;font-size:18px;position:relative;cursor:pointer}.stashSlot.rare{border-color:#8d6b3f;box-shadow:inset 0 0 18px #ffc56f11}.stashSlot.strange{border-color:#665a8c;box-shadow:inset 0 0 18px #b9a5ff11}.stashSlot small{position:absolute;right:3px;bottom:2px;font-size:6px;color:#9bb0b5}.portalCard{position:relative;overflow:hidden}.portalCard:before{content:"";position:absolute;inset:-35%;background:conic-gradient(from 0deg,transparent,#86efff18,transparent,#b9a5ff18,transparent);animation:portalSpin 12s linear infinite}.portalCore{position:relative;z-index:1}@keyframes portalSpin{to{transform:rotate(360deg)}}.profileHud{display:grid;grid-template-columns:1fr;gap:7px;margin-top:10px}.miniMap{height:92px;border:1px solid #355866;border-radius:11px;overflow:hidden;position:relative;background:#081218}.miniMap img{width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.08);opacity:.88}.miniMap:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,#06101788);pointer-events:none}.mapDot{position:absolute;z-index:2;color:var(--cyan);filter:drop-shadow(0 0 5px #000);font-size:12px}.d1{left:24%;top:36%}.d2{left:62%;top:28%;color:var(--gold)}.d3{left:72%;top:62%;color:var(--violet)}.hudStats{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.hudStats span{border:1px solid #284956;background:#08151c;border-radius:8px;padding:6px;font-size:7px;color:var(--muted)}.hudStats b{display:block;color:var(--cyan);font-size:6px;letter-spacing:.08em;margin-bottom:2px}@media(max-width:650px){.stash{grid-template-columns:repeat(6,1fr)}}
+.routeInventoryPanel{margin-top:12px;border:2px solid #4a6874;background:#07131a;padding:10px;box-shadow:4px 4px 0 #02070b;font-family:"Courier New",monospace}.routeInventoryHead{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}.routeInventoryHead b{font-size:9px;color:#86efff;letter-spacing:.1em}.routeInventoryHead span{font-size:7px;color:#9eb4b9}.routeInventoryGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.routeRelic{border:2px solid #355866;background:#0a1820;color:#fff;min-height:72px;padding:7px;text-align:left;position:relative;box-shadow:3px 3px 0 #02070b}.routeRelic.earned{border-color:#8a6a3d}.routeRelic.active{border-color:#7c5f84}.routeRelic .ri{font-size:20px}.routeRelic b{display:block;font-size:8px;margin-top:3px}.routeRelic small{display:block;font-size:6px;color:#9fb2b7;margin-top:2px}.routeRelic em{position:absolute;right:5px;top:5px;font-style:normal;font-size:5px;color:#ffc56f;letter-spacing:.07em}.routeRelic.active em{color:#ff9aaa}@media(max-width:700px){.routeInventoryGrid{grid-template-columns:repeat(2,1fr)}}
 </style>
 <link rel="stylesheet" href="recreo-pixel.css"><style id="rpg-deck-css">
 .rpgCommandDeck{border:3px solid #355866;background:#08141b;box-shadow:8px 8px 0 #02070b;padding:14px;margin-bottom:14px;font-family:"Courier New",monospace}.rpgDeckHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.rpgDeckK{font-size:9px;color:#86efff;letter-spacing:.13em;font-weight:900}.rpgDeckTitle{font-size:clamp(30px,6vw,58px);margin:3px 0;line-height:.88;text-transform:uppercase}.rpgDeckSub{font-size:10px;color:#9eb4b9}.rpgDeckActions{display:flex;gap:7px;flex-wrap:wrap}.rpgDeckActions a,.rpgDeckActions button{border:2px solid #355866;background:#0b1b23;padding:9px;color:#fff;text-decoration:none;font-size:9px;font-weight:900;box-shadow:3px 3px 0 #02070b;font-family:"Courier New",monospace;cursor:pointer}
@@ -62,6 +63,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
       <div class="rpgMiniCaption">MAPA · RUTAS / PORTALES / RECREO</div>
     </div>
   </div>
+  <div class="routeInventoryPanel" id="routeInventoryPanel"><div class="routeInventoryHead"><b>RELIQUIAS DE RUTA</b><span>progreso real ↔ inventario</span></div><div class="routeInventoryGrid" id="routeInventoryGrid"></div></div>
   <div class="rpgDeckStatus">
     <span id="deckLoot">BOTÍN · 0</span><span id="deckPortal">PORTALES · 0</span><span id="deckFish">CAPTURAS · 0</span><span id="deckBoss">BOSS · PENDIENTE</span>
   </div>
@@ -394,6 +396,46 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
     location.reload();
   };
   if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
+})();
+</script>
+<script>
+(function(){
+  function openRouteItem(item){
+    var modal=document.querySelector('.itemModal');
+    if(!modal)return;
+    var sheet=modal.querySelector('.itemSheet');
+    if(!sheet)return;
+    var title=sheet.querySelector('h2');
+    if(title)title.textContent=item.name||'Objeto de Ruta';
+    var cells=sheet.querySelectorAll('.itemMeta span');
+    if(cells[0])cells[0].textContent=item.origin||'RUTA ISL';
+    if(cells[1])cells[1].textContent=item.rarity||'RELIQUIA';
+    if(cells[2])cells[2].textContent=item.truth||item.state||'REGISTRO';
+    if(cells[3])cells[3].textContent=item.function||'Hito de expedición';
+    modal.classList.add('show');
+  }
+  function renderRouteInventory(state){
+    var grid=document.getElementById('routeInventoryGrid');if(!grid)return;
+    grid.innerHTML='';
+    var items=(state.route_inventory||[]).slice();
+    if(state.active_mission_item)items.push(state.active_mission_item);
+    items.forEach(function(item){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='routeRelic '+(item.state==='EARNED'?'earned':'active');
+      b.innerHTML='<span class="ri">'+(item.icon||'✦')+'</span><b>'+item.name+'</b><small>'+item.origin+'</small><em>'+(item.state==='EARNED'?'OBTENIDO':'MISIÓN ACTIVA')+'</em>';
+      b.addEventListener('click',function(){openRouteItem(item)});
+      grid.appendChild(b);
+    });
+    var loot=document.getElementById('deckLoot');
+    if(loot)loot.textContent='BOTÍN · '+(state.route_inventory||[]).length;
+    var hud=document.getElementById('gameHudState');
+    if(hud&&state.now&&state.now.title)hud.textContent='RUTA · '+state.now.title;
+  }
+  fetch('ISL_ROUTE_STATE_CURRENT.json',{cache:'no-store'})
+    .then(function(r){if(!r.ok)throw new Error('route state');return r.json()})
+    .then(renderRouteInventory)
+    .catch(function(){});
 })();
 </script>
 </body></html>
