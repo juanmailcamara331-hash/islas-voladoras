@@ -49,6 +49,8 @@ jobs:
         run: python3 scripts/asset-budget.py
       - name: v0.68 UI regression gate
         run: python3 scripts/portal-v068-ui-gate.py
+      - name: Global navigation and link gate
+        run: python3 scripts/navigation-link-gate.py
 
       - name: CQC portal
         shell: bash
