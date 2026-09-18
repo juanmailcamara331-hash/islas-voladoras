@@ -71,7 +71,8 @@
 
     installPollsModule();
     loadPollState();
-    setInterval(function(){if(document.getElementById('polls')&&document.getElementById('polls').classList.contains('active'))loadPollState()},15000);
+    // Cost-control: live poll state loads on page open and via the ACTUALIZAR button.
+    // Avoid background polling so leaving the Command Center open does not create repeated function calls.
 
     fetch('ISL_PROJECT_STATE_CURRENT.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('state');return r.json()}).then(function(s){
       var main=document.querySelector('main');
