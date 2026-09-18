@@ -15,15 +15,9 @@
   ],
   "icons": [
     {
-      "src": "isl-icon-canon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "isl-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "isl-icon-master.png",
+      "sizes": "1536x1536",
+      "type": "image/png",
       "purpose": "any"
     }
   ],
@@ -34,9 +28,9 @@
       "url": "musica.html",
       "icons": [
         {
-          "src": "isl-icon-canon.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "isl-icon-master.png",
+          "sizes": "1536x1536",
+          "type": "image/png"
         }
       ]
     },
@@ -46,9 +40,9 @@
       "url": "recreo.html",
       "icons": [
         {
-          "src": "isl-icon-canon.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "isl-icon-master.png",
+          "sizes": "1536x1536",
+          "type": "image/png"
         }
       ]
     },
@@ -58,9 +52,9 @@
       "url": "capsulas-tv.html",
       "icons": [
         {
-          "src": "isl-icon-canon.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "isl-icon-master.png",
+          "sizes": "1536x1536",
+          "type": "image/png"
         }
       ]
     },
@@ -70,11 +64,11 @@
       "url": "playtest-echo.html",
       "icons": [
         {
-          "src": "isl-icon-canon.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "isl-icon-master.png",
+          "sizes": "1536x1536",
+          "type": "image/png"
         }
       ]
     }
   ]
-}
+}\n
