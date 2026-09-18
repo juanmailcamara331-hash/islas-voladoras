@@ -3,6 +3,7 @@ name: Audit ISL Portal v0.68
 on:
   push:
     branches:
+      - main
       - portal-v068-command-center
     paths:
       - "portal/**"
