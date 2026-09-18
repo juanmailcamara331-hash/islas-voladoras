@@ -196,3 +196,15 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - portal/ISL_PUBLIC_DECISIONS_CURRENT.json now registers the reference survey.
 - Command Center Encuestas module exposes the survey directly.
 - Poll popularity never promotes CANON automatically.
+
+
+## v0.50 — NATIVE ISL REFERENCE SURVEY
+- Primary friends reference survey moved inside ISL web:
+  - portal/poll/referencias-amigos.html
+- Visual direction matches ISL night/cyan/gold language and uses punk editorial copy.
+- Includes functional examples: spectral maritime absurdity, cabaret as system, Gaudí/Bosch as functional abstraction.
+- Submission path uses Netlify Forms: isl-reference-friends-01.
+- Jotform remains backup only; it is no longer the primary visual surface.
+- Command Center Encuestas now opens the native ISL page.
+- CI guards verify native page, form name and anti-copy framing.
+- Governance unchanged: FRIENDS_SAMPLE informs; no automatic CANON promotion.
