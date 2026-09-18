@@ -29,10 +29,9 @@ h1,h2,p{margin-top:0}.eyebrow{font-size:11px;letter-spacing:.22em;text-transform
 <section id="access" class="screen on center"><div class="panel">
 <div class="eyebrow">ISL · PC-PRE40</div><h1>Antes de empezar</h1>
 <p class="sub">Prototipo de apertura. Ajusta lo esencial antes de cualquier escena.</p>
-<div class="field"><label><input id="subs" type="checkbox" checked> Subtítulos</label></div>
+<div class="field"><label><input type="checkbox" checked disabled> Texto/subtítulos visibles (siempre activos en este prototipo)</label></div>
 <div class="field"><label>Tamaño de texto <input id="txt" type="range" min="90" max="140" value="100"></label></div>
-<div class="field"><label>Movimiento de cámara <input id="motion" type="range" min="0" max="100" value="65"></label></div>
-<div class="field"><label>Volumen ambiente <input id="vol" type="range" min="0" max="100" value="55"></label></div>
+<div class="field"><label>Movimiento visual <input id="motion" type="range" min="0" max="100" value="65"></label></div>
 <button class="btn primary" id="accessGo">Continuar</button>
 </div></section>
 
@@ -50,26 +49,19 @@ h1,h2,p{margin-top:0}.eyebrow{font-size:11px;letter-spacing:.22em;text-transform
 </section>
 
 <section id="end" class="screen center"><div class="panel">
-<div class="eyebrow">PC-PRE40 · FIN</div><h2>Lo que quedó contigo</h2>
-<p id="summary" class="sub"></p>
-<div class="row"><button class="btn primary" id="replay">Repetir</button><button class="btn" id="results">Ver test</button></div>
-<div id="test" style="display:none;margin-top:16px">
-<p><b>Preguntas de playtest:</b></p>
-<ol>
-<li>¿Quién era al menos uno de tus compañeros?</li>
-<li>¿Qué estabais intentando hacer cuando todo se rompió?</li>
-<li>¿Qué priorizaste?</li>
-<li>¿Qué perdiste?</li>
-<li>¿Qué quieres hacer ahora?</li>
-</ol>
-</div>
+<div class="eyebrow">PC-PRE50 · SESIÓN TERMINADA</div><h2>No reveles todavía la huella</h2>
+<p class="sub">Primero responde al facilitador sin volver atrás ni consultar el prototipo. Así medimos lo que realmente entendiste y recuerdas.</p>
+<div class="row"><button class="btn primary" id="reveal">Revelar huella después de responder</button><button class="btn" id="export">Exportar registro local</button><button class="btn" id="replay">Repetir</button></div>
+<div id="revealBox" style="display:none;margin-top:16px"><p id="summary" class="sub"></p></div>
 </div></section>
 
 <script>
 (()=>{
 const $=s=>document.querySelector(s), screens=[...document.querySelectorAll('.screen')];
 function show(id){screens.forEach(x=>x.classList.toggle('on',x.id===id))}
-const canvas=$('#sky'),ctx=canvas.getContext('2d');let W,H,t=0,phase=0,motion=.65,vol=.55,raf;
+const canvas=$('#sky'),ctx=canvas.getContext('2d');let W,H,t=0,phase=0,motion=.65,raf;
+const session={started_at:null,ended_at:null,choice:null,events:[]};
+function log(type,data){session.events.push({t:Date.now(),type,data:data||null})}
 function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight}addEventListener('resize',resize);resize();
 const stars=Array.from({length:90},()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.4}));
 function draw(){
@@ -103,16 +95,16 @@ let i=0,choice='',loss='';
 function render(){
  const q=beats[i];$('#beat').textContent=q.b;$('#speaker').textContent=q.s;$('#line').textContent=q.l;$('#actions').innerHTML='';
  q.a.forEach(([txt,act])=>{const b=document.createElement('button');b.className='btn'+(i===5?' warn':'');b.textContent=txt;b.onclick=()=>actDo(act);$('#actions').appendChild(b)});
- $('#prompt').textContent=i===2?'No hay modo visión: lee el mundo.':'';
+ $('#prompt').textContent='';
  phase=i;
  $('#state').textContent=i<4?'Nave estable':i<6?'Tensión creciente':'Referencia imposible';
 }
-function actDo(act){
+function actDo(act){ log('action',{beat:i,act});
  if(act==='joke'){beats[i].l='Taro: Legal no sé. Sellado por tres oficinas distintas, sí.';beats[i].a=[['Tensar cable','next']];render();return}
  if(act==='wind'){beats[i].l='La tela tira al noroeste. Las partículas van al oeste. Algo ya no coincide.';beats[i].a=[['Avisar','next']];render();return}
  if(act==='anchor'){beats[i].l='El ancla entra. Por un instante, todo queda demasiado quieto.';beats[i].a=[['Soltar manos','next']];render();return}
  if(act==='strain'){i++;render();return}
- if(['person','core','signal'].includes(act)){choice=act;loss=act==='person'?'el núcleo quedó dañado':act==='core'?'una voz se perdió entre rutas':'alguien quedó fuera de alcance';i++;render();return}
+ if(['person','core','signal'].includes(act)){choice=act;session.choice=act;loss=act==='person'?'el núcleo quedó dañado':act==='core'?'una voz se perdió entre rutas':'alguien quedó fuera de alcance';i++;render();return}
  if(act==='rupture'){phase=7;document.body.classList.add('glitch');setTimeout(()=>{document.body.classList.remove('glitch');i++;render()},950);return}
  if(act==='silence'){i++;render();return}
  if(act==='wake'){i++;render();return}
@@ -120,13 +112,15 @@ function actDo(act){
  i++;render()
 }
 function finish(){
- show('end');cancelAnimationFrame(raf);
+ show('end');cancelAnimationFrame(raf);session.ended_at=Date.now();log('session_end',{choice});
  const kept=choice==='person'?'una correa marcada con el nombre de Mara':choice==='core'?'el núcleo auxiliar aún caliente':choice==='signal'?'una coordenada que no existe':'nada identificable';
  $('#summary').textContent='Priorizaste '+({person:'a una persona',core:'el núcleo de la nave',signal:'una señal imposible'}[choice]||'algo')+'. Conservas '+kept+'; '+(loss||'algo importante se perdió')+'.';
 }
-$('#accessGo').onclick=()=>{motion=$('#motion').value/100;vol=$('#vol').value/100;document.documentElement.style.fontSize=$('#txt').value+'%';show('title')};
-$('#start').onclick=()=>{show('game');i=0;render()};
-$('#replay').onclick=()=>location.reload();$('#results').onclick=()=>{$('#test').style.display='block'};
+$('#accessGo').onclick=()=>{motion=$('#motion').value/100;document.documentElement.style.fontSize=$('#txt').value+'%';log('accessibility',{text_pct:$('#txt').value,motion_pct:$('#motion').value});show('title')};
+$('#start').onclick=()=>{session.started_at=Date.now();log('session_start');show('game');i=0;render()};
+$('#reveal').onclick=()=>{$('#revealBox').style.display='block';log('trace_revealed')};
+$('#export').onclick=()=>{const blob=new Blob([JSON.stringify(session,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='isl-pre50-session.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+$('#replay').onclick=()=>location.reload();
 addEventListener('keydown',e=>{if(e.key==='Enter'&&$('#title').classList.contains('on'))$('#start').click()});
 })();
 </script>
