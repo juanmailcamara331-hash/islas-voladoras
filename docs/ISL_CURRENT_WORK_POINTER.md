@@ -422,3 +422,28 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - Error registry recurrence now increases criticality and triggers review of why previous guard failed.
 - Metamorphic invariants protect SAME WORLD / SAME RULES across visual tiers and creative systems.
 - Rule: methodology protects creativity; it must reduce rework, not sterilize design.
+
+
+## v0.62 — DEPLOY TRACE + UNREAL SOURCE MAP
+- Root cause of repeated Android old-shell bug identified:
+  - Android APK build was green;
+  - GitHub Pages deployment was red;
+  - wrapper therefore loaded stale published web.
+- Failed Pages CQC guard identified:
+  - expected Brújula sentence as one literal string;
+  - actual HTML split sentence with <br><em>;
+  - obsolete grep blocked Upload Pages artifact.
+- Fix:
+  - semantic split guards;
+  - CQC shell ERR trap now prints exact failing line/command.
+- Verification:
+  - Pages build SUCCESS;
+  - Upload Pages artifact SUCCESS;
+  - Deploy SUCCESS.
+- ERR-DEPLOY-006 logged and marked FIXED_VERIFIED.
+- New dual release gate:
+  APK_BUILD_GREEN + WEB_DEPLOY_GREEN required before calling wrapper release clean.
+- New future Unreal map:
+  docs/ISL_UNREAL_ENGINEERING_SOURCE_MAP_v0.62.md
+- Unreal source domains structured:
+  testing/QA, build/CI, performance/memory, gameplay architecture, world streaming, networking, AI, assets, save/versioning, platforms, security, AI-assisted engineering, papers, community practice, versioned source governance.
