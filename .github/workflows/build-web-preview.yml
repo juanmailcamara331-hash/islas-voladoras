@@ -61,6 +61,10 @@ jobs:
           grep -q 'rpgCommandDeck' build/pages/index.html
           grep -q 'Distrito Recreo' build/pages/recreo.html
           grep -q 'PERFIL COMPLETO' build/pages/index.html
+          grep -q 'sceneOverlay' build/pages/index.html
+          grep -q 'gameHudBar' build/pages/index.html
+          grep -q 'ACTIVAR MÚSICA' build/pages/index.html
+          grep -q '← Cabina RPG' build/pages/musica.html
           test -f build/pages/capsulas.html
           grep -q "Cabina de Expedición" build/pages/index.html
           grep -q 'src="assets/protagonist-sheet.png"' build/pages/index.html
