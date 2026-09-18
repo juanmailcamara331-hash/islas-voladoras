@@ -64,8 +64,8 @@
     }
 
     function loadPollState(){
-      fetch('/api/poll-state?ts='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('live');return r.json()}).then(renderPolls).catch(function(){
-        fetch('ISL_POLL_STATUS_CURRENT.json?ts='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('fallback');return r.json()}).then(renderPolls).catch(function(){});
+      fetch('/api/poll-state').then(function(r){if(!r.ok)throw new Error('live');return r.json()}).then(renderPolls).catch(function(){
+        fetch('ISL_POLL_STATUS_CURRENT.json').then(function(r){if(!r.ok)throw new Error('fallback');return r.json()}).then(renderPolls).catch(function(){});
       });
     }
 
