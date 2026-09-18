@@ -1,10 +1,6 @@
 name: Deploy private ISL Command Center
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "PRIVATE_DEPLOY_TRIGGER.md"
   workflow_dispatch:
 
 permissions:
