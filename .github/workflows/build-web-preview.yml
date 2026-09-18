@@ -124,6 +124,10 @@ jobs:
           grep -q 'isl-reference-friends-01' build/pages/poll/referencias-amigos.html
           grep -q 'isl-pillars-01' build/pages/poll/pilares-argumento.html
           grep -q 'VALIDACIÓN DIALÉCTICA' build/pages/poll/pilares-argumento.html
+          grep -q 'name="cohort" value="friends-01"' build/pages/poll/referencias-amigos.html
+          grep -q 'name="cohort" value="friends-01"' build/pages/poll/pilares-argumento.html
+          grep -q 'name="survey_version" value="v0.65-r3"' build/pages/poll/referencias-amigos.html
+          grep -q 'name="survey_version" value="v0.65-r3"' build/pages/poll/pilares-argumento.html
           grep -q 'window.__ISL_NATIVE_APP__=true' build/pages/index.html
           grep -q 'isl_native_entered_v063' build/pages/index.html
           grep -q 'id="moreNavBtn"' build/pages/index.html
