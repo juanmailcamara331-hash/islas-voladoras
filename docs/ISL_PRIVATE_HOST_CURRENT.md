@@ -51,3 +51,25 @@ That URL remains operational but is not considered real private hosting.
 
 ## Migration target
 PRIVATE_WEB_GREEN && PRIVATE_ACCESS_GREEN && APK_GREEN && HUMAN_DEVICE_GREEN
+
+
+## Android SSO migration gate
+The private host is identity-based, not network-based.
+
+Expected behavior:
+- authorized account + any Wi-Fi / mobile data => access;
+- unauthorized account + known URL => blocked;
+- network change alone must not revoke access.
+
+Before changing Android HOME:
+1. private site deployed;
+2. access-probe.html reachable only after SSO;
+3. open probe from a second Wi-Fi or mobile data;
+4. test SSO in Android WebView;
+5. verify cookies/session survive ordinary navigation;
+6. BACK returns to Command Center without welcome flash;
+7. app resume remains authenticated or fails closed with clear login;
+8. keep current GitHub Pages HOME as rollback until two successful physical sessions.
+
+Do not use IP allowlisting as the primary control.
+Do not embed a password/token in APK, JS, query params, localStorage, or repository.
