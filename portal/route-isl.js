@@ -67,7 +67,7 @@
     `;
     document.head.appendChild(style);
 
-    var stops=[
+    var routeState={current_stop:'pre50',now:{label:'AHORA IMPORTA',title:'PRE50 · evidencia humana real',body:'Conseguir evidencia humana real sin abrir más infraestructura.'},review:{label:'REVISIÓN ACTUAL',title:'RUTA ISL · una sola experiencia',body:'Home única, Cabina RPG integrada y mapa de viaje sincronizados.'},next_stop:'pre60',next_label:'PRE60 · sintetizar feedback y decidir nueva variante'};\n\n    var stops=[
       {id:'base',x:13,y:68,state:'done',sig:'✓',name:'Base ISL',sub:'1A × 1B × 1C · huella · mutación',status:'TRAMO SUPERADO',body:'La base sistémica está conservada. No se reinicia: sirve de suelo para los experimentos posteriores.'},
       {id:'labs',x:28,y:55,state:'done',sig:'✓',name:'Labs de viento',sub:'Wind Lab · receptor · CQC',status:'TRAMO SUPERADO',body:'Los laboratorios demostraron cómo experimentar pequeño antes de construir grande.'},
       {id:'molino',x:44,y:47,state:'done',sig:'✓',name:'Molino que Miente',sub:'Decisión física · tres rutas',status:'REVISIÓN VIVA',body:'Se conserva como laboratorio narrativo-jugable. Debe revalidarse integrado, no convertirse en menú moral.'},
@@ -85,7 +85,7 @@
       b.innerHTML='<span class="routeSig">'+s.sig+'</span><b>'+s.name+'</b><small>'+s.sub+'</small>';
       map.appendChild(b);
     });
-    var now=document.createElement('div');now.className='routeNow';now.innerHTML='<div><b>◆ AHORA IMPORTA · PRE50</b><span>Conseguir evidencia humana real sin abrir más infraestructura.</span></div><span>La revisión actual viaja contigo →</span>';map.appendChild(now);
+    var now=document.createElement('div');now.className='routeNow';map.appendChild(now);
     shell.appendChild(map);
     view.insertBefore(shell,view.firstChild);
     view.appendChild(details);
@@ -95,6 +95,23 @@
     document.body.appendChild(modal);
     var selected=null,key='isl-route-v1-visited';
     function read(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return[]}}
+    function syncHome(){
+      var nowCard=document.querySelector('.focusCard.now'),reviewCard=document.querySelector('.focusCard.review');
+      if(nowCard){var e=nowCard.querySelector('.eyebrow'),h=nowCard.querySelector('h2'),p=nowCard.querySelector('p');if(e)e.textContent=routeState.now.label||'AHORA IMPORTA';if(h)h.textContent=routeState.now.title||'';if(p)p.textContent=routeState.now.body||''}
+      if(reviewCard){var e2=reviewCard.querySelector('.eyebrow'),h2=reviewCard.querySelector('h2'),p2=reviewCard.querySelector('p');if(e2)e2.textContent=routeState.review.label||'REVISIÓN ACTUAL';if(h2)h2.textContent=routeState.review.title||'';if(p2)p2.textContent=routeState.review.body||''}
+      var heroBtn=document.querySelector('.homeHeroIcons button[onclick*="calendar"]');if(heroBtn){heroBtn.title='RUTA ISL';var sp=heroBtn.querySelector('span');if(sp)sp.textContent='RUTA'}
+    }
+    function syncRoute(){
+      var current=routeState.current_stop||'pre50';
+      stops.forEach(function(s){s.state=(s.id===current)?'current':(s.state==='current'?'future':s.state)});
+      map.querySelectorAll('.routeNode').forEach(function(n){
+        var s=stops.filter(function(x){return x.id===n.dataset.route})[0];
+        n.classList.remove('done','current','future');
+        if(s)n.classList.add(s.state);
+      });
+      now.innerHTML='<div><b>◆ '+(routeState.now.label||'AHORA IMPORTA')+' · '+(routeState.now.title||'')+'</b><span>'+(routeState.now.body||'')+'</span></div><span>'+(routeState.next_label||'La revisión actual viaja contigo →')+'</span>';
+      syncHome();
+    }
     function paint(){var v=read();map.querySelectorAll('.routeNode').forEach(function(n){n.classList.toggle('visited',v.indexOf(n.dataset.route)>=0)})}
     function close(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');selected=null}
     function open(id){var s=stops.filter(function(x){return x.id===id})[0];if(!s)return;selected=s;modal.querySelector('.routeStatus').textContent=s.status;modal.querySelector('h2').textContent=s.name;modal.querySelector('p').textContent=s.body;modal.classList.add('show');modal.setAttribute('aria-hidden','false')}
