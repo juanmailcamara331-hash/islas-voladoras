@@ -1,7 +1,10 @@
 [build]
   command = "bash netlify-portal-build.sh"
   publish = "build/site"
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- portal netlify netlify.toml netlify-portal-build.sh netlify-public-build.sh netlify-private-build.sh ps4-audio-build.sh package.json package-lock.json scripts/security-gate.py"
+  # COST AIRLOCK: normal commits NEVER deploy production.
+  # To intentionally release, modify NETLIFY_DEPLOY_v0.7.2.md in that release commit.
+  # Netlify's ignore command exits 0 when the release marker did not change, so the build is skipped.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- NETLIFY_DEPLOY_v0.7.2.md"
 
 [[headers]]
   for = "/*"
