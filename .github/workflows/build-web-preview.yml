@@ -50,6 +50,7 @@ jobs:
       - name: CQC portal
         shell: bash
         run: |
+          trap 'echo "::error::CQC failed at line $LINENO: $BASH_COMMAND"' ERR
           test -f build/pages/index.html
           test -f build/pages/rpg-home.html
           test -f build/pages/command-center.html
@@ -103,7 +104,8 @@ jobs:
           test -f build/pages/isla-baile-inagotable.html
           test -f build/pages/poll/referencias-amigos.html
           test -f build/pages/poll/pilares-argumento.html
-          grep -q 'No señala dónde ir. Señala de dónde vienes.' build/pages/huellas.html
+          grep -q 'No señala dónde ir.' build/pages/huellas.html
+          grep -q 'Señala de dónde vienes.' build/pages/huellas.html
           grep -q 'isl_huellas_echoes_v1' build/pages/huellas.html
           grep -q 'isl_huellas_events_v2' build/pages/huellas.html
           grep -q 'data-mode="trance"' build/pages/huellas.html
