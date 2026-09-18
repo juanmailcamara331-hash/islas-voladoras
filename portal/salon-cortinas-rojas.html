@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes">
+<meta name="theme-color" content="#12090d">
+<title>ISL · Salón de las Cortinas Rojas</title>
+<style>
+:root{--bg:#07080b;--panel:#101317e8;--red:#9d1f34;--red2:#d34759;--gold:#d3ac64;--cyan:#8defff;--ink:#f2eadc;--muted:#9ba8ac;--line:#41343a}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:#eef4f2;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+body{min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 50% 8%,#4b111d 0,transparent 26%),linear-gradient(#0c0b10,#080b10 58%,#040608)}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(90deg,#120609dd,transparent 38%,transparent 62%,#120609dd),url("assets/island-a-master.jpg") center/cover no-repeat;opacity:.14;filter:saturate(.45) contrast(1.2)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,transparent 0 8%,#6f142233 8% 11%,transparent 11% 19%);mask-image:linear-gradient(#000,transparent 78%)}
+.wrap{width:min(1180px,94vw);margin:auto;padding:16px 0 60px}.top{display:flex;gap:12px;align-items:center}.top img{width:52px;height:52px;object-fit:contain}.meta{flex:1}.k{font-size:9px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.top h1{margin:3px 0 0;font-family:Georgia,serif;font-size:clamp(24px,4vw,42px)}.back{color:#fff;text-decoration:none;border:1px solid #57454a;background:#100d11;border-radius:9px;padding:10px 12px;font-size:10px;font-weight:900}
+.stage{margin-top:16px;border:1px solid var(--line);border-radius:22px;min-height:510px;position:relative;overflow:hidden;background:linear-gradient(180deg,#170b10,#0a1015 66%,#07090c);box-shadow:0 28px 80px #000a}
+.curtain{position:absolute;top:0;bottom:0;width:33%;background:linear-gradient(90deg,#4b0c18,#9e2035 35%,#5b101f 70%,#2b0710);transition:transform 1s cubic-bezier(.2,.8,.2,1),filter .8s}.curtain.left{left:0;border-right:2px solid #c36a7622}.curtain.right{right:0;transform:scaleX(-1);border-right:2px solid #c36a7622}.stage.open .left{transform:translateX(-82%)}.stage.open .right{transform:scaleX(-1) translateX(-82%)}.stage.null .curtain{filter:saturate(.25) brightness(.45)}.stage.changed.sync{box-shadow:inset 0 0 120px #b8914033,0 28px 80px #000a}.stage.changed.break{box-shadow:inset 0 0 120px #6fe8ff22,0 28px 80px #000a}.stage.changed.redirect{box-shadow:inset 0 0 140px #ac78ff22,0 28px 80px #000a}
+.room{position:absolute;inset:0;display:grid;place-items:center;padding:80px 20px 28px}.roomInner{width:min(760px,92%);text-align:center;position:relative;z-index:2}.phase{font-size:9px;letter-spacing:.18em;color:var(--gold);font-weight:900}.room h2{font-family:Georgia,serif;font-size:clamp(32px,6vw,66px);line-height:.98;margin:8px 0 12px;color:var(--ink)}.room p{margin:0 auto;max-width:680px;color:#c9d2d1;line-height:1.55;font-size:13px}.signal{margin:16px auto 0;width:min(540px,90%);height:12px;display:flex;gap:5px;justify-content:center;align-items:end}.signal i{display:block;width:8%;background:#8f6b37;height:20%;border-radius:3px;transition:.4s}.stage.open .signal i:nth-child(2n){height:72%}.stage.open .signal i:nth-child(3n){height:44%}.stage.null .signal i{height:8%;background:#536067}.stage.changed.sync .signal i{height:70%;background:#d3ac64}.stage.changed.break .signal i:nth-child(odd){height:85%;background:#8defff}.stage.changed.redirect .signal i{height:calc(22% + var(--h));background:#b6a0ff}
+.micro{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 0}.micro div{border:1px solid #48363c;background:#0d1115cc;border-radius:10px;padding:9px;font-size:10px;color:#aeb9ba;min-height:62px}.micro b{display:block;color:#eee0c9;margin-bottom:4px}
+.controls{margin-top:14px;border:1px solid var(--line);background:#0b1115e8;border-radius:16px;padding:15px}.controls h3{margin:0 0 5px;font-size:12px}.controls p{margin:0 0 11px;color:var(--muted);font-size:10px;line-height:1.5}.actions{display:flex;gap:7px;flex-wrap:wrap}.btn{border:1px solid #5a4650;background:#171218;color:#eadfe2;border-radius:10px;padding:11px 12px;font-weight:900;font-size:10px;cursor:pointer}.btn.primary{border-color:#a9793e;background:#3d2b19;color:#ffe8ba}.btn.cyan{border-color:#38616e;background:#0d2028;color:#c7f7ff}.btn:disabled{opacity:.4;cursor:not-allowed}.relics{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.relic{border:1px solid #514b35;background:#14130d;color:#d6c89e;border-radius:999px;padding:7px 9px;font-size:9px}.relic.off{opacity:.35}.result{margin-top:12px;border-left:3px solid var(--gold);background:#15140f;border-radius:8px;padding:12px;font-size:11px;line-height:1.5;color:#dbe1dd;display:none}.result.show{display:block}.trace{margin-top:9px;color:#8ea1a5;font-size:9px}.footer{margin-top:10px;text-align:center;color:#68797e;font-size:9px}
+@media(max-width:650px){.micro{grid-template-columns:1fr}.stage{min-height:600px}.room{padding-top:68px}.top{align-items:flex-start}.back{padding:8px}.controls{padding:12px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top">
+  <img src="isl-icon-master.png" alt="ISL">
+  <div class="meta"><div class="k">FASE C · VERTICAL SLICE LÓGICO · PROVISIONAL FUERTE</div><h1>Salón de las Cortinas Rojas</h1></div>
+  <a class="back" href="rpg-home.html">← CABINA RPG</a>
+</header>
+
+<section id="stage" class="stage">
+  <div class="curtain left"></div><div class="curtain right"></div>
+  <div class="room"><div class="roomInner">
+    <div id="phase" class="phase">ANCLA · 01</div>
+    <h2 id="title">La cortina no se mueve.</h2>
+    <p id="copy">Hay viento en el pasillo, pero el rojo permanece inmóvil. El salón no te pide entrar. Tampoco intenta parecer inocente.</p>
+    <div class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="micro">
+      <div><b>ESPEJO</b><span id="m1">Refleja la puerta, no tu cara.</span></div>
+      <div><b>MESA</b><span id="m2">Una copa vibra sin música.</span></div>
+      <div><b>BASTIDOR</b><span id="m3">Alguien dejó una marca detrás de la tela.</span></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="controls">
+  <h3 id="prompt">Cruzar el umbral</h3>
+  <p id="help">Primero observa el ancla. Después la sala abrirá su campo entrópico y una zona nula antes de pedirte una decisión.</p>
+  <div id="actions" class="actions">
+    <button class="btn primary" id="advance" type="button">ENTRAR</button>
+  </div>
+  <div class="relics">
+    <span id="rMet" class="relic off">♩ Metrónomo sin Dueño</span>
+    <span id="rSeal" class="relic off">◉ Sello de Barro Vivo</span>
+    <span id="rMask" class="relic off">◐ Media Máscara del Aplauso</span>
+  </div>
+  <div id="result" class="result"></div>
+  <div id="trace" class="trace"></div>
+</section>
+<div class="footer">Misma lógica y consecuencias en todos los tiers. Rojo = ancla, no moralidad. Nada aquí asciende a CANON sin evidencia humana.</div>
+</main>
+<script>
+(()=>{'use strict';
+const KEY='isl_huellas_events_v2', ROOM='isl_red_room_state_v1';
+const $=id=>document.getElementById(id), stage=$('stage'), phase=$('phase'), title=$('title'), copy=$('copy'), actions=$('actions'), result=$('result'), trace=$('trace');
+const relic={met:localStorage.getItem('isl_relic_metronome_active')==='1',seal:!!localStorage.getItem('isl_relic_clay_seal'),mask:localStorage.getItem('isl_relic_halfmask_active')==='1'};
+$('rMet').classList.toggle('off',!relic.met);$('rSeal').classList.toggle('off',!relic.seal);$('rMask').classList.toggle('off',!relic.mask);
+let step=0;
+function evs(){try{const a=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(a)?a:[]}catch(e){return[]}}
+function push(action,delta,tags,cost,witness,relations=[]){
+ const a=evs(), repeats=a.filter(e=>e.action_class===action&&e.context_id==='salon_rojo').length;
+ a.push({event_id:'salon_'+Date.now()+'_'+action,context_id:'salon_rojo',actor:'player',action_class:action,cost,reversibility:0,witness_scope:witness,relation_ids:relations,world_state_delta:delta,timestamp:new Date().toISOString(),significance_band:Math.max(1,cost+2-Math.min(3,repeats)),tags});
+ localStorage.setItem(KEY,JSON.stringify(a.slice(-64))); return a[a.length-1];
+}
+function btn(label,cls,fn){const b=document.createElement('button');b.className='btn '+(cls||'');b.textContent=label;b.onclick=fn;return b}
+function setMicro(a,b,c){$('m1').textContent=a;$('m2').textContent=b;$('m3').textContent=c}
+function next(){
+ step++;
+ if(step===1){
+  stage.classList.add('open');phase.textContent='CAMPO ENTRÓPICO · 02';title.textContent='Todo quiere que mires a la vez.';
+  copy.textContent='Vals torcido, mesas, reflejos y pequeñas escenas compiten por atención. No hay un centro único: hay una presión para sincronizarte.';
+  setMicro('Ahora refleja a quienes te observan.','Las copas laten con el mismo pulso.','El bastidor parece una salida, pero todavía no lo es.');
+  actions.innerHTML='';actions.append(btn('SEGUIR HASTA LA ZONA NULA','primary',next));
+ } else if(step===2){
+  stage.classList.add('null');phase.textContent='ZONA NULA · 03';title.textContent='La música desaparece.';
+  copy.textContent='Quedan suelo, respiración y una marca de tránsito. Por primera vez la sala no interpreta por ti.';
+  setMicro('Oscuro. Sin público.','Quietud total.','La marca detrás de la tela coincide con una alteración antigua.');
+  actions.innerHTML='';actions.append(btn('CRUZAR LA MARCA','primary',next));
+ } else {
+  phase.textContent='TRIGGER · 04';title.textContent='El salón espera una conducta.';
+  copy.textContent='No hay opción correcta. Cada gesto compra una lectura distinta y deja una deuda diferente.';
+  $('prompt').textContent='¿Qué haces con el ritmo?';$('help').textContent='La sala cambiará físicamente de lectura. Observar o marcharte también cuentan si aceptas su coste.';
+  actions.innerHTML='';
+  actions.append(btn('SINCRONIZAR','primary',()=>choose('sync')));
+  actions.append(btn('DESCOMPASAR','cyan',()=>choose('break')));
+  const rb=btn('RECOREOGRAFIAR'+(relic.met?' · ♩':''),'',()=>choose('redirect')); if(!relic.met)rb.title='Funciona sin reliquia, pero cuesta más';actions.append(rb);
+  actions.append(btn('OBSERVAR SIN ENTRAR','',()=>choose('observe')));
+  actions.append(btn('MARCHARTE','',()=>choose('leave')));
+ }
+}
+function choose(kind){
+ stage.className='stage open null changed '+(kind==='break'?'break':kind==='redirect'?'redirect':'sync');
+ actions.querySelectorAll('button').forEach(b=>b.disabled=true);
+ let main='', echoes=[], e;
+ if(kind==='sync'){
+  main='Acceso social inmediato: el salón te reconoce como parte del pulso.';
+  echoes=['Una deuda de sincronía queda asociada a la próxima reunión.','Una figura tras el espejo deja de ocultarte información.'];
+  e=push('sincronizar','salon_acceso_social_con_deuda',['contagio','mascara'],3,'multitud',['salon_troupe']);
+  setMicro(relic.mask?'La máscara suaviza cómo leen tu adhesión.':'Tu reflejo ya lleva el ritmo antes que tú.','La mesa te reserva un lugar.','El bastidor permanece cerrado.');
+ } else if(kind==='break'){
+  main='Aparece una fisura lateral: ganas ruta, pierdes cooperación inmediata.';
+  echoes=['La orquesta recuerda quién rompió el compás.','La ruta de bastidor queda visible en futuras visitas.'];
+  e=push('descompasar','salon_fisura_lateral_abierta',['contagio','umbral'],3,'multitud',['salon_orchestra']);
+  setMicro('El espejo se retrasa medio segundo.','Una copa cae sin romperse.','Una costura lateral se abre detrás del bastidor.');
+ } else if(kind==='redirect'){
+  main=relic.met?'El Metrónomo devuelve el patrón capturado y la sala acepta una nueva coreografía.':'Tras estudiar el patrón, fuerzas una recoreografía lenta y costosa.';
+  echoes=['Se redistribuye quién ocupa el centro del salón.','La próxima entrada comienza con un pulso distinto.'];
+  e=push('recoreografiar','salon_patron_reescrito',['poder','contagio','umbral'],relic.met?3:4,'multitud',['salon_troupe','salon_orchestra']);
+  setMicro('El espejo ya no tiene un centro claro.','Las mesas cambian de orientación.','El bastidor se convierte en una ruta legítima.');
+ } else if(kind==='observe'){
+  main='No entras en el pulso. Conservas claridad, pero dejas pasar una alianza posible.';
+  echoes=['La sala te registra como testigo, no participante.'];
+  e=push('observar','salon_alianza_no_tomada',['memoria','mascara'],2,'privado');
+  setMicro('El espejo no consigue fijarte.','La mesa deja de vibrar.','La salida sigue abierta, pero sin recompensa.');
+ } else {
+  main='Te marchas antes de que la sala te asigne un papel. El coste es una oportunidad que ya no vuelve igual.';
+  echoes=['La próxima visita empieza con una ausencia reconocible.'];
+  e=push('omitir_salon','salon_oportunidad_ausente',['memoria','deseo'],3,'ninguno');
+  setMicro('El espejo conserva una silueta vacía.','La copa vuelve a quedar quieta.','La marca de tránsito desaparece.');
+ }
+ const sealNote=relic.seal?' El Sello de Barro Vivo verifica que esta configuración difiere de la anterior.':'';
+ const maskNote=relic.mask&&kind==='sync'?' La Media Máscara altera la lectura social, no el coste de haberte sincronizado.':'';
+ const metNote=relic.met&&kind==='redirect'?' El Metrónomo reduce el coste de comprender el patrón; no decide por ti.':'';
+ result.classList.add('show');result.innerHTML='<b>CONSECUENCIA PRINCIPAL</b><br>'+main+'<br><br><b>ECOS</b><br>'+echoes.map(x=>'· '+x).join('<br>')+'<br><br>'+sealNote+maskNote+metNote;
+ trace.textContent='Huella escrita en Brújula v2 · '+e.action_class+' · significancia '+e.significance_band;
+ localStorage.setItem(ROOM,JSON.stringify({phase_result:kind,affected_relations:e.relation_ids,access_debts:kind==='sync'?['deuda_sincronia']:[],trace_event:e.event_id,room_variant_seed:e.world_state_delta,at:e.timestamp}));
+ phase.textContent='CONSECUENCIA / HUELLA · 05';title.textContent=kind==='leave'?'El salón recuerda que no entraste.':'La misma sala ya no significa lo mismo.';
+ copy.textContent='No ha cambiado por una cinemática. Ha cambiado porque tu conducta alteró acceso, lectura social o ritmo.';
+ const again=btn('VOLVER A LEER EN LA BRÚJULA','primary',()=>location.href='huellas.html');actions.appendChild(again);
+}
+$('advance').onclick=next;
+})();
+</script>
+</body>
+</html>
