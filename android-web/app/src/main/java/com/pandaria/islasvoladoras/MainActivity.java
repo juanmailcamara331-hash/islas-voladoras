@@ -30,7 +30,8 @@ public class MainActivity extends Activity {
         s.setAllowFileAccess(false);
         s.setAllowContentAccess(false);
 
-        web.setInitialScale(0);\n        web.clearCache(true);
+        web.setInitialScale(0);
+        web.clearCache(true);
         web.clearHistory();
         web.setWebChromeClient(new WebChromeClient());
         web.setWebViewClient(new WebViewClient());
