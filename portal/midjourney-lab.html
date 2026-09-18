@@ -10,7 +10,7 @@ main{max-width:900px;margin:auto;padding:18px}.top{display:flex;gap:10px;align-i
 .status{margin-top:9px;font-size:12px;color:var(--muted)}.status b{color:var(--fg)}
 .note{margin-top:18px;padding:14px;border:1px dashed #31515c;border-radius:14px;color:var(--muted);font-size:13px}.done{color:#8effb1}.warn{color:#ffc36e}
 a{color:var(--cyan)}
-</style></head><body><main>
+</style><link rel="stylesheet" href="isl-global-shell.css">\n</head><body><main>
 <div class="top"><div><div class="tag">ISL · VISUAL CAMPAIGN LAB</div><h1>6 covers.<br>Una misma familia.</h1><div class="sub">Explora en Midjourney → manda capturas → CQC → elegimos sólo lo que sobreviva.</div></div></div>
 <div class="grid" id="grid"></div>
 <div class="note">Regla: no elijas porque “mola”. Una portada sobrevive si parece ISL sin texto, funciona en miniatura y cuenta la emoción exacta de su canción. El estado se guarda sólo en este dispositivo.</div>
@@ -36,4 +36,4 @@ items.forEach((x,i)=>{
  el.querySelector("[data-status]").onclick=()=>{let cur=localStorage.getItem(key)||"PENDIENTE";let n=(statuses.indexOf(cur)+1)%statuses.length;localStorage.setItem(key,statuses[n]);el.querySelector(".status b").textContent=statuses[n]};
  grid.appendChild(el);
 });
-</script></body></html>
+</script><script defer src="isl-global-shell.js"></script>\n</body></html>
