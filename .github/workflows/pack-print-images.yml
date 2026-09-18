@@ -1,0 +1,30 @@
+name: Pack ISL print images
+on:
+  push:
+    paths:
+      - '.github/workflows/pack-print-images.yml'
+  workflow_dispatch:
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare HD print images
+        run: |
+          mkdir -p print-images
+          cp portal/assets/ship-home-stars.png "print-images/01_PORTADA_nave-hogar.png"
+          cp portal/assets/epic-journey.png "print-images/02_viaje-epico.png"
+          cp portal/assets/ship-between-islands.png "print-images/03_nave-entre-islas.png"
+          cp portal/assets/floating-islands-lookout.png "print-images/04_mirador.png"
+          cp portal/assets/city-wind.png "print-images/05_ciudad-y-viento.png"
+          cp portal/assets/wind-lab-sunset.png "print-images/06_laboratorio-del-viento.png"
+          cp portal/assets/tower-echoes.png "print-images/07_torre-de-los-ecos.png"
+          cp portal/assets/level-celestial-ruins.png "print-images/08_ruinas-celestes.png"
+          cp portal/assets/visual-bible-islands.png "print-images/09_biblia-visual-islas.png"
+          cp portal/assets/world-design-bible.png "print-images/10_biblia-de-mundo.png"
+          cp portal/assets/art-bible-journey.png "print-images/11_viaje-direccion-artistica.png"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ISL_IMAGENES_HD_001
+          path: print-images/*
+          compression-level: 6
