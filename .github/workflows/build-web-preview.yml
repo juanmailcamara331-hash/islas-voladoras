@@ -121,6 +121,10 @@ jobs:
           grep -q 'window.__ISL_NATIVE_APP__=true' build/pages/index.html
           grep -q "removeChild(w)" build/pages/index.html
           grep -q 'isl-center-v060-native-regression-guard' build/pages/sw.js
+          test -f docs/ISL_BUILD_SCIENCE_v0.61.md
+          test -f docs/ISL_ERROR_TAXONOMY_v0.61.json
+          test -f docs/ISL_CHANGE_IMPACT_CARD_TEMPLATE_v0.61.md
+          test -f docs/ISL_ENGINEERING_RESEARCH_LEDGER_v0.61.md
           grep -q 'href="huellas.html"' build/pages/rpg-home.html
           grep -q 'Metrónomo sin Dueño' build/pages/rpg-home.html
           grep -q 'Sello de Barro Vivo' build/pages/rpg-home.html
