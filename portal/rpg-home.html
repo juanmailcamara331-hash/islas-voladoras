@@ -44,7 +44,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
       </div>
     </div>
     <aside class="profile">
-      <div class="portrait"><img src="assets/protagonist-sheet.png" fetchpriority="high" decoding="async" width="768" height="1024" alt="Protagonista ISL"><i class="hudmark a">⌁</i><i class="hudmark b">◇</i><i class="hudmark c">∴</i><div class="companion"><img src="assets/rpg-mascot-provisional.svg" loading="lazy" decoding="async" alt="Mascota provisional ISL"><span>MASCOTA · PROVISIONAL</span></div></div>
+      <div class="portrait"><img data-isl-src="assets/protagonist-sheet.png" data-isl-w="720" fetchpriority="high" decoding="async" width="768" height="1024" alt="Protagonista ISL"><i class="hudmark a">⌁</i><i class="hudmark b">◇</i><i class="hudmark c">∴</i><div class="companion"><img src="assets/rpg-mascot-provisional.svg" loading="lazy" decoding="async" alt="Mascota provisional ISL"><span>MASCOTA · PROVISIONAL</span></div></div>
       <h2>Cartógrafo</h2>
       <div class="rank">RANGO · NAVEGANTE DE CORRIENTES</div>
       <div class="xp"><i></i></div>
@@ -126,7 +126,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
   </section>
     <article class="panel" style="grid-column:1/-1;padding:0;overflow:hidden">
       <div style="position:relative;min-height:300px">
-        <img src="assets/floating-islands-map.png" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="675" alt="Mapa de Islas Voladoras" style="width:100%;height:360px;object-fit:cover;display:block;filter:saturate(.78) contrast(1.05)">
+        <img data-isl-src="assets/floating-islands-map.png" data-isl-w="1200" loading="lazy" decoding="async" fetchpriority="low" width="1200" height="675" alt="Mapa de Islas Voladoras" style="width:100%;height:360px;object-fit:cover;display:block;filter:saturate(.78) contrast(1.05)">
         <div style="position:absolute;inset:0;background:linear-gradient(90deg,#071017ed 0,#07101788 40%,transparent 75%),linear-gradient(0deg,#071017cc,transparent 70%);padding:24px;display:flex;flex-direction:column;justify-content:flex-end">
           <div class="kicker">Mapa de expedición</div>
           <h3 style="font-size:28px;margin:5px 0">Archipiélago vivo</h3>
@@ -181,6 +181,8 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
 <div class="itemModal" id="itemModal"><div class="itemSheet"><div class="kicker">Ficha de objeto</div><h2 id="imName">Objeto</h2><div class="rank" id="imRarity">Rareza</div><div class="itemMeta"><div><b>PROCEDENCIA</b><span id="imOrigin"></span></div><div><b>ESTADO REAL</b><span id="imReal"></span></div><div style="grid-column:1/-1"><b>FUNCIÓN</b><span id="imFunction"></span></div></div><div class="actions"><button class="btn primary" id="equipItem">Equipar visualmente</button><button class="btn" id="closeItem">Cerrar</button></div><div class="tiny">Equipar aquí sólo cambia la presentación RPG local; nunca cambia CANON ni estados de producción.</div></div></div>
 <script>
 (function(){
+  var isPS4=/PlayStation 4/i.test(navigator.userAgent),onNetlify=/\.netlify\.app$/i.test(location.hostname);
+  document.querySelectorAll('img[data-isl-src]').forEach(function(img){var p=img.dataset.islSrc,w=img.dataset.islW||800;img.src=(onNetlify&&!isPS4)?('/.netlify/images?url=/'+p+'&w='+w+'&q=76'):p});
   var gate=document.getElementById('rpgEnter'),music=document.getElementById('rpgMusic'),enter=document.getElementById('enterCabin');
   function startMusic(){music.volume=.34;var p=music.play();if(p&&p.catch)p.catch(function(){});gate.style.display='none';localStorage.setItem('isl_rpg_entered','1')}
   enter.addEventListener('click',startMusic);
