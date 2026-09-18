@@ -74,3 +74,16 @@ Abrir app
 - log de “mundos que no fueron”.
 - cards de canciones y covers.
 - perfil compartible solo si el usuario lo activa.
+
+
+## MÚSICA / RESPIRACIÓN DE LA CABINA
+El Centro de Mandos no debe recibir al usuario con épica máxima.
+La entrada sonora debe sentirse íntima, noble, cálida y abierta, dejando respirar logo, cielo, isla y perfil antes de crecer.
+
+Macrocurva:
+suavidad → asombro → apertura → aventura → riesgo → crescendo.
+
+El crescendo debe responder a una apertura real de experiencia o mundo, no a un temporizador ni a una convención de trailer.
+La referencia funcional es la amplitud lírica y orquestal del cine de aventura 60–70, sin imitación de obras, autores o partituras concretas.
+
+La cabina, la Brújula de las Huellas y el barco-hogar forman el suelo emocional del que despega el resto de la banda sonora.
