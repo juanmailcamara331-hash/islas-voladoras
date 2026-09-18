@@ -103,7 +103,7 @@ jobs:
           grep -q 'class="miniMap"' build/pages/rpg-home.html
           grep -q 'assets/floating-islands-map.png' build/pages/rpg-home.html
           grep -q 'class="hudStats"' build/pages/rpg-home.html
-          grep -q 'RUTA v0.39 · PRE50 PENDIENTE' build/pages/rpg-home.html
+          grep -q 'RUTA v0.40 · PRE50 PENDIENTE' build/pages/rpg-home.html
           grep -q '<span>Inventario</span>' build/pages/rpg-home.html
           grep -q '<span>Aventura</span>' build/pages/rpg-home.html
           grep -q '<span>Centro</span>' build/pages/rpg-home.html
