@@ -265,7 +265,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 .profileStat .track{height:5px;border-radius:99px;background:#152e39;overflow:hidden;border:1px solid #284c5c}.profileStat i{display:block;height:100%;background:linear-gradient(90deg,#7ae9ff,#e1b362);border-radius:99px}.profileStat strong{text-align:right;color:#e5c383;font-size:8px}
 .rpgNote{font-size:7px;color:#7f9da5;letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
 .routeRail{display:flex;align-items:center;gap:4px;margin:12px 0 4px;max-width:290px}.routeRail i{width:12px;height:12px;border:2px solid #7a633f;border-radius:50%;background:#091821;box-shadow:0 0 0 2px #0b1820}.routeRail i.done{background:#e0b45d;border-color:#f0ca83}.routeRail i.now{background:#88efff;border-color:#d9fbff;box-shadow:0 0 14px #73eaff88}.routeRail b{height:2px;flex:1;background:linear-gradient(90deg,#b78c49,#315764)}
-.routeMeta{display:flex;justify-content:space-between;gap:8px;font-size:7px;color:#87a4ab;letter-spacing:.06em;text-transform:uppercase;max-width:290px}
+.routeMeta{display:flex;justify-content:space-between;gap:8px;font-size:7px;color:#87a4ab;letter-spacing:.06em;text-transform:uppercase;max-width:290px}.routePct{color:#e6c27c;font-weight:900}
 .huellasKinds{position:absolute;right:14px;top:14px;z-index:3;display:grid;gap:3px;text-align:right;font-size:7px;letter-spacing:.08em;color:#d4ba86;text-transform:uppercase;opacity:.9}
 .finalCard.profileCard:after{background:linear-gradient(90deg,#07131af4,#07131ab8 70%,#07131a22)}
 .finalCard.routeCard:after{background:linear-gradient(90deg,#07131af4,#07131ab0 70%,#07131a22)}
@@ -380,9 +380,9 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
         <div class="profileStat"><span>Huella</span><span class="track"><i style="width:85%"></i></span><strong>85%</strong></div>
       </div>
       <div class="rpgNote">Indicadores RPG visuales · no analítica real</div><span class="miniAction">VER PERFIL</span></div></a></article>
-    <article class="finalCard routeCard"><img class="bg" src="assets/floating-islands-map.png" alt=""><div class="inner"><h2>Ruta ISL</h2><p>Del concepto al universo. Cada hito necesita evidencia antes de ascender.</p><div class="statusLine">FASE ACTUAL · PRE50 · EVIDENCIA HUMANA</div>
-      <div class="routeRail" aria-label="Progreso visual de la ruta"><i class="done"></i><b></b><i class="done"></i><b></b><i class="now"></i><b></b><i></i><b></b><i></i></div>
-      <div class="routeMeta"><span>concepto</span><span>pre50</span><span>universo</span></div>
+    <article class="finalCard routeCard"><img class="bg" src="assets/floating-islands-map.png" alt=""><div class="inner"><h2>Ruta ISL</h2><p>Del concepto al universo. Cada hito necesita evidencia antes de ascender.</p><div class="statusLine" id="routeStatusLine">FASE ACTUAL · PRE50 · EVIDENCIA HUMANA</div>
+      <div class="routeRail" id="routeRail" aria-label="Progreso visual de la ruta"><i class="done"></i><b></b><i class="done"></i><b></b><i class="now"></i><b></b><i></i><b></b><i></i></div>
+      <div class="routeMeta"><span>concepto</span><span id="routeCurrentLabel">pre50</span><span class="routePct" id="routePct">—%</span></div>
       <button class="miniAction" type="button" onclick="go('calendar')">ABRIR RUTA</button></div></article>
     <article class="finalCard compassCard"><a href="huellas.html"><div class="inner"><h2>La Brújula de las Huellas</h2><p>No señala dónde ir.<br>Señala de dónde vienes.</p><div class="statusLine">MEMORIA · CONSECUENCIA · PERSISTENCIA</div><span class="miniAction">VER HUELLAS</span></div><div class="huellasKinds" aria-hidden="true"><span>Lugares</span><span>Ideas</span><span>Personas</span><span>Historias</span><span>Tu huella</span></div><div class="huellasMini" aria-hidden="true"></div></a></article>
   </div>
@@ -707,4 +707,35 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
   window.addEventListener('pageshow',stabilize);
 })();
 </script><script defer src="route-isl.js"></script>
+
+<script id="isl-v068-route-live">
+(function(){
+  var status=document.getElementById('routeStatusLine');
+  var current=document.getElementById('routeCurrentLabel');
+  var pct=document.getElementById('routePct');
+  var rail=document.getElementById('routeRail');
+  if(!status||!current||!pct||!rail)return;
+  fetch('ISL_ROUTE_STATE_CURRENT.json',{cache:'no-store'}).then(function(r){
+    if(!r.ok)throw new Error('route-state');
+    return r.json();
+  }).then(function(s){
+    var stop=(s.current_stop||'').toUpperCase();
+    var state=(s.now&&s.now.status)||'';
+    status.textContent='FASE ACTUAL · '+stop+' · '+state;
+    current.textContent=(s.current_stop||'ruta').toLowerCase();
+    var pipeline=Array.isArray(s.pipeline_master)?s.pipeline_master:[];
+    var complete=Array.isArray(s.completed_stops)?s.completed_stops.length:0;
+    var progress=pipeline.length?Math.max(0,Math.min(100,Math.round(((complete+1)/pipeline.length)*100))):0;
+    pct.textContent=progress+'%';
+    var dots=[].slice.call(rail.querySelectorAll('i'));
+    var filled=Math.max(1,Math.min(dots.length,Math.round(progress/100*dots.length)));
+    dots.forEach(function(dot,i){
+      dot.classList.toggle('done',i<Math.max(0,filled-1));
+      dot.classList.toggle('now',i===Math.max(0,filled-1));
+    });
+  }).catch(function(){
+    pct.textContent='—%';
+  });
+})();
+</script>
 </body></html>
