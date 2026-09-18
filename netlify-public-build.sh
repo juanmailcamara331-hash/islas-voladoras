@@ -9,6 +9,8 @@ cp portal/poll/index.html build/public/poll/index.html
 cp portal/poll/molino.html build/public/poll/molino.html
 cp portal/poll/pilares-argumento.html build/public/poll/pilares-argumento.html
 cp portal/poll/referencias-amigos.html build/public/poll/referencias-amigos.html
+cp portal/poll/pilares-lite-v2.html build/public/poll/pilares-lite-v2.html
+cp portal/poll/referencias-lite-v2.html build/public/poll/referencias-lite-v2.html
 cp portal/poll/gracias.html build/public/poll/gracias.html
 cp portal/poll-live.js build/public/poll-live.js
 cp portal/ISL_PUBLIC_DECISIONS_CURRENT.json build/public/ISL_PUBLIC_DECISIONS_CURRENT.json
@@ -17,10 +19,19 @@ for f in molino-a-top.jpg molino-b-top.jpg molino-c-top.jpg; do
   cp "portal/assets/$f" "build/public/assets/$f"
 done
 
+cat > build/public/PUBLIC_BUILD_MANIFEST.txt <<'EOF'
+ISL PUBLIC SURFACE
+Allowed:
+- landing
+- polls
+- explicitly shared poll assets
+Private Command Center files are intentionally excluded.
+EOF
+
 touch build/public/.nojekyll
 
 # Security: public build is allowlist-only. Internal state must never leak here.
-for forbidden in   ISL_PROJECT_STATE_CURRENT.json ISL_DECISION_CATALOG_CURRENT.json ISL_GAMEDEV_OS_CURRENT.json   ISL_SECURITY_OS_CURRENT.json ISL_STRESS_AUDIT_CURRENT.json decision-engine.html decision-studio.js lifecycle-studio.js; do
+for forbidden in   ISL_PROJECT_STATE_CURRENT.json ISL_DECISION_CATALOG_CURRENT.json ISL_GAMEDEV_OS_CURRENT.json   ISL_SECURITY_OS_CURRENT.json ISL_STRESS_AUDIT_CURRENT.json decision-engine.html decision-studio.js lifecycle-studio.js command-center.html rpg-home.html route-isl.js huellas.html salon-cortinas-rojas.html isla-baile-inagotable.html secret-level.html boss-prototype.html; do
   test ! -e "build/public/$forbidden"
 done
 
