@@ -320,3 +320,28 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
 - CI guards page, persistence key and Jardín Silencioso.
 - Status remains PROVISIONAL FUERTE pending human playtest/CQC.
 - Next fixed block: first 3 creatures interaction test.
+
+
+## v0.57 — VALIDACIÓN DIALÉCTICA DE PILARES
+- Scientific order restored before expanding content.
+- New method: docs/ISL_VALIDACION_DIALECTICA_PILARES_v0.57.md
+- New native survey: portal/poll/pilares-argumento.html
+- Survey checks:
+  - comprehension of ISL core premise;
+  - pull of La Separación + reunions + ship-home;
+  - strongest continuation motive;
+  - biggest risk/focus concern;
+  - interest in non-moral persistent choices;
+  - preferred tonal balance;
+  - what must never be sacrificed;
+  - what should be cut first if scope overloads;
+  - desired 2-hour player statement;
+  - points of confusion or friction.
+- Registered in ISL_PUBLIC_DECISIONS_CURRENT.json.
+- Surfaced in Command Center.
+- CI guards survey form and dialectical framing.
+- Temporary sequencing change:
+  - creatures are not cancelled;
+  - they wait briefly for core pillar evidence/synthesis;
+  - then continue under the validated base.
+- Decision rule remains: poll results inform; they never auto-promote CANON.
