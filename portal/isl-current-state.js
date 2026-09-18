@@ -80,10 +80,10 @@
         '<h2 style="margin:5px 0 7px;font-size:clamp(24px,4vw,38px)">ENSÉÑALES ESTO AHORA</h2>'+
         '<div class="sub" style="margin-bottom:12px">Primero pilares. Luego dos prototipos. Termina con referencias si todavía hay ganas.</div>'+
         '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px">'+
-          '<a class="btn primary" style="padding:14px;text-align:center;font-weight:900" href="poll/pilares-argumento.html">1 · PILARES Y ARGUMENTO</a>'+
+          '<a class="btn primary" style="padding:14px;text-align:center;font-weight:900" href="https://form.jotform.com/262606707094056" target="_blank" rel="noopener">1 · PILARES Y ARGUMENTO</a>'+
           '<a class="btn" style="padding:14px;text-align:center;font-weight:900" href="salon-cortinas-rojas.html">2 · SALÓN ROJO</a>'+
           '<a class="btn" style="padding:14px;text-align:center;font-weight:900" href="isla-baile-inagotable.html">3 · ISLA DEL BAILE</a>'+
-          '<a class="btn" style="padding:14px;text-align:center;font-weight:900" href="poll/referencias-amigos.html">4 · REFERENCIAS</a>'+
+          '<a class="btn" style="padding:14px;text-align:center;font-weight:900" href="https://form.jotform.com/262605579068063" target="_blank" rel="noopener">4 · REFERENCIAS</a>'+
         '</div>'+
         '<div class="callout" style="margin-top:11px"><b>Regla:</b> no les expliques demasiado. Que entren, jueguen y te digan dónde se pierden. Esa confusión también cuenta como evidencia.</div>';
       main.insertBefore(box,main.firstChild);
