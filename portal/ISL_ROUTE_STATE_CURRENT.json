@@ -1,0 +1,20 @@
+{
+  "version": "0.39.0",
+  "updated_at": "2026-09-18",
+  "current_stop": "pre50",
+  "now": {
+    "label": "AHORA IMPORTA",
+    "title": "PRE50 · evidencia humana real",
+    "body": "Conseguir evidencia humana real sin abrir más infraestructura. Observar conducta, fricción, descubrimiento, agencia y deseo de retorno antes de promover nada.",
+    "status": "PENDING REAL HUMAN"
+  },
+  "review": {
+    "label": "REVISIÓN ACTUAL",
+    "title": "RUTA ISL · una sola experiencia",
+    "body": "Home única, Cabina RPG integrada, mapa de viaje, iconos compactos, ventanas flotantes, ítems funcionales y recreo visual. El sistema técnico queda debajo y no compite con el mundo."
+  },
+  "next_stop": "pre60",
+  "next_label": "PRE60 · sintetizar feedback y decidir nueva variante",
+  "calendar_role": "SECONDARY_DATE_LAYER",
+  "canon_rule": "Nada asciende a CANON automáticamente; CQC + evidencia + confirmación humana siguen mandando."
+}
