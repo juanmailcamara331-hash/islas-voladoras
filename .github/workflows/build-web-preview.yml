@@ -67,6 +67,8 @@ jobs:
           grep -q "ISL_ROUTE_STATE_CURRENT.json" build/pages/route-isl.js
           grep -q '"current_stop": "pre50"' build/pages/ISL_ROUTE_STATE_CURRENT.json
           grep -q 'isl-route-v1-visited' build/pages/route-isl.js
+          grep -q 'routeSceneGrid' build/pages/route-isl.js
+          grep -q 'Botín / hitos' build/pages/route-isl.js
           node --check build/pages/route-isl.js
           ! grep -Fq '\\n\\n    var stops' build/pages/route-isl.js
           grep -q '← Cabina RPG' build/pages/musica.html
