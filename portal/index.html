@@ -105,6 +105,18 @@ body.spectacle #home .heroText{padding-top:18vh!important}
   #welcome .actions .btn{padding:9px 10px;font-size:10px}
   #welcome .microline{margin-top:14px!important}
 }
+</style><style id="isl-home-simplified">
+.homeCabin{margin-bottom:12px;border:1px solid #315462;background:linear-gradient(135deg,#0c1d25,#081219);border-radius:16px;padding:12px;box-shadow:0 18px 42px #0005}
+.homeCabinHero{display:grid;grid-template-columns:100px minmax(0,1fr) minmax(220px,34%);gap:12px;align-items:stretch}
+.homeCabinPortrait{width:100%;height:128px;object-fit:cover;object-position:center 24%;border:1px solid #52727d;border-radius:10px;image-rendering:pixelated}
+.homeCabinCopy{display:flex;flex-direction:column;justify-content:center}.homeCabinCopy h2{margin:3px 0 6px;font-size:clamp(22px,4vw,38px)}
+.homeCabinIcons,.homeHeroIcons{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.homeCabinIcons a,.homeHeroIcons button{width:58px;height:50px;border:1px solid #355866;background:#0a171e;color:#fff;text-decoration:none;display:grid;place-items:center;border-radius:9px;font-weight:900;font-size:18px;cursor:pointer}
+.homeCabinIcons span,.homeHeroIcons span{display:block;font-size:6px;color:#9eb2b7;letter-spacing:.08em}
+.homeCabinMap{position:relative;min-height:128px;border:1px solid #355866;border-radius:10px;overflow:hidden;background:#061017}.homeCabinMap img{width:100%;height:100%;object-fit:cover}.homeCabinMap i{position:absolute;left:61%;top:28%;color:#ffc36e;font-style:normal;font-size:18px}
+.homeFocus{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.focusCard{border:1px solid #294955;border-radius:14px;padding:14px;background:#0a171e}.focusCard h2{font-size:clamp(20px,3vw,30px);margin:5px 0 7px}.focusCard p{margin:0;color:#b9cbd0;line-height:1.5;font-size:12px}.focusCard.now{border-color:#6e5a32}.focusCard.review{border-color:#355f65}
+.homeHeroIcons{margin-top:14px}.homeHeroIcons button{background:#08151c}
+@media(max-width:760px){.homeCabinHero{grid-template-columns:76px 1fr}.homeCabinPortrait{height:104px}.homeCabinMap{grid-column:1/-1;min-height:100px}.homeFocus{grid-template-columns:1fr}.homeCabinIcons a,.homeHeroIcons button{width:52px;height:46px}}
 </style></head>
 <body><div id="bootbar"></div>
 <div id="welcome"><div id="welcomeWind"><i class="windstroke"></i><i class="windstroke"></i><i class="windstroke"></i></div><div class="welcome-inner"><div class="isl-logo"><i class="ring"></i><i class="ring r2"></i><i class="speck s1"></i><i class="speck s2"></i><i class="speck s3"></i><div class="core"><b>ISL</b></div></div><div class="welcome-kicker">Islas Voladoras · Command Center</div><div class="welcome-title">Crear es alterar el mundo.</div><div class="welcome-quote">Y todo lo que alteras termina alterándote. <em>Observa. Decide. Construye. Recuerda.</em></div><div class="actions" style="justify-content:center"><button class="btn primary" id="enterISL">Entrar en ISL</button><a class="btn" href="reel.html">Ver Reel</a><a class="btn" href="ps4.html">PS4 Lite</a><a class="btn" href="avisos.html">Avisos ISL</a></div><div class="microline" style="margin-top:30px"></div></div></div>
@@ -146,13 +158,39 @@ body.spectacle #home .heroText{padding-top:18vh!important}
 <main>
 <section class="view active" id="home">
  <div class="topbar"><div class="eyebrow">Islas Voladoras · cabina maestra v0.3</div><div class="actions"><button class="btn" id="musicBtn">♫</button><button class="btn" id="tvBtn">TV</button></div></div>
+<section class="homeCabin" id="homeCabin">
+  <div class="homeCabinHero">
+    <img class="homeCabinPortrait" src="assets/protagonist-sheet.png" alt="Cartógrafo ISL">
+    <div class="homeCabinCopy">
+      <div class="eyebrow">CABINA RPG · PERFIL ACTUAL</div>
+      <h2>Cartógrafo · Nivel 06</h2>
+      <div class="sub">Tu perfil jugable vive aquí, dentro del mismo Centro ISL. Equipo, mapa, botín y recreo sin abrir otra “app”.</div>
+      <div class="homeCabinIcons">
+        <a href="rpg-home.html" title="Perfil RPG">🎒<span>PERFIL</span></a>
+        <a href="recreo.html" title="Recreo">🎮<span>RECREO</span></a>
+        <a href="musica.html" title="Música">♫<span>MÚSICA</span></a>
+        <a href="rpg-home.html#mapa" title="Mapa">🧭<span>MAPA</span></a>
+      </div>
+    </div>
+    <div class="homeCabinMap"><img src="assets/floating-islands-map.png" alt="Mapa ISL"><i>◆</i></div>
+  </div>
+</section>
  <div class="hero"><img src="assets/island-a-master.jpg"><div class="heroText">
   <div class="eyebrow">MAGISTRALMENTE VAGOS · CUIDADO Y MIMO</div>
   <h1>Todo el mundo ISL,<br>sin perder el hilo.</h1>
   <div class="sub">Arte, criaturas, niveles, herramientas, referencias, calendario, simulaciones, estadísticas, pipelines y decisiones — organizados para producir en meses sin rebajar identidad.</div>
   <div class="heroQuote">“Automatizar la fricción. <em>No automatizar el criterio.</em>”</div>
-  <div class="actions"><button class="btn primary" onclick="go('gallery')">Entrar en Galería</button><button class="btn gold" onclick="go('roadmap')">Ver Roadmap</button><button class="btn" id="heroSpectacle">⛶ Espectáculo</button><button class="btn" onclick="go('calendar')">Planificar semana</button></div>
+  <div class="homeHeroIcons">
+    <button onclick="go('gallery')" title="Galería">◈<span>GALERÍA</span></button>
+    <button onclick="go('roadmap')" title="Roadmap">⌁<span>ROADMAP</span></button>
+    <button id="heroSpectacle" title="Espectáculo">⛶<span>VER</span></button>
+    <button onclick="go('calendar')" title="Calendario">▦<span>SEMANA</span></button>
+  </div>
  </div></div>
+ <section class="homeFocus">
+  <article class="focusCard now"><div class="eyebrow">AHORA IMPORTA</div><h2>Que ISL se sienta como un mundo, no como herramientas sueltas.</h2><p>Prioridad visible: aventura principal, coherencia de navegación, experiencia pública clara y PRE50 real cuando toque. El resto debe ayudar a eso, no competir con ello.</p></article>
+  <article class="focusCard review"><div class="eyebrow">REVISIÓN ACTUAL</div><h2>Una sola entrada. Menos ruido. Mejor lectura.</h2><p>Cabina RPG integrada, controles compactos, visuales con identidad y sistema técnico en segundo plano. Nada asciende a CANON por decoración o automatización.</p></article>
+</section>
  <div class="grid">
   <div class="card"><div class="label">Fuente de verdad</div><div class="kpi">v0.13</div><div class="status good">BIBLIA MAESTRA</div></div>
   <div class="card"><div class="label">Método</div><div class="kpi">R²</div><div class="status good">CQC + BUCLE RECURSIVO</div></div>
