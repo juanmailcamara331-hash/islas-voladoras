@@ -20,3 +20,21 @@ Minimum viable:
 - deep links to YouTube Music/Spotify once public;
 - QR cards for physical altar;
 - region filters once regional themes exist.
+
+
+## MACROARCO DE INICIO
+La experiencia musical del arranque de ISL sigue esta curva:
+- intimidad, aire y nobleza;
+- curiosidad y apertura;
+- descubrimiento y viaje;
+- aventura y riesgo;
+- crescendo progresivo ganado por lo vivido.
+
+Referencia funcional: amplitud melódica y elegancia orquestal del gran cine de aventura 60–70, sin imitar ninguna película, compositor o partitura concreta.
+
+Reglas:
+- no arrancar con épica máxima;
+- identidad antes que volumen;
+- el crescendo puede crecer por orquestación, registro, contrapunto, pulso, metales cálidos, percusión y densidad;
+- conservar el motivo emocional de apertura cuando la escala aumenta;
+- evitar trailerización, bombazos automáticos y grandilocuencia continua.
