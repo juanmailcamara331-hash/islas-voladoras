@@ -1,5 +1,5 @@
-const CACHE='isl-center-v038-single-home';
-const HOT=['./','./index.html','./rpg-home.html','./command-center.html','./recreo.html','./air-fishing.html','./sunday-market.html','./ningun-sitio.html','./boss-prototype.html','./storm-route.html','./secret-level.html','./capsulas.html','./capsulas-tv.html','./musica.html','./manifest.webmanifest','./isl-icon.svg','./recreo-pixel.css'];
+const CACHE='isl-center-v040-nav-refresh';
+const HOT=['./','./index.html','./rpg-home.html','./command-center.html','./route-isl.js','./ISL_ROUTE_STATE_CURRENT.json','./recreo.html','./air-fishing.html','./sunday-market.html','./ningun-sitio.html','./boss-prototype.html','./storm-route.html','./secret-level.html','./capsulas.html','./capsulas-tv.html','./musica.html','./manifest.webmanifest','./isl-icon.svg','./recreo-pixel.css'];
 self.addEventListener('install',function(e){e.waitUntil(caches.open(CACHE).then(function(c){return c.addAll(HOT)}).then(function(){return self.skipWaiting()}))});
 self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(keys){return Promise.all(keys.filter(function(k){return k!==CACHE}).map(function(k){return caches.delete(k)}))}).then(function(){return self.clients.claim()}))});
 function sameOrigin(req){try{return new URL(req.url).origin===self.location.origin}catch(e){return false}}
@@ -11,7 +11,7 @@ self.addEventListener('fetch',function(e){
     e.respondWith(fetch(req).then(function(r){if(r&&r.ok){var cp=r.clone();caches.open(CACHE).then(function(c){c.put(req,cp)})}return r}).catch(function(){return caches.match(req)}));
     return;
   }
-  if(coldAsset(req)){
+  if(sameOrigin(req)&&(/\/route-isl\.js$/i.test(new URL(req.url).pathname)||/\/ISL_ROUTE_STATE_CURRENT\.json$/i.test(new URL(req.url).pathname))){e.respondWith(fetch(req,{cache:'no-store'}).then(function(r){if(r&&r.ok){var cp=r.clone();caches.open(CACHE).then(function(c){c.put(req,cp)})}return r}).catch(function(){return caches.match(req)}));return;}\n  if(coldAsset(req)){
     e.respondWith(caches.match(req).then(function(hit){return hit||fetch(req).then(function(r){if(r&&r.ok){var cp=r.clone();caches.open(CACHE).then(function(c){c.put(req,cp)})}return r})}));
     return;
   }
