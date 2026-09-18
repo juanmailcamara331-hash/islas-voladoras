@@ -23,6 +23,18 @@
   ],
   "shortcuts": [
     {
+      "name": "Música ISL",
+      "short_name": "Música",
+      "url": "musica.html",
+      "icons": [
+        {
+          "src": "isl-icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
       "name": "Modo Recreo",
       "short_name": "Recreo",
       "url": "recreo.html",
