@@ -99,12 +99,16 @@ jobs:
           grep -q 'embed=1' build/pages/recreo.html
           test -f build/pages/capsulas.html
           test -f build/pages/huellas.html
+          test -f build/pages/salon-cortinas-rojas.html
           test -f build/pages/poll/referencias-amigos.html
           grep -q 'No señala dónde ir. Señala de dónde vienes.' build/pages/huellas.html
           grep -q 'isl_huellas_echoes_v1' build/pages/huellas.html
           grep -q 'isl_huellas_events_v2' build/pages/huellas.html
           grep -q 'data-mode="trance"' build/pages/huellas.html
           grep -q 'LABORATORIO DE HUELLA' build/pages/huellas.html
+          grep -q 'Salón de las Cortinas Rojas' build/pages/salon-cortinas-rojas.html
+          grep -q 'isl_red_room_state_v1' build/pages/salon-cortinas-rojas.html
+          grep -q 'recoreografiar' build/pages/salon-cortinas-rojas.html
           grep -q 'NO COPIAMOS, MUTAMOS' build/pages/poll/referencias-amigos.html
           grep -q 'isl-reference-friends-01' build/pages/poll/referencias-amigos.html
           grep -q 'href="huellas.html"' build/pages/rpg-home.html
