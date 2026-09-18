@@ -447,3 +447,20 @@ BLOCKED: definitive public gameplay promises before PRE50 + relevant prototype g
   docs/ISL_UNREAL_ENGINEERING_SOURCE_MAP_v0.62.md
 - Unreal source domains structured:
   testing/QA, build/CI, performance/memory, gameplay architecture, world streaming, networking, AI, assets, save/versioning, platforms, security, AI-assisted engineering, papers, community practice, versioned source governance.
+
+
+### v0.62 release evidence
+- WEB_DEPLOY_GREEN:
+  - GitHub Pages run 35391058183
+  - build: SUCCESS
+  - CQC: SUCCESS
+  - artifact upload: SUCCESS
+  - deploy: SUCCESS
+- APK_BUILD_GREEN:
+  - Android run 35391214858
+  - build number 515
+  - wrapper entry: ?app=1&native=062&v=20260918-8
+  - build: SUCCESS
+  - validate APK: SUCCESS
+  - artifact upload: SUCCESS
+- Deliverable: ISL-Command-Center-v0.62.apk
