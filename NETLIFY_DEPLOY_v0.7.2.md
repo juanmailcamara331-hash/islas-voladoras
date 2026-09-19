@@ -88,3 +88,8 @@ RELEASE 2026-09-19T18:00Z
 - expand Commercial Health with initial investment and variable-cost breakdown
 - add simulated campaigns by channel
 - add scenario table, funnel targets and visual cash charts
+
+RELEASE 2026-09-19T18:10Z
+- reset Lite v2 survey snapshot to zero
+- show survey questions beside aggregated results
+- add refresh-view control with explicit snapshot semantics
