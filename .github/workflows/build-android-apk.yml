@@ -80,11 +80,10 @@ jobs:
           grep -q "juanmailcamara331-hash.github.io/islas-voladoras" android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'app=1' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q "com.pandaria.islasvoladoras" android-web/app/build.gradle
-          grep -q '@mipmap/ic_launcher' android-web/app/src/main/AndroidManifest.xml
-          test -s android-web/app/src/main/res/drawable-nodpi/isl_launcher_foreground.webp
-          test -s android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
-          test -s android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
-          echo "adaptive ISL launcher: OK"
+          grep -q '@drawable/isl_launcher_final' android-web/app/src/main/AndroidManifest.xml
+          test -s android-web/app/src/main/res/drawable-nodpi/isl_launcher_final.png
+          grep -q 'android:roundIcon="@drawable/isl_launcher_final"' android-web/app/src/main/AndroidManifest.xml
+          echo "direct ISL launcher artwork: OK"
           grep -q 'setBuiltInZoomControls(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'setSupportZoom(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'setUseWideViewPort(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
