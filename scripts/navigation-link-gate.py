@@ -69,7 +69,7 @@ survey=(ROOT/"survey-results.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["Pilares","Referencias","/api/survey-lite-state","ACTUALIZAR RESULTADOS"]:
     if token not in survey: errors.append(f"survey results hub missing: {token}")
 ref=(ROOT/"poll/referencias-lite-v2.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["refVisual","ANCLA VISUAL EXACTA","v0.70.10-ghost-exact-hd","ghost-reference-exact-hd.webp"]:
+for token in ["refVisual","ANCLA VISUAL EXACTA","v0.70.10-ghost-exact-hd","ghost-reference-mobile.jpg"]:
     if token not in ref: errors.append(f"references Lite visual contract missing: {token}")
 
 # Survey hub contract
