@@ -152,5 +152,47 @@
       "pay_to_win": false,
       "legal_review_required": true
     }
+  },
+  "outreach_model": {
+    "readiness_scale": {
+      "O0": "no story / no press kit",
+      "O1": "facts + hook",
+      "O2": "press kit ready",
+      "O3": "target list qualified",
+      "O4": "templates/campaign ready",
+      "O5": "first outreach sent/logged",
+      "O6": "responses/follow-ups managed",
+      "O7": "repeatable campaign with analytics"
+    },
+    "channels": {
+      "gmail": "CONNECTED",
+      "close_crm": "CONNECTED",
+      "close_sms": "AVAILABLE_IF_CONFIGURED",
+      "whatsapp": "PLANNED_REQUIRES_AUTHORIZED_PROVIDER",
+      "steam_curator_connect": "PLATFORM_NATIVE_WHEN_APP_READY",
+      "press_services": "CANDIDATE_RESEARCH",
+      "creator_key_services": "CANDIDATE_RESEARCH"
+    },
+    "guardrails": [
+      "fit over reach",
+      "no autonomous cold blast",
+      "one polite follow-up by default",
+      "honor opt-out",
+      "no positive-review quid pro quo",
+      "press kit before broad outreach",
+      "high-value first-contact human approval"
+    ]
+  },
+  "entities": {
+    "danzante_aguja": {
+      "status": "CANDIDATE",
+      "readiness": "R1",
+      "blocked_by": [
+        "CHEAP_PROTOTYPE",
+        "HUMAN_EVIDENCE"
+      ],
+      "next_action": "build greybox rhythmic prototype; 5 blind tests",
+      "canon": false
+    }
   }
 }
