@@ -87,7 +87,7 @@ jobs:
           ! grep -q "sessionStorage.setItem('isl_native_entered_v063','1')" build/pages/index.html
           grep -q "closeW();" build/pages/index.html
           grep -q "go('home');" build/pages/index.html
-          grep -q 'isTechnical=/command-center\\.html' build/pages/index.html
+          ! grep -q 'isTechnical=/command-center\\.html' build/pages/index.html
           ! grep -q '<div class="homeHeroIcons">' build/pages/index.html
           ! grep -q 'data-setting="welcome"' build/pages/index.html
           test -f build/pages/route-isl.js
