@@ -2,103 +2,119 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ISL · Encuestas y resultados</title>
-<meta name="robots" content="noindex,nofollow,noarchive">
+<title>ISL · Encuestas y resultados</title><meta name="robots" content="noindex,nofollow,noarchive">
 <style>
 :root{--bg:#071017;--panel:#0e1c24;--line:#34515d;--fg:#edf7f5;--mut:#9fb3b8;--cyan:#8defff;--gold:#ffc36e;--ok:#b7ff9c}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 85% 0,#183b4c 0,transparent 30%),linear-gradient(#071017,#0a151c);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
-main{width:min(980px,94vw);margin:auto;padding:26px 0 100px}.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);font-weight:900;text-transform:uppercase}
-h1{font-size:clamp(42px,8vw,86px);line-height:.92;margin:14px 0}.lead{max-width:760px;color:#c9d8db;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:20px}.card{border:1px solid var(--line);background:linear-gradient(180deg,#10242d,#0a171e);border-radius:18px;padding:16px;box-shadow:0 18px 50px #0005}
+main{width:min(1080px,94vw);margin:auto;padding:26px 0 100px}.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);font-weight:900;text-transform:uppercase}
+h1{font-size:clamp(42px,8vw,86px);line-height:.92;margin:14px 0}.lead{max-width:800px;color:#c9d8db;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px;margin-top:20px}.card{border:1px solid var(--line);background:linear-gradient(180deg,#10242d,#0a171e);border-radius:18px;padding:16px;box-shadow:0 18px 50px #0005}
 .card h2{margin:6px 0 8px;font-size:24px}.tiny{color:var(--mut);font-size:12px;line-height:1.5}.badge{display:inline-block;padding:5px 8px;border:1px solid #4c6d77;border-radius:999px;font-size:9px;color:var(--ok);font-weight:900}
 .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid #4a6771;border-radius:10px;background:#0a1921;color:#fff;padding:11px 12px;font-size:10px;font-weight:900}.btn.primary{border-color:#8b6c3f;background:#2f2417;color:#ffe7b5}
 .notice{margin-top:16px;border-left:3px solid var(--gold);background:#17150f;padding:12px 14px;border-radius:8px;color:#d9ddd6;line-height:1.5;font-size:12px}
 .snap{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:11px;padding-top:11px;border-top:1px solid #29434c;font-size:11px}.snap b{color:var(--cyan)}
-
-.copybox{margin-top:12px;border:1px solid #34515d;background:#08151c;border-radius:14px;padding:14px}.copybox textarea{width:100%;min-height:180px;background:#050b10;color:#eaf6f2;border:1px solid #29434c;border-radius:10px;padding:12px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;resize:vertical}.copyok{color:var(--ok);font-size:11px;margin-left:8px}
-.resultlist{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:7px}.resultlist li{border-top:1px solid #29434c;padding-top:7px;color:#d7e4e2;font-size:12px;line-height:1.45}.resultlist b{color:var(--cyan)}.techlink{opacity:.72}
-
-.votegrid{display:grid;gap:7px;margin-top:10px}.vote{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;border:1px solid #29434c;background:#08151c;border-radius:10px;padding:9px 10px}.vote span:first-child{color:#dfecea;font-size:12px;line-height:1.35}.vote b{min-width:32px;text-align:center;color:var(--cyan);font-size:12px;border:1px solid #365763;border-radius:999px;padding:4px 7px}.openanswers{display:grid;gap:7px;margin-top:8px}.openanswers div{border-left:2px solid #34515d;padding:6px 9px;background:#08151c;border-radius:0 8px 8px 0;color:#dfecea;font-size:12px}.qblock{margin-top:14px;padding-top:12px;border-top:1px solid #29434c}.qblock h3{margin:0 0 7px;font-size:14px;color:#fff}
-</style>
-</head>
-<body>
-<main>
-<div class="k">ISL // VALIDACIÓN HUMANA // RESUMEN AGREGADO</div>
+.votegrid{display:grid;gap:7px;margin-top:10px}.vote{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;border:1px solid #29434c;background:#08151c;border-radius:10px;padding:9px 10px}.vote span{font-size:12px;line-height:1.35}.vote b{min-width:34px;text-align:center;color:var(--cyan);font-size:12px;border:1px solid #365763;border-radius:999px;padding:4px 7px}
+.openanswers{display:grid;gap:7px;margin-top:8px}.openanswers div{border-left:2px solid #34515d;padding:7px 9px;background:#08151c;border-radius:0 8px 8px 0;color:#dfecea;font-size:12px;white-space:pre-wrap}.qblock{margin-top:14px;padding-top:12px;border-top:1px solid #29434c}.qblock h3{margin:0 0 7px;font-size:14px;color:#fff}
+.copybox{margin-top:12px;border:1px solid #34515d;background:#08151c;border-radius:14px;padding:14px}.copybox textarea{width:100%;min-height:230px;background:#050b10;color:#eaf6f2;border:1px solid #29434c;border-radius:10px;padding:12px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;resize:vertical}.copyok{color:var(--ok);font-size:11px;margin-left:8px}
+.loading{opacity:.55}
+</style></head>
+<body><main>
+<div class="k">ISL // VALIDACIÓN HUMANA // RESULTADOS LIVE</div>
 <h1>Encuestas<br>y resultados.</h1>
-<p class="lead">Vista segura y agregada de la ronda Lite v2. Desde aquí puedes abrir las encuestas activas y, si estás autenticado en Netlify, entrar al panel con el detalle completo.</p>
+<p class="lead">Resultados agregados sin datos personales. <b>Actualizar resultados</b> consulta el estado live seguro; ya no depende de un contador escrito a mano.</p>
 
-<section class="grid">
-<article class="card">
-<span class="badge">ACTIVA · LITE v2 · RESET</span>
-<h2>Referencias</h2>
-<p class="tiny">Resultado completo por pregunta. Cada opción enseña sus votos al lado.</p>
-<div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://islas-voladoras-isl.netlify.app/poll/referencias-lite-v2.html">ABRIR ENCUESTA</a></div>
-<div class="snap"><span>Snapshot Netlify · reiniciado</span><b>0 respuestas</b></div>
+<section class="grid" id="resultGrid">
+<article class="card" id="pillarsCard">
+<span class="badge">PILARES · LITE v2</span><h2>Pilares</h2>
+<div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="/poll/pilares-lite-v2.html">ABRIR ENCUESTA</a></div>
+<div class="snap"><span>Respuestas registradas</span><b id="pCount">—</b></div>
+<div class="qblock"><h3>1 · ¿Qué sientes que es ISL?</h3><div class="votegrid">
+<div class="vote"><span>👥 Reunir una tripulación perdida</span><b data-p="que_es.reencuentro">0</b></div><div class="vote"><span>🏝️ Explorar islas raras</span><b data-p="que_es.exploracion">0</b></div><div class="vote"><span>🚢 Reconstruir un barco-hogar</span><b data-p="que_es.barco">0</b></div><div class="vote"><span>🌀 Una mezcla de todo eso</span><b data-p="que_es.mezcla">0</b></div><div class="vote"><span>❔ Aún no lo pillo</span><b data-p="que_es.no-claro">0</b></div>
+</div></div>
+<div class="qblock"><h3>2 · ¿Qué te tira más? · máximo 2</h3><div class="votegrid">
+<div class="vote"><span>👥 Tripulación</span><b data-p="tiron.tripulacion">0</b></div><div class="vote"><span>🏝️ Islas</span><b data-p="tiron.islas">0</b></div><div class="vote"><span>✨ Huellas</span><b data-p="tiron.huellas">0</b></div><div class="vote"><span>🚢 Barco-hogar</span><b data-p="tiron.barco-hogar">0</b></div><div class="vote"><span>🧿 Reliquias / builds</span><b data-p="tiron.reliquias">0</b></div><div class="vote"><span>🎭 Tono raro-poético</span><b data-p="tiron.tono">0</b></div>
+</div></div>
+<div class="qblock"><h3>3 · ¿Qué mezcla te llama?</h3><div class="votegrid">
+<div class="vote"><span>🌤️ Aventura poética</span><b data-p="vibra.aventura-poetica">0</b></div><div class="vote"><span>🌀 Raro con encanto</span><b data-p="vibra.raro-encanto">0</b></div><div class="vote"><span>👻 Humor extraño</span><b data-p="vibra.humor-extraño">0</b></div><div class="vote"><span>🌫️ Misterio y belleza</span><b data-p="vibra.misterio-belleza">0</b></div><div class="vote"><span>🎨 Mezcla de todo</span><b data-p="vibra.mezcla">0</b></div>
+</div></div>
+<div class="qblock"><h3>4 · ¿Qué te preocupa más?</h3><div class="votegrid">
+<div class="vote"><span>🧱 Demasiadas cosas</span><b data-p="preocupacion.demasiadas-cosas">0</b></div><div class="vote"><span>❓ No entenderlo</span><b data-p="preocupacion.no-entender">0</b></div><div class="vote"><span>🎮 Mucha idea y poco juego</span><b data-p="preocupacion.idea-poco-juego">0</b></div><div class="vote"><span>🎭 Tono demasiado mezclado</span><b data-p="preocupacion.tono-mezclado">0</b></div><div class="vote"><span>✅ Nada especial</span><b data-p="preocupacion.nada">0</b></div>
+</div></div>
+<div class="qblock"><h3>5 · ¿Qué NO quitarías?</h3><div class="openanswers" id="pNoQuitar"><div>Sin respuestas abiertas.</div></div></div>
+<div class="qblock"><h3>6 · ¿Qué recortarías sin piedad?</h3><div class="openanswers" id="pRecortar"><div>Sin respuestas abiertas.</div></div></div>
+</article>
 
+<article class="card" id="refsCard">
+<span class="badge">REFERENCIAS · LITE v2</span><h2>Referencias</h2>
+<div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="/poll/referencias-lite-v2.html">ABRIR ENCUESTA</a></div>
+<div class="snap"><span>Respuestas registradas</span><b id="rCount">—</b></div>
 <div class="qblock"><h3>1 · ¿Qué tipo de referencia te activa?</h3><div class="votegrid">
-<div class="vote"><span>🎮 Jugabilidad</span><b>0</b></div><div class="vote"><span>📖 Narrativa / emoción</span><b>0</b></div>
-<div class="vote"><span>🎨 Visual / espacio</span><b>0</b></div><div class="vote"><span>🎵 Música / atmósfera</span><b>0</b></div>
-<div class="vote"><span>🎭 Humor / tono</span><b>0</b></div><div class="vote"><span>🌀 Rareza difícil de explicar</span><b>0</b></div>
+<div class="vote"><span>🎮 Jugabilidad</span><b data-r="tipo_ref.jugabilidad">0</b></div><div class="vote"><span>📖 Narrativa / emoción</span><b data-r="tipo_ref.narrativa">0</b></div><div class="vote"><span>🎨 Visual / espacio</span><b data-r="tipo_ref.visual">0</b></div><div class="vote"><span>🎵 Música / atmósfera</span><b data-r="tipo_ref.musica">0</b></div><div class="vote"><span>🎭 Humor / tono</span><b data-r="tipo_ref.humor">0</b></div><div class="vote"><span>🌀 Rareza difícil de explicar</span><b data-r="tipo_ref.rareza">0</b></div>
 </div></div>
-
 <div class="qblock"><h3>2 · Del fantasma marítimo absurdo, ¿qué salvarías? · máximo 2</h3><div class="votegrid">
-<div class="vote"><span>👻 Presencia espectral</span><b>0</b></div><div class="vote"><span>😂 Humor absurdo</span><b>0</b></div>
-<div class="vote"><span>⚡ Amenaza + comedia</span><b>0</b></div><div class="vote"><span>🌫️ Niebla / umbral</span><b>0</b></div>
-<div class="vote"><span>🚢 Barco maldito</span><b>0</b></div><div class="vote"><span>📜 Reglas propias</span><b>0</b></div>
+<div class="vote"><span>👻 Presencia espectral</span><b data-r="fantasma_funcion.presencia-espectral">0</b></div><div class="vote"><span>😂 Humor absurdo</span><b data-r="fantasma_funcion.humor-absurdo">0</b></div><div class="vote"><span>⚡ Amenaza + comedia</span><b data-r="fantasma_funcion.amenaza-comedia">0</b></div><div class="vote"><span>🌫️ Niebla / umbral</span><b data-r="fantasma_funcion.niebla-umbral">0</b></div><div class="vote"><span>🚢 Barco maldito</span><b data-r="fantasma_funcion.barco-maldito">0</b></div><div class="vote"><span>📜 Reglas propias</span><b data-r="fantasma_funcion.reglas-propias">0</b></div>
 </div></div>
-
 <div class="qblock"><h3>3 · ¿Cómo debería entrar eso en ISL?</h3><div class="votegrid">
-<div class="vote"><span>✦ Pincelada pequeña</span><b>0</b></div><div class="vote"><span>♻ Evento / criatura recurrente</span><b>0</b></div>
-<div class="vote"><span>⚙ Regla del mundo</span><b>0</b></div><div class="vote"><span>🌫️ Tono / vibe</span><b>0</b></div>
-<div class="vote"><span>✖ Mejor fuera</span><b>0</b></div>
+<div class="vote"><span>✦ Pincelada pequeña</span><b data-r="entrada_isl.pincelada">0</b></div><div class="vote"><span>♻ Evento / criatura recurrente</span><b data-r="entrada_isl.recurrente">0</b></div><div class="vote"><span>⚙ Regla del mundo</span><b data-r="entrada_isl.regla">0</b></div><div class="vote"><span>🌫️ Tono / vibe</span><b data-r="entrada_isl.tono">0</b></div><div class="vote"><span>✖ Mejor fuera</span><b data-r="entrada_isl.fuera">0</b></div>
 </div></div>
-
-<div class="qblock"><h3>4 · ¿Qué NO deberíamos copiar nunca?</h3><div class="openanswers"><div>Sin respuestas todavía.</div></div></div>
-<div class="qblock"><h3>5 · Suelta una referencia útil</h3><div class="openanswers"><div>Sin respuestas todavía.</div></div></div>
+<div class="qblock"><h3>4 · ¿Qué NO deberíamos copiar nunca?</h3><div class="openanswers" id="rNoCopiar"><div>Sin respuestas abiertas.</div></div></div>
+<div class="qblock"><h3>5 · Suelta una referencia útil</h3><div class="openanswers" id="rSeeds"><div>Sin referencias abiertas.</div></div></div>
 </article>
 </section>
 
-<div class="actions" style="margin-top:16px">
-<button class="btn primary" type="button" id="refreshSnapshot">ACTUALIZAR VISTA</button>
-<span class="tiny" id="refreshState">Recarga la última publicación. El snapshot agregado todavía no lee la API administrativa de Netlify en tiempo real.</span>
-</div>
-<div class="notice"><b>Estado del snapshot:</b> las dos encuestas Lite v2 han sido reiniciadas y Netlify confirma 0 respuestas en ambas. Esta página muestra un snapshot agregado seguro; no expone la API administrativa de Netlify en el navegador. Para una actualización automática real habría que añadir una capa backend segura. El botón ACTUALIZAR VISTA sólo recarga la última publicación.</div>
+<div class="actions"><button class="btn primary" id="refreshLive" type="button">ACTUALIZAR RESULTADOS</button><span class="tiny" id="liveState">Cargando…</span></div>
+<div class="notice"><b>Live seguro:</b> esta vista consulta <code>/api/survey-lite-state</code>, que sólo devuelve respuestas anonimizadas y agregadas. Netlify Forms sigue siendo la copia operativa de respaldo.</div>
 
-<section class="card" style="margin-top:12px">
-<div class="k">COPIAR PARA CHATGPT</div>
-<h2>Resumen listo para pegar</h2>
-<p class="tiny">Copia este bloque y pégalo en el chat de ISL. Sirve para actualizar candidatos, panel de mandos, ledger de evidencia y decisiones sin exponer datos personales.</p>
-<div class="copybox">
-<textarea id="chatSummary" readonly>ISL · RESULTADOS DE ENCUESTAS · SNAPSHOT REINICIADO
-Fuente: Netlify Forms · ronda Lite v2
-Pilares: 0 respuestas.
-Referencias: 0 respuestas.
-Estado: reset de prueba completado. No hay evidencia que sintetizar todavía.
-Acción: volver a probar ambas encuestas, después actualizar snapshot y copiar este bloque al chat de ISL.</textarea>
-<div class="actions"><button class="btn primary" type="button" id="copyChat">COPIAR RESUMEN</button><span class="copyok" id="copyState" aria-live="polite"></span></div>
-</div>
-</section>
-
-<section class="card" style="margin-top:12px">
-<div class="k">DETALLE TÉCNICO</div>
-<h2>Netlify Forms</h2>
-<p class="tiny">Abre el panel autenticado y entra en <b>isl-pillars-lite-v2</b> o <b>isl-reference-lite-v2</b>. Ahí aparecen todas las respuestas y su detalle.</p>
-<div class="actions">
-<a class="btn techlink" target="_blank" rel="noopener" href="https://app.netlify.com/projects/islas-voladoras-isl">ABRIR NETLIFY · DETALLE TÉCNICO</a>
-<a class="btn" href="/">VOLVER A ISL</a>
-</div>
-</section>
+<section class="card" style="margin-top:12px"><div class="k">COPIAR PARA CHATGPT</div><h2>Resumen listo para pegar</h2>
+<p class="tiny">Se regenera con los datos live visibles.</p><div class="copybox"><textarea id="chatSummary" readonly></textarea><div class="actions"><button class="btn primary" type="button" id="copyChat">COPIAR RESUMEN</button><span class="copyok" id="copyState"></span></div></div></section>
 </main>
 <script>
 (function(){
-const rb=document.getElementById('refreshSnapshot'),rs=document.getElementById('refreshState');
-if(rb){rb.addEventListener('click',function(){rs.textContent='Recargando última publicación…';const u=new URL(location.href);u.searchParams.set('_',Date.now());location.href=u.toString();});}
-const b=document.getElementById('copyChat'),t=document.getElementById('chatSummary'),s=document.getElementById('copyState');
-if(!b||!t)return;
-b.addEventListener('click',async function(){
- try{await navigator.clipboard.writeText(t.value);s.textContent='Copiado ✓';}
- catch(e){t.focus();t.select();document.execCommand('copy');s.textContent='Copiado ✓';}
-});
+const state=document.getElementById('liveState'),summary=document.getElementById('chatSummary');
+function get(obj,path){return path.split('.').reduce((a,k)=>a&&a[k]!==undefined?a[k]:0,obj)}
+function renderOpen(id,rows,mapper){const el=document.getElementById(id);el.innerHTML='';if(!rows||!rows.length){el.innerHTML='<div>Sin respuestas abiertas.</div>';return;}rows.forEach(x=>{const d=document.createElement('div');d.textContent=mapper?mapper(x):x;el.appendChild(d)})}
+function buildSummary(d){
+ const p=d.pillars,r=d.references;
+ return [
+ 'ISL · RESULTADOS LIVE DE ENCUESTAS',
+ 'Actualizado: '+d.updated_at,
+ 'Pilares: '+p.count+' respuestas.',
+ 'Referencias: '+r.count+' respuestas.',
+ '',
+ 'PILARES',
+ '1 ¿Qué sientes que es ISL? '+JSON.stringify(p.counts.que_es),
+ '2 ¿Qué te tira más? '+JSON.stringify(p.counts.tiron),
+ '3 ¿Qué mezcla te llama? '+JSON.stringify(p.counts.vibra),
+ '4 ¿Qué te preocupa más? '+JSON.stringify(p.counts.preocupacion),
+ '5 ¿Qué NO quitarías? '+JSON.stringify(p.no_quitar),
+ '6 ¿Qué recortarías sin piedad? '+JSON.stringify(p.recortar),
+ '',
+ 'REFERENCIAS',
+ '1 ¿Qué tipo de referencia te activa? '+JSON.stringify(r.counts.tipo_ref),
+ '2 Fantasma: ¿qué salvarías? '+JSON.stringify(r.counts.fantasma_funcion),
+ '3 ¿Cómo debería entrar en ISL? '+JSON.stringify(r.counts.entrada_isl),
+ '4 ¿Qué NO copiar nunca? '+JSON.stringify(r.no_copiar),
+ '5 Referencias útiles '+JSON.stringify(r.reference_seeds),
+ '',
+ 'Regla: usar como evidencia humana; no promover a CANON automáticamente.'
+ ].join('\n');
+}
+async function load(){
+ state.textContent='Actualizando…';document.getElementById('resultGrid').classList.add('loading');
+ try{
+  const res=await fetch('/api/survey-lite-state?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);
+  const d=await res.json();document.getElementById('pCount').textContent=d.pillars.count;document.getElementById('rCount').textContent=d.references.count;
+  document.querySelectorAll('[data-p]').forEach(el=>el.textContent=get(d.pillars.counts,el.dataset.p));
+  document.querySelectorAll('[data-r]').forEach(el=>el.textContent=get(d.references.counts,el.dataset.r));
+  renderOpen('pNoQuitar',d.pillars.no_quitar);renderOpen('pRecortar',d.pillars.recortar);renderOpen('rNoCopiar',d.references.no_copiar);
+  renderOpen('rSeeds',d.references.reference_seeds,x=>(x.nombre||'(sin nombre)')+(x.funcion?' — '+x.funcion:''));
+  summary.value=buildSummary(d);state.textContent='Actualizado · '+new Date(d.updated_at).toLocaleTimeString();
+ }catch(e){state.textContent='No se pudo actualizar · '+e.message}
+ finally{document.getElementById('resultGrid').classList.remove('loading')}
+}
+document.getElementById('refreshLive').addEventListener('click',load);
+document.getElementById('copyChat').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(summary.value);document.getElementById('copyState').textContent='Copiado ✓'}catch(e){summary.select();document.execCommand('copy');document.getElementById('copyState').textContent='Copiado ✓'}});
+load();
 })();
 </script>
 </body></html>
