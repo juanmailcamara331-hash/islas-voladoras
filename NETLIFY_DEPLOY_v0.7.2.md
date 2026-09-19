@@ -73,3 +73,9 @@ Motivo:
 - publicar External Lab con pipeline completo;
 - publicar Knowledge Health y snapshot isl-knowledge-health-v0.1.json;
 - verificar commit_ref de Netlify antes de cerrar gate móvil.
+
+RELEASE 2026-09-19T17:45Z
+- publish safe survey-results aggregate view
+- add copy-to-ChatGPT survey summary
+- publish Commercial Health simulated-money view
+- ship exact HD ghost asset
