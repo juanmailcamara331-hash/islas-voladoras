@@ -15,7 +15,7 @@ var items=[
  ['Centro',href('index.html?full=1','#home'),'','Centro'],
  ['Ruta',href('index.html?full=1','#calendar'),'','Ruta ISL'],
  ['Perfil',href('rpg-home.html'),'','Perfil RPG'],
- ['Encuestas',href('encuestas.html'),'','Encuestas y resultados'],
+ ['Encuestas','https://islas-voladoras-isl.netlify.app/encuestas-resultados','','Encuestas y resultados live'],
  ['Brújula',href('huellas.html'),'','Brújula'],
  ['Cápsulas',href('capsulas.html'),'','Cápsulas'],
  ['Recreo',href('recreo.html'),'','Recreo']
