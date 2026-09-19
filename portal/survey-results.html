@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ISL · Encuestas y resultados</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<style>
+:root{--bg:#071017;--panel:#0e1c24;--line:#34515d;--fg:#edf7f5;--mut:#9fb3b8;--cyan:#8defff;--gold:#ffc36e;--ok:#b7ff9c}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 85% 0,#183b4c 0,transparent 30%),linear-gradient(#071017,#0a151c);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+main{width:min(980px,94vw);margin:auto;padding:26px 0 100px}.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);font-weight:900;text-transform:uppercase}
+h1{font-size:clamp(42px,8vw,86px);line-height:.92;margin:14px 0}.lead{max-width:760px;color:#c9d8db;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:20px}.card{border:1px solid var(--line);background:linear-gradient(180deg,#10242d,#0a171e);border-radius:18px;padding:16px;box-shadow:0 18px 50px #0005}
+.card h2{margin:6px 0 8px;font-size:24px}.tiny{color:var(--mut);font-size:12px;line-height:1.5}.badge{display:inline-block;padding:5px 8px;border:1px solid #4c6d77;border-radius:999px;font-size:9px;color:var(--ok);font-weight:900}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid #4a6771;border-radius:10px;background:#0a1921;color:#fff;padding:11px 12px;font-size:10px;font-weight:900}.btn.primary{border-color:#8b6c3f;background:#2f2417;color:#ffe7b5}
+.notice{margin-top:16px;border-left:3px solid var(--gold);background:#17150f;padding:12px 14px;border-radius:8px;color:#d9ddd6;line-height:1.5;font-size:12px}
+.snap{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:11px;padding-top:11px;border-top:1px solid #29434c;font-size:11px}.snap b{color:var(--cyan)}
+</style>
+<link rel="stylesheet" href="isl-global-shell.css">
+</head>
+<body>
+<main>
+<div class="k">ISL // VALIDACIÓN HUMANA // SOLO AUTOR</div>
+<h1>Encuestas<br>y resultados.</h1>
+<p class="lead">Este es el acceso rápido del Centro de Mandos para la ronda Lite v2. Desde aquí puedes abrir las encuestas que enseñas hoy y saltar directamente al panel donde Netlify guarda las respuestas reales.</p>
+
+<section class="grid">
+<article class="card">
+<span class="badge">ACTIVA · LITE v2</span>
+<h2>Pilares</h2>
+<p class="tiny">Qué entiende la gente que es ISL, qué les tira, qué vibra funciona, qué les preocupa y qué salvarían o recortarían.</p>
+<div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://islas-voladoras-isl.netlify.app/poll/pilares-lite-v2.html">ABRIR ENCUESTA</a></div>
+<div class="snap"><span>Prueba técnica confirmada</span><b>1 respuesta</b></div>
+</article>
+
+<article class="card">
+<span class="badge">ACTIVA · LITE v2</span>
+<h2>Referencias</h2>
+<p class="tiny">Qué funciones de una referencia merecen sobrevivir al proceso de mutación de ISL sin convertir el proyecto en un collage.</p>
+<div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://islas-voladoras-isl.netlify.app/poll/referencias-lite-v2.html">ABRIR ENCUESTA</a></div>
+<div class="snap"><span>Prueba técnica confirmada</span><b>1 respuesta</b></div>
+</article>
+</section>
+
+<div class="notice"><b>Resultados reales:</b> las submissions viven en Netlify Forms. Esta pantalla es el lanzador interno; no expone credenciales ni la API administrativa en el navegador. El contador de arriba es sólo la fotografía verificada antes de la ronda y puede quedarse atrás cuando respondan tus colegas.</div>
+
+<section class="card" style="margin-top:12px">
+<div class="k">PANEL DE RESULTADOS</div>
+<h2>Netlify Forms</h2>
+<p class="tiny">Abre el panel autenticado y entra en <b>isl-pillars-lite-v2</b> o <b>isl-reference-lite-v2</b>. Ahí aparecen todas las respuestas y su detalle.</p>
+<div class="actions">
+<a class="btn primary" target="_blank" rel="noopener" href="https://app.netlify.com/sites/islas-voladoras-isl/forms">VER RESULTADOS EN VIVO</a>
+<a class="btn" href="index.html?full=1&resume=1#home">VOLVER AL CENTRO</a>
+</div>
+</section>
+</main>
+<script defer src="isl-global-shell.js"></script>
+</body></html>
