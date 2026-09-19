@@ -121,3 +121,6 @@ RELEASE 2026-09-19T20:40+02:00
 - remove broken public preload from Referencias survey
 - add WebP ghost with JPG fallback and eager loading
 - disable ghost asset caching during validation
+
+RELEASE 2026-09-19T20:45+02:00
+- use JPG ghost directly in Referencias for maximum mobile/WhatsApp compatibility
