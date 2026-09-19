@@ -29,3 +29,12 @@ Motivo:
 - publicar 404 pública neutra;
 - preparar separación PUBLIC / PRIVATE;
 - conservar Command Center completo fuera del build público.
+
+
+## Release trigger · v0.69.3 survey visual + results fix
+Fecha: 2026-09-19
+Motivo:
+- publicar la ilustración original del fantasma marítimo en Referencias Lite v2;
+- asegurar que el asset forma parte del allowlist público;
+- corregir el acceso a resultados usando la URL canónica del proyecto Netlify;
+- conservar las encuestas Lite v2 como superficie pública mínima.
