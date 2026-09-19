@@ -13,7 +13,7 @@ jobs:
       NETLIFY_SITE_ID: c743d925-3898-45f4-b8f4-b2565f60e8c1
       PRIVATE_ALIAS: private-command
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Require Netlify token
         shell: bash
