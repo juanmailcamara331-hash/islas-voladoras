@@ -38,7 +38,7 @@ global_pages=[
  "isla-baile-inagotable.html","recreo.html","capsulas.html","capsulas-tv.html",
  "musica.html","ps4.html","air-fishing.html","avisos.html","boss-prototype.html",
  "decision-engine.html","midjourney-lab.html","ningun-sitio.html","playtest-echo.html",
- "reel.html","secret-level.html","storm-route.html","sunday-market.html","encuestas.html","survey-results.html"
+ "reel.html","secret-level.html","storm-route.html","sunday-market.html","encuestas.html"
 ]
 for rel in global_pages:
     p=ROOT/rel
@@ -69,7 +69,7 @@ survey=(ROOT/"survey-results.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["Pilares","Referencias","app.netlify.com/projects/islas-voladoras-isl"]:
     if token not in survey: errors.append(f"survey results hub missing: {token}")
 ref=(ROOT/"poll/referencias-lite-v2.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["refVisual","ANCLA VISUAL EXACTA","v0.69.7-ghost-exact","ghost-reference-mobile.jpg"]:
+for token in ["refVisual","ANCLA VISUAL EXACTA","v0.70.10-ghost-exact-hd","ghost-reference-exact-hd.webp"]:
     if token not in ref: errors.append(f"references Lite visual contract missing: {token}")
 
 # Survey hub contract
