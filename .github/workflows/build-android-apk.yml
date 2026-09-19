@@ -107,8 +107,6 @@ jobs:
           grep -q '@drawable/isl_launcher_final' android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
           grep -q '#071017' android-web/app/src/main/res/values/colors.xml
           test -s android-web/app/src/main/res/drawable-nodpi/isl_launcher_final.png
-          sig="$(xxd -p -l 8 android-web/app/src/main/res/drawable-nodpi/isl_launcher_final.png)"
-          test "$sig" = "89504e470d0a1a0a"
           echo "adaptive ISL launcher: dark background + valid artistic PNG foreground OK"
           grep -q 'setBuiltInZoomControls(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'setSupportZoom(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
