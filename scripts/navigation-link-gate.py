@@ -69,7 +69,7 @@ survey=(ROOT/"survey-results.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["Pilares","Referencias","app.netlify.com/projects/islas-voladoras-isl"]:
     if token not in survey: errors.append(f"survey results hub missing: {token}")
 ref=(ROOT/"poll/referencias-lite-v2.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["refVisual","ANCLA VISUAL PROVISIONAL","v0.69-lite-visual","ghost-reference-mobile.jpg"]:
+for token in ["refVisual","ANCLA VISUAL EXACTA","v0.69.7-ghost-exact","ghost-reference-mobile.jpg"]:
     if token not in ref: errors.append(f"references Lite visual contract missing: {token}")
 
 # Survey hub contract
@@ -83,7 +83,7 @@ if shell.count("['Encuestas'") != 1: errors.append("global shell must expose exa
 
 # external lab contract
 lab=(ROOT/"external-lab.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["EXTERNAL LAB","CANDIDATOS · NO CANON","REFERENCIA → FUNCIÓN"]:
+for token in ["EXTERNAL LAB","CANDIDATOS · NO CANON","RUTA PERMANENTE:","PROTOTIPO BARATO","EVIDENCIA HUMANA"]:
     if token not in lab: errors.append(f"external lab missing: {token}")
 idx=(ROOT/"index.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["CANDIDATO · EXTERNAL LAB","Danzante-Aguja · External Lab","Consejero de Niebla · External Lab","Escarabeo-Registrador · External Lab"]:
