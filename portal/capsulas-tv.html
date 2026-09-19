@@ -27,4 +27,5 @@ function show(n){if(!items.length)return;i=(n+items.length)%items.length;const x
 function tick(){if(paused||!items.length)return;let p=(Date.now()-start)/duration;if(p>=1){show(i+1);p=0}prog.style.width=Math.min(100,p*100)+'%'}
 fetch('isl-capsules-current.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{items=j.capsules||[];show(0);timer=setInterval(tick,100)});
 document.getElementById('prev').onclick=()=>show(i-1);document.getElementById('next').onclick=()=>{paused=false;pause.textContent='Ⅱ';show(i+1)};pause.onclick=()=>{paused=!paused;pause.textContent=paused?'▶':'Ⅱ';start=Date.now()};sound.onclick=()=>{if(audio.paused){audio.volume=.45;audio.play().catch(()=>{});sound.textContent='♫'}else{audio.pause();sound.textContent='♪'}};document.getElementById('fs').onclick=()=>{const d=document.documentElement;if(!document.fullscreenElement)(d.requestFullscreen||d.webkitRequestFullscreen)?.call(d);else(document.exitFullscreen||document.webkitExitFullscreen)?.call(document)};addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1);if(e.key===' ')pause.click()});
-})();</script><script defer src="isl-global-shell.js"></script>\n</body></html>
+})();</script><script defer src="isl-global-shell.js"></script>
+</body></html>
