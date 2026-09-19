@@ -17,7 +17,7 @@ cp portal/poll-live.js build/public/poll-live.js
 cp portal/survey-results.html build/public/survey-results.html
 cp portal/ISL_PUBLIC_DECISIONS_CURRENT.json build/public/ISL_PUBLIC_DECISIONS_CURRENT.json
 
-for f in molino-a-top.jpg molino-b-top.jpg molino-c-top.jpg ghost-reference-mobile.jpg; do
+for f in molino-a-top.jpg molino-b-top.jpg molino-c-top.jpg ghost-reference-mobile.jpg ghost-reference-exact-hd.webp; do
   cp "portal/assets/$f" "build/public/assets/$f"
 done
 
