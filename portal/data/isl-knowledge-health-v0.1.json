@@ -194,5 +194,93 @@
       "next_action": "build greybox rhythmic prototype; 5 blind tests",
       "canon": false
     }
+  },
+  "commercial_health": {
+    "state": "SIMULATED",
+    "pvp_reference_eur": 19.99,
+    "scenarios": [
+      {
+        "id": "proof",
+        "label": "Prueba",
+        "units": 2500,
+        "gross": 49975,
+        "variable_costs": 18000,
+        "fixed_costs": 60000,
+        "project_cash": -28025
+      },
+      {
+        "id": "base",
+        "label": "Base",
+        "units": 10000,
+        "gross": 199900,
+        "variable_costs": 70000,
+        "fixed_costs": 90000,
+        "project_cash": 39900
+      },
+      {
+        "id": "strong",
+        "label": "Fuerte",
+        "units": 25000,
+        "gross": 499750,
+        "variable_costs": 170000,
+        "fixed_costs": 130000,
+        "project_cash": 199750
+      },
+      {
+        "id": "breakout",
+        "label": "Breakout",
+        "units": 75000,
+        "gross": 1499250,
+        "variable_costs": 480000,
+        "fixed_costs": 200000,
+        "project_cash": 819250
+      }
+    ],
+    "disclaimer": "Illustrative only; not a forecast. Variable/fixed costs are placeholders for scenario thinking and must be replaced by measured/store/tax/accounting data.",
+    "commercial_readiness_focus": {
+      "C0": 0,
+      "C1": 3,
+      "C2": 1,
+      "C3": 1,
+      "C4": 0,
+      "C5": 0,
+      "C6": 0
+    },
+    "outreach_readiness_focus": {
+      "O0": 0,
+      "O1": 1,
+      "O2": 0,
+      "O3": 0,
+      "O4": 1,
+      "O5": 0,
+      "O6": 0,
+      "O7": 0
+    },
+    "channel_state": [
+      {
+        "channel": "Gmail",
+        "state": "CONNECTED_EXECUTABLE"
+      },
+      {
+        "channel": "Close CRM",
+        "state": "READ_CONNECTED_WRITE_SCOPE_REQUIRED"
+      },
+      {
+        "channel": "Discord",
+        "state": "PLANNED_OFFICIAL_WEBHOOK_BOT"
+      },
+      {
+        "channel": "Telegram",
+        "state": "PLANNED_OFFICIAL_BOT_API"
+      },
+      {
+        "channel": "WhatsApp",
+        "state": "PLANNED_PROVIDER_REQUIRED"
+      },
+      {
+        "channel": "Steam Curator Connect",
+        "state": "FUTURE_PLATFORM_NATIVE"
+      }
+    ]
   }
 }
