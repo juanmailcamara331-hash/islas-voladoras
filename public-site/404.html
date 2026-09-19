@@ -9,4 +9,11 @@ main{min-height:100vh;display:grid;place-items:center;padding:24px;text-align:ce
 .box{max-width:520px;border:1px solid #294955;border-radius:18px;background:#0b171ecc;padding:28px}
 b{color:#8defff;letter-spacing:.12em;font-size:11px}h1{font:700 42px/1 Georgia,serif;margin:10px 0}p{color:#9fb2b7;line-height:1.5}
 a{display:inline-block;margin-top:12px;color:#ffe7b8;border:1px solid #7a6138;border-radius:10px;padding:11px 14px;text-decoration:none}
-</style></head><body><main><div class="box"><b>ISLAS VOLADORAS</b><h1>Esta ruta no está disponible.</h1><p>Vuelve a la superficie pública de ISL.</p><a href="/">VOLVER</a></div></main></body></html>
+</style></head><body><main><div class="box"><b>ISLAS VOLADORAS</b><h1>Esta ruta no está disponible.</h1><p>Vuelve a la superficie pública de ISL.</p><a href="/">VOLVER</a></div></main><script>
+(function(){
+  var raw=(location.pathname||'').toLowerCase();
+  if(raw.indexOf('pilares-lite-v2')!==-1 || raw.indexOf('/pilares')!==-1){ location.replace('/poll/pilares-lite-v2.html'); return; }
+  if(raw.indexOf('referencias-lite-v2')!==-1 || raw.indexOf('/referencias')!==-1){ location.replace('/poll/referencias-lite-v2.html'); return; }
+  if(raw.indexOf('survey-results')!==-1 || raw.indexOf('encuestas-resultados')!==-1){ location.replace('/survey-results.html'); return; }
+})();
+</script></body></html>
