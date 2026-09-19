@@ -69,12 +69,12 @@ survey=(ROOT/"survey-results.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["Pilares","Referencias","VER RESULTADOS EN VIVO","app.netlify.com/sites/islas-voladoras-isl/forms"]:
     if token not in survey: errors.append(f"survey results hub missing: {token}")
 ref=(ROOT/"poll/referencias-lite-v2.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["refVisual","ANCLA VISUAL PROVISIONAL","v0.69-lite-visual"]:
+for token in ["refVisual","ANCLA VISUAL PROVISIONAL","v0.69-lite-visual","ghost-maritime-provisional.svg"]:
     if token not in ref: errors.append(f"references Lite visual contract missing: {token}")
 
 # Survey hub contract
 survey=(ROOT/"encuestas.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["PRUEBA CON COLEGAS","pilares-lite-v2.html","referencias-lite-v2.html","app.netlify.com/sites/islas-voladoras-isl/forms"]:
+for token in ["PRUEBA CON COLEGAS","pilares-lite-v2.html","referencias-lite-v2.html","app.netlify.com/projects/islas-voladoras-isl"]:
     if token not in survey: errors.append(f"survey hub missing: {token}")
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 if "Encuestas" not in shell or "encuestas.html" not in shell: errors.append("global shell survey access missing")
