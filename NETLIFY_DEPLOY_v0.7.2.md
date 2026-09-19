@@ -111,3 +111,8 @@ RELEASE 2026-09-19T18:50Z
 - use verified platform publication fees as small baseline
 - allocate cash primarily to campaigns/discovery
 - add natural-language summaries and clearer visual charts
+
+RELEASE 2026-09-19T20:30+02:00
+- add short WhatsApp-safe survey routes /pilares and /referencias
+- recover malformed/trailing survey paths from public 404
+- adaptive Android icon uses transparent foreground over native dark background
