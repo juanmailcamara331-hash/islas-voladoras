@@ -84,7 +84,7 @@ jobs:
           grep -q 'AHORA IMPORTA' build/pages/index.html
           grep -q 'REVISIÓN ACTUAL' build/pages/index.html
           grep -q 'id="welcome"' build/pages/index.html
-          grep -q "sessionStorage.setItem('isl_native_entered_v063','1')" build/pages/index.html
+          ! grep -q "sessionStorage.setItem('isl_native_entered_v063','1')" build/pages/index.html
           grep -q "closeW();" build/pages/index.html
           grep -q "go('home');" build/pages/index.html
           grep -q 'isTechnical=/command-center\\.html' build/pages/index.html
@@ -126,7 +126,7 @@ jobs:
           grep -q 'CANDIDATOS · NO CANON' build/pages/external-lab.html
           grep -q 'CANDIDATO · EXTERNAL LAB' build/pages/index.html
           test -f build/pages/survey-results.html
-          grep -q 'VER RESULTADOS EN VIVO' build/pages/survey-results.html
+          grep -q 'ACTUALIZAR RESULTADOS' build/pages/survey-results.html
           grep -q 'ANCLA VISUAL EXACTA' build/pages/poll/referencias-lite-v2.html
           test -f build/pages/isl-global-shell.css
           test -f build/pages/isl-global-shell.js
