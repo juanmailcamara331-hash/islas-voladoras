@@ -14,6 +14,8 @@ h1{font-size:clamp(42px,8vw,86px);line-height:.92;margin:14px 0}.lead{max-width:
 .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid #4a6771;border-radius:10px;background:#0a1921;color:#fff;padding:11px 12px;font-size:10px;font-weight:900}.btn.primary{border-color:#8b6c3f;background:#2f2417;color:#ffe7b5}
 .notice{margin-top:16px;border-left:3px solid var(--gold);background:#17150f;padding:12px 14px;border-radius:8px;color:#d9ddd6;line-height:1.5;font-size:12px}
 .snap{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:11px;padding-top:11px;border-top:1px solid #29434c;font-size:11px}.snap b{color:var(--cyan)}
+
+.copybox{margin-top:12px;border:1px solid #34515d;background:#08151c;border-radius:14px;padding:14px}.copybox textarea{width:100%;min-height:180px;background:#050b10;color:#eaf6f2;border:1px solid #29434c;border-radius:10px;padding:12px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;resize:vertical}.copyok{color:var(--ok);font-size:11px;margin-left:8px}
 </style>
 </head>
 <body>
@@ -42,6 +44,32 @@ h1{font-size:clamp(42px,8vw,86px);line-height:.92;margin:14px 0}.lead{max-width:
 
 <div class="notice"><b>Resultados reales:</b> las submissions viven en Netlify Forms. Esta pantalla es el lanzador interno; no expone credenciales ni la API administrativa en el navegador. El contador es una fotografía agregada y puede quedarse atrás. Sincronizado manualmente con Netlify Forms el 2026-09-19: 4 Pilares / 3 Referencias. En Pilares hay al menos un par de registros casi idénticos: no tratar el total bruto como voces independientes. La síntesis sigue bloqueada hasta tener evidencia más diversa.</div>
 
+
+<section class="card" style="margin-top:12px">
+<div class="k">COPIAR PARA CHATGPT</div>
+<h2>Resumen listo para pegar</h2>
+<p class="tiny">Copia este bloque y pégalo en el chat de ISL. Sirve para actualizar candidatos, panel de mandos, ledger de evidencia y decisiones sin exponer datos personales.</p>
+<div class="copybox">
+<textarea id="chatSummary" readonly>ISL · RESULTADOS DE ENCUESTAS · SNAPSHOT 2026-09-19
+Fuente: Netlify Forms · ronda Lite v2
+Pilares: 4 registros brutos.
+Referencias: 3 registros brutos.
+Cautela: al menos un par de registros de Pilares es casi idéntico; no tratar el total bruto como 4 voces independientes.
+Señales provisionales Pilares:
+- humor-extraño: 4/4.
+- preocupación idea-poco-juego: 4/4.
+- qué-es: mezcla 3/4; reencuentro 1/4.
+- tirón: barco-hogar 2/4; tripulación 1/4; tono 1/4.
+Señales provisionales Referencias:
+- presencia-espectral: 2/3.
+- amenaza-comedia: 1/3.
+- modos de entrada observados: recurrente, regla, tono.
+Estado: evidencia direccional; NO cerrar síntesis todavía.
+Acción: conservar resultados en el ledger, actualizar candidatos y panel; seguir buscando respuestas diversas antes de promover referencias o decisiones CANON.</textarea>
+<div class="actions"><button class="btn primary" type="button" id="copyChat">COPIAR RESUMEN</button><span class="copyok" id="copyState" aria-live="polite"></span></div>
+</div>
+</section>
+
 <section class="card" style="margin-top:12px">
 <div class="k">PANEL DE RESULTADOS</div>
 <h2>Netlify Forms</h2>
@@ -52,4 +80,14 @@ h1{font-size:clamp(42px,8vw,86px);line-height:.92;margin:14px 0}.lead{max-width:
 </div>
 </section>
 </main>
+<script>
+(function(){
+const b=document.getElementById('copyChat'),t=document.getElementById('chatSummary'),s=document.getElementById('copyState');
+if(!b||!t)return;
+b.addEventListener('click',async function(){
+ try{await navigator.clipboard.writeText(t.value);s.textContent='Copiado ✓';}
+ catch(e){t.focus();t.select();document.execCommand('copy');s.textContent='Copiado ✓';}
+});
+})();
+</script>
 </body></html>
