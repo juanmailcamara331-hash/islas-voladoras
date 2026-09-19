@@ -6,6 +6,7 @@ mkdir -p build/public/poll build/public/assets
 
 cp public-site/index.html build/public/index.html
 cp public-site/404.html build/public/404.html
+cp public-site/commercial-health.html build/public/commercial-health.html
 cp portal/poll/index.html build/public/poll/index.html
 cp portal/poll/molino.html build/public/poll/molino.html
 cp portal/poll/pilares-argumento.html build/public/poll/pilares-argumento.html
