@@ -1,0 +1,36 @@
+{
+  "schema": "isl.knowledge.health.v0.1",
+  "generated_at": "2026-09-19",
+  "scope": "ISL",
+  "inventory": {
+    "visual_entries": 35,
+    "core_gallery": 26,
+    "external_lab": 9
+  },
+  "readiness": {
+    "R0": 2,
+    "R1": 20,
+    "R2": 10,
+    "R3": 3,
+    "R4": 0,
+    "R5": 0
+  },
+  "gates": {
+    "external_to_canon_direct": false,
+    "require_provenance": true,
+    "require_destination_contract": true,
+    "require_accessibility_assessment": true,
+    "require_crossplay_assessment": true,
+    "require_human_evidence_before_canon": true,
+    "require_binary_validation_for_critical_assets": true,
+    "require_deploy_commit_match": true
+  },
+  "priorities": [
+    "sync Netlify production to current main and verify exact ghost on mobile",
+    "physical Android launcher icon check",
+    "continue human survey round",
+    "dialectical synthesis",
+    "creatures with service-specific precursor packs",
+    "NUDOS only after creatures"
+  ]
+}
