@@ -55,4 +55,5 @@ const p=document.getElementById('panel'),a=document.getElementById('ambience'),b
 document.getElementById('openForm').addEventListener('click',()=>{localStorage.setItem('isl_echo_opened_at',new Date().toISOString())});
 document.getElementById('embedForm').onclick=()=>{p.classList.add('open');window.scrollTo({top:p.offsetTop-8,behavior:'smooth'})};function paint(){b.textContent=a.paused?'♪':'♫'} b.onclick=()=>{if(a.paused){a.volume=.42;a.play().catch(()=>{})}else a.pause();paint()};a.addEventListener('play',paint);a.addEventListener('pause',paint);paint();
 </script>
-<script defer src="isl-global-shell.js"></script>\n</body></html>
+<script defer src="isl-global-shell.js"></script>
+</body></html>
