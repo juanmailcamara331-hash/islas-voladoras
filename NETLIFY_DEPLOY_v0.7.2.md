@@ -38,3 +38,11 @@ Motivo:
 - asegurar que el asset forma parte del allowlist público;
 - corregir el acceso a resultados usando la URL canónica del proyecto Netlify;
 - conservar las encuestas Lite v2 como superficie pública mínima.
+
+
+## Release trigger · v0.69.4 exact approved ghost
+Fecha: 2026-09-19
+Motivo:
+- sustituir el fantasma provisional por el recorte exacto de la lámina aprobada por el autor;
+- publicar ghost-reference-exact.jpg en la allowlist pública;
+- mantener la encuesta Referencias Lite v2 con el mismo instrumento v0.69-lite-visual.
