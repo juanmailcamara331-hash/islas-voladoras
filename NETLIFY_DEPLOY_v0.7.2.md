@@ -124,3 +124,8 @@ RELEASE 2026-09-19T20:40+02:00
 
 RELEASE 2026-09-19T20:45+02:00
 - use JPG ghost directly in Referencias for maximum mobile/WhatsApp compatibility
+
+RELEASE 2026-09-19T20:50+02:00
+- Referencias ghost uses absolute JPG asset path
+- Referencias HTML cache disabled during validation
+- /referencias redirect version-busted to v=0713
