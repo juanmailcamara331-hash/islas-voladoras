@@ -27,59 +27,54 @@ h1{font-size:clamp(42px,8vw,86px);line-height:.92;margin:14px 0}.lead{max-width:
 
 <section class="grid">
 <article class="card">
-<span class="badge">ACTIVA · LITE v2</span>
+<span class="badge">ACTIVA · LITE v2 · RESET</span>
 <h2>Pilares</h2>
 <p class="tiny">Qué entiende la gente que es ISL, qué les tira, qué vibra funciona, qué les preocupa y qué salvarían o recortarían.</p>
 <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://islas-voladoras-isl.netlify.app/poll/pilares-lite-v2.html">ABRIR ENCUESTA</a></div>
-<div class="snap"><span>Snapshot Netlify · muestra pequeña</span><b>4 registros</b></div>
+<div class="snap"><span>Snapshot Netlify · reiniciado</span><b>0 respuestas</b></div>
 <ul class="resultlist">
-<li><b>Humor extraño</b> · 4/4</li>
-<li><b>Preocupación “idea poco juego”</b> · 4/4</li>
-<li><b>Qué es ISL</b> · mezcla 3/4 · reencuentro 1/4</li>
-<li><b>Tirón</b> · barco-hogar 2/4 · tripulación 1/4 · tono 1/4</li>
-<li><b>Cautela</b> · existe al menos un par casi idéntico; no tratar 4 registros como 4 voces independientes.</li>
+<li><b>1 · ¿Qué sientes que es ISL?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
+<li><b>2 · ¿Qué te tira más?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
+<li><b>3 · ¿Qué mezcla te llama?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
+<li><b>4 · ¿Qué te preocupa más?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
+<li><b>5 · ¿Qué NO quitarías?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
+<li><b>6 · ¿Qué recortarías sin piedad?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
 </ul>
 </article>
 
 <article class="card">
-<span class="badge">ACTIVA · LITE v2</span>
+<span class="badge">ACTIVA · LITE v2 · RESET</span>
 <h2>Referencias</h2>
 <p class="tiny">Qué funciones de una referencia merecen sobrevivir al proceso de mutación de ISL sin convertir el proyecto en un collage.</p>
 <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://islas-voladoras-isl.netlify.app/poll/referencias-lite-v2.html">ABRIR ENCUESTA</a></div>
-<div class="snap"><span>Snapshot Netlify · muestra pequeña</span><b>3 registros</b></div>
+<div class="snap"><span>Snapshot Netlify · reiniciado</span><b>0 respuestas</b></div>
 <ul class="resultlist">
-<li><b>Presencia espectral</b> · 2/3</li>
-<li><b>Amenaza + comedia</b> · 1/3</li>
-<li><b>Entrada en ISL observada</b> · recurrente · regla · tono</li>
-<li><b>Estado</b> · señal direccional; todavía no supera el gate de síntesis.</li>
+<li><b>1 · ¿Qué tipo de referencia te activa?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
+<li><b>2 · Del fantasma marítimo absurdo, ¿qué salvarías?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
+<li><b>3 · ¿Cómo debería entrar eso en ISL?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
+<li><b>4 · ¿Qué NO deberíamos copiar nunca?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
+<li><b>5 · Suelta una referencia útil</b><br><span class="tiny">Sin respuestas todavía.</span></li>
 </ul>
 </article>
 </section>
 
-<div class="notice"><b>Resultados reales:</b> las submissions viven en Netlify Forms. Esta pantalla es el lanzador interno; no expone credenciales ni la API administrativa en el navegador. El contador es una fotografía agregada y puede quedarse atrás. Sincronizado manualmente con Netlify Forms el 2026-09-19: 4 Pilares / 3 Referencias. En Pilares hay al menos un par de registros casi idénticos: no tratar el total bruto como voces independientes. La síntesis sigue bloqueada hasta tener evidencia más diversa.</div>
-
+<div class="actions" style="margin-top:16px">
+<button class="btn primary" type="button" id="refreshSnapshot">ACTUALIZAR VISTA</button>
+<span class="tiny" id="refreshState">Recarga la última publicación. El snapshot agregado todavía no lee la API administrativa de Netlify en tiempo real.</span>
+</div>
+<div class="notice"><b>Estado del snapshot:</b> las dos encuestas Lite v2 han sido reiniciadas y Netlify confirma 0 respuestas en ambas. Esta página muestra un snapshot agregado seguro; no expone la API administrativa de Netlify en el navegador. Para una actualización automática real habría que añadir una capa backend segura. El botón ACTUALIZAR VISTA sólo recarga la última publicación.</div>
 
 <section class="card" style="margin-top:12px">
 <div class="k">COPIAR PARA CHATGPT</div>
 <h2>Resumen listo para pegar</h2>
 <p class="tiny">Copia este bloque y pégalo en el chat de ISL. Sirve para actualizar candidatos, panel de mandos, ledger de evidencia y decisiones sin exponer datos personales.</p>
 <div class="copybox">
-<textarea id="chatSummary" readonly>ISL · RESULTADOS DE ENCUESTAS · SNAPSHOT 2026-09-19
+<textarea id="chatSummary" readonly>ISL · RESULTADOS DE ENCUESTAS · SNAPSHOT REINICIADO
 Fuente: Netlify Forms · ronda Lite v2
-Pilares: 4 registros brutos.
-Referencias: 3 registros brutos.
-Cautela: al menos un par de registros de Pilares es casi idéntico; no tratar el total bruto como 4 voces independientes.
-Señales provisionales Pilares:
-- humor-extraño: 4/4.
-- preocupación idea-poco-juego: 4/4.
-- qué-es: mezcla 3/4; reencuentro 1/4.
-- tirón: barco-hogar 2/4; tripulación 1/4; tono 1/4.
-Señales provisionales Referencias:
-- presencia-espectral: 2/3.
-- amenaza-comedia: 1/3.
-- modos de entrada observados: recurrente, regla, tono.
-Estado: evidencia direccional; NO cerrar síntesis todavía.
-Acción: conservar resultados en el ledger, actualizar candidatos y panel; seguir buscando respuestas diversas antes de promover referencias o decisiones CANON.</textarea>
+Pilares: 0 respuestas.
+Referencias: 0 respuestas.
+Estado: reset de prueba completado. No hay evidencia que sintetizar todavía.
+Acción: volver a probar ambas encuestas, después actualizar snapshot y copiar este bloque al chat de ISL.</textarea>
 <div class="actions"><button class="btn primary" type="button" id="copyChat">COPIAR RESUMEN</button><span class="copyok" id="copyState" aria-live="polite"></span></div>
 </div>
 </section>
@@ -96,6 +91,8 @@ Acción: conservar resultados en el ledger, actualizar candidatos y panel; segui
 </main>
 <script>
 (function(){
+const rb=document.getElementById('refreshSnapshot'),rs=document.getElementById('refreshState');
+if(rb){rb.addEventListener('click',function(){rs.textContent='Recargando última publicación…';const u=new URL(location.href);u.searchParams.set('_',Date.now());location.href=u.toString();});}
 const b=document.getElementById('copyChat'),t=document.getElementById('chatSummary'),s=document.getElementById('copyState');
 if(!b||!t)return;
 b.addEventListener('click',async function(){
