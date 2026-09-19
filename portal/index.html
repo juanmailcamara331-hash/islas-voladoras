@@ -412,8 +412,8 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <a class="brandLock" href="#home" aria-label="ISL · Centro"><img src="isl-icon-master.png" alt="ISL"><b>ISL</b></a>
     <button class="on" type="button" data-main-nav="home"><span class="navI" aria-hidden="true">⌂</span>Centro</button>
     <a href="rpg-home.html"><span class="navI" aria-hidden="true">♙</span>Perfil RPG</a>
-    <button type="button" data-main-nav="calendar"><span class="navI" aria-hidden="true">⌁</span>Ruta ISL</button>
-    <a href="rpg-home.html"><span class="navI" aria-hidden="true">⚑</span>Aventura</a>
+    <a href="#calendar" data-route-link="calendar"><span class="navI" aria-hidden="true">⌁</span>Ruta ISL</a>
+    <a href="secret-level.html"><span class="navI" aria-hidden="true">⚑</span>Aventura</a>
     <button type="button" data-main-nav="gallery"><span class="navI" aria-hidden="true">▣</span>Galería</button>
     <a href="musica.html"><span class="navI" aria-hidden="true">♫</span>Música</a>
     <button id="moreNavBtn" type="button" aria-expanded="false" aria-controls="drawer"><span class="navI" aria-hidden="true">＋</span>Más</button>
@@ -456,8 +456,8 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
   <div class="finalWorlds">
     <a class="worldTile" href="rpg-home.html#mapa"><img src="assets/floating-islands-map.png" alt=""><div><b>Islas</b><span>Mundos por descubrir</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
     <a class="worldTile" href="capsulas.html"><img src="assets/wind-lab-sunset.png" alt=""><div><b>Escenas</b><span>Momentos que dejan memoria</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
-    <a class="worldTile" href="rpg-home.html"><img src="assets/visual-bible-islands.png" alt=""><div><b>Criaturas</b><span>Vida en las alturas</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
-    <a class="worldTile" href="rpg-home.html"><img src="assets/level-celestial-ruins.png" alt=""><div><b>Reliquias</b><span>Artefactos con historia</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
+    <button class="worldTile" type="button" onclick="go('gallery')"><img src="assets/visual-bible-islands.png" alt=""><div><b>Criaturas</b><span>Vida en las alturas</span><span class="worldArrow" aria-hidden="true">›</span></div></button>
+    <button class="worldTile" type="button" onclick="go('gallery')"><img src="assets/level-celestial-ruins.png" alt=""><div><b>Reliquias</b><span>Artefactos con historia</span><span class="worldArrow" aria-hidden="true">›</span></div></button>
     <a class="worldTile" href="huellas.html"><img src="assets/world-design-bible.png" alt=""><div><b>Dialéctica del mundo</b><span>Ideas · perspectivas · consecuencias</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
   </div>
   <div class="sectionLabelV68">Cabina · herramientas y versiones</div>
@@ -622,6 +622,8 @@ function save(){localStorage.setItem('islcc_weights',JSON.stringify(weights));lo
 function go(id){document.querySelectorAll('.view,.rail button[data-view]').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');let b=document.querySelector(`[data-view="${id}"]`);if(b)b.classList.add('active');setDrawer(false);if(id==='compare')renderCompare();window.scrollTo(0,0)}
 document.querySelectorAll('.rail button[data-view]').forEach(b=>b.onclick=()=>go(b.dataset.view));
 document.querySelectorAll('[data-main-nav]').forEach(function(b){b.onclick=function(){go(b.dataset.mainNav)}});
+document.querySelectorAll('[data-route-link]').forEach(function(a){a.onclick=function(e){e.preventDefault();var id=a.dataset.routeLink||'calendar';go(id);history.replaceState(null,'','#'+id)}});
+window.addEventListener('hashchange',function(){var id=(location.hash||'').replace('#','');if(id&&document.getElementById(id)&&document.getElementById(id).classList.contains('view'))go(id)});
 function setDrawer(open){
   drawer.classList.toggle('open',!!open);
   if(moreNavBtn)moreNavBtn.setAttribute('aria-expanded',open?'true':'false');
