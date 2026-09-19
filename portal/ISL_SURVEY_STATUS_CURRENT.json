@@ -1,18 +1,33 @@
 {
-  "version": "0.69.1",
-  "checked_at": "2026-09-19T13:32:26Z",
+  "version": "0.70.8",
+  "checked_at": "2026-09-19T17:22:00Z",
   "source": "netlify-forms",
   "forms": [
     {
       "name": "isl-pillars-lite-v2",
       "form_id": "6aadb9a273e16100084acfba",
-      "submission_count": 1
+      "submission_count": 3,
+      "evidence_note": "One pair is near-identical in timing/answers; do not assume three independent respondents."
     },
     {
       "name": "isl-reference-lite-v2",
       "form_id": "6aadb9a273e16100084acfbd",
-      "submission_count": 1
+      "submission_count": 2,
+      "evidence_note": "Small sample; directional only."
     }
   ],
-  "note": "Snapshot only. Netlify Forms is source of truth."
+  "provisional_signals": {
+    "pillars": [
+      "humor-extraño appears in all 3 submissions",
+      "idea-poco-juego appears as concern in all 3 submissions",
+      "barco-hogar appears in 2/3 submissions; tripulacion in 1/3",
+      "mezcla appears in 2/3; reencuentro in 1/3"
+    ],
+    "references": [
+      "one submission favors presencia-espectral as recurrent element",
+      "one favors amenaza-comedia as a world rule",
+      "no synthesis gate met"
+    ]
+  },
+  "note": "Aggregate snapshot only. Netlify Forms is source of truth. No personal/network identifiers are stored here."
 }
