@@ -22,13 +22,13 @@ ol{margin:8px 0 0;padding-left:20px}li{margin:8px 0;line-height:1.4}.tiny{font-s
 <div class="eyebrow">ISL // KNOWLEDGE GRAPH // HEALTH SNAPSHOT</div>
 <h1>Estado comprimido del sistema.</h1>
 <p class="sub">Una capa operativa sobre la documentación: readiness, gates, bloqueos, riesgos y siguiente ruta. No sustituye las fuentes; las indexa.</p>
-<div class="grid" id="readiness"></div>
-<div class="cols">
+<div class="grid islP2" id="readiness"></div>
+<div class="cols islP1">
 <section class="section"><div class="eyebrow">READINESS</div><div id="bars"></div></section>
 <section class="section"><div class="eyebrow">GATES</div><div id="gates"></div></section>
 </div>
-<section class="section"><div class="eyebrow">PRIORIDADES</div><ol id="priorities"></ol></section>
-<section class="section"><div class="eyebrow">LECTURA DEL SNAPSHOT</div><p class="sub">R0 = referencia · R1 = precursor conceptual · R2 = precursor estructural · R3 = listo para fabricar precursor técnico · R4 = input técnico para servicio concreto · R5 = validado en destino.</p><p class="tiny">Fuente: portal/data/isl-knowledge-health-v0.1.json</p></section>
+<section class="section islP0"><div class="eyebrow">P0 · PRIORIDADES</div><ol id="priorities"></ol></section>
+<section class="section islP3"><div class="eyebrow">P3 · LECTURA DEL SNAPSHOT</div><p class="sub">R0 = referencia · R1 = precursor conceptual · R2 = precursor estructural · R3 = listo para fabricar precursor técnico · R4 = input técnico para servicio concreto · R5 = validado en destino.</p><p class="tiny">Fuente: portal/data/isl-knowledge-health-v0.1.json</p></section>
 </main>
 <script>
 fetch('data/isl-knowledge-health-v0.1.json').then(r=>r.json()).then(d=>{
