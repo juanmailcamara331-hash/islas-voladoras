@@ -37,4 +37,5 @@ items.forEach((x,i)=>{
  el.querySelector("[data-status]").onclick=()=>{let cur=localStorage.getItem(key)||"PENDIENTE";let n=(statuses.indexOf(cur)+1)%statuses.length;localStorage.setItem(key,statuses[n]);el.querySelector(".status b").textContent=statuses[n]};
  grid.appendChild(el);
 });
-</script><script defer src="isl-global-shell.js"></script>\n</body></html>
+</script><script defer src="isl-global-shell.js"></script>
+</body></html>
