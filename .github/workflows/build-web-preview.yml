@@ -63,12 +63,16 @@ jobs:
           test -f build/pages/index.html
           test -f build/pages/poll/pilares-lite-v2.html
           test -f build/pages/poll/referencias-lite-v2.html
+          test -f build/pages/encuestas.html
           grep -q 'name="isl-pillars-lite-v2"' build/pages/poll/pilares-lite-v2.html
           grep -q 'name="isl-reference-lite-v2"' build/pages/poll/referencias-lite-v2.html
           grep -q 'name="survey_version" value="v0.66-lite"' build/pages/poll/pilares-lite-v2.html
           grep -q 'name="survey_version" value="v0.69-lite-visual"' build/pages/poll/referencias-lite-v2.html
           grep -q 'id="f_que_es"' build/pages/poll/pilares-lite-v2.html
           grep -q 'id="f_tipo_ref"' build/pages/poll/referencias-lite-v2.html
+          grep -q 'ANCLA VISUAL PROVISIONAL' build/pages/poll/referencias-lite-v2.html
+          grep -q 'VER RESULTADOS EN VIVO' build/pages/encuestas.html
+          grep -q 'app.netlify.com/sites/islas-voladoras-isl/forms' build/pages/encuestas.html
           test -f build/pages/rpg-home.html
           test -f build/pages/command-center.html
           test -f build/pages/secret-level.html
@@ -126,6 +130,8 @@ jobs:
           grep -q 'isl-global-shell.js' build/pages/huellas.html
           grep -q 'isl-global-shell.js' build/pages/capsulas.html
           grep -q 'isl-global-shell.js' build/pages/recreo.html
+          grep -q 'isl-global-shell.js' build/pages/encuestas.html
+          grep -q 'Encuestas' build/pages/isl-global-shell.js
           grep -q 'capsuleModal' build/pages/capsulas.html
           grep -q 'resume=1' build/pages/index.html
           node --check build/pages/isl-global-shell.js
