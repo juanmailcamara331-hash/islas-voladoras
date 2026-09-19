@@ -23,14 +23,88 @@
     "require_crossplay_assessment": true,
     "require_human_evidence_before_canon": true,
     "require_binary_validation_for_critical_assets": true,
-    "require_deploy_commit_match": true
+    "require_deploy_commit_match": true,
+    "physical_mobile_ghost_check": false,
+    "android_launcher_physical_pass": false,
+    "netlify_production_synced": true
   },
   "priorities": [
-    "sync Netlify production to current main and verify exact ghost on mobile",
-    "physical Android launcher icon check",
+    "physical mobile check of exact ghost reference",
+    "replace Android launcher with real adaptive icon and retest physically",
     "continue human survey round",
-    "dialectical synthesis",
+    "dialectical synthesis only after sufficient human evidence",
     "creatures with service-specific precursor packs",
-    "NUDOS only after creatures"
-  ]
+    "NUDOS after creatures"
+  ],
+  "platform_model": {
+    "evidence_states": [
+      "VERIFIED_PUBLIC_FACT",
+      "SIMULATED_TARGET",
+      "MEASURED",
+      "PRIVATE_SDK_UNKNOWN",
+      "DECISION"
+    ],
+    "tiers": {
+      "T0": {
+        "label": "SURVIVAL / STRESS",
+        "fps": 20,
+        "state": "SIMULATED_TARGET"
+      },
+      "T1": {
+        "label": "MINIMUM COMPATIBILITY",
+        "fps": 30,
+        "state": "SIMULATED_TARGET"
+      },
+      "T2": {
+        "label": "STANDARD",
+        "fps": 60,
+        "state": "SIMULATED_TARGET"
+      },
+      "T3": {
+        "label": "ENHANCED",
+        "fps": 60,
+        "state": "SIMULATED_TARGET"
+      }
+    },
+    "weights": {
+      "gameplay": 30,
+      "phenomenology_legibility": 20,
+      "accessibility": 15,
+      "compatibility": 15,
+      "performance": 10,
+      "production_maintainability": 10
+    },
+    "references": [
+      {
+        "id": "android",
+        "label": "Android",
+        "state": "VERIFIED_PUBLIC_FACT+SIMULATED_TARGET"
+      },
+      {
+        "id": "apple",
+        "label": "iPhone / iPad",
+        "state": "VERIFIED_PUBLIC_FACT+SIMULATED_TARGET"
+      },
+      {
+        "id": "ps4",
+        "label": "PS4 / Pro",
+        "state": "PUBLIC_HW+PRIVATE_SDK_UNKNOWN"
+      },
+      {
+        "id": "xbox_one",
+        "label": "Xbox One / S",
+        "state": "PUBLIC_HW+PRIVATE_SDK_UNKNOWN"
+      },
+      {
+        "id": "pc_web",
+        "label": "PC / Web",
+        "state": "SIMULATED_TARGET"
+      },
+      {
+        "id": "android_handheld",
+        "label": "Android handheld",
+        "state": "SIMULATED_TARGET"
+      }
+    ]
+  }
 }
