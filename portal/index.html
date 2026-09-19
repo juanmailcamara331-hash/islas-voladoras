@@ -512,7 +512,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 <a class="card" href="assets/isl-tv-reel-premium-1080p.mp4" target="_blank" data-help="MP4 H.264/AAC optimizado para PS4."><h3>Reel MP4 PS4</h3><div class="kpi">H.264</div><div class="sub">Presentación fiable en Reproductor multimedia.</div></a></div>
 </section>
 
-<section class="view" id="gallery">
+<section class="view islP1" id="gallery">
  <div class="topbar"><div><div class="eyebrow">Forge integrado</div><h2>Galería viva</h2><div class="sub">Filtros, selección y comparación viven dentro del Command Center.</div></div><div class="actions"><a class="btn" href="external-lab.html">EXTERNAL LAB · GEMINI/MJ</a></div></div>
  <div class="toolbar"><select id="cat" class="control"><option value="">Todas las categorías</option></select><select id="st" class="control"><option value="">Todos los estados</option></select><input id="search" class="control" placeholder="buscar isla, 3D, viento..."><button class="btn" onclick="go('compare')">Comparar seleccionados</button></div>
  <div id="galleryGrid" class="gallery"></div>
@@ -524,21 +524,21 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
  <div id="compareGrid" class="compare" style="margin-top:11px"></div>
 </section>
 
-<section class="view" id="roadmap">
+<section class="view islP1" id="roadmap">
  <div class="topbar"><div><div class="eyebrow">Roadmap ISL</div><h2>Archipiélago de producción</h2><div class="sub">El roadmap se lee como viaje entre islas de incertidumbre, no como hoja de cálculo disfrazada.</div></div></div>
  <div class="roadmapMap">
   <div class="bridge" style="left:18%;top:29%;width:26%;transform:rotate(9deg)"></div><div class="bridge" style="left:45%;top:35%;width:25%;transform:rotate(-4deg)"></div><div class="bridge" style="left:61%;top:50%;width:19%;transform:rotate(20deg)"></div><div class="bridge" style="left:25%;top:63%;width:25%;transform:rotate(-16deg)"></div>
-  <div class="island" style="left:5%;top:15%"><span class="num">ISLA 0</span><b>Command Center + Forge</b><span class="status good">EN CURSO</span></div>
-  <div class="island" style="left:32%;top:24%"><span class="num">ISLA 1</span><b>Bake-off 3D</b><span class="status warn">SIGUIENTE</span></div>
-  <div class="island" style="left:62%;top:20%"><span class="num">ISLA 2</span><b>3D Lab / Lookdev</b><span class="status warn">SIGUIENTE</span></div>
-  <div class="island" style="left:72%;top:52%"><span class="num">ISLA 3</span><b>Wind Lab × 3D</b><span class="status">PENDIENTE</span></div>
-  <div class="island" style="left:38%;top:63%"><span class="num">ISLA 4</span><b>Kit modular mínimo</b><span class="status">PENDIENTE</span></div>
-  <div class="island" style="left:8%;top:68%"><span class="num">ISLA 5</span><b>Unreal Handoff</b><span class="status">PENDIENTE</span></div>
+  <div class="island" style="left:5%;top:15%"><span class="num">ISLA 0</span><b>Command Center + External Lab</b><span class="status good">EN CURSO</span></div>
+  <div class="island" style="left:32%;top:24%"><span class="num">ISLA 1</span><b>Ronda humana Lite v2</b><span class="status warn">GATE ACTIVO</span></div>
+  <div class="island" style="left:62%;top:20%"><span class="num">ISLA 2</span><b>Síntesis dialéctica</b><span class="status">BLOQUEADO POR EVIDENCIA</span></div>
+  <div class="island" style="left:72%;top:52%"><span class="num">ISLA 3</span><b>Criaturas + precursor packs</b><span class="status">PENDIENTE</span></div>
+  <div class="island" style="left:38%;top:63%"><span class="num">ISLA 4</span><b>NUDOS sistémicos</b><span class="status">PENDIENTE</span></div>
+  <div class="island" style="left:8%;top:68%"><span class="num">ISLA 5</span><b>3D / Unreal handoff</b><span class="status">DESPUÉS DE GATES</span></div>
  </div>
- <div class="grid"><div class="card"><h3>Objetivo próximo</h3><div class="sub">Demostrar lenguaje visual 3D con isla/receptor/puente usando variables controladas.</div></div><div class="card"><h3>Bloqueo actual</h3><div class="sub">No hay assets 3D formalmente APPROVED todavía.</div></div><div class="card"><h3>Regla</h3><div class="sub">No producir una isla completa hasta que tres piezas pequeñas prueben el lenguaje.</div></div></div>
+ <div class="grid"><div class="card"><h3>Objetivo próximo</h3><div class="sub">Cerrar evidencia humana suficiente sin contaminarla con una síntesis prematura.</div></div><div class="card"><h3>Bloqueo actual</h3><div class="sub">Muestra humana aún pequeña; icono Android físico en FAIL y precursor 3D todavía sin R4.</div></div><div class="card"><h3>Regla</h3><div class="sub">Encuestas → síntesis → criaturas/precursor packs → NUDOS. Ninguna salida externa salta a CANON.</div></div></div>
 </section>
 
-<section class="view" id="calendar">
+<section class="view islP2" id="calendar">
  <div class="topbar"><div><div class="eyebrow">Planificación</div><h2>Calendario operativo</h2><div class="sub">Local ahora; preparado para sincronización real cuando conectes Google Calendar.</div></div><div class="actions"><button class="btn" id="prevMonth">←</button><button class="btn" id="todayBtn">Hoy</button><button class="btn" id="nextMonth">→</button></div></div>
  <div class="two"><div class="panel"><div class="label">Mes</div><div class="kpi" id="monthTitle"></div></div><div class="panel"><h3>Integración</h3><div class="callout">Google Calendar está disponible como conector, pero el centro no fingirá sincronización hasta que exista conexión real.</div></div></div>
  <div class="panel"><div class="calendar" id="calendarGrid"></div></div>
@@ -552,7 +552,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
  </div>
 </section>
 
-<section class="view" id="stats">
+<section class="view islP1" id="stats">
  <div class="topbar"><div><div class="eyebrow">Datos</div><h2>Estadísticas con procedencia</h2><div class="sub">REAL, SIMULADO y PLANEADO permanecen separados.</div></div></div>
  <div class="statsgrid"><div class="card"><span class="realtag">REAL</span><div class="label" style="margin-top:8px">PostHog gameplay</div><div class="kpi">0</div><div class="sub">No hay eventos reales conocidos.</div></div><div class="card"><span class="realtag">REAL</span><div class="label" style="margin-top:8px">Labs</div><div class="kpi">2+</div><div class="sub">Wind + Method; 3D pendiente.</div></div><div class="card"><span class="realtag">REAL</span><div class="label" style="margin-top:8px">Assets 3D aprobados</div><div class="kpi">0</div></div><div class="card"><span class="simtag">SIMULADO</span><div class="label" style="margin-top:8px">Capacidad ejemplo</div><div class="kpi">300h</div></div></div>
  <div class="panel"><h3>Gráfico futuro · maqueta</h3><div class="chart"><div class="barcol"><div class="barfill" style="height:15%"></div><div class="barlabel">CQC</div></div><div class="barcol"><div class="barfill" style="height:45%"></div><div class="barlabel">3D</div></div><div class="barcol"><div class="barfill" style="height:28%"></div><div class="barlabel">Labs</div></div><div class="barcol"><div class="barfill" style="height:10%"></div><div class="barlabel">Docs</div></div><div class="barcol"><div class="barfill" style="height:25%"></div><div class="barlabel">Unreal</div></div></div><div class="sub" style="margin-top:8px"><span class="plantag">PLANEADO</span> No representa horas reales.</div></div>
@@ -566,14 +566,14 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 
 
 
-<section class="view" id="registry">
+<section class="view islP2" id="registry">
  <div class="topbar"><div><div class="eyebrow">Fuente de verdad operativa</div><h2>Registro completo</h2>
  <div class="sub">El panel distingue contenido, archivos, infraestructura y estado. Duplicado físico no significa elemento nuevo.</div></div></div>
  <div class="statsgrid">
   <div class="card"><div class="label">Visuales creativos</div><div class="kpi">26</div><div class="status good">MÁSTER INVENTARIADO</div></div>
   <div class="card"><div class="label">Labs públicos/locales</div><div class="kpi">3+</div><div class="status good">WIND · METHOD · ACADEMY</div></div>
   <div class="card"><div class="label">Fuente documental</div><div class="kpi">v0.13</div><div class="status good">BIBLIA MAESTRA</div></div>
-  <div class="card"><div class="label">Netlify</div><div class="kpi">—</div><div class="status warn">PLUGIN NO CONECTADO</div></div>
+  <div class="card"><div class="label">Netlify</div><div class="kpi">SYNC</div><div class="status good">PRODUCCIÓN ACTIVA</div></div>
  </div>
  <div class="panel"><h3>DOCUMENTACIÓN ACTIVA</h3>
  <table><tr><th>Artefacto</th><th>Estado</th><th>Uso</th></tr>
@@ -582,13 +582,14 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
  <tr><td>METODO_ISL_BUCLE_MAGISTRAL_RECURSIVO_v0.1.docx</td><td>PROVISIONAL FUERTE</td><td>Metodología</td></tr>
  <tr><td>EXPERIENCIA_LAB_01_EL_MOLINO_QUE_MIENTE_v0.13.docx</td><td>LAB</td><td>Build de la Verdad</td></tr>
  <tr><td>RUTA_C_CREACION_OPCIONAL_MOLINO_v0.13.docx</td><td>PROVISIONAL</td><td>Dibujo → interpretación</td></tr>
+ <tr><td>ISL_PLATFORM_TARGET_MATRIX_AND_SIMULATED_REQUIREMENTS_CURRENT</td><td>ACTUAL</td><td>Targets iPhone/Android/PC/PS4/Xbox + budgets T0–T3</td></tr>
  </table></div>
  <div class="panel"><h3>INTEGRACIONES</h3>
- <div class="pipe"><span class="node">GOOGLE DRIVE · ACTIVO</span><span class="node">GITHUB · ACTIVO</span><span class="node">CALENDAR · CONECTADO</span><span class="node">fal · CONECTADO</span><span class="node">LOVABLE · CRÉDITOS BLOQUEADOS</span><span class="node">SUPABASE · VIA LOVABLE</span><span class="node">POSTHOG · SIN DATOS</span><span class="node">JOTFORM · ACTIVO</span><span class="node">NETLIFY · NO CONECTADO</span></div></div>
+ <div class="pipe"><span class="node">GOOGLE DRIVE · ACTIVO</span><span class="node">GITHUB · ACTIVO</span><span class="node">CALENDAR · CONECTADO</span><span class="node">fal · CONECTADO</span><span class="node">LOVABLE · CRÉDITOS BLOQUEADOS</span><span class="node">SUPABASE · VIA LOVABLE</span><span class="node">POSTHOG · SIN DATOS</span><span class="node">JOTFORM · ACTIVO</span><span class="node">NETLIFY · ACTIVO</span></div></div>
  <div class="panel"><h3>REGLA DE ARCHIVO</h3><div class="callout">REJECTED ≠ DELETED. Todo visual útil conserva procedencia, estado y aprendizaje; sólo APPROVED cruza el airlock hacia producción.</div></div>
 </section>
 
-<section class="view" id="controls">
+<section class="view islP1" id="controls">
  <div class="topbar"><div><div class="eyebrow">10-foot UI · Input Layer</div><h2>Controles universales</h2>
  <div class="sub">La interfaz trabaja con acciones ISL, no con dispositivos concretos. Funciona con teclado, mando TV y gamepad en navegadores compatibles.</div></div></div>
  <div class="grid">
@@ -599,7 +600,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
   <div class="card"><h3>MENÚ</h3><div class="kpi">Options</div><div class="sub">Abre/cierra el cajón lateral.</div></div>
   <div class="card"><h3>PANTALLA</h3><div class="kpi">TV</div><div class="sub">Modo 10-foot UI, elementos mayores y menos ruido.</div></div>
  </div>
- <div class="panel"><h3>PS4</h3><div class="callout">El navegador de PS4 recibe automáticamente la versión Lite. Para presentación perfecta usa el Reel MP4 desde el Reproductor multimedia.</div></div>
+ <div class="panel"><h3>PS4</h3><div class="callout">PS4 se usa hoy como referencia adversarial de hardware/controller/TV UI. No se declara compatibilidad de shipping ni requisitos de certificación sin SDK oficial; el Reel MP4 sigue siendo la vía fiable de presentación existente.</div></div>
 </section>
 
 <section class="view" id="pipelines">
