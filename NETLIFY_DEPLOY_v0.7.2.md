@@ -63,3 +63,13 @@ Motivo:
 - no escalar el recorte por encima de 320 px;
 - publicar la corrección de Referencias Lite v2;
 - External Lab permanece fuera del allowlist público y sólo vive en Command Center/Drive.
+
+
+## Release trigger · v0.69.9 knowledge graph + exact ghost production sync
+Fecha: 2026-09-19
+Motivo:
+- sincronizar producción con main actual;
+- publicar ghost-reference-mobile.jpg exacto y Referencias Lite v2 v0.69.7-ghost-exact;
+- publicar External Lab con pipeline completo;
+- publicar Knowledge Health y snapshot isl-knowledge-health-v0.1.json;
+- verificar commit_ref de Netlify antes de cerrar gate móvil.
