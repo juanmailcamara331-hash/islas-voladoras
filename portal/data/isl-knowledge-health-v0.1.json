@@ -1,5 +1,5 @@
 {
-  "schema": "isl.knowledge.health.v0.2",
+  "schema": "isl.knowledge.health.v0.3",
   "generated_at": "2026-09-19",
   "scope": "ISL",
   "inventory": {
@@ -283,153 +283,51 @@
       }
     ],
     "base_budget_model": {
-      "state": "SIMULATED_NOT_FORECAST",
-      "scenario": "base_10000_units",
-      "upfront_fixed_total_eur": 90000,
-      "upfront_fixed_breakdown": [
-        {
-          "category": "Preproducción + prototipos",
-          "eur": 12000
-        },
-        {
-          "category": "Vertical slice + playtests",
-          "eur": 18000
-        },
-        {
-          "category": "Producción/contenido",
-          "eur": 30000
-        },
-        {
-          "category": "QA + accesibilidad + localización",
-          "eur": 10000
-        },
-        {
-          "category": "Legal/derechos/admin",
-          "eur": 5000
-        },
-        {
-          "category": "Store/press kit/launch infra",
-          "eur": 5000
-        },
-        {
-          "category": "Contingencia fija",
-          "eur": 10000
-        }
-      ],
-      "variable_total_eur": 70000,
-      "variable_breakdown": [
-        {
-          "category": "Distribución/pagos/store reserve",
-          "eur": 40000
-        },
-        {
-          "category": "Marketing/outreach",
-          "eur": 12000
-        },
-        {
-          "category": "Community/support",
-          "eur": 5000
-        },
-        {
-          "category": "QA/localización escalable",
-          "eur": 4000
-        },
-        {
-          "category": "Supporter/OST/fulfillment reserve",
-          "eur": 2000
-        },
-        {
-          "category": "Contingencia variable",
-          "eur": 7000
-        }
-      ],
-      "note": "Illustrative allocation only. Replace with measured quotes, store terms, tax/accounting data and actual staffing before C4."
+      "state": "SUPERSEDED_BY_STAGED_INVESTMENT_MODEL",
+      "note": "Previous €90k fixed / €70k variable Base scenario retained only as historical simulation; current planning starts at €1k and escalates by evidence."
     },
     "simulated_campaigns": {
       "state": "SIMULATED_NOT_SENT_NOT_FORECAST",
-      "total_budget_eur": 12000,
-      "channels": [
+      "proof_tranche_campaign_budget_eur": 1000,
+      "traction_tranche_campaign_budget_eur": 3500,
+      "first_test_channels": [
         {
           "channel": "YouTube creators",
-          "budget_eur": 2400,
-          "goal": "8–12 micro/mid creators",
-          "reach_band": "80k–200k views",
-          "target_action": "visitas + wishlists/demo",
-          "status": "SIMULATED"
+          "proof_budget_eur": 250
         },
         {
-          "channel": "Twitch creators",
-          "budget_eur": 1800,
-          "goal": "6–10 streams",
-          "reach_band": "20k–60k live+VOD views",
-          "target_action": "demo plays + follows/wishlists",
-          "status": "SIMULATED"
+          "channel": "Twitch",
+          "proof_budget_eur": 150
         },
         {
-          "channel": "Press / PR / indie media",
-          "budget_eur": 1200,
-          "goal": "20–35 qualified contacts",
-          "reach_band": "earned coverage",
-          "target_action": "coverage + backlinks + discovery",
-          "status": "SIMULATED"
+          "channel": "Press / PR indie",
+          "proof_budget_eur": 100
         },
         {
           "channel": "TikTok / Reels / Shorts",
-          "budget_eur": 1500,
-          "goal": "15–25 short-form tests",
-          "reach_band": "100k–300k impressions",
-          "target_action": "hook testing + visits",
-          "status": "SIMULATED"
+          "proof_budget_eur": 150
         },
         {
           "channel": "Paid social tests",
-          "budget_eur": 2000,
-          "goal": "creative/angle validation",
-          "reach_band": "80k–250k impressions",
-          "target_action": "CTR + cost per qualified visit",
-          "status": "SIMULATED"
+          "proof_budget_eur": 150
         },
         {
-          "channel": "Steam/store conversion assets",
-          "budget_eur": 1000,
-          "goal": "capsule/trailer/page experiments",
-          "reach_band": "store traffic dependent",
-          "target_action": "wishlist conversion",
-          "status": "SIMULATED"
+          "channel": "Steam/store assets",
+          "proof_budget_eur": 75
         },
         {
           "channel": "Podcasts/newsletters",
-          "budget_eur": 800,
-          "goal": "6–12 niche placements",
-          "reach_band": "niche reach",
-          "target_action": "high-intent discovery",
-          "status": "SIMULATED"
+          "proof_budget_eur": 50
         },
         {
-          "channel": "Discord/Reddit/community ops",
-          "budget_eur": 600,
-          "goal": "manual community seeding",
-          "reach_band": "small/high-fit",
-          "target_action": "qualitative signal + retention",
-          "status": "SIMULATED"
+          "channel": "Discord/Reddit/community",
+          "proof_budget_eur": 25
         },
         {
-          "channel": "Campaign contingency",
-          "budget_eur": 700,
-          "goal": "reserve",
-          "reach_band": "n/a",
-          "target_action": "reallocate to evidence",
-          "status": "SIMULATED"
+          "channel": "Contingency",
+          "proof_budget_eur": 50
         }
-      ],
-      "funnel_targets": {
-        "disclaimer": "Illustrative ranges, not forecasts.",
-        "qualified_visits": "5k–15k",
-        "demo_or_store_actions": "1.5k–5k",
-        "wishlists_or_equivalent": "800–3k",
-        "creator_or_press_replies": "8–20",
-        "first_priority_metric": "cost per qualified visit + wishlist/demo conversion, not raw reach"
-      }
+      ]
     },
     "break_even_explainer": {
       "base_scenario": {
@@ -438,6 +336,37 @@
         "variable_cost_placeholder_eur": 70000,
         "note": "Current model does not yet contain a measured per-unit net receipt. Break-even shown on the dashboard is therefore scenario cash break-even, not accounting break-even."
       }
+    },
+    "staged_investment_model": {
+      "state": "SIMULATED_NOT_FORECAST",
+      "principle": "fund evidence progressively; do not unlock the next tranche automatically",
+      "tranches": [
+        {
+          "id": "micro",
+          "budget_eur": 1000,
+          "goal": "validate interaction and legibility",
+          "gate": "human signal before more spend"
+        },
+        {
+          "id": "proof",
+          "budget_eur": 5000,
+          "goal": "prove a small vertical slice and micro-campaign",
+          "gate": "intent/retention/channel signal"
+        },
+        {
+          "id": "traction",
+          "budget_eur": 15000,
+          "goal": "measure demo/store/creator funnel",
+          "gate": "repeatable conversion/replies/wishlist signal"
+        },
+        {
+          "id": "production",
+          "budget_eur": 50000,
+          "goal": "scale production and launch",
+          "gate": "product + channel + ops validated",
+          "minimum_only": true
+        }
+      ]
     }
   }
 }
