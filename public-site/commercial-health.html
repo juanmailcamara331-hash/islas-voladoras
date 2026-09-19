@@ -2,144 +2,116 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ISL · Commercial Health</title><meta name="robots" content="noindex,nofollow,noarchive">
+<title>ISL · Dinero y campañas</title><meta name="robots" content="noindex,nofollow,noarchive">
 <style>
-:root{--bg:#071017;--panel:#0e1c24;--line:#34515d;--fg:#edf7f5;--mut:#9fb3b8;--cyan:#8defff;--gold:#ffc36e;--ok:#b7ff9c;--red:#ff9a8b}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 85% 0,#183b4c 0,transparent 30%),linear-gradient(#071017,#0a151c);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
-main{width:min(1120px,94vw);margin:auto;padding:28px 0 90px}.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);font-weight:900;text-transform:uppercase}
-h1{font-size:clamp(44px,9vw,84px);line-height:.94;margin:12px 0}.lead{max-width:860px;color:#c9d8db;line-height:1.55}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:18px}.card,.section{border:1px solid var(--line);background:linear-gradient(180deg,#10242d,#0a171e);border-radius:18px;padding:16px}
-.section{margin-top:14px;padding:20px}.card b.kpi{display:block;font-size:30px;margin:7px 0}.tiny{color:var(--mut);font-size:12px;line-height:1.55}
-.sim{display:inline-block;padding:4px 7px;border:1px solid #8b6c3f;border-radius:999px;color:#ffe7b5;font-size:9px;font-weight:900}.neg{color:var(--red)}.pos{color:var(--ok)}
-.btn{display:inline-flex;text-decoration:none;border:1px solid #4a6771;border-radius:10px;background:#0a1921;color:#fff;padding:11px 12px;font-size:11px;font-weight:900;margin-top:14px}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}.rows{display:grid;gap:9px}.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:9px 0;border-bottom:1px solid #29434c}.row:last-child{border-bottom:0}.row b{color:#fff}.row span:last-child{font-variant-numeric:tabular-nums;color:#dfecea}
-.bar{height:10px;border-radius:999px;background:#0a1217;overflow:hidden;border:1px solid #233c46;margin-top:5px}.bar>i{display:block;height:100%;background:linear-gradient(90deg,#3f798d,#8defff);border-radius:999px}.bar.gold>i{background:linear-gradient(90deg,#7a542c,#ffc36e)}
-.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse;font-size:12px;min-width:740px}.table th,.table td{padding:10px;border-bottom:1px solid #29434c;text-align:right;white-space:nowrap}.table th:first-child,.table td:first-child{text-align:left}.table th{color:var(--cyan);font-size:10px;letter-spacing:.08em;text-transform:uppercase}.table .neg{color:var(--red)}.table .pos{color:var(--ok)}
-.campaign{display:grid;grid-template-columns:160px 90px minmax(180px,1fr) minmax(170px,1fr);gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #29434c;font-size:12px}.campaign:last-child{border-bottom:0}.campaign strong{color:#fff}.campaign .amt{font-weight:900;color:#ffe7b5}.campaign .goal,.campaign .metric{color:#b7c7ca}
-.callout{border-left:3px solid var(--gold);background:#17150f;padding:13px 15px;border-radius:9px;color:#d9ddd6;line-height:1.55;font-size:12px}
-@media(max-width:760px){.cols{grid-template-columns:1fr}.campaign{grid-template-columns:1fr auto}.campaign .goal,.campaign .metric{grid-column:1/-1}.section{padding:15px}}
+:root{--bg:#061017;--panel:#0d1b23;--panel2:#0a151c;--line:#31505c;--fg:#edf7f5;--mut:#9fb3b8;--cyan:#8defff;--gold:#ffc36e;--ok:#b7ff9c;--red:#ff9a8b}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 88% -5%,#173b4b 0,transparent 28%),radial-gradient(circle at 5% 30%,#22151d 0,transparent 22%),linear-gradient(#061017,#08131a);color:var(--fg);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+main{width:min(1120px,94vw);margin:auto;padding:28px 0 100px}.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);font-weight:950;text-transform:uppercase}h1{font-size:clamp(48px,9vw,88px);line-height:.9;margin:12px 0}.lead{max-width:850px;color:#cbd9dc;line-height:1.6;font-size:15px}.tiny{color:var(--mut);font-size:12px;line-height:1.55}
+.section{margin-top:14px;border:1px solid var(--line);background:linear-gradient(180deg,#0f2029,#09161d);border-radius:20px;padding:20px;box-shadow:0 24px 70px #0005}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.card{border:1px solid #2d4c57;background:#09161d;border-radius:16px;padding:15px}.card h3{margin:6px 0}.kpi{display:block;font-size:clamp(28px,5vw,42px);font-weight:900;margin:6px 0}.sim{display:inline-block;padding:4px 7px;border:1px solid #8b6c3f;border-radius:999px;color:#ffe7b5;font-size:9px;font-weight:900}
+.good{color:var(--ok)}.bad{color:var(--red)}.btn{display:inline-flex;text-decoration:none;border:1px solid #4a6771;border-radius:10px;background:#0a1921;color:#fff;padding:11px 12px;font-size:11px;font-weight:900;margin-top:14px}
+.explain{border-left:3px solid var(--gold);background:#17150f;padding:13px 15px;border-radius:8px;font-size:13px;line-height:1.6;color:#e2e5df}
+.donutrow{display:grid;grid-template-columns:180px minmax(0,1fr);gap:20px;align-items:center}.donut{width:170px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#8defff 0 72%,#ffc36e 72% 92%,#5b6f77 92% 100%);position:relative}.donut:after{content:"";width:104px;aspect-ratio:1;border-radius:50%;background:#09161d;position:absolute}.donutlabel{position:relative;z-index:2;text-align:center;font-weight:950;font-size:22px}.donutlabel small{display:block;font-size:9px;color:var(--mut);letter-spacing:.12em}
+.legend{display:grid;gap:9px}.legend div{display:grid;grid-template-columns:12px 1fr auto;gap:9px;align-items:center;font-size:12px}.dot{width:10px;height:10px;border-radius:50%;background:#8defff}.dot.gold{background:#ffc36e}.dot.mut{background:#5b6f77}
+.tier{display:grid;grid-template-columns:100px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #29434c}.tier:last-child{border-bottom:0}.tier .money{font-weight:950;color:#ffe7b5}.track{height:12px;background:#071116;border:1px solid #243b44;border-radius:999px;overflow:hidden}.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#376c7d,#8defff)}.fill.gold{background:linear-gradient(90deg,#775126,#ffc36e)}
+.channels{display:grid;gap:9px}.channel{display:grid;grid-template-columns:150px 80px minmax(0,1fr);gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #29434c}.channel:last-child{border-bottom:0}.channel strong{font-size:12px}.channel .amt{font-weight:950;color:#ffe7b5}.channel .why{font-size:12px;color:#b8c9cc}.mini{height:8px;background:#061017;border-radius:999px;overflow:hidden;margin-top:4px}.mini i{display:block;height:100%;background:linear-gradient(90deg,#315e6d,#8defff);border-radius:999px}
+.fees{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.fee{border:1px solid #2d4c57;border-radius:14px;padding:14px;background:#08151c}.fee b{font-size:24px;display:block;margin:7px 0}.fee span{font-size:11px;color:var(--mut)}
+.funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:end}.step{border:1px solid #31505c;border-radius:14px;padding:12px;text-align:center;background:#08151c}.step b{display:block;font-size:24px;margin:5px 0}.step small{color:var(--mut)}
+.summary{font-size:15px;line-height:1.65;color:#dce8e6}.summary b{color:#fff}
+@media(max-width:760px){.donutrow{grid-template-columns:1fr}.donut{margin:auto}.channel{grid-template-columns:1fr auto}.channel .why{grid-column:1/-1}.funnel{grid-template-columns:1fr 1fr}.tier{grid-template-columns:72px 1fr auto}.section{padding:15px}}
 </style></head>
 <body><main>
-<div class="k">ISL // COMMERCIAL HEALTH // SIMULACIÓN</div>
-<h1>Dinero sin humo.</h1>
-<p class="lead">Aquí no miramos sólo “cuánto podría entrar”. Miramos <b>qué habría que poner antes</b>, qué se gasta durante el lanzamiento, dónde se prueba cada canal y qué señal justificaría seguir metiendo dinero. Todo lo de esta página es <b>SIMULADO · NO FORECAST</b>.</p>
+<div class="k">ISL // DINERO // CAMPAÑAS // PUBLICACIÓN</div>
+<h1>Pasta, pero<br>sin película.</h1>
+<p class="lead">Modelo ultraligero para ISL: <b>asumimos €0 de gasto externo en producción, prototipos, arte, QA, herramientas y documentación</b>. Ese trabajo lo resolvemos internamente. El dinero simulado se reserva casi entero para dos cosas: <b>poder publicar</b> y <b>hacer que la gente descubra el juego</b>.</p>
 
-<section class="grid">
-<article class="card"><span class="sim">SIMULADO</span><h2>Micro · €1k</h2><div class="tiny">Objetivo</div><b class="kpi">Validar</b><div class="tiny">1 prototipo feo + página/clip + 5–10 tests. No “producir el juego”.</div></article>
-<article class="card"><span class="sim">SIMULADO</span><h2>Prueba · €5k</h2><div class="tiny">Objetivo</div><b class="kpi">Demostrar</b><div class="tiny">Vertical mini, playtests, store/press assets mínimos y microcampaña.</div></article>
-<article class="card"><span class="sim">SIMULADO</span><h2>Tracción · €15k</h2><div class="tiny">Objetivo</div><b class="kpi">Medir</b><div class="tiny">Demo más sólida, creator tests, localización/QA básica y funnel medible.</div></article>
-<article class="card"><span class="sim">SIMULADO</span><h2>Producción · €50k+</h2><div class="tiny">Objetivo</div><b class="kpi">Escalar</b><div class="tiny">Sólo si la evidencia anterior justifica producción, arte y lanzamiento más ambicioso.</div></article>
+<section class="section">
+<div class="k">RESUMEN EN CRISTIANO</div>
+<div class="summary"><p><b>Con €1.000</b> no intentamos “hacer un lanzamiento grande”. Pagamos los peajes básicos que hagan falta y usamos el resto para descubrir qué canal trae gente que de verdad se interesa.</p>
+<p><b>Con €5.000</b> ya podemos repetir los canales que funcionen y dejar de gastar en los que sólo generan likes vacíos.</p>
+<p><b>Con €15.000 o €50.000</b> no cambia la filosofía: se amplifica sólo lo que ya haya demostrado señal. El dinero sigue a la evidencia.</p></div>
 </section>
 
 <section class="section">
-<div class="k">1 · ESCALERA DE INVERSIÓN</div><h2>Primero €1k. Si hay señal, €5k. Si vuelve a funcionar, €15k. Después ya hablamos de €50k+.</h2>
-<div class="callout"><b>La inversión no es una apuesta única.</b> Es una escalera con gates. Cada tramo compra evidencia concreta. Si no aparece la señal esperada, no se desbloquea automáticamente el siguiente presupuesto.</div>
-<div class="cols" style="margin-top:14px">
-<div class="rows">
-<div class="row"><b>€75 · Micro</b><span>VALIDAR</span></div>
-<div class="row"><span>Prototipo Danzante/otra hipótesis</span><span>€350</span></div>
-<div class="row"><span>Landing/clip/assets mínimos</span><span>€200</span></div>
-<div class="row"><span>5–10 tests + incentivos/logística</span><span>€250</span></div>
-<div class="row"><span>Herramientas/hosting/imprevistos</span><span>€200</span></div>
+<div class="k">PILARES BÁSICOS DE PUBLICACIÓN · COSTE REAL DE ENTRADA</div><h2>Los peajes de tienda son pequeños comparados con la campaña.</h2>
+<div class="fees">
+<div class="fee"><span>STEAM DIRECT · POR PRODUCTO</span><b>US$100</b><span>Recuperable tras US$1.000 de Adjusted Gross Revenue.</span></div>
+<div class="fee"><span>GOOGLE PLAY · CUENTA</span><b>US$25</b><span>Registro único de la cuenta de desarrollador.</span></div>
+<div class="fee"><span>APPLE DEVELOPER</span><b>US$99/año</b><span>Membresía anual; precio local puede variar.</span></div>
+<div class="fee"><span>EPIC GAMES STORE · POR JUEGO</span><b>US$100</b><span>Submission fee recuperable.</span></div>
+<div class="fee"><span>ITCH.IO</span><b>US$0 entrada</b><span>Revenue share configurable; procesadores de pago aparte.</span></div>
 </div>
-</div>
-<div class="rows">
-<div class="row"><b>€5.000 · Prueba</b><span>DEMOSTRAR</span></div>
-<div class="row"><span>Vertical mini / polish limitado</span><span>€150</span></div>
-<div class="row"><span>QA/playtests + accesibilidad básica</span><span>€50</span></div>
-<div class="row"><span>Store/press kit/trailer corto</span><span>€50</span></div>
-<div class="row"><span>Microcampaña creators/press</span><span>€1.000</span></div>
-<div class="row"><span>Contingencia</span><span>€500</span></div>
-</div></div>
-<div class="cols" style="margin-top:14px">
-<div class="rows">
-<div class="row"><b>€15.000 · Tracción</b><span>MEDIR</span></div>
-<div class="row"><span>Demo sólida / contenido jugable</span><span>€6.000</span></div>
-<div class="row"><span>QA/localización/compatibilidad</span><span>€2.000</span></div>
-<div class="row"><span>Creator + live + short-form tests</span><span>€3.500</span></div>
-<div class="row"><span>Store/analytics/community</span><span>€150</span></div>
-<div class="row"><span>Contingencia</span><span>€2.000</span></div>
-</div>
-</div>
-<div class="rows">
-<div class="row"><b>€50.000+ · Producción</b><span>ESCALAR</span></div>
-<div class="row"><span>Producción/contenido/arte</span><span>€20k+</span></div>
-<div class="row"><span>Engineering/QA/localización</span><span>€8k+</span></div>
-<div class="row"><span>Marketing/lanzamiento</span><span>€10k+</span></div>
-<div class="row"><span>Legal/platform/support</span><span>€4k+</span></div>
-<div class="row"><span>Reserva/contingencia</span><span>€8k+</span></div>
-</div></div>
+<div class="explain" style="margin-top:14px">Para planificar sin obsesionarnos con divisas, impuestos ni qué tiendas usaremos finalmente, reservo una bolsa redonda de <b>~€400–€500</b> para publicación/admin en los escenarios pequeños. Es una <b>reserva de planificación</b>, no una factura real.</div>
 </section>
 
 <section class="section">
-<div class="k">2 · GASTO POR ETAPA, NO POR HUMO</div><h2>Qué debe comprar cada euro.</h2>
+<div class="k">GRÁFICO 1 · DÓNDE IRÍA UN PRESUPUESTO DE €5K</div><h2>Casi todo a visibilidad. Muy poco a peajes.</h2>
+<div class="donutrow">
+<div class="donut"><div class="donutlabel">€5k<small>SIMULADOS</small></div></div>
+<div class="legend">
+<div><span class="dot"></span><span>Campañas / descubrimiento</span><b>€3.600 · 72%</b></div>
+<div><span class="dot gold"></span><span>Publicación / tiendas / admin</span><b>€1.000 · 20%</b></div>
+<div><span class="dot mut"></span><span>Reserva para repetir lo que funcione</span><b>€400 · 8%</b></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="k">GRÁFICO 2 · ESCALERA DE DINERO</div><h2>No comprometemos €50k el día uno.</h2>
+<div class="tier"><b>Micro</b><div><div class="track"><div class="fill" style="width:2%"></div></div><div class="tiny">Publicar lo mínimo + primeras pruebas de canal.</div></div><span class="money">€1k</span></div>
+<div class="tier"><b>Prueba</b><div><div class="track"><div class="fill" style="width:10%"></div></div><div class="tiny">Repetir 2–3 canales que enseñen señal.</div></div><span class="money">€5k</span></div>
+<div class="tier"><b>Tracción</b><div><div class="track"><div class="fill" style="width:30%"></div></div><div class="tiny">Más volumen sólo si ya vemos visitas, wishlist/demo y replies.</div></div><span class="money">€15k</span></div>
+<div class="tier"><b>Escala</b><div><div class="track"><div class="fill gold" style="width:100%"></div></div><div class="tiny">Campaña grande sólo con producto + canal demostrados.</div></div><span class="money">€50k</span></div>
+</section>
+
+<section class="section">
+<div class="k">CAMPAÑA SIMULADA · TRAMO €1K</div><h2>Una primera bala pequeña para aprender.</h2>
+<div class="channels">
+<div class="channel"><strong>Publicación/admin</strong><span class="amt">€400</span><div class="why">Reserva para Steam / Play / Apple / Epic según plataformas finalmente activadas.<div class="mini"><i style="width:40%"></i></div></div></div>
+<div class="channel"><strong>YouTube creators</strong><span class="amt">€180</span><div class="why">Microcreators con fit alto. Queremos clicks, demo/store actions y replies.<div class="mini"><i style="width:18%"></i></div></div></div>
+<div class="channel"><strong>TikTok / Shorts</strong><span class="amt">€120</span><div class="why">Testear hooks baratos: ¿qué imagen o idea hace parar el scroll?<div class="mini"><i style="width:12%"></i></div></div></div>
+<div class="channel"><strong>Paid social</strong><span class="amt">€100</span><div class="why">Sólo para comparar creatividades y coste por visita cualificada.<div class="mini"><i style="width:10%"></i></div></div></div>
+<div class="channel"><strong>Press / newsletters</strong><span class="amt">€50</span><div class="why">La mayoría del trabajo es outreach manual; presupuesto mínimo para herramientas/activos.<div class="mini"><i style="width:5%"></i></div></div></div>
+<div class="channel"><strong>Twitch / live</strong><span class="amt">€50</span><div class="why">Microtests y activaciones pequeñas, no compra de alcance grande.<div class="mini"><i style="width:5%"></i></div></div></div>
+<div class="channel"><strong>Reserva</strong><span class="amt">€100</span><div class="why">No se gasta hasta que algún canal demuestre señal.<div class="mini"><i style="width:10%"></i></div></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="k">CAMPAÑA SIMULADA · TRAMO €5K</div><h2>Más claro: publicar, probar, doblar donde funciona.</h2>
+<div class="channels">
+<div class="channel"><strong>Publicación/admin</strong><span class="amt">€1.000</span><div class="why">Bolsa amplia para varias tiendas, impuestos/variación de divisa y pequeñas necesidades de lanzamiento.<div class="mini"><i style="width:20%"></i></div></div></div>
+<div class="channel"><strong>YouTube / creators</strong><span class="amt">€1.150</span><div class="why">Principal canal experimental si el fit es bueno.<div class="mini"><i style="width:23%"></i></div></div></div>
+<div class="channel"><strong>Short-form</strong><span class="amt">€750</span><div class="why">Variaciones de clips y hooks con medición.<div class="mini"><i style="width:15%"></i></div></div></div>
+<div class="channel"><strong>Paid social</strong><span class="amt">€650</span><div class="why">No “comprar fama”: medir coste por visita/wishlist de cada ángulo.<div class="mini"><i style="width:13%"></i></div></div></div>
+<div class="channel"><strong>Twitch / live</strong><span class="amt">€450</span><div class="why">Pequeños creadores / sesiones concretas / feedback visible.<div class="mini"><i style="width:9%"></i></div></div></div>
+<div class="channel"><strong>Press/newsletters</strong><span class="amt">€300</span><div class="why">Herramientas, outreach y acciones muy selectivas.<div class="mini"><i style="width:6%"></i></div></div></div>
+<div class="channel"><strong>Community</strong><span class="amt">€300</span><div class="why">Discord/Reddit/comunidad, manual y sin spam.<div class="mini"><i style="width:6%"></i></div></div></div>
+<div class="channel"><strong>Reserva ganadora</strong><span class="amt">€400</span><div class="why">Se reasigna al canal que dé mejor señal, no al que tenga más impresiones.<div class="mini"><i style="width:8%"></i></div></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="k">GRÁFICO 3 · EMBUDO QUE QUEREMOS MIRAR</div><h2>No nos emocionamos con impresiones.</h2>
+<div class="funnel">
+<div class="step"><small>1 · ALCANCE</small><b>👀</b><span class="tiny">Gente que ve algo</span></div>
+<div class="step"><small>2 · INTERÉS</small><b>↗</b><span class="tiny">Visita cualificada</span></div>
+<div class="step"><small>3 · INTENCIÓN</small><b>♡</b><span class="tiny">Wishlist / demo / follow</span></div>
+<div class="step"><small>4 · VALOR</small><b>€</b><span class="tiny">Compra / supporter / comunidad</span></div>
+</div>
+<div class="explain" style="margin-top:14px">La métrica reina al principio no es “cuánta gente nos vio”, sino <b>cuánto cuesta conseguir una visita que realmente entiende ISL y qué porcentaje de esas visitas deja una señal de intención</b>.</div>
+</section>
+
+<section class="section">
+<div class="k">DECISIÓN SIMPLE</div>
+<h2>Qué haría con cada escalón.</h2>
 <div class="grid">
-<article class="card"><div class="tiny">€1k</div><b class="kpi">¿Funciona?</b><div class="tiny">Interacción + legibilidad + primeras reacciones humanas.</div></article>
-<article class="card"><div class="tiny">€5k</div><b class="kpi">¿Convence?</b><div class="tiny">¿La demo genera intención de seguir, compartir o wishlist?</div></article>
-<article class="card"><div class="tiny">€15k</div><b class="kpi">¿Tracciona?</b><div class="tiny">Canales reales, creator replies, store actions y señales repetibles.</div></article>
-<article class="card"><div class="tiny">€50k+</div><b class="kpi">¿Escala?</b><div class="tiny">Sólo con evidencia de producto + canal + operaciones.</div></article>
+<div class="card"><span class="sim">€1K</span><h3>Aprender</h3><span class="kpi">7 días</span><div class="tiny">Poner presencia mínima en tienda(s) y lanzar microtests de mensajes/canales.</div></div>
+<div class="card"><span class="sim">€5K</span><h3>Repetir</h3><span class="kpi">2–4 canales</span><div class="tiny">Eliminar ruido y repetir los 2–4 canales con señal real.</div></div>
+<div class="card"><span class="sim">€15K</span><h3>Acelerar</h3><span class="kpi">Sólo si</span><div class="tiny">Hay wishlist/demo/replies suficientes para justificar más volumen.</div></div>
+<div class="card"><span class="sim">€50K</span><h3>Escalar</h3><span class="kpi">Después</span><div class="tiny">No se desbloquea por entusiasmo; se desbloquea por evidencia.</div></div>
 </div>
 </section>
 
-<section class="section">
-<div class="k">3 · ESCENARIOS DE FINANCIACIÓN</div><h2>Qué desbloquea cada tramo y qué evidencia exige antes de subir.</h2>
-<div class="tablewrap"><table class="table"><thead><tr><th>Tramo</th><th>Presupuesto</th><th>Qué compra</th><th>Gate para subir</th><th>Estado</th></tr></thead><tbody>
-<tr><td>Micro</td><td>€1.000</td><td>Prototipo + tests</td><td>Interacción entendida + señal humana</td><td>ACTIVO AHORA</td></tr>
-<tr><td>Prueba</td><td>€5.000</td><td>Vertical mini + assets + microcampaña</td><td>Retención/intención + señales de canal</td><td>CONDICIONAL</td></tr>
-<tr><td>Tracción</td><td>€15.000</td><td>Demo sólida + funnel + creator tests</td><td>Conversión/replies/wishlist suficientes</td><td>CONDICIONAL</td></tr>
-<tr><td>Producción</td><td>€50.000+</td><td>Contenido + engineering + lanzamiento</td><td>Producto/canal/ops validados</td><td>NO DESBLOQUEADO</td></tr>
-</tbody></table></div>
-<div class="tiny">Esto no sustituye presupuesto real, presupuestos de proveedores, impuestos ni términos de tienda. Es una escalera de decisión.</div>
-</section>
-
-<section class="section">
-<div class="k">4 · CAMPAÑAS SIMULADAS POR TRAMO</div><h2>No gastamos €12k de golpe: primero tests pequeños por canal.</h2>
-<div class="callout">Ejemplo: en el tramo <b>€5k</b>, reservar ~€1k a campaña. Si algún canal demuestra señal, el tramo <b>€15k</b> puede subir marketing a ~€3,5k. La inversión sigue a la evidencia.</div>
-<div class="campaign"><strong>YouTube creators</strong><span class="amt">€250</span><span class="goal">8–12 micro/mid creators · 80k–200k views</span><span class="metric">visitas + wishlist/demo</span></div>
-<div class="bar"><i style="width:25%"></i></div>
-<div class="campaign"><strong>Twitch</strong><span class="amt">€150</span><span class="goal">6–10 streams · 20k–60k live+VOD views</span><span class="metric">demo plays + follows/wishlist</span></div>
-<div class="bar"><i style="width:15%"></i></div>
-<div class="campaign"><strong>Press / PR indie</strong><span class="amt">€100</span><span class="goal">20–35 contactos cualificados</span><span class="metric">coverage + backlinks + discovery</span></div>
-<div class="bar"><i style="width:10%"></i></div>
-<div class="campaign"><strong>TikTok / Reels / Shorts</strong><span class="amt">€1.500</span><span class="goal">15–25 tests de clips · 100k–300k impresiones</span><span class="metric">hook testing + visitas</span></div>
-<div class="bar"><i style="width:15%"></i></div>
-<div class="campaign"><strong>Paid social tests</strong><span class="amt">€2.000</span><span class="goal">tests de creatividades/ángulos</span><span class="metric">CTR + coste por visita cualificada</span></div>
-<div class="bar"><i style="width:15%"></i></div>
-<div class="campaign"><strong>Steam/store assets</strong><span class="amt">€1.000</span><span class="goal">capsule/trailer/page experiments</span><span class="metric">wishlist conversion</span></div>
-<div class="bar"><i style="width:7.5%"></i></div>
-<div class="campaign"><strong>Podcasts/newsletters</strong><span class="amt">€800</span><span class="goal">6–12 placements nicho</span><span class="metric">high-intent discovery</span></div>
-<div class="bar"><i style="width:2.5%"></i></div>
-<div class="campaign"><strong>Discord/Reddit/community</strong><span class="amt">€25</span><span class="goal">seeding manual y relación</span><span class="metric">señal cualitativa + retención</span></div>
-<div class="bar"><i style="width:5%"></i></div>
-<div class="campaign"><strong>Contingencia</strong><span class="amt">€700</span><span class="goal">reserva</span><span class="metric">mover dinero hacia lo que demuestre señal</span></div>
-<div class="bar"><i style="width:5%"></i></div>
-</section>
-
-<section class="section">
-<div class="k">5 · FUNNEL SIMULADO</div><h2>Qué tendría que empezar a ocurrir para justificar más gasto.</h2>
-<div class="grid">
-<article class="card"><div class="tiny">Visitas cualificadas</div><b class="kpi">500–2k</b><div class="tiny">No tráfico vacío: gente que llega por un ángulo que entiende.</div></article>
-<article class="card"><div class="tiny">Demo/store actions</div><b class="kpi">150–700</b><div class="tiny">Descarga demo, visita profunda, seguimiento o equivalente.</div></article>
-<article class="card"><div class="tiny">Wishlists/equivalente</div><b class="kpi">80–400</b><div class="tiny">Objetivo exploratorio, no predicción.</div></article>
-<article class="card"><div class="tiny">Replies creator/press</div><b class="kpi">3–10</b><div class="tiny">Respuestas útiles, no sólo aperturas o likes.</div></article>
-</div>
-</section>
-
-<section class="section">
-<div class="k">6 · GRÁFICO · ESCALERA DE INVERSIÓN</div><h2>Capital comprometido sólo si el gate anterior responde.</h2>
-<div class="rows">
-<div><div class="row"><span>Micro</span><span>€1k</span></div><div class="bar"><i style="width:2%"></i></div></div>
-<div><div class="row"><span>Prueba</span><span>€5k</span></div><div class="bar"><i style="width:10%"></i></div></div>
-<div><div class="row"><span>Tracción</span><span>€15k</span></div><div class="bar"><i style="width:30%"></i></div></div>
-<div><div class="row"><span>Producción</span><span>€50k+</span></div><div class="bar"><i style="width:100%"></i></div></div>
-</div>
-<div class="tiny">Escala relativa tomando €50k como referencia visual. No implica que haya que llegar a ese tramo.</div>
-</section>
-
-<section class="section">
-<div class="k">READINESS C0–C6</div><h2>Cuándo estas cifras empiezan a valer más que una hipótesis.</h2>
-<p class="tiny">C0 derechos inciertos → C1 derechos/valor claros → C2 canal/modelo → C3 unit economics simulados → C4 checkout/distribución probados → C5 venta/soporte/analytics reales → C6 sistema repetible/escalable.</p>
-<p class="tiny"><b>Regla:</b> antes de subir presupuesto, pedir evidencia. Antes de subir arte, pedir evidencia. Antes de subir outreach, pedir evidencia.</p>
-</section>
+<div class="tiny" style="margin-top:16px">Fuentes de tarifas verificadas: Steamworks, Apple Developer, Google Play Console, Epic Games Store Distribution e itch.io. Importes oficiales pueden variar por divisa, impuestos, región y condiciones vigentes. Los repartos de campaña son hipótesis de trabajo ISL, no previsiones.</div>
 <a class="btn" href="/">← VOLVER A ISL</a>
 </main></body></html>
