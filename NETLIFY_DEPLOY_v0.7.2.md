@@ -44,5 +44,13 @@ Motivo:
 Fecha: 2026-09-19
 Motivo:
 - sustituir el fantasma provisional por el recorte exacto de la lámina aprobada por el autor;
-- publicar ghost-reference-exact.jpg en la allowlist pública;
+- publicar ghost-reference-exact-hd.webp en la allowlist pública;
 - mantener la encuesta Referencias Lite v2 con el mismo instrumento v0.69-lite-visual.
+
+
+## Release trigger · v0.69.5 HD ghost repair
+Fecha: 2026-09-19
+Motivo:
+- sustituir blob truncado/pixelado por ghost-reference-exact-hd.webp 1200x688;
+- render sin aspect-ratio forzado;
+- mantener el mismo estímulo visual, sólo corregir calidad.
