@@ -80,7 +80,7 @@ jobs:
           REPO: ${{ github.repository }}
         run: |
           set -Eeuo pipefail
-          json="$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$REPO/actions/workflows/build-web-preview.yml/runs?branch=main&per_page=1")"
+          json="$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" "https://api.github.com/repos/$REPO/actions/workflows/build-web-preview.yml/runs?branch=main&status=success&per_page=1")"
           status="$(printf '%s' "$json" | jq -r '.workflow_runs[0].status // "missing"')"
           conclusion="$(printf '%s' "$json" | jq -r '.workflow_runs[0].conclusion // "missing"')"
           pages_sha="$(printf '%s' "$json" | jq -r '.workflow_runs[0].head_sha // "missing"')"
