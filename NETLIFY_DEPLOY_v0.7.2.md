@@ -79,3 +79,7 @@ RELEASE 2026-09-19T17:45Z
 - add copy-to-ChatGPT survey summary
 - publish Commercial Health simulated-money view
 - ship exact HD ghost asset
+
+RELEASE 2026-09-19T17:50Z
+- show survey aggregate results inline
+- demote Netlify to technical-detail link
