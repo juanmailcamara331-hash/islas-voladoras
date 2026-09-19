@@ -38,7 +38,7 @@ global_pages=[
  "isla-baile-inagotable.html","recreo.html","capsulas.html","capsulas-tv.html",
  "musica.html","ps4.html","air-fishing.html","avisos.html","boss-prototype.html",
  "decision-engine.html","midjourney-lab.html","ningun-sitio.html","playtest-echo.html",
- "reel.html","secret-level.html","storm-route.html","sunday-market.html","encuestas.html"
+ "reel.html","secret-level.html","storm-route.html","sunday-market.html","encuestas.html","survey-results.html"
 ]
 for rel in global_pages:
     p=ROOT/rel
@@ -77,7 +77,8 @@ survey=(ROOT/"encuestas.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["PRUEBA CON COLEGAS","pilares-lite-v2.html","referencias-lite-v2.html","app.netlify.com/sites/islas-voladoras-isl/forms"]:
     if token not in survey: errors.append(f"survey hub missing: {token}")
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
-if "Encuestas" not in shell or "encuestas.html" not in shell: errors.append("global shell survey access missing")
+if "Encuestas" not in shell or "survey-results.html" not in shell: errors.append("global shell survey access missing")
+if shell.count("['Encuestas'") != 1: errors.append("global shell must expose exactly one Encuestas item")
 
 if errors:
     print("ISL NAVIGATION/LINK GATE FAILED")
