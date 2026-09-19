@@ -67,7 +67,7 @@
 
 [[redirects]]
   from = "/referencias"
-  to = "/poll/referencias-lite-v2.html"
+  to = "/poll/referencias-lite-v2.html?v=0713"
   status = 302
 
 [[redirects]]
@@ -84,3 +84,9 @@
   for = "/assets/ghost-reference-mobile.jpg"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/poll/referencias-lite-v2.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Netlify-CDN-Cache-Control = "no-store"
