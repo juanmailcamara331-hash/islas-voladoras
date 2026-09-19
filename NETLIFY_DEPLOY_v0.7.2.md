@@ -99,3 +99,9 @@ RELEASE 2026-09-19T18:20Z
 - Lite v2 remains reset at zero for clean testing
 - Commercial Health switches to staged €1k → €5k → €15k → €50k+ investment ladder
 - proof-tranche campaign reduced to €1k simulated test budget
+
+RELEASE 2026-09-19T18:35Z
+- add live anonymous survey aggregate endpoint
+- mirror Lite v2 submissions to live aggregate store
+- make survey results refresh truly live
+- preserve full questions, options, vote counts and open answers
