@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.67",
+  "schema_version": "0.67.1",
   "policy": "default_private",
   "public": [
     "public-site/index.html",
@@ -9,7 +9,8 @@
     "portal/poll/referencias-amigos.html",
     "portal/poll/pilares-lite-v2.html",
     "portal/poll/referencias-lite-v2.html",
-    "portal/poll/gracias.html"
+    "portal/poll/gracias.html",
+    "portal/survey-results.html"
   ],
   "private_patterns": [
     "portal/index.html",
