@@ -1,5 +1,5 @@
 {
-  "schema": "isl.knowledge.health.v0.3",
+  "schema": "isl.knowledge.health.v0.4",
   "generated_at": "2026-09-19",
   "scope": "ISL",
   "inventory": {
@@ -367,6 +367,84 @@
           "minimum_only": true
         }
       ]
-    }
+    },
+    "assumption": "AI_FIRST_INTERNAL_PRODUCTION_COST_ZERO_FOR_SIMULATION",
+    "cash_scope": [
+      "store/platform publication fees",
+      "campaigns and discovery",
+      "small launch/admin reserve"
+    ],
+    "external_production_costs_assumed_eur": 0,
+    "platform_fee_reference": {
+      "steam": {
+        "fee_usd": 100,
+        "basis": "per product",
+        "recoupable_after_adjusted_gross_usd": 1000,
+        "source": "Steamworks"
+      },
+      "google_play": {
+        "fee_usd": 25,
+        "basis": "one-time developer registration",
+        "source": "Google Play Console"
+      },
+      "apple": {
+        "fee_usd": 99,
+        "basis": "annual developer program membership",
+        "source": "Apple Developer"
+      },
+      "epic_games_store": {
+        "fee_usd": 100,
+        "basis": "per game",
+        "recoupable": true,
+        "source": "Epic Games Store Distribution"
+      },
+      "itch": {
+        "fee_usd": 0,
+        "basis": "no upfront platform fee; revenue share configurable",
+        "source": "itch.io"
+      }
+    },
+    "campaign_ladder": [
+      {
+        "budget_eur": 1000,
+        "label": "Micro",
+        "publication_admin_eur": 400,
+        "campaigns_eur": 500,
+        "reserve_eur": 100,
+        "goal": "learn which channel creates qualified intent"
+      },
+      {
+        "budget_eur": 5000,
+        "label": "Proof",
+        "publication_admin_eur": 1000,
+        "campaigns_eur": 3600,
+        "reserve_eur": 400,
+        "goal": "repeat 2–4 channels with real signal"
+      },
+      {
+        "budget_eur": 15000,
+        "label": "Traction",
+        "publication_admin_eur": 1500,
+        "campaigns_eur": 12000,
+        "reserve_eur": 1500,
+        "goal": "scale channels with measured conversion"
+      },
+      {
+        "budget_eur": 50000,
+        "label": "Scale",
+        "publication_admin_eur": 2500,
+        "campaigns_eur": 43000,
+        "reserve_eur": 4500,
+        "goal": "large launch only after product-channel evidence"
+      }
+    ],
+    "primary_funnel": [
+      "reach",
+      "qualified visit",
+      "wishlist/demo/follow",
+      "purchase/support/community"
+    ],
+    "primary_metric": "cost per qualified visit + conversion to wishlist/demo/follow",
+    "note": "Campaign allocations are simulated hypotheses, not forecasts. Platform fees are reference facts and may vary by currency, tax, region, or policy changes."
   }
 }
