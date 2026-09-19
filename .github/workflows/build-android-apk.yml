@@ -87,9 +87,11 @@ jobs:
           test -s android-web/app/src/main/res/values/colors.xml
           grep -q 'android:roundIcon="@mipmap/ic_launcher_round"' android-web/app/src/main/AndroidManifest.xml
           grep -q '@color/isl_launcher_bg' android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
-          grep -q '@drawable/isl_launcher' android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+          grep -q '@drawable/isl_launcher_foreground_vector' android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
           grep -q '#071017' android-web/app/src/main/res/values/colors.xml
-          echo "adaptive ISL launcher: dark background + full-scale foreground OK"
+          test -s android-web/app/src/main/res/drawable/isl_launcher_foreground_vector.xml
+          ! grep -q 'M0,0h108v108h-108z' android-web/app/src/main/res/drawable/isl_launcher_foreground_vector.xml
+          echo "adaptive ISL launcher: dark background + transparent foreground OK"
           grep -q 'setBuiltInZoomControls(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'setSupportZoom(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'setUseWideViewPort(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
