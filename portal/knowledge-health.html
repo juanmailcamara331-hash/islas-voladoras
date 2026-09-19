@@ -16,6 +16,8 @@ h1{font:700 clamp(36px,7vw,76px)/.95 Georgia,serif;color:var(--ink);margin:8px 0
 .pill{border:1px solid #3a5863;border-radius:999px;padding:5px 9px;font-size:10px}.ok{color:var(--ok)}.bad{color:var(--bad)}
 ol{margin:8px 0 0;padding-left:20px}li{margin:8px 0;line-height:1.4}.tiny{font-size:10px;color:var(--muted)}
 @media(max-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.cols{grid-template-columns:1fr}.row{grid-template-columns:110px 1fr auto}.card b{font-size:25px}}
+
+.heat{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.heatCell{border:1px solid #2f4f5b;border-radius:12px;padding:12px;background:#09171e}.heatCell b{display:block;font-size:22px;color:var(--ink)}.heatCell span{font-size:9px;color:var(--muted);line-height:1.3}.tierGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.tier{border:1px solid #355562;border-radius:12px;padding:12px;background:#0a1820}.tier b{font-size:20px}.tier small{display:block;color:var(--muted);margin-top:4px}.simMark{font-size:8px;letter-spacing:.12em;color:var(--gold);font-weight:900}@media(max-width:760px){.heat{grid-template-columns:repeat(2,1fr)}.tierGrid{grid-template-columns:repeat(2,1fr)}}
 </style>
 <link rel="stylesheet" href="isl-global-shell.css">
 </head><body><main>
@@ -28,6 +30,8 @@ ol{margin:8px 0 0;padding-left:20px}li{margin:8px 0;line-height:1.4}.tiny{font-s
 <section class="section"><div class="eyebrow">GATES</div><div id="gates"></div></section>
 </div>
 <section class="section islP0"><div class="eyebrow">P0 · PRIORIDADES</div><ol id="priorities"></ol></section>
+<section class="section islP1"><div class="eyebrow">P1 · HEATMAP DE PESOS</div><div class="simMark">SIMULADO · NO BENCHMARK REAL</div><div class="heat" id="weightsHeat" style="margin-top:12px"></div></section>
+<section class="section islP1"><div class="eyebrow">P1 · TIERS DE PLATAFORMA</div><div class="tierGrid" id="tierGrid" style="margin-top:12px"></div></section>
 <section class="section islP3"><div class="eyebrow">P3 · LECTURA DEL SNAPSHOT</div><p class="sub">R0 = referencia · R1 = precursor conceptual · R2 = precursor estructural · R3 = listo para fabricar precursor técnico · R4 = input técnico para servicio concreto · R5 = validado en destino.</p><p class="tiny">Fuente: portal/data/isl-knowledge-health-v0.1.json</p></section>
 </main>
 <script>
@@ -36,9 +40,12 @@ fetch('data/isl-knowledge-health-v0.1.json').then(r=>r.json()).then(d=>{
  const order=['R0','R1','R2','R3','R4','R5'];
  document.getElementById('readiness').innerHTML=order.map(k=>'<div class="card"><b>'+d.readiness[k]+'</b><span>'+k+'</span></div>').join('');
  document.getElementById('bars').innerHTML=order.map(k=>{const n=d.readiness[k],p=Math.round(n/total*100);return '<div class="row"><strong>'+k+'</strong><div class="bar"><div class="fill" style="width:'+p+'%"></div></div><span>'+p+'%</span></div>'}).join('');
- const labels={external_to_canon_direct:'External → CANON directo',require_provenance:'Provenance',require_destination_contract:'Contrato destino',require_accessibility_assessment:'Accesibilidad',require_crossplay_assessment:'Crossplay',require_human_evidence_before_canon:'Evidencia humana',require_binary_validation_for_critical_assets:'Validación binaria',require_deploy_commit_match:'Deploy = commit'};
+ const labels={external_to_canon_direct:'External → CANON directo',require_provenance:'Provenance',require_destination_contract:'Contrato destino',require_accessibility_assessment:'Accesibilidad',require_crossplay_assessment:'Crossplay',require_human_evidence_before_canon:'Evidencia humana',require_binary_validation_for_critical_assets:'Validación binaria',require_deploy_commit_match:'Deploy = commit',physical_mobile_ghost_check:'Fantasma físico móvil',android_launcher_physical_pass:'Icono Android físico',netlify_production_synced:'Netlify producción'};
  document.getElementById('gates').innerHTML=Object.entries(d.gates).map(([k,v])=>'<div class="row"><strong>'+labels[k]+'</strong><div></div><span class="pill '+((k==='external_to_canon_direct'&&!v)||(k!=='external_to_canon_direct'&&v)?'ok':'bad')+'">'+(v?'ON':'OFF')+'</span></div>').join('');
  document.getElementById('priorities').innerHTML=d.priorities.map(x=>'<li>'+x+'</li>').join('');
+ const wn={gameplay:'Jugabilidad',phenomenology_legibility:'Fenomenología / legibilidad',accessibility:'Accesibilidad',compatibility:'Compatibilidad',performance:'Rendimiento',production_maintainability:'Producción / mantenimiento'};
+ document.getElementById('weightsHeat').innerHTML=Object.entries(d.platform_model.weights).map(([k,v])=>'<div class="heatCell"><b>'+v+'%</b><span>'+wn[k]+'</span></div>').join('');
+ document.getElementById('tierGrid').innerHTML=Object.entries(d.platform_model.tiers).map(([k,v])=>'<div class="tier"><span class="simMark">'+k+'</span><b>'+v.fps+' FPS</b><small>'+v.label+'</small></div>').join('');
 }).catch(()=>{document.getElementById('readiness').innerHTML='<div class="card"><b>!</b><span>Snapshot no disponible</span></div>'});
 </script>
 <script src="isl-global-shell.js"></script>
