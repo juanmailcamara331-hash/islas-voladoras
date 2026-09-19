@@ -106,5 +106,51 @@
         "state": "SIMULATED_TARGET"
       }
     ]
+  },
+  "commercial_model": {
+    "readiness_scale": {
+      "C0": "rights unclear",
+      "C1": "rights clear/value identified",
+      "C2": "channel/model candidate",
+      "C3": "pricing/unit economics simulated",
+      "C4": "checkout/distribution tested",
+      "C5": "real sale + analytics/support",
+      "C6": "repeatable/scalable"
+    },
+    "default_thesis": [
+      "premium indie game",
+      "free demo/public experience",
+      "deluxe/supporter + OST/artbook",
+      "meaningful expansions",
+      "direct/itch supporter optional",
+      "B2B licensing/assets/methodology selective",
+      "blockchain collectible/provenance optional only"
+    ],
+    "weights": {
+      "player_value": 25,
+      "brand_ip": 15,
+      "margin": 15,
+      "conversion_potential": 10,
+      "platform_compatibility": 10,
+      "operations": 10,
+      "legal_rights_risk": 10,
+      "reversibility": 5
+    },
+    "channels": [
+      "Steam",
+      "Epic Games Store",
+      "itch.io",
+      "Apple App Store",
+      "Google Play",
+      "Direct Web/Stripe",
+      "Console storefronts when authorized"
+    ],
+    "blockchain": {
+      "status": "OPTIONAL_EXPERIMENTAL",
+      "gameplay_critical": false,
+      "wallet_required": false,
+      "pay_to_win": false,
+      "legal_review_required": true
+    }
   }
 }
