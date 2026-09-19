@@ -59,3 +59,18 @@
 # Public Netlify serves only the explicit allowlist produced by netlify-public-build.sh.
 # The Android app remains on its existing Pages URL until PRIVATE_WEB_GREEN.
 
+
+[[redirects]]
+  from = "/pilares"
+  to = "/poll/pilares-lite-v2.html"
+  status = 302
+
+[[redirects]]
+  from = "/referencias"
+  to = "/poll/referencias-lite-v2.html"
+  status = 302
+
+[[redirects]]
+  from = "/encuestas-resultados"
+  to = "/survey-results.html"
+  status = 302
