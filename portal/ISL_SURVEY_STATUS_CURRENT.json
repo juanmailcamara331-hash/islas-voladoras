@@ -1,28 +1,30 @@
 {
-  "version": "0.71.0",
-  "checked_at": "2026-09-19T18:08:00Z",
+  "version": "0.71.1",
+  "checked_at": "2026-09-19T18:18:00Z",
   "source": "netlify-forms",
   "forms": [
     {
       "name": "isl-pillars-lite-v2",
       "form_id": "6aadb9a273e16100084acfba",
-      "submission_count": 0,
-      "evidence_note": "Reset for fresh test round on 2026-09-19."
+      "submission_count": 1,
+      "evidence_note": "Fresh post-reset test response received; live aggregate seeded with this anonymous response."
     },
     {
       "name": "isl-reference-lite-v2",
       "form_id": "6aadb9a273e16100084acfbd",
-      "submission_count": 0,
-      "evidence_note": "Reset for fresh test round on 2026-09-19."
+      "submission_count": 1,
+      "evidence_note": "Fresh post-reset test response received; live aggregate seeded with this anonymous response."
     }
   ],
   "provisional_signals": {
     "pillars": [
-      "No evidence after reset."
+      "1 fresh post-reset response: exploracion; tripulacion; humor-extraño; no-entender.",
+      "Too small for synthesis."
     ],
     "references": [
-      "No evidence after reset."
+      "1 fresh post-reset response: visual; presencia-espectral; recurrente.",
+      "Too small for synthesis."
     ]
   },
-  "note": "Both Lite v2 forms reset to zero submissions for a fresh test round. Netlify Forms remains source of truth. No personal/network identifiers stored here."
+  "note": "Fresh test round active. Live aggregate endpoint now mirrors future Lite v2 submissions anonymously; Netlify Forms remains backup source of truth."
 }
