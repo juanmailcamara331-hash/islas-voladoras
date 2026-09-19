@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- ISL launcher pin: keep custom isl_launcher_final for app + round icon -->
     <application
         android:allowBackup="true"
         android:usesCleartextTraffic="false"
