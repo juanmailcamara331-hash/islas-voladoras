@@ -80,11 +80,16 @@ jobs:
           grep -q "juanmailcamara331-hash.github.io/islas-voladoras" android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'app=1' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q "com.pandaria.islasvoladoras" android-web/app/build.gradle
-          grep -q '@drawable/isl_launcher' android-web/app/src/main/AndroidManifest.xml
+          grep -q '@mipmap/ic_launcher' android-web/app/src/main/AndroidManifest.xml
           test -s android-web/app/src/main/res/drawable/isl_launcher.xml
-          grep -q 'android:roundIcon="@drawable/isl_launcher"' android-web/app/src/main/AndroidManifest.xml
-          grep -q '#071017' android-web/app/src/main/res/drawable/isl_launcher.xml
-          echo "full-bleed dark ISL vector launcher: OK"
+          test -s android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+          test -s android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+          test -s android-web/app/src/main/res/values/colors.xml
+          grep -q 'android:roundIcon="@mipmap/ic_launcher_round"' android-web/app/src/main/AndroidManifest.xml
+          grep -q '@color/isl_launcher_bg' android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+          grep -q '@drawable/isl_launcher' android-web/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+          grep -q '#071017' android-web/app/src/main/res/values/colors.xml
+          echo "adaptive ISL launcher: dark background + full-scale foreground OK"
           grep -q 'setBuiltInZoomControls(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'setSupportZoom(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'setUseWideViewPort(false)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
