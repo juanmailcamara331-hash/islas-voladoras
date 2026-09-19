@@ -74,3 +74,13 @@
   from = "/encuestas-resultados"
   to = "/survey-results.html"
   status = 302
+
+[[headers]]
+  for = "/assets/ghost-reference-exact-hd.webp"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/assets/ghost-reference-mobile.jpg"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
