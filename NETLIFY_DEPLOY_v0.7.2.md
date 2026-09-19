@@ -116,3 +116,8 @@ RELEASE 2026-09-19T20:30+02:00
 - add short WhatsApp-safe survey routes /pilares and /referencias
 - recover malformed/trailing survey paths from public 404
 - adaptive Android icon uses transparent foreground over native dark background
+
+RELEASE 2026-09-19T20:40+02:00
+- remove broken public preload from Referencias survey
+- add WebP ghost with JPG fallback and eager loading
+- disable ghost asset caching during validation
