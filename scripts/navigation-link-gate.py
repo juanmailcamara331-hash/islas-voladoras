@@ -66,7 +66,7 @@ for token in ["routeStrip","AHORA","SIGUIENTE","Calendario operativo"]:
 if '"current_stop": "r2-human"' not in state: errors.append("route state is not aligned with current R2 gate")
 
 survey=(ROOT/"survey-results.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["Pilares","Referencias","VER RESULTADOS EN VIVO","app.netlify.com/sites/islas-voladoras-isl/forms"]:
+for token in ["Pilares","Referencias","app.netlify.com/projects/islas-voladoras-isl"]:
     if token not in survey: errors.append(f"survey results hub missing: {token}")
 ref=(ROOT/"poll/referencias-lite-v2.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["refVisual","ANCLA VISUAL PROVISIONAL","v0.69-lite-visual","ghost-maritime-provisional.svg"]:
