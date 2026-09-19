@@ -1,35 +1,28 @@
 {
-  "version": "0.70.9",
-  "checked_at": "2026-09-19T17:31:00Z",
+  "version": "0.71.0",
+  "checked_at": "2026-09-19T18:08:00Z",
   "source": "netlify-forms",
   "forms": [
     {
       "name": "isl-pillars-lite-v2",
       "form_id": "6aadb9a273e16100084acfba",
-      "submission_count": 4,
-      "evidence_note": "Four total records; at least one near-identical pair remains. Treat as small/partly duplicated evidence, not four independent respondents."
+      "submission_count": 0,
+      "evidence_note": "Reset for fresh test round on 2026-09-19."
     },
     {
       "name": "isl-reference-lite-v2",
       "form_id": "6aadb9a273e16100084acfbd",
-      "submission_count": 3,
-      "evidence_note": "Three total records; small sample. Directional only."
+      "submission_count": 0,
+      "evidence_note": "Reset for fresh test round on 2026-09-19."
     }
   ],
   "provisional_signals": {
     "pillars": [
-      "humor-extraño appears in all 4 submissions",
-      "idea-poco-juego appears as concern in all 4 submissions",
-      "barco-hogar appears in 2/4; tripulacion in 1/4; tono in 1/4 as tiron",
-      "que_es: mezcla appears in 3/4; reencuentro in 1/4",
-      "at least one near-identical pair means raw n is not independent n"
+      "No evidence after reset."
     ],
     "references": [
-      "presencia-espectral appears in 2/3 submissions",
-      "amenaza-comedia appears in 1/3",
-      "entry modes currently include recurrente, regla and tono",
-      "no synthesis gate met; sample remains small"
+      "No evidence after reset."
     ]
   },
-  "note": "Aggregate snapshot only. Netlify Forms is source of truth. No personal/network identifiers are stored here. Last manual sync: 2026-09-19."
+  "note": "Both Lite v2 forms reset to zero submissions for a fresh test round. Netlify Forms remains source of truth. No personal/network identifiers stored here."
 }
