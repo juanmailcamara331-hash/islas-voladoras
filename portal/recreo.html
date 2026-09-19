@@ -45,4 +45,5 @@ document.getElementById('wander').onclick=function(){S.turn++;S.pet++;document.g
 document.getElementById('craft').onclick=function(){if(S.junk<2||S.cloud<1){document.getElementById('craftLog').textContent='Faltan 2 chatarra y 1 semilla de nube.';return}S.junk-=2;S.cloud--;S.turn++;var c=[['silbato-viento-torcido','Silbato de Viento Torcido'],['brujula-desobediente','Brújula Desobediente'],['taza-niebla','Taza para guardar niebla']][Math.floor(Math.random()*3)];addLoot(c[0]);document.getElementById('craftLog').textContent='Has fabricado: '+c[1]+'. Su utilidad sigue siendo sospechosa.';save();paint()};
 paint();
 })();
-</script><script>(function(){if(location.search.indexOf('embed=1')>=0)document.body.classList.add('embed')})();</script><script defer src="isl-global-shell.js"></script>\n</body></html>
+</script><script>(function(){if(location.search.indexOf('embed=1')>=0)document.body.classList.add('embed')})();</script><script defer src="isl-global-shell.js"></script>
+</body></html>
