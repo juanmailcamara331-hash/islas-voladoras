@@ -69,7 +69,7 @@ survey=(ROOT/"survey-results.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["Pilares","Referencias","app.netlify.com/projects/islas-voladoras-isl"]:
     if token not in survey: errors.append(f"survey results hub missing: {token}")
 ref=(ROOT/"poll/referencias-lite-v2.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["refVisual","ANCLA VISUAL PROVISIONAL","v0.69-lite-visual","ghost-reference-exact.jpg"]:
+for token in ["refVisual","ANCLA VISUAL PROVISIONAL","v0.69-lite-visual","ghost-reference-exact-hd.webp"]:
     if token not in ref: errors.append(f"references Lite visual contract missing: {token}")
 
 # Survey hub contract
