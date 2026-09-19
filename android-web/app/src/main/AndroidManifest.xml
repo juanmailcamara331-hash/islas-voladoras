@@ -4,8 +4,8 @@
         android:allowBackup="true"
         android:usesCleartextTraffic="false"
         android:label="Islas Voladoras"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/isl_launcher_final"
+        android:roundIcon="@drawable/isl_launcher_final"
         android:theme="@android:style/Theme.Material.NoActionBar">
         <activity
             android:name=".MainActivity"
