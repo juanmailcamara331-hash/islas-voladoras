@@ -50,7 +50,7 @@ need("if(e.key==='Escape'&&drawer.classList.contains('open'))setDrawer(false);" 
 for token,label in [
     ('data-main-nav="home"',"Centro"),
     ('href="rpg-home.html"',"Perfil/Aventura"),
-    ('data-main-nav="calendar"',"Ruta ISL"),
+    ('data-route-link="calendar"',"Ruta ISL"),
     ('data-main-nav="gallery"',"Galería"),
     ('id="musicBtn"',"Música"),
 ]:
