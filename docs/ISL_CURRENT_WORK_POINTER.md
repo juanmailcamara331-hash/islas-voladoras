@@ -721,3 +721,42 @@ Regresión:
 
 Regla:
 No declarar R2 HUMAN GREEN hasta comprobar esta versión en Android físico.
+
+
+## v0.69.6 · External Lab permanente + reparación Fantasma
+Fecha: 2026-09-19
+
+### Pipeline externo obligatorio
+Toda salida de Gemini, Midjourney u otra herramienta creativa externa sigue:
+CAPTURA → ENTES → FUNCIÓN G/N/V/M/D → TESIS → ANTÍTESIS/RED TEAM → SÍNTESIS PROVISIONAL → CANDIDATO/PARK/MUTATE/DEMOTE/KILL PROVISIONAL → PROTOTIPO BARATO → CQC → EVIDENCIA HUMANA → DECISIÓN → ARCHIVO.
+
+Destinos:
+- Drive / ISL_EXTERNAL_LAB_INTAKE
+- ISL_EXTERNAL_LAB_PROTOCOL_AND_INTAKE_CURRENT
+- docs GitHub
+- Galería viva del Command Center
+- External Lab del panel
+- Current Work Pointer si afecta trabajo activo
+- checkpoint si cambia ruta
+- CQC al llegar a prueba
+- assets finales sólo tras adopción humana
+
+Estado actual:
+- intake 2026-09-19 archivado en Drive;
+- External Lab visible desde Más y Galería;
+- 9 láminas actuales registradas como CANDIDATO · EXTERNAL LAB;
+- Gemini RED TEAM archivado; no promover etiquetas externas a canon;
+- Fantasma Lite v2 usa un JPEG verificado y limitado a su resolución nativa para evitar pixelación/decodificación rota.
+
+### Próximo orden
+1. prueba física del Fantasma en Referencias Lite v2;
+2. ronda colegas;
+3. síntesis dialéctica;
+4. 3 criaturas;
+5. NUDOS;
+6. CQC B×A;
+7. decisión humana.
+
+### Android
+APK con `isl_launcher_final.png` empaquetado: workflow 35450616859 SUCCESS.
+Pendiente únicamente comprobación física del icono instalado.
