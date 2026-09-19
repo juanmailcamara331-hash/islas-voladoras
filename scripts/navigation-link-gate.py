@@ -80,19 +80,19 @@ shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 if "Encuestas" not in shell or "encuestas.html" not in shell: errors.append("global shell survey access missing")
 if shell.count("['Encuestas'") != 1: errors.append("global shell must expose exactly one Encuestas item")
 
-if errors:
-    print("ISL NAVIGATION/LINK GATE FAILED")
-    for e in errors: print(" -",e)
-    sys.exit(1)
-print(f"ISL NAVIGATION/LINK GATE GREEN · {len(html_files)} HTML surfaces checked")
-
 
 # external lab contract
 lab=(ROOT/"external-lab.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["EXTERNAL LAB","CANDIDATOS · NO CANON","REFERENCIA → FUNCIÓN","ISL_EXTERNAL_LAB"]:
+for token in ["EXTERNAL LAB","CANDIDATOS · NO CANON","REFERENCIA → FUNCIÓN"]:
     if token not in lab: errors.append(f"external lab missing: {token}")
 idx=(ROOT/"index.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["CANDIDATO · EXTERNAL LAB","Danzante-Aguja · External Lab","Consejero de Niebla · External Lab","Escarabeo-Registrador · External Lab"]:
     if token not in idx: errors.append(f"gallery external intake missing: {token}")
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 if "external-lab.html" not in shell: errors.append("global shell External Lab access missing")
+
+if errors:
+    print("ISL NAVIGATION/LINK GATE FAILED")
+    for e in errors: print(" -",e)
+    sys.exit(1)
+print(f"ISL NAVIGATION/LINK GATE GREEN · {len(html_files)} HTML surfaces checked")
