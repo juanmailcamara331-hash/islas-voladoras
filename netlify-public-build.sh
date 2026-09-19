@@ -14,6 +14,7 @@ cp portal/poll/pilares-lite-v2.html build/public/poll/pilares-lite-v2.html
 cp portal/poll/referencias-lite-v2.html build/public/poll/referencias-lite-v2.html
 cp portal/poll/gracias.html build/public/poll/gracias.html
 cp portal/poll-live.js build/public/poll-live.js
+cp portal/survey-results.html build/public/survey-results.html
 cp portal/ISL_PUBLIC_DECISIONS_CURRENT.json build/public/ISL_PUBLIC_DECISIONS_CURRENT.json
 
 for f in molino-a-top.jpg molino-b-top.jpg molino-c-top.jpg ghost-reference-mobile.jpg; do
@@ -26,6 +27,7 @@ Allowed:
 - landing
 - polls
 - explicitly shared poll assets
+- safe aggregated survey results
 Private Command Center files are intentionally excluded.
 EOF
 
