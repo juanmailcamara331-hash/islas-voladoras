@@ -83,3 +83,8 @@ RELEASE 2026-09-19T17:45Z
 RELEASE 2026-09-19T17:50Z
 - show survey aggregate results inline
 - demote Netlify to technical-detail link
+
+RELEASE 2026-09-19T18:00Z
+- expand Commercial Health with initial investment and variable-cost breakdown
+- add simulated campaigns by channel
+- add scenario table, funnel targets and visual cash charts
