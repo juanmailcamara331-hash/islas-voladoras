@@ -48,7 +48,7 @@ for rel in global_pages:
     s=p.read_text(encoding="utf-8",errors="ignore")
     if "isl-global-shell.css" not in s: errors.append(f"{p}: global shell CSS missing")
     if "isl-global-shell.js" not in s: errors.append(f"{p}: global shell JS missing")
-    if 'isl-global-shell.css">\\\\n' in s or 'isl-global-shell.js"></script>\\\\n' in s: errors.append(f"{p}: literal newline artifact next to global shell")
+    if 'isl-global-shell.css">\\n' in s or 'isl-global-shell.js"></script>\\n' in s: errors.append(f"{p}: literal newline artifact next to global shell")
 
 idx=(ROOT/"index.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["resume=1","isl_center_entered","location.hash==='#calendar'"]:
@@ -64,15 +64,16 @@ for token in ["routeStrip","AHORA","SIGUIENTE","Calendario operativo"]:
     if token not in route: errors.append(f"route clarity contract missing: {token}")
 if '"current_stop": "r2-human"' not in state: errors.append("route state is not aligned with current R2 gate")
 
-if errors:
-    print("ISL NAVIGATION/LINK GATE FAILED")
-    for e in errors: print(" -",e)
-    sys.exit(1)
-print(f"ISL NAVIGATION/LINK GATE GREEN · {len(html_files)} HTML surfaces checked")
-
 # Survey hub contract
 survey=(ROOT/"encuestas.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["PRUEBA CON COLEGAS","pilares-lite-v2.html","referencias-lite-v2.html","app.netlify.com/sites/islas-voladoras-isl/forms"]:
     if token not in survey: errors.append(f"survey hub missing: {token}")
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 if "Encuestas" not in shell or "encuestas.html" not in shell: errors.append("global shell survey access missing")
+
+if errors:
+    print("ISL NAVIGATION/LINK GATE FAILED")
+    for e in errors: print(" -",e)
+    sys.exit(1)
+print(f"ISL NAVIGATION/LINK GATE GREEN · {len(html_files)} HTML surfaces checked")
+
