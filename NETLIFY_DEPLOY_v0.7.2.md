@@ -54,3 +54,12 @@ Motivo:
 - sustituir blob truncado/pixelado por ghost-reference-exact-hd.webp 1200x688;
 - render sin aspect-ratio forzado;
 - mantener el mismo estímulo visual, sólo corregir calidad.
+
+
+## Release trigger · v0.69.6 verified ghost + External Lab
+Fecha: 2026-09-19
+Motivo:
+- sustituir el WebP corrupto por ghost-reference-mobile.jpg verificado;
+- no escalar el recorte por encima de 320 px;
+- publicar la corrección de Referencias Lite v2;
+- External Lab permanece fuera del allowlist público y sólo vive en Command Center/Drive.
