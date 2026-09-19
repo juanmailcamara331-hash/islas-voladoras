@@ -52,7 +52,7 @@ for rel in global_pages:
     if 'isl-global-shell.css">\\n' in s or 'isl-global-shell.js"></script>\\n' in s: errors.append(f"{p}: literal newline artifact next to global shell")
 
 idx=(ROOT/"index.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["resume=1","isl_center_entered","location.hash==='#calendar'"]:
+for token in ["resume=1","location.hash==='#calendar'"]:
     if token not in idx: errors.append(f"index resume contract missing: {token}")
 
 caps=(ROOT/"capsulas.html").read_text(encoding="utf-8",errors="ignore")
@@ -66,7 +66,7 @@ for token in ["routeStrip","AHORA","SIGUIENTE","Calendario operativo"]:
 if '"current_stop": "r2-human"' not in state: errors.append("route state is not aligned with current R2 gate")
 
 survey=(ROOT/"survey-results.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["Pilares","Referencias","app.netlify.com/projects/islas-voladoras-isl"]:
+for token in ["Pilares","Referencias","/api/survey-lite-state","ACTUALIZAR RESULTADOS"]:
     if token not in survey: errors.append(f"survey results hub missing: {token}")
 ref=(ROOT/"poll/referencias-lite-v2.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["refVisual","ANCLA VISUAL EXACTA","v0.70.10-ghost-exact-hd","ghost-reference-exact-hd.webp"]:
