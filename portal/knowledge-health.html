@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes">
+<title>ISL · Knowledge Health</title>
+<style>
+:root{--bg:#061017;--panel:#0b1820;--line:#31505c;--cyan:#8defff;--gold:#e0b45d;--ink:#f3ead7;--muted:#9cb0b5;--ok:#73dfc1;--bad:#e85d5d}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(#061017,#03070a);color:#eef7f4;font-family:Inter,system-ui,Arial,sans-serif}
+main{width:min(1180px,94vw);margin:auto;padding:86px 0 40px}.eyebrow{font-size:10px;letter-spacing:.15em;color:var(--cyan);font-weight:900}
+h1{font:700 clamp(36px,7vw,76px)/.95 Georgia,serif;color:var(--ink);margin:8px 0 12px}.sub{color:var(--muted);max-width:780px;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:22px 0}.card{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:16px}
+.card b{font-size:30px;display:block;color:var(--ink)}.card span{font-size:10px;color:var(--muted);letter-spacing:.09em}
+.cols{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.section{border:1px solid var(--line);background:#08151c;border-radius:20px;padding:18px;margin-top:14px}
+.row{display:grid;grid-template-columns:150px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #1d343e}.row:last-child{border-bottom:0}
+.bar{height:8px;border-radius:999px;background:#142731;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold))}
+.pill{border:1px solid #3a5863;border-radius:999px;padding:5px 9px;font-size:10px}.ok{color:var(--ok)}.bad{color:var(--bad)}
+ol{margin:8px 0 0;padding-left:20px}li{margin:8px 0;line-height:1.4}.tiny{font-size:10px;color:var(--muted)}
+@media(max-width:760px){.grid{grid-template-columns:repeat(3,1fr)}.cols{grid-template-columns:1fr}.row{grid-template-columns:110px 1fr auto}.card b{font-size:25px}}
+</style>
+<link rel="stylesheet" href="isl-global-shell.css">
+</head><body><main>
+<div class="eyebrow">ISL // KNOWLEDGE GRAPH // HEALTH SNAPSHOT</div>
+<h1>Estado comprimido del sistema.</h1>
+<p class="sub">Una capa operativa sobre la documentación: readiness, gates, bloqueos, riesgos y siguiente ruta. No sustituye las fuentes; las indexa.</p>
+<div class="grid" id="readiness"></div>
+<div class="cols">
+<section class="section"><div class="eyebrow">READINESS</div><div id="bars"></div></section>
+<section class="section"><div class="eyebrow">GATES</div><div id="gates"></div></section>
+</div>
+<section class="section"><div class="eyebrow">PRIORIDADES</div><ol id="priorities"></ol></section>
+<section class="section"><div class="eyebrow">LECTURA DEL SNAPSHOT</div><p class="sub">R0 = referencia · R1 = precursor conceptual · R2 = precursor estructural · R3 = listo para fabricar precursor técnico · R4 = input técnico para servicio concreto · R5 = validado en destino.</p><p class="tiny">Fuente: portal/data/isl-knowledge-health-v0.1.json</p></section>
+</main>
+<script>
+fetch('data/isl-knowledge-health-v0.1.json').then(r=>r.json()).then(d=>{
+ const total=d.inventory.visual_entries;
+ const order=['R0','R1','R2','R3','R4','R5'];
+ document.getElementById('readiness').innerHTML=order.map(k=>'<div class="card"><b>'+d.readiness[k]+'</b><span>'+k+'</span></div>').join('');
+ document.getElementById('bars').innerHTML=order.map(k=>{const n=d.readiness[k],p=Math.round(n/total*100);return '<div class="row"><strong>'+k+'</strong><div class="bar"><div class="fill" style="width:'+p+'%"></div></div><span>'+p+'%</span></div>'}).join('');
+ const labels={external_to_canon_direct:'External → CANON directo',require_provenance:'Provenance',require_destination_contract:'Contrato destino',require_accessibility_assessment:'Accesibilidad',require_crossplay_assessment:'Crossplay',require_human_evidence_before_canon:'Evidencia humana',require_binary_validation_for_critical_assets:'Validación binaria',require_deploy_commit_match:'Deploy = commit'};
+ document.getElementById('gates').innerHTML=Object.entries(d.gates).map(([k,v])=>'<div class="row"><strong>'+labels[k]+'</strong><div></div><span class="pill '+((k==='external_to_canon_direct'&&!v)||(k!=='external_to_canon_direct'&&v)?'ok':'bad')+'">'+(v?'ON':'OFF')+'</span></div>').join('');
+ document.getElementById('priorities').innerHTML=d.priorities.map(x=>'<li>'+x+'</li>').join('');
+}).catch(()=>{document.getElementById('readiness').innerHTML='<div class="card"><b>!</b><span>Snapshot no disponible</span></div>'});
+</script>
+<script src="isl-global-shell.js"></script>
+</body></html>
