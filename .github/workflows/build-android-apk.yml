@@ -50,6 +50,23 @@ jobs:
         with:
           gradle-version: "8.9"
 
+      - name: Cache stable debug signing key
+        uses: actions/cache@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: isl-android-debug-keystore-v1
+
+      - name: Prepare stable debug signing key
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.android"
+          if [ ! -s "$HOME/.android/debug.keystore" ]; then
+            keytool -genkeypair -v               -keystore "$HOME/.android/debug.keystore"               -storepass android               -alias androiddebugkey               -keypass android               -dname "CN=ISL Debug,O=Pandaria,C=ES"               -keyalg RSA -keysize 2048 -validity 10000
+          fi
+          keytool -list -keystore "$HOME/.android/debug.keystore" -storepass android -alias androiddebugkey >/dev/null
+          echo "stable debug signing key: OK"
+
       - name: Stamp build version
         shell: bash
         run: |
@@ -106,8 +123,14 @@ jobs:
       - name: Validate APK
         shell: bash
         run: |
+          set -euo pipefail
           APK="android-web/app/build/outputs/apk/debug/app-debug.apk"
           test -s "$APK"
+          "$ANDROID_SDK_ROOT/build-tools/35.0.1/apksigner" verify --verbose --print-certs "$APK"
+          unzip -l "$APK" | grep -q 'res/mipmap-anydpi-v26/ic_launcher.xml'
+          unzip -l "$APK" | grep -q 'res/mipmap-anydpi-v26/ic_launcher_round.xml'
+          unzip -l "$APK" | grep -q 'res/drawable-nodpi-v4/isl_launcher_foreground.webp'
+          echo "APK signature + artistic adaptive icon resources: OK"
           cp "$APK" "ISL-Command-Center.apk"
 
       - name: Upload APK artifact
