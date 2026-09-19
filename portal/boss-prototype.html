@@ -8,4 +8,5 @@ document.getElementById('choices').addEventListener('click',e=>{const a=e.target
  else if(phase===2){if(a==='move'){phase=3;progress=38;log.textContent='Encuentras una ruta estable entre plataformas móviles. La tormenta expone su núcleo.'}else{progress=Math.max(48,progress-8);log.textContent='La ruta cambia otra vez. Necesitas responder al espacio, no al boss.'}}
  else{let ending;if(a==='tool'){if(localStorage.getItem('isl_craft_receiver')==='built'){ending='Desvías la tormenta usando el Receptor de Corrientes. La solución especial estaba preparada antes del combate.'}else{log.textContent='Intentas usar una herramienta que aún no existe. El boss no cede.';paint();return}}else if(a==='read'){ending='Interpretas el mapa y haces colapsar su lógica.'}else{ending='Rompes la ruta y fuerzas una salida física.'}progress=0;log.textContent=ending+' Recompensa provisional: Sello de la Tormenta.';localStorage.setItem('isl_boss_reward','sello-tormenta');localStorage.setItem('isl_boss_resolution',a)}
  paint()});paint();
-</script><script defer src="isl-global-shell.js"></script>\n</body></html>
+</script><script defer src="isl-global-shell.js"></script>
+</body></html>
