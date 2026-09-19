@@ -1,4 +1,6 @@
 (function(){
+/* Repair legacy shell injection artifacts before rendering navigation. */
+try{Array.from(document.body.childNodes).forEach(function(n){if(n.nodeType===3&&n.nodeValue&&/^\\s*\\\\n\\s*$/.test(n.nodeValue))n.remove()})}catch(e){}
 if(document.getElementById('islGlobalShell'))return;
 try{sessionStorage.setItem('isl_native_entered_v063','1');sessionStorage.setItem('isl_center_entered','1')}catch(e){}
 var path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
