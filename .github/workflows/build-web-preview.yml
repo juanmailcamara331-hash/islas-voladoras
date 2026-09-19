@@ -122,6 +122,9 @@ jobs:
           ! grep -q 'rpgActivityBar' build/pages/rpg-home.html
           grep -q 'embed=1' build/pages/recreo.html
           test -f build/pages/capsulas.html
+          test -f build/pages/external-lab.html
+          grep -q 'CANDIDATOS · NO CANON' build/pages/external-lab.html
+          grep -q 'CANDIDATO · EXTERNAL LAB' build/pages/index.html
           test -f build/pages/survey-results.html
           grep -q 'VER RESULTADOS EN VIVO' build/pages/survey-results.html
           grep -q 'ANCLA VISUAL PROVISIONAL' build/pages/poll/referencias-lite-v2.html
