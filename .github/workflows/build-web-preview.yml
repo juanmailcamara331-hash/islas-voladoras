@@ -71,8 +71,10 @@ jobs:
           grep -q 'id="f_que_es"' build/pages/poll/pilares-lite-v2.html
           grep -q 'id="f_tipo_ref"' build/pages/poll/referencias-lite-v2.html
           grep -q 'ANCLA VISUAL PROVISIONAL' build/pages/poll/referencias-lite-v2.html
+          test -f build/pages/assets/ghost-maritime-provisional.svg
+          grep -q 'ghost-maritime-provisional.svg' build/pages/poll/referencias-lite-v2.html
           grep -q 'VER RESULTADOS EN VIVO' build/pages/encuestas.html
-          grep -q 'app.netlify.com/sites/islas-voladoras-isl/forms' build/pages/encuestas.html
+          grep -q 'app.netlify.com/projects/islas-voladoras-isl' build/pages/encuestas.html
           test -f build/pages/rpg-home.html
           test -f build/pages/command-center.html
           test -f build/pages/secret-level.html
