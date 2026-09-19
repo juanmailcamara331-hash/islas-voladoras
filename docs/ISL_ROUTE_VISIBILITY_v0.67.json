@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.67.1",
+  "schema_version": "0.67.2",
   "policy": "default_private",
   "public": [
     "public-site/index.html",
@@ -10,7 +10,8 @@
     "portal/poll/pilares-lite-v2.html",
     "portal/poll/referencias-lite-v2.html",
     "portal/poll/gracias.html",
-    "portal/survey-results.html"
+    "portal/survey-results.html",
+    "public-site/commercial-health.html"
   ],
   "private_patterns": [
     "portal/index.html",
