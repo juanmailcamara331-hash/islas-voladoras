@@ -17,6 +17,8 @@ h1{font-size:clamp(42px,8vw,86px);line-height:.92;margin:14px 0}.lead{max-width:
 
 .copybox{margin-top:12px;border:1px solid #34515d;background:#08151c;border-radius:14px;padding:14px}.copybox textarea{width:100%;min-height:180px;background:#050b10;color:#eaf6f2;border:1px solid #29434c;border-radius:10px;padding:12px;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;resize:vertical}.copyok{color:var(--ok);font-size:11px;margin-left:8px}
 .resultlist{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:7px}.resultlist li{border-top:1px solid #29434c;padding-top:7px;color:#d7e4e2;font-size:12px;line-height:1.45}.resultlist b{color:var(--cyan)}.techlink{opacity:.72}
+
+.votegrid{display:grid;gap:7px;margin-top:10px}.vote{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;border:1px solid #29434c;background:#08151c;border-radius:10px;padding:9px 10px}.vote span:first-child{color:#dfecea;font-size:12px;line-height:1.35}.vote b{min-width:32px;text-align:center;color:var(--cyan);font-size:12px;border:1px solid #365763;border-radius:999px;padding:4px 7px}.openanswers{display:grid;gap:7px;margin-top:8px}.openanswers div{border-left:2px solid #34515d;padding:6px 9px;background:#08151c;border-radius:0 8px 8px 0;color:#dfecea;font-size:12px}.qblock{margin-top:14px;padding-top:12px;border-top:1px solid #29434c}.qblock h3{margin:0 0 7px;font-size:14px;color:#fff}
 </style>
 </head>
 <body>
@@ -28,33 +30,31 @@ h1{font-size:clamp(42px,8vw,86px);line-height:.92;margin:14px 0}.lead{max-width:
 <section class="grid">
 <article class="card">
 <span class="badge">ACTIVA · LITE v2 · RESET</span>
-<h2>Pilares</h2>
-<p class="tiny">Qué entiende la gente que es ISL, qué les tira, qué vibra funciona, qué les preocupa y qué salvarían o recortarían.</p>
-<div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://islas-voladoras-isl.netlify.app/poll/pilares-lite-v2.html">ABRIR ENCUESTA</a></div>
-<div class="snap"><span>Snapshot Netlify · reiniciado</span><b>0 respuestas</b></div>
-<ul class="resultlist">
-<li><b>1 · ¿Qué sientes que es ISL?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-<li><b>2 · ¿Qué te tira más?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-<li><b>3 · ¿Qué mezcla te llama?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-<li><b>4 · ¿Qué te preocupa más?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-<li><b>5 · ¿Qué NO quitarías?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-<li><b>6 · ¿Qué recortarías sin piedad?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-</ul>
-</article>
-
-<article class="card">
-<span class="badge">ACTIVA · LITE v2 · RESET</span>
 <h2>Referencias</h2>
-<p class="tiny">Qué funciones de una referencia merecen sobrevivir al proceso de mutación de ISL sin convertir el proyecto en un collage.</p>
+<p class="tiny">Resultado completo por pregunta. Cada opción enseña sus votos al lado.</p>
 <div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://islas-voladoras-isl.netlify.app/poll/referencias-lite-v2.html">ABRIR ENCUESTA</a></div>
 <div class="snap"><span>Snapshot Netlify · reiniciado</span><b>0 respuestas</b></div>
-<ul class="resultlist">
-<li><b>1 · ¿Qué tipo de referencia te activa?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-<li><b>2 · Del fantasma marítimo absurdo, ¿qué salvarías?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-<li><b>3 · ¿Cómo debería entrar eso en ISL?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-<li><b>4 · ¿Qué NO deberíamos copiar nunca?</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-<li><b>5 · Suelta una referencia útil</b><br><span class="tiny">Sin respuestas todavía.</span></li>
-</ul>
+
+<div class="qblock"><h3>1 · ¿Qué tipo de referencia te activa?</h3><div class="votegrid">
+<div class="vote"><span>🎮 Jugabilidad</span><b>0</b></div><div class="vote"><span>📖 Narrativa / emoción</span><b>0</b></div>
+<div class="vote"><span>🎨 Visual / espacio</span><b>0</b></div><div class="vote"><span>🎵 Música / atmósfera</span><b>0</b></div>
+<div class="vote"><span>🎭 Humor / tono</span><b>0</b></div><div class="vote"><span>🌀 Rareza difícil de explicar</span><b>0</b></div>
+</div></div>
+
+<div class="qblock"><h3>2 · Del fantasma marítimo absurdo, ¿qué salvarías? · máximo 2</h3><div class="votegrid">
+<div class="vote"><span>👻 Presencia espectral</span><b>0</b></div><div class="vote"><span>😂 Humor absurdo</span><b>0</b></div>
+<div class="vote"><span>⚡ Amenaza + comedia</span><b>0</b></div><div class="vote"><span>🌫️ Niebla / umbral</span><b>0</b></div>
+<div class="vote"><span>🚢 Barco maldito</span><b>0</b></div><div class="vote"><span>📜 Reglas propias</span><b>0</b></div>
+</div></div>
+
+<div class="qblock"><h3>3 · ¿Cómo debería entrar eso en ISL?</h3><div class="votegrid">
+<div class="vote"><span>✦ Pincelada pequeña</span><b>0</b></div><div class="vote"><span>♻ Evento / criatura recurrente</span><b>0</b></div>
+<div class="vote"><span>⚙ Regla del mundo</span><b>0</b></div><div class="vote"><span>🌫️ Tono / vibe</span><b>0</b></div>
+<div class="vote"><span>✖ Mejor fuera</span><b>0</b></div>
+</div></div>
+
+<div class="qblock"><h3>4 · ¿Qué NO deberíamos copiar nunca?</h3><div class="openanswers"><div>Sin respuestas todavía.</div></div></div>
+<div class="qblock"><h3>5 · Suelta una referencia útil</h3><div class="openanswers"><div>Sin respuestas todavía.</div></div></div>
 </article>
 </section>
 
