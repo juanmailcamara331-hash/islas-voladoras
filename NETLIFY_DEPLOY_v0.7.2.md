@@ -93,3 +93,9 @@ RELEASE 2026-09-19T18:10Z
 - reset Lite v2 survey snapshot to zero
 - show survey questions beside aggregated results
 - add refresh-view control with explicit snapshot semantics
+
+RELEASE 2026-09-19T18:20Z
+- survey results show full answer options with vote counters
+- Lite v2 remains reset at zero for clean testing
+- Commercial Health switches to staged €1k → €5k → €15k → €50k+ investment ladder
+- proof-tranche campaign reduced to €1k simulated test budget
