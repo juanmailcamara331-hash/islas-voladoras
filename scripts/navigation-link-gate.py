@@ -48,6 +48,7 @@ for rel in global_pages:
     s=p.read_text(encoding="utf-8",errors="ignore")
     if "isl-global-shell.css" not in s: errors.append(f"{p}: global shell CSS missing")
     if "isl-global-shell.js" not in s: errors.append(f"{p}: global shell JS missing")
+    if "\\n</head>" in s: errors.append(f"{p}: literal \\n shell artifact visible in UI")
     if 'isl-global-shell.css">\\n' in s or 'isl-global-shell.js"></script>\\n' in s: errors.append(f"{p}: literal newline artifact next to global shell")
 
 idx=(ROOT/"index.html").read_text(encoding="utf-8",errors="ignore")
@@ -63,6 +64,13 @@ state=(ROOT/"ISL_ROUTE_STATE_CURRENT.json").read_text(encoding="utf-8",errors="i
 for token in ["routeStrip","AHORA","SIGUIENTE","Calendario operativo"]:
     if token not in route: errors.append(f"route clarity contract missing: {token}")
 if '"current_stop": "r2-human"' not in state: errors.append("route state is not aligned with current R2 gate")
+
+survey=(ROOT/"survey-results.html").read_text(encoding="utf-8",errors="ignore")
+for token in ["Pilares","Referencias","VER RESULTADOS EN VIVO","app.netlify.com/sites/islas-voladoras-isl/forms"]:
+    if token not in survey: errors.append(f"survey results hub missing: {token}")
+ref=(ROOT/"poll/referencias-lite-v2.html").read_text(encoding="utf-8",errors="ignore")
+for token in ["refVisual","ANCLA VISUAL PROVISIONAL","v0.69-lite-visual"]:
+    if token not in ref: errors.append(f"references Lite visual contract missing: {token}")
 
 # Survey hub contract
 survey=(ROOT/"encuestas.html").read_text(encoding="utf-8",errors="ignore")
