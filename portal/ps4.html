@@ -52,4 +52,5 @@ function geom(dir){refresh();var cur=document.activeElement;if(nodes.indexOf(cur
 document.addEventListener('keydown',function(ev){if(boot.className.indexOf('hidden')<0&&(ev.key==='Enter'||ev.keyCode===13||ev.keyCode===32)){ev.preventDefault();enter();return}if(boot.className.indexOf('hidden')<0)return;retryMedia();var k=ev.key||ev.keyCode;if(k==='ArrowLeft'||k===37){ev.preventDefault();geom('left')}else if(k==='ArrowRight'||k===39){ev.preventDefault();geom('right')}else if(k==='ArrowUp'||k===38){ev.preventDefault();geom('up')}else if(k==='ArrowDown'||k===40){ev.preventDefault();geom('down')}});
 document.addEventListener('click',function(){if(boot.className.indexOf('hidden')>=0)retryMedia()},true);window.addEventListener('beforeunload',savePos);window.addEventListener('pagehide',savePos);window.addEventListener('pageshow',function(){if(localStorage.getItem(K_ENTER)==='1'){boot.className='boot hidden';restoreState(80)}});window.addEventListener('load',function(){bindSaveLinks();if(localStorage.getItem(K_ENTER)==='1'){boot.className='boot hidden';restoreState(120)}else{renderGallery();bootBtn.focus()}paint()});window.addEventListener('resize',refresh);
 })();
-</script><script defer src="isl-global-shell.js"></script>\n</body></html>
+</script><script defer src="isl-global-shell.js"></script>
+</body></html>
