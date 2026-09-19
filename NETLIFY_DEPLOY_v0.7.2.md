@@ -105,3 +105,9 @@ RELEASE 2026-09-19T18:35Z
 - mirror Lite v2 submissions to live aggregate store
 - make survey results refresh truly live
 - preserve full questions, options, vote counts and open answers
+
+RELEASE 2026-09-19T18:50Z
+- rebuild Commercial Health as AI-first zero-production-cost model
+- use verified platform publication fees as small baseline
+- allocate cash primarily to campaigns/discovery
+- add natural-language summaries and clearer visual charts
