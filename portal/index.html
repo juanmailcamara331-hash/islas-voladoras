@@ -469,7 +469,12 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <button class="util" type="button" onclick="document.getElementById('menuBtn').click()"><span class="uIcon" aria-hidden="true">⚒</span><b>HERRAMIENTAS</b><span>Recursos · extras</span></button>
     <a class="util" href="recreo.html"><span class="uIcon" aria-hidden="true">✦</span><b>RECREO</b><span>Jugar sin romper el canon</span></a>
   </div>
-  <div class="finalQuote">“TODA DECISIÓN DEJA UNA ISLA.”</div>
+  <section id="spielbergLabFeedCard" style="margin:0 12px 12px;border:1px solid #31505c;border-radius:14px;background:linear-gradient(135deg,#0c1c23,#0a171d);padding:13px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center">
+    <div><div class="k">LAB EXTERNO · SPIELBERG CREATIVE GAMEVERSE</div><h3 style="margin:4px 0 5px;font-size:17px">SPIELBERG LAB FEED</h3><p style="margin:0;color:#9fb3b8;font-size:10px;line-height:1.45">Sólo principios abstractos transferibles. Nada entra en CANON automáticamente.</p><div id="spielbergFeedMini" style="margin-top:7px;font-size:9px;color:#d6e4e5">Nuevas 0 · En prueba 0 · Adaptadas 0 · Descartadas 0 · Sync —</div></div>
+    <a href="spielberg-lab.html" style="border:1px solid #7a6540;border-radius:10px;background:#251d12;color:#ffe4aa;text-decoration:none;padding:10px 12px;font-size:9px;font-weight:900;white-space:nowrap">ABRIR LAB FEED →</a>
+  </section>
+  <script id="isl-spielberg-feed-mini">(function(){var out=document.getElementById('spielbergFeedMini');if(!out)return;fetch('data/isl-spielberg-lab-feed.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){var c=d.counts||{};out.textContent='Nuevas '+(c.new||0)+' · En prueba '+(c.lab_testing||0)+' · Adaptadas '+(c.adapted||0)+' · Descartadas '+(c.discarded||0)+' · Sync '+(d.last_sync||'—')}).catch(function(){out.textContent='Feed no disponible · LAB_ONLY'})})();</script>
+<div class="finalQuote">“TODA DECISIÓN DEJA UNA ISLA.”</div>
 </section>
  <div class="topbar"><div class="eyebrow">Islas Voladoras · cabina maestra v0.3</div><div class="actions"><button class="btn" id="musicBtn">♫</button><button class="btn" id="tvBtn">TV</button></div></div>
 <section class="homeCabin" id="homeCabin">
