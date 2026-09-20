@@ -51,8 +51,8 @@ for token,label in [
     ('data-main-nav="home"',"Centro"),
     ('href="rpg-home.html"',"Perfil/Aventura"),
     ('data-route-link="calendar"',"Ruta ISL"),
-    ('data-main-nav="gallery"',"Galería"),
-    ('id="musicBtn"',"Música"),
+    ('href="galeria.html?v=20260921-1"',"Galería"),
+    ('href="galeria.html?v=20260921-1#music"',"Música"),
 ]:
     need(token in s,f"primary destination missing: {label}")
 
