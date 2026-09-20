@@ -10,85 +10,99 @@
 <meta name="robots" content="noindex,nofollow,noarchive">
 <link rel="stylesheet" href="isl-global-shell.css">
 <style>
-:root{--bg:#071017;--panel:#0d1b23e8;--line:#294955;--text:#eef8f5;--mut:#92a8ae;--cyan:#87efff;--gold:#ffc36e;--good:#bcefc6;--vio:#c7a9ff}
+:root{--bg:#071017;--panel:#0d1b23e8;--line:#294955;--text:#eef8f5;--mut:#92a8ae;--cyan:#87efff;--gold:#ffc36e;--good:#bcefc6;--vio:#c7a9ff;--rose:#ff9aa5}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 86% 3%,#23485c 0,transparent 28%),linear-gradient(#071017,#09151c);color:var(--text);font-family:Inter,system-ui,sans-serif}
-a{color:inherit;text-decoration:none}.wrap{width:min(1440px,95vw);margin:auto;padding:22px 0 100px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.k{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:900}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:#0c1921;color:white;border-radius:10px;padding:10px 12px;font-size:10px;font-weight:900}.btn.primary{border-color:#4a8893;background:#15333c}.btn.gold{border-color:#8d6b3e;background:#30271d}
-.hero{margin-top:12px;border:1px solid #3d5d68;border-radius:22px;background:linear-gradient(135deg,#102630,#08131a);padding:clamp(18px,4vw,42px)}h1{font-size:clamp(46px,8vw,90px);line-height:.88;letter-spacing:-.05em;margin:8px 0 12px}.lead{max-width:900px;color:#c7d8db;line-height:1.55;font-size:clamp(15px,2vw,20px)}
-.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}.tab{border:1px solid var(--line);background:#0a1720;color:#c7d8dc;border-radius:999px;padding:8px 11px;font-size:9px;font-weight:900}.tab.on{border-color:#8c6a3c;background:#2d2419;color:#ffe6b2}
-.section{display:none}.section.on{display:block}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:11px}.card{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:14px;min-width:0}.card h2{font-size:21px;margin:5px 0}.meta{font-size:9px;color:var(--mut);line-height:1.5}.status{display:inline-block;margin-top:7px;border:1px solid #4d6872;border-radius:999px;padding:4px 6px;font-size:7px;font-weight:900;letter-spacing:.08em}.status.good{color:var(--good);border-color:#50765a}.status.warn{color:var(--gold);border-color:#7f663c}.mediaIcon{height:150px;border:1px solid #284852;border-radius:12px;background:radial-gradient(circle at 50% 40%,#173441,#081218 70%);display:grid;place-items:center;font-size:52px;color:var(--cyan);margin-bottom:10px}
-.player{margin-top:10px;padding-top:10px;border-top:1px solid #213b45}.player audio{width:100%;height:38px}.disabledPlayer{border:1px dashed #35535e;border-radius:10px;padding:10px;font-size:9px;color:#7f979e}
-.panel{border:1px solid var(--line);background:#09161d;border-radius:15px;padding:14px;margin-bottom:11px}.panel h2{margin:4px 0 6px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
-.truth{border-left:3px solid var(--gold);padding:10px 12px;background:#17150f;color:#d8d4c8;font-size:10px;line-height:1.5;margin-top:12px}
-@media(max-width:640px){.wrap{width:calc(100vw - 16px)}h1{font-size:45px}.mediaIcon{height:120px}.btn{padding:9px 10px}}
+a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;padding:20px 0 110px}.top{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.k{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);font-weight:900}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:#0c1921;color:white;border-radius:10px;padding:10px 12px;font-size:10px;font-weight:900}.btn.primary{border-color:#4a8893;background:#15333c}.btn.gold{border-color:#8d6b3e;background:#30271d}
+.hero{margin-top:12px;border:1px solid #3d5d68;border-radius:22px;background:linear-gradient(135deg,#102630,#08131a);padding:clamp(18px,4vw,42px)}h1{font-size:clamp(44px,8vw,88px);line-height:.88;letter-spacing:-.05em;margin:8px 0 12px}.lead{max-width:950px;color:#c7d8db;line-height:1.55;font-size:clamp(15px,2vw,20px)}
+.stats{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.stat{border:1px solid #34525d;background:#08151c;border-radius:999px;padding:6px 9px;font-size:9px;color:#c9dade}.stat b{color:var(--gold)}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0;position:sticky;top:8px;z-index:10;background:#071017d9;padding:8px;border:1px solid #203842;border-radius:15px;backdrop-filter:blur(14px)}.tab{border:1px solid var(--line);background:#0a1720;color:#c7d8dc;border-radius:999px;padding:8px 11px;font-size:9px;font-weight:900}.tab.on{border-color:#8c6a3c;background:#2d2419;color:#ffe6b2}
+.section{display:none}.section.on{display:block}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:11px}.card{border:1px solid var(--line);background:var(--panel);border-radius:16px;overflow:hidden;min-width:0}.pad{padding:13px}.card h2{font-size:18px;margin:5px 0}.meta{font-size:9px;color:var(--mut);line-height:1.5}.status{display:inline-block;margin-top:7px;border:1px solid #4d6872;border-radius:999px;padding:4px 6px;font-size:7px;font-weight:900;letter-spacing:.08em}.status.good{color:var(--good);border-color:#50765a}.status.warn{color:var(--gold);border-color:#7f663c}.status.bad{color:var(--rose);border-color:#74434a}.thumb{aspect-ratio:16/10;background:radial-gradient(circle at 50% 40%,#173441,#081218 70%);display:grid;place-items:center;overflow:hidden;font-size:48px;color:var(--cyan);border-bottom:1px solid #203842}.thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block}.thumb video{background:#000}.player{margin-top:10px;padding-top:10px;border-top:1px solid #213b45}.player audio{width:100%;height:38px}.disabledPlayer{margin-top:10px;border:1px dashed #35535e;border-radius:10px;padding:10px;font-size:9px;color:#7f979e}
+.panel{border:1px solid var(--line);background:#09161d;border-radius:15px;padding:14px;margin-bottom:11px}.panel h2{margin:4px 0 6px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.truth{border-left:3px solid var(--gold);padding:10px 12px;background:#17150f;color:#d8d4c8;font-size:10px;line-height:1.5;margin-top:12px}.empty{padding:18px;color:#9fb3b8}.subhead{display:flex;align-items:end;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 2px 9px}.subhead h2{margin:0;font-size:24px}.counter{font-size:9px;color:#a8bbc0}
+@media(max-width:640px){.wrap{width:calc(100vw - 12px)}h1{font-size:44px}.btn{padding:9px 10px}.tabs{top:4px}.grid{grid-template-columns:1fr 1fr}.card h2{font-size:15px}.meta{font-size:8px}.thumb{aspect-ratio:1.15}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <main class="wrap">
-<div class="top"><div class="k">ISL · GALERÍA VIVA · WEB + APP</div><div class="actions"><a class="btn" href="command-center.html?full=1#calendar">RUTA ISL</a><a class="btn" href="command-center.html?full=1#home">CENTRO</a><a class="btn" href="gym-3d-asset.html">GYM 3D</a></div></div>
+<div class="top"><div class="k">ISL · GALERÍA VIVA · WEB + APP + PS4</div><div class="actions"><a class="btn" href="index.html?full=1#calendar">RUTA ISL</a><a class="btn" href="index.html?full=1#home">CENTRO</a><a class="btn" href="gym-3d-asset.html">GYM 3D</a></div></div>
 <section class="hero">
-<div class="k">IMÁGENES · VÍDEO · 3D · AUDIO / MÚSICA</div>
-<h1>Todo lo que ISL<br>está aprendiendo.</h1>
-<p class="lead">Una única superficie interna para revisar activos y evidencias sin separar música del resto del mundo. Los medios pueden escucharse o inspeccionarse aquí cuando existe un runtime seguro; los masters siguen preservados aparte.</p>
-<div class="truth"><b>REGLA:</b> Gallery ≠ CANON. Una pieza puede ser referencia, precursor, master, runtime, evidencia o archivo. El reproductor integrado nunca sustituye source/master/provenance.</div>
+<div class="k">ARCHIVO · EXTERNAL LAB · VÍDEO · 3D · AUDIO / MÚSICA</div>
+<h1>Todo ISL.<br>Una sola cubierta.</h1>
+<p class="lead">La Galería es la superficie madre: archivo histórico, tanda actual, vídeo, 3D y música. Los runtime se ven o escuchan aquí; Drive conserva source/master y provenance. Nada asciende a CANON por aparecer bonito.</p>
+<div class="stats"><span class="stat"><b id="countArchive">—</b> archivo</span><span class="stat"><b id="countLab">—</b> lab</span><span class="stat"><b id="count3d">—</b> 3D</span><span class="stat"><b id="countMusic">—</b> música</span></div>
+<div class="truth"><b>REGLA:</b> Gallery ≠ CANON · MASTER ≠ RUNTIME · SOURCE NOT WIRED ≠ inexistente. La interfaz enseña el estado real y no se inventa un player.</div>
 </section>
 
 <div class="tabs" role="tablist">
 <button class="tab on" data-tab="overview">TODO</button>
-<button class="tab" data-tab="visual">IMAGEN / VÍDEO / 3D</button>
+<button class="tab" data-tab="archive">ARCHIVO VISUAL</button>
+<button class="tab" data-tab="lab">EXTERNAL LAB</button>
+<button class="tab" data-tab="three">3D</button>
+<button class="tab" data-tab="video">VÍDEO</button>
 <button class="tab" data-tab="music">MÚSICA</button>
 </div>
 
 <section id="overview" class="section on">
-<div class="panel"><div class="k">GALERÍA VISUAL COMPLETA</div><h2>Forge + inventario histórico</h2><div class="meta">La galería técnica histórica del Command Center sigue disponible y no se duplica aquí.</div><div class="actions"><a class="btn primary" href="command-center.html?full=1#gallery">ABRIR GALERÍA VISUAL</a><a class="btn" href="external-lab.html">EXTERNAL LAB</a><a class="btn" href="musica.html">VISTA MUSICAL COMPLETA</a></div></div>
-<div class="grid" id="overviewMedia"></div>
+<div class="panel"><div class="k">AHORA</div><h2>Una vista, no seis cajones</h2><div class="meta">Último laboratorio + piezas 3D + música runtime/candidata + acceso al archivo completo. Si algo no puede reproducirse todavía, lo dice.</div></div>
+<div class="subhead"><h2>Última tanda</h2><span class="counter">External Lab</span></div><div class="grid" id="overviewLab"></div>
+<div class="subhead"><h2>3D / reliquias</h2><span class="counter">Asset Health</span></div><div class="grid" id="overview3d"></div>
+<div class="subhead"><h2>Música</h2><span class="counter">Soundtrack Registry</span></div><div class="grid" id="overviewMusic"></div>
+<div class="subhead"><h2>Archivo visual</h2><span class="counter">primeras 8 · pestaña Archivo para todo</span></div><div class="grid" id="overviewArchive"></div>
 </section>
 
-<section id="visual" class="section">
-<div class="panel"><div class="k">MEDIA ACTIVA</div><h2>Última tanda External Lab</h2><div class="meta">Activos recientes con provenance y estado. Los enlaces Drive abren source/review; no implican runtime público.</div></div>
-<div class="grid" id="visualGrid"></div>
-</section>
-
-<section id="music" class="section">
-<div class="panel"><div class="k">MUSIC GALLERY / SOUNDTRACK REGISTRY</div><h2>Escucha dentro de ISL</h2><div class="meta">Los temas con runtime conectado muestran reproductor HTML5. Las fuentes aún sólo archivadas aparecen como pendientes en vez de fingir una reproducción inexistente.</div></div>
-<div class="grid" id="musicGrid"></div>
-</section>
+<section id="archive" class="section"><div class="panel"><div class="k">ARCHIVO VISUAL / RUNTIME</div><h2>Inventario histórico completo</h2><div class="meta">La colección que antes estaba hardcodeada en PS4 ahora tiene registro compartido para web/app/PS4.</div></div><div class="grid" id="archiveGrid"></div></section>
+<section id="lab" class="section"><div class="panel"><div class="k">EXTERNAL LAB</div><h2>Precursores y evidencia reciente</h2><div class="meta">Drive = source/review. No implica runtime ni CANON.</div></div><div class="grid" id="labGrid"></div></section>
+<section id="three" class="section"><div class="panel"><div class="k">3D ASSET HEALTH</div><h2>MASTER, runtime y bloqueos sin humo</h2><div class="meta">Aquí viven BIO-001, Brújula y siguientes activos 3D según su gate actual.</div></div><div class="grid" id="threeGrid"></div></section>
+<section id="video" class="section"><div class="panel"><div class="k">VÍDEO</div><h2>Runtime + previs</h2><div class="meta">Vídeo reproducible cuando está empaquetado; source Drive cuando todavía es precursor/review.</div></div><div class="grid" id="videoGrid"></div></section>
+<section id="music" class="section"><div class="panel"><div class="k">MUSIC GALLERY / SOUNDTRACK REGISTRY</div><h2>Música dentro de la Galería</h2><div class="meta">Los temas con runtime conectado muestran <code>audio controls</code>. El resto conserva source/provenance sin fingir streaming.</div></div><div class="grid" id="musicGrid"></div></section>
 </main>
-
 <script>
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById(b.dataset.tab).classList.add('on')});
-
-function mediaCard(a){
- const icon=a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣';
- const link=a.drive_id?'https://drive.google.com/file/d/'+esc(a.drive_id)+'/view':'';
- return '<article class="card"><div class="mediaIcon">'+icon+'</div><div class="k">'+esc(a.type||a.asset_role||'ASSET')+'</div><h2>'+esc(a.name||a.id)+'</h2><div class="meta">'+esc(a.status||'CANDIDATE')+(a.entity?' · '+esc(a.entity):'')+'</div><span class="status warn">NOT CANON</span>'+(link?'<div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+link+'">ABRIR SOURCE</a></div>':'')+'</article>';
+function setTab(id){id=(id||'overview').replace('#','');if(!document.getElementById(id))id='overview';document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.tab===id));document.querySelectorAll('.section').forEach(x=>x.classList.toggle('on',x.id===id));history.replaceState(null,'','#'+id)}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
+addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
+function archiveCard(a){
+ const media=a.type==='video'?'<video controls preload="metadata" src="'+esc(a.runtime_src)+'"></video>':'<img loading="lazy" src="'+esc(a.runtime_src)+'" alt="'+esc(a.title)+'">';
+ return '<article class="card"><div class="thumb">'+media+'</div><div class="pad"><div class="k">'+esc(a.group)+'</div><h2>'+esc(a.title)+'</h2><div class="meta">'+esc(a.id)+'</div><span class="status warn">'+esc(a.status)+'</span></div></article>';
 }
-
+function labCard(a){
+ const icon=a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣';
+ const title=a.name||a.entity||a.id, link=a.drive_id?'https://drive.google.com/file/d/'+esc(a.drive_id)+'/view':'';
+ return '<article class="card"><div class="thumb">'+icon+'</div><div class="pad"><div class="k">'+esc(a.type||a.role)+'</div><h2>'+esc(title)+'</h2><div class="meta">'+esc(a.role||'')+' · '+esc(a.status||'CANDIDATE')+'</div><span class="status warn">NOT CANON</span>'+(link?'<div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+link+'">ABRIR SOURCE</a></div>':'')+'</div></article>';
+}
+function healthCard(a){
+ const state=a.state||a.status||'UNKNOWN', blocked=/BLOCK|WAIT/i.test(state);
+ return '<article class="card"><div class="thumb">◇</div><div class="pad"><div class="k">3D · '+esc(a.id||a.asset_id||'ASSET')+'</div><h2>'+esc(a.name||a.entity||a.id||a.asset_id)+'</h2><div class="meta">'+esc(state)+(a.next?' · '+esc(a.next):'')+'</div><span class="status '+(blocked?'bad':'warn')+'">'+esc(a.human_gate||'HUMAN GATE PENDING')+'</span><div class="actions"><a class="btn" href="gym-3d-asset.html">ABRIR GYM 3D</a></div></div></article>';
+}
 function musicCard(t){
  const roles=(t.functional_role||[]).map(x=>x.replaceAll('_',' ')).join(' · ');
- let player='';
- if(t.runtime_src){
-   player='<div class="player"><audio controls preload="none" src="'+esc(t.runtime_src)+'"></audio></div>';
- }else{
-   player='<div class="disabledPlayer">Runtime de escucha aún no conectado. Source/provenance se conserva sin inventar una URL reproducible.</div>';
- }
- let action='';
- if(t.drive_id)action='<div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/'+esc(t.drive_id)+'/view">ABRIR SOURCE</a></div>';
- return '<article class="card"><div class="mediaIcon">♫</div><div class="k">'+esc(t.id)+'</div><h2>'+esc(t.title)+'</h2><div class="meta">'+esc(roles||'Función pendiente')+'</div><span class="status '+(t.runtime_src?'good':'warn')+'">'+esc(t.status)+'</span>'+player+action+'</article>';
+ const player=t.runtime_src?'<div class="player"><audio controls preload="none" src="'+esc(t.runtime_src)+'"></audio></div>':'<div class="disabledPlayer">SOURCE '+esc(t.source_state||'NOT WIRED')+' · runtime pendiente.</div>';
+ const action=t.drive_id?'<div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/'+esc(t.drive_id)+'/view">ABRIR SOURCE</a></div>':'';
+ return '<article class="card"><div class="thumb">♫</div><div class="pad"><div class="k">'+esc(t.id)+'</div><h2>'+esc(t.title)+'</h2><div class="meta">'+esc(roles||'Función pendiente')+'</div><span class="status '+(t.runtime_src?'good':'warn')+'">'+esc(t.status)+'</span>'+player+action+'</div></article>';
 }
-
 Promise.all([
+ fetch('data/isl-gallery-library-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-external-lab-current.json',{cache:'no-store'}).then(r=>r.json()),
- fetch('data/isl-music-current.json',{cache:'no-store'}).then(r=>r.json())
-]).then(([media,music])=>{
- const arr=media.assets||[];
- visualGrid.innerHTML=arr.map(mediaCard).join('')||'<div class="card">Sin media registrada.</div>';
- overviewMedia.innerHTML=arr.slice(0,4).map(mediaCard).join('');
- musicGrid.innerHTML=(music.tracks||[]).map(musicCard).join('')||'<div class="card">Sin música registrada.</div>';
-}).catch(()=>{
- overviewMedia.innerHTML='<div class="card">No se pudo cargar el registro.</div>';
- visualGrid.innerHTML='<div class="card">No se pudo cargar el registro.</div>';
- musicGrid.innerHTML='<div class="card">No se pudo cargar el registro.</div>';
+ fetch('data/isl-music-current.json',{cache:'no-store'}).then(r=>r.json()),
+ fetch('data/isl-asset-health-current.json',{cache:'no-store'}).then(r=>r.json())
+]).then(([lib,lab,music,health])=>{
+ const archive=lib.assets||[], ext=lab.assets||[], tracks=music.tracks||[], hs=health.assets||health.entities||health.items||[];
+ const videos=[...archive.filter(x=>x.type==='video'),...ext.filter(x=>x.type==='video')];
+ countArchive.textContent=archive.length;countLab.textContent=ext.length;count3d.textContent=hs.length;countMusic.textContent=tracks.length;
+ archiveGrid.innerHTML=archive.map(archiveCard).join('')||'<div class="card empty">Sin archivo.</div>';
+ labGrid.innerHTML=ext.map(labCard).join('')||'<div class="card empty">Sin External Lab.</div>';
+ threeGrid.innerHTML=hs.map(healthCard).join('')||'<div class="card empty">Sin Asset Health.</div>';
+ videoGrid.innerHTML=videos.map(a=>a.runtime_src?archiveCard(a):labCard(a)).join('')||'<div class="card empty">Sin vídeo registrado.</div>';
+ musicGrid.innerHTML=tracks.map(musicCard).join('')||'<div class="card empty">Sin música registrada.</div>';
+ overviewLab.innerHTML=ext.slice(0,6).map(labCard).join('');
+ overview3d.innerHTML=hs.slice(0,4).map(healthCard).join('');
+ overviewMusic.innerHTML=tracks.slice(0,4).map(musicCard).join('');
+ overviewArchive.innerHTML=archive.slice(0,8).map(archiveCard).join('');
+ setTab(location.hash.slice(1)||'overview');
+}).catch(err=>{
+ console.error(err);
+ ['overviewLab','overview3d','overviewMusic','overviewArchive','archiveGrid','labGrid','threeGrid','videoGrid','musicGrid'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML='<div class="card empty">No se pudo cargar este registro.</div>'});
+ setTab(location.hash.slice(1)||'overview');
 });
 </script>
 <script defer src="isl-global-shell.js"></script>
