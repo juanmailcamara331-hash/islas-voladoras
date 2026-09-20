@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "project": "ISLAS_VOLADORAS_ISL",
   "generated_at": "2026-09-20",
   "status": "EXTERNAL_LAB_CURRENT",
@@ -8,58 +8,79 @@
     "canon": "NO_AUTO_PROMOTION",
     "provenance_required": true,
     "video_reference_image_first": true,
-    "surface_propagation": true
+    "surface_propagation": true,
+    "repeatable_patterns_become_method": true
   },
   "assets": [
     {
       "id": "IMG-EXT-20260920-01",
       "type": "image",
-      "status": "REVIEW",
+      "entity": "ISLA_DEL_BAILE_INAGOTABLE",
+      "role": "ENVIRONMENT_PRODUCTION_PRECURSOR",
+      "status": "PASS_WITH_HOLDS",
       "drive_id": "1Mv8mqonQBfdhhMUfqpCu-BINP_ngLAMU",
       "surface": [
         "gallery",
-        "external_lab"
+        "external_lab",
+        "observatorio"
       ],
-      "entity_assignment": "PENDING"
+      "next": "use_as_spatial_visual_reference_not_single_meshy_asset",
+      "notes": "Strong full-island production board. Use to derive modular assets and video references; do not reconstruct the whole board as one Meshy model."
     },
     {
       "id": "IMG-EXT-20260920-02",
       "type": "image",
-      "status": "REVIEW",
+      "entity": "MEDALLA_DEL_PROTOCOLO_ROTO",
+      "role": "RELIC_PRODUCTION_PRECURSOR",
+      "status": "MESHY_CANDIDATE",
       "drive_id": "1ZoSDu2iVD9B2ezqjeKjup-G9JqkS6JuX",
       "surface": [
         "gallery",
-        "external_lab"
+        "external_lab",
+        "mission_map"
       ],
-      "entity_assignment": "PENDING"
+      "next": "extract_clean_front_left_right_back_views_then_meshy_multiview",
+      "meshy_priority": 2
     },
     {
       "id": "IMG-EXT-20260920-03",
       "type": "image",
-      "status": "REVIEW",
+      "entity": "SALON_CORTINAS_ROJAS",
+      "role": "MODULAR_ENVIRONMENT_KIT_PRECURSOR",
+      "status": "PASS_WITH_HOLDS",
       "drive_id": "1C5mgEcAp73GT36kQQXoumIuDSxrX2XuL",
       "surface": [
         "gallery",
-        "external_lab"
+        "external_lab",
+        "observatorio"
       ],
-      "entity_assignment": "PENDING"
+      "next": "select_3_to_5_modules_for_individual_3d_generation",
+      "notes": "Do not generate full scene as one mesh. Candidate modules: frame/arch, curtain system, pedestal/table, lamp, stair/threshold."
     },
     {
       "id": "IMG-EXT-20260920-04",
       "type": "image",
-      "status": "REVIEW",
+      "entity": "BRUJULA_DE_LAS_HUELLAS",
+      "role": "INTERACTIVE_RELIC_PRECURSOR",
+      "status": "NEXT_MESHY_CANDIDATE",
       "drive_id": "1OL5xZ6FQSkW2FSKpwKO7zohGIp-SCkFY",
       "surface": [
         "gallery",
-        "external_lab"
+        "external_lab",
+        "mission_map",
+        "observatorio"
       ],
-      "entity_assignment": "PENDING"
+      "next": "extract_clean_front_left_right_back_views_then_meshy_multiview",
+      "meshy_priority": 1,
+      "notes": "Best next single-asset candidate: bounded form, clear silhouette, interaction logic and high reuse value."
     },
     {
       "id": "VID-DANCE-20260920-01",
       "type": "video",
       "name": "ISL_ISLA_BAILE_PREVIS_VIDEO_v0.1",
-      "status": "VISUAL_CONSISTENCY_REVIEW",
+      "entity": "ISLA_DEL_BAILE_INAGOTABLE",
+      "role": "ENVIRONMENT_PREVIS",
+      "status": "PASS_WITH_HOLDS",
       "drive_id": "1KGB9koDVBYrBJ32WPdla4SFMaoO2bgRQ",
       "surface": [
         "gallery",
@@ -67,27 +88,53 @@
         "observatorio",
         "mission_map"
       ],
-      "entity": "ISLA_DEL_BAILE_INAGOTABLE"
+      "qa": {
+        "sampled_frames": 10,
+        "continuity": "GOOD_FOR_MOOD_PREVIS",
+        "geometry_authority": "NO",
+        "morphing": "MINOR_TO_MODERATE_ARCHITECTURAL_DRIFT",
+        "route_readability": "PARTIAL",
+        "use": "camera_mood_scale_transition_reference"
+      },
+      "next": "keep_as_previs_not_spatial_master"
     },
     {
       "id": "AUD-20260920-01",
       "type": "audio",
       "name": "ISL_AUDIO_SEVEN_THOUSAND_PACES_CANDIDATE_v0.1",
+      "role": "MUSIC_CANDIDATE",
       "status": "FUNCTION_REVIEW",
       "drive_id": "1svy7lNXviZZK1d58cS9H7Sh0eOjYxCjz",
       "surface": [
         "gallery",
         "external_lab",
-        "observatorio"
+        "observatorio",
+        "music_gallery"
       ],
-      "entity_assignment": "PENDING"
+      "technical": {
+        "duration_seconds": 178.808,
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "codec": "mp3",
+        "bitrate_bps": 192000,
+        "tempo_estimate_bpm": 117.45
+      },
+      "functional_hypothesis": [
+        "long_traversal",
+        "inter_island_journey",
+        "sustained_movement",
+        "departure_return_montage"
+      ],
+      "human_listen_required": true,
+      "next": "test_against_traversal_scene_before_location_assignment"
     }
   ],
   "current_next_actions": [
-    "classify_images_by_entity",
-    "audit_video_morphing_and_route_readability",
-    "evaluate_audio_functional_fit",
-    "select_next_meshy_ready_precursor",
-    "propagate_validated_results_to_command_center"
+    "extract_brujula_multiview",
+    "extract_medalla_multiview",
+    "select_salon_modules",
+    "human_listen_seven_thousand_paces",
+    "derive_video_reference_images_for_next_previs",
+    "propagate_results_to_command_center"
   ]
 }
