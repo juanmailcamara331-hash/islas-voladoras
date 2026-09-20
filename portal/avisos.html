@@ -14,17 +14,57 @@
 <section id="grid" class="grid"></section>
 </main>
 <script>
-let deferredInstall=null;
-addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;install.hidden=false});
-install.onclick=async()=>{if(!deferredInstall)return;deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;install.hidden=true};
-if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
-function paintStatus(){
- const n=('Notification'in window)?Notification.permission:'no soportado';
- status.textContent='Notificaciones: '+n+'. Los avisos programados con la app cerrada requieren push/Calendar; aquí funcionan feed + avisos nativos bajo interacción.';
-}
-allow.onclick=async()=>{if(!('Notification'in window)){paintStatus();return}await Notification.requestPermission();paintStatus()};
-test.onclick=async()=>{if(!('Notification'in window))return;if(Notification.permission!=='granted'){await Notification.requestPermission()}if(Notification.permission==='granted'){const reg=await navigator.serviceWorker.ready;reg.showNotification('ISL · El viento ha cambiado de idea',{body:'Aviso de prueba. Si lees esto, el Centro puede hablarte.',icon:'isl-icon-master.png',badge:'isl-icon-master.png',data:{url:'recreo.html'}})}paintStatus()};
-fetch('isl-notices-current.json',{cache:'no-store'}).then(r=>r.json()).then(j=>{grid.innerHTML=(j.notices||[]).map(x=>'<article class="card"><div class="kind">'+x.kind+'</div><div class="title">'+x.title+'</div><div class="body">'+x.body+'</div><div class="row"><a class="btn" href="'+x.url+'">ABRIR</a></div></article>').join('')});
-paintStatus();
+(function(){
+ const allow=document.getElementById('allow'),test=document.getElementById('test'),install=document.getElementById('install'),status=document.getElementById('status'),grid=document.getElementById('grid');
+ let deferredInstall=null;
+ addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;install.hidden=false});
+ install.onclick=async()=>{if(!deferredInstall)return;deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;install.hidden=true};
+
+ const native=!!window.ISLNativeNotifications;
+ function paintStatus(){
+   if(native){
+     let ok=false;try{ok=window.ISLNativeNotifications.hasPermission()}catch(e){}
+     status.textContent=ok?'Android nativo activo · mañana + tarde · Misiones/Crecer conectados.':'Android nativo listo · toca ACTIVAR y acepta el permiso del sistema.';
+     return;
+   }
+   const n=('Notification'in window)?Notification.permission:'no soportado';
+   status.textContent='Modo web/PWA · notificaciones: '+n+'. Para avisos fiables con la app cerrada usa el APK nativo.';
+ }
+ allow.onclick=async()=>{
+   if(native){try{window.ISLNativeNotifications.requestPermission();status.textContent='Permiso solicitado · acepta el diálogo de Android.';setTimeout(paintStatus,1500)}catch(e){status.textContent='No se pudo abrir el permiso nativo.'}return}
+   if(!('Notification'in window)){paintStatus();return}
+   try{await Notification.requestPermission()}catch(e){}
+   paintStatus();
+ };
+ test.onclick=async()=>{
+   if(native){try{window.ISLNativeNotifications.testNotification();status.textContent='Aviso nativo de prueba enviado. Si no aparece, activa el permiso de Android.'}catch(e){status.textContent='Falló la prueba nativa.'}return}
+   if(!('Notification'in window)){paintStatus();return}
+   try{
+     if(Notification.permission!=='granted')await Notification.requestPermission();
+     if(Notification.permission==='granted'){
+       const reg=await navigator.serviceWorker.ready;
+       await reg.showNotification('ISL · Parte de navegación',{body:'Capitán: una misión, no veinte.',icon:'isl-icon-master.png',badge:'isl-icon-master.png',data:{url:'mission-map.html'}});
+     }
+   }catch(e){}
+   paintStatus();
+ };
+ if('serviceWorker'in navigator&&!native)navigator.serviceWorker.register('sw.js').catch(()=>{});
+
+ const escapeHtml=x=>String(x||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+ Promise.all([
+   fetch('isl-mission-state.json',{cache:'no-store'}).then(r=>r.json()).catch(()=>({missions:[]})),
+   fetch('isl-notices-current.json',{cache:'no-store'}).then(r=>r.json()).catch(()=>({notices:[]}))
+ ]).then(([m,n])=>{
+   const now=(m.missions||[]).find(x=>x.lane==='NOW');
+   const growth=(m.missions||[]).find(x=>x.lane==='GROWTH');
+   const live=[];
+   if(now)live.push({kind:'MISIÓN',title:'La brújula marca una sola isla',body:'Hoy: '+now.title+'. Haz eso y deja respirar al resto.',url:now.deep_link||'mission-map.html'});
+   if(growth)live.push({kind:'CRECER',title:'Hay botín fuera del combate',body:'Making, mockup, stream o campaña: una pieza pequeña puede alimentar varias rutas.',url:growth.deep_link||'crecimiento.html'});
+   live.push({kind:'OBSERVATORIO',title:'Antes de remar más fuerte, mira la marea',body:'Tiempo, coste, distribución y riesgo están juntos para decidir qué merece energía.',url:'project-observatory.html'});
+   const all=live.concat((n.notices||[]).slice(0,2));
+   grid.innerHTML=all.map(x=>'<article class="card"><div class="kind">'+escapeHtml(x.kind)+'</div><div class="title">'+escapeHtml(x.title)+'</div><div class="body">'+escapeHtml(x.body)+'</div><div class="row"><a class="btn" href="'+escapeHtml(x.url)+'">ABRIR</a></div></article>').join('');
+ });
+ paintStatus();
+})();
 </script><script defer src="isl-global-shell.js"></script>
 </body></html>
