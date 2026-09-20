@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "isl://schemas/spielberg-to-isl-creative-transfer-packet-v0.1",
+  "title": "SPIELBERG_TO_ISL_CREATIVE_TRANSFER_PACKET",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source",
+    "session_id",
+    "date",
+    "origin_world",
+    "origin_experiment",
+    "player_action",
+    "initial_state",
+    "changed_entity",
+    "changed_variable",
+    "causal_chain",
+    "emergent_mechanic",
+    "systemic_principle",
+    "dialectical_tension",
+    "gamefeel_effect",
+    "level_design_effect",
+    "ai_system_effect",
+    "accessibility_implication",
+    "possible_transfer_domains",
+    "unexpected_consequence",
+    "why_it_is_interesting",
+    "confidence",
+    "maturity",
+    "provenance",
+    "contains_spielberg_specific_expression"
+  ],
+  "properties": {
+    "source": {
+      "const": "SPIELBERG_CREATIVE_GAMEVERSE"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "date": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "origin_world": {
+      "type": "string",
+      "maxLength": 240
+    },
+    "origin_experiment": {
+      "type": "string",
+      "maxLength": 400
+    },
+    "player_action": {
+      "type": "string",
+      "maxLength": 600
+    },
+    "initial_state": {
+      "type": "string",
+      "maxLength": 600
+    },
+    "changed_entity": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "changed_variable": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "causal_chain": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "string",
+        "maxLength": 600
+      }
+    },
+    "emergent_mechanic": {
+      "type": "string",
+      "maxLength": 700
+    },
+    "systemic_principle": {
+      "type": "string",
+      "maxLength": 700
+    },
+    "dialectical_tension": {
+      "type": "string",
+      "maxLength": 700
+    },
+    "gamefeel_effect": {
+      "type": "string",
+      "maxLength": 700
+    },
+    "level_design_effect": {
+      "type": "string",
+      "maxLength": 700
+    },
+    "ai_system_effect": {
+      "type": "string",
+      "maxLength": 700
+    },
+    "accessibility_implication": {
+      "type": "string",
+      "maxLength": 700
+    },
+    "possible_transfer_domains": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "string",
+        "maxLength": 160
+      }
+    },
+    "unexpected_consequence": {
+      "type": "string",
+      "maxLength": 700
+    },
+    "why_it_is_interesting": {
+      "type": "string",
+      "maxLength": 900
+    },
+    "confidence": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "maturity": {
+      "enum": [
+        "SEED",
+        "SPROUT",
+        "ARTIFACT",
+        "MECHANIC",
+        "DIORAMA",
+        "SYSTEM",
+        "MICRO_WORLD"
+      ]
+    },
+    "provenance": {
+      "const": "generated_during_play"
+    },
+    "contains_spielberg_specific_expression": {
+      "const": false
+    }
+  }
+}
