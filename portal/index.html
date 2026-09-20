@@ -674,7 +674,7 @@ let weights=JSON.parse(localStorage.getItem('islcc_weights')||'null')||{identity
 let selected=JSON.parse(localStorage.getItem('islcc_selected')||'[]');
 let ratings=JSON.parse(localStorage.getItem('islcc_ratings')||'{}');
 function save(){localStorage.setItem('islcc_weights',JSON.stringify(weights));localStorage.setItem('islcc_selected',JSON.stringify(selected));localStorage.setItem('islcc_ratings',JSON.stringify(ratings))}
-function go(id){document.querySelectorAll('.view,.rail button[data-view]').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');let b=document.querySelector(`[data-view="${id}"]`);if(b)b.classList.add('active');setDrawer(false);if(id==='compare')renderCompare();window.scrollTo(0,0)}
+function go(id){if(id==='gallery'){location.href='galeria.html'+(window.__ISL_NATIVE_APP__?'?app=1':'');return}document.querySelectorAll('.view,.rail button[data-view]').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');let b=document.querySelector(`[data-view="${id}"]`);if(b)b.classList.add('active');setDrawer(false);if(id==='compare')renderCompare();window.scrollTo(0,0)}
 document.querySelectorAll('.rail button[data-view]').forEach(b=>b.onclick=()=>go(b.dataset.view));
 document.querySelectorAll('[data-main-nav]').forEach(function(b){b.onclick=function(){go(b.dataset.mainNav)}});
 document.querySelectorAll('[data-route-link]').forEach(function(a){a.onclick=function(e){e.preventDefault();var id=a.dataset.routeLink||'calendar';go(id);history.replaceState(null,'','#'+id)}});
