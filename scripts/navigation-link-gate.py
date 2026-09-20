@@ -34,7 +34,7 @@ for p in html_files:
 
 # Surfaces that must feel like one internal Command Center.
 global_pages=[
- "index.html","rpg-home.html","huellas.html","salon-cortinas-rojas.html",
+ "index.html","rpg-home.html","galeria.html","huellas.html","salon-cortinas-rojas.html",
  "isla-baile-inagotable.html","recreo.html","capsulas.html","capsulas-tv.html",
  "musica.html","ps4.html","air-fishing.html","avisos.html","boss-prototype.html",
  "decision-engine.html","midjourney-lab.html","ningun-sitio.html","playtest-echo.html",
@@ -120,6 +120,15 @@ else:
     low=st.lower()
     for token in ["spielberg lab feed","lab_only","not_canon","isl-spielberg-lab-feed.json"]:
         if token.lower() not in low: errors.append(f"Spielberg Lab Feed contract missing: {token}")
+
+
+# Unified Gallery + production-safe Route ISL
+gallery=(ROOT/"galeria.html").read_text(encoding="utf-8",errors="ignore")
+for token in ["GALERÍA VIVA · WEB + APP","data/isl-music-current.json","data/isl-external-lab-current.json","command-center.html?full=1#calendar","audio controls"]:
+    if token not in gallery: errors.append(f"unified gallery contract missing: {token}")
+shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
+for token in ["command-center.html?full=1','#calendar","galeria.html"]:
+    if token not in shell: errors.append(f"global route contract missing: {token}")
 
 if errors:
     print("ISL NAVIGATION/LINK GATE FAILED")
