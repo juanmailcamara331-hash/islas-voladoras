@@ -16,6 +16,10 @@ cp portal/poll/referencias-lite-v2.html build/public/poll/referencias-lite-v2.ht
 cp portal/poll/gracias.html build/public/poll/gracias.html
 cp portal/poll-live.js build/public/poll-live.js
 cp portal/survey-results.html build/public/survey-results.html
+cp portal/playtest-lab.html build/public/playtest-lab.html
+cp portal/signal-telegraph-lab.html build/public/signal-telegraph-lab.html
+# Public playtests reuse the same source files, but strip the internal Command Center shell.
+sed -i '/isl-global-shell.css/d;/isl-global-shell.js/d' build/public/playtest-lab.html build/public/signal-telegraph-lab.html
 cp portal/ISL_PUBLIC_DECISIONS_CURRENT.json build/public/ISL_PUBLIC_DECISIONS_CURRENT.json
 
 for f in molino-a-top.jpg molino-b-top.jpg molino-c-top.jpg ghost-reference-mobile.jpg ghost-reference-exact-hd.webp; do
@@ -29,6 +33,7 @@ Allowed:
 - polls
 - explicitly shared poll assets
 - safe aggregated survey results
+- public-safe Playtest Lab / Signal Telegraph Lab
 Private Command Center files are intentionally excluded.
 EOF
 
@@ -46,4 +51,4 @@ if [ "$bytes" -gt 5000000 ]; then
   exit 3
 fi
 python3 scripts/route-visibility-gate.py
-echo "ISL PUBLIC build OK: minimal landing + polls only."
+echo "ISL PUBLIC build OK: landing + polls + public-safe playtest lab."
