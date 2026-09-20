@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "isl://schemas/isl-translation-candidate-v0.1",
+  "title": "ISL_TRANSLATION_CANDIDATE",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "abstract_principle",
+    "possible_isl_application",
+    "affected_systems",
+    "possible_new_mechanic",
+    "possible_world_response",
+    "possible_creature_response",
+    "possible_navigation_effect",
+    "possible_progression_effect",
+    "compatibility_risks",
+    "dependencies",
+    "test_cost",
+    "recommended_experiment",
+    "status"
+  ],
+  "properties": {
+    "abstract_principle": {
+      "type": "string",
+      "maxLength": 900
+    },
+    "possible_isl_application": {
+      "type": "string",
+      "maxLength": 900
+    },
+    "affected_systems": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "string",
+        "maxLength": 160
+      }
+    },
+    "possible_new_mechanic": {
+      "type": "string",
+      "maxLength": 900
+    },
+    "possible_world_response": {
+      "type": "string",
+      "maxLength": 900
+    },
+    "possible_creature_response": {
+      "type": "string",
+      "maxLength": 900
+    },
+    "possible_navigation_effect": {
+      "type": "string",
+      "maxLength": 900
+    },
+    "possible_progression_effect": {
+      "type": "string",
+      "maxLength": 900
+    },
+    "compatibility_risks": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "string",
+        "maxLength": 300
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "string",
+        "maxLength": 300
+      }
+    },
+    "test_cost": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "recommended_experiment": {
+      "type": "string",
+      "maxLength": 1200
+    },
+    "status": {
+      "const": "LAB_ONLY"
+    }
+  }
+}
