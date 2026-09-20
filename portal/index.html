@@ -369,6 +369,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 .actionCard.mission{border:2px solid #a97a35}.actionCard.mission:before{background:linear-gradient(135deg,#251b0d,#0b1820)}.actionCard.mission .actionGlow{background:#ffc36e}.actionCard.mission small{color:#ffd994}
 .actionCard.growth{border:1.5px solid #8065a7}.actionCard.growth:before{background:linear-gradient(135deg,#1d1731,#0b1820)}.actionCard.growth .actionGlow{background:#bc95ff}.actionCard.growth small{color:#d8c1ff}
 .actionCard.observe{border:1.5px solid #4f8795}.actionCard.observe:before{background:linear-gradient(135deg,#0d2934,#0b1820)}.actionCard.observe .actionGlow{background:#8defff}.actionCard.observe small{color:#a8f4ff}
+.actionMeta{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}.actionMeta i{font-style:normal;font-size:7px;font-weight:950;letter-spacing:.08em;border:1px solid #ffffff28;border-radius:999px;padding:4px 6px;background:#06101888;color:#dfe9e8}.actionCard.mission .actionMeta i:first-child{color:#ffd994;border-color:#a97a35}.actionCard.growth .actionMeta i:first-child{color:#d8c1ff;border-color:#8065a7}.actionCard.observe .actionMeta i:first-child{color:#a8f4ff;border-color:#4f8795}
 .actionCard:hover,.actionCard:focus-visible{transform:translateY(-2px);box-shadow:0 24px 58px #0009}
 .secondaryTools{margin:12px;border:1px solid #294651;border-radius:14px;background:#07131a88;overflow:hidden}
 .secondaryTools>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:12px 14px;color:#94aab0}.secondaryTools>summary::-webkit-details-marker{display:none}.secondaryTools>summary span{font-size:9px;font-weight:950;letter-spacing:.14em;color:#b5c8cc}.secondaryTools>summary b{font-size:8px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.secondaryTools>summary i{font-style:normal;font-size:18px;color:#d7b46f}.secondaryTools[open]>summary i{transform:rotate(45deg)}
@@ -451,9 +452,9 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     </div>
   </section>
   <section class="actionTriad" aria-label="Acciones prioritarias">
-    <a class="actionCard mission" href="mission-map.html"><span class="actionGlow"></span><small>P0 · QUÉ TOCA</small><b>MISIONES</b><span>Ahora · bloqueos · dependencias · avisos</span></a>
-    <a class="actionCard growth" href="crecimiento.html"><span class="actionGlow"></span><small>CREAR + SOSTENER</small><b>CRECER</b><span>Making · Twitch · curso · mockups · campañas</span></a>
-    <a class="actionCard observe" href="project-observatory.html"><span class="actionGlow"></span><small>SIMULAR / MEDIR</small><b>OBSERVATORIO</b><span>Tiempo · coste · distribución · riesgo</span></a>
+    <a class="actionCard mission" href="mission-map.html"><span class="actionGlow"></span><small>P0 · QUÉ TOCA</small><b>MISIONES</b><span>Ahora · bloqueos · dependencias · avisos</span><div class="actionMeta"><i>PESO ALTO</i><i>~30–40 MIN · EST.</i><i>BLOQUEA</i></div></a>
+    <a class="actionCard growth" href="crecimiento.html"><span class="actionGlow"></span><small>P2 · CREAR + SOSTENER</small><b>CRECER</b><span>Making · Twitch · curso · mockups · campañas</span><div class="actionMeta"><i>PESO MEDIO</i><i>~20–30 MIN · EST.</i><i>PARALELO</i></div></a>
+    <a class="actionCard observe" href="project-observatory.html"><span class="actionGlow"></span><small>P1 · SIMULAR / MEDIR</small><b>OBSERVATORIO</b><span>Tiempo · coste · distribución · riesgo</span><div class="actionMeta"><i>PESO MEDIO</i><i>~5 MIN · EST.</i><i>DECIDE</i></div></a>
   </section>
   <div class="finalHero">
     <img src="assets/island-a-master.jpg" alt="Islas Voladoras">
