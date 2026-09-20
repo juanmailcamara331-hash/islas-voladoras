@@ -25,3 +25,33 @@ body{padding-bottom:76px!important}
 .islP3 h2,.islP3 h3{font-size:.94em}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid #8defff!important;outline-offset:3px!important}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+
+
+/* ISL v0.75.1 — weighted navigation */
+#islGlobalShell .igsRow{gap:6px}
+#islGlobalShell a.igsP0,#islGlobalShell a.igsP1,#islGlobalShell a.igsP2,#islGlobalShell a.igsLife{
+  position:relative;border:1px solid transparent;padding:10px 12px;min-width:96px;font-size:10px;overflow:hidden
+}
+#islGlobalShell a.igsP0{min-width:116px;font-size:11px;color:#ffe2a6!important;border-color:#9d7338;background:linear-gradient(180deg,#2a2113,#15170f);box-shadow:0 0 0 1px #ffc36e18,0 0 26px #ffc36e24,0 10px 24px #0008}
+#islGlobalShell a.igsP0:before{content:"";position:absolute;inset:-60% 20%;background:linear-gradient(90deg,transparent,#ffd27d28,transparent);transform:rotate(14deg);animation:islNavSweep 5.5s ease-in-out infinite}
+#islGlobalShell a.igsP1{color:#baf6ff!important;border-color:#3f7483;background:#0c222b;box-shadow:0 0 20px #8defff12}
+#islGlobalShell a.igsP2{color:#e4d4ff!important;border-color:#71598c;background:#171326;box-shadow:0 0 18px #bba4ff10}
+#islGlobalShell a.igsLife{color:#c9f2d9!important;border-color:#47715e;background:#0c2018}
+#islGlobalShell a.igsSecondary{opacity:.68;font-size:8px;min-width:68px}
+#islGlobalShell .igsSub{display:block;font-size:6px;letter-spacing:.08em;opacity:.72;margin-top:2px;font-weight:800}
+#islGlobalMore a.priority0,#islGlobalMore a.priority1,#islGlobalMore a.priority2,#islGlobalMore a.life{
+  min-height:62px;display:flex;flex-direction:column;justify-content:center;font-size:10px
+}
+#islGlobalMore a.priority0{border:2px solid #9d7338;background:linear-gradient(135deg,#291f11,#0a171e);color:#ffe1a1;box-shadow:0 0 24px #ffc36e18}
+#islGlobalMore a.priority1{border-color:#3f7483;background:#0b222c;color:#baf6ff}
+#islGlobalMore a.priority2{border-color:#70578a;background:#171126;color:#e2d2ff}
+#islGlobalMore a.life{border-color:#47715e;background:#0c2018;color:#c9f2d9}
+#islGlobalMore a.utility{opacity:.72}
+@keyframes islNavSweep{0%,55%{transform:translateX(-160%) rotate(14deg)}75%,100%{transform:translateX(180%) rotate(14deg)}}
+@media(max-width:640px){
+  #islGlobalShell .igsRow{padding:5px}
+  #islGlobalShell a.igsP0{min-width:108px;font-size:10px}
+  #islGlobalShell a.igsP1,#islGlobalShell a.igsP2,#islGlobalShell a.igsLife{min-width:88px;font-size:9px}
+  #islGlobalMore.open{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){#islGlobalShell a.igsP0:before{animation:none}}
