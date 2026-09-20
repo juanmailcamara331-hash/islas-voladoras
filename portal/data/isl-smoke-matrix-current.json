@@ -1,0 +1,48 @@
+{
+  "schema": "isl.smoke.matrix.v0.1",
+  "generated_at": "2026-09-21",
+  "boundary": "ISL_ONLY",
+  "status": "ACTIVE",
+  "tests": [
+    {
+      "id": "SMOKE-GALLERY-001",
+      "surface": "GALLERY",
+      "check": "portal/galeria.html exists and loads current media + music registries",
+      "severity": "P0",
+      "automation": "STATIC+RUNTIME",
+      "expected": "PASS"
+    },
+    {
+      "id": "SMOKE-3D-001",
+      "surface": "GYM_3D_ASSET",
+      "check": "asset health registry loads without promoting blocked assets",
+      "severity": "P0",
+      "automation": "STATIC+RUNTIME",
+      "expected": "PASS_WITH_WARN_ALLOWED"
+    },
+    {
+      "id": "SMOKE-MUSIC-001",
+      "surface": "MUSIC_GALLERY",
+      "check": "audio player exists only when runtime_src is present",
+      "severity": "P0",
+      "automation": "STATIC",
+      "expected": "PASS"
+    },
+    {
+      "id": "SMOKE-CANON-001",
+      "surface": "REGISTRIES",
+      "check": "no External Lab asset auto-promotes to CANON",
+      "severity": "P0",
+      "automation": "VALIDATION_AS_CODE",
+      "expected": "PASS"
+    },
+    {
+      "id": "SMOKE-LINEAGE-001",
+      "surface": "ASSET_HEALTH",
+      "check": "source/master/runtime distinctions remain explicit",
+      "severity": "P0",
+      "automation": "VALIDATION_AS_CODE",
+      "expected": "PASS_OR_WARN_IF_GATE_BLOCKED"
+    }
+  ]
+}
