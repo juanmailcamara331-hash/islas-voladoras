@@ -1,0 +1,23 @@
+{
+  "schema": "isl.external_research.spielberg_bridge.v0.1",
+  "source": "SPIELBERG_CREATIVE_GAMEVERSE",
+  "boundary": "ABSTRACT_SYSTEMIC_DISCOVERIES_ONLY",
+  "current_mode": "LEVEL_1_SEMIAUTOMATIC",
+  "last_sync": null,
+  "counts": {
+    "new": 0,
+    "observing": 0,
+    "lab_testing": 0,
+    "adapted": 0,
+    "discarded": 0,
+    "promoted_to_isl_path": 0
+  },
+  "items": [],
+  "gates": {
+    "automatic_canon_promotion": false,
+    "automatic_production_promotion": false,
+    "automatic_ready_unreal_promotion": false,
+    "human_decision_required": true,
+    "r2_human_unchanged": true
+  }
+}
