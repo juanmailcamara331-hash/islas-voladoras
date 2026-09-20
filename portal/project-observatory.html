@@ -11,6 +11,27 @@ main{width:min(1120px,94vw);margin:auto;padding:26px 0 100px}.k{font-size:10px;l
 <article class="card"><h2>Simulador de carga</h2><div id="rows"></div><div class="totals"><div class="metric"><small>Optimista</small><strong id="low">—</strong></div><div class="metric"><small>Base</small><strong id="base">—</strong></div><div class="metric"><small>Con margen</small><strong id="high">—</strong></div></div><div class="barWrap" id="bars"></div><div class="note">Modelo simple: suma categorías. A futuro se sustituirá por Monte Carlo / dependencias cuando tengamos suficientes datos del Creation Ledger. No incluye esperas humanas ni bloqueos externos salvo que los metas en una categoría.</div></article>
 <article class="card"><h2>Ruta actual</h2><div class="road" id="road"></div><div class="note">La ruta se carga desde ISL_ROUTE_STATE_CURRENT.json. Cuando cambie el roadmap, esta vista cambia sin reescribir el gráfico.</div></article>
 </section>
+<section class="grid" id="moneySim">
+<article class="card"><h2>Coste / distribución</h2>
+<div class="totals">
+<div class="metric"><small>Producción interna</small><strong>€0 ext.</strong></div>
+<div class="metric"><small>Publicación base</small><strong id="pubCost">€450</strong></div>
+<div class="metric"><small>Campaña test</small><strong id="campCost">€1.000</strong></div>
+</div>
+<div class="row"><b>Publicación/admin €</b><input id="pub" type="number" min="0" value="450"><input id="camp" aria-label="campaña" type="number" min="0" value="1000"><input id="reserve" aria-label="reserva" type="number" min="0" value="100"></div>
+<div class="barWrap" id="moneyBars"></div>
+<div class="note">Producción externa = hipótesis €0 mientras resolvamos internamente. Publicación, campaña y reserva son escenarios, no gastos comprometidos. La distribución sigue la evidencia: no se escala un canal sólo porque tenga alcance.</div>
+<a class="btn" href="https://islas-voladoras-isl.netlify.app/commercial-health">ABRIR SALUD COMERCIAL →</a>
+</article>
+<article class="card"><h2>Lectura rápida</h2>
+<div class="road">
+<div class="step now"><i></i><div><b>AHORA</b><span>Validación humana + navegación + evidencia.</span></div><strong>P0</strong></div>
+<div class="step"><i></i><div><b>DESPUÉS</b><span>Contenido/sistemas sólo al desbloquear la ruta.</span></div><strong>P1</strong></div>
+<div class="step"><i></i><div><b>PARALELO</b><span>Making, mockups, stream y crecimiento sin bloquear el juego.</span></div><strong>P2</strong></div>
+</div>
+<div class="note">Tiempo, dinero y distribución se leen juntos. Si una tarea no desbloquea nada, no debe parecer urgente.</div>
+</article>
+</section>
 <a class="btn" href="index.html?resume=1">← VOLVER AL CENTRO</a>
 </main><script>
 const defaults=[
@@ -26,4 +47,9 @@ defaults.forEach((r,i)=>{rows.insertAdjacentHTML("beforeend",'<div class="row"><
 function calc(){const rr=[...rows.querySelectorAll(".row")];let sums=[0,0,0],cats=[];rr.forEach(x=>{const v=[...x.querySelectorAll("input")].map(n=>Math.max(0,Number(n.value)||0));v.forEach((n,i)=>sums[i]+=n);cats.push([x.querySelector("b").textContent,v[1]])});low.textContent=sums[0]+" d";base.textContent=sums[1]+" d";high.textContent=sums[2]+" d";const max=Math.max(...cats.map(x=>x[1]),1);bars.innerHTML=cats.map(x=>'<div class="barRow"><span>'+x[0]+'</span><div class="bar"><i style="width:'+(x[1]/max*100)+'%"></i></div><b>'+x[1]+'d</b></div>').join("")}
 rows.addEventListener("input",calc);calc();
 fetch("ISL_ROUTE_STATE_CURRENT.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{road.innerHTML=(d.route_steps||[]).map(x=>'<div class="step '+x.status+'"><i></i><div><b>'+x.title+'</b><span>'+x.note+'</span></div><strong>'+x.status.toUpperCase()+'</strong></div>').join("")}).catch(()=>{road.innerHTML='<div class="note">No se pudo cargar la ruta.</div>'});
+const fmt=n=>'€'+Math.round(n).toLocaleString('es-ES');
+function money(){const p=Math.max(0,+pub.value||0),c=Math.max(0,+camp.value||0),r=Math.max(0,+reserve.value||0),t=Math.max(1,p+c+r);pubCost.textContent=fmt(p);campCost.textContent=fmt(c);moneyBars.innerHTML=[
+['Publicación',p],['Campaña',c],['Reserva',r]
+].map(x=>'<div class="barRow"><span>'+x[0]+'</span><div class="bar"><i style="width:'+(x[1]/t*100)+'%"></i></div><b>'+fmt(x[1])+'</b></div>').join('')}
+['pub','camp','reserve'].forEach(id=>document.getElementById(id).addEventListener('input',money));money();
 </script><script defer src="isl-global-shell.js"></script></body></html>
