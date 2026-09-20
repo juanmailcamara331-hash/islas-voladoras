@@ -45,6 +45,7 @@ need("pilares-lite-v2.html" in pub_build, "public build missing Pilares Lite v2"
 need("referencias-lite-v2.html" in pub_build, "public build missing Referencias Lite v2")
 need("playtest-lab.html" in pub_build, "public build missing Playtest Lab")
 need("signal-telegraph-lab.html" in pub_build, "public build missing Signal Telegraph Lab")
+need("playtest-results.html" in pub_build, "public build missing aggregate Playtest Evidence view")
 need("sed -i" in pub_build and "isl-global-shell.js" in pub_build, "public playtest build must strip internal shell")
 for forbidden in ["command-center.html","rpg-home.html","route-isl.js","huellas.html","secret-level.html"]:
     need(forbidden in pub_build, f"public build must explicitly forbid private surface: {forbidden}")
