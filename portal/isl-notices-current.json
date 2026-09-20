@@ -1,37 +1,46 @@
 {
-  "version": "0.23",
-  "updated": "2026-09-18",
+  "version": "0.24",
+  "updated": "2026-09-21",
+  "tone_contract": "PUNKARRA_CALIDO + SCI_FI_SARDONIC_SPARK; never imitation, never guilt, never spam.",
   "notices": [
     {
-      "id": "pre50",
-      "kind": "PLAYTEST",
-      "title": "El cielo espera una mirada humana",
-      "body": "PRE50 está listo. Falta un tester real para abrir PRE60.",
-      "url": "playtest-echo.html",
-      "priority": "high"
-    },
-    {
-      "id": "recreo",
-      "kind": "RECREO",
-      "title": "Hoy no hace falta arreglar el cielo",
-      "body": "Cápsulas, música y una decisión ligera. Nada entra en CANON.",
-      "url": "recreo.html",
+      "id": "night-calm-0921",
+      "kind": "DESCANSO · P3",
+      "title": "Cierra el astillero, criatura",
+      "body": "La nave no explota si duermes. Galería, música y 3D quedan en su sitio; mañana sólo miramos que siga flotando.",
+      "url": "galeria.html",
       "priority": "soft"
     },
     {
-      "id": "visual",
-      "kind": "VISUAL LAB",
-      "title": "VIS-00 está abierto",
-      "body": "Midjourney + Discord entran como laboratorio visual controlado, no como árbitro de CANON.",
-      "url": "index.html",
+      "id": "morning-route-0921",
+      "kind": "RUMBO · P0",
+      "title": "Parte de cubierta: una cosa, no veinte",
+      "body": "Primero abre Ruta ISL + Galería y comprueba web/app. Si está fina, el resto puede ponerse sus pantalones solo.",
+      "url": "mission-map.html",
+      "priority": "high"
+    },
+    {
+      "id": "bee-block-0921",
+      "kind": "BLOQUEO · P1",
+      "title": "La abeja exige papeles, qué sorpresa",
+      "body": "BIO-001 no necesita otra generación: necesita el GLB accesible para QA serio. Hasta entonces no se inventa un PASS.",
+      "url": "gym-3d-asset.html",
       "priority": "medium"
     },
     {
-      "id": "music",
-      "kind": "MÚSICA",
-      "title": "Cielo y Descenso sigue creciendo",
-      "body": "Las nuevas pistas entran como candidatas y pasan CQC antes de publicación.",
-      "url": "capsulas-tv.html",
+      "id": "brujula-next-0921",
+      "kind": "HALLAZGO · P1",
+      "title": "La Brújula ya tiene cuatro caras",
+      "body": "FRONT/LEFT/RIGHT/BACK están preparados. Falta coherencia final y entonces sí: Meshy, sin sacrificar cabras al algoritmo.",
+      "url": "galeria.html",
+      "priority": "medium"
+    },
+    {
+      "id": "music-rest-0921",
+      "kind": "RECREO · P2",
+      "title": "Modo sofá desbloqueado",
+      "body": "Abre Galería → Música. Lo runtime se escucha; lo que aún es source no finge ser Spotify interdimensional.",
+      "url": "galeria.html",
       "priority": "soft"
     }
   ]
