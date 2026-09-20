@@ -591,3 +591,12 @@ Entregables:
 - physical Android CQC.
 
 Human decision remains final.
+
+
+---
+
+## 18. ENTITY INTEGRATION
+Notification OS is operationally linked to `docs/ISL_ENTITY_NOTIFICATION_CONTRACT_v0.72.md`. Every future checkpoint/process should declare notification impact so anti-forgetting becomes a project invariant rather than a manual habit.
+
+## 19. PROJECT OBSERVATORY
+`portal/project-observatory.html` provides current roadmap state plus editable time/load scenarios. Simulation values are hypotheses until calibrated with Creation Ledger evidence; they must never be presented as delivery promises.
