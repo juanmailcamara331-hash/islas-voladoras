@@ -217,3 +217,25 @@ Playwright lives only in path-filtered CI rather than production dependencies.
 5. Feed accepted lessons into Creation Process Ledger.
 6. Generate safe devlog/course/supporter outputs from the same ledger entry.
 7. Build next microexperiment only after first evidence: Ruta/Nav or Gamefeel Tuner.
+
+
+## ADDENDUM — AGGREGATE EVIDENCE VIEW
+Implemented after the first v0.71.4 closure:
+- portal/playtest-results.html
+- public route /playtest-results
+- aggregate-only view for sessions, overall accuracy, mean reaction time, cue performance, understood/confused/fun counts, bug severity and reproducibility
+- free-text notes and bug descriptions are not rendered in the aggregate view
+- Playtest Lab hub links to the evidence view
+- internal global shell links to the public aggregate evidence surface
+
+Final public evidence-view deploy:
+5e46c28c5ceb28d0463b5cfe9d3e8fbebddf4df7
+Netlify deploy:
+6aafaca17ec28a00082c0f85
+STATE: READY
+Netlify reports:
+- playtest-results.html published
+- 6 redirect rules processed
+- 13 header rules processed
+- 3 functions deployed
+- secret scan: no matches
