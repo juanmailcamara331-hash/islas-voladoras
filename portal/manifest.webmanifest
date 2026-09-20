@@ -23,9 +23,21 @@
   ],
   "shortcuts": [
     {
-      "name": "Música ISL",
+      "name": "Galería Viva ISL",
+      "short_name": "Galería",
+      "url": "galeria.html",
+      "icons": [
+        {
+          "src": "isl-icon-master.png",
+          "sizes": "1536x1536",
+          "type": "image/jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Música ISL · dentro de Galería",
       "short_name": "Música",
-      "url": "musica.html",
+      "url": "galeria.html#music",
       "icons": [
         {
           "src": "isl-icon-master.png",
