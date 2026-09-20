@@ -1,0 +1,94 @@
+{
+  "version": "0.72",
+  "status": "PROVISIONAL_IMPLEMENTATION_CONTRACT",
+  "principle": "AVISAR MENOS, PERO AVISAR MEJOR",
+  "modes": {
+    "quiet": {
+      "soft_per_day": 0,
+      "default_per_day": 0,
+      "critical_only": true,
+      "weekly_digest": true
+    },
+    "normal": {
+      "soft_per_day": 1,
+      "default_per_day": 1,
+      "critical_only": false,
+      "weekly_digest": true
+    },
+    "active": {
+      "soft_per_day": 1,
+      "default_per_day": 2,
+      "critical_only": false,
+      "weekly_digest": true
+    }
+  },
+  "channels": [
+    {
+      "id": "now",
+      "label": "Ahora",
+      "importance": "default",
+      "opt_in": "core"
+    },
+    {
+      "id": "decisions",
+      "label": "Decisiones",
+      "importance": "default",
+      "opt_in": "core"
+    },
+    {
+      "id": "tests",
+      "label": "Pruebas",
+      "importance": "default",
+      "opt_in": "core"
+    },
+    {
+      "id": "rhythm",
+      "label": "Ritmo",
+      "importance": "low",
+      "opt_in": "optional"
+    },
+    {
+      "id": "world",
+      "label": "Mundo y creatividad",
+      "importance": "low",
+      "opt_in": "optional"
+    },
+    {
+      "id": "community",
+      "label": "Comunidad y campañas",
+      "importance": "low",
+      "opt_in": "explicit"
+    },
+    {
+      "id": "release",
+      "label": "Release / crítico",
+      "importance": "high",
+      "opt_in": "core"
+    }
+  ],
+  "rules": {
+    "request_permission_only_after_user_action": true,
+    "no_automatic_canon": true,
+    "no_private_biographical_push": true,
+    "no_open_survey_text_in_push": true,
+    "dedupe_required": true,
+    "deep_link_required": true,
+    "quiet_hours_user_configurable": true,
+    "exact_alarms_for_soft_reminders": false,
+    "local_first": true,
+    "remote_push_event_driven": true
+  },
+  "event_map": {
+    "HUMAN_DECISION_REQUIRED": "decisions",
+    "PLAYTEST_READY": "tests",
+    "PLAYTEST_COHORT_REACHED": "tests",
+    "SURVEY_NEW_EVIDENCE": "decisions",
+    "BUILD_READY_PHYSICAL_TEST": "tests",
+    "RELEASE_BLOCKER": "release",
+    "DEPLOY_REGRESSION": "now",
+    "RIGHTS_BLOCKER": "now",
+    "SOFT_CREATIVE_NUDGE": "world",
+    "WEEKLY_FLECOS_DIGEST": "rhythm",
+    "COMMUNITY_EVENT": "community"
+  }
+}
