@@ -254,7 +254,7 @@ jobs:
           checks={
             'index.html':['ENTRAR EN ISL','rpg-home.html','welcomeBrandIcon','railBrandIcon'],
             'rpg-home.html':['RUTA v0.40 · PRE50 PENDIENTE','Inventario','Aventura','Recreo','Música','Centro'],
-            'ps4.html':['PRE50 · EVIDENCIA HUMANA REAL','PRE60','FIRST PLAYABLE','VERTICAL SLICE','Alpha → Beta → Master']
+            'ps4.html':['GALERÍA VIVA','MISIONES','AVISOS','FIRST PLAYABLE','VERTICAL SLICE','Alpha → Beta → Master']
           }
           root=Path('build/pages')
           for name,needles in checks.items():
