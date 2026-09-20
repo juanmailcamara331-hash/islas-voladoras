@@ -39,7 +39,7 @@ global_pages=[
  "musica.html","ps4.html","air-fishing.html","avisos.html","boss-prototype.html",
  "decision-engine.html","midjourney-lab.html","ningun-sitio.html","playtest-echo.html",
  "reel.html","secret-level.html","storm-route.html","sunday-market.html","encuestas.html",
- "playtest-lab.html","signal-telegraph-lab.html"
+ "playtest-lab.html","signal-telegraph-lab.html","playtest-review.html"
 ]
 for rel in global_pages:
     p=ROOT/rel
@@ -94,6 +94,13 @@ if "external-lab.html" not in shell: errors.append("global shell External Lab ac
 if "spielberg-lab.html" not in shell: errors.append("global shell Spielberg Lab Feed access missing")
 if "playtest-lab.html" not in shell: errors.append("global shell Playtest Lab access missing")
 if "signal-telegraph-lab.html" not in shell: errors.append("global shell Signal/Telegraph Lab access missing")
+if "playtest-review.html" not in shell: errors.append("global shell human Playtest Review access missing")
+review=(ROOT/"playtest-review.html")
+if not review.exists(): errors.append("Playtest human review surface missing")
+else:
+    rv=review.read_text(encoding="utf-8",errors="ignore").lower()
+    for token in ["keep","adapt","discard","new_experiment","human_review_only","not_canon"]:
+        if token.lower() not in rv: errors.append(f"Playtest human review contract missing: {token}")
 playtest=(ROOT/"playtest-lab.html")
 if not playtest.exists(): errors.append("Playtest Lab surface missing")
 else:
