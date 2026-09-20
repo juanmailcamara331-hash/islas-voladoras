@@ -1,0 +1,85 @@
+name: ISL Playtest Virtual Preflight
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "portal/playtest-lab.html"
+      - "portal/signal-telegraph-lab.html"
+      - "netlify/functions/playtest-evidence.mts"
+      - "netlify-public-build.sh"
+      - "netlify.toml"
+      - "scripts/security-gate.py"
+      - ".github/workflows/playtest-preflight.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: isl-playtest-preflight-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build public-safe surface
+        run: |
+          bash netlify-public-build.sh
+          test -f build/public/playtest-lab.html
+          test -f build/public/signal-telegraph-lab.html
+          ! grep -q 'isl-global-shell.js' build/public/playtest-lab.html
+          ! grep -q 'isl-global-shell.js' build/public/signal-telegraph-lab.html
+          grep -q 'JUEGA 3 MINUTOS' build/public/playtest-lab.html
+          grep -q 'ISL_SIGNAL_TELEGRAPH_LAB_v0.1' build/public/signal-telegraph-lab.html
+          grep -q '/api/playtest-evidence' build/public/signal-telegraph-lab.html
+
+      - name: Start local public server
+        run: |
+          python3 -m http.server 8765 --directory build/public >/tmp/isl-playtest-http.log 2>&1 &
+          echo $! > /tmp/isl-playtest-http.pid
+          for i in {1..20}; do
+            curl -fsS http://127.0.0.1:8765/playtest-lab.html >/dev/null && exit 0
+            sleep 0.5
+          done
+          exit 1
+
+      - name: Link and failure smoke
+        run: |
+          curl -fsS http://127.0.0.1:8765/playtest-lab.html >/dev/null
+          curl -fsS http://127.0.0.1:8765/signal-telegraph-lab.html >/dev/null
+          code=$(curl -sS -o /dev/null -w "%{http_code}" http://127.0.0.1:8765/definitely-missing-isl-playtest.html)
+          test "$code" = "404"
+
+      - name: Install pinned Chromium harness
+        run: npx --yes playwright@1.55.0 install --with-deps chromium
+
+      - name: WEB_LOW_END 360x640
+        run: |
+          mkdir -p preflight
+          npx --yes playwright@1.55.0 screenshot --browser=chromium --viewport-size="360,640" --full-page http://127.0.0.1:8765/playtest-lab.html preflight/WEB_LOW_END-hub.png
+          npx --yes playwright@1.55.0 screenshot --browser=chromium --viewport-size="360,640" --full-page http://127.0.0.1:8765/signal-telegraph-lab.html preflight/WEB_LOW_END-signal.png
+
+      - name: ANDROID_MID 393x873
+        run: |
+          npx --yes playwright@1.55.0 screenshot --browser=chromium --viewport-size="393,873" --full-page http://127.0.0.1:8765/signal-telegraph-lab.html preflight/ANDROID_MID-signal.png
+
+      - name: WEB_TABLET 768x1024
+        run: |
+          npx --yes playwright@1.55.0 screenshot --browser=chromium --viewport-size="768,1024" --full-page http://127.0.0.1:8765/signal-telegraph-lab.html preflight/WEB_TABLET-signal.png
+
+      - name: WEB_DESKTOP 1366x768
+        run: |
+          npx --yes playwright@1.55.0 screenshot --browser=chromium --viewport-size="1366,768" --full-page http://127.0.0.1:8765/playtest-lab.html preflight/WEB_DESKTOP-hub.png
+          npx --yes playwright@1.55.0 screenshot --browser=chromium --viewport-size="1366,768" --full-page http://127.0.0.1:8765/signal-telegraph-lab.html preflight/WEB_DESKTOP-signal.png
+
+      - name: Upload comparison screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: isl-playtest-preflight-${{ github.sha }}
+          path: preflight/
+          retention-days: 14
