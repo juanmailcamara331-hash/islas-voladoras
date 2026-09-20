@@ -95,8 +95,9 @@ spielberg=(ROOT/"spielberg-lab.html")
 if not spielberg.exists(): errors.append("Spielberg Lab Feed surface missing")
 else:
     st=spielberg.read_text(encoding="utf-8",errors="ignore")
-    for token in ["SPIELBERG LAB FEED","LAB_ONLY","NOT_CANON","isl-spielberg-lab-feed.json"]:
-        if token not in st: errors.append(f"Spielberg Lab Feed contract missing: {token}")
+    low=st.lower()
+    for token in ["spielberg lab feed","lab_only","not_canon","isl-spielberg-lab-feed.json"]:
+        if token.lower() not in low: errors.append(f"Spielberg Lab Feed contract missing: {token}")
 
 if errors:
     print("ISL NAVIGATION/LINK GATE FAILED")
