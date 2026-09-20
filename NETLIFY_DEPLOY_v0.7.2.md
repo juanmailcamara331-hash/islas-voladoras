@@ -139,3 +139,10 @@ RELEASE 2026-09-20T11:55+02:00
 - add short routes /playtest and /signal-lab
 - add no-store/noindex headers for public playtest surfaces
 - preserve private Command Center exclusion from public allowlist
+
+
+RELEASE 2026-09-20T12:05+02:00
+- publish aggregate Playtest Evidence view
+- add /playtest-results short route
+- expose only aggregate sessions, cue performance, confusion/fun counts and bug severity/reproducibility
+- keep free-text notes and bug descriptions out of the public aggregate
