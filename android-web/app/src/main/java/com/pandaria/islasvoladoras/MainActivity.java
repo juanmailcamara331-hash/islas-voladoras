@@ -2,6 +2,8 @@ package com.pandaria.islasvoladoras;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity {
     private static final String BASE = "https://juanmailcamara331-hash.github.io/islas-voladoras/";
-    private static final String HOME = BASE + "index.html?app=1&native=075&v=20260920-2";
+    private static final String HOME = BASE + "index.html?app=1&native=076&v=20260920-3";
     private WebView web;
 
     @Override
@@ -83,12 +85,27 @@ public class MainActivity extends Activity {
         return Build.VERSION.SDK_INT < 33 || checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED;
     }
 
+    private SharedPreferences notificationPrefs() {
+        return getSharedPreferences(NotificationWorker.PREFS, Context.MODE_PRIVATE);
+    }
+
     public class NativeNotificationsBridge {
         @JavascriptInterface
         public boolean isNative() { return true; }
 
         @JavascriptInterface
         public boolean hasPermission() { return hasNotificationPermission(); }
+
+        @JavascriptInterface
+        public String getMode() {
+            return notificationPrefs().getString(NotificationWorker.PREF_MODE, "normal");
+        }
+
+        @JavascriptInterface
+        public void setMode(String mode) {
+            if (!"quiet".equals(mode) && !"normal".equals(mode) && !"active".equals(mode)) mode = "normal";
+            notificationPrefs().edit().putString(NotificationWorker.PREF_MODE, mode).apply();
+        }
 
         @JavascriptInterface
         public void requestPermission() {

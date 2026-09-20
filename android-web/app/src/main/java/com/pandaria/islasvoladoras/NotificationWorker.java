@@ -5,6 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,8 @@ import java.time.LocalDate;
 
 public class NotificationWorker extends Worker {
     public static final String CHANNEL_ID = "isl_rhythm";
+    public static final String PREFS = "isl_notification_os";
+    public static final String PREF_MODE = "mode";
     private static final String STATE_URL = "https://juanmailcamara331-hash.github.io/islas-voladoras/isl-mission-state.json";
 
     public NotificationWorker(@NonNull Context context, @NonNull WorkerParameters params) {
@@ -32,10 +35,15 @@ public class NotificationWorker extends Worker {
     @NonNull @Override
     public Result doWork() {
         Context c = getApplicationContext();
-        ensureChannel(c);
-
         String slot = getInputData().getString("slot");
         if (slot == null) slot = "morning";
+
+        SharedPreferences prefs = c.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
+        String mode = prefs.getString(PREF_MODE, "normal");
+        if ("quiet".equals(mode)) return Result.success();
+        if ("normal".equals(mode) && "afternoon".equals(slot)) return Result.success();
+
+        ensureChannel(c);
 
         String mission = fetchNowMission();
         int day = LocalDate.now().getDayOfYear();
@@ -48,7 +56,7 @@ public class NotificationWorker extends Worker {
         if ("afternoon".equals(slot)) {
             title = "ISL · El viento gira al caer la tarde";
             if (growthDay) {
-                body = "Hay botín fuera del juego: Making, mockup o campaña. Una pieza pequeña basta hoy.";
+                body = "Hay botín fuera del combate: Making, mockup o campaña. Una pieza pequeña basta hoy.";
                 url = "crecimiento.html";
             } else {
                 body = mission != null
@@ -87,7 +95,7 @@ public class NotificationWorker extends Worker {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationManager nm = (NotificationManager)c.getSystemService(Context.NOTIFICATION_SERVICE);
             NotificationChannel ch = new NotificationChannel(CHANNEL_ID, "Ritmo ISL", NotificationManager.IMPORTANCE_DEFAULT);
-            ch.setDescription("Misiones, crecimiento y recordatorios suaves de ISL.");
+            ch.setDescription("Partes de navegación, misiones y recordatorios suaves de expedición.");
             nm.createNotificationChannel(ch);
         }
     }
