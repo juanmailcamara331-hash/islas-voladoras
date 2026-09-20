@@ -76,6 +76,7 @@ PY
 
 test -f build/site/index.html
 test -f build/site/rpg-home.html
+test -f build/site/galeria.html
 test -f build/site/command-center.html
 test -f build/site/ps4.html
 test -f build/site/ps4-runtime-hotfix.js
@@ -101,6 +102,9 @@ test -f build/site/assets/floating-island-level.png
 test -f build/site/assets/floating-ruins-guide.png
 grep -q 'Cabina de Expedición' build/site/index.html
 grep -q 'isl-polish.css' build/site/command-center.html
+grep -q 'GALERÍA VIVA · WEB + APP' build/site/galeria.html
+grep -q 'command-center.html?full=1' build/site/isl-global-shell.js
+grep -q 'galeria.html' build/site/isl-global-shell.js
 grep -q 'isl-polish.js' build/site/command-center.html
 grep -q 'isl-current-state.js' build/site/command-center.html
 grep -q 'decision-studio.js' build/site/command-center.html
