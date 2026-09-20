@@ -105,7 +105,8 @@ jobs:
           grep -q 'PILARES LITE' build/pages/route-isl.js
           grep -q 'REFERENCIAS LITE' build/pages/route-isl.js
           node --check build/pages/route-isl.js
-          grep -q '← Cabina RPG' build/pages/musica.html
+          grep -q 'data/isl-music-current.json' build/pages/galeria.html
+          grep -q 'id="music" class="section"' build/pages/galeria.html
           grep -q 'itemCloseX' build/pages/rpg-home.html
           grep -q 'rpgCommandDeck' build/pages/rpg-home.html
           grep -q 'sceneOverlay' build/pages/rpg-home.html
@@ -181,7 +182,7 @@ jobs:
           grep -q "setDrawer(false)" build/pages/index.html
           grep -q 'name="survey_version" value="v0.65-r3"' build/pages/poll/pilares-argumento.html
           grep -q 'window.__ISL_NATIVE_APP__=true' build/pages/index.html
-          grep -q "document.documentElement.classList.add('native-entered')" build/pages/index.html
+          grep -q "document.documentElement.classList.add('native-app','native-entered')" build/pages/index.html
           grep -q 'html.native-app.native-entered #welcome{display:none!important' build/pages/index.html
           grep -q 'isl_native_entered_v063' build/pages/index.html
           grep -q 'id="moreNavBtn"' build/pages/index.html
