@@ -1,5 +1,5 @@
 {
-  "version": "0.73",
+  "version": "0.76",
   "updated_at": "2026-09-20",
   "rule": "Una misión conecta estado, dependencia, evidencia, método, calendario y notificación.",
   "missions": [
@@ -14,9 +14,46 @@
       "notification_event": "HUMAN_DECISION_REQUIRED",
       "channel": "decisions",
       "deep_link": "index.html?resume=1",
-      "unlocks": [
-        "M-COLLEAGUES"
-      ]
+      "unlocks": ["M-COLLEAGUES"]
+    },
+    {
+      "id": "M-BIO001-BEE",
+      "title": "BIO-001 · generar abeja multiview",
+      "lane": "CREATIVE",
+      "priority": "P2",
+      "state": "IN_PROGRESS_HUMAN",
+      "method_gate": "ASSET PROVENANCE → VISUAL CQC",
+      "calendar_mode": "NONE",
+      "notification_event": "ASSET_REVIEW_PENDING",
+      "channel": "rhythm",
+      "deep_link": "mission-map.html#bio001",
+      "unlocks": ["M-BIO001-CQC"]
+    },
+    {
+      "id": "M-BIO001-CQC",
+      "title": "BIO-001 · validar GLB 360°",
+      "lane": "CREATIVE",
+      "priority": "P1",
+      "state": "WAITING_ASSET",
+      "method_gate": "VISUAL + TECHNICAL CQC",
+      "calendar_mode": "NONE",
+      "notification_event": "CQC_HUMAN_GATE",
+      "channel": "decisions",
+      "deep_link": "mission-map.html#bio001",
+      "unlocks": ["M-BIO001-RUNTIME"]
+    },
+    {
+      "id": "M-BIO001-RUNTIME",
+      "title": "BIO-001 · derivar WEB / MOBILE runtime",
+      "lane": "CREATIVE",
+      "priority": "P1",
+      "state": "BLOCKED_BY_ASSET",
+      "method_gate": "OPTIMIZE → DEVICE TEST",
+      "calendar_mode": "NONE",
+      "notification_event": null,
+      "channel": null,
+      "deep_link": "mission-map.html#bio001",
+      "unlocks": []
     },
     {
       "id": "M-COLLEAGUES",
@@ -29,9 +66,7 @@
       "notification_event": "PLAYTEST_READY",
       "channel": "tests",
       "deep_link": "survey-results.html",
-      "unlocks": [
-        "M-SYNTHESIS"
-      ]
+      "unlocks": ["M-SYNTHESIS"]
     },
     {
       "id": "M-SYNTHESIS",
@@ -44,9 +79,7 @@
       "notification_event": "SURVEY_NEW_EVIDENCE",
       "channel": "decisions",
       "deep_link": "survey-results.html",
-      "unlocks": [
-        "M-CREATURES"
-      ]
+      "unlocks": ["M-CREATURES"]
     },
     {
       "id": "M-CREATURES",
@@ -59,9 +92,7 @@
       "notification_event": null,
       "channel": null,
       "deep_link": "rpg-home.html",
-      "unlocks": [
-        "M-NUDOS"
-      ]
+      "unlocks": ["M-NUDOS"]
     },
     {
       "id": "M-NUDOS",
@@ -74,9 +105,7 @@
       "notification_event": null,
       "channel": null,
       "deep_link": "huellas.html",
-      "unlocks": [
-        "M-CQC"
-      ]
+      "unlocks": ["M-CQC"]
     },
     {
       "id": "M-CQC",
@@ -89,9 +118,7 @@
       "notification_event": "CQC_HUMAN_GATE",
       "channel": "decisions",
       "deep_link": "index.html?resume=1",
-      "unlocks": [
-        "M-HUMAN"
-      ]
+      "unlocks": ["M-HUMAN"]
     },
     {
       "id": "M-HUMAN",
@@ -111,7 +138,7 @@
       "title": "Notification OS · base nativa",
       "lane": "MAINTENANCE",
       "priority": "P2",
-      "state": "READY",
+      "state": "ACTIVE",
       "method_gate": "T0–T8",
       "calendar_mode": "NONE",
       "notification_event": null,
@@ -143,6 +170,19 @@
       "notification_event": null,
       "channel": "community",
       "deep_link": "crecimiento.html",
+      "unlocks": []
+    },
+    {
+      "id": "M-CREW",
+      "title": "Tripulación · semillas privadas",
+      "lane": "PRIVATE",
+      "priority": "P3",
+      "state": "AVAILABLE",
+      "method_gate": "PRIVACY → ABSTRACTION → HUMAN",
+      "calendar_mode": "NONE",
+      "notification_event": null,
+      "channel": null,
+      "deep_link": "crew.html",
       "unlocks": []
     }
   ]
