@@ -90,6 +90,13 @@ for token in ["CANDIDATO · EXTERNAL LAB","Danzante-Aguja · External Lab","Cons
     if token not in idx: errors.append(f"gallery external intake missing: {token}")
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 if "external-lab.html" not in shell: errors.append("global shell External Lab access missing")
+if "spielberg-lab.html" not in shell: errors.append("global shell Spielberg Lab Feed access missing")
+spielberg=(ROOT/"spielberg-lab.html")
+if not spielberg.exists(): errors.append("Spielberg Lab Feed surface missing")
+else:
+    st=spielberg.read_text(encoding="utf-8",errors="ignore")
+    for token in ["SPIELBERG LAB FEED","LAB_ONLY","NOT_CANON","isl-spielberg-lab-feed.json"]:
+        if token not in st: errors.append(f"Spielberg Lab Feed contract missing: {token}")
 
 if errors:
     print("ISL NAVIGATION/LINK GATE FAILED")
