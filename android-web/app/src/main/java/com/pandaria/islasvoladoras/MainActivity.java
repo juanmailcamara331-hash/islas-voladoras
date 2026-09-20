@@ -1,14 +1,29 @@
 package com.pandaria.islasvoladoras;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.work.Data;
+import androidx.work.ExistingPeriodicWorkPolicy;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkManager;
+
+import java.time.Duration;
+import java.time.ZonedDateTime;
+import java.util.concurrent.TimeUnit;
+
 public class MainActivity extends Activity {
-    private static final String HOME = "https://juanmailcamara331-hash.github.io/islas-voladoras/index.html?app=1&native=074&v=20260920-1";
+    private static final String BASE = "https://juanmailcamara331-hash.github.io/islas-voladoras/";
+    private static final String HOME = BASE + "index.html?app=1&native=075&v=20260920-2";
     private WebView web;
 
     @Override
@@ -35,7 +50,66 @@ public class MainActivity extends Activity {
         web.clearHistory();
         web.setWebChromeClient(new WebChromeClient());
         web.setWebViewClient(new WebViewClient());
-        web.loadUrl(HOME);
+        web.addJavascriptInterface(new NativeNotificationsBridge(), "ISLNativeNotifications");
+
+        scheduleSoftReminders();
+
+        String target = getIntent().getStringExtra("isl_url");
+        web.loadUrl(target != null ? BASE + target : HOME);
+    }
+
+    private void scheduleSoftReminders() {
+        scheduleDaily("isl-morning", "morning", 8, 30);
+        scheduleDaily("isl-afternoon", "afternoon", 15, 30);
+    }
+
+    private void scheduleDaily(String uniqueName, String slot, int hour, int minute) {
+        Data data = new Data.Builder().putString("slot", slot).build();
+        PeriodicWorkRequest req = new PeriodicWorkRequest.Builder(NotificationWorker.class, 24, TimeUnit.HOURS)
+            .setInitialDelay(msUntil(hour, minute), TimeUnit.MILLISECONDS)
+            .setInputData(data)
+            .build();
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork(uniqueName, ExistingPeriodicWorkPolicy.UPDATE, req);
+    }
+
+    private long msUntil(int hour, int minute) {
+        ZonedDateTime now = ZonedDateTime.now();
+        ZonedDateTime target = now.withHour(hour).withMinute(minute).withSecond(0).withNano(0);
+        if (!target.isAfter(now)) target = target.plusDays(1);
+        return Duration.between(now, target).toMillis();
+    }
+
+    private boolean hasNotificationPermission() {
+        return Build.VERSION.SDK_INT < 33 || checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    public class NativeNotificationsBridge {
+        @JavascriptInterface
+        public boolean isNative() { return true; }
+
+        @JavascriptInterface
+        public boolean hasPermission() { return hasNotificationPermission(); }
+
+        @JavascriptInterface
+        public void requestPermission() {
+            runOnUiThread(() -> {
+                if (Build.VERSION.SDK_INT >= 33 && !hasNotificationPermission()) {
+                    requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 4201);
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public void testNotification() {
+            Data data = new Data.Builder().putString("slot", "morning").build();
+            OneTimeWorkRequest req = new OneTimeWorkRequest.Builder(NotificationWorker.class).setInputData(data).build();
+            WorkManager.getInstance(MainActivity.this).enqueue(req);
+        }
+
+        @JavascriptInterface
+        public void open(String relativeUrl) {
+            runOnUiThread(() -> web.loadUrl(BASE + relativeUrl));
+        }
     }
 
     @Override
