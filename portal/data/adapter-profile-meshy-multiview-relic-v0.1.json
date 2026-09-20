@@ -1,0 +1,39 @@
+{
+  "adapter_id": "PROFILE_MESHY_MULTIVIEW_RELIC_v0.1",
+  "service_name": "Meshy",
+  "purpose": "multiview reconstruction of compact ISL relics",
+  "status": "CURRENT_UNVERIFIED_UI_ASSUMPTIONS",
+  "entity_types_supported": ["RELIC","INTERACTIVE_OBJECT"],
+  "neutral_package_rule": "NEVER_REPLACE_NEUTRAL_SOURCE",
+  "input": {
+    "preferred_views": ["FRONT","LEFT","RIGHT","BACK"],
+    "optional_views": ["TOP","BOTTOM","THREE_QUARTER"],
+    "background": "neutral/plain",
+    "lighting": "neutral/consistent",
+    "proportions": "identical across views",
+    "perspective": "minimize inconsistent hero perspective"
+  },
+  "output_role": "RAW_SERVICE_OUTPUT",
+  "promotion_route": ["RAW_SERVICE_OUTPUT","BLENDER_QA","GLB_VALIDATION","VALIDATED_MASTER_CANDIDATE","RUNTIME_DERIVATIVES"],
+  "known_failure_modes": [
+    "view-to-view proportion drift",
+    "backside hallucination",
+    "thickness mismatch",
+    "ornament interpreted as geometry",
+    "glass/metal material confusion",
+    "asymmetric details mirrored incorrectly"
+  ],
+  "validation_test": [
+    "360 silhouette continuity",
+    "front/back identity",
+    "thickness and rim continuity",
+    "material family separation",
+    "pivot/origin",
+    "scale assumption recorded",
+    "mesh/material/texture stats",
+    "independent GLB validation"
+  ],
+  "human_gate": "REQUIRED",
+  "canon_auto_promotion": false,
+  "last_verified_date": "2026-09-21"
+}
