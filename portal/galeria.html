@@ -72,7 +72,7 @@ function labCard(a){
 }
 function healthCard(a){
  const state=a.state||a.status||'UNKNOWN', blocked=/BLOCK|WAIT/i.test(state);
- return '<article class="card"><div class="thumb">◇</div><div class="pad"><div class="k">3D · '+esc(a.id||a.asset_id||'ASSET')+'</div><h2>'+esc(a.name||a.entity||a.id||a.asset_id)+'</h2><div class="meta">'+esc(state)+(a.next?' · '+esc(a.next):'')+'</div><span class="status '+(blocked?'bad':'warn')+'">'+esc(a.human_gate||'HUMAN GATE PENDING')+'</span><div class="actions"><a class="btn" href="gym-3d-asset.html">ABRIR GYM 3D</a></div></div></article>';
+ return '<article class="card"><div class="thumb">◇</div><div class="pad"><div class="k">3D · '+esc(a.id||a.asset_id||'ASSET')+'</div><h2>'+esc(a.display_name||a.name||a.entity_id||a.entity||a.id||a.asset_id)+'</h2><div class="meta">'+esc(state)+(a.next?' · '+esc(a.next):'')+'</div><span class="status '+(blocked?'bad':'warn')+'">'+esc(a.human_gate||'HUMAN GATE PENDING')+'</span><div class="actions"><a class="btn" href="gym-3d-asset.html">ABRIR GYM 3D</a></div></div></article>';
 }
 function musicCard(t){
  const roles=(t.functional_role||[]).map(x=>x.replaceAll('_',' ')).join(' · ');
