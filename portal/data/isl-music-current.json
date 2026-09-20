@@ -1,14 +1,17 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "project": "ISLAS_VOLADORAS_ISL",
-  "generated_at": "2026-09-20",
+  "generated_at": "2026-09-21",
   "status": "MUSIC_GALLERY_CURRENT",
   "boundary": "ISL_ONLY",
+  "gallery_surface": "galeria.html",
   "rules": {
     "function_before_beauty": true,
     "no_auto_canon": true,
     "source_not_wired_is_not_zero": true,
-    "human_listen_required": true
+    "human_listen_required": true,
+    "integrated_player_requires_runtime_src": true,
+    "master_is_not_runtime": true
   },
   "tracks": [
     {
@@ -95,6 +98,20 @@
       "codec": "mp3",
       "bitrate_bps": 192000,
       "tempo_estimate_bpm": 117.45
+    },
+    {
+      "id": "MUS-REF-001",
+      "title": "Airships Last Waltz · runtime reference",
+      "status": "RUNTIME_REFERENCE",
+      "functional_role": [
+        "tonal_reference",
+        "portal_ambience",
+        "runtime_smoke_audio"
+      ],
+      "source_state": "RUNTIME_AVAILABLE",
+      "runtime_src": "assets/airships-last-waltz-master.mp3",
+      "rights_state": "REVIEW_REQUIRED",
+      "notes": "Reference runtime currently used by portal/PS4 surfaces. It is not one of the six catalog candidates by default and does not imply canon."
     }
   ]
 }
