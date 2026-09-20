@@ -129,3 +129,13 @@ RELEASE 2026-09-19T20:50+02:00
 - Referencias ghost uses absolute JPG asset path
 - Referencias HTML cache disabled during validation
 - /referencias redirect version-busted to v=0713
+
+
+RELEASE 2026-09-20T11:55+02:00
+- publish public-safe Playtest Lab and Signal / Telegraph Lab v0.1
+- add isolated Netlify Blobs evidence transport at /api/playtest-evidence
+- keep gameplay evidence separate from surveys, marketing and CANON
+- centralize optional Bug Hunt evidence without names, email or account identifiers
+- add short routes /playtest and /signal-lab
+- add no-store/noindex headers for public playtest surfaces
+- preserve private Command Center exclusion from public allowlist
