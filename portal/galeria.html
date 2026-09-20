@@ -86,7 +86,7 @@ Promise.all([
  fetch('data/isl-music-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-asset-health-current.json',{cache:'no-store'}).then(r=>r.json())
 ]).then(([lib,lab,music,health])=>{
- const archive=lib.assets||[], ext=lab.assets||[], tracks=music.tracks||[], hs=health.assets||health.entities||health.items||[];
+ const archive=lib.assets||[], ext=lab.assets||[], tracks=music.tracks||[], hsAll=health.assets||health.entities||health.items||[], hs=hsAll.filter(x=>x.asset_id!=="ISL_MUSIC_GALLERY");
  const videos=[...archive.filter(x=>x.type==='video'),...ext.filter(x=>x.type==='video')];
  countArchive.textContent=archive.length;countLab.textContent=ext.length;count3d.textContent=hs.length;countMusic.textContent=tracks.length;
  archiveGrid.innerHTML=archive.map(archiveCard).join('')||'<div class="card empty">Sin archivo.</div>';
