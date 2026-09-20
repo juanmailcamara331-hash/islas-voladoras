@@ -1,0 +1,92 @@
+{
+  "schema": "isl.asset.health.v0.1",
+  "generated_at": "2026-09-21",
+  "boundary": "ISL_ONLY",
+  "rules": {
+    "master_is_not_runtime": true,
+    "entity_truth_not_service_input": true,
+    "no_auto_canon": true,
+    "human_gate_required": true
+  },
+  "assets": [
+    {
+      "asset_id": "BIO001_BEE_3D",
+      "entity_id": "BIO-001_BEE",
+      "display_name": "Abeja de Barro",
+      "state": "MASTER_CANDIDATE_QA_BLOCKED",
+      "source_refs": [
+        "Meshy_AI_Bumblebee_Bauble_0920213510_texture.glb",
+        "Meshy_AI_Bumblebee_Bauble_0920213408_generate.glb"
+      ],
+      "binary_access": "BLOCKED",
+      "blocker": "Registered GLB binary is not currently exposed through Drive/Library/runtime for independent geometry inspection.",
+      "master_required": true,
+      "master_ref": null,
+      "runtime_required": true,
+      "runtime_ref": null,
+      "qa_required": [
+        "front_snout",
+        "ceramic_material",
+        "wing_integrity",
+        "antennae_integrity",
+        "rear_point",
+        "symmetry",
+        "mesh_stats",
+        "texture_maps",
+        "bounds_axis_scale",
+        "independent_glb_validator"
+      ],
+      "next": "obtain accessible GLB binary, run visual+DCC QA, then classify MASTER or MUTATE",
+      "human_gate": "PENDING",
+      "canon_state": "LAB_ONLY_NOT_CANON"
+    },
+    {
+      "asset_id": "BRUJULA_HUELLAS_PRECURSOR",
+      "entity_id": "BRUJULA_DE_LAS_HUELLAS",
+      "display_name": "Brújula de las Huellas",
+      "state": "MULTIVIEW_EXTRACTED_NEEDS_CONSISTENCY_QA",
+      "source_refs": [
+        {
+          "role": "EXTERNAL_LAB_ORIGINAL",
+          "drive_id": "1OL5xZ6FQSkW2FSKpwKO7zohGIp-SCkFY"
+        },
+        {
+          "role": "NAMED_PRECURSOR_COPY",
+          "drive_id": "1RtY8HOgpdrmvOQxgUBvHe8For6FOpTec"
+        }
+      ],
+      "neutral_package": {
+        "source_board_preserved": true,
+        "front_definition": "circular relic face",
+        "scale_reference_present_on_board": true,
+        "material_family": "aged brass/bronze, glass, oxidized metal",
+        "service_specific_input_separate": true
+      },
+      "adapter_profile": "PROFILE_MESHY_MULTIVIEW_PENDING",
+      "master_required": true,
+      "master_ref": null,
+      "runtime_required": true,
+      "runtime_ref": null,
+      "next": "consistency QA on FRONT/LEFT/RIGHT/BACK extracts, then Meshy multiview Golden Path",
+      "human_gate": "PENDING",
+      "canon_state": "EXTERNAL_LAB_CANDIDATE_NOT_CANON"
+    },
+    {
+      "asset_id": "ISL_MUSIC_GALLERY",
+      "entity_id": "FEATURE_MUSIC_GALLERY",
+      "display_name": "Music Gallery / Soundtrack Registry",
+      "state": "SURFACE_ACTIVE_CATALOG_INCOMPLETE",
+      "master_required": false,
+      "runtime_required": false,
+      "catalog_ref": "portal/data/isl-music-current.json",
+      "health_notes": [
+        "Gallery v0.2 exists and is wired",
+        "six historical concept candidates remain source-not-wired",
+        "Seven Thousand Paces has Drive source and requires functional human review",
+        "runtime playback only when runtime_src exists"
+      ],
+      "human_gate": "PENDING",
+      "canon_state": "MIXED_NON_CANON_REVIEW"
+    }
+  ]
+}
