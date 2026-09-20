@@ -26,6 +26,10 @@ poll=Path("netlify/functions/poll-state.mts").read_text(encoding="utf-8")
 for token in ["rateLimit", "sameOrigin(req", "payload_too_large", "unsupported_media_type"]:
     need(token in poll, f"poll API hardening missing: {token}")
 
+playtest=Path("netlify/functions/playtest-evidence.mts").read_text(encoding="utf-8")
+for token in ["rateLimit", "sameOrigin(req", "payload_too_large", "unsupported_media_type", "isl-playtest-evidence", "automatic_canon_promotion:false"]:
+    need(token in playtest, f"playtest API hardening missing: {token}")
+
 for path in [
     "SECURITY.md",
     "portal/ISL_SECURITY_OS_CURRENT.json",
@@ -39,6 +43,9 @@ for path in [
 pub_build=Path("netlify-public-build.sh").read_text(encoding="utf-8")
 need("pilares-lite-v2.html" in pub_build, "public build missing Pilares Lite v2")
 need("referencias-lite-v2.html" in pub_build, "public build missing Referencias Lite v2")
+need("playtest-lab.html" in pub_build, "public build missing Playtest Lab")
+need("signal-telegraph-lab.html" in pub_build, "public build missing Signal Telegraph Lab")
+need("sed -i" in pub_build and "isl-global-shell.js" in pub_build, "public playtest build must strip internal shell")
 for forbidden in ["command-center.html","rpg-home.html","route-isl.js","huellas.html","secret-level.html"]:
     need(forbidden in pub_build, f"public build must explicitly forbid private surface: {forbidden}")
 
