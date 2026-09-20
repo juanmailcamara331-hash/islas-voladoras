@@ -1,6 +1,11 @@
 # ISL — MOBILE APP / NOTIFICATION ARCHITECTURE v0.24
 Fecha: 2026-09-18
-Estado: IMPLEMENTACIÓN BASE COMPLETA / PUSH EXTERNO PENDIENTE
+Estado: SUPERSEDED BY v0.72 / BASE HISTÓRICA CONSERVADA
+
+> Documento histórico. La arquitectura maestra vigente está en:
+> `docs/ISL_NOTIFICATION_OS_v0.72.md`
+> Política machine-readable:
+> `portal/isl-notification-policy.json`
 
 ## HECHO
 - PWA manifest ampliado;
@@ -53,3 +58,16 @@ Avisos deben sonar ISL:
 "La nave recuerda algo. Hay un playtest esperando."
 "Una canción ha sobrevivido al CQC."
 No usar tono corporativo.
+
+## EVOLUCIÓN
+v0.72 convierte esta base en Notification OS con:
+- canales;
+- presupuestos de interrupción;
+- quiet hours;
+- dedupe;
+- digest de flecos;
+- recordatorios vagos;
+- eventos de encuestas/playtests/builds;
+- capa nativa Android;
+- adaptadores futuros FCM / Unreal / Steam / Calendar / ChatGPT;
+- privacidad y human gate.
