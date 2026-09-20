@@ -23,9 +23,9 @@ function clampInt(v:unknown,min:number,max:number){
 }
 function bool(v:unknown){ return v===true; }
 
-async function readRows(){
+async function readPrefix(prefix:string){
   const store=storeForContext();
-  const found=await store.list({prefix:"signal-v01/"});
+  const found=await store.list({prefix});
   const rows:any[]=[];
   for(const b of found.blobs){
     const v=await store.get(b.key,{type:"json"});
@@ -36,7 +36,7 @@ async function readRows(){
 function inc(dst:Record<string,number>,k:string){
   if(k) dst[k]=(dst[k]||0)+1;
 }
-function summarize(rows:any[]){
+function summarize(rows:any[],bugs:any[]){
   const cueCorrect:Record<string,{attempts:number,correct:number}>={};
   const confused:Record<string,number>={}, understood:Record<string,number>={}, fun:Record<string,number>={};
   let totalScore=0,totalRounds=0,totalReaction=0,reactionN=0;
@@ -52,6 +52,8 @@ function summarize(rows:any[]){
       if(Number.isFinite(rt)&&rt>=0&&rt<=30000){totalReaction+=rt;reactionN++;}
     }
   }
+  const severity:Record<string,number>={}, reproducibility:Record<string,number>={};
+  for(const bug of bugs){inc(severity,bug.severity);inc(reproducibility,bug.reproducibility);}
   return {
     schema:"ISL_PLAYTEST_AGGREGATE_v0.1",
     experiment:"ISL_SIGNAL_TELEGRAPH_LAB_v0.1",
@@ -63,6 +65,7 @@ function summarize(rows:any[]){
     mean_reaction_ms:reactionN?Math.round(totalReaction/reactionN):null,
     cue_performance:cueCorrect,
     feedback:{understood,confused,fun},
+    bug_hunt:{count:bugs.length,severity,reproducibility},
     updated_at:new Date().toISOString()
   };
 }
@@ -70,7 +73,7 @@ function summarize(rows:any[]){
 export default async (req:Request,_context:Context)=>{
   const headers={"X-Content-Type-Options":"nosniff","Referrer-Policy":"no-referrer"};
   if(req.method==="GET"){
-    return Response.json(summarize(await readRows()),{headers:{...headers,"Cache-Control":"no-store"}});
+    return Response.json(summarize(await readPrefix("signal-v01/"),await readPrefix("bugs-v01/")),{headers:{...headers,"Cache-Control":"no-store"}});
   }
   if(req.method!=="POST") return new Response("Method not allowed",{status:405,headers:{...headers,"Allow":"GET, POST"}});
   if(!sameOrigin(req)) return Response.json({ok:false,error:"forbidden"},{status:403,headers});
@@ -82,6 +85,24 @@ export default async (req:Request,_context:Context)=>{
   const body:any=await req.json().catch(()=>null);
   if(!body || clean(body.experiment,64)!=="ISL_SIGNAL_TELEGRAPH_LAB_v0.1")
     return Response.json({ok:false,error:"invalid_experiment"},{status:400,headers});
+
+  if(clean(body.kind,16)==="bug"){
+    const bug={
+      experiment:"ISL_SIGNAL_TELEGRAPH_LAB_v0.1",
+      status:"LAB_ONLY",
+      not_canon:true,
+      created_at:new Date().toISOString(),
+      action:clean(body.action,240),
+      result:clean(body.result,240),
+      reproducibility:clean(body.reproducibility,32),
+      severity:clean(body.severity,32)
+    };
+    if(!bug.action || !bug.result) return Response.json({ok:false,error:"bug_fields_required"},{status:400,headers});
+    const store=storeForContext(), id=crypto.randomUUID();
+    await store.setJSON(`bugs-v01/${bug.created_at}-${id}`,bug);
+    return Response.json({ok:true,status:"LAB_BUG_EVIDENCE_ONLY",automatic_canon_promotion:false},{headers:{...headers,"Cache-Control":"no-store"}});
+  }
+
   if(clean(body.completion_marker,64)!=="SIGNAL_TELEGRAPH_V01_COMPLETED")
     return Response.json({ok:false,error:"incomplete_session"},{status:400,headers});
 
