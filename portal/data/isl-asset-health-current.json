@@ -20,9 +20,7 @@
       ],
       "binary_access": "BLOCKED",
       "blocker": "Registered GLB binary is not currently exposed through Drive/Library/runtime for independent geometry inspection.",
-      "master_required": true,
       "master_ref": null,
-      "runtime_required": true,
       "runtime_ref": null,
       "qa_required": [
         "front_snout",
@@ -38,7 +36,11 @@
       ],
       "next": "obtain accessible GLB binary, run visual+DCC QA, then classify MASTER or MUTATE",
       "human_gate": "PENDING",
-      "canon_state": "LAB_ONLY_NOT_CANON"
+      "canon_state": "LAB_ONLY_NOT_CANON",
+      "master_required_target": true,
+      "runtime_required_target": true,
+      "master_required_now": true,
+      "runtime_required_now": false
     },
     {
       "asset_id": "BRUJULA_HUELLAS_PRECURSOR",
@@ -63,21 +65,21 @@
         "service_specific_input_separate": true
       },
       "adapter_profile": "PROFILE_MESHY_MULTIVIEW_PENDING",
-      "master_required": true,
       "master_ref": null,
-      "runtime_required": true,
       "runtime_ref": null,
       "next": "consistency QA on FRONT/LEFT/RIGHT/BACK extracts, then Meshy multiview Golden Path",
       "human_gate": "PENDING",
-      "canon_state": "EXTERNAL_LAB_CANDIDATE_NOT_CANON"
+      "canon_state": "EXTERNAL_LAB_CANDIDATE_NOT_CANON",
+      "master_required_target": true,
+      "runtime_required_target": true,
+      "master_required_now": false,
+      "runtime_required_now": false
     },
     {
       "asset_id": "ISL_MUSIC_GALLERY",
       "entity_id": "FEATURE_MUSIC_GALLERY",
       "display_name": "Music Gallery / Soundtrack Registry",
       "state": "SURFACE_ACTIVE_CATALOG_INCOMPLETE",
-      "master_required": false,
-      "runtime_required": false,
       "catalog_ref": "portal/data/isl-music-current.json",
       "health_notes": [
         "Gallery v0.2 exists and is wired",
@@ -86,7 +88,9 @@
         "runtime playback only when runtime_src exists"
       ],
       "human_gate": "PENDING",
-      "canon_state": "MIXED_NON_CANON_REVIEW"
+      "canon_state": "MIXED_NON_CANON_REVIEW",
+      "master_required_now": false,
+      "runtime_required_now": false
     }
   ]
 }
