@@ -1,17 +1,84 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ISL · Música</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="isl-icon-master.png" type="image/png"><meta name="theme-color" content="#071017"><style>
-:root{--bg:#071017;--fg:#f3f0e8;--mut:#9fb1b7;--cyan:#87efff;--gold:#ffc36e;--line:#294955}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 82% 8%,#24495d 0,transparent 28%),linear-gradient(#071017,#09151c);color:var(--fg);font-family:system-ui,sans-serif;min-height:100vh}.wrap{width:min(1000px,94vw);margin:auto;padding:28px 0 80px}.top{display:flex;justify-content:space-between;gap:12px}.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase}h1{font-size:clamp(46px,8vw,92px);line-height:.9;margin:18px 0}.lead{color:#d1dee1;font-size:clamp(18px,2.4vw,27px);line-height:1.45}.btn{border:1px solid var(--line);background:#0d1b23;color:white;padding:11px 14px;border-radius:10px;text-decoration:none;font-weight:750}.grid{display:grid;gap:12px;margin-top:24px}.card{border:1px solid var(--line);background:#0c1921dd;border-radius:16px;padding:16px}.num{font-size:10px;letter-spacing:.13em;color:var(--gold)}.title{font-size:25px;font-weight:850;margin:6px 0}.body{color:var(--mut);line-height:1.5}.tag{display:inline-block;margin:4px 5px 0 0;padding:4px 7px;border:1px solid var(--line);border-radius:999px;font-size:9px;color:#c9d8dc}.note{margin-top:22px;padding:12px;border-left:3px solid var(--gold);background:#0a171e;color:#d4e2e5}</style><link rel="stylesheet" href="recreo-pixel.css"><link rel="stylesheet" href="isl-global-shell.css">
-</head><body class="pixel-isl"><main class="wrap">
-<div class="top"><div class="k">ISL · CIELO Y DESCENSO</div><a class="btn" href="rpg-home.html">← Cabina RPG</a></div>
-<h1>Seis formas de quedarse un rato en el cielo.</h1>
-<p class="lead">Colección candidata. Audio y descripciones están preparados; las covers finales siguen pendientes del laboratorio visual ISL.</p><div class="note"><b>ARCO MUSICAL DE APERTURA</b><br>Suavidad, nobleza y espacio al comienzo —con un perfume de gran banda sonora cinematográfica de los 60–70 sin imitar ninguna obra concreta— y después un crescendo progresivo cuando el mundo se abre: más aventura, más altura, más riesgo y más orquesta. La música no entra épica desde el segundo uno: se gana el vuelo.</div>
-<section class="grid">
-<article class="card"><div class="num">01</div><div class="title">Above the Sleeping Coast</div><div class="body">Apertura aérea. Costa dormida, primera salida y aventura contenida.</div><span class="tag">calma</span><span class="tag">horizonte</span></article>
-<article class="card"><div class="num">02</div><div class="title">Tea Above the Clouds</div><div class="body">Recreo de tripulación. Té, notas y una nave que se comporta como casa.</div><span class="tag">cozy</span><span class="tag">hogar</span></article>
-<article class="card"><div class="num">03</div><div class="title">The Mahogany Deck</div><div class="body">Madera, herramientas y rutina. La cubierta vivida de una nave que ha sobrevivido.</div><span class="tag">orgánico</span><span class="tag">mañana</span></article>
-<article class="card"><div class="num">04</div><div class="title">Lanterns in the Mist</div><div class="body">Nácar de Niebla aparece primero por sonido, luz y respiración.</div><span class="tag">niebla</span><span class="tag">descubrimiento</span></article>
-<article class="card"><div class="num">05</div><div class="title">Where the Current Ends</div><div class="body">Una corriente deja de obedecer las reglas. Belleza tranquila en un límite extraño.</div><span class="tag">liminal</span><span class="tag">misterio</span></article>
-<article class="card"><div class="num">06</div><div class="title">A Waltz for the Slow Descent</div><div class="body">El regreso después del viaje. Cansancio, refugio y memoria.</div><span class="tag">melancolía</span><span class="tag">regreso</span></article>
-</section><div class="note">Cuando la colección esté publicada, esta pantalla enlazará directamente a YouTube Music/Spotify. No se simulará ninguna integración que todavía no exista.</div>
-</main><script>if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js')</script><script defer src="isl-global-shell.js"></script>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ISL · Galería de Música</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="isl-icon-master.png" type="image/png">
+<meta name="theme-color" content="#071017">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="stylesheet" href="isl-global-shell.css">
+<style>
+:root{--bg:#071017;--fg:#f3f0e8;--mut:#9fb1b7;--cyan:#87efff;--gold:#ffc36e;--line:#294955;--panel:#0c1921dd;--good:#b8efc4;--vio:#cba8ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 82% 8%,#24495d 0,transparent 28%),linear-gradient(#071017,#09151c);color:var(--fg);font-family:system-ui,sans-serif;min-height:100vh}
+.wrap{width:min(1180px,94vw);margin:auto;padding:24px 0 90px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;font-weight:900}.btn{border:1px solid var(--line);background:#0d1b23;color:white;padding:10px 13px;border-radius:10px;text-decoration:none;font-weight:800;font-size:11px}
+.hero{border:1px solid #3f5962;background:linear-gradient(135deg,#0d202a,#09161e);border-radius:22px;padding:22px;margin-top:14px}h1{font:700 clamp(44px,8vw,82px)/.9 Georgia,serif;margin:10px 0}.lead{color:#d1dee1;font-size:clamp(16px,2.2vw,23px);line-height:1.45;max-width:900px}
+.truth{margin-top:16px;border-left:3px solid var(--gold);padding:10px 12px;background:#17150f;color:#ddd8cb;font-size:11px;line-height:1.45}
+.toolbar{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.pill{border:1px solid var(--line);background:#09161d;color:#c8d8dc;border-radius:999px;padding:7px 10px;font-size:9px;font-weight:850}.pill.on{border-color:#8c6b3d;color:#ffe4a9;background:#221b11}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}.card{border:1px solid var(--line);background:var(--panel);border-radius:17px;padding:15px;display:flex;flex-direction:column;gap:10px;min-height:250px}.card.real{border-color:#566d48;box-shadow:inset 3px 0 0 #8fcf78}.num{font-size:9px;letter-spacing:.13em;color:var(--gold)}.title{font-size:24px;font-weight:880;line-height:1}.body{color:var(--mut);font-size:11px;line-height:1.48}.tags{display:flex;gap:5px;flex-wrap:wrap}.tag{padding:4px 6px;border:1px solid #35525d;border-radius:999px;font-size:8px;color:#c9d8dc}.status{font-size:8px;font-weight:900;letter-spacing:.09em}.status.real{color:var(--good)}.status.concept{color:var(--vio)}.meta{font-size:9px;color:#81979d;line-height:1.5;margin-top:auto}.actions{display:flex;gap:7px;flex-wrap:wrap}.actions a{font-size:9px;text-decoration:none;color:white;border:1px solid #42616c;border-radius:9px;padding:8px 9px}.actions a.primary{border-color:#8a6938;background:#2b2217;color:#ffe6b6}
+.panel{margin-top:16px;border:1px solid var(--line);border-radius:16px;background:#09161d;padding:15px}.panel h2{margin:0 0 8px;font-size:20px}.mini{font-size:10px;color:var(--mut);line-height:1.5}.now{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.now strong{font-size:20px}.empty{opacity:.6}
+@media(max-width:620px){.now{grid-template-columns:1fr}.card{min-height:220px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="top"><div class="k">ISL · GALERÍA DE MÚSICA / AUDIO</div><div><a class="btn" href="index.html?resume=1">← CENTRO</a> <a class="btn" href="project-observatory.html">OBSERVATORIO</a></div></div>
+<section class="hero">
+<div class="k">BANDA SONORA · FUNCIÓN ANTES QUE ADORNO</div>
+<h1>La música también<br>deja huella.</h1>
+<p class="lead">Catálogo vivo de temas, funciones, lugares candidatos y fuentes reales. Una canción no asciende por sonar bonita: debe encontrar qué hace dentro del mundo.</p>
+<div class="truth"><b>REGLA:</b> SOURCE NOT WIRED ≠ canción inexistente. CONCEPT ONLY ≠ audio final. FUNCTION REVIEW ≠ canon. Datos, escucha humana y contexto permanecen separados.</div>
+</section>
+
+<section class="panel now">
+<div><div class="k">AHORA EN AUDIO</div><strong>Seven Thousand Paces</strong><div class="mini">Fuente real recibida · 2:58 · 44.1 kHz · estéreo · ~117.45 BPM. Hipótesis actual: travesía / recorrido sostenido. Falta escucha humana funcional.</div></div>
+<a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1svy7lNXviZZK1d58cS9H7Sh0eOjYxCjz/view">ABRIR AUDIO →</a>
+</section>
+
+<div class="toolbar">
+<button class="pill on" data-filter="all">TODO</button>
+<button class="pill" data-filter="concept">CONCEPT ONLY</button>
+<button class="pill" data-filter="real">AUDIO REAL</button>
+<button class="pill" data-filter="review">EN REVISIÓN</button>
+</div>
+
+<section class="grid" id="musicGrid"><div class="card empty">Cargando registro musical…</div></section>
+
+<section class="panel">
+<h2>Arco musical de apertura</h2>
+<div class="mini">Suavidad, nobleza y espacio al comienzo; después crescendo progresivo cuando el mundo se abre. La música no entra épica desde el segundo uno: se gana el vuelo. Esta dirección sigue siendo una hipótesis de producción y debe validarse por escenas y escucha humana.</div>
+</section>
+
+<section class="panel">
+<h2>Próximo gate</h2>
+<div class="mini">1) localizar/conectar las fuentes reales de los seis temas ya documentados; 2) escuchar Seven Thousand Paces contra escenas concretas; 3) decidir funciones por contexto; 4) crear stems sólo donde aporten gameplay; 5) Gallery/Observatorio registran evidencia, nunca un ganador automático.</div>
+</section>
+</main>
+<script>
+const fallbackRoles={
+"MUS-001":"Apertura · primera salida · aventura contenida",
+"MUS-002":"Tripulación · hogar · nave-refugio",
+"MUS-003":"Cubierta vivida · rutina · mañana",
+"MUS-004":"Descubrimiento · niebla · llegada",
+"MUS-005":"Límite liminal · misterio · regla extraña",
+"MUS-006":"Regreso · cansancio · refugio · memoria",
+"MUS-007":"Travesía candidata · recorrido sostenido"
+};
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]))}
+function card(t){
+ const real=t.source_state==="DRIVE_SOURCE_AVAILABLE", review=t.status==="FUNCTION_REVIEW";
+ const cls=real?"real":review?"review":"concept";
+ const tags=(t.functional_role||[]).slice(0,4).map(x=>'<span class="tag">'+esc(x.replaceAll("_"," "))+'</span>').join("");
+ let meta=real?((t.duration_seconds?Math.floor(t.duration_seconds/60)+":"+String(Math.round(t.duration_seconds%60)).padStart(2,"0")+" · ":"")+(t.sample_rate_hz?Math.round(t.sample_rate_hz/100)/10+" kHz · ":"")+(t.tempo_estimate_bpm?"~"+t.tempo_estimate_bpm+" BPM":"")):"Fuente de audio todavía no conectada al runtime.";
+ let actions=real?'<div class="actions"><a class="primary" target="_blank" rel="noopener" href="https://drive.google.com/file/d/'+esc(t.drive_id)+'/view">ABRIR FUENTE →</a></div>':'<div class="actions"><a href="#source-pending">SOURCE NOT WIRED</a></div>';
+ return '<article class="card '+(real?'real':'')+'" data-kind="'+cls+'"><div class="num">'+esc(t.id)+'</div><div class="title">'+esc(t.title)+'</div><div class="status '+(real?'real':'concept')+'">'+esc(t.status)+'</div><div class="body">'+esc(fallbackRoles[t.id]||"Función pendiente")+'</div><div class="tags">'+tags+'</div><div class="meta">'+esc(meta)+'</div>'+actions+'</article>';
+}
+fetch("data/isl-music-current.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
+ const tracks=d.tracks||[]; musicGrid.innerHTML=tracks.map(card).join("");
+ const pills=[...document.querySelectorAll(".pill")];
+ pills.forEach(p=>p.onclick=()=>{pills.forEach(x=>x.classList.remove("on"));p.classList.add("on");const f=p.dataset.filter;document.querySelectorAll("#musicGrid .card").forEach(c=>c.style.display=(f==="all"||c.dataset.kind===f)?"flex":"none")});
+}).catch(()=>musicGrid.innerHTML='<div class="card empty">No se pudo cargar el registro musical.</div>');
+</script>
+<script defer src="isl-global-shell.js"></script>
 </body></html>
