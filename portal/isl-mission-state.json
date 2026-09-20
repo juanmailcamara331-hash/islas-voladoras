@@ -1,137 +1,135 @@
 {
-  "version": "0.76",
-  "updated_at": "2026-09-20",
-  "rule": "Una misión conecta estado, dependencia, evidencia, método, calendario y notificación.",
+  "version": "0.77",
+  "updated_at": "2026-09-21",
+  "rule": "Una misión conecta estado, dependencia, evidencia, método, calendario y notificación. Ritmo humano: si el capitán va fundido, el sistema reduce ruido antes de aumentar presión.",
   "missions": [
     {
-      "id": "M-R2-HUMAN",
-      "title": "Recheck físico de navegación",
+      "id": "M-DEPLOY-GALLERY-VERIFY",
+      "title": "Verificar Ruta ISL + Galería en web/app",
       "lane": "NOW",
       "priority": "P0",
-      "state": "WAITING_HUMAN",
-      "method_gate": "T8 HUMAN/CQC",
+      "state": "ACTIVE",
+      "method_gate": "DEPLOY_COMMIT_MATCH → WEB/APP SMOKE → HUMAN CHECK",
       "calendar_mode": "SOFT",
-      "notification_event": "HUMAN_DECISION_REQUIRED",
+      "notification_event": "DEPLOY_REVIEW_REQUIRED",
       "channel": "decisions",
-      "deep_link": "index.html?resume=1",
-      "unlocks": ["M-COLLEAGUES"]
-    },
-    {
-      "id": "M-BIO001-BEE",
-      "title": "BIO-001 · generar abeja multiview",
-      "lane": "CREATIVE",
-      "priority": "P2",
-      "state": "IN_PROGRESS_HUMAN",
-      "method_gate": "ASSET PROVENANCE → VISUAL CQC",
-      "calendar_mode": "NONE",
-      "notification_event": "ASSET_REVIEW_PENDING",
-      "channel": "rhythm",
-      "deep_link": "mission-map.html#bio001",
-      "unlocks": ["M-BIO001-CQC"]
+      "deep_link": "galeria.html",
+      "unlocks": [
+        "M-BIO001-CQC",
+        "M-BRUJULA-MULTIVIEW"
+      ]
     },
     {
       "id": "M-BIO001-CQC",
-      "title": "BIO-001 · validar GLB 360°",
-      "lane": "CREATIVE",
+      "title": "BIO-001 · QA final del GLB de la abeja",
+      "lane": "NEXT",
       "priority": "P1",
-      "state": "WAITING_ASSET",
-      "method_gate": "VISUAL + TECHNICAL CQC",
+      "state": "BLOCKED_BY_BINARY_ACCESS",
+      "method_gate": "BINARY ACCESS → VISUAL + DCC QA → GLB VALIDATOR",
       "calendar_mode": "NONE",
-      "notification_event": "CQC_HUMAN_GATE",
+      "notification_event": "ASSET_REVIEW_PENDING",
       "channel": "decisions",
-      "deep_link": "mission-map.html#bio001",
-      "unlocks": ["M-BIO001-RUNTIME"]
+      "deep_link": "gym-3d-asset.html",
+      "unlocks": [
+        "M-BIO001-RUNTIME"
+      ]
     },
     {
       "id": "M-BIO001-RUNTIME",
       "title": "BIO-001 · derivar WEB / MOBILE runtime",
-      "lane": "CREATIVE",
+      "lane": "LATER",
       "priority": "P1",
       "state": "BLOCKED_BY_ASSET",
-      "method_gate": "OPTIMIZE → DEVICE TEST",
+      "method_gate": "MASTER ACCEPTED → OPTIMIZE → DEVICE TEST",
       "calendar_mode": "NONE",
       "notification_event": null,
       "channel": null,
-      "deep_link": "mission-map.html#bio001",
+      "deep_link": "gym-3d-asset.html",
+      "unlocks": []
+    },
+    {
+      "id": "M-BRUJULA-MULTIVIEW",
+      "title": "Brújula · coherencia multiview para Meshy",
+      "lane": "NEXT",
+      "priority": "P1",
+      "state": "READY_FOR_CONSISTENCY_QA",
+      "method_gate": "NEUTRAL PRECURSOR → MULTIVIEW QA → MESHY ADAPTER",
+      "calendar_mode": "NONE",
+      "notification_event": "ASSET_REVIEW_PENDING",
+      "channel": "rhythm",
+      "deep_link": "galeria.html",
+      "unlocks": [
+        "M-BRUJULA-MESHY"
+      ]
+    },
+    {
+      "id": "M-BRUJULA-MESHY",
+      "title": "Brújula · Meshy Golden Path",
+      "lane": "LATER",
+      "priority": "P1",
+      "state": "BLOCKED_BY_MULTIVIEW_QA",
+      "method_gate": "MESHY RAW → BLENDER QA → GLB VALIDATION",
+      "calendar_mode": "NONE",
+      "notification_event": null,
+      "channel": null,
+      "deep_link": "gym-3d-asset.html",
+      "unlocks": []
+    },
+    {
+      "id": "M-MUSIC-CATALOG",
+      "title": "Música · recuperar sources/masters que faltan",
+      "lane": "CREATIVE",
+      "priority": "P2",
+      "state": "PARALLEL",
+      "method_gate": "SOURCE → RIGHTS/PROVENANCE → FUNCTION → HUMAN LISTEN",
+      "calendar_mode": "NONE",
+      "notification_event": "MUSIC_REVIEW_AVAILABLE",
+      "channel": "rhythm",
+      "deep_link": "galeria.html",
+      "unlocks": []
+    },
+    {
+      "id": "M-SALON-KIT",
+      "title": "Salón Cortinas Rojas · 3–5 módulos 3D",
+      "lane": "CREATIVE",
+      "priority": "P2",
+      "state": "READY_AFTER_PRIMARY",
+      "method_gate": "MODULE PICK → PRECURSOR → 3D",
+      "calendar_mode": "NONE",
+      "notification_event": null,
+      "channel": null,
+      "deep_link": "galeria.html",
       "unlocks": []
     },
     {
       "id": "M-COLLEAGUES",
       "title": "Ronda Lite v2 con colegas",
       "lane": "NEXT",
-      "priority": "P1",
+      "priority": "P2",
       "state": "READY_AFTER_DEPENDENCY",
       "method_gate": "HUMAN EVIDENCE",
       "calendar_mode": "NONE",
       "notification_event": "PLAYTEST_READY",
       "channel": "tests",
       "deep_link": "survey-results.html",
-      "unlocks": ["M-SYNTHESIS"]
+      "unlocks": [
+        "M-SYNTHESIS"
+      ]
     },
     {
       "id": "M-SYNTHESIS",
       "title": "Síntesis dialéctica de encuestas",
-      "lane": "NEXT",
-      "priority": "P1",
+      "lane": "LATER",
+      "priority": "P2",
       "state": "WAITING_EVIDENCE",
       "method_gate": "SYNTHESIS + HUMAN REVIEW",
       "calendar_mode": "NONE",
       "notification_event": "SURVEY_NEW_EVIDENCE",
       "channel": "decisions",
       "deep_link": "survey-results.html",
-      "unlocks": ["M-CREATURES"]
-    },
-    {
-      "id": "M-CREATURES",
-      "title": "3 criaturas · interacción",
-      "lane": "LATER",
-      "priority": "P1",
-      "state": "BLOCKED_BY_ROUTE",
-      "method_gate": "CHEAP TEST → CQC",
-      "calendar_mode": "NONE",
-      "notification_event": null,
-      "channel": null,
-      "deep_link": "rpg-home.html",
-      "unlocks": ["M-NUDOS"]
-    },
-    {
-      "id": "M-NUDOS",
-      "title": "NUDOS persistentes",
-      "lane": "LATER",
-      "priority": "P1",
-      "state": "BLOCKED_BY_ROUTE",
-      "method_gate": "INTEGRATION → CQC",
-      "calendar_mode": "NONE",
-      "notification_event": null,
-      "channel": null,
-      "deep_link": "huellas.html",
-      "unlocks": ["M-CQC"]
-    },
-    {
-      "id": "M-CQC",
-      "title": "CQC cruzado B×A",
-      "lane": "LATER",
-      "priority": "P1",
-      "state": "BLOCKED_BY_ROUTE",
-      "method_gate": "CQC",
-      "calendar_mode": "NONE",
-      "notification_event": "CQC_HUMAN_GATE",
-      "channel": "decisions",
-      "deep_link": "index.html?resume=1",
-      "unlocks": ["M-HUMAN"]
-    },
-    {
-      "id": "M-HUMAN",
-      "title": "Decisión humana de promoción",
-      "lane": "LATER",
-      "priority": "P0",
-      "state": "BLOCKED_BY_ROUTE",
-      "method_gate": "HUMAN DECISION",
-      "calendar_mode": "NONE",
-      "notification_event": "HUMAN_DECISION_REQUIRED",
-      "channel": "decisions",
-      "deep_link": "index.html?resume=1",
-      "unlocks": []
+      "unlocks": [
+        "M-CREATURES"
+      ]
     },
     {
       "id": "M-NOTIFY-NATIVE",
@@ -139,10 +137,10 @@
       "lane": "MAINTENANCE",
       "priority": "P2",
       "state": "ACTIVE",
-      "method_gate": "T0–T8",
-      "calendar_mode": "NONE",
+      "method_gate": "LOW-NOISE → PERMISSION → DEVICE CQC",
+      "calendar_mode": "SOFT",
       "notification_event": null,
-      "channel": null,
+      "channel": "rhythm",
       "deep_link": "avisos.html",
       "unlocks": []
     },
@@ -150,39 +148,13 @@
       "id": "M-OBS-CAL",
       "title": "Calibrar tiempos con Creation Ledger",
       "lane": "MAINTENANCE",
-      "priority": "P2",
+      "priority": "P3",
       "state": "READY",
       "method_gate": "EVIDENCE CALIBRATION",
       "calendar_mode": "RECURRING",
       "notification_event": "WEEKLY_FLECOS_DIGEST",
       "channel": "rhythm",
       "deep_link": "project-observatory.html",
-      "unlocks": []
-    },
-    {
-      "id": "M-GROWTH",
-      "title": "Making / curso / stream / mockups",
-      "lane": "GROWTH",
-      "priority": "P2",
-      "state": "PARALLEL",
-      "method_gate": "EVIDENCE + RIGHTS + HUMAN",
-      "calendar_mode": "NONE",
-      "notification_event": null,
-      "channel": "community",
-      "deep_link": "crecimiento.html",
-      "unlocks": []
-    },
-    {
-      "id": "M-CREW",
-      "title": "Tripulación · semillas privadas",
-      "lane": "PRIVATE",
-      "priority": "P3",
-      "state": "AVAILABLE",
-      "method_gate": "PRIVACY → ABSTRACTION → HUMAN",
-      "calendar_mode": "NONE",
-      "notification_event": null,
-      "channel": null,
-      "deep_link": "crew.html",
       "unlocks": []
     }
   ]
