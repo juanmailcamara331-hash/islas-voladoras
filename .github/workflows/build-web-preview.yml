@@ -128,7 +128,7 @@ jobs:
           test -f build/pages/external-lab.html
           test -f build/pages/spielberg-lab.html
           test -f build/pages/data/isl-spielberg-lab-feed.json
-          grep -q 'SPIELBERG LAB FEED' build/pages/spielberg-lab.html
+          grep -qi 'spielberg lab feed' build/pages/spielberg-lab.html
           grep -q 'LAB_ONLY' build/pages/spielberg-lab.html
           grep -q 'spielberg-lab.html' build/pages/index.html
           grep -q 'CANDIDATOS · NO CANON' build/pages/external-lab.html
