@@ -38,7 +38,8 @@ global_pages=[
  "isla-baile-inagotable.html","recreo.html","capsulas.html","capsulas-tv.html",
  "musica.html","ps4.html","air-fishing.html","avisos.html","boss-prototype.html",
  "decision-engine.html","midjourney-lab.html","ningun-sitio.html","playtest-echo.html",
- "reel.html","secret-level.html","storm-route.html","sunday-market.html","encuestas.html"
+ "reel.html","secret-level.html","storm-route.html","sunday-market.html","encuestas.html",
+ "playtest-lab.html","signal-telegraph-lab.html"
 ]
 for rel in global_pages:
     p=ROOT/rel
@@ -91,6 +92,20 @@ for token in ["CANDIDATO · EXTERNAL LAB","Danzante-Aguja · External Lab","Cons
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 if "external-lab.html" not in shell: errors.append("global shell External Lab access missing")
 if "spielberg-lab.html" not in shell: errors.append("global shell Spielberg Lab Feed access missing")
+if "playtest-lab.html" not in shell: errors.append("global shell Playtest Lab access missing")
+if "signal-telegraph-lab.html" not in shell: errors.append("global shell Signal/Telegraph Lab access missing")
+playtest=(ROOT/"playtest-lab.html")
+if not playtest.exists(): errors.append("Playtest Lab surface missing")
+else:
+    pt=playtest.read_text(encoding="utf-8",errors="ignore").lower()
+    for token in ["juega 3 minutos","lab_only","not_canon","signal-telegraph-lab.html"]:
+        if token.lower() not in pt: errors.append(f"Playtest Lab contract missing: {token}")
+signal=(ROOT/"signal-telegraph-lab.html")
+if not signal.exists(): errors.append("Signal/Telegraph Lab surface missing")
+else:
+    sg=signal.read_text(encoding="utf-8",errors="ignore").lower()
+    for token in ["isl_signal_telegraph_lab_v0.1","lab_only","not_canon","completion_marker","isl_bug_hunt_v0.1","human review"]:
+        if token.lower() not in sg: errors.append(f"Signal/Telegraph Lab contract missing: {token}")
 spielberg=(ROOT/"spielberg-lab.html")
 if not spielberg.exists(): errors.append("Spielberg Lab Feed surface missing")
 else:
