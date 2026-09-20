@@ -43,6 +43,48 @@
       "severity": "P0",
       "automation": "VALIDATION_AS_CODE",
       "expected": "PASS_OR_WARN_IF_GATE_BLOCKED"
+    },
+    {
+      "id": "GALLERY_UNIFIED_REGISTRY",
+      "surface": "GALLERY",
+      "priority": "P0",
+      "assertions": [
+        "portal/galeria.html loads isl-gallery-library-current.json",
+        "loads isl-external-lab-current.json",
+        "loads isl-asset-health-current.json",
+        "loads isl-music-current.json",
+        "Music route is galeria.html#music",
+        "Gallery Center route uses index.html"
+      ]
+    },
+    {
+      "id": "COMMAND_CENTER_GALLERY_ROUTE",
+      "surface": "COMMAND_CENTER",
+      "priority": "P0",
+      "assertions": [
+        "primary Gallery link opens galeria.html",
+        "Music link opens galeria.html#music",
+        "no primary Gallery control depends on internal legacy Forge view"
+      ]
+    },
+    {
+      "id": "PS4_GALLERY_ROUTE",
+      "surface": "PS4",
+      "priority": "P1",
+      "assertions": [
+        "GALERÍA VIVA opens galeria.html",
+        "ARCHIVO LOCAL remains optional legacy view",
+        "Missions and Notices remain reachable"
+      ]
+    },
+    {
+      "id": "PWA_GALLERY_SHORTCUTS",
+      "surface": "PWA_APP",
+      "priority": "P1",
+      "assertions": [
+        "Gallery shortcut opens galeria.html",
+        "Music shortcut opens galeria.html#music"
+      ]
     }
   ]
 }
