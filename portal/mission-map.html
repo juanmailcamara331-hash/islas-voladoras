@@ -18,6 +18,14 @@ details{margin-top:14px;border:1px solid #27434d;border-radius:13px;background:#
 <div class="bottom"><a class="btn secondary" href="project-observatory.html">⌁ OBSERVATORIO</a><a class="btn secondary" href="crecimiento.html">✦ CRECER</a><a class="btn secondary" href="crew.html">⚓ TRIPULACIÓN</a><a class="btn secondary" href="index.html?resume=1">← CENTRO</a></div>
 </main><script>
 const explain={
+"M-DEPLOY-GALLERY-VERIFY":"Primero comprobamos que Ruta ISL y Galería enseñan lo mismo en web/app. Si el despliegue va por detrás del repo, no seguimos metiendo juguetes encima.",
+"M-BIO001-CQC":"La abeja ya existe. Ahora toca abrir el GLB real, mirar geometría/materiales/escala y decidir MASTER o MUTATE sin inventarnos un aprobado.",
+"M-BIO001-RUNTIME":"Sólo después de aceptar MASTER: adelgazar para web/móvil sin matar silueta ni materiales.",
+"M-BRUJULA-MULTIVIEW":"Cuatro caras listas; falta comprobar que no parezcan primas lejanas entre sí. Luego Meshy.",
+"M-BRUJULA-MESHY":"Cuando las vistas cuadren: RAW → Blender QA → validator. Nada de bautizar MASTER al primer monstruo bonito.",
+"M-MUSIC-CATALOG":"Carril sofá: recuperar sources/masters, rights, loops y stems sin fingir que un Drive source ya es streaming.",
+"M-SALON-KIT":"Elegir 3–5 módulos útiles. El Salón no necesita convertirse en un croissant 3D de 400 MB.",
+
 "M-R2-HUMAN":"Abre el Centro en tu móvil y comprueba que menú, Atrás, Cápsulas y Ruta se sienten como una sola app. Si algo falla, captura pantalla y no avanzamos.",
 "M-BIO001-BEE":"Mientras el gate principal espera, genera en Meshy la abeja de barro con las cuatro vistas. El MASTER no se optimiza todavía.",
 "M-BIO001-CQC":"Cuando llegue el GLB, revisar 360°, malla, materiales, texturas, escala, silueta y coherencia antes de aceptarlo.",
@@ -33,8 +41,24 @@ const explain={
 "M-GROWTH":"Making, curso, stream y mockups avanzan sólo como carril paralelo con evidencia y derechos.",
 "M-CREW":"Vida real privada por defecto. Abstracción antes de cualquier traducción a mundo."
 };
-const labels={"M-R2-HUMAN":"ABRIR CENTRO Y COMPROBAR →","M-BIO001-BEE":"VER BIO-001 →","M-BIO001-CQC":"ESPERANDO GLB","M-BIO001-RUNTIME":"ESPERANDO CQC","M-COLLEAGUES":"ABRIR ENCUESTAS →","M-SYNTHESIS":"VER RESULTADOS →","M-CREATURES":"VER ZONA RPG →","M-NUDOS":"VER HUELLAS →","M-CQC":"ABRIR CENTRO →","M-HUMAN":"REVISAR DECISIÓN →","M-NOTIFY-NATIVE":"ABRIR AVISOS →","M-OBS-CAL":"ABRIR OBSERVATORIO →","M-GROWTH":"ABRIR CRECER →","M-CREW":"ABRIR TRIPULACIÓN →"};
-const icons={"M-R2-HUMAN":"◆","M-BIO001-BEE":"🐝","M-BIO001-CQC":"◎","M-BIO001-RUNTIME":"⇣","M-COLLEAGUES":"👥","M-SYNTHESIS":"◉","M-CREATURES":"✦","M-NUDOS":"⌘","M-CQC":"✓","M-HUMAN":"◆","M-NOTIFY-NATIVE":"⚑","M-OBS-CAL":"⌁","M-GROWTH":"✦","M-CREW":"⚓"};
+const labels={
+"M-DEPLOY-GALLERY-VERIFY":"ABRIR GALERÍA Y COMPROBAR →",
+"M-BIO001-CQC":"ABRIR GYM 3D →",
+"M-BIO001-RUNTIME":"ESPERANDO MASTER",
+"M-BRUJULA-MULTIVIEW":"REVISAR BRÚJULA →",
+"M-BRUJULA-MESHY":"BLOQUEADO HASTA QA",
+"M-MUSIC-CATALOG":"ESCUCHAR / INVENTARIO →",
+"M-SALON-KIT":"VER GALERÍA →",
+"M-R2-HUMAN":"ABRIR CENTRO Y COMPROBAR →","M-BIO001-BEE":"VER BIO-001 →","M-BIO001-CQC":"ESPERANDO GLB","M-BIO001-RUNTIME":"ESPERANDO CQC","M-COLLEAGUES":"ABRIR ENCUESTAS →","M-SYNTHESIS":"VER RESULTADOS →","M-CREATURES":"VER ZONA RPG →","M-NUDOS":"VER HUELLAS →","M-CQC":"ABRIR CENTRO →","M-HUMAN":"REVISAR DECISIÓN →","M-NOTIFY-NATIVE":"ABRIR AVISOS →","M-OBS-CAL":"ABRIR OBSERVATORIO →","M-GROWTH":"ABRIR CRECER →","M-CREW":"ABRIR TRIPULACIÓN →"};
+const icons={
+"M-DEPLOY-GALLERY-VERIFY":"⚡",
+"M-BIO001-CQC":"🐝",
+"M-BIO001-RUNTIME":"⇣",
+"M-BRUJULA-MULTIVIEW":"🧭",
+"M-BRUJULA-MESHY":"◇",
+"M-MUSIC-CATALOG":"♫",
+"M-SALON-KIT":"🎭",
+"M-R2-HUMAN":"◆","M-BIO001-BEE":"🐝","M-BIO001-CQC":"◎","M-BIO001-RUNTIME":"⇣","M-COLLEAGUES":"👥","M-SYNTHESIS":"◉","M-CREATURES":"✦","M-NUDOS":"⌘","M-CQC":"✓","M-HUMAN":"◆","M-NOTIFY-NATIVE":"⚑","M-OBS-CAL":"⌁","M-GROWTH":"✦","M-CREW":"⚓"};
 function card(m,locked,parallel){return '<div class="card '+(locked?'locked ':'')+(parallel?'parallel':'')+'" data-priority="'+(m.priority||'P3')+'"><div class="icon">'+(icons[m.id]||'•')+'</div><div><b>'+m.title+'</b><p>'+(explain[m.id]||m.method_gate)+'</p><div class="meta"><i>'+m.priority+'</i><i>'+m.state+'</i></div></div>'+(locked?'':'<a class="mini" href="'+m.deep_link+'">'+(labels[m.id]||'ABRIR →')+'</a>')+'</div>'}
 fetch("isl-mission-state.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
  const ms=d.missions||[],now=ms.find(x=>x.lane==="NOW"),next=ms.filter(x=>x.lane==="NEXT"),parallel=ms.filter(x=>["CREATIVE","GROWTH","MAINTENANCE","PRIVATE"].includes(x.lane)),blocked=ms.filter(x=>x.state==="BLOCKED_BY_ROUTE");
