@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ISL · Signal / Telegraph Lab v0.1</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="stylesheet" href="isl-global-shell.css">
+<style>
+:root{--bg:#061018;--panel:#0d1a22;--line:#294955;--txt:#eef8f5;--muted:#91a8ae;--cyan:#87efff;--gold:#ffc36e;--lime:#dfff7b;--rose:#ff9aa5}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 70% 5%,#173a49 0,transparent 28%),linear-gradient(#061018,#09161d);color:var(--txt);font-family:Inter,system-ui,sans-serif}button,input,textarea,select{font:inherit}
+main{max-width:980px;margin:auto;padding:82px 12px 70px}.ey{font:900 9px/1.3 ui-monospace,monospace;letter-spacing:.13em;color:var(--cyan)}h1{font-size:clamp(32px,7vw,58px);line-height:.94;margin:8px 0 10px}.sub{color:var(--muted);line-height:1.5}.panel{border:1px solid var(--line);background:#0b1820dc;border-radius:16px;padding:14px;margin-top:12px;box-shadow:0 18px 50px #0005}.hud{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font:800 10px/1.2 ui-monospace,monospace;color:#cfe0e3}.pill{border:1px solid #355765;border-radius:999px;padding:6px 8px}
+.stage{position:relative;height:min(62vh,520px);min-height:360px;margin-top:12px;border:1px solid #31505c;border-radius:18px;overflow:hidden;background:radial-gradient(circle at 50% 92%,#193933 0,transparent 24%),linear-gradient(#07131a,#0b1b24 58%,#0b151b)}
+.gates{position:absolute;left:6%;right:6%;top:18%;display:grid;grid-template-columns:repeat(3,1fr);gap:5%}.gate{height:145px;border:1px solid #38545f;border-radius:50% 50% 18px 18px;background:linear-gradient(#0c1c24,#081117);color:#d9e8eb;position:relative;overflow:hidden;touch-action:manipulation}.gate span{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);font:900 10px/1 ui-monospace,monospace;color:#6f8c95}.gate.light{box-shadow:0 0 0 2px #87efff66,0 0 48px #87efff99 inset,0 0 35px #87efff66}.gate.motion:after{content:"";position:absolute;left:10%;right:10%;top:18%;height:4px;background:var(--gold);animation:sweep .52s ease-in-out infinite alternate}.gate.danger{border-color:var(--rose);box-shadow:0 0 30px #ff607744 inset}.gate.reward{border-color:var(--lime);box-shadow:0 0 30px #c7ff5b35 inset}@keyframes sweep{to{transform:translateY(85px)}}.gate.miss{animation:shake .2s linear 2}@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.avatar{position:absolute;width:34px;height:34px;border:2px solid var(--cyan);border-radius:50%;left:50%;bottom:12%;transform:translateX(-50%);box-shadow:0 0 20px #87efff66}.message{position:absolute;left:50%;top:5%;transform:translateX(-50%);width:90%;text-align:center;font-weight:900;font-size:12px}.direction{font-size:28px;color:var(--gold)}.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.btn{border:1px solid #446875;border-radius:10px;background:#102630;color:#fff;padding:10px 12px;font-weight:900;text-decoration:none}.btn.primary{border-color:#4e8e99;background:#143740}.btn.gold{border-color:#80683d;background:#2b2419}.btn:disabled{opacity:.38}.feedback[hidden],.bug[hidden]{display:none}.field{margin:12px 0}.field label{display:block;font-size:11px;font-weight:850;margin-bottom:6px}.field textarea,.field select{width:100%;background:#071218;border:1px solid #31505c;color:white;border-radius:9px;padding:10px}.tiny{font-size:10px;color:var(--muted);line-height:1.45}.ok{color:var(--lime)}pre{white-space:pre-wrap;word-break:break-word;background:#050c10;border:1px solid #203c47;border-radius:9px;padding:10px;font-size:9px;max-height:260px;overflow:auto}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<div class="ey">ISL_SIGNAL_TELEGRAPH_LAB_v0.1 · LAB_ONLY · NOT_CANON</div>
+<h1>LEE LA SEÑAL.<br>NO TE LA EXPLICAMOS.</h1>
+<p class="sub">Toca la salida que creas correcta. El cuestionario se desbloquea sólo después de seis rondas.</p>
+<section class="panel">
+<div class="hud"><span class="pill" id="round">RONDA 0/6</span><span class="pill" id="score">ACIERTOS 0</span><span class="pill" id="cue">SEÑAL —</span><span class="pill">HUMAN REVIEW</span></div>
+<div class="stage"><div class="message" id="message">Pulsa EMPEZAR.</div><div class="gates"><button class="gate" data-i="0"><span>01</span></button><button class="gate" data-i="1"><span>02</span></button><button class="gate" data-i="2"><span>03</span></button></div><div class="avatar"></div></div>
+<div class="controls"><button class="btn primary" id="start">EMPEZAR</button><button class="btn gold" id="sound">ACTIVAR SONIDO</button><a class="btn" href="playtest-lab.html">VOLVER</a></div>
+<p class="tiny">Evidencia mínima: tipo de señal, elección, acierto, tiempo de reacción, viewport y preferencias de movimiento. Sin cuenta, nombre, email ni fingerprint.</p>
+</section>
+<section class="panel feedback" id="feedback" hidden>
+<div class="ey">JUGADO · AHORA DEJA HUELLA</div><h2>Feedback corto</h2>
+<form id="form">
+<div class="field"><label>¿Qué entendiste?</label><select name="understood" required><option value="">Elige</option><option>Qué salida parecía segura</option><option>Qué salida parecía peligrosa</option><option>Dónde estaba la recompensa</option><option>La dirección, pero no el motivo</option><option>No entendí un patrón claro</option></select></div>
+<div class="field"><label>¿Qué te confundió?</label><select name="confused" required><option value="">Elige</option><option>Nada importante</option><option>La luz</option><option>El movimiento</option><option>El sonido</option><option>La dirección</option><option>Demasiadas señales</option><option>No sabía qué hacer</option></select></div>
+<div class="field"><label>¿Qué te divirtió?</label><select name="fun" required><option value="">Elige</option><option>Descubrir el patrón</option><option>Equivocarme y corregir</option><option>La mezcla de señales</option><option>El ritmo corto</option><option>No me divirtió especialmente</option></select></div>
+<div class="field"><label>Bug opcional</label><textarea name="bug" rows="2"></textarea></div>
+<div class="field"><label>Nota libre opcional</label><textarea name="note" rows="2"></textarea></div>
+<button class="btn primary" type="submit">GUARDAR HUELLA LAB</button>
+</form>
+<div id="saved" hidden><p class="ok"><b>Guardada localmente · LAB_ONLY.</b></p><button class="btn" id="copy">COPIAR EVIDENCIA</button><pre id="json"></pre></div>
+</section>
+<section class="panel bug" id="bugPanel" hidden>
+<div class="ey">INTENTA ROMPER ISL · BUG HUNT</div><h2>Registro reproducible</h2>
+<div class="field"><label>Acción</label><textarea id="ba" rows="2"></textarea></div><div class="field"><label>Resultado</label><textarea id="br" rows="2"></textarea></div><div class="field"><label>Reproducibilidad</label><select id="bp"><option>NO PROBADO</option><option>1/1</option><option>2/2</option><option>INTERMITENTE</option><option>NO REPRODUCIBLE</option></select></div><div class="field"><label>Severidad</label><select id="bs"><option>S4 · COSMÉTICO</option><option>S3 · MENOR</option><option>S2 · MAYOR</option><option>S1 · BLOQUEANTE</option></select></div><button class="btn" id="saveBug">GUARDAR BUG</button><p class="tiny" id="bugState"></p>
+</section>
+</main>
+<script>
+(function(){
+const q=s=>document.querySelector(s),gs=[...document.querySelectorAll('.gate')],plans=['light','motion','sound','direction','danger_reward','mixed'];let r=0,score=0,t=-1,started=0,sound=false,events=[],done=false;
+if(new URLSearchParams(location.search).get('mode')==='bug')q('#bugPanel').hidden=false;
+function clear(){gs.forEach(g=>g.className='gate');q('#message').textContent='Observa la escena.'}
+function beep(){if(!sound)return;try{const A=window.AudioContext||window.webkitAudioContext,c=window.__islAudio||(window.__islAudio=new A()),o=c.createOscillator(),g=c.createGain();o.frequency.value=520;g.gain.value=.04;o.connect(g).connect(c.destination);o.start();o.stop(c.currentTime+.16)}catch(e){}}
+function setup(){if(r>=plans.length)return finish();clear();t=Math.floor(Math.random()*3);const p=plans[r];q('#round').textContent='RONDA '+(r+1)+'/6';q('#cue').textContent='SEÑAL '+p.toUpperCase().replace('_','+');if(p==='light')gs[t].classList.add('light');if(p==='motion')gs[t].classList.add('motion');if(p==='sound'){beep();q('#message').textContent=sound?'Escucha y decide.':'SONIDO DESACTIVADO · decide con menos información.'}if(p==='direction'){q('#message').innerHTML='DIRECCIÓN <span class="direction">'+['←','↑','→'][t]+'</span>'}if(p==='danger_reward')gs.forEach((g,i)=>g.classList.add(i===t?'reward':'danger'));if(p==='mixed'){gs[t].classList.add('light','motion','reward');gs[(t+1)%3].classList.add('danger');beep()}started=performance.now()}
+function pick(i){if(done||t<0)return;const ok=i===t;events.push({round:r+1,cue:plans[r],choice:i,target:t,correct:ok,reaction_ms:Math.round(performance.now()-started)});if(ok)score++;else gs[i].classList.add('miss');q('#score').textContent='ACIERTOS '+score;q('#message').textContent=ok?'SEÑAL LEÍDA.':'LECTURA DISTINTA. SIGUE.';r++;t=-1;setTimeout(setup,420)}
+function finish(){done=true;clear();q('#round').textContent='COMPLETADO';q('#cue').textContent='FEEDBACK';q('#message').textContent='Ahora sí: deja huella.';q('#feedback').hidden=false;q('#feedback').scrollIntoView({behavior:'smooth'})}
+gs.forEach((g,i)=>g.onclick=()=>pick(i));q('#start').onclick=function(){r=0;score=0;events=[];done=false;this.disabled=true;setup()};q('#sound').onclick=async function(){sound=true;try{const A=window.AudioContext||window.webkitAudioContext;window.__islAudio=window.__islAudio||new A();await window.__islAudio.resume()}catch(e){}this.textContent='SONIDO ACTIVO';this.disabled=true};
+q('#form').onsubmit=function(e){e.preventDefault();const f=new FormData(this),ev={schema:'ISL_PLAYTEST_EVIDENCE_v0.1',experiment:'ISL_SIGNAL_TELEGRAPH_LAB_v0.1',status:'LAB_ONLY',not_canon:true,completion_marker:'SIGNAL_TELEGRAPH_V01_COMPLETED',completed_at:new Date().toISOString(),telemetry:{score,total:6,events,viewport:{w:innerWidth,h:innerHeight},reduced_motion:matchMedia('(prefers-reduced-motion: reduce)').matches,sound_enabled:sound},feedback:{understood:f.get('understood'),confused:f.get('confused'),fun:f.get('fun'),bug:f.get('bug')||null,note:f.get('note')||null}};const all=JSON.parse(localStorage.getItem('isl_signal_telegraph_evidence_v01')||'[]');all.push(ev);localStorage.setItem('isl_signal_telegraph_evidence_v01',JSON.stringify(all));window.__last=ev;q('#json').textContent=JSON.stringify(ev,null,2);q('#saved').hidden=false};
+q('#copy').onclick=()=>navigator.clipboard&&navigator.clipboard.writeText(JSON.stringify(window.__last,null,2));
+q('#saveBug').onclick=function(){const bug={schema:'ISL_BUG_HUNT_v0.1',experiment:'ISL_SIGNAL_TELEGRAPH_LAB_v0.1',created_at:new Date().toISOString(),action:q('#ba').value.trim(),result:q('#br').value.trim(),reproducibility:q('#bp').value,severity:q('#bs').value,method:'symptom -> reproducibility -> version/commit -> root cause -> fix -> regression test -> generalized lesson'};const all=JSON.parse(localStorage.getItem('isl_bug_hunt_v01')||'[]');all.push(bug);localStorage.setItem('isl_bug_hunt_v01',JSON.stringify(all));q('#bugState').textContent='Guardado localmente · pendiente de revisión humana.'};
+})();
+</script>
+<script src="isl-global-shell.js"></script>
+</body></html>
