@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ISL · Playtest Human Review</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="stylesheet" href="isl-global-shell.css">
+<style>
+:root{--bg:#071017;--panel:#0d1b23;--line:#294955;--txt:#eef8f5;--muted:#91a8ae;--cyan:#87efff;--gold:#ffc36e;--lime:#dfff7b;--rose:#ff9aa5;--violet:#bba4ff}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 78% 2%,#183a48 0,transparent 27%),linear-gradient(#071017,#09151c);color:var(--txt);font-family:Inter,system-ui,sans-serif}
+main{max-width:1180px;margin:auto;padding:82px 14px 70px}.ey{font:900 9px/1.3 ui-monospace,monospace;color:var(--cyan);letter-spacing:.14em}h1{font-size:clamp(34px,7vw,66px);line-height:.94;margin:8px 0 10px}.sub{color:var(--muted);line-height:1.55}.notice,.card{border:1px solid var(--line);border-radius:14px;background:#0c1921dc;padding:13px;margin-top:12px}.notice{border-left:3px solid var(--gold)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:12px}.finding{border:1px solid #294955;border-radius:12px;padding:12px;background:#08151c}.finding h3{font-size:12px;margin:0 0 7px;color:#e8f5f6}.small{font-size:10px;color:var(--muted);line-height:1.45}.k{font-size:30px;font-weight:950}.decision{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}.decision button{border:1px solid #365661;background:#0d2028;color:white;border-radius:999px;padding:6px 8px;font-size:9px;font-weight:900}.decision button.on[data-v="KEEP"]{border-color:#7fae60;color:var(--lime)}.decision button.on[data-v="ADAPT"]{border-color:#8b6e3f;color:var(--gold)}.decision button.on[data-v="DISCARD"]{border-color:#945564;color:var(--rose)}.decision button.on[data-v="NEW_EXPERIMENT"]{border-color:#695b96;color:var(--violet)}textarea{width:100%;margin-top:8px;background:#071218;border:1px solid #31505c;color:white;border-radius:8px;padding:8px;min-height:65px}.btn{display:inline-flex;border:1px solid #456d79;background:#102a33;color:#fff;border-radius:10px;padding:9px 11px;text-decoration:none;font-weight:900;margin:6px 6px 0 0}.good{color:var(--lime)}.warn{color:var(--gold)}pre{white-space:pre-wrap;word-break:break-word;background:#050c10;border:1px solid #203c47;border-radius:9px;padding:10px;font-size:9px;max-height:260px;overflow:auto}
+</style>
+</head>
+<body>
+<main>
+<div class="ey">HUMAN REVIEW · PLAYTEST LAB · NO AUTO-CANON</div>
+<h1>LOS DATOS INFORMAN.<br>TÚ DECIDES.</h1>
+<p class="sub">Esta mesa convierte evidencia agregada en decisiones explícitas. No cambia CANON ni producción; sólo genera un paquete de revisión humana para el Creation Process Ledger.</p>
+<div class="notice"><b>Regla:</b> KEEP / ADAPT / DISCARD / NEW_EXPERIMENT son decisiones humanas. Ningún porcentaje las selecciona automáticamente.</div>
+<div class="grid">
+<div class="card"><div class="small">Sesiones</div><div class="k" id="sessions">—</div></div>
+<div class="card"><div class="small">Precisión</div><div class="k" id="accuracy">—</div></div>
+<div class="card"><div class="small">Reacción media</div><div class="k" id="reaction">—</div></div>
+<div class="card"><div class="small">Bugs</div><div class="k" id="bugs">—</div></div>
+</div>
+<section class="card"><div class="ey">HALLAZGOS</div><div id="findings"><p class="small">Cargando evidencia…</p></div></section>
+<section class="card"><div class="ey">PAQUETE DE DECISIÓN</div><p class="small">Se guarda sólo en este navegador hasta que lo exportes.</p><button class="btn" id="save">GUARDAR REVISIÓN</button><button class="btn" id="copy">COPIAR JSON</button><pre id="out"></pre></section>
+</main>
+<script>
+(function(){
+const ENDPOINT='https://islas-voladoras-isl.netlify.app/api/playtest-evidence';
+const q=s=>document.querySelector(s);let snapshot=null,decisions={};
+function pct(x){return x==null?'—':Math.round(x*100)+'%'}
+function addFinding(id,title,evidence){
+ const wrap=document.createElement('div');wrap.className='finding';wrap.dataset.id=id;
+ wrap.innerHTML='<h3>'+title+'</h3><div class="small">'+evidence+'</div><div class="decision">'+['KEEP','ADAPT','DISCARD','NEW_EXPERIMENT'].map(v=>'<button type="button" data-v="'+v+'">'+v+'</button>').join('')+'</div><textarea placeholder="Razonamiento / siguiente acción"></textarea>';
+ wrap.querySelectorAll('button').forEach(b=>b.onclick=()=>{wrap.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');decisions[id]=decisions[id]||{};decisions[id].decision=b.dataset.v});
+ wrap.querySelector('textarea').oninput=e=>{decisions[id]=decisions[id]||{};decisions[id].rationale=e.target.value};
+ q('#findings').appendChild(wrap);
+}
+function build(d){
+ q('#findings').innerHTML='';q('#sessions').textContent=d.sessions||0;q('#accuracy').textContent=pct(d.overall_accuracy);q('#reaction').textContent=d.mean_reaction_ms==null?'—':d.mean_reaction_ms+' ms';q('#bugs').textContent=d.bug_hunt?.count||0;
+ Object.entries(d.cue_performance||{}).forEach(([cue,x])=>{const p=x.attempts?Math.round(x.correct/x.attempts*100):0;addFinding('cue:'+cue,'SEÑAL · '+cue,x.correct+'/'+x.attempts+' correctas · '+p+'%')});
+ Object.entries(d.feedback?.confused||{}).sort((a,b)=>b[1]-a[1]).slice(0,4).forEach(([k,v])=>addFinding('confused:'+k,'CONFUSIÓN · '+k,v+' menciones'));
+ Object.entries(d.bug_hunt?.severity||{}).forEach(([k,v])=>addFinding('bug:'+k,'BUG · '+k,v+' casos'));
+ if(!q('#findings').children.length)q('#findings').innerHTML='<p class="small">Todavía no hay evidencia suficiente para revisar.</p>';
+}
+async function load(){try{const r=await fetch(ENDPOINT+'?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw 0;snapshot=await r.json();build(snapshot)}catch(e){q('#findings').innerHTML='<p class="small">No se pudo cargar el agregado.</p>'}}
+function pack(){return {schema:'ISL_PLAYTEST_HUMAN_REVIEW_v0.1',experiment:'ISL_SIGNAL_TELEGRAPH_LAB_v0.1',status:'HUMAN_REVIEW_ONLY',not_canon:true,created_at:new Date().toISOString(),evidence_snapshot:snapshot?{sessions:snapshot.sessions,overall_accuracy:snapshot.overall_accuracy,mean_reaction_ms:snapshot.mean_reaction_ms,cue_performance:snapshot.cue_performance,bug_hunt:snapshot.bug_hunt}:null,decisions}}
+q('#save').onclick=()=>{const p=pack();localStorage.setItem('isl_playtest_human_review_v01',JSON.stringify(p));q('#out').textContent=JSON.stringify(p,null,2)};
+q('#copy').onclick=()=>{const p=pack();q('#out').textContent=JSON.stringify(p,null,2);navigator.clipboard&&navigator.clipboard.writeText(JSON.stringify(p,null,2))};
+load();
+})();
+</script>
+<script src="isl-global-shell.js"></script>
+</body></html>
