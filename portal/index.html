@@ -7,7 +7,7 @@
 (function(){
   var app=new URLSearchParams(location.search).get('app')==='1';
   if(!app)return;
-  document.documentElement.classList.add('native-app');
+  document.documentElement.classList.add('native-app','native-entered');
   try{
     if(sessionStorage.getItem('isl_native_entered_v063')==='1'){
       document.documentElement.classList.add('native-entered');
@@ -417,7 +417,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
  <div class="group"><h3>ACCESOS PRINCIPALES</h3>
   <a href="rpg-home.html">Perfil RPG del Cartógrafo ↗</a>
   <button class="item" onclick="go('calendar')">RUTA ISL · ahora y siguiente</button>
-  <a href="galeria.html">Galería Viva · archivo + lab + 3D + música ↗</a>
+  <a href="galeria.html?v=20260921-1">Galería Viva · archivo + lab + 3D + música ↗</a>
   <a href="capsulas.html">Cápsulas ISL ↗</a>
  </div>
  <div class="group"><h3>ENCUESTAS · EVIDENCIA</h3>
@@ -449,8 +449,8 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <a href="rpg-home.html"><span class="navI" aria-hidden="true">♙</span>Perfil RPG</a>
     <a href="#calendar" data-route-link="calendar"><span class="navI" aria-hidden="true">⌁</span>Ruta ISL</a>
     <a href="secret-level.html"><span class="navI" aria-hidden="true">⚑</span>Aventura</a>
-    <a href="galeria.html"><span class="navI" aria-hidden="true">▣</span>Galería</a>
-    <a href="galeria.html#music"><span class="navI" aria-hidden="true">♫</span>Música</a>
+    <a href="galeria.html?v=20260921-1"><span class="navI" aria-hidden="true">▣</span>Galería</a>
+    <a href="galeria.html?v=20260921-1#music"><span class="navI" aria-hidden="true">♫</span>Música</a>
     <button id="moreNavBtn" type="button" aria-expanded="false" aria-controls="drawer"><span class="navI" aria-hidden="true">＋</span>Más</button>
   </nav>
   <section class="currentActions" id="currentActions" aria-label="Qué toca ahora">
@@ -501,8 +501,8 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
   <div class="finalWorlds">
     <a class="worldTile" href="rpg-home.html#mapa"><img src="assets/floating-islands-map.png" alt=""><div><b>Islas</b><span>Mundos por descubrir</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
     <a class="worldTile" href="capsulas.html"><img src="assets/wind-lab-sunset.png" alt=""><div><b>Escenas</b><span>Momentos que dejan memoria</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
-    <a class="worldTile" href="galeria.html"><img src="assets/visual-bible-islands.png" alt=""><div><b>Criaturas</b><span>Vida en las alturas</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
-    <a class="worldTile" href="galeria.html"><img src="assets/level-celestial-ruins.png" alt=""><div><b>Reliquias</b><span>Artefactos con historia</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
+    <a class="worldTile" href="galeria.html?v=20260921-1"><img src="assets/visual-bible-islands.png" alt=""><div><b>Criaturas</b><span>Vida en las alturas</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
+    <a class="worldTile" href="galeria.html?v=20260921-1"><img src="assets/level-celestial-ruins.png" alt=""><div><b>Reliquias</b><span>Artefactos con historia</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
     <a class="worldTile" href="huellas.html"><img src="assets/world-design-bible.png" alt=""><div><b>Dialéctica del mundo</b><span>Ideas · perspectivas · consecuencias</span><span class="worldArrow" aria-hidden="true">›</span></div></a>
   </div>
   <div class="sectionLabelV68">Cabina · herramientas y versiones</div>
@@ -511,9 +511,9 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <a class="util islGrowth" href="crecimiento.html"><span class="uIcon" aria-hidden="true">✦</span><b>CRECER</b><span>Making · curso · stream · campañas</span></a>
     <a class="util islObservatory" href="project-observatory.html"><span class="uIcon" aria-hidden="true">⌁</span><b>OBSERVATORIO</b><span>Tiempo · hitos · carga · simulaciones</span></a>
     <a class="util islMissions" href="mission-map.html"><span class="uIcon" aria-hidden="true">◆</span><b>MISIONES</b><span>Ahora · dependencias · avisos</span></a>
-    <a class="util" href="galeria.html"><span class="uIcon" aria-hidden="true">▣</span><b>GALERÍA</b><span>Archivo · Lab · 3D · vídeo · música</span></a>
+    <a class="util" href="galeria.html?v=20260921-1"><span class="uIcon" aria-hidden="true">▣</span><b>GALERÍA</b><span>Archivo · Lab · 3D · vídeo · música</span></a>
     <a class="util" href="ps4.html"><span class="uIcon" aria-hidden="true">🎮</span><b>PS4 VERSION</b><span>Experiencia optimizada</span></a>
-    <a class="util" href="galeria.html#music"><span class="uIcon" aria-hidden="true">♫</span><b>MÚSICA</b><span>Dentro de Galería Viva</span></a>
+    <a class="util" href="galeria.html?v=20260921-1#music"><span class="uIcon" aria-hidden="true">♫</span><b>MÚSICA</b><span>Dentro de Galería Viva</span></a>
     <a class="util" href="capsulas.html"><span class="uIcon" aria-hidden="true">●●●</span><b>COMUNIDAD</b><span>Comparte · colabora</span></a>
     <button class="util" type="button" onclick="document.getElementById('menuBtn').click()"><span class="uIcon" aria-hidden="true">⚒</span><b>HERRAMIENTAS</b><span>Recursos · extras</span></button>
     <a class="util" href="recreo.html"><span class="uIcon" aria-hidden="true">✦</span><b>RECREO</b><span>Jugar sin romper el canon</span></a>
@@ -537,7 +537,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
       <div class="homeCabinIcons">
         <a href="rpg-home.html" title="Perfil RPG">🎒<span>PERFIL</span></a>
         <a href="recreo.html" title="Recreo">🎮<span>RECREO</span></a>
-        <a href="galeria.html#music" title="Música">♫<span>MÚSICA</span></a>
+        <a href="galeria.html?v=20260921-1#music" title="Música">♫<span>MÚSICA</span></a>
         <a href="rpg-home.html#mapa" title="Mapa">🧭<span>MAPA</span></a>
       </div>
     </div>
@@ -674,7 +674,7 @@ let weights=JSON.parse(localStorage.getItem('islcc_weights')||'null')||{identity
 let selected=JSON.parse(localStorage.getItem('islcc_selected')||'[]');
 let ratings=JSON.parse(localStorage.getItem('islcc_ratings')||'{}');
 function save(){localStorage.setItem('islcc_weights',JSON.stringify(weights));localStorage.setItem('islcc_selected',JSON.stringify(selected));localStorage.setItem('islcc_ratings',JSON.stringify(ratings))}
-function go(id){if(id==='gallery'){location.href='galeria.html'+(window.__ISL_NATIVE_APP__?'?app=1':'');return}document.querySelectorAll('.view,.rail button[data-view]').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');let b=document.querySelector(`[data-view="${id}"]`);if(b)b.classList.add('active');setDrawer(false);if(id==='compare')renderCompare();window.scrollTo(0,0)}
+function go(id){if(id==='gallery'){location.href='galeria.html?v=20260921-1'+(window.__ISL_NATIVE_APP__?'&app=1':'');return}document.querySelectorAll('.view,.rail button[data-view]').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');let b=document.querySelector(`[data-view="${id}"]`);if(b)b.classList.add('active');setDrawer(false);if(id==='compare')renderCompare();window.scrollTo(0,0)}
 document.querySelectorAll('.rail button[data-view]').forEach(b=>b.onclick=()=>go(b.dataset.view));
 document.querySelectorAll('[data-main-nav]').forEach(function(b){b.onclick=function(){go(b.dataset.mainNav)}});
 document.querySelectorAll('[data-route-link]').forEach(function(a){a.onclick=function(e){e.preventDefault();var id=a.dataset.routeLink||'calendar';go(id);history.replaceState(null,'','#'+id)}});
