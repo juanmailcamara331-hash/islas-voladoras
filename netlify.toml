@@ -86,6 +86,11 @@
   to = "/signal-telegraph-lab.html"
   status = 302
 
+[[redirects]]
+  from = "/playtest-results"
+  to = "/playtest-results.html"
+  status = 302
+
 [[headers]]
   for = "/playtest-lab.html"
   [headers.values]
@@ -115,3 +120,10 @@
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
     Netlify-CDN-Cache-Control = "no-store"
+
+[[headers]]
+  for = "/playtest-results.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Netlify-CDN-Cache-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow, noarchive"
