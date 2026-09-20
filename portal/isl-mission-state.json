@@ -1,0 +1,149 @@
+{
+  "version": "0.73",
+  "updated_at": "2026-09-20",
+  "rule": "Una misión conecta estado, dependencia, evidencia, método, calendario y notificación.",
+  "missions": [
+    {
+      "id": "M-R2-HUMAN",
+      "title": "Recheck físico de navegación",
+      "lane": "NOW",
+      "priority": "P0",
+      "state": "WAITING_HUMAN",
+      "method_gate": "T8 HUMAN/CQC",
+      "calendar_mode": "SOFT",
+      "notification_event": "HUMAN_DECISION_REQUIRED",
+      "channel": "decisions",
+      "deep_link": "index.html?resume=1",
+      "unlocks": [
+        "M-COLLEAGUES"
+      ]
+    },
+    {
+      "id": "M-COLLEAGUES",
+      "title": "Ronda Lite v2 con colegas",
+      "lane": "NEXT",
+      "priority": "P1",
+      "state": "READY_AFTER_DEPENDENCY",
+      "method_gate": "HUMAN EVIDENCE",
+      "calendar_mode": "NONE",
+      "notification_event": "PLAYTEST_READY",
+      "channel": "tests",
+      "deep_link": "survey-results.html",
+      "unlocks": [
+        "M-SYNTHESIS"
+      ]
+    },
+    {
+      "id": "M-SYNTHESIS",
+      "title": "Síntesis dialéctica de encuestas",
+      "lane": "NEXT",
+      "priority": "P1",
+      "state": "WAITING_EVIDENCE",
+      "method_gate": "SYNTHESIS + HUMAN REVIEW",
+      "calendar_mode": "NONE",
+      "notification_event": "SURVEY_NEW_EVIDENCE",
+      "channel": "decisions",
+      "deep_link": "survey-results.html",
+      "unlocks": [
+        "M-CREATURES"
+      ]
+    },
+    {
+      "id": "M-CREATURES",
+      "title": "3 criaturas · interacción",
+      "lane": "LATER",
+      "priority": "P1",
+      "state": "BLOCKED_BY_ROUTE",
+      "method_gate": "CHEAP TEST → CQC",
+      "calendar_mode": "NONE",
+      "notification_event": null,
+      "channel": null,
+      "deep_link": "rpg-home.html",
+      "unlocks": [
+        "M-NUDOS"
+      ]
+    },
+    {
+      "id": "M-NUDOS",
+      "title": "NUDOS persistentes",
+      "lane": "LATER",
+      "priority": "P1",
+      "state": "BLOCKED_BY_ROUTE",
+      "method_gate": "INTEGRATION → CQC",
+      "calendar_mode": "NONE",
+      "notification_event": null,
+      "channel": null,
+      "deep_link": "huellas.html",
+      "unlocks": [
+        "M-CQC"
+      ]
+    },
+    {
+      "id": "M-CQC",
+      "title": "CQC cruzado B×A",
+      "lane": "LATER",
+      "priority": "P1",
+      "state": "BLOCKED_BY_ROUTE",
+      "method_gate": "CQC",
+      "calendar_mode": "NONE",
+      "notification_event": "CQC_HUMAN_GATE",
+      "channel": "decisions",
+      "deep_link": "index.html?resume=1",
+      "unlocks": [
+        "M-HUMAN"
+      ]
+    },
+    {
+      "id": "M-HUMAN",
+      "title": "Decisión humana de promoción",
+      "lane": "LATER",
+      "priority": "P0",
+      "state": "BLOCKED_BY_ROUTE",
+      "method_gate": "HUMAN DECISION",
+      "calendar_mode": "NONE",
+      "notification_event": "HUMAN_DECISION_REQUIRED",
+      "channel": "decisions",
+      "deep_link": "index.html?resume=1",
+      "unlocks": []
+    },
+    {
+      "id": "M-NOTIFY-NATIVE",
+      "title": "Notification OS · base nativa",
+      "lane": "MAINTENANCE",
+      "priority": "P2",
+      "state": "READY",
+      "method_gate": "T0–T8",
+      "calendar_mode": "NONE",
+      "notification_event": null,
+      "channel": null,
+      "deep_link": "avisos.html",
+      "unlocks": []
+    },
+    {
+      "id": "M-OBS-CAL",
+      "title": "Calibrar tiempos con Creation Ledger",
+      "lane": "MAINTENANCE",
+      "priority": "P2",
+      "state": "READY",
+      "method_gate": "EVIDENCE CALIBRATION",
+      "calendar_mode": "RECURRING",
+      "notification_event": "WEEKLY_FLECOS_DIGEST",
+      "channel": "rhythm",
+      "deep_link": "project-observatory.html",
+      "unlocks": []
+    },
+    {
+      "id": "M-GROWTH",
+      "title": "Making / curso / stream / mockups",
+      "lane": "GROWTH",
+      "priority": "P2",
+      "state": "PARALLEL",
+      "method_gate": "EVIDENCE + RIGHTS + HUMAN",
+      "calendar_mode": "NONE",
+      "notification_event": null,
+      "channel": "community",
+      "deep_link": "crecimiento.html",
+      "unlocks": []
+    }
+  ]
+}
