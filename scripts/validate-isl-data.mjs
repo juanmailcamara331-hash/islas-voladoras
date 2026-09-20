@@ -48,9 +48,9 @@ for (const a of health.assets||[]) {
     if (a[req]===undefined || a[req]===null || a[req]==='')
       add('FAIL','HEALTH_FIELD_MISSING',`${a.asset_id||'?'}:${req}`);
   }
-  if (a.master_required && !a.master_ref)
+  if (a.master_required_now && !a.master_ref)
     add(a.binary_access==='BLOCKED'?'WARN':'FAIL','MASTER_REF_MISSING',a.asset_id);
-  if (a.runtime_required && !a.runtime_ref)
+  if (a.runtime_required_now && !a.runtime_ref)
     add('WARN','RUNTIME_REF_MISSING',a.asset_id);
   if (a.canon_state==='CANON' && a.human_gate!=='PASS')
     add('FAIL','CANON_WITHOUT_HUMAN_GATE',a.asset_id);
