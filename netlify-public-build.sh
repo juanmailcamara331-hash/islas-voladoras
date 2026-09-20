@@ -18,6 +18,7 @@ cp portal/poll-live.js build/public/poll-live.js
 cp portal/survey-results.html build/public/survey-results.html
 cp portal/playtest-lab.html build/public/playtest-lab.html
 cp portal/signal-telegraph-lab.html build/public/signal-telegraph-lab.html
+cp portal/playtest-results.html build/public/playtest-results.html
 # Public playtests reuse the same source files, but strip the internal Command Center shell.
 sed -i '/isl-global-shell.css/d;/isl-global-shell.js/d' build/public/playtest-lab.html build/public/signal-telegraph-lab.html
 cp portal/ISL_PUBLIC_DECISIONS_CURRENT.json build/public/ISL_PUBLIC_DECISIONS_CURRENT.json
