@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "generated_at": "2026-09-20",
+  "status": "EXTERNAL_LAB_CURRENT",
+  "boundary": "ISL_ONLY",
+  "rules": {
+    "canon": "NO_AUTO_PROMOTION",
+    "provenance_required": true,
+    "video_reference_image_first": true,
+    "surface_propagation": true
+  },
+  "assets": [
+    {
+      "id": "IMG-EXT-20260920-01",
+      "type": "image",
+      "status": "REVIEW",
+      "drive_id": "1Mv8mqonQBfdhhMUfqpCu-BINP_ngLAMU",
+      "surface": [
+        "gallery",
+        "external_lab"
+      ],
+      "entity_assignment": "PENDING"
+    },
+    {
+      "id": "IMG-EXT-20260920-02",
+      "type": "image",
+      "status": "REVIEW",
+      "drive_id": "1ZoSDu2iVD9B2ezqjeKjup-G9JqkS6JuX",
+      "surface": [
+        "gallery",
+        "external_lab"
+      ],
+      "entity_assignment": "PENDING"
+    },
+    {
+      "id": "IMG-EXT-20260920-03",
+      "type": "image",
+      "status": "REVIEW",
+      "drive_id": "1C5mgEcAp73GT36kQQXoumIuDSxrX2XuL",
+      "surface": [
+        "gallery",
+        "external_lab"
+      ],
+      "entity_assignment": "PENDING"
+    },
+    {
+      "id": "IMG-EXT-20260920-04",
+      "type": "image",
+      "status": "REVIEW",
+      "drive_id": "1OL5xZ6FQSkW2FSKpwKO7zohGIp-SCkFY",
+      "surface": [
+        "gallery",
+        "external_lab"
+      ],
+      "entity_assignment": "PENDING"
+    },
+    {
+      "id": "VID-DANCE-20260920-01",
+      "type": "video",
+      "name": "ISL_ISLA_BAILE_PREVIS_VIDEO_v0.1",
+      "status": "VISUAL_CONSISTENCY_REVIEW",
+      "drive_id": "1KGB9koDVBYrBJ32WPdla4SFMaoO2bgRQ",
+      "surface": [
+        "gallery",
+        "external_lab",
+        "observatorio",
+        "mission_map"
+      ],
+      "entity": "ISLA_DEL_BAILE_INAGOTABLE"
+    },
+    {
+      "id": "AUD-20260920-01",
+      "type": "audio",
+      "name": "ISL_AUDIO_SEVEN_THOUSAND_PACES_CANDIDATE_v0.1",
+      "status": "FUNCTION_REVIEW",
+      "drive_id": "1svy7lNXviZZK1d58cS9H7Sh0eOjYxCjz",
+      "surface": [
+        "gallery",
+        "external_lab",
+        "observatorio"
+      ],
+      "entity_assignment": "PENDING"
+    }
+  ],
+  "current_next_actions": [
+    "classify_images_by_entity",
+    "audit_video_morphing_and_route_readability",
+    "evaluate_audio_functional_fit",
+    "select_next_meshy_ready_precursor",
+    "propagate_validated_results_to_command_center"
+  ]
+}
