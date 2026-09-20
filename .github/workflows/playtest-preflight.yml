@@ -6,6 +6,7 @@ on:
     paths:
       - "portal/playtest-lab.html"
       - "portal/signal-telegraph-lab.html"
+      - "portal/playtest-results.html"
       - "netlify/functions/playtest-evidence.mts"
       - "netlify-public-build.sh"
       - "netlify.toml"
@@ -32,11 +33,13 @@ jobs:
           bash netlify-public-build.sh
           test -f build/public/playtest-lab.html
           test -f build/public/signal-telegraph-lab.html
+          test -f build/public/playtest-results.html
           ! grep -q 'isl-global-shell.js' build/public/playtest-lab.html
           ! grep -q 'isl-global-shell.js' build/public/signal-telegraph-lab.html
           grep -q 'JUEGA 3 MINUTOS' build/public/playtest-lab.html
           grep -q 'ISL_SIGNAL_TELEGRAPH_LAB_v0.1' build/public/signal-telegraph-lab.html
           grep -q '/api/playtest-evidence' build/public/signal-telegraph-lab.html
+          grep -q '/api/playtest-evidence' build/public/playtest-results.html
 
       - name: Start local public server
         run: |
