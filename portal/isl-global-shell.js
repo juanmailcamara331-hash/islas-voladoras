@@ -17,8 +17,9 @@ var items=[
  ['Crecer',href('crecimiento.html'),'igsP2','P2 · making, mockups y campañas','P2'],
  ['Tripulación',href('crew.html'),'igsLife','Vida real · privado por defecto','VIDA'],
  ['Avisos',href('avisos.html'),'igsSecondary','Notification OS · ritmo de expedición','RITMO'],
- ['Centro',href('index.html?full=1','#home'),'igsSecondary','Centro'],
- ['Ruta',href('index.html?full=1','#calendar'),'igsSecondary','Ruta ISL'],
+ ['Centro',href('command-center.html?full=1','#home'),'igsSecondary','Centro'],
+ ['Ruta',href('command-center.html?full=1','#calendar'),'igsSecondary','Ruta ISL'],
+ ['Galería',href('galeria.html'),'igsSecondary','Galería viva · imágenes, vídeo, 3D y música'],
  ['Perfil',href('rpg-home.html'),'igsSecondary','Perfil RPG'],
  ['Encuestas','https://islas-voladoras-isl.netlify.app/encuestas-resultados','igsSecondary','Encuestas y resultados live'],
  ['Brújula',href('huellas.html'),'igsSecondary','Brújula']
@@ -33,7 +34,8 @@ items.forEach(function(it){
     (path==='crecimiento.html'&&it[0]==='Crecer')||
     (path==='crew.html'&&it[0]==='Tripulación')||
     (path==='avisos.html'&&it[0]==='Avisos')||
-    (path==='index.html'&&it[0]==='Centro')||
+    ((path==='index.html'||path==='command-center.html')&&it[0]==='Centro')||
+    (path==='galeria.html'&&it[0]==='Galería')||
     (path==='rpg-home.html'&&it[0]==='Perfil')||
     ((path==='survey-results.html'||path==='encuestas.html')&&it[0]==='Encuestas')||
     (path==='huellas.html'&&it[0]==='Brújula');
