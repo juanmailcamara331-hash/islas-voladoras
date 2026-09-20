@@ -80,6 +80,7 @@ for token in ["PRUEBA CON COLEGAS","pilares-lite-v2.html","referencias-lite-v2.h
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 if "Encuestas" not in shell or "encuestas.html" not in shell: errors.append("global shell survey access missing")
 if shell.count("['Encuestas'") != 1: errors.append("global shell must expose exactly one Encuestas item")
+if "musica.html" in shell: errors.append("global shell must route Music through unified Gallery")
 
 
 # external lab contract
@@ -124,11 +125,23 @@ else:
 
 # Unified Gallery + production-safe Route ISL
 gallery=(ROOT/"galeria.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["GALERÍA VIVA · WEB + APP","data/isl-music-current.json","data/isl-external-lab-current.json","command-center.html?full=1#calendar","audio controls"]:
+for token in ["GALERÍA VIVA · WEB + APP + PS4","data/isl-gallery-library-current.json","data/isl-music-current.json","data/isl-external-lab-current.json","data/isl-asset-health-current.json","index.html?full=1#calendar","audio controls"]:
     if token not in gallery: errors.append(f"unified gallery contract missing: {token}")
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
-for token in ["command-center.html?full=1','#calendar","galeria.html"]:
+for token in ["index.html?full=1','#calendar","galeria.html","#music"]:
     if token not in shell: errors.append(f"global route contract missing: {token}")
+
+
+# Unified Gallery data contract
+gallery_lib=ROOT/"data/isl-gallery-library-current.json"
+if not gallery_lib.exists(): errors.append("unified historical gallery registry missing")
+else:
+    gl=gallery_lib.read_text(encoding="utf-8",errors="ignore")
+    for token in ['"VIS-HIST-029"','"VID-RUNTIME-001"','"VID-RUNTIME-002"']:
+        if token not in gl: errors.append(f"historical gallery registry missing: {token}")
+idx=(ROOT/"index.html").read_text(encoding="utf-8",errors="ignore")
+for token in ['href="galeria.html"','href="galeria.html#music"']:
+    if token not in idx: errors.append(f"Command Center unified Gallery route missing: {token}")
 
 if errors:
     print("ISL NAVIGATION/LINK GATE FAILED")
