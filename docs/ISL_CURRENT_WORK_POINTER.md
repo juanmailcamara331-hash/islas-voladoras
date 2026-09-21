@@ -823,3 +823,17 @@ When those four are HUMAN_DEVICE_GREEN:
 - prepare DNS cutover for islasvoladorasgame.com first;
 - wire islasvoladorasgame.online only after the primary domain is stable;
 - do NOT move private Command Center to app.islasvoladorasgame.com until authenticated private host is actually deployed and PRIVATE_ACCESS_GREEN.
+
+
+## 2026-09-21 · ANDROID EDGE-TO-EDGE + VELARIA MICRO-FEEDBACK
+- Android wrapper now draws WebView edge-to-edge behind transparent status/navigation bars using WindowCompat.
+- Native shell version bumped to 078 / app version 1.1 to avoid stale wrapper state.
+- Purpose: remove native top/bottom dead bands that HTML alone cannot fix.
+- Physical Android recheck still required; do not mark HUMAN_DEVICE_GREEN from source evidence alone.
+- Velaria V2 post-play now asks exactly three lightweight local questions:
+  1) understood what happened;
+  2) had fun;
+  3) would continue.
+- Answers are stored only in localStorage under isl_velaria_feedback_v1 with scope local_lab_only.
+- Return-to-boat unlocks after the three taps so the loop produces usable human evidence without a long survey.
+- No analytics upload, profiling, scoring or automatic CANON promotion.
