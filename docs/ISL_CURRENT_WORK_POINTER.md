@@ -888,3 +888,18 @@ Rule: JUGAR means choose/play something immediately; operational tools live behi
 - Velaria keeps its richer native preplay gate and now exposes IR A LA RECREATIVA.
 - Principle: one shared playtest language around each prototype, while preserving each prototype's own personality and mechanics.
 - Physical companion artifact created outside repo: ISL_PASAPORTE_PLAYTEST_A4.pdf for lightweight in-person sessions.
+
+
+## 2026-09-21 · PLAYABLE QUALITY SYSTEM + FRIEND FOCUS
+- Internal Drive methodology re-read before further polishing.
+- No fake closed quality score: historical weighted formula remains non-final.
+- New docs/ISL_PLAYABLE_QUALITY_SYSTEM_v0.1.md operationalizes existing ISL principles:
+  Experience Card + attention budget + Build de la Verdad + CQC-R + 1–3–∞ + Δ + T0–T8.
+- Provisional weakest-link gate: Q_PLAY = min(clarity, agency, feel, desire, robustness). Decision aid only; NOT CANON math.
+- Arcade friend mode now reduces choice: one primary recommendation = Velaria. Other playables appear only after explicit “curiosear”.
+- Friend shell hides global Command Center shell and Cartographer/command-center links during friend sessions.
+- All current playables normalized to viewport-fit=cover.
+- New scripts/playable-quality-gate.py runs in Pages CI across all current playables.
+- Explicit private-by-default classification reinforced for arcade/friend shell/current prototypes. Cartographer remains private.
+- New original-only music prompt: docs/ISL_ARCADE_MUSIC_GEMINI_PROMPT_v0.1.md.
+- Audio runtime remains BLOCKED until an original approved master exists; do not reuse rights-review reference music.
