@@ -76,6 +76,17 @@ body{touch-action:none}
 #feedbackDone{display:none;margin-top:10px;font-size:10px;color:#bde9c8}
 #returnBoat{opacity:.45;pointer-events:none}.feedback-complete #returnBoat{opacity:1;pointer-events:auto}
 @media(max-width:420px){.feedbackOpts button{font-size:9px;padding:5px}}
+</style>
+<style id="velaria-final-comment-v080">
+.issueBox{margin-top:12px;padding:12px;border:1px dashed #ffffff24;border-radius:13px;background:#08161c;text-align:left}
+.issueBox summary{cursor:pointer;font-size:10px;font-weight:900;color:#cfe2e4;list-style:none}
+.issueBox summary::-webkit-details-marker{display:none}
+.issueTags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.issueTags button{border:1px solid #3b5963;border-radius:999px;background:#0a1a21;color:#dce8ea;padding:7px 9px;font-size:9px}
+.issueTags button.on{border-color:#ffd28a;background:#2a2114;color:#ffe8bd}
+.issueBox textarea{width:100%;min-height:74px;resize:vertical;border:1px solid #35525d;border-radius:10px;background:#061218;color:#eef7f5;padding:9px;font:11px system-ui}
+#saveIssue{margin-top:8px;width:100%;min-height:38px;border:1px solid #4f6e78;border-radius:10px;background:#10242c;color:#fff;font-size:10px;font-weight:900}
+#issueSaved{display:none;margin-top:7px;font-size:9px;color:#bde9c8;text-align:center}
 </style></head>
 <body>
 <script id="velaria-standalone-isolation-v078">
@@ -143,6 +154,19 @@ body{touch-action:none}
         <div class="feedbackQ" data-q="fun"><b>¿Te resultó divertido?</b><div class="feedbackOpts"><button data-v="yes">Sí</button><button data-v="maybe">Un poco</button><button data-v="no">No</button></div></div>
         <div class="feedbackQ" data-q="continue"><b>¿Te apetecería seguir?</b><div class="feedbackOpts"><button data-v="yes">Sí</button><button data-v="maybe">Quizá</button><button data-v="no">No</button></div></div>
         <div id="feedbackDone">Gracias. Esto sí nos dice si merece crecer.</div>
+        <details class="issueBox" id="issueBox">
+          <summary>¿Algo se vio mal, falló o quieres comentar algo?</summary>
+          <div class="issueTags">
+            <button type="button" data-issue="visual">Se veía raro</button>
+            <button type="button" data-issue="controls">No entendí el control</button>
+            <button type="button" data-issue="bug">Algo falló</button>
+            <button type="button" data-issue="slow">Iba lento</button>
+            <button type="button" data-issue="idea">Tengo una idea</button>
+          </div>
+          <textarea id="issueText" maxlength="500" placeholder="Opcional: cuéntalo como te salga…"></textarea>
+          <button id="saveIssue" type="button">GUARDAR COMENTARIO</button>
+          <div id="issueSaved">Guardado en esta prueba.</div>
+        </details>
       </div>
       <a id="returnBoat" href="rpg-home.html?resume=1" target="_top">Volver al barco</a>
     </div>
@@ -235,6 +259,26 @@ body{touch-action:none}
     var b=e.target.closest('button[data-v]');if(!b)return;
     var q=b.closest('.feedbackQ'),key=q.dataset.q;q.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});
     answers[key]=b.dataset.v;save();
+  });
+})();
+</script>
+<script id="velaria-final-comment-js-v080">
+(function(){
+  var box=document.getElementById('issueBox');if(!box)return;
+  var selected=[];
+  box.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-issue]');if(!b)return;
+    var k=b.dataset.issue,idx=selected.indexOf(k);
+    if(idx>=0)selected.splice(idx,1);else selected.push(k);
+    b.classList.toggle('on',selected.indexOf(k)>=0);
+  });
+  document.getElementById('saveIssue').addEventListener('click',function(){
+    var text=document.getElementById('issueText').value.trim();
+    if(!selected.length&&!text)return;
+    var a=[];try{a=JSON.parse(localStorage.getItem('isl_velaria_issue_notes_v1')||'[]');if(!Array.isArray(a))a=[]}catch(e){a=[]}
+    a.push({test_id:'velaria_v2',timestamp:new Date().toISOString(),issues:selected.slice(0,5),comment:text.slice(0,500),scope:'local_lab_only'});
+    localStorage.setItem('isl_velaria_issue_notes_v1',JSON.stringify(a.slice(-24)));
+    document.getElementById('issueSaved').style.display='block';
   });
 })();
 </script></body>
