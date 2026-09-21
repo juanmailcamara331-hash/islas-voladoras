@@ -266,7 +266,7 @@ a{color:inherit;text-decoration:none}.shell{width:min(1480px,100%);margin:auto;p
 <script>
 (function(){
   var sceneOverlay=document.getElementById('sceneOverlay'),sceneFrame=document.getElementById('sceneFrame'),sceneTitle=document.getElementById('sceneTitle'),sceneClose=document.getElementById('sceneClose');
-  function openScene(url,title){sceneFrame.src=url+(url.indexOf('?')>=0?'&':'?')+'embed=1';sceneTitle.textContent=(title||'ESCENA').toUpperCase();sceneOverlay.classList.add('show');sceneOverlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+  function openScene(url,title){var q=(url.indexOf('?')>=0?'&':'?')+'embed=1&resume=1';sceneFrame.src=url+q;sceneTitle.textContent=(title||'ESCENA').toUpperCase();sceneOverlay.classList.add('show');sceneOverlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
   function closeScene(){sceneOverlay.classList.remove('show');sceneOverlay.setAttribute('aria-hidden','true');sceneFrame.src='about:blank';document.body.style.overflow=''}
   document.addEventListener('click',function(e){var b=e.target.closest('[data-scene]');if(!b)return;e.preventDefault();openScene(b.getAttribute('data-scene'),b.getAttribute('data-title')||b.textContent)});
   sceneClose.onclick=closeScene;
