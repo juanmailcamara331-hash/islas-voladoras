@@ -158,3 +158,47 @@ Para cada tarea debe poder resumirse en:
 - QUALITY LANES:
 - HUMAN GATE:
 - STOP RULE:
+
+
+## BOOT / HANDOFF OBLIGATORIO ENTRE CONVERSACIONES
+Antes de cualquier tarea sustantiva de ISL, aunque sea una conversación nueva:
+1. cargar `ISL_CHECKPOINT_MASTER_CURRENT` desde Drive;
+2. cargar `docs/ISL_CURRENT_WORK_POINTER.md` desde GitHub;
+3. identificar último checkpoint, freezes y gates humanos;
+4. cargar este router + matriz de entidad;
+5. sólo entonces producir.
+
+No depender de memoria conversacional como única fuente de continuidad.
+Drive = memoria maestra de estado.
+GitHub = verdad operativa de implementación.
+El chat = espacio de trabajo, no única memoria del proyecto.
+
+## DISPARADOR DE PRESENTACIÓN / CAPITAL / OPORTUNIDAD
+Cuando exista un hito que pueda mejorar comprensión externa, financiación, colaboración, comunidad o legitimidad:
+activar automáticamente una PRESENTATION QUALITY LANE.
+
+Posibles artefactos:
+- one-pager;
+- dossier visual 5–12 páginas;
+- deck para inversores;
+- dossier editorial;
+- press kit / EPK de proyecto;
+- página de crowdfunding;
+- demo guiada;
+- vídeo corto / teaser;
+- material físico para reuniones;
+- paquete para subvenciones / editoras / partners.
+
+Regla:
+no fabricar humo ni fingir madurez.
+Presentar:
+VERDAD ACTUAL → VISIÓN → EVIDENCIA → MÉTODO → SIGUIENTE HITO → OPORTUNIDAD.
+
+Cada artefacto externo debe:
+- reutilizar assets ISL reales o claramente aspiracionales;
+- distinguir PROTOTIPO / ASPIRACIONAL / MASTER;
+- proteger información privada;
+- pasar CQC visual y factual;
+- responder “qué es / por qué importa / qué existe / qué falta / qué buscamos” en pocos minutos.
+
+Si un nuevo hito cambia materialmente la historia que podemos contar, revisar si conviene regenerar el dossier.
