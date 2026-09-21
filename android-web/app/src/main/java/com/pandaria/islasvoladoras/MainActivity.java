@@ -7,12 +7,14 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.graphics.Color;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.core.view.WindowCompat;
 import androidx.work.Data;
 import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.OneTimeWorkRequest;
@@ -25,13 +27,22 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends Activity {
     private static final String BASE = "https://juanmailcamara331-hash.github.io/islas-voladoras/";
-    private static final String HOME = BASE + "index.html?app=1&native=076&v=20260920-3";
+    private static final String HOME = BASE + "index.html?app=1&native=078&v=20260921-1";
     private WebView web;
 
     @Override
     protected void onCreate(Bundle state) {
         super.onCreate(state);
+        // Draw the WebView behind Android system bars. Web content owns safe-area padding.
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+        getWindow().setNavigationBarColor(Color.TRANSPARENT);
+        if (Build.VERSION.SDK_INT >= 29) {
+            getWindow().setStatusBarContrastEnforced(false);
+            getWindow().setNavigationBarContrastEnforced(false);
+        }
         web = new WebView(this);
+        web.setBackgroundColor(Color.TRANSPARENT);
         setContentView(web);
 
         WebSettings s = web.getSettings();
