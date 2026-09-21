@@ -36,6 +36,6 @@ var panel=document.createElement('div');panel.id='islGlobalMore';panel.innerHTML
 more.onclick=function(e){e.stopPropagation();panel.classList.toggle('open');more.setAttribute('aria-expanded',panel.classList.contains('open')?'true':'false')};
 document.addEventListener('pointerdown',function(e){if(!panel.classList.contains('open'))return;if(panel.contains(e.target)||more.contains(e.target))return;panel.classList.remove('open');more.setAttribute('aria-expanded','false')});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){panel.classList.remove('open');more.setAttribute('aria-expanded','false')}});
-var pulse=document.createElement('div');pulse.id='islGlobalHomePulse';pulse.textContent='P0 AHORA · P1 DECIDE · P2 PARALELO · P3 CONTEXTO';document.body.appendChild(pulse);
+var pulse=document.createElement('div');pulse.id='islGlobalHomePulse';pulse.textContent='JUGAR · CREAR · VER · DECIDIR · MÁS';document.body.appendChild(pulse);
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var u=a.getAttribute('href')||'';if(!/^(https?:|mailto:|tel:|#)/i.test(u)){try{sessionStorage.setItem('isl_return_to',location.href)}catch(err){}}},true);
 })();
