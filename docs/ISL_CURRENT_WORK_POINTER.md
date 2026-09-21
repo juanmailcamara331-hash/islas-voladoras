@@ -865,3 +865,16 @@ Decision:
 - Global MUNDO escape now enters Velaria.
 - Explicit Perfil RPG / Mapa / Cabina links remain on rpg-home by design.
 - Rule: JUGAR must enter play, never an operational dashboard.
+
+
+## 2026-09-21 · JUGAR = ARCADE HUB
+Human correction: JUGAR should not open a technical RPG profile nor jump straight into one experiment.
+New play architecture:
+- primary JUGAR -> portal/jugar.html
+- jugar.html is a visual arcade/hub of existing playable surfaces
+- featured current lane: Velaria V2
+- Recreo hub: air-fishing, Sunday Market, Ningún Sitio, pet/wander event
+- independent prototypes: Isla del Baile Inagotable, Salón Cortinas Rojas
+- archived LAB playables: Secret Level, Storm Route, Boss Prototype
+- rpg-home is explicitly secondary: Cabina/Profile/Map/Inventory, not the primary game entrance.
+Rule: JUGAR means choose/play something immediately; operational tools live behind secondary links.
