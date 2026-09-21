@@ -461,7 +461,26 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 </style><style id="isl-v0752-drawer-priority">
 .drawerPriorities{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}.drawer .drawerPriorities a.dp{display:flex!important;flex-direction:column!important;gap:3px!important;border:1px solid!important;border-radius:12px!important;padding:12px!important;text-decoration:none!important;background:#0a171e!important}.drawerPriorities small{font-size:7px;letter-spacing:.12em;font-weight:950}.drawerPriorities b{font-family:Georgia,serif;font-size:18px}.drawerPriorities span{font-size:8px;color:#aebfc2;line-height:1.3}.drawerPriorities .p0{grid-column:1/-1;border-color:#9d7338!important;box-shadow:0 0 26px #ffc36e18;background:linear-gradient(135deg,#291f11,#0a171e)!important}.drawerPriorities .p0 small,.drawerPriorities .p0 b{color:#ffe1a1}.drawerPriorities .p1{border-color:#3f7483!important}.drawerPriorities .p1 small,.drawerPriorities .p1 b{color:#baf6ff}.drawerPriorities .p2{border-color:#71598c!important}.drawerPriorities .p2 small,.drawerPriorities .p2 b{color:#e4d4ff}.drawerPriorities .life{border-color:#47715e!important}.drawerPriorities .life small,.drawerPriorities .life b{color:#c9f2d9}.drawer>.group{opacity:.72}.drawer>.group:hover{opacity:1}
 @media(max-width:420px){.drawerPriorities{grid-template-columns:1fr}.drawerPriorities .p0{grid-column:auto}}
-</style></head>
+</style>
+<style id="isl-mobile-regression-fixes-v076">
+/* Human-device fixes: no double safe-area gutters, no raster blur through modal ancestors. */
+html.native-app,html.native-app body{margin:0!important;padding-top:0!important}
+html.native-app body{padding-bottom:0!important}
+html.native-app .app{min-height:0!important;margin:0!important;padding:0!important}
+html.native-app main{margin:0!important;padding-top:0!important}
+html.native-app #home,html.native-app #finalCommandCenter{margin-top:0!important}
+html.deck-focus body>*:not(script){filter:none!important}
+html.deck-focus .deckBackdrop{background:rgba(2,7,11,.82)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+html.deck-focus .deckWindow{filter:none!important;opacity:1!important;transform:translateY(0) scale(1)!important}
+@media(max-width:640px){
+ body{padding-bottom:0!important}
+ main{padding-bottom:74px!important}
+ .deckBackdrop,.lazyBackdrop{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+ .deckChrome{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:#08151cf8!important}
+ .deckWindow{opacity:1!important;filter:none!important}
+}
+</style>
+</head>
 <body><div id="bootbar"></div>
 <div id="welcome"><div id="welcomeWind"><i class="windstroke"></i><i class="windstroke"></i><i class="windstroke"></i></div><div class="welcome-inner"><img class="welcomeBrandIcon" src="isl-icon-master.png" alt="ISL · Islas Voladoras"><div class="welcome-kicker">ISLAS VOLADORAS · UN UNIVERSO EN TUS MANOS</div><div class="welcome-title">Explora. Crea. Deja huella.</div><div class="welcome-quote">El mismo cielo, más historias por descubrir. <em>Crear es alterar el mundo.</em></div><div class="actions" style="justify-content:center"><button class="btn primary" id="enterISL" style="font-size:14px;padding:12px 18px;font-weight:950;letter-spacing:.04em">ENTRAR EN ISL</button></div><div class="microline" style="margin-top:30px"></div></div></div>
 <div id="helpTip"></div>
