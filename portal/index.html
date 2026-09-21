@@ -35,6 +35,8 @@
 @media(prefers-reduced-motion:reduce){.deckModal,.deckWindow,.lazyScene,.lazyMiniDock,.secondaryTools{transition:none!important}}
 
 .lazyChoiceActions button{border:1px solid #41616c;border-radius:11px;background:#0b1b22;color:#e7f1f2;padding:11px 12px;font-size:9px;font-weight:900;letter-spacing:.05em;cursor:pointer}.lazyChoiceActions button:hover{background:#12303a}.lazySoftHint{margin-top:10px;color:#71888e;font-size:8px;line-height:1.45}.lazyChoiceActions #resumeSoft{border-color:#8c6d3f;background:#261e13;color:#ffe2aa}.lazyChoiceActions #surpriseSoft{border-color:#5c5182;background:#171427;color:#ddd2ff}.lazyChoiceActions #noDecideSoft{border-color:#3d6655;background:#0b1e17;color:#ccefd9}
+
+.lazySoftPrivacy{margin-top:5px;color:#536a70;font-size:7px;line-height:1.4}
 </style><script>
 (function(){
   var ua = navigator.userAgent || "";
@@ -496,7 +498,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
       <button type="button" id="surpriseSoft">SORPRÉNDEME</button>
       <button type="button" id="noDecideSoft">NO QUIERO DECIDIR</button>
     </div>
-    <div class="lazySoftHint" id="lazySoftHint">Nada de esto crea tareas. Sólo cambia cómo entras hoy.</div>
+    <div class="lazySoftHint" id="lazySoftHint">Nada de esto crea tareas. Sólo cambia cómo entras hoy.</div><div class="lazySoftPrivacy">Memoria local mínima: última puerta/contexto. Sin productividad, tiempos ni scoring.</div>
   </section>
 </div>
 <div class="deckModal" id="deckModal" hidden>
@@ -919,6 +921,17 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
  const fallback='rpg-home.html';
  const routes={create:'crear.html',view:'galeria.html?v=20260921-1',decide:'decidir.html'};
  const surprises=['recreo.html','galeria.html?v=20260921-1#video','galeria.html?v=20260921-1#music','huellas.html','capsulas.html'];
+ const CONTINUITY_KEY='isl_soft_continuity_v1';
+ function readContinuity(){
+   try{return JSON.parse(localStorage.getItem(CONTINUITY_KEY)||'{}')}catch(e){return {}}
+ }
+ function writeContinuity(patch){
+   try{
+     const cur=readContinuity();
+     const next={context:patch.context||cur.context||'neutral',route:patch.route||cur.route||'',label:patch.label||cur.label||'',updated:new Date().toISOString().slice(0,10)};
+     localStorage.setItem(CONTINUITY_KEY,JSON.stringify(next));
+   }catch(e){}
+ }
  const contexts={
    create:{k:'VIENES DE CREAR',title:'¿Seguimos jugando con la idea?',text:'Puedes continuar donde estabas, mirar cómo respira lo creado o salir a jugar. Nada exige cerrar nada.'},
    view:{k:'VIENES DE MIRAR',title:'¿Te apetece tocar algo?',text:'Puedes seguir viendo, crear una pequeña variación o dejarlo reposar y entrar al mundo.'},
@@ -933,6 +946,8 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
      if(deck&&contexts[deck])return deck;
      const route=sessionStorage.getItem('isl_last_soft_route')||'';
      if(/rpg-home|recreo|secret-level/.test(route))return 'play';
+     const saved=readContinuity();
+     if(saved.context&&contexts[saved.context])return saved.context;
    }catch(e){}
    return 'neutral';
  }
@@ -947,14 +962,24 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
  function lastRoute(){
    try{
      const last=sessionStorage.getItem('isl_last_deck');
-     return routes[last]||sessionStorage.getItem('isl_last_soft_route')||fallback;
+     const saved=readContinuity();
+     return routes[last]||sessionStorage.getItem('isl_last_soft_route')||saved.route||fallback;
    }catch(e){return fallback}
  }
- function remember(url){try{sessionStorage.setItem('isl_last_soft_route',url)}catch(e){}}
+ function remember(url){
+   try{sessionStorage.setItem('isl_last_soft_route',url)}catch(e){}
+   let ctx='neutral',label='ISL';
+   if(/rpg-home|recreo|secret-level/.test(url)){ctx='play';label='jugar'}
+   else if(/crear\.html|external-lab|capsulas/.test(url)){ctx='create';label='crear'}
+   else if(/galeria\.html|reel\.html/.test(url)){ctx='view';label='mirar'}
+   else if(/decidir\.html|playtest-review/.test(url)){ctx='decide';label='decidir'}
+   writeContinuity({context:ctx,route:url,label:label});
+ }
  function refresh(){
    const r=lastRoute();
    resume.textContent=r===fallback?'CONTINUAR AVENTURA':'CONTINUAR DONDE ESTABA';
-   hint.textContent='Nada de esto crea tareas. Sólo cambia cómo entras hoy.';
+   const saved=readContinuity();
+   hint.textContent=saved.label&&saved.label!=='ISL'?'Última pista guardada en este dispositivo: '+saved.label+'. Sin métricas ni tareas.':'Nada de esto crea tareas. Sólo cambia cómo entras hoy.';
  }
  document.querySelectorAll('[data-lazy-open]').forEach(b=>b.addEventListener('click',open));
  modal.querySelectorAll('[data-lazy-close]').forEach(b=>b.addEventListener('click',close));
@@ -1049,7 +1074,14 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
    else if(/crear\.html|external-lab|capsulas/.test(h))ctx='create';
    else if(/galeria\.html|reel\.html/.test(h))ctx='view';
    else if(/decidir\.html|playtest-review/.test(h))ctx='decide';
-   if(ctx){try{sessionStorage.setItem('isl_last_context',ctx)}catch(err){}}
+   if(ctx){
+     try{
+       sessionStorage.setItem('isl_last_context',ctx);
+       const key='isl_soft_continuity_v1';
+       const label=ctx==='play'?'jugar':ctx==='create'?'crear':ctx==='view'?'mirar':'decidir';
+       localStorage.setItem(key,JSON.stringify({context:ctx,route:h,label:label,updated:new Date().toISOString().slice(0,10)}));
+     }catch(err){}
+   }
  },true);
 })();
 </script>
