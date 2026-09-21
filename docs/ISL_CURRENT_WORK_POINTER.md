@@ -1047,3 +1047,12 @@ If another source-level pass does not materially improve clarity/agency/feel/des
 - Current Ancla back reference is LOCKED to the user-reconfirmed compass-rose/star sheet with “SIEMPRE HAY UN LUGAR / AL QUE VOLVER”.
 - Wrong/redundant later generations are SUPERSEDED and must not become reference inputs.
 - Next physical action: derive manufacturing assets from approved Ancla references; no more concept-sheet regeneration.
+
+
+## 2026-09-21 · META GIFTS / MAKING-OF / EASTER EGG TRACE
+- Added docs/ISL_META_GIFTS_MAKING_OF_AND_EASTER_EGG_TRACE_PROTOCOL_CURRENT.md
+- Human gifts, images, clips, jokes, session moments and creative traces are now first-class TRACE/META-SEED material.
+- They may feed making-of, gallery/app/web, diegetic Easter eggs or future meta-plot, but never become CANON automatically.
+- Fourth-wall breaks require emotional/function value and must not become noise or scope creep.
+- Integrate one trace well before expanding a chain.
+- Keep provenance/consent and SOURCE_OF_TRUTH gates.
