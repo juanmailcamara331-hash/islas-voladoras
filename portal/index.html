@@ -37,6 +37,23 @@
 .lazyChoiceActions button{border:1px solid #41616c;border-radius:11px;background:#0b1b22;color:#e7f1f2;padding:11px 12px;font-size:9px;font-weight:900;letter-spacing:.05em;cursor:pointer}.lazyChoiceActions button:hover{background:#12303a}.lazySoftHint{margin-top:10px;color:#71888e;font-size:8px;line-height:1.45}.lazyChoiceActions #resumeSoft{border-color:#8c6d3f;background:#261e13;color:#ffe2aa}.lazyChoiceActions #surpriseSoft{border-color:#5c5182;background:#171427;color:#ddd2ff}.lazyChoiceActions #noDecideSoft{border-color:#3d6655;background:#0b1e17;color:#ccefd9}
 
 .lazySoftPrivacy{margin-top:5px;color:#536a70;font-size:7px;line-height:1.4}
+
+/* ISL calm idle mode: world first, controls on intent */
+html.isl-resting .finalNav,
+html.isl-resting .lazyMiniDock,
+html.isl-resting .secondaryTools,
+html.isl-resting #islGlobalShell,
+html.isl-resting #islGlobalHomePulse{opacity:.08;filter:saturate(.7);transition:opacity .35s ease,filter .35s ease}
+html.isl-resting .lazyTodayBtn{opacity:.12;transition:opacity .35s ease}
+html.isl-resting .lazyPrimary{box-shadow:0 0 0 1px #ffc36e16,0 0 28px #ffc36e16}
+html.isl-resting .lazyScene{transform:scale(1.003);transition:transform 5s ease}
+html:not(.isl-resting) .finalNav,
+html:not(.isl-resting) .lazyMiniDock,
+html:not(.isl-resting) .secondaryTools,
+html:not(.isl-resting) #islGlobalShell,
+html:not(.isl-resting) #islGlobalHomePulse,
+html:not(.isl-resting) .lazyTodayBtn{transition:opacity .2s ease,filter .2s ease}
+@media(prefers-reduced-motion:reduce){html.isl-resting .lazyScene{transform:none!important}}
 </style><script>
 (function(){
   var ua = navigator.userAgent || "";
@@ -1083,6 +1100,21 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
      }catch(err){}
    }
  },true);
+})();
+</script>
+<script id="isl-rest-mode">
+(function(){
+ const root=document.documentElement;
+ let timer=null;
+ const IDLE_MS=7000;
+ function arm(){
+   clearTimeout(timer);
+   root.classList.remove('isl-resting');
+   timer=setTimeout(()=>root.classList.add('isl-resting'),IDLE_MS);
+ }
+ ['pointerdown','pointermove','keydown','touchstart','wheel'].forEach(ev=>addEventListener(ev,arm,{passive:true}));
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){clearTimeout(timer)}else arm()});
+ arm();
 })();
 </script>
 <script defer src="isl-global-shell.js"></script>
