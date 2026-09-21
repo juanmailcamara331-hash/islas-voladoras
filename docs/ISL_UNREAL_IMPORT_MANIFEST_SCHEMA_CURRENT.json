@@ -1,0 +1,86 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "manifest_type": "UNREAL_IMPORT_DRAFT",
+  "engine_version": "UNFROZEN",
+  "required": [
+    "isl_id",
+    "entity_type",
+    "source",
+    "master",
+    "provenance",
+    "target",
+    "validation"
+  ],
+  "template": {
+    "isl_id": "ISL_<DOMAIN><NNN>",
+    "entity_type": "visual_asset_3d|audio|ui|world|creature|relic|other",
+    "title": "",
+    "canon_state": "CANDIDATE",
+    "source": {
+      "uri": "",
+      "sha256": "",
+      "format": "",
+      "version": ""
+    },
+    "master": {
+      "uri": "",
+      "sha256": "",
+      "preserve": true
+    },
+    "runtime_candidate": {
+      "uri": "",
+      "format": "",
+      "generated_from_master": true
+    },
+    "provenance": {
+      "creator_or_tool": "",
+      "rights_status": "UNKNOWN|CLEARED|RESTRICTED",
+      "notes": ""
+    },
+    "target": {
+      "unreal_class": "",
+      "suggested_path": "",
+      "primary_asset": false,
+      "gameplay_tags": []
+    },
+    "transform": {
+      "units": "cm",
+      "scale": 1,
+      "forward_axis": "UNDECIDED",
+      "up_axis": "UNDECIDED",
+      "pivot_policy": "EXPLICIT"
+    },
+    "render": {
+      "material_slots": [],
+      "nanite": "UNDECIDED",
+      "lod": "UNDECIDED",
+      "streaming_class": "UNDECIDED"
+    },
+    "physics": {
+      "collision": "UNDECIDED"
+    },
+    "platform": {
+      "tiers": [
+        "PC",
+        "ANDROID"
+      ],
+      "budget_class": "UNDECIDED"
+    },
+    "dependencies": [],
+    "validation": {
+      "static": false,
+      "import": false,
+      "visual": false,
+      "performance": false,
+      "device": false,
+      "human": false
+    },
+    "tests": [],
+    "rollback": {
+      "master_required": true,
+      "previous_runtime_uri": ""
+    },
+    "decision": "DRAFT"
+  }
+}
