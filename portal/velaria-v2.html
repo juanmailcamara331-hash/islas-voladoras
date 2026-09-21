@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071017">
 <title>ISL · Velaria</title>
-<link rel="stylesheet" href="isl-global-shell.css">
 <style>
 :root{--cyan:#91f2ff;--gold:#ffd28a;--ink:#061016}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071017;color:white;font-family:Inter,system-ui,sans-serif}
@@ -70,6 +69,14 @@ body{touch-action:none}
 @media(max-width:640px){#preplayGate{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(3,9,13,.94)}.preplayCard{padding:18px;border-radius:20px}}
 </style></head>
 <body>
+<script id="velaria-standalone-isolation-v078">
+(function(){
+  // Gameplay scenes are intentionally autonomous: never revive Command Center welcome/navigation.
+  try{sessionStorage.setItem('isl_center_entered','1');sessionStorage.setItem('isl_native_entered_v063','1')}catch(e){}
+  document.documentElement.classList.add('isl-gameplay-scene');
+})();
+</script>
+
 
 <section id="preplayGate" aria-modal="true" role="dialog" aria-labelledby="preplayTitle">
   <div class="preplayCard">
@@ -120,7 +127,7 @@ body{touch-action:none}
       <small style="color:var(--cyan);font-weight:900;letter-spacing:.12em">ALGO NO CUADRA</small>
       <h2>El indicador miente.</h2>
       <p>La señal oficial cambió, pero la tela y el viento no. Alguien está falseando cómo Velaria lee sus corrientes.</p>
-      <a href="rpg-home.html">Volver al barco</a>
+      <a href="rpg-home.html?resume=1" target="_top">Volver al barco</a>
     </div>
   </section>
 </main>
@@ -178,10 +185,9 @@ body{touch-action:none}
     localStorage.setItem('isl_huellas_events_v2',JSON.stringify(a.slice(-64)));
     localStorage.setItem('isl_velaria_pc40_state','observed');
   }
-  document.getElementById('back').onclick=function(){location.href='rpg-home.html'};
+  document.getElementById('back').onclick=function(){window.top.location.href='rpg-home.html?resume=1'};
 })();
 </script>
-<script defer src="isl-global-shell.js"></script>
 
 <script id="velaria-human-gate-js-v077">
 (function(){
