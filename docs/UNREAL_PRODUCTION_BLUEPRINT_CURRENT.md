@@ -72,3 +72,21 @@ Automatizar preparación, validación, export, naming, checks, builds y manifest
 - https://dev.epicgames.com/documentation/unreal-engine/scalability-in-unreal-engine
 - https://dev.epicgames.com/documentation/unreal-engine/one-file-per-actor-in-unreal-engine
 - https://dev.epicgames.com/documentation/unreal-engine/lyra-sample-game-in-unreal-engine
+
+
+## READINESS LAYER CURRENT
+La preparación Unreal ya no depende sólo de este blueprint.
+Contratos activos:
+- docs/ISL_UNREAL_READINESS_MASTER_CURRENT.md
+- docs/ISL_ENTITY_TO_UNREAL_MAPPING_CURRENT.json
+- docs/ISL_UNREAL_ASSET_CONTRACT_CURRENT.md
+- docs/ISL_UNREAL_IMPORT_MANIFEST_SCHEMA_CURRENT.json
+- docs/ISL_UNREAL_TEST_AND_REGRESSION_BRIDGE_CURRENT.md
+- docs/ISL_UNREAL_PLUGIN_AND_DEPENDENCY_ALLOWLIST_CURRENT.md
+
+Regla:
+crear con IDs/contratos compatibles ahora, migrar sólo cuando el gate humano/técnico lo autorice.
+
+Versión de motor:
+UNFROZEN.
+La documentación oficial revisada actualmente está en UE 5.8, pero ISL fijará versión exacta sólo al abrir migración y tras auditoría de deprecaciones/plugins/plataformas.
