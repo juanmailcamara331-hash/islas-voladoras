@@ -227,3 +227,14 @@ Do not expose this checklist unless a conflict, risk, ambiguity or gate requires
 
 ## NEW-CONVERSATION BOOT
 When starting a fresh ISL conversation, reading ISL_CURRENT_WORK_POINTER + ISL_META_LAYER_ORCHESTRATOR_CURRENT is enough to reactivate the routing model before loading only the task-relevant CURRENT docs.
+
+
+## AUTO-CLOSE RULE · HUMAN TRACE → VISUAL ASSET
+When a significant human trace produces a visual artifact during the session:
+M3 HUMAN TRACE + M2 SOURCE OF TRUTH + M11 MEDIA/GALLERY (+M4 when gift/making-of applies)
+→ persist the asset in Drive/Gallery
+→ record provenance and state
+→ cross-link it to the originating human trace
+→ never auto-promote it to CANON
+→ return to PRIMARY.
+The user should not need to manually remind the system to close this loop.
