@@ -35,7 +35,7 @@ for p in html_files:
 # Surfaces that must feel like one internal Command Center.
 global_pages=[
  "index.html","rpg-home.html","crear.html","decidir.html","galeria.html","huellas.html","salon-cortinas-rojas.html",
- "isla-baile-inagotable.html","recreo.html","capsulas.html","capsulas-tv.html",
+ "isla-baile-inagotable.html","velaria-pc40.html","recreo.html","capsulas.html","capsulas-tv.html",
  "musica.html","ps4.html","air-fishing.html","avisos.html","boss-prototype.html",
  "decision-engine.html","midjourney-lab.html","ningun-sitio.html","playtest-echo.html",
  "reel.html","secret-level.html","storm-route.html","sunday-market.html","encuestas.html",
