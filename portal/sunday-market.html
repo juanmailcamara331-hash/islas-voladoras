@@ -11,4 +11,4 @@ function render(){let a=inv(),box=document.getElementById('offers');box.innerHTM
 function trade(i){let d=deals[i],a=inv(),ix=a.indexOf(d.give);if(ix<0)return;a.splice(ix,1);if(!a.includes(d.take))a.push(d.take);setInv(a);localStorage.setItem('isl_market_trade','done');log.textContent='Trato cerrado: '+d.t+' ya está en tu mochila. El tendero parece demasiado satisfecho.';render()}
 render();
 </script><script>(function(){if(location.search.indexOf('embed=1')>=0)document.body.classList.add('embed')})();</script><script defer src="isl-global-shell.js"></script>
-</body></html>
+<script defer src="playtest-friends.js"></script></body></html>
