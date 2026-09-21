@@ -90,3 +90,10 @@ Al cerrar:
 
 ## REGLA
 Una mega-sesión buena debe dejar más claridad y activos que deuda cognitiva.
+
+
+## ENTITY MEMORY / NO-REPEAT EXTENSION
+Before CREACIÓN RÁPIDA, resolve:
+ENTE → OPERATION → SOURCE_OF_TRUTH → LOCKED → MUTABLE → NO_REGENERATE.
+If an approved entity already exists, prefer EDIT / DERIVE / VECTORIZE / TECHNICALIZE over CREATE_NEW.
+Recent output never overrides an approved human reference merely because it is newer.
