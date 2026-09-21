@@ -77,3 +77,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[t
  #islGlobalShell a,#islGlobalShell button{min-width:60px;min-height:38px;padding:6px;font-size:7px}
  #islGlobalMore .igsGroup>a{min-height:38px}
 }
+
+/* v0.76 mobile spacing contract: pages own content clearance; shell must not add a second gutter. */
+@media(max-width:640px){body{padding-bottom:0!important}}
