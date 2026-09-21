@@ -84,6 +84,12 @@ jobs:
           test -f build/pages/velaria-v2.html
           test -f build/pages/jugar.html
           grep -q 'ARCADE ISL · TODO LO JUGABLE EN UN SITIO' build/pages/jugar.html
+          test -f build/pages/playtest-friends.js
+          grep -q 'isl_friend_mode' build/pages/playtest-friends.js
+          grep -q 'MODO COLEGAS' build/pages/jugar.html
+          grep -q 'IR A LA RECREATIVA' build/pages/velaria-v2.html
+          grep -q 'playtest-friends.js' build/pages/air-fishing.html
+          grep -q 'playtest-friends.js' build/pages/boss-prototype.html
           grep -q 'href="velaria-v2.html"' build/pages/jugar.html
           grep -q 'href="recreo.html"' build/pages/jugar.html
           grep -q 'href="jugar.html"' build/pages/index.html
