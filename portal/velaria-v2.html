@@ -51,6 +51,15 @@ body{touch-action:none}
 .finish{position:absolute;z-index:50;inset:0;display:none;place-items:center;background:#06101880;backdrop-filter:blur(7px);padding:20px}
 .finish.show{display:grid}.finishCard{width:min(92vw,480px);padding:24px;border-radius:24px;background:linear-gradient(145deg,#102a33ee,#07151bee);border:1px solid #8fefff66;box-shadow:0 30px 100px #000b;text-align:center}
 .finish h2{font-size:38px;line-height:.95;margin:4px 0 10px}.finish p{color:#c8dadd;line-height:1.45;font-size:13px}.finish a{display:inline-block;margin-top:10px;padding:12px 15px;border-radius:12px;border:1px solid #87efff;background:#17343d;color:white;text-decoration:none;font-weight:900}
+<style id="velaria-p0-feel-v084">
+.windReadout{position:absolute;z-index:22;left:50%;top:max(72px,calc(env(safe-area-inset-top) + 62px));transform:translateX(-50%);display:flex;align-items:center;gap:7px;padding:6px 10px;border:1px solid #baf7ff35;border-radius:999px;background:#061018a8;backdrop-filter:blur(8px);font-size:8px;font-weight:950;letter-spacing:.12em;color:#d9f8fb;pointer-events:none;box-shadow:0 8px 26px #0005}
+.windReadout b{font-size:17px;line-height:.8;color:var(--cyan);text-shadow:0 0 12px #91f2ff88}
+.player.moving{filter:drop-shadow(0 10px 18px #0008);transform:translateX(-50%) rotate(2deg)}
+.player.moving .body{animation:velariaStep .28s ease-in-out infinite alternate}
+.action:active{transform:scale(.94)}
+@keyframes velariaStep{to{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.player.moving .body{animation:none}}
+</style>
 @keyframes fly{to{transform:translateX(155vw)}}@keyframes flag{to{transform:rotate(9deg) scaleX(1.12)}}@keyframes mist{to{transform:translateX(10%)}}@keyframes pulse{50%{transform:scale(1.08);box-shadow:0 0 0 14px #7feeff08,0 12px 32px #0009}}@keyframes ripple{to{transform:scale(1.8);opacity:0}}
 @media(min-width:850px){.player{width:50px}.friend{transform:translateX(-50%) scale(1.08)}}
 @media(prefers-reduced-motion:reduce){.wind i,.flag,.mist,.action{animation:none}.player,.friend,.anchorPost,.sign{transition:none}}
@@ -151,7 +160,7 @@ body{touch-action:none}
     <div class="place"><b>VELARIA</b><small>Distrito bajo · después de La Separación</small></div>
   </div>
 
-  <div class="notice" id="notice">El viento tira hacia la derecha.</div>
+  <div class="notice" id="notice" role="status" aria-live="polite">El viento tira hacia la derecha.</div>\n  <div class="windReadout" aria-label="El viento sopla hacia la derecha"><span>VIENTO</span><b>→</b></div>
 
   <div class="player" id="player"><span class="hair"></span><span class="head"></span><span class="body"></span></div>
   <div class="friend" id="friend"><span class="head"></span><span class="body"></span></div>
@@ -160,7 +169,7 @@ body{touch-action:none}
   <div class="sign" id="sign">CORRIENTE SEGURA →</div>
 
   <div class="prompt" id="prompt">
-    <div class="bubble" id="bubble">Hay alguien esperándote al otro lado.</div>
+    <div class="bubble" id="bubble" aria-live="polite">Hay alguien esperándote al otro lado.</div>
     <span class="hint" id="hint">Toca donde quieras caminar</span>
   </div>
 
@@ -192,7 +201,7 @@ body{touch-action:none}
           <div id="issueSaved">Guardado en esta prueba.</div>
         </details>
       </div>
-      <a id="returnBoat" href="rpg-home.html?resume=1" target="_top">Volver al barco</a>
+      <a id="returnBoat" href="jugar.html?friends=1" target="_top">Volver a la Recreativa</a>
     </div>
   </section>
 </main>
@@ -202,13 +211,14 @@ body{touch-action:none}
   var game=document.getElementById('game'),player=document.getElementById('player'),friend=document.getElementById('friend');
   var action=document.getElementById('action'),bubble=document.getElementById('bubble'),hint=document.getElementById('hint');
   var sign=document.getElementById('sign'),post=document.getElementById('post'),notice=document.getElementById('notice'),finish=document.getElementById('finish');
-  var x=15,phase=0,locked=false;
+  var x=15,phase=0,locked=false,moveTimer=null;\n  function feel(ms){try{if(navigator.vibrate)navigator.vibrate(ms)}catch(e){}}
   function setX(v){
     if(locked)return;
     x=Math.max(9,Math.min(78,v));player.style.left=x+'%';
+    player.classList.add('moving');clearTimeout(moveTimer);moveTimer=setTimeout(function(){player.classList.remove('moving')},560);feel(7);
     if(x>54&&phase===0){
       phase=1;friend.classList.add('ready');action.classList.add('show');
-      bubble.textContent='Es él.';hint.textContent='Acércate y ayudad a estabilizar el paso';action.textContent='ANCLAR';
+      bubble.textContent='Ahí está.';hint.textContent='El Anclaje tiembla. Acércate y sujetadlo juntos';action.textContent='ANCLAR';
     }
   }
   function ripple(px,py){
@@ -226,7 +236,7 @@ body{touch-action:none}
       post.style.transform='rotate(0deg) translateY(-7px)';
       player.style.left='68%';friend.style.left='76%';
       action.classList.remove('show');
-      bubble.textContent='Juntos aguanta.';hint.textContent='El paso deja de temblar';
+      bubble.textContent='Ahora sí. Aguanta.';hint.textContent='El paso deja de temblar';
       notice.classList.add('show');
       setTimeout(function(){
         locked=false;phase=3;action.textContent='SUJETAR';action.classList.add('show');
@@ -236,7 +246,7 @@ body{touch-action:none}
       phase=4;locked=true;action.classList.remove('show');
       sign.textContent='CORRIENTE SEGURA ←';sign.classList.add('bad');
       post.style.transform='rotate(-4deg)';
-      bubble.textContent='Espera…';hint.textContent='El cartel cambió. El viento no.';
+      bubble.textContent='Perfecto. Ahora el cartel discute con el viento.';hint.textContent='El cartel cambió. El viento no.';
       notice.textContent='La tela sigue tirando hacia la derecha.';notice.classList.add('show');
       setTimeout(function(){phase=5;action.textContent='MIRAR';action.classList.add('show')},950);
     } else if(phase===5){
@@ -250,7 +260,7 @@ body{touch-action:none}
     localStorage.setItem('isl_huellas_events_v2',JSON.stringify(a.slice(-64)));
     localStorage.setItem('isl_velaria_pc40_state','observed');
   }
-  document.getElementById('back').onclick=function(){window.top.location.href='rpg-home.html?resume=1'};
+  document.getElementById('back').onclick=function(){window.top.location.href='jugar.html?friends=1'};
 })();
 </script>
 
