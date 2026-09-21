@@ -126,6 +126,10 @@ jobs:
           grep -q '¿Algo se vio mal, falló o quieres comentar algo?' build/pages/velaria-v2.html
           grep -q "scope:'local_lab_only'" build/pages/velaria-v2.html
           grep -q 'TEST DE JUGABILIDAD · GRÁFICOS PROVISIONALES' build/pages/velaria-v2.html
+          grep -q 'velaria-context-preview-v081' build/pages/velaria-v2.html
+          grep -q 'assets/ship-between-islands.png' build/pages/velaria-v2.html
+          grep -q 'Así debería sentirse ISL cuando esté terminado.' build/pages/velaria-v2.html
+          grep -q 'Referencia aspiracional de atmósfera y mundo' build/pages/velaria-v2.html
           ! grep -q 'isl-global-shell.css' build/pages/velaria-v2.html
           ! grep -q 'isl-global-shell.js' build/pages/velaria-v2.html
           ! grep -q 'Comparar señales' build/pages/velaria-v2.html
