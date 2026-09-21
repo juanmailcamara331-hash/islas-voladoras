@@ -9,4 +9,4 @@ document.getElementById('choices').addEventListener('click',e=>{const a=e.target
  else{let ending;if(a==='tool'){if(localStorage.getItem('isl_craft_receiver')==='built'){ending='Desvías la tormenta usando el Receptor de Corrientes. La solución especial estaba preparada antes del combate.'}else{log.textContent='Intentas usar una herramienta que aún no existe. El boss no cede.';paint();return}}else if(a==='read'){ending='Interpretas el mapa y haces colapsar su lógica.'}else{ending='Rompes la ruta y fuerzas una salida física.'}progress=0;log.textContent=ending+' Recompensa provisional: Sello de la Tormenta.';localStorage.setItem('isl_boss_reward','sello-tormenta');localStorage.setItem('isl_boss_resolution',a)}
  paint()});paint();
 </script><script defer src="isl-global-shell.js"></script>
-</body></html>
+<script defer src="playtest-friends.js"></script></body></html>
