@@ -36,4 +36,26 @@ document.addEventListener('pointerdown',function(e){if(!panel.classList.contains
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){panel.classList.remove('open');more.setAttribute('aria-expanded','false')}});
 var pulse=document.createElement('div');pulse.id='islGlobalHomePulse';pulse.textContent='JUGAR · CREAR · VER · DECIDIR · MÁS';document.body.appendChild(pulse);
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var u=a.getAttribute('href')||'';if(!/^(https?:|mailto:|tel:|#)/i.test(u)){try{sessionStorage.setItem('isl_return_to',location.href)}catch(err){}}},true);
+
+// Stable back/forward navigation: preserve the exact place without automatic jumps.
+(function(){
+  var NAVKEY='isl_nav:'+location.pathname+location.search+location.hash;
+  try{history.scrollRestoration='manual'}catch(e){}
+  function savePos(){
+    try{sessionStorage.setItem(NAVKEY,JSON.stringify({x:window.scrollX||0,y:window.scrollY||0}))}catch(e){}
+  }
+  function restorePos(){
+    var s=null;try{s=JSON.parse(sessionStorage.getItem(NAVKEY)||'null')}catch(e){}
+    if(!s)return;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){window.scrollTo(Number(s.x||0),Number(s.y||0))})});
+  }
+  window.addEventListener('pagehide',savePos,{capture:true});
+  window.addEventListener('pageshow',function(e){
+    var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+    if(e.persisted||(nav&&nav.type==='back_forward'))restorePos();
+  });
+  document.querySelectorAll('img').forEach(function(img){
+    if(!img.closest('header,.hero,.lazyScene,.finalHero,.welcome')){if(!img.loading)img.loading='lazy';img.decoding='async'}
+  });
+})();
 })();
