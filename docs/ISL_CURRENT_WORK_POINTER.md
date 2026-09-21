@@ -944,3 +944,14 @@ Rule: JUGAR means choose/play something immediately; operational tools live behi
 - Added presentation/capital opportunity trigger: meaningful milestones should prompt review/update of one-pager, visual dossier, investor deck, crowdfunding/partner material, press kit or guided demo as appropriate.
 - External materials must distinguish current prototype vs aspirational vision and pass factual/visual CQC.
 - Character direction candidate strengthened: charismatic punk-leaning female protagonist + strange fox/dog/dolphin-like companion with expressive slightly unhinged personality; NOT final CANON until character/creature CQC + human review.
+
+
+## 2026-09-21 · CHECKPOINT v0.83
+Created:
+- docs/ISL_PARTICIPATORY_WORLD_LOOP_CANON_v1.0.md
+- docs/ISL_CHECKPOINT_v0.83_PARTICIPATORY_WORLD_LOOP_AND_QUALITY_ROUTER_2026-09-21.md
+
+Participatory World Loop is now CANON methodology:
+CREATE → PARTICIPATE → OBSERVE → CAPTURE TRACE → INTERPRET → CONTRAST → CQC-R → HUMAN DECISION → RETURN A MORE ALIVE VERSION.
+
+Next primary lane remains Velaria P0 polish.
