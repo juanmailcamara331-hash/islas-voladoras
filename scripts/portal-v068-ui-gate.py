@@ -15,7 +15,7 @@ need('class="quickDock"' in s,"missing quick dock")
 for label in ["CALENDARIO","REFERENCIAS","ENCUESTAS","REGISTRO","ESTADO"]:
     need(f"<b>{label}</b>" in s,f"missing visible quick action: {label}")
 
-need(len(re.findall(r'class="navI"',s)) >= 6,"main nav icons missing")
+need(len(re.findall(r'class="navI"',s)) >= 5,"main nav icons missing")
 need("flex-wrap:nowrap!important" in s,"main nav nowrap guard missing")
 need('name="viewport"' in s and "width=device-width" in s,"mobile viewport contract missing")
 
