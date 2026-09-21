@@ -809,3 +809,17 @@ Pendiente únicamente comprobación física del icono instalado.
   - private host source deployment remains pending/blocked by external Netlify credential authorization.
 - Rule: do not label any GitHub Pages route PRIVATE or intruder-safe merely because it is unlinked/noindex.
 - Sensitive/private-by-default material must not rely on obscurity; keep it out of public builds until SSO private host is GREEN.
+
+
+## 2026-09-21 · PRE-DNS STABILIZATION GATE
+DNS remains intentionally untouched until one short human-device pass confirms all four:
+1. HOME MOBILE — no abnormal dead band above/below the Command Center content.
+2. FLOATING WINDOWS — Crear/Ver/Decidir content is crisp; background may darken but the active window never inherits blur.
+3. GALLERY — tapping an image opens a usable full-screen/lightbox view and closes normally.
+4. VELARIA V2 — opens without Command Center welcome, shows mandatory gameplay-test disclaimer, checkbox unlocks play, no old debug controls, exit returns to Cabina without welcome.
+
+When those four are HUMAN_DEVICE_GREEN:
+- freeze current web/app routing;
+- prepare DNS cutover for islasvoladorasgame.com first;
+- wire islasvoladorasgame.online only after the primary domain is stable;
+- do NOT move private Command Center to app.islasvoladorasgame.com until authenticated private host is actually deployed and PRIVATE_ACCESS_GREEN.
