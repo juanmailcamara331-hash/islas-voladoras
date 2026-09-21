@@ -846,3 +846,12 @@ When those four are HUMAN_DEVICE_GREEN:
 - Free text max 500 chars.
 - Stored locally only in isl_velaria_issue_notes_v1 with local_lab_only scope.
 - Optional by design; never blocks return to Cabina once the 3 core questions are answered.
+
+
+## 2026-09-21 · VELARIA CONTEXT + ASPIRATIONAL PREVIEW
+- Preplay gate now gives minimal game context before the mechanics test.
+- Context states: after La Separación, the world is fragmented; the larger adventure is about reuniting the group, rebuilding a home in the sky, and discovering how people/world changed.
+- Velaria is framed as a small tactile minigame/moment inside that larger adventure, not as the whole game.
+- Added one existing ISL visual reference: assets/ship-between-islands.png.
+- It is explicitly labelled as an aspirational atmosphere/world reference, NOT a screenshot of final product and NOT the current prototype.
+- Principle: provide enough context to make the test meaningful and exciting without using aspirational art to disguise weak mechanics.
