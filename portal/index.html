@@ -68,6 +68,40 @@ html.deck-focus #islGlobalShell{transition:filter .18s ease,opacity .18s ease}
 @media(max-width:600px){.lazyMiniDock{grid-template-columns:repeat(3,1fr)}}
 
 .deckExit{display:flex;align-items:center;gap:7px}.deckExit a{border:1px solid #3d6655;background:#0b1e17;color:#ccefd9;border-radius:9px;padding:7px 9px;text-decoration:none;font-size:8px;font-weight:900;letter-spacing:.08em}.deckExit button{border:0;background:transparent;color:#dce8ea;font-size:26px;line-height:1}
+
+/* v1 final silent polish — compact, legible, compositing-friendly */
+.finalNav{gap:5px}.finalNav a,.finalNav button{min-height:40px;padding:7px 9px;font-size:8px;border-radius:10px}
+.lazyCopy h1{font-size:clamp(42px,8vw,78px);max-width:9ch}.lazyCopy p{font-size:clamp(14px,2vw,18px)}
+.lazyPrimary{min-height:42px;align-items:center;padding:10px 14px;border-radius:11px;font-size:9px;position:relative;overflow:hidden}
+.lazyPrimary:after{content:"";position:absolute;inset:-80% -30%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.16) 50%,transparent 58%);transform:translateX(-55%);animation:islSoftGleam 7s ease-in-out infinite;pointer-events:none}
+.lazyTodayBtn{min-height:34px;padding:7px 9px}
+.lazyMiniDock a{min-height:42px;padding:8px 7px;border-radius:11px}
+.deckBody{padding:16px}.deckBody h2{font-size:clamp(28px,5vw,46px);line-height:.98;margin:3px 0 7px;max-width:14ch}.deckBody>p{font-size:12px;line-height:1.5;margin-bottom:13px}
+.deckChrome{padding:8px 10px}.deckChrome .deckBack,.deckExit button{width:34px;height:34px;min-width:34px;min-height:34px}.deckExit button{font-size:22px}.deckExit a{min-height:34px;display:flex;align-items:center;padding:6px 8px}
+.deckCard{min-height:94px;padding:12px;border-radius:13px}.deckCard b{font-size:18px}.deckCard span{line-height:1.35}
+.machineDrawers>details>summary{min-height:48px}.machineLinks a{min-height:40px;display:flex;align-items:center}
+.secondaryTools,.legacyHomeArchive,.deepMachineArchive{opacity:.86}
+.lazyScene:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.28;background:
+radial-gradient(circle at 17% 25%,rgba(255,232,170,.55) 0 1px,transparent 1.8px),
+radial-gradient(circle at 72% 18%,rgba(141,239,255,.5) 0 1px,transparent 1.7px),
+radial-gradient(circle at 84% 64%,rgba(255,255,255,.42) 0 1px,transparent 1.6px),
+radial-gradient(circle at 39% 78%,rgba(190,170,255,.38) 0 1px,transparent 1.7px);
+animation:islDustBreath 6.5s ease-in-out infinite;will-change:opacity}
+@keyframes islSoftGleam{0%,65%{transform:translateX(-65%)}78%,100%{transform:translateX(65%)}}
+@keyframes islDustBreath{0%,100%{opacity:.18}50%{opacity:.34}}
+@media(max-width:640px){
+ .finalNav a,.finalNav button{min-height:38px;padding:6px 7px;font-size:7px}
+ .lazyScene{min-height:44vh;border-radius:18px}
+ .lazyCopy h1{font-size:clamp(38px,13vw,58px)}
+ .lazyCopy p{font-size:14px}
+ .deckWindow{border-radius:18px;backdrop-filter:none}
+ .deckBody{padding:12px}
+ .deckBody h2{font-size:clamp(25px,9vw,36px)}
+ .deckGrid{gap:7px}.deckCard{min-height:86px;padding:10px}
+ .lazyScene:after{opacity:.18;animation:none}
+ .secondaryTools>summary{position:static}
+}
+@media(prefers-reduced-motion:reduce){.lazyPrimary:after,.lazyScene:after{animation:none!important}}
 </style><script>
 (function(){
   /* Device detection must never auto-navigate. The user chooses the surface. */
