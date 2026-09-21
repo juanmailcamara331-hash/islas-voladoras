@@ -15,7 +15,7 @@ need('class="quickDock"' in s,"missing quick dock")
 for label in ["CALENDARIO","REFERENCIAS","ENCUESTAS","REGISTRO","ESTADO"]:
     need(f"<b>{label}</b>" in s,f"missing visible quick action: {label}")
 
-need(len(re.findall(r'class="navI"',s)) >= 7,"main nav icons missing")
+need(len(re.findall(r'class="navI"',s)) >= 6,"main nav icons missing")
 need("flex-wrap:nowrap!important" in s,"main nav nowrap guard missing")
 need('name="viewport"' in s and "width=device-width" in s,"mobile viewport contract missing")
 
@@ -48,11 +48,12 @@ need("if(e.key==='Escape'&&drawer.classList.contains('open'))setDrawer(false);" 
 
 # Primary destinations must remain wired and reachable
 for token,label in [
-    ('data-main-nav="home"',"Centro"),
-    ('href="rpg-home.html"',"Perfil/Aventura"),
-    ('data-route-link="calendar"',"Ruta ISL"),
+    ('>JUGAR</a>',"Jugar"),
+    ('href="crear.html"',"Crear"),
+    ('>VER</a>',"Ver"),
+    ('href="decidir.html"',"Decidir"),
+    ('>MÁS</button>',"Más"),
     ('href="galeria.html?v=20260921-1"',"Galería"),
-    ('href="galeria.html?v=20260921-1#music"',"Música"),
 ]:
     need(token in s,f"primary destination missing: {label}")
 
