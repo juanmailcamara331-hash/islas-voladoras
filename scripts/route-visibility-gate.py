@@ -50,7 +50,7 @@ else:
     # These operational surfaces must never be public even if someone forgets manifest maintenance.
     deny_names={
         "command-center.html","rpg-home.html","huellas.html","secret-level.html",
-        "boss-prototype.html","salon-cortinas-rojas.html","isla-baile-inagotable.html",
+        "boss-prototype.html","salon-cortinas-rojas.html","isla-baile-inagotable.html","velaria-v2.html","velaria-pc40.html",
         "route-isl.js","decision-engine.html","decision-studio.js","lifecycle-studio.js"
     }
     for f in sorted(public_files):
