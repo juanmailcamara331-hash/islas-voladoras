@@ -955,3 +955,41 @@ Participatory World Loop is now CANON methodology:
 CREATE → PARTICIPATE → OBSERVE → CAPTURE TRACE → INTERPRET → CONTRAST → CQC-R → HUMAN DECISION → RETURN A MORE ALIVE VERSION.
 
 Next primary lane remains Velaria P0 polish.
+
+
+## 2026-09-21 · v0.84 VELARIA P0 FEEL + RECREATIVA RETURN
+Estado: SOURCE GREEN · HUMAN DEVICE PENDING.
+
+Primary lane remains Velaria V2. No G00–G07 expansion.
+
+Applied:
+- finish return now goes to jugar.html?friends=1 / Recreativa, never Cartógrafo;
+- top-left back also returns to Recreativa;
+- first-minute wind direction gets a compact diegetic VIENTO → readout;
+- movement gets lightweight visual motion feedback;
+- supported devices get tiny vibration feedback on movement/actions;
+- Anclaje copy is more action-readable;
+- contradiction gets one restrained personality beat: “Perfecto. Ahora el cartel discute con el viento.”;
+- no final art, no new system, no CANON promotion.
+
+Regression guards:
+- scripts/playable-quality-gate.py requires the v0.84 feel/return contract;
+- Pages workflow fails if returnBoat points back to rpg-home.
+
+Evidence status:
+- GitHub source readback GREEN;
+- HUMAN_DEVICE_GREEN remains PENDING;
+- Android edge-to-edge physical recheck remains PENDING;
+- PRE-DNS gate remains CLOSED;
+- no DNS change authorized.
+
+Next human test:
+1. Can player identify wind direction immediately?
+2. Does tapping/moving feel responsive?
+3. Is ANCLAR understandable without explanation?
+4. Does the sign/world contradiction land?
+5. understood / fun / continue;
+6. verify return lands in Recreativa without welcome/HUD regression.
+
+Stop rule:
+If another source-level pass does not materially improve clarity/agency/feel/desire/robustness, stop and test on device.
