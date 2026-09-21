@@ -993,3 +993,24 @@ Next human test:
 
 Stop rule:
 If another source-level pass does not materially improve clarity/agency/feel/desire/robustness, stop and test on device.
+
+
+## 2026-09-21 · WORLD HUMAN TRACE + RESILIENCE
+- New CANON methodological protocol:
+  - docs/ISL_WORLD_HUMAN_TRACE_CAPTURE_PROTOCOL_CURRENT.md
+- New active storage architecture:
+  - docs/ISL_STORAGE_RESILIENCE_ARCHITECTURE_CURRENT.md
+- Drive mirror/current:
+  - ISL_WORLD_HUMAN_TRACE_AND_RESILIENCE_PROTOCOL_CURRENT
+- Persistent trigger:
+  REALIDAD → HUELLA → DESIDENTIFICACIÓN → FUNCIÓN → CONTRADICCIÓN → MUTACIÓN ISL → CQC-R → EVIDENCIA → DECISIÓN.
+- People/hazañas/feedback do not become characters, rewards or CANON automatically.
+- Default privacy: desidentify third parties; keep only necessary creative function.
+- Cross rule: max 1–3 existing ISL systems per trace.
+- Process reminder must review new human traces at significant blocks and decide TRACE_RAW / SEED / COLOR / PROTOTYPE / PARK / KILL.
+- Storage truth:
+  Drive = human/creative memory.
+  GitHub = operational truth/versioned guards.
+  Chat = workspace, never sole memory.
+- No Dropbox/S3/R2/Supabase storage expansion yet. Third storage activates only on a verified binary/volume/CDN/restore need.
+- This is a QUALITY/RESILIENCE lane only. Velaria V2 remains PRIMARY P0; HUMAN_DEVICE_GREEN pending; G00–G07 closed.
