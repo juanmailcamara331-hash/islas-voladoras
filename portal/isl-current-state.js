@@ -32,7 +32,6 @@
       document.querySelectorAll('.view,.rail button[data-view]').forEach(function(x){x.classList.remove('active')});
       var v=document.getElementById(id);if(v)v.classList.add('active');
       var b=document.querySelector('.rail button[data-view="'+id+'"]');if(b)b.classList.add('active');
-      window.scrollTo(0,0);
     }
 
     function renderPolls(p){
