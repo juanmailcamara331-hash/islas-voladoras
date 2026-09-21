@@ -66,6 +66,8 @@ html.deck-focus #islGlobalShell{transition:filter .18s ease,opacity .18s ease}
 
 .lazyMiniDock{grid-template-columns:repeat(3,1fr)}
 @media(max-width:600px){.lazyMiniDock{grid-template-columns:repeat(3,1fr)}}
+
+.deckExit{display:flex;align-items:center;gap:7px}.deckExit a{border:1px solid #3d6655;background:#0b1e17;color:#ccefd9;border-radius:9px;padding:7px 9px;text-decoration:none;font-size:8px;font-weight:900;letter-spacing:.08em}.deckExit button{border:0;background:transparent;color:#dce8ea;font-size:26px;line-height:1}
 </style><script>
 (function(){
   var ua = navigator.userAgent || "";
@@ -531,7 +533,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 <div class="deckModal" id="deckModal" hidden>
   <div class="deckBackdrop" data-deck-close></div>
   <section class="deckWindow" role="dialog" aria-modal="true" aria-labelledby="deckTitle">
-    <div class="deckChrome"><button class="deckBack" type="button" id="deckBack" aria-label="Volver">←</button><span id="deckEyebrow">ISL</span><button type="button" data-deck-close aria-label="Cerrar">×</button></div>
+    <div class="deckChrome"><button class="deckBack" type="button" id="deckBack" aria-label="Volver">←</button><span id="deckEyebrow">ISL</span><div class="deckExit"><a href="rpg-home.html" aria-label="Volver al mundo">MUNDO</a><button type="button" data-deck-close aria-label="Cerrar">×</button></div></div>
     <div class="deckBody">
       <h2 id="deckTitle">Ventana</h2>
       <p id="deckLead"></p>
