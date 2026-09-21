@@ -63,6 +63,9 @@ html.deck-focus .lazyScene,
 html.deck-focus .finalNav,
 html.deck-focus .secondaryTools,
 html.deck-focus #islGlobalShell{transition:filter .18s ease,opacity .18s ease}
+
+.lazyMiniDock{grid-template-columns:repeat(3,1fr)}
+@media(max-width:600px){.lazyMiniDock{grid-template-columns:repeat(3,1fr)}}
 </style><script>
 (function(){
   var ua = navigator.userAgent || "";
@@ -490,7 +493,6 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <a href="crear.html" data-deck="create"><span class="navI" aria-hidden="true">✦</span>CREAR</a>
     <a href="galeria.html?v=20260921-1" data-deck="view"><span class="navI" aria-hidden="true">▣</span>VER</a>
     <a href="decidir.html" data-deck="decide"><span class="navI" aria-hidden="true">◆</span>DECIDIR</a>
-    <a href="huellas.html"><span class="navI" aria-hidden="true">🧭</span>HUELLA</a>
     <button id="moreNavBtn" type="button" aria-expanded="false" aria-controls="drawer"><span class="navI" aria-hidden="true">＋</span>MÁS</button>
   </nav>
   <section class="lazyCockpit" id="currentActions" aria-label="Centro vago creativo">
@@ -509,7 +511,6 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <a href="crear.html" data-deck="create"><b>✦</b><span>CREAR</span></a>
     <a href="galeria.html?v=20260921-1" data-deck="view"><b>▣</b><span>VER</span></a>
     <a href="decidir.html" data-deck="decide"><b>◆</b><span>DECIDIR</span></a>
-    <a href="huellas.html"><b>🧭</b><span>HUELLA</span></a>
   </div>
 </section>
 <div class="lazyModal" id="lazyModal" hidden>
