@@ -855,3 +855,13 @@ When those four are HUMAN_DEVICE_GREEN:
 - Added one existing ISL visual reference: assets/ship-between-islands.png.
 - It is explicitly labelled as an aspirational atmosphere/world reference, NOT a screenshot of final product and NOT the current prototype.
 - Principle: provide enough context to make the test meaningful and exciting without using aspirational art to disguise weak mechanics.
+
+
+## 2026-09-21 · PLAY ROUTING CORRECTION
+Human device evidence: JUGAR and several primary actions were landing on rpg-home Cartographer, which reads as confusing/technical rather than fun.
+Decision:
+- rpg-home remains a secondary Cabina/Profile/Map/Inventory surface.
+- Primary JUGAR and CONTINUAR now go directly to velaria-v2.html, the active playable lane.
+- Global MUNDO escape now enters Velaria.
+- Explicit Perfil RPG / Mapa / Cabina links remain on rpg-home by design.
+- Rule: JUGAR must enter play, never an operational dashboard.
