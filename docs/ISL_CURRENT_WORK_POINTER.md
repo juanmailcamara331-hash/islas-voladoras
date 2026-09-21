@@ -935,3 +935,12 @@ Rule: JUGAR means choose/play something immediately; operational tools live behi
 - Reference rule remains function -> contrast -> ISL mutation, never surface imitation.
 - Terry Pratchett function profile explicitly includes humane satire, rule-governed absurdity, tenderness under cynicism, callbacks/consequences, and long-horizon world coherence.
 - CI now fails if the mandatory router/matrix is missing or structurally weakened.
+
+
+## 2026-09-21 · DURABLE BOOT + PRESENTATION/CAPITAL TRIGGER
+- ISL continuity must not rely on conversational memory alone.
+- Mandatory boot for substantive ISL work: Drive ISL_CHECKPOINT_MASTER_CURRENT + GitHub ISL_CURRENT_WORK_POINTER + quality router/matrix before production.
+- Existing Google Drive + GitHub connectors are sufficient; do not add an external memory service unless a concrete failure appears.
+- Added presentation/capital opportunity trigger: meaningful milestones should prompt review/update of one-pager, visual dossier, investor deck, crowdfunding/partner material, press kit or guided demo as appropriate.
+- External materials must distinguish current prototype vs aspirational vision and pass factual/visual CQC.
+- Character direction candidate strengthened: charismatic punk-leaning female protagonist + strange fox/dog/dolphin-like companion with expressive slightly unhinged personality; NOT final CANON until character/creature CQC + human review.
