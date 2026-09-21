@@ -914,3 +914,24 @@ Rule: JUGAR means choose/play something immediately; operational tools live behi
   Anclaje → crew capabilities;
   contradiction → world memory/interpretation.
 - Purpose: let colleagues/investors see the soul and future integration of the microtest without exposing technical dashboards or overwhelming them with the full game design.
+
+
+## 2026-09-21 · RECURSIVE DIALECTIC QUALITY ROUTER
+- New mandatory preflight router: docs/ISL_RECURSIVE_DIALECTIC_QUALITY_ROUTER_CURRENT.md.
+- New machine-readable entity matrix: docs/ISL_QUALITY_ROUTER_MATRIX_CURRENT.json.
+- New CI gate: scripts/quality-router-gate.py.
+- Goal: user should not need to remind the system of every quality plane on each task.
+- Router activates planes by entity type with review priority 0–3; weights are priorities, NOT quality scores.
+- Profiles currently cover: playable, narrative scene, timeline/lore, creature/character, UI surface, music/audio, visual/3D asset, presentation/print.
+- Mandatory preflight includes: known regressions, references by function, external evidence only when uncertainty warrants it, cheapest falsifiable prototype, bounded parallel quality lanes, human gate, stop rule.
+- External evidence routing:
+  scientific/psychological -> papers/Consensus;
+  evolving technology -> official docs/current web;
+  historical patterns -> archive.org/primary archives;
+  practical friction -> Reddit/community with corroboration;
+  visual -> Midjourney/Gemini image candidates;
+  3D -> Meshy after multiview QA;
+  music -> original composition lane.
+- Reference rule remains function -> contrast -> ISL mutation, never surface imitation.
+- Terry Pratchett function profile explicitly includes humane satire, rule-governed absurdity, tenderness under cynicism, callbacks/consequences, and long-horizon world coherence.
+- CI now fails if the mandatory router/matrix is missing or structurally weakened.
