@@ -116,6 +116,10 @@ jobs:
           grep -q 'v0.76 mobile spacing contract' build/pages/isl-global-shell.css
           grep -q 'isl-gallery-touch-v076' build/pages/galeria.html
           grep -q 'galleryLightbox' build/pages/galeria.html
+          grep -q 'velaria-human-gate-v077' build/pages/velaria-v2.html
+          grep -q 'Esto no es el aspecto final.' build/pages/velaria-v2.html
+          grep -q 'understoodTest' build/pages/velaria-v2.html
+          grep -q 'TEST DE JUGABILIDAD · GRÁFICOS PROVISIONALES' build/pages/velaria-v2.html
           grep -q 'id="music" class="section"' build/pages/galeria.html
           grep -q 'itemCloseX' build/pages/rpg-home.html
           grep -q 'rpgCommandDeck' build/pages/rpg-home.html
