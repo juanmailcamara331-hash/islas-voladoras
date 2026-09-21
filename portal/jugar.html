@@ -18,10 +18,24 @@ body{padding:0 0 24px}main{width:min(1120px,94vw);margin:auto;padding:18px 0 40p
 .tools{margin-top:20px;border:1px dashed #2a4650;border-radius:15px;background:#07141a}.tools summary{cursor:pointer;padding:12px;color:#8fa8ae;font-size:9px;font-weight:900;letter-spacing:.1em}.toolLinks{display:flex;flex-wrap:wrap;gap:7px;padding:0 12px 12px}.toolLinks a{border:1px solid #35515c;border-radius:9px;padding:8px 9px;color:#cbdadd;text-decoration:none;font-size:9px}
 @media(max-width:700px){main{width:calc(100vw - 20px)}.hero{min-height:230px;border-radius:20px}.heroCopy{padding:24px 20px}.grid{grid-template-columns:1fr}.smallGrid{grid-template-columns:1fr 1fr}.card{min-height:190px}}
 </style>
-</head>
+
+<style id="isl-arcade-friend-focus-v082">
+.friendFocus{display:none;margin:14px 0;border:1px solid #8defff55;border-radius:22px;background:linear-gradient(145deg,#102832,#07141a);padding:18px;box-shadow:0 24px 70px #0008}
+.friendFocus .ffK{font-size:9px;letter-spacing:.15em;color:#8defff;font-weight:950}.friendFocus h2{font-size:clamp(34px,8vw,58px);line-height:.92;margin:7px 0}.friendFocus p{color:#c8d8db;line-height:1.45;max-width:650px}
+.friendPlay{display:flex;align-items:center;justify-content:center;min-height:58px;margin-top:13px;border:1px solid #ffe0a2;border-radius:14px;background:linear-gradient(#f2c979,#c38a39);color:#171009;text-decoration:none;font-weight:950;letter-spacing:.06em;box-shadow:0 12px 30px #0007}
+.friendMore{width:100%;margin-top:8px;min-height:42px;border:1px solid #45636d;border-radius:12px;background:#0a1920;color:#dce8ea;font-weight:900}
+body.friend-mode .friendFocus{display:block}
+body.friend-mode #arcadeLibrary{display:none}
+body.friend-mode.friend-browse #arcadeLibrary{display:block}
+body.friend-mode .tools{display:none}
+body.friend-mode .centerLink{display:none}
+body.friend-mode .hero .now{display:none}
+body.friend-mode .hero h1{font-size:clamp(42px,9vw,72px)}
+body.friend-mode .hero p{max-width:560px}
+</style></head>
 <body>
 <main>
-<div class="top"><div class="brand"><img src="isl-icon-master.png" alt="ISL"><b>ISL · JUGAR</b></div><div style="display:flex;gap:7px"><button class="back" id="friendModeBtn" type="button">MODO COLEGAS</button><a class="back" href="index.html?resume=1#home">CENTRO</a></div></div>
+<div class="top"><div class="brand"><img src="isl-icon-master.png" alt="ISL"><b>ISL · JUGAR</b></div><div style="display:flex;gap:7px"><button class="back" id="friendModeBtn" type="button">MODO COLEGAS</button><a class="back centerLink" href="index.html?resume=1#home">CENTRO</a></div></div>
 
 <section class="hero">
   <img src="assets/city-wind.png" alt="">
@@ -33,6 +47,15 @@ body{padding:0 0 24px}main{width:min(1120px,94vw);margin:auto;padding:18px 0 40p
   </div>
 </section>
 
+<section class="friendFocus" id="friendFocus">
+  <div class="ffK">MODO COLEGAS · UNA SOLA COSA</div>
+  <h2>Hoy: Velaria.</h2>
+  <p>Es la prueba que más nos importa ahora. Juega unos minutos sin que te expliquemos demasiado; al final dinos si lo entendiste, si te divertiste y si seguirías.</p>
+  <a class="friendPlay" id="friendPlay" href="velaria-v2.html?friends=1">▶ JUGAR VELARIA</a>
+  <button class="friendMore" id="friendMore" type="button">QUIERO CURIOSear OTROS JUGABLES</button>
+</section>
+
+<div id="arcadeLibrary">
 <div class="sectionTitle"><h2>Aventura actual</h2><span>Lo que estamos intentando convertir en juego de verdad</span></div>
 <section class="grid">
   <a class="card" href="velaria-v2.html">
@@ -68,14 +91,32 @@ body{padding:0 0 24px}main{width:min(1120px,94vw);margin:auto;padding:18px 0 40p
   <a href="galeria.html">Galería</a>
   <a href="index.html?resume=1#home">Centro de Mandos</a>
 </div></details>
+</div>
 </main>
 <script>
 (function(){
  var b=document.getElementById('friendModeBtn');if(!b)return;
- function paint(){var on=false;try{on=localStorage.getItem('isl_friend_mode')==='1'}catch(e){}b.textContent=on?'MODO COLEGAS · ON':'MODO COLEGAS';b.style.borderColor=on?'#8defff':'#35535e'}
- b.onclick=function(){var on=false;try{on=localStorage.getItem('isl_friend_mode')==='1';localStorage.setItem('isl_friend_mode',on?'0':'1')}catch(e){}paint()};
+ var qs=new URLSearchParams(location.search);
+ try{if(qs.get('friends')==='1')localStorage.setItem('isl_friend_mode','1')}catch(e){}
+ function isFriend(){try{return localStorage.getItem('isl_friend_mode')==='1'}catch(e){return false}}
+ function paint(){
+   var on=isFriend();
+   document.body.classList.toggle('friend-mode',on);
+   if(!on)document.body.classList.remove('friend-browse');
+   b.textContent=on?'MODO COLEGAS · ON':'MODO COLEGAS';
+   b.style.borderColor=on?'#8defff':'#35535e';
+ }
+ b.onclick=function(){try{localStorage.setItem('isl_friend_mode',isFriend()?'0':'1')}catch(e){}paint()};
+ var more=document.getElementById('friendMore');
+ if(more)more.onclick=function(){document.body.classList.add('friend-browse');more.textContent='RECREATIVA COMPLETA ABIERTA ↓'};
+ var fp=document.getElementById('friendPlay');
+ if(fp)fp.addEventListener('click',function(){
+   try{localStorage.setItem('isl_friend_mode','1')}catch(e){}
+   var el=document.documentElement;
+   try{if(!document.fullscreenElement&&el.requestFullscreen)el.requestFullscreen().catch(function(){})}catch(e){}
+ });
  paint();
- document.querySelectorAll('a[href$=".html"]').forEach(function(a){a.addEventListener('click',function(){try{if(localStorage.getItem('isl_friend_mode')==='1'){var u=new URL(a.href,location.href);u.searchParams.set('friends','1');a.href=u.toString()}}catch(e){}})});
+ document.querySelectorAll('a[href$=".html"]').forEach(function(a){a.addEventListener('click',function(){try{if(isFriend()){var u=new URL(a.href,location.href);u.searchParams.set('friends','1');a.href=u.toString()}}catch(e){}})});
 })();
 </script></body>
 </html>
