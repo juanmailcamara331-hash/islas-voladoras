@@ -774,3 +774,14 @@ Pendiente únicamente comprobación física del icono instalado.
 - Gate before expansion: human/device player should identify wind direction, understand Anclaje, and detect official/world contradiction without long explanation.
 - If gate survives: continue existing order into G00–G07 Velaria slice → contextualized Molino → consequence → ship echo.
 - Parallel lanes remain bounded: Brújula consistency QA→Meshy RAW; BIO-001 binary QA only, no regeneration; one creature/audio/world asset only when it directly feeds the slice.
+
+
+## 2026-09-21 · VELARIA PC-40 UX RESET
+- Human feedback on first PC-40 build: confusing, unintuitive and visually weak.
+- Response: do NOT expand scope yet; fix first-minute comprehension and feel.
+- portal/velaria-pc40.html rebuilt as an immersive micro-scene using existing ISL Ciudad del Viento art.
+- Removed debug-style MOVE / COMPARE controls and visible test framing.
+- New interaction: tap scene to walk → contextual ANCLAR appears near friend01 → second contextual hold → official sign flips while diegetic wind cues continue → MIRAR resolves contradiction.
+- Global Command Center shell remains technically loaded for continuity but hidden during the scene so play is visually primary.
+- State/provenance remain unchanged: LAB_ONLY, isl_velaria_pc40_state, no CANON promotion.
+- Expansion to G00–G07 remains blocked until this first-minute interaction is human-readable and pleasant.
