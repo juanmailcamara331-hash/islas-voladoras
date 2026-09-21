@@ -81,6 +81,10 @@ jobs:
           test -f build/pages/rpg-home.html
           test -f build/pages/command-center.html
           test -f build/pages/secret-level.html
+          test -f build/pages/velaria-pc40.html
+          grep -q 'PC-40 · LAB · NO CANON' build/pages/velaria-pc40.html
+          grep -q 'isl_velaria_pc40_state' build/pages/velaria-pc40.html
+          grep -q 'data-scene="velaria-pc40.html"' build/pages/rpg-home.html
           test -f build/pages/recreo-pixel.css
           grep -q 'DISTRITO RECREO' build/pages/recreo.html
           grep -q 'homeCabin' build/pages/index.html
