@@ -96,6 +96,10 @@ jobs:
           ! grep -Rqi "project.godot\|scripts/main.gd\|GODOT_VERSION" .github/workflows/build-android-apk.yml android-web
           grep -q "juanmailcamara331-hash.github.io/islas-voladoras" android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q 'app=1' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
+          grep -q 'WindowCompat.setDecorFitsSystemWindows' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
+          grep -q 'setStatusBarColor(Color.TRANSPARENT)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
+          grep -q 'setNavigationBarColor(Color.TRANSPARENT)' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
+          grep -q 'native=078' android-web/app/src/main/java/com/pandaria/islasvoladoras/MainActivity.java
           grep -q "com.pandaria.islasvoladoras" android-web/app/build.gradle
           grep -q '@mipmap/ic_launcher' android-web/app/src/main/AndroidManifest.xml
           test -s android-web/app/src/main/res/drawable/isl_launcher.xml
