@@ -82,7 +82,8 @@ jobs:
           test -f build/pages/command-center.html
           test -f build/pages/secret-level.html
           test -f build/pages/velaria-pc40.html
-          grep -q 'PC-40 · LAB · NO CANON' build/pages/velaria-pc40.html
+          grep -q "context_id:'velaria_pc40'" build/pages/velaria-pc40.html
+          grep -q 'assets/city-wind.png' build/pages/velaria-pc40.html
           grep -q 'isl_velaria_pc40_state' build/pages/velaria-pc40.html
           grep -q 'data-scene="velaria-pc40.html"' build/pages/rpg-home.html
           test -f build/pages/recreo-pixel.css
