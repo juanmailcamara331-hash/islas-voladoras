@@ -202,3 +202,10 @@ Cada artefacto externo debe:
 - responder “qué es / por qué importa / qué existe / qué falta / qué buscamos” en pocos minutos.
 
 Si un nuevo hito cambia materialmente la historia que podemos contar, revisar si conviene regenerar el dossier.
+
+
+## PARTICIPATORY WORLD LOOP · CANON
+Antes de cerrar cualquier bloque que pueda beneficiarse de realidad humana, consultar:
+- docs/ISL_PARTICIPATORY_WORLD_LOOP_CANON_v1.0.md
+
+Regla: el mundo aporta huellas; ISL interpreta y decide.
