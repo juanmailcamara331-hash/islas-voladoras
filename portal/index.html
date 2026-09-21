@@ -30,6 +30,9 @@
 
 .deckModal[hidden]{display:none}.deckModal{position:fixed;inset:0;z-index:10030;display:grid;place-items:center;padding:14px}.deckBackdrop{position:absolute;inset:0;background:#02070bd0;backdrop-filter:blur(10px)}.deckWindow{position:relative;z-index:2;width:min(760px,96vw);max-height:min(82vh,760px);overflow:auto;border:1px solid #496874;border-radius:24px;background:linear-gradient(145deg,#10252e,#071117);box-shadow:0 28px 100px #000;transform-origin:center}.deckChrome{position:sticky;top:0;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:#08151ce8;border-bottom:1px solid #243f49;backdrop-filter:blur(14px)}.deckChrome span{font-size:8px;letter-spacing:.16em;color:#8defff;font-weight:900}.deckChrome button{border:0;background:transparent;color:#dce8ea;font-size:26px;line-height:1}.deckBody{padding:20px}.deckBody h2{font-size:clamp(34px,6vw,60px);line-height:.95;margin:4px 0 8px}.deckBody>p{margin:0 0 16px;color:#9fb4b9;max-width:620px}.deckGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.deckCard{border:1px solid #31505c;border-radius:15px;background:#0a1920;color:#eaf3f3;text-decoration:none;padding:15px;min-height:110px;display:flex;flex-direction:column;justify-content:end}.deckCard small{font-size:7px;color:#80a0a8;letter-spacing:.12em;font-weight:900}.deckCard b{font-size:21px;margin-top:4px}.deckCard span{font-size:9px;color:#8fa5aa;margin-top:4px}.deckDetails{margin-top:12px;border:1px dashed #29464f;border-radius:12px;background:#071219}.deckDetails summary{padding:10px;cursor:pointer;font-size:8px;color:#718990;font-weight:900;letter-spacing:.12em}.deckDetails div{padding:0 10px 10px;color:#8fa3a8;font-size:9px;line-height:1.55}.deckWindow[data-kind="decide"] .deckGrid{grid-template-columns:1fr}.deckWindow[data-kind="decide"] .deckCard:first-child{border-color:#8a6a3e;background:#241c12}.deckWindow[data-kind="view"] .deckCard:first-child{border-color:#3d7482}.deckWindow[data-kind="create"] .deckCard:first-child{border-color:#705a8a}
 @media(max-width:600px){.deckWindow{max-height:88vh}.deckBody{padding:14px}.deckGrid{grid-template-columns:1fr 1fr}.deckCard{padding:12px;min-height:96px}.deckCard b{font-size:18px}.deckCard span{font-size:8px}}
+
+.deckModal{opacity:0;transition:opacity .18s ease}.deckModal:not([hidden]){opacity:1}.deckWindow{transform:translateY(14px) scale(.985);opacity:.92;transition:transform .2s ease,opacity .2s ease}.deckModal:not([hidden]) .deckWindow{transform:translateY(0) scale(1);opacity:1}.deckChrome{grid-template-columns:auto 1fr auto}.deckChrome .deckBack{border:1px solid #2e4a55;background:#0a1820;color:#b9cdd1;border-radius:9px;font-size:16px;width:34px;height:34px}.deckChrome #deckEyebrow{text-align:center}.deckWindow.deckSwap{transform:translateX(18px) scale(.99);opacity:.55}.lazyScene,.lazyMiniDock,.secondaryTools{transition:filter .18s ease,transform .18s ease}.deckModal:not([hidden])~.secondaryTools{filter:blur(.5px)}
+@media(prefers-reduced-motion:reduce){.deckModal,.deckWindow,.lazyScene,.lazyMiniDock,.secondaryTools{transition:none!important}}
 </style><script>
 (function(){
   var ua = navigator.userAgent || "";
@@ -496,7 +499,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 <div class="deckModal" id="deckModal" hidden>
   <div class="deckBackdrop" data-deck-close></div>
   <section class="deckWindow" role="dialog" aria-modal="true" aria-labelledby="deckTitle">
-    <div class="deckChrome"><span id="deckEyebrow">ISL</span><button type="button" data-deck-close aria-label="Cerrar">×</button></div>
+    <div class="deckChrome"><button class="deckBack" type="button" id="deckBack" aria-label="Volver">←</button><span id="deckEyebrow">ISL</span><button type="button" data-deck-close aria-label="Cerrar">×</button></div>
     <div class="deckBody">
       <h2 id="deckTitle">Ventana</h2>
       <p id="deckLead"></p>
@@ -915,7 +918,7 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
 </script>
 <script id="isl-floating-decks">
 (function(){
- const modal=document.getElementById('deckModal'), win=modal&&modal.querySelector('.deckWindow');
+ const modal=document.getElementById('deckModal'), win=modal&&modal.querySelector('.deckWindow'), back=document.getElementById('deckBack');
  if(!modal||!win)return;
  const data={
   create:{eyebrow:'CREAR · TOCAR ALGO',title:'¿Qué te apetece mover?',lead:'No hace falta “trabajar en ISL”. Elige una pieza y juega con ella.',cards:[
@@ -937,20 +940,48 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
     ['Jugar primero','Decidir después','rpg-home.html','PLAY FIRST']
   ],details:'Misiones, CQC, gates, logs y prioridades siguen registrándose detrás. No necesitas leerlos para que el sistema sea riguroso.'}
  };
- function openDeck(kind){
+ let stack=[];
+ function remember(kind){try{sessionStorage.setItem('isl_last_deck',kind)}catch(e){}}
+ function render(kind,push){
   const d=data[kind]; if(!d)return;
-  win.dataset.kind=kind;
-  document.getElementById('deckEyebrow').textContent=d.eyebrow;
-  document.getElementById('deckTitle').textContent=d.title;
-  document.getElementById('deckLead').textContent=d.lead;
-  document.getElementById('deckGrid').innerHTML=d.cards.map(x=>'<a class="deckCard" href="'+x[2]+'"><small>'+x[3]+'</small><b>'+x[0]+'</b><span>'+x[1]+'</span></a>').join('');
-  document.getElementById('deckDetailsBody').textContent=d.details;
+  if(push!==false && win.dataset.kind && win.dataset.kind!==kind) stack.push(win.dataset.kind);
+  win.classList.add('deckSwap');
+  setTimeout(()=>{
+    win.dataset.kind=kind;
+    document.getElementById('deckEyebrow').textContent=d.eyebrow;
+    document.getElementById('deckTitle').textContent=d.title;
+    document.getElementById('deckLead').textContent=d.lead;
+    document.getElementById('deckGrid').innerHTML=d.cards.map(x=>'<a class="deckCard" href="'+x[2]+'"><small>'+x[3]+'</small><b>'+x[0]+'</b><span>'+x[1]+'</span></a>').join('');
+    document.getElementById('deckDetailsBody').textContent=d.details;
+    back.disabled=stack.length===0;
+    back.style.opacity=stack.length===0?'.35':'1';
+    remember(kind);
+    requestAnimationFrame(()=>win.classList.remove('deckSwap'));
+  },90);
+ }
+ function openDeck(kind){
+  render(kind,false);
   modal.hidden=false;document.body.style.overflow='hidden';
  }
- function close(){modal.hidden=true;document.body.style.overflow=''}
- document.querySelectorAll('[data-deck]').forEach(a=>a.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();openDeck(a.dataset.deck)}));
+ function close(){modal.hidden=true;document.body.style.overflow='';stack=[]}
+ function goBack(){
+  if(stack.length){render(stack.pop(),false);back.disabled=stack.length===0;back.style.opacity=stack.length===0?'.35':'1';}
+  else close();
+ }
+ document.querySelectorAll('[data-deck]').forEach(a=>a.addEventListener('click',e=>{
+  if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  e.preventDefault();
+  if(!modal.hidden && win.dataset.kind!==a.dataset.deck){render(a.dataset.deck,true)}
+  else openDeck(a.dataset.deck);
+ }));
+ back.addEventListener('click',goBack);
  modal.querySelectorAll('[data-deck-close]').forEach(x=>x.addEventListener('click',close));
- document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)goBack()});
+ document.querySelectorAll('.lazyMiniDock a[data-deck],.finalNav a[data-deck]').forEach(a=>a.addEventListener('pointerenter',()=>{try{sessionStorage.setItem('isl_deck_hint',a.dataset.deck)}catch(e){}}));
+ try{
+   const last=sessionStorage.getItem('isl_last_deck');
+   if(last&&data[last]) document.documentElement.dataset.lastDeck=last;
+ }catch(e){}
 })();
 </script>
 <script defer src="isl-global-shell.js"></script>
