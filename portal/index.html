@@ -543,7 +543,7 @@ html.deck-focus .deckWindow{filter:none!important;opacity:1!important;transform:
 <section class="finalCC" id="finalCommandCenter">
   <nav class="finalNav" aria-label="Centro de Mandos">
     <a class="brandLock" href="#home" aria-label="ISL · Centro"><img src="isl-icon-master.png" alt="ISL"><b>ISL</b></a>
-    <a href="rpg-home.html"><span class="navI" aria-hidden="true">▶</span>JUGAR</a>
+    <a href="velaria-v2.html"><span class="navI" aria-hidden="true">▶</span>JUGAR</a>
     <a href="crear.html" data-deck="create"><span class="navI" aria-hidden="true">✦</span>CREAR</a>
     <a href="galeria.html?v=20260921-1" data-deck="view"><span class="navI" aria-hidden="true">▣</span>VER</a>
     <a href="decidir.html" data-deck="decide"><span class="navI" aria-hidden="true">◆</span>DECIDIR</a>
@@ -557,7 +557,7 @@ html.deck-focus .deckWindow{filter:none!important;opacity:1!important;transform:
       <div class="k">ISLAS VOLADORAS · HOY</div>
       <h1>Entra al mundo.</h1>
       <p>Lo demás puede esperar.</p>
-      <a class="lazyPrimary" href="rpg-home.html">▶ CONTINUAR</a>
+      <a class="lazyPrimary" href="velaria-v2.html">▶ CONTINUAR</a>
     </div>
     <button class="lazyTodayBtn" id="lazyTodayBtn" type="button" data-lazy-open="today">¿QUÉ ME APETECE HOY?</button>
   </div>
@@ -585,7 +585,7 @@ html.deck-focus .deckWindow{filter:none!important;opacity:1!important;transform:
 <div class="deckModal" id="deckModal" hidden>
   <div class="deckBackdrop" data-deck-close></div>
   <section class="deckWindow" role="dialog" aria-modal="true" aria-labelledby="deckTitle">
-    <div class="deckChrome"><button class="deckBack" type="button" id="deckBack" aria-label="Volver">←</button><span id="deckEyebrow">ISL</span><div class="deckExit"><a href="rpg-home.html" aria-label="Volver al mundo">MUNDO</a><button type="button" data-deck-close aria-label="Cerrar">×</button></div></div>
+    <div class="deckChrome"><button class="deckBack" type="button" id="deckBack" aria-label="Volver">←</button><span id="deckEyebrow">ISL</span><div class="deckExit"><a href="velaria-v2.html" aria-label="Entrar al mundo">MUNDO</a><button type="button" data-deck-close aria-label="Cerrar">×</button></div></div>
     <div class="deckBody">
       <h2 id="deckTitle">Ventana</h2>
       <p id="deckLead"></p>
@@ -1013,7 +1013,7 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
  if(!modal)return;
  const resume=document.getElementById('resumeSoft'),surprise=document.getElementById('surpriseSoft'),noDecide=document.getElementById('noDecideSoft'),hint=document.getElementById('lazySoftHint'),todayBtn=document.getElementById('lazyTodayBtn');
  const title=document.getElementById('lazyTitle'),text=document.getElementById('lazyText'),k=document.getElementById('lazyK');
- const fallback='rpg-home.html';
+ const fallback='velaria-v2.html';
  const routes={create:'crear.html',view:'galeria.html?v=20260921-1',decide:'decidir.html'};
  const surprises=['recreo.html','galeria.html?v=20260921-1#video','galeria.html?v=20260921-1#music','huellas.html','capsulas.html'];
  const CONTINUITY_KEY='isl_soft_continuity_v1';
@@ -1112,7 +1112,7 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
     ['Mirar la versión actual','¿Se siente mejor?','galeria.html','1–3 MIN'],
     ['Dejar una huella','Algo chirría / algo funciona','huellas.html','SIN INFORME'],
     ['Ver decisión pendiente','Una sola, no veinte','decidir.html','HUMAN GATE'],
-    ['Jugar primero','Decidir después','rpg-home.html','PLAY FIRST']
+    ['Jugar primero','Decidir después','velaria-v2.html','PLAY FIRST']
   ],details:'Misiones, CQC, gates, logs y prioridades siguen registrándose detrás. No necesitas leerlos para que el sistema sea riguroso.'}
  };
  let stack=[];
