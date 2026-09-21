@@ -795,3 +795,17 @@ Pendiente únicamente comprobación física del icono instalado.
 - Player must actively tick acknowledgement before PROBAR VELARIA unlocks.
 - In-scene badge remains visible: TEST DE JUGABILIDAD · GRÁFICOS PROVISIONALES.
 - Principle: test fun/comprehension before expensive fidelity. Do not use polished art to hide an unclear mechanic.
+
+
+## 2026-09-21 · GAMEPLAY ISOLATION + SECURITY TRUTH
+- Human report: entering Velaria could resurrect the Command Center welcome.
+- Fix: Velaria gameplay scene is now standalone and does not load isl-global-shell.css/js.
+- Scene iframe receives embed=1&resume=1; exits target the top-level Cabina RPG with resume=1.
+- Security truth re-audited:
+  - noindex/robots = discoverability protection only, NOT authentication;
+  - GitHub Pages currently copies portal/** and must therefore be treated as URL-accessible/public-ish;
+  - public Netlify allowlist is a real publication boundary;
+  - true private access layer is the dedicated Netlify private host with SSO;
+  - private host source deployment remains pending/blocked by external Netlify credential authorization.
+- Rule: do not label any GitHub Pages route PRIVATE or intruder-safe merely because it is unlinked/noindex.
+- Sensitive/private-by-default material must not rely on obscurity; keep it out of public builds until SSO private host is GREEN.
