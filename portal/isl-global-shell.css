@@ -55,3 +55,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[t
   #islGlobalMore.open{grid-template-columns:1fr 1fr}
 }
 @media(prefers-reduced-motion:reduce){#islGlobalShell a.igsP0:before{animation:none}}
+
+/* Human-first grouped More */
+#islGlobalMore.open{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:min(72vh,620px);overflow:auto}
+#islGlobalMore .igsGroup{border:1px solid #29434d;border-radius:13px;background:#091820;padding:8px;display:flex;flex-direction:column;gap:5px}
+#islGlobalMore .igsGroup>b{font:900 8px system-ui;letter-spacing:.14em;color:#86a7ae;padding:3px 4px 5px}
+#islGlobalMore .igsGroup>a{display:block;border:0;border-radius:8px;background:#0c2029;padding:9px 8px;color:#e6f0f1;text-decoration:none;font:850 9px system-ui;text-transform:uppercase}
+#islGlobalMore .igsGroup>a:hover{background:#15303b}
+@media(max-width:640px){#islGlobalMore.open{grid-template-columns:1fr 1fr;right:5px;bottom:76px;width:calc(100vw - 10px)}#islGlobalMore .igsGroup>a{font-size:8px;padding:8px 6px}}
