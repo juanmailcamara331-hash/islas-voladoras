@@ -12,7 +12,7 @@ function href(file,hash){
 }
 var items=[
  ['ISL',href('index.html?full=1','#home'),'igsBrand','Centro'],
- ['Jugar',href('velaria-v2.html'),'igsP0','Aventura actual','JUGAR'],
+ ['Jugar',href('jugar.html'),'igsP0','Arcade · aventura · minijuegos','JUGAR'],
  ['Crear',href('crear.html'),'igsP2','Criaturas · islas · reliquias · música · 3D','CREAR'],
  ['Ver',href('galeria.html'),'igsP1','Galería · vídeo · 3D · música','VER'],
  ['Decidir',href('decidir.html'),'igsLife','Una sola decisión humana','DECIDIR'],
@@ -22,7 +22,7 @@ var row=document.createElement('div');row.className='igsRow';
 items.forEach(function(it){
   var a=document.createElement('a');a.href=it[1];a.className=it[2]||'';a.textContent=it[0];a.title=it[3];
   if(it[4]){var sub=document.createElement('small');sub.className='igsSub';sub.textContent=it[4];a.appendChild(sub);}
-  var active=((path==='velaria-v2.html'||path==='rpg-home.html')&&it[0]==='Jugar')||
+  var active=((path==='jugar.html'||path==='velaria-v2.html'||path==='rpg-home.html')&&it[0]==='Jugar')||
     (path==='crear.html'&&it[0]==='Crear')||
     (path==='galeria.html'&&it[0]==='Ver')||
     (path==='decidir.html'&&it[0]==='Decidir');
@@ -30,7 +30,7 @@ items.forEach(function(it){
   row.appendChild(a)
 });
 var more=document.createElement('button');more.type='button';more.textContent='Más';more.setAttribute('aria-expanded','false');row.appendChild(more);shell.appendChild(row);document.body.appendChild(shell);
-var panel=document.createElement('div');panel.id='islGlobalMore';panel.innerHTML='<a class="igsWorldEscape" href="'+href('velaria-v2.html')+'">← MUNDO</a><div class="igsGroup"><b>PROYECTO</b><a href="'+href('mission-map.html')+'">Misiones</a><a href="'+href('project-observatory.html')+'">Observatorio</a><a href="'+href('crecimiento.html')+'">Crecer</a><a href="'+href('crew.html')+'">Tripulación</a></div><div class="igsGroup"><b>MUNDO / LABS</b><a href="'+href('rpg-home.html')+'">Cabina / perfil</a><a href="'+href('huellas.html')+'">Huellas</a><a href="'+href('external-lab.html')+'">External Lab</a><a href="'+href('spielberg-lab.html')+'">Lab Feed</a><a href="'+href('signal-telegraph-lab.html')+'">Signal Lab</a><a href="'+href('capsulas-tv.html')+'">Cápsulas TV</a><a href="'+href('ps4.html')+'">PS4</a></div><div class="igsGroup"><b>EVIDENCIA</b><a href="'+href('playtest-lab.html')+'">Playtest</a><a href="'+href('playtest-review.html')+'">Review</a><a href="'+href('encuestas.html')+'">Encuestas</a><a href="'+href('galeria.html','#music')+'">Música</a></div><div class="igsGroup"><b>SISTEMA</b><a href="'+href('knowledge-health.html')+'">Health</a><a href="'+href('avisos.html')+'">Avisos</a><a href="'+href('index.html?full=1','#calendar')+'">Ruta / calendario</a></div>';document.body.appendChild(panel);
+var panel=document.createElement('div');panel.id='islGlobalMore';panel.innerHTML='<a class="igsWorldEscape" href="'+href('jugar.html')+'">← JUGAR</a><div class="igsGroup"><b>PROYECTO</b><a href="'+href('mission-map.html')+'">Misiones</a><a href="'+href('project-observatory.html')+'">Observatorio</a><a href="'+href('crecimiento.html')+'">Crecer</a><a href="'+href('crew.html')+'">Tripulación</a></div><div class="igsGroup"><b>MUNDO / LABS</b><a href="'+href('rpg-home.html')+'">Cabina / perfil</a><a href="'+href('huellas.html')+'">Huellas</a><a href="'+href('external-lab.html')+'">External Lab</a><a href="'+href('spielberg-lab.html')+'">Lab Feed</a><a href="'+href('signal-telegraph-lab.html')+'">Signal Lab</a><a href="'+href('capsulas-tv.html')+'">Cápsulas TV</a><a href="'+href('ps4.html')+'">PS4</a></div><div class="igsGroup"><b>EVIDENCIA</b><a href="'+href('playtest-lab.html')+'">Playtest</a><a href="'+href('playtest-review.html')+'">Review</a><a href="'+href('encuestas.html')+'">Encuestas</a><a href="'+href('galeria.html','#music')+'">Música</a></div><div class="igsGroup"><b>SISTEMA</b><a href="'+href('knowledge-health.html')+'">Health</a><a href="'+href('avisos.html')+'">Avisos</a><a href="'+href('index.html?full=1','#calendar')+'">Ruta / calendario</a></div>';document.body.appendChild(panel);
 more.onclick=function(e){e.stopPropagation();panel.classList.toggle('open');more.setAttribute('aria-expanded',panel.classList.contains('open')?'true':'false')};
 document.addEventListener('pointerdown',function(e){if(!panel.classList.contains('open'))return;if(panel.contains(e.target)||more.contains(e.target))return;panel.classList.remove('open');more.setAttribute('aria-expanded','false')});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){panel.classList.remove('open');more.setAttribute('aria-expanded','false')}});
