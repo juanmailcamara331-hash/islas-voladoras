@@ -111,6 +111,11 @@ jobs:
           grep -q 'REFERENCIAS LITE' build/pages/route-isl.js
           node --check build/pages/route-isl.js
           grep -q 'data/isl-music-current.json' build/pages/galeria.html
+          grep -q 'isl-mobile-regression-fixes-v076' build/pages/index.html
+          grep -Fq 'html.deck-focus body>*:not(script){filter:none!important}' build/pages/index.html
+          grep -q 'v0.76 mobile spacing contract' build/pages/isl-global-shell.css
+          grep -q 'isl-gallery-touch-v076' build/pages/galeria.html
+          grep -q 'galleryLightbox' build/pages/galeria.html
           grep -q 'id="music" class="section"' build/pages/galeria.html
           grep -q 'itemCloseX' build/pages/rpg-home.html
           grep -q 'rpgCommandDeck' build/pages/rpg-home.html
