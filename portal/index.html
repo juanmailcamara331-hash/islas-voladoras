@@ -33,6 +33,8 @@
 
 .deckModal{opacity:0;transition:opacity .18s ease}.deckModal:not([hidden]){opacity:1}.deckWindow{transform:translateY(14px) scale(.985);opacity:.92;transition:transform .2s ease,opacity .2s ease}.deckModal:not([hidden]) .deckWindow{transform:translateY(0) scale(1);opacity:1}.deckChrome{grid-template-columns:auto 1fr auto}.deckChrome .deckBack{border:1px solid #2e4a55;background:#0a1820;color:#b9cdd1;border-radius:9px;font-size:16px;width:34px;height:34px}.deckChrome #deckEyebrow{text-align:center}.deckWindow.deckSwap{transform:translateX(18px) scale(.99);opacity:.55}.lazyScene,.lazyMiniDock,.secondaryTools{transition:filter .18s ease,transform .18s ease}.deckModal:not([hidden])~.secondaryTools{filter:blur(.5px)}
 @media(prefers-reduced-motion:reduce){.deckModal,.deckWindow,.lazyScene,.lazyMiniDock,.secondaryTools{transition:none!important}}
+
+.lazyChoiceActions button{border:1px solid #41616c;border-radius:11px;background:#0b1b22;color:#e7f1f2;padding:11px 12px;font-size:9px;font-weight:900;letter-spacing:.05em;cursor:pointer}.lazyChoiceActions button:hover{background:#12303a}.lazySoftHint{margin-top:10px;color:#71888e;font-size:8px;line-height:1.45}.lazyChoiceActions #resumeSoft{border-color:#8c6d3f;background:#261e13;color:#ffe2aa}.lazyChoiceActions #surpriseSoft{border-color:#5c5182;background:#171427;color:#ddd2ff}.lazyChoiceActions #noDecideSoft{border-color:#3d6655;background:#0b1e17;color:#ccefd9}
 </style><script>
 (function(){
   var ua = navigator.userAgent || "";
@@ -473,7 +475,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
       <p>Lo demás puede esperar.</p>
       <a class="lazyPrimary" href="rpg-home.html">▶ CONTINUAR</a>
     </div>
-    <button class="lazyTodayBtn" type="button" data-lazy-open="today">HOY PODRÍAS…</button>
+    <button class="lazyTodayBtn" type="button" data-lazy-open="today">¿QUÉ ME APETECE HOY?</button>
   </div>
   <div class="lazyMiniDock" aria-label="Accesos humanos">
     <a href="crear.html" data-deck="create"><b>✦</b><span>CREAR</span></a>
@@ -489,11 +491,12 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <div class="k" id="lazyK">HOY</div>
     <h2 id="lazyTitle">Una sola cosa</h2>
     <p id="lazyText">Juega un momento. Si algo chirría, ya tenemos material útil.</p>
-    <div class="lazyWindowActions" id="lazyActions">
-      <a href="rpg-home.html">JUGAR →</a>
-      <a href="galeria.html?v=20260921-1">MIRAR →</a>
-      <a href="decidir.html">DECIDIR →</a>
+    <div class="lazyWindowActions lazyChoiceActions" id="lazyActions">
+      <button type="button" id="resumeSoft">CONTINUAR DONDE ESTABA</button>
+      <button type="button" id="surpriseSoft">SORPRÉNDEME</button>
+      <button type="button" id="noDecideSoft">NO QUIERO DECIDIR</button>
     </div>
+    <div class="lazySoftHint" id="lazySoftHint">Nada de esto crea tareas. Sólo cambia cómo entras hoy.</div>
   </section>
 </div>
 <div class="deckModal" id="deckModal" hidden>
@@ -911,9 +914,46 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
 (function(){
  const modal=document.getElementById('lazyModal');
  if(!modal)return;
- document.querySelectorAll('[data-lazy-open]').forEach(b=>b.addEventListener('click',()=>{modal.hidden=false;document.body.style.overflow='hidden'}));
- modal.querySelectorAll('[data-lazy-close]').forEach(b=>b.addEventListener('click',()=>{modal.hidden=true;document.body.style.overflow=''}));
- document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden){modal.hidden=true;document.body.style.overflow=''}});
+ const resume=document.getElementById('resumeSoft'),surprise=document.getElementById('surpriseSoft'),noDecide=document.getElementById('noDecideSoft'),hint=document.getElementById('lazySoftHint');
+ const fallback='rpg-home.html';
+ const routes={
+   create:'crear.html',
+   view:'galeria.html?v=20260921-1',
+   decide:'decidir.html'
+ };
+ const surprises=[
+   'recreo.html',
+   'galeria.html?v=20260921-1#video',
+   'galeria.html?v=20260921-1#music',
+   'huellas.html',
+   'capsulas.html'
+ ];
+ function close(){modal.hidden=true;document.body.style.overflow=''}
+ function open(){modal.hidden=false;document.body.style.overflow='hidden';refresh()}
+ function lastRoute(){
+   try{
+     const last=sessionStorage.getItem('isl_last_deck');
+     return routes[last]||sessionStorage.getItem('isl_last_soft_route')||fallback;
+   }catch(e){return fallback}
+ }
+ function remember(url){try{sessionStorage.setItem('isl_last_soft_route',url)}catch(e){}}
+ function refresh(){
+   const r=lastRoute();
+   resume.textContent=r===fallback?'CONTINUAR AVENTURA':'CONTINUAR DONDE ESTABA';
+   hint.textContent='Nada de esto crea tareas. Sólo cambia cómo entras hoy.';
+ }
+ document.querySelectorAll('[data-lazy-open]').forEach(b=>b.addEventListener('click',open));
+ modal.querySelectorAll('[data-lazy-close]').forEach(b=>b.addEventListener('click',close));
+ resume.addEventListener('click',()=>{const url=lastRoute();remember(url);location.href=url});
+ surprise.addEventListener('click',()=>{
+   let prev='';try{prev=sessionStorage.getItem('isl_last_surprise')||''}catch(e){}
+   let pool=surprises.filter(x=>x!==prev); if(!pool.length)pool=surprises.slice();
+   const url=pool[Math.floor(Math.random()*pool.length)];
+   try{sessionStorage.setItem('isl_last_surprise',url)}catch(e){}
+   remember(url);location.href=url;
+ });
+ noDecide.addEventListener('click',()=>{const url='recreo.html';remember(url);location.href=url});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close()});
 })();
 </script>
 <script id="isl-floating-decks">
