@@ -87,6 +87,17 @@ body{touch-action:none}
 .issueBox textarea{width:100%;min-height:74px;resize:vertical;border:1px solid #35525d;border-radius:10px;background:#061218;color:#eef7f5;padding:9px;font:11px system-ui}
 #saveIssue{margin-top:8px;width:100%;min-height:38px;border:1px solid #4f6e78;border-radius:10px;background:#10242c;color:#fff;font-size:10px;font-weight:900}
 #issueSaved{display:none;margin-top:7px;font-size:9px;color:#bde9c8;text-align:center}
+</style>
+<style id="velaria-context-preview-v081">
+.preplayWorld{display:grid;grid-template-columns:1fr;gap:10px;margin:12px 0}
+.preplayStory{padding:11px 12px;border:1px solid #ffffff1b;border-radius:14px;background:#08161c}
+.preplayStory b{display:block;color:#ffd28a;font-size:10px;letter-spacing:.08em;margin-bottom:4px}.preplayStory p{margin:0;color:#cadbdd;font-size:11px;line-height:1.45}
+.preplayPreview{position:relative;overflow:hidden;border-radius:16px;border:1px solid #ffffff26;background:#061018;min-height:150px}
+.preplayPreview img{display:block;width:100%;height:170px;object-fit:cover;filter:saturate(.92) contrast(1.04)}
+.preplayPreview:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,#061018d8)}
+.preplayPreviewCopy{position:absolute;z-index:2;left:12px;right:12px;bottom:10px}
+.preplayPreviewCopy b{display:block;font-size:12px;color:#fff}.preplayPreviewCopy span{display:block;margin-top:3px;font-size:9px;line-height:1.35;color:#c9dcdf}
+@media(max-width:520px){.preplayPreview img{height:145px}.preplayCard{max-height:92dvh}}
 </style></head>
 <body>
 <script id="velaria-standalone-isolation-v078">
@@ -102,7 +113,20 @@ body{touch-action:none}
   <div class="preplayCard">
     <div class="preplayK">ANTES DE JUGAR · 20 SEGUNDOS</div>
     <h1 id="preplayTitle">Esto no es el aspecto final.</h1>
-    <p class="preplayLead">Estamos probando una idea de juego con gráficos provisionales. Si la mecánica funciona y divierte, después la vestimos con el mundo, personajes, animación, sonido y arte de ISL.</p>
+    <p class="preplayLead">Velaria es un pequeño momento jugable dentro de la aventura principal de ISL. Tras La Separación, el mundo quedó fragmentado y el viaje consiste en reencontrar a tu gente, reconstruir vuestro hogar en el cielo y descubrir qué ha cambiado.</p>
+    <div class="preplayWorld">
+      <div class="preplayStory">
+        <b>LO QUE PRUEBAS AQUÍ</b>
+        <p>Un minijuego táctil: moverte tocando la pantalla, leer el entorno y reaccionar cuando algo no encaja. No estás viendo todavía el acabado final.</p>
+      </div>
+      <div class="preplayPreview">
+        <img src="assets/ship-between-islands.png" alt="Dirección visual aspiracional de ISL">
+        <div class="preplayPreviewCopy">
+          <b>Así debería sentirse ISL cuando esté terminado.</b>
+          <span>Referencia aspiracional de atmósfera y mundo; no es una captura del producto final ni de esta prueba.</span>
+        </div>
+      </div>
+    </div>
     <div class="preplaySimple">
       <div><b>1</b><span>Toca el escenario para moverte.</span></div>
       <div><b>2</b><span>Cuando aparezca una acción, pruébala sin buscar “la respuesta correcta”.</span></div>
