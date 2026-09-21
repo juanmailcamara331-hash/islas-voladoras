@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "updated": "2026-09-21",
+  "rules": {
+    "preflight_required": true,
+    "no_regeneration_when_approved_reference_exists": true,
+    "recent_generation_does_not_override_approved_reference": true
+  },
+  "entities": [
+    {
+      "isl_id": "ISL_PHYSICAL_001",
+      "name": "Ancla del Regreso",
+      "state": "ACTIVE_PROTOTYPE_PREP",
+      "current_operation": "DERIVE_MANUFACTURING_ASSETS",
+      "front": {
+        "status": "APPROVED_REFERENCE_PENDING_TECHNICAL_EXTRACTION",
+        "source_of_truth": "User-approved original physical mockup / front reference from current physical lane",
+        "locked": [
+          "overall composition",
+          "anchor motif",
+          "teal + antique brass language",
+          "floating-island world language",
+          "relic feel"
+        ],
+        "forbidden": [
+          "full redesign",
+          "replacement by new stylistic interpretation"
+        ]
+      },
+      "back": {
+        "status": "APPROVED_REFERENCE",
+        "source_of_truth": "User-provided/reconfirmed technical sheet with compass rose/star and text 'SIEMPRE HAY UN LUGAR / AL QUE VOLVER'",
+        "locked": [
+          "compass rose/star composition",
+          "teal enamel",
+          "antique brass",
+          "floating island",
+          "cloud/wind motifs",
+          "48 mm format",
+          "approved technical-sheet visual language"
+        ],
+        "forbidden": [
+          "replace with alternate back",
+          "change to spiral/other symbol",
+          "regenerate whole sheet unless explicitly requested"
+        ]
+      },
+      "next_action": "Extract/prepare real manufacturing assets from approved references; do not create another concept sheet."
+    },
+    {
+      "isl_id": "ISL_PHYSICAL_002",
+      "name": "Pasaporte de Huellas",
+      "state": "WAITING_AFTER_ANCHOR",
+      "next_action": "Do not advance until Ancla manufacturing package is closed."
+    },
+    {
+      "isl_id": "ISL_PHYSICAL_003",
+      "name": "Credencial Carrillo Human Lab",
+      "state": "WAITING_AFTER_PASSPORT"
+    },
+    {
+      "isl_id": "ISL_PHYSICAL_004",
+      "name": "Gracias, Máquina Rara",
+      "state": "WAITING_AFTER_CREDENTIAL"
+    }
+  ]
+}
