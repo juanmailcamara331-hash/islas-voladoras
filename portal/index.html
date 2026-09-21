@@ -22,7 +22,10 @@
     caches.keys().then(function(keys){keys.forEach(function(k){caches.delete(k)})}).catch(function(){});
   }
 })();
-</script><style>html.native-app body{overflow-x:hidden!important}html.native-app.native-entered #welcome{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}html.native-app #home{display:block!important;visibility:visible!important;opacity:1!important}html.native-app #finalCommandCenter{display:block!important;visibility:visible!important;opacity:1!important}</style><script>
+</script><style>html.native-app body{overflow-x:hidden!important}html.native-app.native-entered #welcome{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}html.native-app #home{display:block!important;visibility:visible!important;opacity:1!important}html.native-app #finalCommandCenter{display:block!important;visibility:visible!important;opacity:1!important}
+.lazyCockpit{padding:12px}.lazyScene{position:relative;min-height:52vh;border:1px solid #31505c;border-radius:24px;overflow:hidden;background:#061017}.lazyScene>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.lazyShade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,7,11,.88),rgba(2,7,11,.2) 68%,rgba(2,7,11,.62))}.lazyCopy{position:absolute;left:clamp(20px,5vw,56px);bottom:clamp(26px,8vw,68px);z-index:2;max-width:560px}.lazyCopy h1{font-size:clamp(48px,9vw,94px);line-height:.87;margin:8px 0}.lazyCopy p{font-size:clamp(16px,2.4vw,22px);color:#d6e3e5;margin:0 0 18px}.lazyPrimary{display:inline-flex;padding:13px 17px;border-radius:13px;border:1px solid #8f7447;background:#2b2114;color:#ffe6b4;text-decoration:none;font-weight:950;letter-spacing:.08em}.lazyTodayBtn{position:absolute;right:14px;top:14px;z-index:3;border:1px solid #54737e;background:#07161ed9;color:#dcebed;border-radius:999px;padding:9px 11px;font-size:9px;font-weight:900}.lazyMiniDock{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:9px}.lazyMiniDock a{border:1px solid #2e4b55;border-radius:14px;background:#0a171d;color:#dce8ea;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 8px;font-size:10px;font-weight:900}.lazyMiniDock b{font-size:16px}.lazyModal[hidden]{display:none}.lazyModal{position:fixed;inset:0;z-index:10020;display:grid;place-items:center;padding:16px}.lazyBackdrop{position:absolute;inset:0;background:#02070bd9;backdrop-filter:blur(8px)}.lazyWindow{position:relative;z-index:2;width:min(520px,94vw);border:1px solid #46616b;border-radius:22px;background:linear-gradient(145deg,#10242d,#081218);padding:24px;box-shadow:0 24px 80px #000}.lazyWindow h2{font-size:32px;margin:6px 0}.lazyWindow p{color:#aebfc3;line-height:1.55}.lazyClose{position:absolute;right:12px;top:10px;border:0;background:transparent;color:#cfe0e3;font-size:26px}.lazyWindowActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.lazyWindowActions a{border:1px solid #41616c;border-radius:10px;padding:10px 12px;color:#e6f2f3;text-decoration:none;font-size:10px;font-weight:900}.legacyHomeArchive{margin:12px;border:1px dashed #294650;border-radius:14px;background:#071219}.legacyHomeArchive>summary{cursor:pointer;padding:12px;color:#718990;font-size:9px;font-weight:900;letter-spacing:.12em}.legacyHomeArchive[open]>summary{color:#bed0d4}.secondaryTools>summary{position:sticky;bottom:8px;z-index:4}.quickDock,.finalDeck,.finalWorlds,.finalUtilities{content-visibility:auto;contain-intrinsic-size:500px}.finalUtilities{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+@media(max-width:600px){.lazyScene{min-height:46vh}.lazyMiniDock{grid-template-columns:repeat(4,1fr)}.lazyMiniDock a{flex-direction:column;gap:2px;padding:9px 4px}.lazyMiniDock span{font-size:8px}.lazyCopy{left:18px;bottom:26px}.lazyTodayBtn{font-size:8px}}
+</style><script>
 (function(){
   var ua = navigator.userAgent || "";
   var q = location.search || "";
@@ -452,29 +455,41 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <a href="huellas.html"><span class="navI" aria-hidden="true">🧭</span>HUELLA</a>
     <button id="moreNavBtn" type="button" aria-expanded="false" aria-controls="drawer"><span class="navI" aria-hidden="true">＋</span>MÁS</button>
   </nav>
-  <section class="currentActions" id="currentActions" aria-label="Qué toca ahora">
-    <div class="nowBadge">HOY</div>
-    <div class="nowCopy"><b>Una sola cosa, si te apetece.</b><span>Juega un momento o mira la Galería. Si algo chirría, deja una huella y seguimos desde ahí.</span></div>
-    <div class="nowLinks">
+  <section class="lazyCockpit" id="currentActions" aria-label="Centro vago creativo">
+  <div class="lazyScene">
+    <img src="assets/island-a-master.jpg" alt="Islas Voladoras">
+    <div class="lazyShade"></div>
+    <div class="lazyCopy">
+      <div class="k">ISLAS VOLADORAS · HOY</div>
+      <h1>Entra al mundo.</h1>
+      <p>Lo demás puede esperar.</p>
+      <a class="lazyPrimary" href="rpg-home.html">▶ CONTINUAR</a>
+    </div>
+    <button class="lazyTodayBtn" type="button" data-lazy-open="today">HOY PODRÍAS…</button>
+  </div>
+  <div class="lazyMiniDock" aria-label="Accesos humanos">
+    <a href="crear.html"><b>✦</b><span>CREAR</span></a>
+    <a href="galeria.html?v=20260921-1"><b>▣</b><span>VER</span></a>
+    <a href="decidir.html"><b>◆</b><span>DECIDIR</span></a>
+    <a href="huellas.html"><b>🧭</b><span>HUELLA</span></a>
+  </div>
+</section>
+<div class="lazyModal" id="lazyModal" hidden>
+  <div class="lazyBackdrop" data-lazy-close></div>
+  <section class="lazyWindow" role="dialog" aria-modal="true" aria-labelledby="lazyTitle">
+    <button class="lazyClose" type="button" data-lazy-close>×</button>
+    <div class="k" id="lazyK">HOY</div>
+    <h2 id="lazyTitle">Una sola cosa</h2>
+    <p id="lazyText">Juega un momento. Si algo chirría, ya tenemos material útil.</p>
+    <div class="lazyWindowActions" id="lazyActions">
       <a href="rpg-home.html">JUGAR →</a>
-      <a href="galeria.html?v=20260921-1">VER GALERÍA →</a>
-      <a href="decidir.html">DECIDIR UNA COSA →</a>
+      <a href="galeria.html?v=20260921-1">MIRAR →</a>
+      <a href="decidir.html">DECIDIR →</a>
     </div>
   </section>
-  <section class="actionTriad" aria-label="Puertas principales">
-    <a class="actionCard mission" href="rpg-home.html"><span class="actionGlow"></span><small>ENTRAR AL MUNDO</small><b>JUGAR</b><span>Aventura · recreo · mapa · perfil</span><div class="actionMeta"><i>SIN PRESIÓN</i><i>TOCAR Y VER</i></div></a>
-    <a class="actionCard growth" href="crear.html"><span class="actionGlow"></span><small>HACER ALGO</small><b>CREAR</b><span>Criaturas · islas · reliquias · música · 3D</span><div class="actionMeta"><i>UNA COSA</i><i>LAB SEGURO</i></div></a>
-    <a class="actionCard observe" href="galeria.html?v=20260921-1"><span class="actionGlow"></span><small>MIRAR EL MUNDO</small><b>VER</b><span>Galería · vídeo · 3D · música · archivo</span><div class="actionMeta"><i>TODO JUNTO</i><i>SIN RUIDO</i></div></a>
-  </section>
-  <section class="lifeDeck" aria-label="Decidir y tripulación">
-    <a class="lifeCard crew" href="decidir.html"><span class="lifeIcon">◆</span><div><small>TU CRITERIO MANDA</small><b>DECIDIR</b><span>Sólo lo que necesita tu opinión ahora</span></div><i>→</i></a>
-  </section>
-  <div class="finalHero">
-    <img src="assets/island-a-master.jpg" alt="Islas Voladoras">
-    <div class="finalHeroCopy"><div class="k">CENTRO DE MANDOS · ISLAS VOLADORAS</div><h1>Un mundo que recuerda tus pasos</h1><p>Explora · crea · deja huella. La aventura, la memoria y el laboratorio creativo viven en una sola cabina.</p><div class="actions"><a class="cta" href="rpg-home.html">CONTINUAR AVENTURA →</a></div></div>
-  </div>
-  <details class="secondaryTools">
-    <summary><span>MÁS · SALA DE MÁQUINAS</span><b>Misiones · Observatorio · Crecer · Tripulación · Health · encuestas · herramientas</b><i>＋</i></summary>
+</div>
+<details class="secondaryTools">
+    <summary><span>MÁS · SALA DE MÁQUINAS</span><b>Todo sigue aquí, pero no molesta</b><i>＋</i></summary>
   <section class="quickDock" aria-label="Accesos rápidos">
     <button class="quickItem" type="button" onclick="go('calendar')"><span class="quickIcon" aria-hidden="true">🗓</span><span><b>CALENDARIO</b><span>Fases · hitos · ritmo</span></span></button>
     <button class="quickItem" type="button" onclick="go('inspiration')"><span class="quickIcon" aria-hidden="true">✦</span><span><b>REFERENCIAS</b><span>Función · contraste · ADN</span></span></button>
@@ -525,7 +540,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 <div class="finalQuote">“TODA DECISIÓN DEJA UNA ISLA.”</div>
   </details>
 </section>
- <div class="topbar"><div class="eyebrow">Islas Voladoras · cabina maestra v0.3</div><div class="actions"><button class="btn" id="musicBtn">♫</button><button class="btn" id="tvBtn">TV</button></div></div>
+<details class="legacyHomeArchive"><summary>ARCHIVO DE CABINA · detalles antiguos / técnicos</summary> <div class="topbar"><div class="eyebrow">Islas Voladoras · cabina maestra v0.3</div><div class="actions"><button class="btn" id="musicBtn">♫</button><button class="btn" id="tvBtn">TV</button></div></div>
 <section class="homeCabin" id="homeCabin">
   <div class="homeCabinHero">
     <img class="homeCabinPortrait" src="assets/protagonist-sheet.png" alt="Cartógrafo ISL">
@@ -565,6 +580,8 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
 <a class="card thumb" href="reel.html" data-help="Reel web dinámico alimentado por el manifiesto."><img src="assets/island-a-master.jpg"><div class="pad"><h3>Reel dinámico</h3><div class="sub">Presentación musical viva.</div></div></a>
 <a class="card" href="assets/isl-tv-reel-premium-1080p.mp4" target="_blank" data-help="MP4 H.264/AAC optimizado para PS4."><h3>Reel MP4 PS4</h3><div class="kpi">H.264</div><div class="sub">Presentación fiable en Reproductor multimedia.</div></a></div>
 </section>
+
+</details>
 
 <section class="view islP1" id="gallery">
  <div class="topbar"><div><div class="eyebrow">Forge integrado</div><h2>Galería viva</h2><div class="sub">Filtros, selección y comparación viven dentro del Command Center.</div></div><div class="actions"><a class="btn" href="external-lab.html">EXTERNAL LAB · GEMINI/MJ</a></div></div>
@@ -858,6 +875,15 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
   }).catch(function(){
     pct.textContent='—%';
   });
+})();
+</script>
+<script id="isl-lazy-cockpit">
+(function(){
+ const modal=document.getElementById('lazyModal');
+ if(!modal)return;
+ document.querySelectorAll('[data-lazy-open]').forEach(b=>b.addEventListener('click',()=>{modal.hidden=false;document.body.style.overflow='hidden'}));
+ modal.querySelectorAll('[data-lazy-close]').forEach(b=>b.addEventListener('click',()=>{modal.hidden=true;document.body.style.overflow=''}));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden){modal.hidden=true;document.body.style.overflow=''}});
 })();
 </script>
 <script defer src="isl-global-shell.js"></script>
