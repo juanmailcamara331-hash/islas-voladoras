@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import sys
+
+ROOT=Path(__file__).resolve().parents[1]
+P=ROOT/"portal"
+PLAYABLES=[
+ "velaria-v2.html","recreo.html","air-fishing.html","sunday-market.html",
+ "ningun-sitio.html","isla-baile-inagotable.html","salon-cortinas-rojas.html",
+ "secret-level.html","storm-route.html","boss-prototype.html"
+]
+errors=[]
+def fail(x): errors.append(x)
+for name in PLAYABLES:
+    p=P/name
+    if not p.exists():
+        fail(f"missing playable: {name}")
+        continue
+    t=p.read_text(encoding="utf-8",errors="ignore")
+    if "viewport-fit=cover" not in t: fail(f"{name}: mobile viewport missing viewport-fit=cover")
+    if "playtest-friends.js" not in t: fail(f"{name}: missing unified friend playtest shell")
+    if "<title>" not in t: fail(f"{name}: missing title")
+
+friend=(P/"playtest-friends.js").read_text(encoding="utf-8")
+for token in ["isl-friend-play","jugar.html?friends=1","rpg-home.html","display:none!important"]:
+    if token not in friend: fail(f"friend shell missing guard token: {token}")
+
+arcade=(P/"jugar.html").read_text(encoding="utf-8")
+for token in ["MODO COLEGAS","Hoy: Velaria.","JUGAR VELARIA","friend-browse"]:
+    if token not in arcade: fail(f"arcade friend-focus missing: {token}")
+
+if errors:
+    print("PLAYABLE QUALITY GATE FAILED")
+    for e in errors: print(" -",e)
+    sys.exit(1)
+print("PLAYABLE QUALITY GATE GREEN: shared mobile + friend-mode contract present")
