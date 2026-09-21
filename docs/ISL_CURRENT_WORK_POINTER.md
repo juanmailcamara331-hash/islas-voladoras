@@ -1064,3 +1064,12 @@ If another source-level pass does not materially improve clarity/agency/feel/des
 - Key rule: activate only 1–4 relevant layers per action; never run every protocol mechanically.
 - Formula/rules layer is recognized but remains distributed; consolidate only when the next real formula requires it.
 - External service decision: GitHub + Drive + ChatGPT Automations are sufficient now. Calendar only for dated human events. Team messaging connector only when a real collaboration gate exists.
+
+
+## 2026-09-22 · CHECKPOINT v0.86 CLEAN CONTEXT RESET
+- New checkpoint: docs/ISL_CHECKPOINT_v0.86_CLEAN_CONTEXT_RESET_ANCLA_SOURCE_OF_TRUTH_RECOVERY_2026-09-22.md
+- Reason: conversation context contamination caused derivation from the wrong Ancla front.
+- Reverse star/compass technical sheet remains AUTHORITATIVE / LOCKED.
+- Front source must be reconfirmed by human in the next chat before any generation or extraction.
+- ISL_ANCLA_FRONT_MANUFACTURING_v0.4 and derivatives are SUPERSEDED / DO_NOT_USE.
+- Next action: clean new chat → attach correct front → lock source → derive manufacturing assets faithfully.
