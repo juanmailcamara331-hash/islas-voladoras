@@ -54,6 +54,9 @@ jobs:
       - name: Global navigation and link gate
         run: python3 scripts/navigation-link-gate.py
 
+      - name: Playable quality regression gate
+        run: python3 scripts/playable-quality-gate.py
+
       - name: Spielberg external research boundary gate
         run: python3 scripts/spielberg-bridge-gate.py
 
