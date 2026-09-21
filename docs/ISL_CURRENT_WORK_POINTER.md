@@ -1014,3 +1014,10 @@ If another source-level pass does not materially improve clarity/agency/feel/des
   Chat = workspace, never sole memory.
 - No Dropbox/S3/R2/Supabase storage expansion yet. Third storage activates only on a verified binary/volume/CDN/restore need.
 - This is a QUALITY/RESILIENCE lane only. Velaria V2 remains PRIMARY P0; HUMAN_DEVICE_GREEN pending; G00–G07 closed.
+
+
+## 2026-09-21 · CHECKPOINT v0.85
+- docs/ISL_MAGISTRAL_LAZY_CREATIVE_SESSION_PROTOCOL_CURRENT.md
+- docs/ISL_CHECKPOINT_v0.85_MAGISTRAL_LAZY_CREATIVE_SESSION_PHYSICAL_CREW_SECURITY_2026-09-21.md
+- PRIMARY unchanged: Velaria V2 P0; SOURCE GREEN; HUMAN_DEVICE_GREEN PENDING; G00–G07 CLOSED; PRE-DNS CLOSED.
+- Optional color lane: physical mockups → print-ready/specs → quotes.
