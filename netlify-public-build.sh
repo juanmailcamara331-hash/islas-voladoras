@@ -41,7 +41,7 @@ EOF
 touch build/public/.nojekyll
 
 # Security: public build is allowlist-only. Internal state must never leak here.
-for forbidden in   ISL_PROJECT_STATE_CURRENT.json ISL_DECISION_CATALOG_CURRENT.json ISL_GAMEDEV_OS_CURRENT.json   ISL_SECURITY_OS_CURRENT.json ISL_STRESS_AUDIT_CURRENT.json decision-engine.html decision-studio.js lifecycle-studio.js command-center.html rpg-home.html route-isl.js huellas.html salon-cortinas-rojas.html isla-baile-inagotable.html secret-level.html boss-prototype.html; do
+for forbidden in   ISL_PROJECT_STATE_CURRENT.json ISL_DECISION_CATALOG_CURRENT.json ISL_GAMEDEV_OS_CURRENT.json   ISL_SECURITY_OS_CURRENT.json ISL_STRESS_AUDIT_CURRENT.json decision-engine.html decision-studio.js lifecycle-studio.js command-center.html rpg-home.html route-isl.js huellas.html salon-cortinas-rojas.html isla-baile-inagotable.html secret-level.html boss-prototype.html velaria-v2.html velaria-pc40.html; do
   test ! -e "build/public/$forbidden"
 done
 
