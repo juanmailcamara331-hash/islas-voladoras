@@ -218,6 +218,10 @@ jobs:
           grep -q 'isl_native_entered_v063' build/pages/index.html
           grep -q 'id="moreNavBtn"' build/pages/index.html
           grep -q '>JUGAR</a>' build/pages/index.html
+          grep -q 'href="velaria-v2.html"' build/pages/index.html
+          grep -q "const fallback='velaria-v2.html'" build/pages/index.html
+          grep -q "\['Jugar',href('velaria-v2.html')" build/pages/isl-global-shell.js
+          grep -q 'Cabina / perfil' build/pages/isl-global-shell.js
           grep -q 'href="crear.html"' build/pages/index.html
           grep -q '>VER</a>' build/pages/index.html
           grep -q 'href="decidir.html"' build/pages/index.html
