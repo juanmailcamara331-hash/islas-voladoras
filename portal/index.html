@@ -54,6 +54,15 @@ html:not(.isl-resting) #islGlobalShell,
 html:not(.isl-resting) #islGlobalHomePulse,
 html:not(.isl-resting) .lazyTodayBtn{transition:opacity .2s ease,filter .2s ease}
 @media(prefers-reduced-motion:reduce){html.isl-resting .lazyScene{transform:none!important}}
+
+/* Focus lock for floating creative windows */
+html.deck-focus body>*:not(#deckModal):not(script){filter:blur(1.5px) brightness(.62) saturate(.82);pointer-events:none;user-select:none}
+html.deck-focus #deckModal{filter:none!important;pointer-events:auto!important;user-select:auto!important}
+html.deck-focus body{overflow:hidden!important}
+html.deck-focus .lazyScene,
+html.deck-focus .finalNav,
+html.deck-focus .secondaryTools,
+html.deck-focus #islGlobalShell{transition:filter .18s ease,opacity .18s ease}
 </style><script>
 (function(){
   var ua = navigator.userAgent || "";
@@ -1058,9 +1067,9 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
  }
  function openDeck(kind){
   render(kind,false);
-  modal.hidden=false;document.body.style.overflow='hidden';
+  document.documentElement.classList.add('deck-focus');modal.hidden=false;document.body.style.overflow='hidden';
  }
- function close(){modal.hidden=true;document.body.style.overflow='';stack=[]}
+ function close(){modal.hidden=true;document.body.style.overflow='';document.documentElement.classList.remove('deck-focus');stack=[]}
  function goBack(){
   if(stack.length){render(stack.pop(),false);back.disabled=stack.length===0;back.style.opacity=stack.length===0?'.35':'1';}
   else close();
