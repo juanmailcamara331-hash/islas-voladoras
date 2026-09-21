@@ -27,6 +27,9 @@
 @media(max-width:600px){.lazyScene{min-height:46vh}.lazyMiniDock{grid-template-columns:repeat(4,1fr)}.lazyMiniDock a{flex-direction:column;gap:2px;padding:9px 4px}.lazyMiniDock span{font-size:8px}.lazyCopy{left:18px;bottom:26px}.lazyTodayBtn{font-size:8px}}
 
 .machineDrawers{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;padding:12px}.machineDrawers>details{border:1px solid #2e4b55;border-radius:14px;background:#09171e;overflow:hidden}.machineDrawers>details>summary{cursor:pointer;list-style:none;padding:14px;display:flex;flex-direction:column;gap:3px}.machineDrawers>details>summary b{font-size:13px}.machineDrawers>details>summary span{font-size:9px;color:#859da3}.machineLinks{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 10px 10px}.machineLinks a{border:1px solid #294651;border-radius:9px;padding:9px;color:#dce8ea;text-decoration:none;font-size:9px;font-weight:850}.deepMachineArchive{margin:8px 12px 12px;border:1px dashed #263f48;border-radius:12px;background:#061016}.deepMachineArchive>summary{padding:11px;color:#647b82;font-size:8px;font-weight:900;letter-spacing:.1em;cursor:pointer}.deepMachineArchive[open]>summary{color:#9eb3b9}@media(max-width:600px){.machineDrawers{grid-template-columns:1fr 1fr;padding:8px;gap:7px}.machineLinks{grid-template-columns:1fr}.machineDrawers>details>summary{padding:11px}}
+
+.deckModal[hidden]{display:none}.deckModal{position:fixed;inset:0;z-index:10030;display:grid;place-items:center;padding:14px}.deckBackdrop{position:absolute;inset:0;background:#02070bd0;backdrop-filter:blur(10px)}.deckWindow{position:relative;z-index:2;width:min(760px,96vw);max-height:min(82vh,760px);overflow:auto;border:1px solid #496874;border-radius:24px;background:linear-gradient(145deg,#10252e,#071117);box-shadow:0 28px 100px #000;transform-origin:center}.deckChrome{position:sticky;top:0;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:11px 14px;background:#08151ce8;border-bottom:1px solid #243f49;backdrop-filter:blur(14px)}.deckChrome span{font-size:8px;letter-spacing:.16em;color:#8defff;font-weight:900}.deckChrome button{border:0;background:transparent;color:#dce8ea;font-size:26px;line-height:1}.deckBody{padding:20px}.deckBody h2{font-size:clamp(34px,6vw,60px);line-height:.95;margin:4px 0 8px}.deckBody>p{margin:0 0 16px;color:#9fb4b9;max-width:620px}.deckGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.deckCard{border:1px solid #31505c;border-radius:15px;background:#0a1920;color:#eaf3f3;text-decoration:none;padding:15px;min-height:110px;display:flex;flex-direction:column;justify-content:end}.deckCard small{font-size:7px;color:#80a0a8;letter-spacing:.12em;font-weight:900}.deckCard b{font-size:21px;margin-top:4px}.deckCard span{font-size:9px;color:#8fa5aa;margin-top:4px}.deckDetails{margin-top:12px;border:1px dashed #29464f;border-radius:12px;background:#071219}.deckDetails summary{padding:10px;cursor:pointer;font-size:8px;color:#718990;font-weight:900;letter-spacing:.12em}.deckDetails div{padding:0 10px 10px;color:#8fa3a8;font-size:9px;line-height:1.55}.deckWindow[data-kind="decide"] .deckGrid{grid-template-columns:1fr}.deckWindow[data-kind="decide"] .deckCard:first-child{border-color:#8a6a3e;background:#241c12}.deckWindow[data-kind="view"] .deckCard:first-child{border-color:#3d7482}.deckWindow[data-kind="create"] .deckCard:first-child{border-color:#705a8a}
+@media(max-width:600px){.deckWindow{max-height:88vh}.deckBody{padding:14px}.deckGrid{grid-template-columns:1fr 1fr}.deckCard{padding:12px;min-height:96px}.deckCard b{font-size:18px}.deckCard span{font-size:8px}}
 </style><script>
 (function(){
   var ua = navigator.userAgent || "";
@@ -451,9 +454,9 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
   <nav class="finalNav" aria-label="Centro de Mandos">
     <a class="brandLock" href="#home" aria-label="ISL · Centro"><img src="isl-icon-master.png" alt="ISL"><b>ISL</b></a>
     <a href="rpg-home.html"><span class="navI" aria-hidden="true">▶</span>JUGAR</a>
-    <a href="crear.html"><span class="navI" aria-hidden="true">✦</span>CREAR</a>
-    <a href="galeria.html?v=20260921-1"><span class="navI" aria-hidden="true">▣</span>VER</a>
-    <a href="decidir.html"><span class="navI" aria-hidden="true">◆</span>DECIDIR</a>
+    <a href="crear.html" data-deck="create"><span class="navI" aria-hidden="true">✦</span>CREAR</a>
+    <a href="galeria.html?v=20260921-1" data-deck="view"><span class="navI" aria-hidden="true">▣</span>VER</a>
+    <a href="decidir.html" data-deck="decide"><span class="navI" aria-hidden="true">◆</span>DECIDIR</a>
     <a href="huellas.html"><span class="navI" aria-hidden="true">🧭</span>HUELLA</a>
     <button id="moreNavBtn" type="button" aria-expanded="false" aria-controls="drawer"><span class="navI" aria-hidden="true">＋</span>MÁS</button>
   </nav>
@@ -470,9 +473,9 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
     <button class="lazyTodayBtn" type="button" data-lazy-open="today">HOY PODRÍAS…</button>
   </div>
   <div class="lazyMiniDock" aria-label="Accesos humanos">
-    <a href="crear.html"><b>✦</b><span>CREAR</span></a>
-    <a href="galeria.html?v=20260921-1"><b>▣</b><span>VER</span></a>
-    <a href="decidir.html"><b>◆</b><span>DECIDIR</span></a>
+    <a href="crear.html" data-deck="create"><b>✦</b><span>CREAR</span></a>
+    <a href="galeria.html?v=20260921-1" data-deck="view"><b>▣</b><span>VER</span></a>
+    <a href="decidir.html" data-deck="decide"><b>◆</b><span>DECIDIR</span></a>
     <a href="huellas.html"><b>🧭</b><span>HUELLA</span></a>
   </div>
 </section>
@@ -487,6 +490,18 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
       <a href="rpg-home.html">JUGAR →</a>
       <a href="galeria.html?v=20260921-1">MIRAR →</a>
       <a href="decidir.html">DECIDIR →</a>
+    </div>
+  </section>
+</div>
+<div class="deckModal" id="deckModal" hidden>
+  <div class="deckBackdrop" data-deck-close></div>
+  <section class="deckWindow" role="dialog" aria-modal="true" aria-labelledby="deckTitle">
+    <div class="deckChrome"><span id="deckEyebrow">ISL</span><button type="button" data-deck-close aria-label="Cerrar">×</button></div>
+    <div class="deckBody">
+      <h2 id="deckTitle">Ventana</h2>
+      <p id="deckLead"></p>
+      <div id="deckGrid" class="deckGrid"></div>
+      <details class="deckDetails"><summary>DETALLES · sólo si te sirven</summary><div id="deckDetailsBody"></div></details>
     </div>
   </section>
 </div>
@@ -896,6 +911,46 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
  document.querySelectorAll('[data-lazy-open]').forEach(b=>b.addEventListener('click',()=>{modal.hidden=false;document.body.style.overflow='hidden'}));
  modal.querySelectorAll('[data-lazy-close]').forEach(b=>b.addEventListener('click',()=>{modal.hidden=true;document.body.style.overflow=''}));
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden){modal.hidden=true;document.body.style.overflow=''}});
+})();
+</script>
+<script id="isl-floating-decks">
+(function(){
+ const modal=document.getElementById('deckModal'), win=modal&&modal.querySelector('.deckWindow');
+ if(!modal||!win)return;
+ const data={
+  create:{eyebrow:'CREAR · TOCAR ALGO',title:'¿Qué te apetece mover?',lead:'No hace falta “trabajar en ISL”. Elige una pieza y juega con ella.',cards:[
+    ['3D','Criaturas y reliquias','galeria.html#three','GIRAR · MIRAR · PROBAR'],
+    ['Música','Escuchar y colocar','galeria.html#music','SONIDO · ATMÓSFERA'],
+    ['Islas','Mundo y mapas','galeria.html#archive','LUGARES · RUTAS'],
+    ['Escenas','Momentos pequeños','capsulas.html','IDEA → ESCENA']
+  ],details:'External Lab, Signal Lab y herramientas de producción siguen disponibles en MÁS · Sala de máquinas.'},
+  view:{eyebrow:'VER · TODO ISL',title:'Mira sin administrar.',lead:'Galería, vídeo, 3D y música en puertas simples. Nada de estados técnicos salvo que los abras.',cards:[
+    ['Galería Viva','Todo junto','galeria.html','ARCHIVO · LAB'],
+    ['3D','Modelos interactivos','galeria.html#three','GLB · TOUCH'],
+    ['Vídeo','Movimiento','galeria.html#video','REEL · PREVIS'],
+    ['Música','Escuchar','galeria.html#music','RUNTIME · SOURCE']
+  ],details:'La Galería no convierte nada en CANON. Source, master y runtime siguen separados aunque aquí no te molesten.'},
+  decide:{eyebrow:'DECIDIR · TU OJO',title:'Una sola decisión.',lead:'Sólo aparece aquello donde tu criterio vale más que otro test automático.',cards:[
+    ['Mirar la versión actual','¿Se siente mejor?','galeria.html','1–3 MIN'],
+    ['Dejar una huella','Algo chirría / algo funciona','huellas.html','SIN INFORME'],
+    ['Ver decisión pendiente','Una sola, no veinte','decidir.html','HUMAN GATE'],
+    ['Jugar primero','Decidir después','rpg-home.html','PLAY FIRST']
+  ],details:'Misiones, CQC, gates, logs y prioridades siguen registrándose detrás. No necesitas leerlos para que el sistema sea riguroso.'}
+ };
+ function openDeck(kind){
+  const d=data[kind]; if(!d)return;
+  win.dataset.kind=kind;
+  document.getElementById('deckEyebrow').textContent=d.eyebrow;
+  document.getElementById('deckTitle').textContent=d.title;
+  document.getElementById('deckLead').textContent=d.lead;
+  document.getElementById('deckGrid').innerHTML=d.cards.map(x=>'<a class="deckCard" href="'+x[2]+'"><small>'+x[3]+'</small><b>'+x[0]+'</b><span>'+x[1]+'</span></a>').join('');
+  document.getElementById('deckDetailsBody').textContent=d.details;
+  modal.hidden=false;document.body.style.overflow='hidden';
+ }
+ function close(){modal.hidden=true;document.body.style.overflow=''}
+ document.querySelectorAll('[data-deck]').forEach(a=>a.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();openDeck(a.dataset.deck)}));
+ modal.querySelectorAll('[data-deck-close]').forEach(x=>x.addEventListener('click',close));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close()});
 })();
 </script>
 <script defer src="isl-global-shell.js"></script>
