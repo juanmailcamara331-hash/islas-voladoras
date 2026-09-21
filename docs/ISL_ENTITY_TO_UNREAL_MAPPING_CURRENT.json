@@ -1,0 +1,211 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "status": "PREPARED_NOT_PRODUCTION",
+  "engine_version": "UNFROZEN",
+  "rules": {
+    "stable_id": "Every production-relevant entity gets an immutable isl_id before READY_UNREAL",
+    "canon_guard": "READY_UNREAL does not imply CANON",
+    "master_runtime_separation": true,
+    "soft_reference_preference": "Prefer soft references for optional/heavy content where appropriate",
+    "same_world_same_rules_different_ceilings": true
+  },
+  "entity_profiles": {
+    "creature": {
+      "unreal_targets": [
+        "PrimaryDataAsset",
+        "Actor/Pawn",
+        "ActorComponents",
+        "GameplayTags"
+      ],
+      "optional": [
+        "GAS",
+        "StateTree",
+        "BehaviorTree",
+        "AI Perception",
+        "EQS"
+      ],
+      "required_fields": [
+        "isl_id",
+        "canon_state",
+        "gameplay_function",
+        "relationships",
+        "persistent_state",
+        "asset_refs",
+        "tests",
+        "provenance"
+      ]
+    },
+    "relic": {
+      "unreal_targets": [
+        "PrimaryDataAsset",
+        "GameplayTags",
+        "Actor/Item representation"
+      ],
+      "optional": [
+        "GAS"
+      ],
+      "required_fields": [
+        "isl_id",
+        "function",
+        "cost_or_tradeoff",
+        "persistence",
+        "asset_refs",
+        "tests"
+      ]
+    },
+    "island": {
+      "unreal_targets": [
+        "World/Level",
+        "WorldPartition",
+        "DataLayers"
+      ],
+      "optional": [
+        "HLOD",
+        "PCG"
+      ],
+      "required_fields": [
+        "isl_id",
+        "world_rules",
+        "state_variants",
+        "streaming_scope",
+        "dependencies",
+        "tests"
+      ]
+    },
+    "region": {
+      "unreal_targets": [
+        "WorldPartition",
+        "DataLayers",
+        "PrimaryDataAsset"
+      ],
+      "optional": [
+        "HLOD",
+        "PCG"
+      ],
+      "required_fields": [
+        "isl_id",
+        "rules",
+        "travel_links",
+        "streaming_scope",
+        "performance_class"
+      ]
+    },
+    "scene_or_encounter": {
+      "unreal_targets": [
+        "LevelInstance_or_ActorAssembly",
+        "PrimaryDataAsset",
+        "GameplayTags"
+      ],
+      "optional": [
+        "DataLayers",
+        "LevelSequence"
+      ],
+      "required_fields": [
+        "isl_id",
+        "entry_conditions",
+        "choices",
+        "consequences",
+        "persistent_writes",
+        "tests"
+      ]
+    },
+    "ability_or_technique": {
+      "unreal_targets": [
+        "PrimaryDataAsset",
+        "GameplayTags"
+      ],
+      "optional": [
+        "GAS"
+      ],
+      "required_fields": [
+        "isl_id",
+        "activation",
+        "cost",
+        "effect",
+        "counters",
+        "tests"
+      ]
+    },
+    "ui_surface": {
+      "unreal_targets": [
+        "UMG"
+      ],
+      "optional": [
+        "CommonUI"
+      ],
+      "required_fields": [
+        "isl_id",
+        "navigation",
+        "input_contexts",
+        "accessibility",
+        "platform_scope",
+        "tests"
+      ]
+    },
+    "audio": {
+      "unreal_targets": [
+        "SoundWave_or_equivalent",
+        "DataAsset"
+      ],
+      "optional": [
+        "MetaSounds",
+        "AudioModulation"
+      ],
+      "required_fields": [
+        "isl_id",
+        "role",
+        "trigger",
+        "loudness_policy",
+        "provenance",
+        "tests"
+      ]
+    },
+    "visual_asset_3d": {
+      "unreal_targets": [
+        "StaticMesh_or_SkeletalMesh",
+        "Materials"
+      ],
+      "optional": [
+        "Nanite",
+        "LODs"
+      ],
+      "required_fields": [
+        "isl_id",
+        "master_ref",
+        "runtime_ref",
+        "scale",
+        "pivot",
+        "collision",
+        "materials",
+        "performance_class",
+        "provenance",
+        "tests"
+      ]
+    },
+    "save_state": {
+      "unreal_targets": [
+        "SaveGame",
+        "VersionedStructs"
+      ],
+      "optional": [],
+      "required_fields": [
+        "schema_version",
+        "migration_path",
+        "rollback",
+        "compatibility_tests"
+      ]
+    }
+  },
+  "state_machine": [
+    "BANK",
+    "CANDIDATE",
+    "PROVISIONAL_STRONG",
+    "READY_UNREAL",
+    "PRODUCTION",
+    "VALIDATED",
+    "CANON",
+    "PARK",
+    "REJECTED_LEARNED"
+  ]
+}
