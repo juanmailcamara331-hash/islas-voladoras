@@ -186,7 +186,12 @@ jobs:
           grep -q 'html.native-app.native-entered #welcome{display:none!important' build/pages/index.html
           grep -q 'isl_native_entered_v063' build/pages/index.html
           grep -q 'id="moreNavBtn"' build/pages/index.html
-          grep -q 'data-main-nav="home"' build/pages/index.html
+          grep -q '>JUGAR</a>' build/pages/index.html
+          grep -q 'href="crear.html"' build/pages/index.html
+          grep -q '>VER</a>' build/pages/index.html
+          grep -q 'href="decidir.html"' build/pages/index.html
+          test -f build/pages/crear.html
+          test -f build/pages/decidir.html
           grep -q '.rail{display:none!important}' build/pages/index.html
           grep -q 'flex-wrap:nowrap!important' build/pages/index.html
           grep -q 'isl-center-v060-native-regression-guard' build/pages/sw.js
@@ -254,7 +259,7 @@ jobs:
           checks={
             'index.html':['ENTRAR EN ISL','rpg-home.html','welcomeBrandIcon','railBrandIcon'],
             'rpg-home.html':['RUTA v0.40 · PRE50 PENDIENTE','Inventario','Aventura','Recreo','Música','Centro'],
-            'ps4.html':['GALERÍA VIVA','MISIONES','AVISOS','FIRST PLAYABLE','VERTICAL SLICE','Alpha → Beta → Master']
+            'ps4.html':['JUGAR','CREAR','VER','DECIDIR','MÁS · SALA DE MÁQUINAS','FIRST PLAYABLE','VERTICAL SLICE','Alpha → Beta → Master']
           }
           root=Path('build/pages')
           for name,needles in checks.items():
