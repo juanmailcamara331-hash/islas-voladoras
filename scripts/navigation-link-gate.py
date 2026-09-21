@@ -79,7 +79,7 @@ for token in ["PRUEBA CON COLEGAS","pilares-lite-v2.html","referencias-lite-v2.h
     if token not in survey: errors.append(f"survey hub missing: {token}")
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 if "Encuestas" not in shell or "encuestas.html" not in shell: errors.append("global shell survey access missing")
-if shell.count("['Encuestas'") != 1: errors.append("global shell must expose exactly one Encuestas item")
+if shell.count("href('encuestas.html')") != 1: errors.append("global shell must expose exactly one Encuestas route")
 if "musica.html" in shell: errors.append("global shell must route Music through unified Gallery")
 
 
