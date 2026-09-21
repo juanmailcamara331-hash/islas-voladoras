@@ -4,6 +4,7 @@
   var FRIEND=QS.get('friends')==='1';
   try{if(FRIEND)localStorage.setItem('isl_friend_mode','1');else FRIEND=localStorage.getItem('isl_friend_mode')==='1'}catch(e){}
   if(!FRIEND)return;
+  document.documentElement.classList.add('isl-friend-play');
 
   var META={
     'velaria-v2.html':['Velaria','Toca para moverte, prueba Anclaje y fíjate en si el mundo contradice la señal.'],
@@ -20,7 +21,7 @@
   var m=META[PATH]||['ISL Playtest','Juega sin buscar la respuesta correcta. Si algo no se entiende, eso también cuenta.'];
 
   var css=document.createElement('style');
-  css.textContent='#islFriendBar{position:fixed;left:8px;right:8px;top:max(8px,env(safe-area-inset-top));z-index:2147482900;display:flex;align-items:center;gap:7px;padding:7px;border:1px solid #45636d;border-radius:14px;background:#061017ee;box-shadow:0 8px 30px #0008;font-family:system-ui,sans-serif}#islFriendBar a,#islFriendBar button{border:1px solid #3e5d67;border-radius:9px;background:#0b1a21;color:#e9f4f5;text-decoration:none;padding:8px 9px;font-size:9px;font-weight:900}#islFriendBar b{flex:1;font-size:10px;color:#8defff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#islFriendHelp{position:fixed;inset:0;z-index:2147482950;display:none;place-items:center;padding:16px;background:#02070bd9;font-family:system-ui,sans-serif}#islFriendHelp.show{display:grid}.ifh{width:min(92vw,480px);border:1px solid #45636d;border-radius:20px;background:#0c1c24;color:#eef7f4;padding:20px}.ifh small{color:#8defff;font-weight:900;letter-spacing:.12em}.ifh h2{font-size:28px;margin:6px 0}.ifh p{color:#c7d6d8;line-height:1.5}.ifh button{width:100%;min-height:44px;border:1px solid #8defff;border-radius:11px;background:#153640;color:#fff;font-weight:900}';
+  css.textContent='html.isl-friend-play #islGlobalShell,html.isl-friend-play #islGlobalMore,html.isl-friend-play #islGlobalHomePulse{display:none!important}html.isl-friend-play body{padding-top:0!important}html.isl-friend-play a[href*="rpg-home.html"],html.isl-friend-play a[href*="command-center.html"]{display:none!important}#islFriendBar{position:fixed;left:8px;right:8px;top:max(8px,env(safe-area-inset-top));z-index:2147482900;display:flex;align-items:center;gap:7px;padding:7px;border:1px solid #45636d;border-radius:14px;background:#061017ee;box-shadow:0 8px 30px #0008;font-family:system-ui,sans-serif}#islFriendBar a,#islFriendBar button{border:1px solid #3e5d67;border-radius:9px;background:#0b1a21;color:#e9f4f5;text-decoration:none;padding:8px 9px;font-size:9px;font-weight:900}#islFriendBar b{flex:1;font-size:10px;color:#8defff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#islFriendHelp{position:fixed;inset:0;z-index:2147482950;display:none;place-items:center;padding:16px;background:#02070bd9;font-family:system-ui,sans-serif}#islFriendHelp.show{display:grid}.ifh{width:min(92vw,480px);border:1px solid #45636d;border-radius:20px;background:#0c1c24;color:#eef7f4;padding:20px}.ifh small{color:#8defff;font-weight:900;letter-spacing:.12em}.ifh h2{font-size:28px;margin:6px 0}.ifh p{color:#c7d6d8;line-height:1.5}.ifh button{width:100%;min-height:44px;border:1px solid #8defff;border-radius:11px;background:#153640;color:#fff;font-weight:900}';
   document.head.appendChild(css);
 
   var bar=document.createElement('div');bar.id='islFriendBar';
