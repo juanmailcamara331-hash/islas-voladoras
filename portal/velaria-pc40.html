@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071017">
+<title>ISL · Velaria PC-40</title>
+<link rel="stylesheet" href="isl-global-shell.css">
+<style>
+:root{--bg:#071017;--panel:#0b1820;--line:#31515e;--fg:#eef8f5;--muted:#9eb3b9;--cyan:#86efff;--gold:#ffc56f;--red:#ff9b9b}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font-family:system-ui,sans-serif}
+body{overflow-x:hidden;background:radial-gradient(circle at 75% 0,#163441 0,transparent 36%),linear-gradient(#071017,#0a151b)}
+.wrap{width:min(980px,100%);margin:auto;padding:14px 12px 80px}.top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px}.brand{font-size:10px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.tag{font-size:8px;color:var(--gold);border:1px solid #765e3b;border-radius:999px;padding:6px 8px}
+h1{font-size:clamp(34px,8vw,72px);line-height:.9;margin:8px 0}.sub{color:#bdd0d4;max-width:760px;line-height:1.45;font-size:13px}
+.stage{position:relative;margin-top:14px;height:min(62vh,560px);min-height:390px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(#17333e 0 46%,#0d2028 46% 100%);box-shadow:0 22px 70px #0009}
+.sky{position:absolute;inset:0 0 54% 0;background:linear-gradient(180deg,#214957,#132c36)}
+.cloud{position:absolute;width:180px;height:35px;background:#dff8ff12;border-radius:50%;filter:blur(4px)}
+.c1{left:4%;top:15%}.c2{right:4%;top:27%;width:240px}.flag{position:absolute;top:19%;left:18%;width:78px;height:8px;background:linear-gradient(90deg,#ffc56f,#ffc56f22);transform-origin:left center;animation:flag 1s ease-in-out infinite alternate}
+.flag:before{content:"";position:absolute;left:-8px;top:-18px;width:5px;height:45px;background:#7b8f91}
+.cable{position:absolute;top:28%;left:48%;width:33%;height:2px;background:#b8d3d866;transform:rotate(-8deg);transform-origin:left center}
+.particles{position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(90deg,transparent 0 22px,#86efff20 24px 25px,transparent 27px 48px);animation:wind 2.4s linear infinite;opacity:.65}
+.platform{position:absolute;left:8%;right:8%;bottom:18%;height:78px;background:#1a333b;border:1px solid #476873;border-radius:18px;box-shadow:0 18px 30px #0006}
+.platform:after{content:"";position:absolute;left:43%;top:-22px;width:14%;height:22px;background:#233f48;border:1px solid #52717a;border-radius:8px 8px 0 0}
+.player{position:absolute;width:34px;height:44px;border-radius:12px 12px 9px 9px;background:#eef8f5;box-shadow:0 0 0 3px #071017,0 0 24px #86efff66;left:14%;bottom:calc(18% + 78px);transition:left .12s linear}
+.player:after{content:"";position:absolute;left:11px;top:8px;width:12px;height:5px;border-radius:50%;background:#071017}
+.friend{position:absolute;width:42px;height:48px;border-radius:16px 16px 8px 8px;background:#ffc56f;right:22%;bottom:calc(18% + 78px);box-shadow:0 0 0 3px #071017,0 0 24px #ffc56f44}
+.anchor{position:absolute;right:10%;bottom:calc(18% + 78px);width:54px;height:54px;border:2px dashed #86efff;border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-weight:900;font-size:11px;background:#071017aa}
+.official{position:absolute;left:8%;top:49%;border:1px solid #486874;background:#071017dd;border-radius:10px;padding:8px 10px;font-size:10px}.official b{color:var(--gold)}
+.real{position:absolute;right:8%;top:49%;font-size:9px;color:#bed1d5;text-align:right}.real strong{color:var(--cyan)}
+.hud{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.card{border:1px solid var(--line);background:#091820;border-radius:14px;padding:11px}.card b{font-size:11px}.card small{display:block;color:var(--muted);margin-top:4px;line-height:1.35}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.controls button,.controls a{border:1px solid #456875;background:#10242c;color:#fff;border-radius:11px;padding:11px 14px;font-weight:850;font-size:12px;text-decoration:none}.controls .primary{border-color:#69c8d4;background:#17343d}.controls button:disabled{opacity:.35}
+.log{margin-top:10px;border-left:3px solid var(--cyan);background:#091820;padding:10px 12px;font-size:11px;line-height:1.45;color:#d4e1e4}.gate{color:var(--gold);font-weight:800}
+@keyframes wind{to{background-position:96px 0}}@keyframes flag{to{transform:rotate(8deg) scaleX(1.12)}}
+@media(max-width:620px){.stage{min-height:430px}.hud{grid-template-columns:1fr}.friend{right:18%}.anchor{right:5%}}
+@media(prefers-reduced-motion:reduce){.particles,.flag{animation:none}.player{transition:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><div class="brand">ISL // PRIMARY LANE · AVENTURA</div><div class="tag">PC-40 · LAB · NO CANON</div></div>
+  <h1>Velaria</h1>
+  <p class="sub">Microprototipo físico: aprende a leer el viento, prueba Anclaje dos veces y decide si el indicador oficial describe lo que realmente está ocurriendo.</p>
+
+  <section class="stage" id="stage" aria-label="Microprototipo jugable de Velaria">
+    <div class="sky"></div><div class="cloud c1"></div><div class="cloud c2"></div>
+    <div class="particles"></div><div class="flag"></div><div class="cable" id="cable"></div>
+    <div class="official">INDICADOR OFICIAL<br><b id="officialText">VIENTO ESTABLE →</b></div>
+    <div class="real">TELA + PARTÍCULAS + CABLE<br><strong id="realText">empujan hacia la derecha</strong></div>
+    <div class="platform" id="platform"></div>
+    <div class="player" id="player" aria-label="Jugador"></div>
+    <div class="friend" id="friend" aria-label="Amigo 01"></div>
+    <div class="anchor" id="anchor">ANCLA</div>
+  </section>
+
+  <div class="controls">
+    <button id="left">← Mover</button><button id="right">Mover →</button>
+    <button class="primary" id="anchorBtn" disabled>Usar Anclaje</button>
+    <button id="inspect">Comparar señales</button>
+    <a href="rpg-home.html">Volver a la Cabina</a>
+  </div>
+
+  <div class="hud">
+    <div class="card"><b>Lectura del viento</b><small id="windState">No necesitas un modo visión. Mira qué hacen tela, partículas y cable.</small></div>
+    <div class="card"><b>Anclaje</b><small id="anchorState">Acércate al amigo. No es una llave: debe servir para estabilizar más de una cosa.</small></div>
+  </div>
+
+  <div class="log" id="log">Objetivo invisible del test: ¿puedes descubrir dirección, función y contradicción sin un tutorial largo?</div>
+</main>
+
+<script>
+(function(){
+  var x=14, player=document.getElementById('player'), anchorUses=0, compared=false, lied=false;
+  var anchorBtn=document.getElementById('anchorBtn'), log=document.getElementById('log');
+  function render(){
+    x=Math.max(8,Math.min(84,x)); player.style.left=x+'%';
+    anchorBtn.disabled=x<58;
+  }
+  function move(d){x+=d;render(); if(x>=58) document.getElementById('anchorState').textContent='El amigo puede fijar masa o estructura mientras tú actúas.'}
+  document.getElementById('left').onclick=function(){move(-8)};
+  document.getElementById('right').onclick=function(){move(8)};
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='a')move(-5);if(e.key==='ArrowRight'||e.key==='d')move(5)});
+  document.getElementById('anchorBtn').onclick=function(){
+    anchorUses++;
+    if(anchorUses===1){
+      document.getElementById('platform').style.transform='translateY(-10px)';
+      document.getElementById('anchorState').textContent='Uso 1/2: plataforma estabilizada. Busca otro uso.';
+      log.textContent='El amigo no abre una puerta: sostiene la plataforma mientras tú cruzas.';
+    }else{
+      document.getElementById('cable').style.transform='rotate(0deg)';
+      document.getElementById('anchorState').textContent='Uso 2/2: cable/contrapeso fijado. Anclaje leído como verbo sistémico.';
+      log.textContent='Dos usos distintos. Anclaje = estabilizar/fijar, no “llave de compañero”.';
+      checkGate();
+    }
+  };
+  document.getElementById('inspect').onclick=function(){
+    compared=true; lied=true;
+    document.getElementById('officialText').textContent='VIENTO ESTABLE ←';
+    document.getElementById('officialText').style.color='var(--red)';
+    document.getElementById('realText').textContent='siguen empujando hacia la derecha';
+    document.getElementById('windState').textContent='Contradicción detectada: el indicador afirma ←, pero tres señales físicas siguen marcando →.';
+    log.innerHTML='<span class="gate">La lectura oficial no coincide con el mundo.</span> Eso es la semilla del Molino que Miente.';
+    checkGate();
+  };
+  function appendTrace(){
+    var a=[];try{a=JSON.parse(localStorage.getItem('isl_huellas_events_v2')||'[]');if(!Array.isArray(a))a=[]}catch(e){a=[]}
+    a.push({event_id:'velaria_pc40_'+Date.now(),context_id:'velaria_pc40',actor:'player',action_class:'read_world_contradiction',cost:1,reversibility:1,witness_scope:'lab',relation_ids:['friend01'],world_state_delta:'pc40_gate_observed',timestamp:new Date().toISOString(),significance_band:1,tags:['viento','anclaje','contradiccion','lab_only']});
+    localStorage.setItem('isl_huellas_events_v2',JSON.stringify(a.slice(-64)));
+    localStorage.setItem('isl_velaria_pc40_state','observed');
+  }
+  function checkGate(){
+    if(anchorUses>=2&&compared&&lied&&localStorage.getItem('isl_velaria_pc40_state')!=='observed'){
+      appendTrace();
+      log.innerHTML='<span class="gate">PC‑40 COMPLETABLE:</span> has usado Anclaje dos veces y detectado una discrepancia entre interfaz oficial y realidad física. Esto guarda evidencia local de laboratorio, no CANON.';
+    }
+  }
+  render();
+})();
+</script>
+<script defer src="isl-global-shell.js"></script>
+</body>
+</html>
