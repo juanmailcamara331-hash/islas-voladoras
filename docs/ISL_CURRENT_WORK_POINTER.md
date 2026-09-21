@@ -760,3 +760,17 @@ Estado actual:
 ### Android
 APK con `isl_launcher_final.png` empaquetado: workflow 35450616859 SUCCESS.
 Pendiente únicamente comprobación física del icono instalado.
+
+
+## 2026-09-21 · PRIMARY LANE REOPENED — VELARIA PC-40
+- Panel Vago Creativo v1 remains FROZEN after verified HEAD a82e047863026ed604425dbd959af471aff8c3d8.
+- Product P0 returns to PLAY / WORLD / ADVENTURE.
+- Existing Velaria v0.18 greybox contract is reactivated rather than replaced.
+- New playable microprototype: portal/velaria-pc40.html.
+- RPG AVENTURA now routes to Velaria PC-40 instead of the older secret microprototype.
+- PC-40 scope is intentionally tiny: readable lateral wind + 3 diegetic cues + friend01 Anclaje used twice + official indicator/world contradiction.
+- Local lab evidence may write isl_velaria_pc40_state + one LAB_ONLY event into isl_huellas_events_v2.
+- No CANON promotion. No PostHog. No final art. No new generic quest/reputation system.
+- Gate before expansion: human/device player should identify wind direction, understand Anclaje, and detect official/world contradiction without long explanation.
+- If gate survives: continue existing order into G00–G07 Velaria slice → contextualized Molino → consequence → ship echo.
+- Parallel lanes remain bounded: Brújula consistency QA→Meshy RAW; BIO-001 binary QA only, no regeneration; one creature/audio/world asset only when it directly feeds the slice.
