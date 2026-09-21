@@ -121,6 +121,9 @@ jobs:
           grep -q 'understoodTest' build/pages/velaria-v2.html
           grep -q 'velaria-micro-feedback-v079' build/pages/velaria-v2.html
           grep -q 'isl_velaria_feedback_v1' build/pages/velaria-v2.html
+          grep -q 'velaria-final-comment-v080' build/pages/velaria-v2.html
+          grep -q 'isl_velaria_issue_notes_v1' build/pages/velaria-v2.html
+          grep -q '¿Algo se vio mal, falló o quieres comentar algo?' build/pages/velaria-v2.html
           grep -q "scope:'local_lab_only'" build/pages/velaria-v2.html
           grep -q 'TEST DE JUGABILIDAD · GRÁFICOS PROVISIONALES' build/pages/velaria-v2.html
           ! grep -q 'isl-global-shell.css' build/pages/velaria-v2.html
