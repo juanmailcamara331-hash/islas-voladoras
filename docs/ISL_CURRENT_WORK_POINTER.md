@@ -837,3 +837,12 @@ When those four are HUMAN_DEVICE_GREEN:
 - Answers are stored only in localStorage under isl_velaria_feedback_v1 with scope local_lab_only.
 - Return-to-boat unlocks after the three taps so the loop produces usable human evidence without a long survey.
 - No analytics upload, profiling, scoring or automatic CANON promotion.
+
+
+## 2026-09-21 · VELARIA OPTIONAL ISSUE / COMMENT FORM
+- Added a compact optional footer after the 3 mandatory playtest signals.
+- Purpose: capture rendering problems, control confusion, bugs, slowness, ideas, or free comments without bloating the core test.
+- Quick issue tags: visual / controls / bug / slow / idea.
+- Free text max 500 chars.
+- Stored locally only in isl_velaria_issue_notes_v1 with local_lab_only scope.
+- Optional by design; never blocks return to Cabina once the 3 core questions are answered.
