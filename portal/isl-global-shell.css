@@ -65,3 +65,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[t
 @media(max-width:640px){#islGlobalMore.open{grid-template-columns:1fr 1fr;right:5px;bottom:76px;width:calc(100vw - 10px)}#islGlobalMore .igsGroup>a{font-size:8px;padding:8px 6px}}
 
 #islGlobalMore .igsWorldEscape{grid-column:1/-1;border:1px solid #3d6655;background:#0b1e17;color:#ccefd9!important;border-radius:10px;padding:10px!important;text-align:center;font:900 9px system-ui!important;letter-spacing:.08em}
+
+/* v1 final mobile/performance polish */
+#islGlobalShell{contain:layout paint}
+#islGlobalShell a,#islGlobalShell button{min-height:40px}
+#islGlobalMore{contain:layout paint}
+#islGlobalMore .igsGroup{content-visibility:auto;contain-intrinsic-size:150px}
+@media(max-width:640px){
+ #islGlobalShell{backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+ #islGlobalMore{backdrop-filter:none}
+ #islGlobalShell a,#islGlobalShell button{min-width:60px;min-height:38px;padding:6px;font-size:7px}
+ #islGlobalMore .igsGroup>a{min-height:38px}
+}
