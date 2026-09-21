@@ -29,6 +29,12 @@ arcade=(P/"jugar.html").read_text(encoding="utf-8")
 for token in ["MODO COLEGAS","Hoy: Velaria.","JUGAR VELARIA","friend-browse"]:
     if token not in arcade: fail(f"arcade friend-focus missing: {token}")
 
+velaria=(P/"velaria-v2.html").read_text(encoding="utf-8",errors="ignore")
+for token in ["velaria-p0-feel-v084","windReadout","Volver a la Recreativa","jugar.html?friends=1","Perfecto. Ahora el cartel discute con el viento."]:
+    if token not in velaria: fail(f"Velaria P0 contract missing: {token}")
+if 'id="returnBoat" href="rpg-home.html' in velaria:
+    fail("Velaria regression: finish still returns to Cartographer instead of Recreativa")
+
 if errors:
     print("PLAYABLE QUALITY GATE FAILED")
     for e in errors: print(" -",e)
