@@ -878,3 +878,13 @@ New play architecture:
 - archived LAB playables: Secret Level, Storm Route, Boss Prototype
 - rpg-home is explicitly secondary: Cabina/Profile/Map/Inventory, not the primary game entrance.
 Rule: JUGAR means choose/play something immediately; operational tools live behind secondary links.
+
+
+## 2026-09-21 · FRIEND MODE / UNIFIED PLAYTEST UX
+- Added shared portal/playtest-friends.js across playable prototypes.
+- Arcade now has MODO COLEGAS toggle stored locally.
+- In friend mode every playable gets a consistent top bar: ARCADE / title / ¿QUÉ HAGO?
+- Non-Velaria prototypes get a short one-screen intro with the same language: what to try, no right answer, unfinished visuals, 3 human signals.
+- Velaria keeps its richer native preplay gate and now exposes IR A LA RECREATIVA.
+- Principle: one shared playtest language around each prototype, while preserving each prototype's own personality and mechanics.
+- Physical companion artifact created outside repo: ISL_PASAPORTE_PLAYTEST_A4.pdf for lightweight in-person sessions.
