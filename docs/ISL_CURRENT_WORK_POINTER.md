@@ -903,3 +903,14 @@ Rule: JUGAR means choose/play something immediately; operational tools live behi
 - Explicit private-by-default classification reinforced for arcade/friend shell/current prototypes. Cartographer remains private.
 - New original-only music prompt: docs/ISL_ARCADE_MUSIC_GEMINI_PROMPT_v0.1.md.
 - Audio runtime remains BLOCKED until an original approved master exists; do not reuse rights-review reference music.
+
+
+## 2026-09-21 · ARCADE CONTEXT WITHOUT OVERLOAD
+- Friend-focused Arcade still recommends one thing first: Velaria.
+- Added a compact progression rail only around that recommendation:
+  TEST MECÁNICA → ESCENA CONTEXTUAL → INTEGRACIÓN MUNDO → ISL MASTER.
+- Added exactly 3 systemic connections:
+  wind → navigation;
+  Anclaje → crew capabilities;
+  contradiction → world memory/interpretation.
+- Purpose: let colleagues/investors see the soul and future integration of the microtest without exposing technical dashboards or overwhelming them with the full game design.
