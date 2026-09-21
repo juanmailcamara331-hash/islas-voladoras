@@ -210,3 +210,20 @@ Activar sólo las capas que cambian una decisión, un riesgo o una experiencia p
 ## META STOP RULE
 Si todo está coherente:
 NO HACER NADA.
+
+
+## ALWAYS-ON PROMPT PREFLIGHT
+For every substantive ISL prompt, run this silently before acting:
+1. PRIMARY
+2. ENTITY / SUBJECT
+3. OPERATION
+4. SOURCE_OF_TRUTH
+5. 1–4 relevant meta-layers
+6. irreversible-risk check
+7. duplication/context-contamination check
+8. smallest useful action
+
+Do not expose this checklist unless a conflict, risk, ambiguity or gate requires human attention.
+
+## NEW-CONVERSATION BOOT
+When starting a fresh ISL conversation, reading ISL_CURRENT_WORK_POINTER + ISL_META_LAYER_ORCHESTRATOR_CURRENT is enough to reactivate the routing model before loading only the task-relevant CURRENT docs.
