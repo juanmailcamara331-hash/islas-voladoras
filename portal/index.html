@@ -475,7 +475,7 @@ html.native-app #welcome:not(.hidden){display:flex!important;visibility:visible!
       <p>Lo demás puede esperar.</p>
       <a class="lazyPrimary" href="rpg-home.html">▶ CONTINUAR</a>
     </div>
-    <button class="lazyTodayBtn" type="button" data-lazy-open="today">¿QUÉ ME APETECE HOY?</button>
+    <button class="lazyTodayBtn" id="lazyTodayBtn" type="button" data-lazy-open="today">¿QUÉ ME APETECE HOY?</button>
   </div>
   <div class="lazyMiniDock" aria-label="Accesos humanos">
     <a href="crear.html" data-deck="create"><b>✦</b><span>CREAR</span></a>
@@ -914,22 +914,36 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
 (function(){
  const modal=document.getElementById('lazyModal');
  if(!modal)return;
- const resume=document.getElementById('resumeSoft'),surprise=document.getElementById('surpriseSoft'),noDecide=document.getElementById('noDecideSoft'),hint=document.getElementById('lazySoftHint');
+ const resume=document.getElementById('resumeSoft'),surprise=document.getElementById('surpriseSoft'),noDecide=document.getElementById('noDecideSoft'),hint=document.getElementById('lazySoftHint'),todayBtn=document.getElementById('lazyTodayBtn');
+ const title=document.getElementById('lazyTitle'),text=document.getElementById('lazyText'),k=document.getElementById('lazyK');
  const fallback='rpg-home.html';
- const routes={
-   create:'crear.html',
-   view:'galeria.html?v=20260921-1',
-   decide:'decidir.html'
+ const routes={create:'crear.html',view:'galeria.html?v=20260921-1',decide:'decidir.html'};
+ const surprises=['recreo.html','galeria.html?v=20260921-1#video','galeria.html?v=20260921-1#music','huellas.html','capsulas.html'];
+ const contexts={
+   create:{k:'VIENES DE CREAR',title:'¿Seguimos jugando con la idea?',text:'Puedes continuar donde estabas, mirar cómo respira lo creado o salir a jugar. Nada exige cerrar nada.'},
+   view:{k:'VIENES DE MIRAR',title:'¿Te apetece tocar algo?',text:'Puedes seguir viendo, crear una pequeña variación o dejarlo reposar y entrar al mundo.'},
+   decide:{k:'VIENES DE DECIDIR',title:'Ya has hecho bastante.',text:'Lo natural ahora es jugar, mirar o cerrar la cabina. No hace falta abrir otra decisión.'},
+   play:{k:'VIENES DE JUGAR',title:'Sigue la corriente.',text:'Puedes volver al mundo, mirar algo que encontraste o dejar que ISL te sorprenda.'},
+   neutral:{k:'HOY',title:'Una sola cosa',text:'Juega un momento. Si algo chirría, ya tenemos material útil.'}
  };
- const surprises=[
-   'recreo.html',
-   'galeria.html?v=20260921-1#video',
-   'galeria.html?v=20260921-1#music',
-   'huellas.html',
-   'capsulas.html'
- ];
  function close(){modal.hidden=true;document.body.style.overflow=''}
- function open(){modal.hidden=false;document.body.style.overflow='hidden';refresh()}
+ function readContext(){
+   try{
+     const deck=sessionStorage.getItem('isl_last_deck');
+     if(deck&&contexts[deck])return deck;
+     const route=sessionStorage.getItem('isl_last_soft_route')||'';
+     if(/rpg-home|recreo|secret-level/.test(route))return 'play';
+   }catch(e){}
+   return 'neutral';
+ }
+ function applyContext(){
+   const key=readContext(),ctx=contexts[key]||contexts.neutral;
+   k.textContent=ctx.k;title.textContent=ctx.title;text.textContent=ctx.text;
+   if(todayBtn){
+     todayBtn.textContent=key==='neutral'?'¿QUÉ ME APETECE HOY?':key==='play'?'SEGUIR LA CORRIENTE…':key==='create'?'SEGUIR CREANDO…':key==='view'?'¿TOCAR ALGO?':'YA ESTÁ BIEN POR HOY…';
+   }
+ }
+ function open(){applyContext();modal.hidden=false;document.body.style.overflow='hidden';refresh()}
  function lastRoute(){
    try{
      const last=sessionStorage.getItem('isl_last_deck');
@@ -954,6 +968,7 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
  });
  noDecide.addEventListener('click',()=>{const url='recreo.html';remember(url);location.href=url});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close()});
+ applyContext();
 })();
 </script>
 <script id="isl-floating-decks">
@@ -1022,6 +1037,20 @@ var panel=$('#settingsPanel');$('#settingsBtn').onclick=function(){panel.classLi
    const last=sessionStorage.getItem('isl_last_deck');
    if(last&&data[last]) document.documentElement.dataset.lastDeck=last;
  }catch(e){}
+})();
+</script>
+<script id="isl-context-memory">
+(function(){
+ document.addEventListener('click',function(e){
+   const a=e.target.closest&&e.target.closest('a[href]'); if(!a)return;
+   const h=a.getAttribute('href')||'';
+   let ctx='';
+   if(/rpg-home|recreo|secret-level/.test(h))ctx='play';
+   else if(/crear\.html|external-lab|capsulas/.test(h))ctx='create';
+   else if(/galeria\.html|reel\.html/.test(h))ctx='view';
+   else if(/decidir\.html|playtest-review/.test(h))ctx='decide';
+   if(ctx){try{sessionStorage.setItem('isl_last_context',ctx)}catch(err){}}
+ },true);
 })();
 </script>
 <script defer src="isl-global-shell.js"></script>
