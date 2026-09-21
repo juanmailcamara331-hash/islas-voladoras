@@ -56,8 +56,40 @@ body{touch-action:none}
 @media(min-width:850px){.player{width:50px}.friend{transform:translateX(-50%) scale(1.08)}}
 @media(prefers-reduced-motion:reduce){.wind i,.flag,.mist,.action{animation:none}.player,.friend,.anchorPost,.sign{transition:none}}
 </style>
-</head>
+
+<style id="velaria-human-gate-v077">
+#preplayGate{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;padding:16px;background:rgba(3,9,13,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#preplayGate[hidden]{display:none}
+.preplayCard{width:min(92vw,520px);max-height:90dvh;overflow:auto;border:1px solid #89eefa66;border-radius:26px;background:linear-gradient(145deg,#102a33f5,#07151bf8);box-shadow:0 30px 100px #000c;padding:22px}
+.preplayK{font-size:9px;letter-spacing:.15em;color:#91f2ff;font-weight:950}.preplayCard h1{font-size:clamp(32px,9vw,48px);line-height:.94;margin:7px 0 10px}.preplayLead{font-size:14px;line-height:1.48;color:#d8e6e7;margin:0 0 14px}
+.preplaySimple{display:grid;gap:7px;margin:13px 0}.preplaySimple div{display:flex;gap:10px;align-items:flex-start;padding:10px 11px;border:1px solid #ffffff18;border-radius:13px;background:#07151b}.preplaySimple b{color:#ffd28a}.preplaySimple span{font-size:12px;line-height:1.35;color:#c5d6d9}
+.preplayCheck{display:flex;gap:10px;align-items:flex-start;margin-top:15px;padding:12px;border-radius:13px;border:1px solid #ffffff24;background:#091820}.preplayCheck input{margin-top:3px;width:20px;height:20px;accent-color:#91f2ff;flex:none}.preplayCheck label{font-size:12px;line-height:1.4;color:#e5efef}
+#startTest{width:100%;margin-top:12px;min-height:50px;border:1px solid #9af3ff;border-radius:14px;background:linear-gradient(#1d5662,#12343d);color:white;font-weight:950;letter-spacing:.08em}#startTest:disabled{opacity:.32}
+.preplayFoot{margin-top:9px;text-align:center;font-size:9px;color:#829ba0}
+.labBadge{position:absolute;z-index:21;left:12px;top:max(66px,calc(env(safe-area-inset-top) + 56px));padding:6px 8px;border-radius:999px;background:#061018a8;border:1px solid #ffffff28;color:#d5e5e7;font-size:8px;font-weight:900;letter-spacing:.08em;pointer-events:none}
+@media(max-width:640px){#preplayGate{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(3,9,13,.94)}.preplayCard{padding:18px;border-radius:20px}}
+</style></head>
 <body>
+
+<section id="preplayGate" aria-modal="true" role="dialog" aria-labelledby="preplayTitle">
+  <div class="preplayCard">
+    <div class="preplayK">ANTES DE JUGAR · 20 SEGUNDOS</div>
+    <h1 id="preplayTitle">Esto no es el aspecto final.</h1>
+    <p class="preplayLead">Estamos probando una idea de juego con gráficos provisionales. Si la mecánica funciona y divierte, después la vestimos con el mundo, personajes, animación, sonido y arte de ISL.</p>
+    <div class="preplaySimple">
+      <div><b>1</b><span>Toca el escenario para moverte.</span></div>
+      <div><b>2</b><span>Cuando aparezca una acción, pruébala sin buscar “la respuesta correcta”.</span></div>
+      <div><b>3</b><span>Lo importante es si entiendes lo que pasa y si te apetece seguir.</span></div>
+    </div>
+    <div class="preplayCheck">
+      <input id="understoodTest" type="checkbox">
+      <label for="understoodTest">Entiendo que esto es una prueba de jugabilidad, no el producto ni los gráficos finales.</label>
+    </div>
+    <button id="startTest" type="button" disabled>PROBAR VELARIA →</button>
+    <div class="preplayFoot">Sin examen. Sin puntuación. Sólo jugar y notar qué funciona.</div>
+  </div>
+</section>
+<div class="labBadge">TEST DE JUGABILIDAD · GRÁFICOS PROVISIONALES</div>
 <main class="game" id="game">
   <div class="bg"></div><div class="depth"></div><div class="mist"></div>
   <div class="wind"><i></i><i></i><i></i><i></i></div>
@@ -150,5 +182,18 @@ body{touch-action:none}
 })();
 </script>
 <script defer src="isl-global-shell.js"></script>
+
+<script id="velaria-human-gate-js-v077">
+(function(){
+  var gate=document.getElementById('preplayGate'),check=document.getElementById('understoodTest'),start=document.getElementById('startTest');
+  if(!gate||!check||!start)return;
+  check.addEventListener('change',function(){start.disabled=!check.checked});
+  start.addEventListener('click',function(){
+    if(!check.checked)return;
+    gate.hidden=true;
+    try{sessionStorage.setItem('isl_velaria_test_understood','1')}catch(e){}
+  });
+})();
+</script>
 </body>
 </html>
