@@ -230,9 +230,9 @@ jobs:
           grep -q 'isl_native_entered_v063' build/pages/index.html
           grep -q 'id="moreNavBtn"' build/pages/index.html
           grep -q '>JUGAR</a>' build/pages/index.html
-          grep -q 'href="velaria-v2.html"' build/pages/index.html
-          grep -q "const fallback='velaria-v2.html'" build/pages/index.html
-          grep -q "\['Jugar',href('velaria-v2.html')" build/pages/isl-global-shell.js
+          grep -q 'href="jugar.html"' build/pages/index.html
+          grep -q "const fallback='jugar.html'" build/pages/index.html
+          grep -q "\['Jugar',href('jugar.html')" build/pages/isl-global-shell.js
           grep -q 'Cabina / perfil' build/pages/isl-global-shell.js
           grep -q 'href="crear.html"' build/pages/index.html
           grep -q '>VER</a>' build/pages/index.html
@@ -241,7 +241,7 @@ jobs:
           test -f build/pages/decidir.html
           grep -q '.rail{display:none!important}' build/pages/index.html
           grep -q 'flex-wrap:nowrap!important' build/pages/index.html
-          grep -q 'isl-center-v060-native-regression-guard' build/pages/sw.js
+          grep -q 'isl-center-v076-human-device-fixes' build/pages/sw.js
           test -f docs/ISL_BUILD_SCIENCE_v0.61.md
           test -f docs/ISL_ERROR_TAXONOMY_v0.61.json
           test -f docs/ISL_CHANGE_IMPACT_CARD_TEMPLATE_v0.61.md
