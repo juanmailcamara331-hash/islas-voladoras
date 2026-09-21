@@ -1036,3 +1036,14 @@ If another source-level pass does not materially improve clarity/agency/feel/des
 - Rule: CREATE ONCE → DESCRIBE ONCE → TRANSLATE LATER.
 - MASTER != RUNTIME; provenance/rights/rollback mandatory.
 - Physical Color Lane remains separate and continues now with Ancla del Regreso.
+
+
+## 2026-09-21 · ENTITY MEMORY + CONTEXT HYGIENE
+- Added mandatory anti-duplication protocol: docs/ISL_ENTITY_MEMORY_AND_ANTI_DUPLICATION_PROTOCOL_CURRENT.md
+- Added context/reference authority protocol: docs/ISL_CONTEXT_HYGIENE_AND_REFERENCE_AUTHORITY_PROTOCOL_CURRENT.md
+- Added machine-readable physical registry: docs/ISL_PHYSICAL_ENTITY_REGISTRY_CURRENT.json
+- Reason: repeated physical-sheet generation showed that recent context can accidentally override an already-approved entity/reference.
+- New rule: RECENCY IS NOT AUTHORITY. APPROVED_REFERENCE / SOURCE_OF_TRUTH wins.
+- Current Ancla back reference is LOCKED to the user-reconfirmed compass-rose/star sheet with “SIEMPRE HAY UN LUGAR / AL QUE VOLVER”.
+- Wrong/redundant later generations are SUPERSEDED and must not become reference inputs.
+- Next physical action: derive manufacturing assets from approved Ancla references; no more concept-sheet regeneration.
