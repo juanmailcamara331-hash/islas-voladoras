@@ -8,4 +8,4 @@ cast.onclick=()=>{if(active)return;active=true;x=0;dir=1;pull.disabled=false;cas
 pull.onclick=()=>{if(!active)return;clearInterval(timer);active=false;pull.disabled=true;cast.disabled=false;const good=x>=32&&x<=68;let catches=+localStorage.getItem('isl_air_fishing_catches')||0;if(good){catches++;localStorage.setItem('isl_air_fishing_catches',catches);const pool=[['pez-cometa','Pez Cometa'],['botella-viento','Botella con Viento'],['calcetin-aereo','Calcetín Aéreo']];const c=pool[Math.floor(Math.random()*pool.length)];add(c[0]);burst.textContent='+'+c[1].toUpperCase();burst.classList.remove('show');void burst.offsetWidth;burst.classList.add('show');log.textContent='¡Captura! '+c[1]+' añadido a tu mochila de Recreo.'}else log.textContent='Sólo has pescado una corriente enfadada.';count.textContent='Capturas: '+catches};
 count.textContent='Capturas: '+ (+localStorage.getItem('isl_air_fishing_catches')||0);
 </script><script>(function(){if(location.search.indexOf('embed=1')>=0)document.body.classList.add('embed')})();</script><script defer src="isl-global-shell.js"></script>
-</body></html>
+<script defer src="playtest-friends.js"></script></body></html>
