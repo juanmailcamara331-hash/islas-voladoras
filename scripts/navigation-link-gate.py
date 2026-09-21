@@ -34,7 +34,7 @@ for p in html_files:
 
 # Surfaces that must feel like one internal Command Center.
 global_pages=[
- "index.html","rpg-home.html","galeria.html","huellas.html","salon-cortinas-rojas.html",
+ "index.html","rpg-home.html","crear.html","decidir.html","galeria.html","huellas.html","salon-cortinas-rojas.html",
  "isla-baile-inagotable.html","recreo.html","capsulas.html","capsulas-tv.html",
  "musica.html","ps4.html","air-fishing.html","avisos.html","boss-prototype.html",
  "decision-engine.html","midjourney-lab.html","ningun-sitio.html","playtest-echo.html",
@@ -128,7 +128,7 @@ gallery=(ROOT/"galeria.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["GALERÍA VIVA · WEB + APP + PS4","data/isl-gallery-library-current.json","data/isl-music-current.json","data/isl-external-lab-current.json","data/isl-asset-health-current.json","index.html?full=1#calendar","audio controls"]:
     if token not in gallery: errors.append(f"unified gallery contract missing: {token}")
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
-for token in ["index.html?full=1','#calendar","galeria.html","#music"]:
+for token in ["rpg-home.html","crear.html","galeria.html","decidir.html","huellas.html","mission-map.html","project-observatory.html","crecimiento.html","crew.html"]:
     if token not in shell: errors.append(f"global route contract missing: {token}")
 
 
