@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.78",
+  "schema_version": "0.82",
   "policy": "default_private",
   "public": [
     "public-site/index.html",
@@ -27,7 +27,14 @@
     "portal/labs/**",
     "portal/ISL_*CURRENT*.json",
     "portal/velaria-v2.html",
-    "portal/velaria-pc40.html"
+    "portal/velaria-pc40.html",
+    "portal/jugar.html",
+    "portal/playtest-friends.js",
+    "portal/recreo.html",
+    "portal/air-fishing.html",
+    "portal/sunday-market.html",
+    "portal/ningun-sitio.html",
+    "portal/storm-route.html"
   ],
   "rules": [
     "PUBLIC build uses explicit allowlist.",
