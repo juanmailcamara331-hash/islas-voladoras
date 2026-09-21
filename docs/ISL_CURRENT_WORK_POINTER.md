@@ -1021,3 +1021,18 @@ If another source-level pass does not materially improve clarity/agency/feel/des
 - docs/ISL_CHECKPOINT_v0.85_MAGISTRAL_LAZY_CREATIVE_SESSION_PHYSICAL_CREW_SECURITY_2026-09-21.md
 - PRIMARY unchanged: Velaria V2 P0; SOURCE GREEN; HUMAN_DEVICE_GREEN PENDING; G00–G07 CLOSED; PRE-DNS CLOSED.
 - Optional color lane: physical mockups → print-ready/specs → quotes.
+
+
+## 2026-09-21 · UNREAL READINESS ANCHORED
+- Unreal sigue BLOCKED para producción seria; Velaria V2 P0 + HUMAN_DEVICE_GREEN siguen mandando.
+- Se consolida una readiness lane silenciosa para evitar rehacer ontología, assets, tests y dependencias al migrar.
+- Nuevo master: docs/ISL_UNREAL_READINESS_MASTER_CURRENT.md
+- Machine-readable entity mapping: docs/ISL_ENTITY_TO_UNREAL_MAPPING_CURRENT.json
+- Asset contract: docs/ISL_UNREAL_ASSET_CONTRACT_CURRENT.md
+- Import manifest schema: docs/ISL_UNREAL_IMPORT_MANIFEST_SCHEMA_CURRENT.json
+- Test bridge T0–T8 → Automation/Functional/Screenshot/Gauntlet: docs/ISL_UNREAL_TEST_AND_REGRESSION_BRIDGE_CURRENT.md
+- Plugin/dependency admission policy: docs/ISL_UNREAL_PLUGIN_AND_DEPENDENCY_ALLOWLIST_CURRENT.md
+- Engine version remains UNFROZEN; freeze only at real migration gate after deprecation/source re-audit.
+- Rule: CREATE ONCE → DESCRIBE ONCE → TRANSLATE LATER.
+- MASTER != RUNTIME; provenance/rights/rollback mandatory.
+- Physical Color Lane remains separate and continues now with Ancla del Regreso.
