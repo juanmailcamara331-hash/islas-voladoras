@@ -1056,3 +1056,11 @@ If another source-level pass does not materially improve clarity/agency/feel/des
 - Fourth-wall breaks require emotional/function value and must not become noise or scope creep.
 - Integrate one trace well before expanding a chain.
 - Keep provenance/consent and SOURCE_OF_TRUTH gates.
+
+
+## 2026-09-21 · META-LAYER ORCHESTRATOR
+- Added docs/ISL_META_LAYER_ORCHESTRATOR_CURRENT.md.
+- Maps cross-cutting layers M0–M12 and distinguishes them from lanes/surfaces such as Velaria, Recreativa, Physical, Gallery and platform targets.
+- Key rule: activate only 1–4 relevant layers per action; never run every protocol mechanically.
+- Formula/rules layer is recognized but remains distributed; consolidate only when the next real formula requires it.
+- External service decision: GitHub + Drive + ChatGPT Automations are sufficient now. Calendar only for dated human events. Team messaging connector only when a real collaboration gate exists.
