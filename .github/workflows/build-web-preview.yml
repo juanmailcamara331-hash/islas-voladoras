@@ -82,6 +82,12 @@ jobs:
           test -f build/pages/command-center.html
           test -f build/pages/secret-level.html
           test -f build/pages/velaria-v2.html
+          test -f build/pages/jugar.html
+          grep -q 'ARCADE ISL · TODO LO JUGABLE EN UN SITIO' build/pages/jugar.html
+          grep -q 'href="velaria-v2.html"' build/pages/jugar.html
+          grep -q 'href="recreo.html"' build/pages/jugar.html
+          grep -q 'href="jugar.html"' build/pages/index.html
+          grep -q "\['Jugar',href('jugar.html')" build/pages/isl-global-shell.js
           grep -q "context_id:'velaria_pc40'" build/pages/velaria-v2.html
           grep -q 'assets/city-wind.png' build/pages/velaria-v2.html
           grep -q 'isl_velaria_pc40_state' build/pages/velaria-v2.html
