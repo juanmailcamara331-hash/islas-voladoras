@@ -4,116 +4,149 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071017">
-<title>ISL · Velaria PC-40</title>
+<title>ISL · Velaria</title>
 <link rel="stylesheet" href="isl-global-shell.css">
 <style>
-:root{--bg:#071017;--panel:#0b1820;--line:#31515e;--fg:#eef8f5;--muted:#9eb3b9;--cyan:#86efff;--gold:#ffc56f;--red:#ff9b9b}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font-family:system-ui,sans-serif}
-body{overflow-x:hidden;background:radial-gradient(circle at 75% 0,#163441 0,transparent 36%),linear-gradient(#071017,#0a151b)}
-.wrap{width:min(980px,100%);margin:auto;padding:14px 12px 80px}.top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px}.brand{font-size:10px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.tag{font-size:8px;color:var(--gold);border:1px solid #765e3b;border-radius:999px;padding:6px 8px}
-h1{font-size:clamp(34px,8vw,72px);line-height:.9;margin:8px 0}.sub{color:#bdd0d4;max-width:760px;line-height:1.45;font-size:13px}
-.stage{position:relative;margin-top:14px;height:min(62vh,560px);min-height:390px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(#17333e 0 46%,#0d2028 46% 100%);box-shadow:0 22px 70px #0009}
-.sky{position:absolute;inset:0 0 54% 0;background:linear-gradient(180deg,#214957,#132c36)}
-.cloud{position:absolute;width:180px;height:35px;background:#dff8ff12;border-radius:50%;filter:blur(4px)}
-.c1{left:4%;top:15%}.c2{right:4%;top:27%;width:240px}.flag{position:absolute;top:19%;left:18%;width:78px;height:8px;background:linear-gradient(90deg,#ffc56f,#ffc56f22);transform-origin:left center;animation:flag 1s ease-in-out infinite alternate}
-.flag:before{content:"";position:absolute;left:-8px;top:-18px;width:5px;height:45px;background:#7b8f91}
-.cable{position:absolute;top:28%;left:48%;width:33%;height:2px;background:#b8d3d866;transform:rotate(-8deg);transform-origin:left center}
-.particles{position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(90deg,transparent 0 22px,#86efff20 24px 25px,transparent 27px 48px);animation:wind 2.4s linear infinite;opacity:.65}
-.platform{position:absolute;left:8%;right:8%;bottom:18%;height:78px;background:#1a333b;border:1px solid #476873;border-radius:18px;box-shadow:0 18px 30px #0006}
-.platform:after{content:"";position:absolute;left:43%;top:-22px;width:14%;height:22px;background:#233f48;border:1px solid #52717a;border-radius:8px 8px 0 0}
-.player{position:absolute;width:34px;height:44px;border-radius:12px 12px 9px 9px;background:#eef8f5;box-shadow:0 0 0 3px #071017,0 0 24px #86efff66;left:14%;bottom:calc(18% + 78px);transition:left .12s linear}
-.player:after{content:"";position:absolute;left:11px;top:8px;width:12px;height:5px;border-radius:50%;background:#071017}
-.friend{position:absolute;width:42px;height:48px;border-radius:16px 16px 8px 8px;background:#ffc56f;right:22%;bottom:calc(18% + 78px);box-shadow:0 0 0 3px #071017,0 0 24px #ffc56f44}
-.anchor{position:absolute;right:10%;bottom:calc(18% + 78px);width:54px;height:54px;border:2px dashed #86efff;border-radius:50%;display:grid;place-items:center;color:var(--cyan);font-weight:900;font-size:11px;background:#071017aa}
-.official{position:absolute;left:8%;top:49%;border:1px solid #486874;background:#071017dd;border-radius:10px;padding:8px 10px;font-size:10px}.official b{color:var(--gold)}
-.real{position:absolute;right:8%;top:49%;font-size:9px;color:#bed1d5;text-align:right}.real strong{color:var(--cyan)}
-.hud{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.card{border:1px solid var(--line);background:#091820;border-radius:14px;padding:11px}.card b{font-size:11px}.card small{display:block;color:var(--muted);margin-top:4px;line-height:1.35}
-.controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.controls button,.controls a{border:1px solid #456875;background:#10242c;color:#fff;border-radius:11px;padding:11px 14px;font-weight:850;font-size:12px;text-decoration:none}.controls .primary{border-color:#69c8d4;background:#17343d}.controls button:disabled{opacity:.35}
-.log{margin-top:10px;border-left:3px solid var(--cyan);background:#091820;padding:10px 12px;font-size:11px;line-height:1.45;color:#d4e1e4}.gate{color:var(--gold);font-weight:800}
-@keyframes wind{to{background-position:96px 0}}@keyframes flag{to{transform:rotate(8deg) scaleX(1.12)}}
-@media(max-width:620px){.stage{min-height:430px}.hud{grid-template-columns:1fr}.friend{right:18%}.anchor{right:5%}}
-@media(prefers-reduced-motion:reduce){.particles,.flag{animation:none}.player{transition:none}}
+:root{--cyan:#91f2ff;--gold:#ffd28a;--ink:#061016}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#071017;color:white;font-family:Inter,system-ui,sans-serif}
+body{touch-action:none}
+#islGlobalShell,#islGlobalMore,#islGlobalHomePulse{display:none!important}
+.game{position:fixed;inset:0;overflow:hidden;background:#102731}
+.bg{position:absolute;inset:-3%;background:
+ linear-gradient(180deg,#06101822 0,#06101800 42%,#06101855 72%,#061018aa 100%),
+ url('assets/city-wind.png') center/cover no-repeat;transform:scale(1.04);filter:saturate(.92) contrast(1.04)}
+.depth{position:absolute;inset:0;background:radial-gradient(circle at 55% 48%,transparent 0 34%,#06101820 62%,#06101888 100%);pointer-events:none}
+.mist{position:absolute;left:-20%;right:-20%;bottom:13%;height:28%;background:linear-gradient(90deg,transparent,#e8fbff20,transparent);filter:blur(25px);animation:mist 12s ease-in-out infinite alternate;pointer-events:none}
+.wind{position:absolute;inset:12% 0 24%;pointer-events:none;opacity:.7;overflow:hidden}
+.wind i{position:absolute;left:-35%;height:2px;width:32vw;background:linear-gradient(90deg,transparent,#d9fbff88,transparent);border-radius:99px;animation:fly 3.5s linear infinite}
+.wind i:nth-child(1){top:22%;animation-delay:-.4s}.wind i:nth-child(2){top:39%;width:24vw;animation-delay:-1.7s}.wind i:nth-child(3){top:58%;width:38vw;animation-delay:-2.4s}.wind i:nth-child(4){top:72%;width:27vw;animation-delay:-.9s}
+.topbar{position:absolute;left:0;right:0;top:0;z-index:20;padding:max(10px,env(safe-area-inset-top)) 12px 0;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none}
+.back{pointer-events:auto;width:44px;height:44px;border:1px solid #ffffff35;border-radius:14px;background:#06101888;color:white;backdrop-filter:blur(10px);font-size:20px}
+.place{padding:9px 12px;border-radius:14px;background:#06101870;border:1px solid #ffffff25;backdrop-filter:blur(10px);text-align:right}
+.place b{display:block;font-size:13px;letter-spacing:.08em}.place small{display:block;color:#cce4e7;font-size:9px;margin-top:2px}
+.ground{position:absolute;left:-5%;right:-5%;bottom:-2%;height:27%;background:linear-gradient(180deg,#213b4199,#061018 74%);clip-path:polygon(0 34%,9% 27%,16% 34%,26% 18%,36% 29%,47% 15%,59% 26%,72% 17%,82% 29%,92% 20%,100% 28%,100% 100%,0 100%);filter:drop-shadow(0 -12px 24px #0005)}
+.path{position:absolute;left:6%;right:6%;bottom:16%;height:82px;border-radius:50%;background:radial-gradient(ellipse,#d8faff16 0 25%,transparent 62%);pointer-events:none}
+.player,.friend{position:absolute;z-index:8;bottom:18.8%;transform:translateX(-50%);transition:left .55s cubic-bezier(.2,.8,.2,1),transform .3s ease,filter .3s ease}
+.player{left:15%;width:42px;height:62px}
+.player .body{position:absolute;left:9px;bottom:0;width:25px;height:42px;border-radius:14px 14px 9px 9px;background:linear-gradient(#eef7f5,#8fa9a9);box-shadow:0 10px 25px #000a}
+.player .head{position:absolute;left:11px;top:0;width:22px;height:22px;border-radius:50%;background:#d9c1a5;box-shadow:0 4px 8px #0005}
+.player .hair{position:absolute;left:7px;top:-2px;width:31px;height:21px;border-radius:60% 65% 45% 55%;background:#172128;transform:rotate(-8deg)}
+.friend{left:72%;width:48px;height:66px;filter:drop-shadow(0 10px 18px #0008)}
+.friend .body{position:absolute;left:10px;bottom:0;width:28px;height:44px;border-radius:14px 14px 8px 8px;background:linear-gradient(#f1c57c,#9a7040)}
+.friend .head{position:absolute;left:13px;top:0;width:22px;height:22px;border-radius:50%;background:#cfae8c}
+.friend:after{content:"";position:absolute;inset:-15px;border:1px solid #ffd28a00;border-radius:50%;transition:.3s}
+.friend.ready:after{border-color:#ffd28a99;box-shadow:0 0 34px #ffd28a55}
+.anchorPost{position:absolute;z-index:7;left:83%;bottom:18%;width:15px;height:83px;background:linear-gradient(#b8d6d5,#536d70);border-radius:8px;box-shadow:0 8px 22px #0009;transform-origin:bottom;transition:transform .5s ease}
+.anchorPost:before{content:"";position:absolute;left:-18px;top:5px;width:51px;height:7px;border-radius:99px;background:#bcd0d1;transform:rotate(-12deg)}
+.sign{position:absolute;z-index:9;left:81%;bottom:calc(18% + 92px);transform:translateX(-50%);padding:7px 9px;border-radius:9px;background:#09161bdc;border:1px solid #ffffff32;font-size:9px;font-weight:900;letter-spacing:.08em;white-space:nowrap;box-shadow:0 8px 20px #0008;transition:.35s}
+.sign.bad{border-color:#ff9c9c99;color:#ffd0d0;transform:translateX(-50%) rotate(-2deg)}
+.flag{position:absolute;z-index:6;left:84%;bottom:calc(18% + 75px);width:73px;height:13px;background:linear-gradient(90deg,#f6bd69,#f6bd6920);clip-path:polygon(0 0,100% 30%,77% 100%,0 72%);transform-origin:left center;animation:flag 1s ease-in-out infinite alternate}
+.prompt{position:absolute;z-index:30;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(92vw,520px);text-align:center;pointer-events:none}
+.prompt .bubble{display:inline-block;max-width:100%;padding:10px 14px;border-radius:16px;background:#061018bd;border:1px solid #ffffff2b;backdrop-filter:blur(14px);box-shadow:0 14px 40px #0008;font-size:13px;line-height:1.35;color:#eef8f5;transition:.25s}
+.prompt .hint{display:block;margin-top:7px;font-size:10px;color:#cce6e7;text-shadow:0 2px 5px #000}
+.action{position:absolute;z-index:35;right:18px;bottom:max(24px,env(safe-area-inset-bottom));width:78px;height:78px;border-radius:50%;border:1px solid #aaf5ff;background:radial-gradient(circle at 35% 30%,#2a6672,#102c35);color:white;box-shadow:0 0 0 8px #7feeff13,0 12px 32px #0009;font-weight:950;font-size:11px;letter-spacing:.04em;display:none}
+.action.show{display:block;animation:pulse 1.5s ease-in-out infinite}
+.tapRipple{position:absolute;z-index:25;width:42px;height:42px;margin:-21px;border:1px solid #bff8ff;border-radius:50%;pointer-events:none;animation:ripple .55s ease-out forwards}
+.notice{position:absolute;z-index:31;top:78px;left:50%;transform:translateX(-50%);font-size:11px;background:#061018b8;border:1px solid #ffffff26;padding:8px 11px;border-radius:999px;backdrop-filter:blur(10px);opacity:0;transition:.3s;white-space:nowrap}
+.notice.show{opacity:1}
+.finish{position:absolute;z-index:50;inset:0;display:none;place-items:center;background:#06101880;backdrop-filter:blur(7px);padding:20px}
+.finish.show{display:grid}.finishCard{width:min(92vw,480px);padding:24px;border-radius:24px;background:linear-gradient(145deg,#102a33ee,#07151bee);border:1px solid #8fefff66;box-shadow:0 30px 100px #000b;text-align:center}
+.finish h2{font-size:38px;line-height:.95;margin:4px 0 10px}.finish p{color:#c8dadd;line-height:1.45;font-size:13px}.finish a{display:inline-block;margin-top:10px;padding:12px 15px;border-radius:12px;border:1px solid #87efff;background:#17343d;color:white;text-decoration:none;font-weight:900}
+@keyframes fly{to{transform:translateX(155vw)}}@keyframes flag{to{transform:rotate(9deg) scaleX(1.12)}}@keyframes mist{to{transform:translateX(10%)}}@keyframes pulse{50%{transform:scale(1.08);box-shadow:0 0 0 14px #7feeff08,0 12px 32px #0009}}@keyframes ripple{to{transform:scale(1.8);opacity:0}}
+@media(min-width:850px){.player{width:50px}.friend{transform:translateX(-50%) scale(1.08)}}
+@media(prefers-reduced-motion:reduce){.wind i,.flag,.mist,.action{animation:none}.player,.friend,.anchorPost,.sign{transition:none}}
 </style>
 </head>
 <body>
-<main class="wrap">
-  <div class="top"><div class="brand">ISL // PRIMARY LANE · AVENTURA</div><div class="tag">PC-40 · LAB · NO CANON</div></div>
-  <h1>Velaria</h1>
-  <p class="sub">Microprototipo físico: aprende a leer el viento, prueba Anclaje dos veces y decide si el indicador oficial describe lo que realmente está ocurriendo.</p>
+<main class="game" id="game">
+  <div class="bg"></div><div class="depth"></div><div class="mist"></div>
+  <div class="wind"><i></i><i></i><i></i><i></i></div>
+  <div class="ground"></div><div class="path"></div>
 
-  <section class="stage" id="stage" aria-label="Microprototipo jugable de Velaria">
-    <div class="sky"></div><div class="cloud c1"></div><div class="cloud c2"></div>
-    <div class="particles"></div><div class="flag"></div><div class="cable" id="cable"></div>
-    <div class="official">INDICADOR OFICIAL<br><b id="officialText">VIENTO ESTABLE →</b></div>
-    <div class="real">TELA + PARTÍCULAS + CABLE<br><strong id="realText">empujan hacia la derecha</strong></div>
-    <div class="platform" id="platform"></div>
-    <div class="player" id="player" aria-label="Jugador"></div>
-    <div class="friend" id="friend" aria-label="Amigo 01"></div>
-    <div class="anchor" id="anchor">ANCLA</div>
+  <div class="topbar">
+    <button class="back" id="back" aria-label="Volver">←</button>
+    <div class="place"><b>VELARIA</b><small>Distrito bajo · después de La Separación</small></div>
+  </div>
+
+  <div class="notice" id="notice">El viento tira hacia la derecha.</div>
+
+  <div class="player" id="player"><span class="hair"></span><span class="head"></span><span class="body"></span></div>
+  <div class="friend" id="friend"><span class="head"></span><span class="body"></span></div>
+  <div class="anchorPost" id="post"></div>
+  <div class="flag" id="flag"></div>
+  <div class="sign" id="sign">CORRIENTE SEGURA →</div>
+
+  <div class="prompt" id="prompt">
+    <div class="bubble" id="bubble">Hay alguien esperándote al otro lado.</div>
+    <span class="hint" id="hint">Toca donde quieras caminar</span>
+  </div>
+
+  <button class="action" id="action">ANCLAR</button>
+
+  <section class="finish" id="finish">
+    <div class="finishCard">
+      <small style="color:var(--cyan);font-weight:900;letter-spacing:.12em">ALGO NO CUADRA</small>
+      <h2>El indicador miente.</h2>
+      <p>La señal oficial cambió, pero la tela y el viento no. Alguien está falseando cómo Velaria lee sus corrientes.</p>
+      <a href="rpg-home.html">Volver al barco</a>
+    </div>
   </section>
-
-  <div class="controls">
-    <button id="left">← Mover</button><button id="right">Mover →</button>
-    <button class="primary" id="anchorBtn" disabled>Usar Anclaje</button>
-    <button id="inspect">Comparar señales</button>
-    <a href="rpg-home.html">Volver a la Cabina</a>
-  </div>
-
-  <div class="hud">
-    <div class="card"><b>Lectura del viento</b><small id="windState">No necesitas un modo visión. Mira qué hacen tela, partículas y cable.</small></div>
-    <div class="card"><b>Anclaje</b><small id="anchorState">Acércate al amigo. No es una llave: debe servir para estabilizar más de una cosa.</small></div>
-  </div>
-
-  <div class="log" id="log">Objetivo invisible del test: ¿puedes descubrir dirección, función y contradicción sin un tutorial largo?</div>
 </main>
 
 <script>
 (function(){
-  var x=14, player=document.getElementById('player'), anchorUses=0, compared=false, lied=false;
-  var anchorBtn=document.getElementById('anchorBtn'), log=document.getElementById('log');
-  function render(){
-    x=Math.max(8,Math.min(84,x)); player.style.left=x+'%';
-    anchorBtn.disabled=x<58;
+  var game=document.getElementById('game'),player=document.getElementById('player'),friend=document.getElementById('friend');
+  var action=document.getElementById('action'),bubble=document.getElementById('bubble'),hint=document.getElementById('hint');
+  var sign=document.getElementById('sign'),post=document.getElementById('post'),notice=document.getElementById('notice'),finish=document.getElementById('finish');
+  var x=15,phase=0,locked=false;
+  function setX(v){
+    if(locked)return;
+    x=Math.max(9,Math.min(78,v));player.style.left=x+'%';
+    if(x>54&&phase===0){
+      phase=1;friend.classList.add('ready');action.classList.add('show');
+      bubble.textContent='Es él.';hint.textContent='Acércate y ayudad a estabilizar el paso';action.textContent='ANCLAR';
+    }
   }
-  function move(d){x+=d;render(); if(x>=58) document.getElementById('anchorState').textContent='El amigo puede fijar masa o estructura mientras tú actúas.'}
-  document.getElementById('left').onclick=function(){move(-8)};
-  document.getElementById('right').onclick=function(){move(8)};
-  document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='a')move(-5);if(e.key==='ArrowRight'||e.key==='d')move(5)});
-  document.getElementById('anchorBtn').onclick=function(){
-    anchorUses++;
-    if(anchorUses===1){
-      document.getElementById('platform').style.transform='translateY(-10px)';
-      document.getElementById('anchorState').textContent='Uso 1/2: plataforma estabilizada. Busca otro uso.';
-      log.textContent='El amigo no abre una puerta: sostiene la plataforma mientras tú cruzas.';
-    }else{
-      document.getElementById('cable').style.transform='rotate(0deg)';
-      document.getElementById('anchorState').textContent='Uso 2/2: cable/contrapeso fijado. Anclaje leído como verbo sistémico.';
-      log.textContent='Dos usos distintos. Anclaje = estabilizar/fijar, no “llave de compañero”.';
-      checkGate();
+  function ripple(px,py){
+    var r=document.createElement('i');r.className='tapRipple';r.style.left=px+'px';r.style.top=py+'px';game.appendChild(r);setTimeout(function(){r.remove()},600);
+  }
+  game.addEventListener('pointerdown',function(e){
+    if(e.target.closest('button,a')||finish.classList.contains('show'))return;
+    var rect=game.getBoundingClientRect(),pct=(e.clientX-rect.left)/rect.width*100;
+    ripple(e.clientX,e.clientY);setX(pct);
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='a')setX(x-7);if(e.key==='ArrowRight'||e.key==='d')setX(x+7)});
+  action.onclick=function(){
+    if(phase===1){
+      phase=2;locked=true;friend.classList.remove('ready');
+      post.style.transform='rotate(0deg) translateY(-7px)';
+      player.style.left='68%';friend.style.left='76%';
+      action.classList.remove('show');
+      bubble.textContent='Juntos aguanta.';hint.textContent='El paso deja de temblar';
+      notice.classList.add('show');
+      setTimeout(function(){
+        locked=false;phase=3;action.textContent='SUJETAR';action.classList.add('show');
+        bubble.textContent='La estructura del indicador también se está soltando.';hint.textContent='Una vez más';
+      },900);
+    } else if(phase===3){
+      phase=4;locked=true;action.classList.remove('show');
+      sign.textContent='CORRIENTE SEGURA ←';sign.classList.add('bad');
+      post.style.transform='rotate(-4deg)';
+      bubble.textContent='Espera…';hint.textContent='El cartel cambió. El viento no.';
+      notice.textContent='La tela sigue tirando hacia la derecha.';notice.classList.add('show');
+      setTimeout(function(){phase=5;action.textContent='MIRAR';action.classList.add('show')},950);
+    } else if(phase===5){
+      action.classList.remove('show');appendTrace();finish.classList.add('show');
     }
   };
-  document.getElementById('inspect').onclick=function(){
-    compared=true; lied=true;
-    document.getElementById('officialText').textContent='VIENTO ESTABLE ←';
-    document.getElementById('officialText').style.color='var(--red)';
-    document.getElementById('realText').textContent='siguen empujando hacia la derecha';
-    document.getElementById('windState').textContent='Contradicción detectada: el indicador afirma ←, pero tres señales físicas siguen marcando →.';
-    log.innerHTML='<span class="gate">La lectura oficial no coincide con el mundo.</span> Eso es la semilla del Molino que Miente.';
-    checkGate();
-  };
   function appendTrace(){
+    if(localStorage.getItem('isl_velaria_pc40_state')==='observed')return;
     var a=[];try{a=JSON.parse(localStorage.getItem('isl_huellas_events_v2')||'[]');if(!Array.isArray(a))a=[]}catch(e){a=[]}
     a.push({event_id:'velaria_pc40_'+Date.now(),context_id:'velaria_pc40',actor:'player',action_class:'read_world_contradiction',cost:1,reversibility:1,witness_scope:'lab',relation_ids:['friend01'],world_state_delta:'pc40_gate_observed',timestamp:new Date().toISOString(),significance_band:1,tags:['viento','anclaje','contradiccion','lab_only']});
     localStorage.setItem('isl_huellas_events_v2',JSON.stringify(a.slice(-64)));
     localStorage.setItem('isl_velaria_pc40_state','observed');
   }
-  function checkGate(){
-    if(anchorUses>=2&&compared&&lied&&localStorage.getItem('isl_velaria_pc40_state')!=='observed'){
-      appendTrace();
-      log.innerHTML='<span class="gate">PC‑40 COMPLETABLE:</span> has usado Anclaje dos veces y detectado una discrepancia entre interfaz oficial y realidad física. Esto guarda evidencia local de laboratorio, no CANON.';
-    }
-  }
-  render();
+  document.getElementById('back').onclick=function(){location.href='rpg-home.html'};
 })();
 </script>
 <script defer src="isl-global-shell.js"></script>
