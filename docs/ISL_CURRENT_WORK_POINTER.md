@@ -785,3 +785,13 @@ Pendiente únicamente comprobación física del icono instalado.
 - Global Command Center shell remains technically loaded for continuity but hidden during the scene so play is visually primary.
 - State/provenance remain unchanged: LAB_ONLY, isl_velaria_pc40_state, no CANON promotion.
 - Expansion to G00–G07 remains blocked until this first-minute interaction is human-readable and pleasant.
+
+
+## 2026-09-21 · VELARIA HUMAN PREPLAY GATE
+- Human direction: explicitly prevent prototype visuals from being mistaken for final product quality.
+- velaria-v2 now opens with a short mandatory human-readable gate before interaction.
+- Gate states plainly: gameplay test only; provisional graphics; final ISL art/characters/animation/audio/world come after the mechanic earns further production.
+- Three simple instructions only: tap to move; try contextual actions; judge comprehension + desire to continue.
+- Player must actively tick acknowledgement before PROBAR VELARIA unlocks.
+- In-scene badge remains visible: TEST DE JUGABILIDAD · GRÁFICOS PROVISIONALES.
+- Principle: test fun/comprehension before expensive fidelity. Do not use polished art to hide an unclear mechanic.
