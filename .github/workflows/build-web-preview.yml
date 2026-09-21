@@ -57,6 +57,9 @@ jobs:
       - name: Playable quality regression gate
         run: python3 scripts/playable-quality-gate.py
 
+      - name: Recursive dialectic quality router gate
+        run: python3 scripts/quality-router-gate.py
+
       - name: Spielberg external research boundary gate
         run: python3 scripts/spielberg-bridge-gate.py
 
