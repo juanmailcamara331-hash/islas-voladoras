@@ -209,3 +209,16 @@ Antes de cerrar cualquier bloque que pueda beneficiarse de realidad humana, cons
 - docs/ISL_PARTICIPATORY_WORLD_LOOP_CANON_v1.0.md
 
 Regla: el mundo aporta huellas; ISL interpreta y decide.
+
+
+## ENTITY MEMORY / CONTEXT HYGIENE GUARD
+Before any generative or transformative task:
+- consult docs/ISL_ENTITY_MEMORY_AND_ANTI_DUPLICATION_PROTOCOL_CURRENT.md;
+- consult docs/ISL_CONTEXT_HYGIENE_AND_REFERENCE_AUTHORITY_PROTOCOL_CURRENT.md;
+- if the entity is physical, consult docs/ISL_PHYSICAL_ENTITY_REGISTRY_CURRENT.json;
+- determine CREATE vs EDIT/DERIVE before generation;
+- AUTHORITATIVE reference outranks recent candidate output;
+- if an approved asset exists, derive from it instead of regenerating the whole entity.
+
+Recovery rule:
+STOP → LAST GOOD → mark wrong output SUPERSEDED → restore SOURCE_OF_TRUTH → resume.
