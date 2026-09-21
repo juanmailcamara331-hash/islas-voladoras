@@ -81,6 +81,14 @@ shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 if "Encuestas" not in shell or "encuestas.html" not in shell: errors.append("global shell survey access missing")
 if shell.count("href('encuestas.html')") != 1: errors.append("global shell must expose exactly one Encuestas route")
 if "musica.html" in shell: errors.append("global shell must route Music through unified Gallery")
+if 'location.replace("ps4.html")' in idx or "location.replace('ps4.html')" in idx:
+    errors.append("index must never auto-redirect to PS4")
+native_block=idx[idx.find("function stabilize()"):idx.find("function stabilize()")+2200] if "function stabilize()" in idx else ""
+if "scrollTo(0,0)" in native_block or "scrollTo(0, 0)" in native_block:
+    errors.append("native pageshow/stabilize must not force scroll to top")
+if "history.scrollRestoration='manual'" not in idx and 'history.scrollRestoration="manual"' not in idx:
+    errors.append("stable back/forward scroll restoration missing")
+
 
 
 # external lab contract
