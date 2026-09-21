@@ -67,6 +67,15 @@ body{touch-action:none}
 .preplayFoot{margin-top:9px;text-align:center;font-size:9px;color:#829ba0}
 .labBadge{position:absolute;z-index:21;left:12px;top:max(66px,calc(env(safe-area-inset-top) + 56px));padding:6px 8px;border-radius:999px;background:#061018a8;border:1px solid #ffffff28;color:#d5e5e7;font-size:8px;font-weight:900;letter-spacing:.08em;pointer-events:none}
 @media(max-width:640px){#preplayGate{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(3,9,13,.94)}.preplayCard{padding:18px;border-radius:20px}}
+</style>
+<style id="velaria-micro-feedback-v079">
+.feedbackBox{margin-top:14px;padding-top:13px;border-top:1px solid #ffffff20}
+.feedbackBox h3{margin:0 0 5px;font-size:14px}.feedbackBox p{margin:0 0 10px!important;font-size:10px!important;color:#91aab0!important}
+.feedbackQ{margin-top:9px;text-align:left}.feedbackQ b{display:block;font-size:10px;margin-bottom:6px;color:#dfecee}
+.feedbackOpts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.feedbackOpts button{min-height:40px;border:1px solid #46646d;border-radius:10px;background:#0a1b22;color:#e9f2f2;font-size:10px;font-weight:900}.feedbackOpts button.on{border-color:#91f2ff;background:#173942;box-shadow:0 0 18px #91f2ff18}
+#feedbackDone{display:none;margin-top:10px;font-size:10px;color:#bde9c8}
+#returnBoat{opacity:.45;pointer-events:none}.feedback-complete #returnBoat{opacity:1;pointer-events:auto}
+@media(max-width:420px){.feedbackOpts button{font-size:9px;padding:5px}}
 </style></head>
 <body>
 <script id="velaria-standalone-isolation-v078">
@@ -127,7 +136,15 @@ body{touch-action:none}
       <small style="color:var(--cyan);font-weight:900;letter-spacing:.12em">ALGO NO CUADRA</small>
       <h2>El indicador miente.</h2>
       <p>La señal oficial cambió, pero la tela y el viento no. Alguien está falseando cómo Velaria lee sus corrientes.</p>
-      <a href="rpg-home.html?resume=1" target="_top">Volver al barco</a>
+      <div class="feedbackBox" id="feedbackBox">
+        <h3>Antes de volver…</h3>
+        <p>Tres toques. No hay respuesta buena.</p>
+        <div class="feedbackQ" data-q="understood"><b>¿Entendiste qué estaba pasando?</b><div class="feedbackOpts"><button data-v="yes">Sí</button><button data-v="maybe">Más o menos</button><button data-v="no">No</button></div></div>
+        <div class="feedbackQ" data-q="fun"><b>¿Te resultó divertido?</b><div class="feedbackOpts"><button data-v="yes">Sí</button><button data-v="maybe">Un poco</button><button data-v="no">No</button></div></div>
+        <div class="feedbackQ" data-q="continue"><b>¿Te apetecería seguir?</b><div class="feedbackOpts"><button data-v="yes">Sí</button><button data-v="maybe">Quizá</button><button data-v="no">No</button></div></div>
+        <div id="feedbackDone">Gracias. Esto sí nos dice si merece crecer.</div>
+      </div>
+      <a id="returnBoat" href="rpg-home.html?resume=1" target="_top">Volver al barco</a>
     </div>
   </section>
 </main>
@@ -201,5 +218,24 @@ body{touch-action:none}
   });
 })();
 </script>
-</body>
+
+<script id="velaria-micro-feedback-js-v079">
+(function(){
+  var box=document.getElementById('feedbackBox');if(!box)return;
+  var answers={};
+  function save(){
+    if(Object.keys(answers).length<3)return;
+    var row={test_id:'velaria_v2',timestamp:new Date().toISOString(),understood:answers.understood,fun:answers.fun,continue_intent:answers.continue,scope:'local_lab_only'};
+    var a=[];try{a=JSON.parse(localStorage.getItem('isl_velaria_feedback_v1')||'[]');if(!Array.isArray(a))a=[]}catch(e){a=[]}
+    a.push(row);localStorage.setItem('isl_velaria_feedback_v1',JSON.stringify(a.slice(-24)));
+    document.getElementById('feedbackDone').style.display='block';
+    document.querySelector('.finishCard').classList.add('feedback-complete');
+  }
+  box.addEventListener('click',function(e){
+    var b=e.target.closest('button[data-v]');if(!b)return;
+    var q=b.closest('.feedbackQ'),key=q.dataset.q;q.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)});
+    answers[key]=b.dataset.v;save();
+  });
+})();
+</script></body>
 </html>
