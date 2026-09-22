@@ -302,3 +302,125 @@ Después construir A:
 - provenance/links;
 - riesgos de sobreuso;
 - cobertura por pilar.
+
+
+## 10. CURVA LONGITUDINAL · DE LO AUSTERO A LO IMPOSIBLE · 2026-09-22
+
+### IDEA
+ISL puede comenzar material, cercano y relativamente pobre para que el jugador aprenda una normalidad coherente.
+La magia no entra como lluvia de espectáculo desde el minuto uno: se gana por descubrimiento.
+
+CURVA:
+AUSTERIDAD
+→ OFICIO / SUPERVIVENCIA
+→ PRIMERAS RAREZAS
+→ CAPACIDADES
+→ RELACIONES
+→ ECONOMÍA / ACCESO
+→ SISTEMAS QUE SE CRUZAN
+→ CRIATURAS QUE CAMBIAN
+→ ISLAS / REGLAS MAYORES
+→ ESCALA CASI MÍTICA
+→ REGRESO A LO HUMANO.
+
+No es un camino del héroe obligatorio ni una ascensión lineal.
+El jugador puede enriquecerse, empobrecerse, perder acceso, compartir recursos, ganar prestigio, deber favores o construir hogar.
+
+### RIQUEZA COMO SISTEMA, NO COMO SCORE
+“Ser más rico” puede significar:
+- más recursos;
+- mejor nave;
+- taller;
+- acceso;
+- contactos;
+- tripulación;
+- información;
+- rutas;
+- reputación situada;
+- objetos únicos;
+- seguridad;
+- tiempo;
+- hogar.
+
+También puede generar:
+- deuda;
+- dependencia;
+- exposición;
+- mantenimiento;
+- captura por instituciones;
+- tensiones con amigos;
+- pérdida de libertad.
+
+No existe medidor moral de riqueza.
+La economía debe producir opciones, costes y consecuencias.
+
+### HERO PATH ADAPTATIVO
+Estructura funcional inspirada en arcos de crecimiento clásicos:
+1. mundo cotidiano legible;
+2. primera anomalía;
+3. aprendizaje por acción;
+4. aliados / vínculos;
+5. coste;
+6. expansión de capacidad;
+7. cambio de escala;
+8. crisis / contradicción;
+9. retorno o relectura de lo cotidiano.
+
+La secuencia puede romperse, bifurcarse o repetirse.
+No imponer destino heroico único.
+
+### ESCALADA DE MECÁNICAS
+Una brutalidad nueva debe apoyarse en algo que el jugador ya entiende.
+
+Ejemplo abstracto:
+viento simple
+→ anclaje
+→ corrientes contradictorias
+→ navegación cooperativa
+→ criaturas que leen viento
+→ islas que cambian reglas
+→ tormentas vivas
+→ decisiones sistémicas a gran escala.
+
+Regla:
+NUEVO = CONOCIDO + UNA MUTACIÓN LEGIBLE.
+
+La escala puede crecer mucho sin convertir el juego en tutorial infinito ni ruido.
+
+### CRIATURAS / MONSTRUOS
+La fauna puede seguir la misma curva:
+- formas tempranas austeras y comprensibles;
+- conductas que el jugador aprende;
+- variantes funcionales;
+- mutaciones por entorno/historia;
+- criaturas tardías que combinan reglas ya conocidas de manera inesperada.
+
+Referencia funcional:
+series de aventura larga donde las amenazas/aliados crecen en escala y rareza mientras el mundo conserva lógica interna.
+NO copiar diseños, transformaciones, power levels, ataques, nombres, siluetas o arcos de obras concretas.
+
+### TONO
+Terry Pratchett funciona aquí como principio:
+cuanto más grande se vuelve el mundo, más importante es conservar lo pequeño:
+- una taza;
+- una deuda absurda;
+- un amigo cansado;
+- una reparación;
+- una regla burocrática;
+- un animal raro con una manía.
+
+La épica debe seguir pudiendo pincharse con cotidianeidad.
+Eso evita power-creep emocional.
+
+### CQC DE PROGRESIÓN
+Preguntar:
+- ¿lo nuevo se entiende gracias a algo anterior?
+- ¿la escala crece sin borrar la intimidad?
+- ¿riqueza abre posibilidades y costes?
+- ¿los amigos/vínculos siguen importando cuando aumenta el poder?
+- ¿una criatura tardía sigue perteneciendo al mismo mundo?
+- ¿el jugador recuerda cómo llegó hasta aquí?
+- ¿hay retornos a espacios/objetos tempranos que ahora significan otra cosa?
+- ¿la progresión permite pérdidas, rodeos y especialización?
+- ¿el juego sigue siendo ISL cuando todo se vuelve enorme?
+
