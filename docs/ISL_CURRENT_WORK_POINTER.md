@@ -1129,3 +1129,11 @@ Evaluation gate:
 If it has soul: open ONE second-life candidate only.
 If it does not: allow one controlled iteration or keep it as a standalone Buenos días ISL gift.
 This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
+
+
+## 2026-09-22 · FIRST WIND CUP · VISUAL REFERENCE SELECTED
+- docs/ISL_GIFT_FIRST_WIND_CUP_CURRENT.md
+- Human-selected direct ChatGPT/Imagegen visual is VISUAL_REFERENCE_CURRENT.
+- Status: NO CANON · second life pending.
+- Next derivative if pursued: video continuity pass using the selected image as reference.
+- After derivative decision, return PRIMARY Velaria V2 P0 and B→NUDOS→CQC B×A.
