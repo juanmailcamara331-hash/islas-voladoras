@@ -267,6 +267,27 @@ body{touch-action:none}
   });
   window.ISLVelariaMoveTo=moveFromPoint;
   window.ISLVelariaSetX=setX;
+  // Real-device fallback: some Android WebViews swallow the scene-level pointer/touch path.
+  // Capture the release/click at document level and route it back into the same movement function.
+  var lastFallbackAt=0,lastFallbackX=-999,lastFallbackY=-999;
+  function fallbackMove(clientX,clientY,target){
+    var now=Date.now();
+    if(Math.abs(clientX-lastFallbackX)<3&&Math.abs(clientY-lastFallbackY)<3&&now-lastFallbackAt<180)return;
+    lastFallbackAt=now;lastFallbackX=clientX;lastFallbackY=clientY;
+    moveFromPoint(clientX,clientY,target);
+  }
+  document.addEventListener('pointerup',function(e){
+    if(!game.contains(e.target))return;
+    fallbackMove(e.clientX,e.clientY,e.target);
+  },true);
+  document.addEventListener('touchend',function(e){
+    if(!game.contains(e.target)||!e.changedTouches||!e.changedTouches[0])return;
+    var t=e.changedTouches[0];fallbackMove(t.clientX,t.clientY,e.target);
+  },{capture:true,passive:true});
+  document.addEventListener('click',function(e){
+    if(!game.contains(e.target))return;
+    fallbackMove(e.clientX,e.clientY,e.target);
+  },true);
   document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='a')setX(x-7);if(e.key==='ArrowRight'||e.key==='d')setX(x+7)});
   action.onclick=function(){
     if(phase===1){
