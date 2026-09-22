@@ -1418,3 +1418,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Proposed cheap prototype: 1v1 · 4 beats · 3 manoeuvres · 2 weapons · 1 resource · wind · 1 captain choice · 1 non-HP damaged system.
 - Automation Master updated with event-triggered ship-combat review; no new bot.
 - PRIMARY remains Velaria V2 P0 / HUMAN_DEVICE_GREEN=PENDING.
+
+
+## 2026-09-22 · CHECKPOINT v0.91 · TASKS / SUPPLIER / SKYSHIP / RELICS
+- New handoff: docs/ISL_CHECKPOINT_v0.91_TASKS_SUPPLIER_SKYSHIP_RELICS_HANDOFF_2026-09-22.md
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- Supplier gate: CoinsForAnything aligns with 1–3 prototype path; The Pins Store remains MOQ25 benchmark/backup.
+- Prism Worlds stays parked until new human evidence/event.
+- Skyship combat remains research seed with cheap 4-beat prototype next.
+- Mechero 001 remains visual CANDIDATE.
+- Private Netlify still blocked; mobile overflow fix requires real-device retest.
