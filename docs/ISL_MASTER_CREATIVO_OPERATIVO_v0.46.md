@@ -424,3 +424,143 @@ Preguntar:
 - ¿la progresión permite pérdidas, rodeos y especialización?
 - ¿el juego sigue siendo ISL cuando todo se vuelve enorme?
 
+
+
+## 11. PROGRESIÓN BIDIRECCIONAL / ADVERSIDAD · 2026-09-22
+
+### PRINCIPIO
+La progresión puede avanzar, desviarse, degradarse y recuperarse.
+
+No todo crecimiento es permanente.
+El mundo puede responder a acciones/omisiones con:
+- enfermedad;
+- fatiga;
+- avería;
+- pérdida de recurso;
+- deuda;
+- desastre local;
+- cierre de ruta;
+- ruptura de relación;
+- deterioro de criatura/compañera;
+- retroceso de capacidad;
+- cambio de hogar/nave;
+- obligación práctica que antes era opcional.
+
+La adversidad no debe sentirse como castigo arbitrario.
+Debe conservar:
+TELEGRAPH → CAUSA → COSTE → CONSECUENCIA → POSIBILIDAD DE RESPUESTA.
+
+### INVOLUCIÓN
+“Involucionar” no significa borrar progreso sin sentido.
+Puede significar:
+- perder temporalmente una habilidad;
+- cambiar una habilidad por otra menos potente pero útil;
+- enfermar o fatigarse;
+- perder acceso;
+- ver mutar una criatura hacia otra función;
+- necesitar recuperar confianza/recursos;
+- aceptar una cicatriz o estado permanente.
+
+La recuperación puede:
+- restaurar;
+- transformar;
+- abrir una ruta distinta;
+- convertir una pérdida en nueva identidad jugable.
+
+No usar grind obligatorio como única salida.
+No destruir horas de progreso por RNG opaco.
+
+### SECUNDARIAS DINÁMICAS
+Una misión secundaria puede permanecer opcional hasta que una consecuencia del mundo la vuelva relevante.
+
+Ejemplos:
+- ignoraste mantenimiento → reparar nave pasa a ser urgente;
+- sobreexplotaste una corriente → buscar una fuente alternativa gana prioridad;
+- compañera enferma → investigar cura, reposo, alimento o ayuda especializada;
+- deuda social → una ruta secundaria puede resolverla, negociarla o empeorarla;
+- desastre local → ayudar, aprovecharlo, rodearlo o marcharse generan historias distintas.
+
+Regla:
+la secundaria no debe convertirse mágicamente en obligación sin una causa legible.
+
+### DESASTRES
+Los desastres pueden ser:
+- naturales;
+- sistémicos;
+- sociales;
+- económicos;
+- relacionales;
+- derivados de una cadena de decisiones.
+
+No todos deben ser “culpa” del jugador.
+Algunos ocurren aunque juegues bien.
+La agencia está en cómo respondes.
+
+Cada desastre importante:
+- debe cambiar al menos una affordance;
+- debe dejar una huella;
+- debe tener rutas de respuesta múltiples;
+- no debe imponer una lectura moral única.
+
+### ADAPTACIÓN NARRATIVA POR CONDUCTA
+ISL puede adaptar eventos, historias, secundarios, economía y oportunidades según patrones observables de juego.
+
+NO diagnosticar personalidad real.
+NO fijar al jugador en una etiqueta psicológica.
+NO mostrar “eres X”.
+
+Usar pesos blandos y reversibles basados en conducta reciente y trayectoria.
+
+Familias funcionales inspiradas libremente en arquetipos narrativos:
+- EXPLORADOR: busca rutas, secretos, horizontes;
+- CUIDADOR: protege vínculos, criaturas, comunidad;
+- ARTESANO: repara, construye, optimiza hogar/nave;
+- TRICKSTER: rompe reglas, improvisa, provoca sistemas;
+- BUSCADOR: persigue significado, archivos, contradicciones;
+- NEGOCIADOR: favores, acceso, deuda, redes;
+- DESAFIANTE: riesgo, combate, presión, límites;
+- HOGAREÑO: seguridad, base, ritual, pertenencia.
+
+Estos nombres son herramientas internas de diseño, no perfiles clínicos ni identidades del usuario.
+
+### ROUTER DE HISTORIAS
+El mundo puede variar:
+- qué secundaria aparece primero;
+- quién pide ayuda;
+- qué coste se vuelve visible;
+- qué recurso escasea;
+- qué criatura te busca;
+- qué rumor llega;
+- qué desastre te afecta más;
+- qué oportunidad económica aparece;
+- qué historia de amistad se profundiza.
+
+Regla:
+ADAPTAR OPORTUNIDADES, NO FALSEAR EL MUNDO.
+
+Los mismos hechos globales siguen existiendo.
+Cambia el ángulo, timing, relevancia y acceso.
+
+### ANTI-PIGEONHOLE
+Los pesos de conducta:
+- decaen con el tiempo;
+- admiten contradicción;
+- pueden coexistir;
+- nunca bloquean permanentemente contenido esencial;
+- no determinan un final automático.
+
+Un jugador puede ser Explorador hoy, Artesano mañana y Cuidador después.
+La trayectoria importa más que la etiqueta.
+
+### CQC
+Preguntar:
+- ¿el retroceso tiene causa legible?
+- ¿hay respuesta interesante además de grind?
+- ¿la pérdida crea historia o sólo frustración?
+- ¿la secundaria emergente nace de una consecuencia real?
+- ¿el mundo se adapta sin parecer que lee la mente?
+- ¿los arquetipos describen conducta, no personalidad?
+- ¿el jugador puede cambiar de patrón?
+- ¿un desastre abre decisiones?
+- ¿la compañera enferma sigue teniendo agencia/identidad?
+- ¿la recuperación puede transformar, no sólo resetear?
