@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "generated_at": "2026-09-22",
+  "status": "PHRASE_BANK_CURRENT",
+  "rule": "Phrases are seeds, interface texture and making-of material. Not game CANON automatically.",
+  "phrases": [
+    {
+      "id": "PHR-001",
+      "text": "No hace falta terminar el cielo esta mañana. Sólo dejar una corriente bien puesta.",
+      "origin": "Cabin breakfast sheet",
+      "state": "APPROVED_TONE",
+      "destinations": [
+        "gallery",
+        "command_center",
+        "making_of",
+        "loading_screen_candidate"
+      ],
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "PHR-002",
+      "text": "Si hoy no sabes por dónde ir, mira qué mueve el viento antes que tú.",
+      "origin": "La Taza del Primer Viento",
+      "state": "GIFT_SEED",
+      "destinations": [
+        "easter_egg",
+        "physical",
+        "making_of"
+      ],
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "PHR-003",
+      "text": "A veces la grandeza no llega cuando conquistas algo, sino cuando te paras a mirar el cielo con los tuyos.",
+      "origin": "Mirador de Corrientes Tardías",
+      "state": "HUMAN_TRACE_SEED",
+      "destinations": [
+        "gallery",
+        "making_of",
+        "scene_seed"
+      ],
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "PHR-004",
+      "text": "Perfecto. Ahora el cartel discute con el viento.",
+      "origin": "Velaria V2",
+      "state": "PLAYABLE_GAG",
+      "destinations": [
+        "game",
+        "making_of"
+      ],
+      "canon_state": "CURRENT_PLAYABLE_COPY"
+    },
+    {
+      "id": "PHR-005",
+      "text": "NO COPIAMOS, MUTAMOS.",
+      "origin": "ISL method",
+      "state": "METHOD_MOTTO",
+      "destinations": [
+        "fourth_wall",
+        "making_of",
+        "gallery"
+      ],
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "PHR-006",
+      "text": "COMPLEJIDAD POR DENTRO · CLARIDAD POR FUERA.",
+      "origin": "Human Translation Layer",
+      "state": "METHOD_MOTTO",
+      "destinations": [
+        "command_center",
+        "making_of",
+        "docs"
+      ],
+      "canon_state": "TRANSVERSAL"
+    }
+  ]
+}
