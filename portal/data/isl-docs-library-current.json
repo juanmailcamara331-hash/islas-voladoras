@@ -302,11 +302,11 @@
       "status": "CURRENT",
       "source": "github",
       "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_REFERENCE_DISTANCE_AND_LICENSE_AVOIDANCE_PROTOCOL_CURRENT.md",
+      "canon_state": "TRANSVERSAL",
       "surfaces": [
         "gallery",
         "command_center"
-      ],
-      "canon_state": "TRANSVERSAL"
+      ]
     },
     {
       "id": "DOC-SYS-002",
@@ -316,11 +316,11 @@
       "status": "CURRENT",
       "source": "github",
       "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_COMMAND_CENTER_ACTION_ROUTER_CURRENT.md",
+      "canon_state": "TRANSVERSAL",
       "surfaces": [
         "gallery",
         "command_center"
-      ],
-      "canon_state": "TRANSVERSAL"
+      ]
     }
   ]
 }
