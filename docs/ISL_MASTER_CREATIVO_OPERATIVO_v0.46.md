@@ -1059,3 +1059,157 @@ Eso hace que el mundo no espere siempre al protagonista.
 - ¿hay aftermath?
 - ¿la referencia histórica está suficientemente transformada?
 - ¿el evento puede recordar algo horas después?
+
+
+## 15. RUTINA / TEDIO CON SENTIDO / CONTRASTE DE RECOMPENSA · 2026-09-22
+
+### PRINCIPIO
+ISL puede incluir tareas rutinarias, lentas o incluso algo tediosas si tienen función dramática, económica, social o sistémica.
+
+Ejemplos:
+- cargar cajas;
+- reparar vela/cabo;
+- limpiar una zona;
+- turno de trabajo;
+- cocinar;
+- clasificar piezas;
+- esperar una corriente;
+- hacer recados;
+- montar/desmontar un espectáculo;
+- mantener la nave;
+- trabajar por dinero/deuda/acceso.
+
+No todo debe ser “divertido por segundo”.
+Algunas acciones sirven para:
+- crear normalidad;
+- medir esfuerzo;
+- construir apego;
+- generar expectativa;
+- hacer visible clase/trabajo;
+- aumentar contraste antes de una sorpresa;
+- dar peso material a riqueza/pobreza;
+- preparar conversación o evento.
+
+### TEDIO CON SALIDA
+Una tarea lenta necesita al menos una de estas salidas:
+- conversación;
+- microevento;
+- aprendizaje;
+- cambio de ritmo;
+- eficiencia aprendida;
+- herramienta mejor;
+- decisión;
+- humor;
+- observación;
+- recompensa material/social;
+- interrupción inesperada.
+
+No diseñar grind vacío como relleno.
+
+### CURVA DE ACTIVACIÓN
+Evitar “dopamine hacking” como lenguaje de diseño.
+Usar variables observables:
+- expectativa;
+- sorpresa;
+- esfuerzo;
+- incertidumbre;
+- dominio;
+- descanso;
+- frustración;
+- novedad;
+- repetición;
+- recompensa;
+- pérdida;
+- recuperación.
+
+Curva candidata:
+RUTINA
+→ PEQUEÑA FRICCIÓN
+→ DOMINIO
+→ EXPECTATIVA
+→ RUPTURA/SORPRESA
+→ PICO DE DECISIÓN
+→ CONSECUENCIA
+→ DESCENSO
+→ CALMA
+→ NUEVA LECTURA.
+
+La sorpresa funciona mejor cuando existe una línea base estable.
+
+### ESTÍMULOS AMBIVALENTES
+Un estímulo puede tener dos lecturas simultáneas:
+- bonito / inquietante;
+- aburrido / reconfortante;
+- trabajo / ritual;
+- riqueza / carga;
+- hogar / encierro;
+- deseo / peligro;
+- ayuda / deuda;
+- descanso / oportunidad perdida.
+
+La ambivalencia debe producir decisión o interpretación, no confusión gratuita.
+
+### DIFICULTAD / FLOW
+Ajustar challenge vs skill como hipótesis de experiencia, no fórmula universal.
+
+Variables:
+- precisión;
+- timing;
+- simultaneidad;
+- lectura;
+- memoria;
+- planificación;
+- riesgo;
+- recuperación.
+
+Objetivo:
+evitar periodos largos de subcarga o sobrecarga.
+
+Puede haber:
+- zonas de dominio fácil para respirar;
+- tramos exigentes;
+- tareas lentas;
+- secuencias de alta concentración;
+- recuperación.
+
+La accesibilidad puede modificar la forma de la tarea sin borrar su función.
+
+### TRABAJO COMO NARRATIVA
+El trabajo puede contar:
+- posición social;
+- economía;
+- rutina de ciudad;
+- carácter de amigos;
+- desigualdad;
+- orgullo;
+- explotación;
+- oficio;
+- comunidad.
+
+Un turno de trabajo puede ser tan narrativo como una pelea si:
+el jugador observa relaciones, sistemas y consecuencias.
+
+### SORPRESA INSERTADA EN NORMALIDAD
+Eventos raros no deben aparecer a intervalos mecánicos.
+Pueden entrar durante:
+- tercer turno;
+- tarea repetida;
+- viaje rutinario;
+- descanso;
+- paseo con compañera;
+- montaje de festival;
+- mantenimiento nocturno.
+
+El contraste es parte del payoff.
+
+### CQC
+- ¿la rutina construye algo?
+- ¿el tedio tiene salida?
+- ¿la sorpresa gana fuerza por contraste?
+- ¿el jugador puede aprender a hacer mejor la tarea?
+- ¿la economía/trabajo tiene significado?
+- ¿el esfuerzo produce lectura del mundo?
+- ¿la dificultad tiene respiración?
+- ¿la accesibilidad conserva función?
+- ¿la ambivalencia abre interpretación?
+- ¿estamos diseñando experiencia y no “dopamina” simplista?
