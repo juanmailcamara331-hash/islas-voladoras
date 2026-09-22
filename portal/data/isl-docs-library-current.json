@@ -1,0 +1,225 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "generated_at": "2026-09-22",
+  "status": "DOCS_LIBRARY_CURRENT",
+  "boundary": "ISL_ONLY",
+  "rules": {
+    "gallery_is_not_canon": true,
+    "docs_do_not_auto_promote_canon": true,
+    "runtime_registry_requires_explicit_entry": true,
+    "drive_or_github_remains_source": true
+  },
+  "docs": [
+    {
+      "id": "DOC-CORE-001",
+      "title": "Checkpoint Master CURRENT",
+      "group": "Core / Continuidad",
+      "kind": "checkpoint",
+      "status": "SOURCE_OF_TRUTH",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1EeKKsARwVr5MsO7R9E2dhYa_D63EZYpY4b10AotK1sk/edit",
+      "canon_state": "GOVERNANCE_NOT_GAME_CANON"
+    },
+    {
+      "id": "DOC-CORE-002",
+      "title": "Human Translation Layer",
+      "group": "Core / Método",
+      "kind": "method",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1HBwdDLFRjiEICpNKFsY_rt5oB3Fu5Sx8Hfzm8UwuebQ/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-METHOD-001",
+      "title": "Automation Quality Layer",
+      "group": "Método / Automatización",
+      "kind": "method",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1KhYaAnsArnxI9ASc5LKuwspnTsdqKIB2IxNhjmndz8w/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-METHOD-002",
+      "title": "Automation Prompts Master",
+      "group": "Método / Automatización",
+      "kind": "automation",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1mnK3lVUKjvyWOaE9_Iel0jq51TzWCw_6qlFEtedjFIk/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-METHOD-003",
+      "title": "Human Variation Randomizer",
+      "group": "Método / Variación",
+      "kind": "method",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_HUMAN_VARIATION_RANDOMIZER_CURRENT.md",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-METHOD-004",
+      "title": "Method Trigger Engine",
+      "group": "Método / Triggers",
+      "kind": "automation",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1GKEmxQvN_h4LdQEy16dw_xObWfsPp4upvCtrs78S9TA/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-METHOD-005",
+      "title": "Stage-Aware Deferred Work Queue",
+      "group": "Método / Hitos",
+      "kind": "roadmap",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1OBnPURM0exRxWFxq4A0ZnZw7HAWJo_89Ef6T8aIozV0/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-LEGAL-001",
+      "title": "Legal / IP / Authorship Defense Layer",
+      "group": "Legal / IP",
+      "kind": "legal",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1FkV9ZeiikDpBHeoZbh63KdBOcDrt5XiQuI6xzLihHKw/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-LEGAL-002",
+      "title": "Legal / IP Real Audit",
+      "group": "Legal / IP",
+      "kind": "audit",
+      "status": "FIRST_PASS",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1xchSuw_MYSRiY4HXCWNzColOV04gJ3zYf4KERzu6CVk/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-MKT-001",
+      "title": "Marketing / SEO / GTM Master",
+      "group": "Marketing / Growth",
+      "kind": "marketing",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1X2I7GxZyMSM6hFllHMzNULCRBQNzqscxj6RNSrEyFzc/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-MKT-002",
+      "title": "Outreach / Press / Distribution / CRM",
+      "group": "Marketing / Outreach",
+      "kind": "marketing",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1hFkVYxIm3J5w7dh0FRU8K29dgPZ-v4t4jGgmOvzlJgI/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-MKT-003",
+      "title": "Qualified Contact Directory + Simulated Campaign",
+      "group": "Marketing / Outreach",
+      "kind": "directory",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1QX1d4WpOl3RuiFGcDwSMTmaWEv36VN7ZgqJRI0I4_DY/edit",
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-PHYS-001",
+      "title": "Ancla del Regreso · Supplier Pack",
+      "group": "Physical / Ancla",
+      "kind": "supplier_pack",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1G1yIh4uHp7uRYN7FNuG0WF8UT14DUXA2RIy2isMyLZk/edit",
+      "canon_state": "PHYSICAL_SOURCE"
+    },
+    {
+      "id": "DOC-PHYS-002",
+      "title": "Ancla del Regreso · RFQ",
+      "group": "Physical / Ancla",
+      "kind": "rfq",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1QOoFMmNl11TmPH4HLziK1CN8Bd5ych_d3dKdj7EOckQ/edit",
+      "canon_state": "PHYSICAL_SOURCE"
+    },
+    {
+      "id": "DOC-BRIEF-001",
+      "title": "Production Patterns & Reusable Templates",
+      "group": "Briefs / Plantillas",
+      "kind": "brief",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1GRRZb_M7lVzmxKElLrJU40kATITMOHkUM237226aN1g/edit",
+      "canon_state": "REFERENCE"
+    },
+    {
+      "id": "DOC-BRIEF-002",
+      "title": "Founding Crew Collaboration Protocol",
+      "group": "Briefs / Participación",
+      "kind": "brief",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1jNqEHULaZXU4rPtwlqH34u4ZWpzuAuC5LZkfi8_9IkM/edit",
+      "canon_state": "REFERENCE"
+    },
+    {
+      "id": "DOC-BRIEF-003",
+      "title": "World Human Trace & Resilience Protocol",
+      "group": "Briefs / Huellas",
+      "kind": "brief",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1WmNQvemVf2hRIp7Ocdz4ehTQGtjvLDp_16HIMf3196U/edit",
+      "canon_state": "REFERENCE"
+    },
+    {
+      "id": "DOC-BRIEF-004",
+      "title": "Repeatable Work Pattern Protocol",
+      "group": "Briefs / Método",
+      "kind": "brief",
+      "status": "CURRENT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1yD3uQCADTjWUT22IekhtLrItxMEmPM8ojIpYqt0GXYU/edit",
+      "canon_state": "REFERENCE"
+    },
+    {
+      "id": "DOC-CHK-086",
+      "title": "Checkpoint v0.86 · Clean Context / Ancla SOT Recovery",
+      "group": "Checkpoints / Recientes",
+      "kind": "checkpoint",
+      "status": "CURRENT_HANDOFF",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1pcn1Wzb-UfciF1CWP7T_1WJUp_8uznPDUI0KmyBpCJQ/edit",
+      "canon_state": "GOVERNANCE_NOT_GAME_CANON"
+    },
+    {
+      "id": "DOC-CHK-075",
+      "title": "Checkpoint v0.75 · Panel Vago Creativo",
+      "group": "Checkpoints / Recientes",
+      "kind": "checkpoint",
+      "status": "HISTORICAL_CURRENT_CONTEXT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1Zj53wZUZ1w4QZtNO1aKVtDXZerqU8GRF_10N-4bw9Wg/edit",
+      "canon_state": "HISTORICAL"
+    },
+    {
+      "id": "DOC-CHK-074",
+      "title": "Checkpoint v0.74 · Gallery Runtime Reconciliation",
+      "group": "Checkpoints / Recientes",
+      "kind": "checkpoint",
+      "status": "HISTORICAL_CURRENT_CONTEXT",
+      "source": "drive",
+      "url": "https://docs.google.com/document/d/1Jn0bkemKDGIZT2iuU1wchZ9P1NQo4_MO40JDmCORnwE/edit",
+      "canon_state": "HISTORICAL"
+    }
+  ]
+}
