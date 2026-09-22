@@ -102,7 +102,8 @@ test -f build/site/assets/floating-island-level.png
 test -f build/site/assets/floating-ruins-guide.png
 grep -q 'Cabina de Expedición' build/site/index.html
 grep -q 'isl-polish.css' build/site/command-center.html
-grep -q 'GALERÍA VIVA · WEB + APP + PS4' build/site/galeria.html
+grep -q 'ISL · GALERÍA VIVA' build/site/galeria.html
+grep -q 'Toca una pieza. Lo técnico queda detrás.' build/site/galeria.html
 grep -q 'index.html?full=1' build/site/isl-global-shell.js
 grep -q 'galeria.html' build/site/isl-global-shell.js
 grep -q 'isl-polish.js' build/site/command-center.html
