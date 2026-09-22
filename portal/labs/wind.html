@@ -602,7 +602,7 @@ function frame(t){
   scoreEMA=scoreEMA*.93+instant*.07;
   let success=scoreEMA>=.55;
   successTime=success?successTime+dt:Math.max(0,successTime-dt*.6);
-  if(successTime>2 && !lastSuccess){spawnSuccessSparks(ch==="split"?"split":"single"); lastSuccess=true}
+  if(successTime>2 && !lastSuccess){spawnSuccessSparks(ch==="split"?"split":"single");traceWind('challenge_success',{score:Math.round(scoreEMA*100)});lastSuccess=true}
   if(successTime<.25) lastSuccess=false;
 
   document.getElementById('score').textContent=Math.round(scoreEMA*100)+"%";
