@@ -1180,3 +1180,15 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Pratchett is used only as functional reference for keeping huge systems human through everyday detail.
 - Existing automation master now checks progression coherence when relevant; no new bot created.
 - Does not displace Velaria P0 / HUMAN_DEVICE_GREEN.
+
+
+## 2026-09-22 · BIDIRECTIONAL PROGRESSION / ADAPTIVE STORY HYPOTHESIS
+- Progression may advance, regress, mutate and recover.
+- Companion may become tired/sick/altered through legible causes; recovery can restore or transform.
+- Disasters can be natural/systemic/social/economic/relational; not all are player-caused.
+- Previously optional side content may become relevant through world consequences, never arbitrary obligation.
+- Story routing may adapt to observable play patterns using soft, reversible narrative-role weights (explorer/caregiver/artisan/trickster/seeker/negotiator/challenger/home-oriented).
+- These are internal design signals, not psychological diagnosis or fixed player identity.
+- Essential content is never permanently locked by a label.
+- Existing progression automation trigger extended; no new bot.
+- PRIMARY remains Velaria V2 P0.
