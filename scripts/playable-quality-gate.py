@@ -65,3 +65,16 @@ for token in [
 ]:
     if token not in dance:
         fail(f"Isla Baile missing persistent NUDOS contract token: {token}")
+
+
+# Delayed NUDO human-return evidence contract
+friend=(P/"playtest-friends.js").read_text(encoding="utf-8")
+for token in [
+    "isl_baile_return_probe_pending",
+    "isl_baile_return_evidence_v1",
+    "¿Qué crees que cambió?",
+    "¿Por qué crees que cambió?",
+    "¿Qué esperas que ocurra si vuelves otra vez?",
+]:
+    if token not in friend:
+        fail(f"Playtest friend mode missing delayed NUDO evidence token: {token}")
