@@ -1469,3 +1469,11 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Diagnosis strengthened: source/build is not the blocker; GitHub NETLIFY_AUTH_TOKEN / team visibility is.
 - Do not retry deploy loops until that secret is replaced/re-authorized for team/project access.
 - PRIVATE_DEPLOY remains RED/PENDING.
+
+
+## 2026-09-22 · VELARIA LIVE ROOT CAUSE FOUND
+- Real mobile retest still showed no movement because production app was stale.
+- Netlify production deploy was still 6ab065f8f08a719d4759a992 from 2026-09-20, commit 2a8abbc4cdbce2cd3947121caa7884159f460b98.
+- Therefore the touch fallback / TOCA beacon commit was NOT live in the app.
+- Public release airlock NETLIFY_DEPLOY_v0.7.2.md was intentionally bumped in commit b03ffabe511c1132262169f0f9afb6e3b3cd999b to publish the current portal for human-device retest.
+- HUMAN_DEVICE_GREEN remains PENDING until new Netlify deploy is READY and physical retest passes.
