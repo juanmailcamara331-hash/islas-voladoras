@@ -322,3 +322,24 @@ ROJO si:
 - el jugador no entiende la regla;
 - el humor destruye una escena que debía doler;
 - todo se vuelve sombrío y desaparece el mundo vivo.
+
+
+## ESCALA ÉPICA / VIDA COTIDIANA · 2026-09-22
+Cuanto más crece la escala de ISL, más importante es conservar anclas cotidianas.
+
+Mecanismo funcional:
+ÉPICA CRECIENTE × DETALLE HUMANO PEQUEÑO.
+
+Aplicaciones:
+- naves mejores pero con reparaciones;
+- ciudades imposibles con problemas domésticos;
+- criaturas enormes con hábitos comprensibles;
+- poder económico acompañado de deudas, amistades y obligaciones;
+- grandes revelaciones interrumpidas o aterrizadas por vida cotidiana cuando no destruya el beat emocional.
+
+Pratchett se usa aquí como referencia de FUNCIÓN:
+hacer que sistemas enormes sigan siendo humanos y coherentes mediante lo cotidiano.
+No copiar voz, chistes, personajes ni estructuras reconocibles.
+
+Regla:
+si una escalada sólo añade tamaño/espectáculo y no aumenta decisión, vínculo, consecuencia o sorpresa sistémica, no cuenta como progresión.
