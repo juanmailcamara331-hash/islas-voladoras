@@ -1407,3 +1407,14 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Gate: PENDING_REAL_HUMAN_INFERENCE.
 - PASS target: a person independently infers that gravity pulls toward concentrations of life.
 - No CANON promotion from source readiness.
+
+
+## 2026-09-22 · RELIQUIAS COTIDIANAS + SKYSHIP COMBAT RESEARCH
+- New doc: docs/ISL_EVERYDAY_RELICS_LIGHTERS_CURRENT.md.
+- Mechero 001 / Farol de Regreso preserved as CANDIDATE; current visual direction = stylized ISL, not hyperreal, not generic fantasy.
+- New doc: docs/ISL_SKYSHIP_COMBAT_MANOEUVRE_RESEARCH_CURRENT.md.
+- Historical functions captured: periplous, diekplous, raking/cross-axis, wind advantage, manoeuvre damage.
+- Functional Skies of Arcadia reference captured: multi-beat planning, danger/opportunity telegraph, delayed weapons, route/decision branches.
+- Proposed cheap prototype: 1v1 · 4 beats · 3 manoeuvres · 2 weapons · 1 resource · wind · 1 captain choice · 1 non-HP damaged system.
+- Automation Master updated with event-triggered ship-combat review; no new bot.
+- PRIMARY remains Velaria V2 P0 / HUMAN_DEVICE_GREEN=PENDING.
