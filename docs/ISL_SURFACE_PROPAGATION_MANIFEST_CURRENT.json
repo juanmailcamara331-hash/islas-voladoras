@@ -307,6 +307,36 @@
         "command_center"
       ],
       "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-REF-001",
+      "path": "docs/ISL_REFERENCE_DISTANCE_AND_LICENSE_AVOIDANCE_PROTOCOL_CURRENT.md",
+      "title": "Reference Distance / Evocation / License Avoidance",
+      "group": "Método / Referencias",
+      "kind": "method",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_REFERENCE_DISTANCE_AND_LICENSE_AVOIDANCE_PROTOCOL_CURRENT.md",
+      "surfaces": [
+        "gallery",
+        "command_center"
+      ],
+      "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "DOC-SYS-002",
+      "path": "docs/ISL_COMMAND_CENTER_ACTION_ROUTER_CURRENT.md",
+      "title": "Command Center Action Router",
+      "group": "Sistema / Centro de Mandos",
+      "kind": "system",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_COMMAND_CENTER_ACTION_ROUTER_CURRENT.md",
+      "surfaces": [
+        "gallery",
+        "command_center"
+      ],
+      "canon_state": "TRANSVERSAL"
     }
   ]
 }
