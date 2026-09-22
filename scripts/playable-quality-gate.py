@@ -32,7 +32,7 @@ for token in ["MODO COLEGAS","Hoy: Velaria.","JUGAR VELARIA","friend-browse"]:
 velaria=(P/"velaria-v2.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["velaria-p0-feel-v084","windReadout","Volver a la Recreativa","jugar.html?friends=1","Perfecto. Ahora el cartel discute con el viento."]:
     if token not in velaria: fail(f"Velaria P0 contract missing: {token}")
-for token in ["velaria-intuitive-input-v085","moveBeacon","TOCA","touchstart","moveFromPoint"]:
+for token in ["velaria-intuitive-input-v085","moveBeacon","TOCA","touchstart","moveFromPoint","velaria-device-fallback-v086","ISLVelariaMoveTo","TOQUE RECIBIDO"]:
     if token not in velaria: fail(f"Velaria mobile touch/discoverability contract missing: {token}")
 if 'id="returnBoat" href="rpg-home.html' in velaria:
     fail("Velaria regression: finish still returns to Cartographer instead of Recreativa")
@@ -114,7 +114,7 @@ for token in ["ISL // WIND LAB v1.7","backRecreo","prefers-reduced-motion","isl_
 
 # Gallery media-first v0.90
 gallery=(P/"galeria.html").read_text(encoding="utf-8")
-for token in ["Toca una pieza. Lo técnico queda detrás.","isl-gallery-touch-js-v090","data-drive","DETALLES"]:
+for token in ["Toca una pieza. Lo técnico queda detrás.","isl-gallery-touch-js-v090","data-drive","DETALLES","runtime_src"]:
     if token not in gallery:
         fail(f"Gallery missing media-first token: {token}")
 if 'content:"AMPLIAR"' in gallery:
