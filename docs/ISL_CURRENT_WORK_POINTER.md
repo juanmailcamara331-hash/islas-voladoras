@@ -1396,3 +1396,14 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Automation Master now contains an event-triggered Prism Worlds check; no new bot.
 - Current next gate for PRISM_WORLD_001: cheap causal prototype + human inference test.
 - PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
+
+## 2026-09-22 · PRISM WORLD 001 · CHEAP CAUSAL PROTOTYPE SOURCE READY
+- New playable source: portal/prism-gravedad-viva.html
+- Test contains 3 draggable living masses + resultant gravity vector + player/object response.
+- No rule tutorial; after interaction it asks only: “¿Qué crees que está pasando?”
+- Evidence key: isl_prism_world_001_evidence_v1 (local device).
+- Galería MUNDOS PRISMA opens the prototype directly.
+- Gate: PENDING_REAL_HUMAN_INFERENCE.
+- PASS target: a person independently infers that gravity pulls toward concentrations of life.
+- No CANON promotion from source readiness.
