@@ -1242,3 +1242,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Tedious loops require an exit/value channel: learning, efficiency, dialogue, microevent, decision, reward or interruption.
 - Accessibility may change task form while preserving narrative/systemic function.
 - Existing automation trigger extended; no new bot.
+
+
+## 2026-09-22 · CHECKPOINT v0.89 · GLOBAL RUMBO / EQUILIBRIO VIVO
+- Global checkpoint created: docs/ISL_CHECKPOINT_v0.89_GLOBAL_RUMBO_EQUILIBRIO_VIVO_2026-09-22.md
+- Core direction: STOP reflexive expansion. ISL now gains more from combination than from adding systems.
+- Rule: MENOS SISTEMAS NUEVOS · MÁS VIDA ENTRE LOS QUE YA EXISTEN.
+- Private printable summary surface created: private-site/rumbo-isl.html
+- Private build exposes RUMBO ISL from private Home/Command Center.
+- Page is print/PDF-friendly for calm offline review and redesign sessions.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
