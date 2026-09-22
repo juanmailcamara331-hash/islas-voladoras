@@ -309,3 +309,32 @@ Reglas:
 Para metodología exportable:
 usar sólo la abstracción desidentificada.
 Nunca exportar lore/assets/identidad/datos ISL.
+
+
+## 14. CHARACTER / COMPANION VISUAL AUTHORITY TRIGGER · 2026-09-22
+Trigger:
+when generating, editing, briefing or selecting protagonist/companion imagery.
+
+Before generation:
+1. check authoritative visual/reference note;
+2. RECENCY IS NOT AUTHORITY;
+3. reject recent candidates that drift toward generic fantasy;
+4. preserve identity-critical traits before style/lighting polish.
+
+Companion hard guard:
+- dolphin + fox + bird + dog + cat fused coherently;
+- rounded teddy-bear-like silly mouth/muzzle;
+- tender, weird, slightly unhinged, punk-mischief energy;
+- never default to “pretty fox with feathers”.
+
+Protagonist hard guard:
+- punk + chaotic + creative + friendly + dark;
+- practical sky-world traveler, not fashion cosplay;
+- gothic/deadpan/dark-whimsy references only by function;
+- mutate into original ISL; never copy a recognizable existing character.
+
+Output:
+maximum 2–4 candidates only when the active lane actually needs imagery.
+No new bot.
+No CANON promotion from generation alone.
+Return PRIMARY after the visual task.
