@@ -36,6 +36,8 @@ for token in ["velaria-intuitive-input-v085","moveBeacon","TOCA","touchstart","m
     if token not in velaria: fail(f"Velaria mobile touch/discoverability contract missing: {token}")
 if 'id="returnBoat" href="rpg-home.html' in velaria:
     fail("Velaria regression: finish still returns to Cartographer instead of Recreativa")
+if "\\n" in velaria:
+    fail("Velaria regression: literal \\n escape leaked into runtime HTML/JS")
 
 
 dance=(P/"isla-baile-inagotable.html").read_text(encoding="utf-8",errors="ignore")
@@ -117,3 +119,5 @@ for token in ["Toca una pieza. Lo técnico queda detrás.","isl-gallery-touch-js
         fail(f"Gallery missing media-first token: {token}")
 if 'content:"AMPLIAR"' in gallery:
     fail("Gallery regressed to redundant AMPLIAR overlay")
+if "drive.google.com/file/d/'+encodeURIComponent(drive)+'/preview" in gallery:
+    fail("Gallery regression: blocked Google Drive preview iframe restored")
