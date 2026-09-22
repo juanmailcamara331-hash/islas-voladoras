@@ -1105,3 +1105,13 @@ If another source-level pass does not materially improve clarity/agency/feel/des
 - Front source must be reconfirmed by human in the next chat before any generation or extraction.
 - ISL_ANCLA_FRONT_MANUFACTURING_v0.4 and derivatives are SUPERSEDED / DO_NOT_USE.
 - Next action: clean new chat → attach correct front → lock source → derive manufacturing assets faithfully.
+
+## 2026-09-22 · COMPANION EVOLUTION BRANCH
+- New product hypothesis: docs/ISL_COMPANION_EVOLUTION_BRANCH_CURRENT.md
+- Direction: ONE primary companion, not a collection loop.
+- Existing Recreativa pet walk/rank system is treated as precursor evidence, not final design.
+- Evolution target: experiences + environment + bond + autonomy + consequences; no moral score and no stat-only evolution.
+- Candidate functions: wind reading, retrieval, route finding, social/creature interaction, short autonomous exploration, recall.
+- Future cheap test: CERCA / LIBRE / LLAMADA + object/signal/relation outcomes + one autonomy consequence.
+- Unreal readiness and marketing implications are documented but remain gated.
+- No CANON promotion. Does not displace PRIMARY Velaria V2 P0 or current B→NUDOS→CQC B×A lane.
