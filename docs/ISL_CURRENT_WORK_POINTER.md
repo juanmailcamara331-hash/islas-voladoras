@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · ANCLA AUTHORITY RESOLVED
+- Explicit human reconfirmation closed the historical FRONT authority conflict.
+- FRONT AUTHORITATIVE/LOCKED: central anchor; circular eye at top; wind/ribbon around stem; floating islands/clouds; upper-right star; curved text ANCLA DEL REGRESO; antique brass + dark teal relic language.
+- REVERSE AUTHORITATIVE/LOCKED: central navigation rose/star; floating island; clouds/wind; teal + antique brass; 48 mm; text SIEMPRE HAY UN LUGAR / AL QUE VOLVER.
+- Superseded v0.4 manufacturing outputs remain forbidden.
+- Current Ancla step: technical extraction/validation → human digital CQC → supplier package.
+- CoinsForAnything send remains gated by explicit user approval.
+- No production authorization and no CANON promotion.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE EXECUTION NOTE · 2026-09-22 · VISUAL IDENTITY RECOVERY
 - Human correction: recent mascot generations drifted from the approved identity and are SUPERSEDED as references.
 - Companion AUTHORITATIVE DIRECTION: recover prior approved visual; compact bear-like mouth/muzzle; weird/cute; dumb-punk, curious, slightly unhinged; organic dolphin/fox/bird/dog/cat hybrid; NOT generic fantasy fox.
