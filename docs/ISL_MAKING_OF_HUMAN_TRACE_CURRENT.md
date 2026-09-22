@@ -121,3 +121,54 @@ Relación con la sesión:
 - misma rama HUMAN TRACE que CREATURE_001 y el OJO / isla-cocodrilo;
 - el vídeo documenta proceso, no valida canon;
 - cualquier interpretación visual posterior debe conservar vínculo de procedencia con esta sesión humana.
+
+
+## HUMAN TRACE · IRENE · EYE_001
+
+Estado:
+HUMAN_TRACE_RAW · CONCEPT ART · NO CANON
+
+Material:
+- dibujo manual del ojo asociado al hito isla-cocodrilo;
+- ojo concebido como umbral / ruptura de realidad, no como simple rasgo anatómico;
+- composición alargada, orgánica y extraña;
+- interior con pliegues / estratos que sugieren profundidad, abertura o espacio imposible;
+- función narrativa: la mirada de la criatura activa el tránsito hacia otro mundo.
+
+Dirección de continuidad:
+- al mirar al jugador, el mundo pierde estabilidad;
+- transición hacia un espacio de nubes / aire / partículas;
+- allí emerge el dragón-cocodrilo blanco formado por atmósfera;
+- ojos del ser de nubes: vacíos / no convencionales;
+- mantener misterio y ambigüedad antes que explicar el mecanismo.
+
+No convertir todavía en portal genérico ni boss gate.
+Preservar el dibujo original como fuente humana.
+
+## MAKING-OF · SESSION_001 · HUMAN PAIR
+
+Estado:
+PROCESS EVIDENCE · PRIVATE UNTIL CONSENT
+
+Material:
+- fotografía de la sesión creativa compartida;
+- autor + Irene trabajando físicamente con cuaderno;
+- contexto doméstico / real;
+- valor: documentar que el diseño nace de conversación, amistad, dibujo y prueba humana, no sólo de herramientas digitales.
+
+Uso potencial:
+- making-of;
+- dossier;
+- galería privada;
+- futuro montaje documental.
+
+Publicación:
+- requiere decisión explícita sobre uso de rostro / nombre / crédito;
+- por defecto queda privada;
+- no subir archivo original a repositorios públicos automáticamente.
+
+## MICRO-SECUENCIA DE MAKING-OF
+
+SESSION TOGETHER → CUADERNO → CREATURE_001 → VIDEO_001 → EYE_001 → HITO ISLA-COCODRILO → MUNDO DE NUBES.
+
+Esta secuencia puede convertirse más adelante en una cápsula corta de making-of porque muestra causalidad creativa real: una conversación produce un dibujo; el dibujo produce una idea; la idea produce una escena y una función jugable/narrativa.
