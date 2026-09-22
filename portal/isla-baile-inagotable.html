@@ -115,7 +115,7 @@ body{background:radial-gradient(circle at 72% 0,#1c3c4b 0,transparent 28%),radia
 <section class="panel" id="knotLab">
   <div class="k">NUDOS PERSISTENTES · SCHEMA v1 · NO MORAL SCORE</div>
   <h3 style="margin-top:6px">Lo que ocurrió puede volver</h3>
-  <p>Un NUDO sólo aparece si hubo coste, más de una lectura defendible y un cambio verificable. Una consecuencia principal y hasta dos ecos.</p>
+  <p>Un NUDO sólo aparece si hubo coste, más de una lectura defendible y un cambio verificable. Una consecuencia principal y hasta dos ecos. El historial se conserva con schema versionado y snapshot de rollback.</p>
   <div class="knots">
     <div class="knot" id="knotA"><b>NUDO-A · MEMORIA / CONFIANZA</b><span id="knotAText">Dormido. El Escarabeo aún no conserva una cadena significativa.</span></div>
     <div class="knot" id="knotB"><b>NUDO-B · REGLA / ADAPTACIÓN</b><span id="knotBText">Dormido. La Danzante aún no ha cambiado una regla persistente.</span></div>
@@ -128,10 +128,25 @@ body{background:radial-gradient(circle at 72% 0,#1c3c4b 0,transparent 28%),radia
 
 <script>
 (()=>{'use strict';
-const EKEY='isl_huellas_events_v2', SKEY='isl_dance_island_v1';
-const state=load();
+const EKEY='isl_huellas_events_v2', SKEY='isl_dance_island_v1', DIALECTIC_BACKUP_KEY='isl_dance_island_v1_dialectic_backup';
+const state=migrateDialecticState(load());
 const $=id=>document.getElementById(id);
 function load(){try{return JSON.parse(localStorage.getItem(SKEY)||'{}')}catch(e){return{}}}
+
+function migrateDialecticState(s){
+ const from=Number(s.dialectic_schema_version||0);
+ if(from>=1) return s;
+ try{
+   if(Object.keys(s).length) localStorage.setItem(DIALECTIC_BACKUP_KEY,JSON.stringify({saved_at:new Date().toISOString(),from_version:from,state:s}));
+ }catch(e){}
+ s.knots=s.knots&&typeof s.knots==='object'?s.knots:{};
+ s.dialectic_schema_version=1;
+ s.dialectic_migrated_from=from;
+ return s;
+}
+function dialecticRollbackAvailable(){
+ try{return !!localStorage.getItem(DIALECTIC_BACKUP_KEY)}catch(e){return false}
+}
 function save(){localStorage.setItem(SKEY,JSON.stringify(state));render()}
 function evs(){try{const a=JSON.parse(localStorage.getItem(EKEY)||'[]');return Array.isArray(a)?a:[]}catch(e){return[]}}
 function trace(action,delta,tags,cost,witness,relations=[]){
@@ -159,6 +174,7 @@ function ensureKnots(){
 }
 function createKnot(id,data){
  ensureKnots();
+ try{if(!localStorage.getItem(DIALECTIC_BACKUP_KEY)) localStorage.setItem(DIALECTIC_BACKUP_KEY,JSON.stringify({saved_at:new Date().toISOString(),from_version:1,state:JSON.parse(JSON.stringify(state))}))}catch(e){}
  if(state.knots[id]) return state.knots[id];
  state.knots[id]={
    knot_id:id,
