@@ -55,3 +55,27 @@ wishlist/demo crossover
 post-campaign retention
 delivery accuracy
 community survival 90/180 days
+
+
+## ROLE STARTER PACKS / REPLAY HYPOTHESIS · 2026-09-22
+Hipótesis de campaña:
+los tiers pueden diferenciarse por una lente/contrato de inicio jugable + una familia física coherente, no sólo por “más merch”.
+
+Ejemplo conceptual:
+VIAJERO / DESCUBRIDOR / GUARDIÁN / TRICKSTER / ARTESANO.
+
+Principio:
+BUY THE GAME ONCE.
+Un backer puede recibir un starter role incluido en su tier; después, un jugador que quiera rejugar con otra lente podría desbloquear un nuevo inicio mediante un add-on pequeño sin volver a comprar el juego completo.
+
+Guardas:
+- ningún rol debe contener historia esencial exclusiva;
+- no pay-to-win;
+- no ventaja competitiva;
+- no bloqueo irreversible;
+- no perfilado psicológico real;
+- no FOMO artificial;
+- precio y cantidad de tiers se validan con claridad, conversión, coste de fulfillment y percepción de valor.
+
+Test previo a CF-30:
+comparar 2 starter roles en una misma primera hora y comprobar si el jugador percibe una experiencia distinta por decisiones/contexto/relaciones, no por simple reskin.
