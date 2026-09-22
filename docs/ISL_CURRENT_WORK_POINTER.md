@@ -1492,3 +1492,11 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Supplier packet structure, filenames, locked spec and technical questions are ready.
 - Only blocking input is human reconfirmation of the exact authoritative FRONT.
 - No further supplier-side prep needed until that source is reconfirmed.
+
+
+## 2026-09-22 · GITHUB PAGES RECOVERED FOR ANDROID APP
+- Workflow run 35762967427 = SUCCESS.
+- Deployed SHA = 7a42f91266966c11c576b871bb361dff0e5dd51d.
+- Root cause of prior stale Android experience was failed Pages navigation gate, not Velaria runtime logic alone.
+- Android WebView points to GitHub Pages, so this is the first valid app retest surface containing the Velaria touch/discoverability fix.
+- HUMAN_DEVICE_GREEN still PENDING until physical retest.
