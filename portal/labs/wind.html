@@ -72,12 +72,14 @@ canvas{display:block;width:100%;height:100%;touch-action:none;image-rendering:pi
   .toolbar{padding:5px 6px;min-height:48px}
   .toolbar button{padding:6px;font-size:9px}
 }
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.topbar,.toolbar,#drawer{transition:none!important}}
 </style>
 </head>
 <body>
 <div id="app">
   <div class="topbar">
-    <div class="brand">ISL // WIND LAB v1.6</div>
+    <button id="backRecreo" aria-label="Volver a Distrito Recreo">← RECREO</button>
+    <div class="brand">ISL // WIND LAB v1.7 · LAB · NO CANON</div>
     <select id="challenge">
       <option value="redirect">Redirigir</option>
       <option value="stabilize">Estabilizar</option>
@@ -343,6 +345,14 @@ document.getElementById('windStraight').onclick=()=>{windAngle=0;resetScore()};
 document.getElementById('windRight').onclick=()=>{windAngle=-.20;resetScore()};
 document.getElementById('analyzerBtn').onclick=()=>document.getElementById('drawer').classList.toggle('open');
 document.getElementById('challenge').onchange=()=>{resetScore();updateObjective()};
+document.getElementById('backRecreo').onclick=()=>{location.href='../recreo.html'};
+function traceWind(kind,extra){
+  try{
+    let a=JSON.parse(localStorage.getItem('isl_wind_lab_events_v1')||'[]');if(!Array.isArray(a))a=[];
+    a.push(Object.assign({at:new Date().toISOString(),kind:kind,challenge:document.getElementById('challenge').value,shape_count:shapes.length},extra||{}));
+    localStorage.setItem('isl_wind_lab_events_v1',JSON.stringify(a.slice(-40)));
+  }catch(e){}
+}
 
 function interact(x,y,vx,vy,s){
   const pts=displayPts(s); if(pts.length<4)return{vx,vy};
