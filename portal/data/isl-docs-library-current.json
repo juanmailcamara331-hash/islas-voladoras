@@ -321,6 +321,33 @@
         "gallery",
         "command_center"
       ]
+    },
+    {
+      "id": "DOC-METHOD-008",
+      "title": "Visual Brief / Checkframe Pattern",
+      "group": "Método / Presentación",
+      "kind": "method",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_VISUAL_BRIEF_CHECKFRAME_PATTERN_CURRENT.md",
+      "canon_state": "TRANSVERSAL",
+      "surfaces": [
+        "gallery",
+        "command_center"
+      ]
+    },
+    {
+      "id": "DOC-METHOD-009",
+      "title": "Exportable Visual Brief / Checkframe Abstraction",
+      "group": "Método / Abstracción",
+      "kind": "method",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_EXPORTABLE_VISUAL_BRIEF_CHECKFRAME_PATTERN_v0.1.md",
+      "canon_state": "ABSTRACT_ONLY",
+      "surfaces": [
+        "gallery"
+      ]
     }
   ]
 }
