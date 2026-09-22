@@ -42,13 +42,14 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 <div class="k">MIRA · ESCUCHA · ABRE</div>
 <h1>Galería viva.</h1>
 <p class="lead">Toca una pieza. Lo técnico queda detrás.</p>
-<div class="stats"><span class="stat"><b id="countArchive">—</b> archivo</span><span class="stat"><b id="countLab">—</b> lab</span><span class="stat"><b id="count3d">—</b> 3D</span><span class="stat"><b id="countMusic">—</b> música</span></div>
+<div class="stats"><span class="stat"><b id="countArchive">—</b> archivo</span><span class="stat"><b id="countPrism">—</b> mundos prisma</span><span class="stat"><b id="countLab">—</b> lab</span><span class="stat"><b id="count3d">—</b> 3D</span><span class="stat"><b id="countMusic">—</b> música</span></div>
 <div class="truth"><b>REGLA:</b> Gallery ≠ CANON · MASTER ≠ RUNTIME · SOURCE NOT WIRED ≠ inexistente. La interfaz enseña el estado real y no se inventa un player.</div>
 </section>
 
 <div class="tabs" role="tablist">
 <button class="tab on" data-tab="overview">TODO</button>
 <button class="tab" data-tab="archive">ARCHIVO VISUAL</button>
+<button class="tab" data-tab="prism">MUNDOS PRISMA</button>
 <button class="tab" data-tab="lab">EXTERNAL LAB</button>
 <button class="tab" data-tab="three">3D</button>
 <button class="tab" data-tab="video">VÍDEO</button>
@@ -58,6 +59,7 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 </div>
 
 <section id="overview" class="section on">
+<div class="subhead"><h2>Mundos Prisma</h2></div><div class="grid" id="overviewPrism"></div>
 <div class="subhead"><h2>Ahora</h2></div><div class="grid" id="overviewLab"></div>
 <div class="subhead"><h2>3D</h2></div><div class="grid" id="overview3d"></div>
 <div class="subhead"><h2>Música</h2></div><div class="grid" id="overviewMusic"></div>
@@ -65,6 +67,7 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 </section>
 
 <section id="archive" class="section"><div class="grid" id="archiveGrid"></div></section>
+<section id="prism" class="section"><div class="grid" id="prismGrid"></div></section>
 <section id="lab" class="section"><div class="grid" id="labGrid"></div></section>
 <section id="three" class="section"><div class="grid" id="threeGrid"></div></section>
 <section id="video" class="section"><div class="grid" id="videoGrid"></div></section>
@@ -81,6 +84,10 @@ addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
 function archiveCard(a){
  const media=a.type==='video'?'<video muted playsinline preload="metadata" src="'+esc(a.runtime_src)+'"></video>':'<img loading="lazy" src="'+esc(a.runtime_src)+'" alt="'+esc(a.title)+'">';
  return '<article class="card mediaCard"><div class="thumb">'+media+'</div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
+}
+function prismCard(a){
+ const drive=a.drive_id||'';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="image"><div class="thumb"><span aria-hidden="true">◈</span></div><div class="pad"><div class="k">MUNDO PRISMA</div><h2>'+esc(a.title||a.id)+'</h2><span class="status warn">'+esc(a.status||'PROTOTYPE SEED')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.law||'')+' · '+esc(a.canon_state||'NO CANON')+'</div></details></div></article>';
 }
 function labCard(a){
  const title=a.name||a.entity||a.id;
@@ -106,22 +113,25 @@ function musicCard(t){
 }
 Promise.all([
  fetch('data/isl-gallery-library-current.json',{cache:'no-store'}).then(r=>r.json()),
+ fetch('data/isl-prism-worlds-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-external-lab-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-music-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-asset-health-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-docs-library-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-phrase-bank-current.json',{cache:'no-store'}).then(r=>r.json())
-]).then(([lib,lab,music,health,docsLib,phraseBank])=>{
- const archive=lib.assets||[], ext=lab.assets||[], tracks=music.tracks||[], hsAll=health.assets||health.entities||health.items||[], hs=hsAll.filter(x=>x.asset_id!=="ISL_MUSIC_GALLERY");
+]).then(([lib,prism,lab,music,health,docsLib,phraseBank])=>{
+ const archive=lib.assets||[], prisms=prism.worlds||[], ext=lab.assets||[], tracks=music.tracks||[], hsAll=health.assets||health.entities||health.items||[], hs=hsAll.filter(x=>x.asset_id!=="ISL_MUSIC_GALLERY");
  const videos=[...archive.filter(x=>x.type==='video'),...ext.filter(x=>x.type==='video')], docs=docsLib.docs||[], phrases=phraseBank.phrases||[];
- countArchive.textContent=archive.length;countLab.textContent=ext.length;count3d.textContent=hs.length;countMusic.textContent=tracks.length;
+ countArchive.textContent=archive.length;countPrism.textContent=prisms.length;countLab.textContent=ext.length;count3d.textContent=hs.length;countMusic.textContent=tracks.length;
  archiveGrid.innerHTML=archive.map(archiveCard).join('')||'<div class="card empty">Sin archivo.</div>';
+ prismGrid.innerHTML=prisms.map(prismCard).join('')||'<div class="card empty">Sin mundos prisma todavía.</div>';
  labGrid.innerHTML=ext.map(labCard).join('')||'<div class="card empty">Sin External Lab.</div>';
  threeGrid.innerHTML=hs.map(healthCard).join('')||'<div class="card empty">Sin Asset Health.</div>';
  videoGrid.innerHTML=videos.map(a=>a.runtime_src?archiveCard(a):labCard(a)).join('')||'<div class="card empty">Sin vídeo registrado.</div>';
  musicGrid.innerHTML=tracks.map(musicCard).join('')||'<div class="card empty">Sin música registrada.</div>';
  docsGrid.innerHTML=docs.map(docsCard).join('')||'<div class="card empty">Sin documentos registrados.</div>';
  phrasesGrid.innerHTML=phrases.map(phraseCard).join('')||'<div class="card empty">Sin frases registradas.</div>';
+ overviewPrism.innerHTML=prisms.slice(0,4).map(prismCard).join('');
  overviewLab.innerHTML=ext.slice(0,6).map(labCard).join('');
  overview3d.innerHTML=hs.slice(0,4).map(healthCard).join('');
  overviewMusic.innerHTML=[...tracks].sort((a,b)=>Number(!!b.runtime_src)-Number(!!a.runtime_src)||Number(!!b.drive_id)-Number(!!a.drive_id)).slice(0,4).map(musicCard).join('');
@@ -129,7 +139,7 @@ Promise.all([
  setTab(location.hash.slice(1)||'overview');
 }).catch(err=>{
  console.error(err);
- ['overviewLab','overview3d','overviewMusic','overviewArchive','archiveGrid','labGrid','threeGrid','videoGrid','musicGrid','docsGrid','phrasesGrid'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML='<div class="card empty">No se pudo cargar este registro.</div>'});
+ ['overviewPrism','overviewLab','overview3d','overviewMusic','overviewArchive','archiveGrid','prismGrid','labGrid','threeGrid','videoGrid','musicGrid','docsGrid','phrasesGrid'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML='<div class="card empty">No se pudo cargar este registro.</div>'});
  setTab(location.hash.slice(1)||'overview');
 });
 </script>
