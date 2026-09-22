@@ -1153,3 +1153,12 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Remaining gates: HUMAN causal-recall test + ART/3-scale visual read.
 - No CANON promotion.
 - PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
+
+## 2026-09-22 · NUDOS HUMAN RETURN PROBE READY
+- Friend-mode return test is implemented for Isla del Baile.
+- Creating a NUDO arms a delayed-return probe.
+- On return, tester answers: what changed / why / what they expect next.
+- Raw answers persist locally in isl_baile_return_evidence_v1.
+- No scoring, no automatic interpretation, no CANON promotion.
+- Gate now requires real human answers before causal-recall can move from HOLD.
