@@ -192,3 +192,26 @@ LOOK → REALITY BREAK → CLOUDS → PARTICLES → CRYSTALS → CRYSTALLIZED SK
 Guard:
 Do not reduce this to decorative gemstones, a generic crystal dragon, a standard boss or a conventional portal.
 Preserve Irene's human source and later derivatives as separate, provenance-linked artifacts.
+
+
+## VISUAL DERIVATIVE · CONCEPT BOARD 001
+
+Status:
+VISUAL_DERIVATIVE_PROVISIONAL · NO CANON
+
+Reference-by-function from Irene:
+- classic airborne fantasy-creature feeling / majesty / flight;
+- ISL mutation: feathers become living crystal, white diamond, cloud and condensed air;
+- do not copy recognizable creature design, anatomy or composition from existing works.
+
+Board direction:
+- crystal instead of feathers;
+- punk crest;
+- blade-like teeth;
+- atmospheric/mineral body;
+- particles and crystals continuously reconfigure and distort air/light;
+- beauty + danger + sacred/unsettling presence.
+
+Authority:
+IRENE HUMAN SOURCE / DRAWINGS > this generated board.
+The board inspires and communicates; it does not overwrite the human source.
