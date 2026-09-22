@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "project": "ISLAS_VOLADORAS_ISL",
-  "updated": "2026-09-21",
+  "updated": "2026-09-22",
   "rules": {
     "preflight_required": true,
     "no_regeneration_when_approved_reference_exists": true,
@@ -11,8 +11,8 @@
     {
       "isl_id": "ISL_PHYSICAL_001",
       "name": "Ancla del Regreso",
-      "state": "ACTIVE_PROTOTYPE_PREP",
-      "current_operation": "DERIVE_MANUFACTURING_ASSETS",
+      "state": "SUPPLIER_FEEDBACK_RECEIVED",
+      "current_operation": "EVALUATE_SUPPLIER_FEEDBACK_AGAINST_AUTHORITATIVE_SPEC",
       "front": {
         "status": "APPROVED_REFERENCE_PENDING_TECHNICAL_EXTRACTION",
         "source_of_truth": "User-approved original physical mockup / front reference from current physical lane",
@@ -46,7 +46,43 @@
           "regenerate whole sheet unless explicitly requested"
         ]
       },
-      "next_action": "Extract/prepare real manufacturing assets from approved references; do not create another concept sheet."
+      "next_action": "Ask targeted technical follow-up and clarify 1–3 sample/first-article path before any payment; then compare digital proof to locked front/reverse source-of-truth.",
+      "supplier_feedback": {
+        "supplier": "The Pins Store",
+        "received": "2026-09-22",
+        "feasibility": "CONFIRMED_IN_PRINCIPLE",
+        "offered_materials": [
+          "iron",
+          "zinc alloy"
+        ],
+        "finish": "antique brass",
+        "processes": [
+          "raised relief",
+          "fine engraving",
+          "enamel details"
+        ],
+        "digital_proof": true,
+        "artwork_change_rule": "Supplier states no simplification/redesign without discussion first",
+        "moq": 25,
+        "quote_usd": {
+          "pieces_25": 650,
+          "pieces_50_approx": 890,
+          "pieces_100_approx": 1280
+        },
+        "mould_included": true,
+        "shipping_to_spain_included": true,
+        "production_delivery": "3–4 weeks",
+        "mismatch_with_requested_prototype_lane": "Requested 1–3 samples; supplier MOQ is 25. Do not commit money yet.",
+        "missing_before_decision": [
+          "exact minimum line width",
+          "minimum enamel cell size",
+          "relief height/depth limits",
+          "engraving depth/line limits",
+          "recommended iron vs zinc alloy for this specific 48 mm relic",
+          "confirmation of ~3.0 mm thickness and integrated top loop",
+          "whether paid/pre-production sample or single first article is possible despite MOQ"
+        ]
+      }
     },
     {
       "isl_id": "ISL_PHYSICAL_002",
