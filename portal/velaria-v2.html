@@ -211,7 +211,7 @@ body{touch-action:none}
   var game=document.getElementById('game'),player=document.getElementById('player'),friend=document.getElementById('friend');
   var action=document.getElementById('action'),bubble=document.getElementById('bubble'),hint=document.getElementById('hint');
   var sign=document.getElementById('sign'),post=document.getElementById('post'),notice=document.getElementById('notice'),finish=document.getElementById('finish');
-  var x=15,phase=0,locked=false,moveTimer=null;\n  function feel(ms){try{if(navigator.vibrate)navigator.vibrate(ms)}catch(e){}}
+  var x=15,phase=0,locked=false,moveTimer=null;\n  function safeReturnTarget(){\n    try{\n      var p=new URLSearchParams(location.search),r=p.get('return')||'';\n      if(/^[a-z0-9._-]+\\.html$/i.test(r))return r;\n    }catch(e){}\n    return 'jugar.html?friends=1';\n  }\n  var returnTarget=safeReturnTarget();\n  var returnBoat=document.getElementById('returnBoat');if(returnBoat)returnBoat.href=returnTarget;\n  function feel(ms){try{if(navigator.vibrate)navigator.vibrate(ms)}catch(e){}}
   function setX(v){
     if(locked)return;
     x=Math.max(9,Math.min(78,v));player.style.left=x+'%';
@@ -260,7 +260,7 @@ body{touch-action:none}
     localStorage.setItem('isl_huellas_events_v2',JSON.stringify(a.slice(-64)));
     localStorage.setItem('isl_velaria_pc40_state','observed');
   }
-  document.getElementById('back').onclick=function(){window.top.location.href='jugar.html?friends=1'};
+  document.getElementById('back').onclick=function(){window.top.location.href=returnTarget};
 })();
 </script>
 
