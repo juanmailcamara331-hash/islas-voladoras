@@ -1,0 +1,108 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "generated_at": "2026-09-22",
+  "status": "RESOURCE_HEALTH_CURRENT",
+  "note": "Observed values are connector-visible snapshots, not account billing truth.",
+  "services": [
+    {
+      "id": "github_repo",
+      "label": "GitHub · islas-voladoras",
+      "state": "GREEN",
+      "observed": {
+        "visibility": "public",
+        "repo_api_size_kb": 95888,
+        "repo_api_size_mib": 93.64,
+        "license_field": null
+      },
+      "reference_limits": {
+        "recommended_repo_git_size_gb": 10,
+        "hard_single_object_mb": 100,
+        "recommended_single_object_mb": 1,
+        "push_size_gb": 2
+      },
+      "usage_ratio_note": "Repo API size is ~0.9% of GitHub's 10 GB recommended repository-size ceiling; API size is not identical to local .git on-disk size.",
+      "risks": [
+        "Repository is PUBLIC: never store secrets, private contracts, personal data or unreleased sensitive masters here.",
+        "Large binaries should not accumulate in ordinary Git history."
+      ],
+      "next": [
+        "Keep source/code/docs in GitHub.",
+        "Use LFS or external persistent storage for large binaries when needed.",
+        "Track Actions artifact/caches separately if they become material."
+      ]
+    },
+    {
+      "id": "google_drive",
+      "label": "Google Drive · ISL workspace",
+      "state": "WATCH",
+      "observed": {
+        "scanned_folder_id": "0AEUN1o3grgOwUk9PVA",
+        "direct_items_visible": 253,
+        "folders_visible": 32,
+        "summed_visible_bytes": 5997974699,
+        "summed_visible_gib": 5.59,
+        "account_quota": "UNKNOWN_FROM_CONNECTOR"
+      },
+      "reference_limits": {
+        "base_consumer_account_gb": 15,
+        "note": "Actual user quota may be larger via Google One/Workspace; do not infer account plan."
+      },
+      "risks": [
+        "Visible project footprint is already multi-GB.",
+        "Account-wide remaining quota cannot be read from the current connector.",
+        "Drive is archive/master storage, not a low-latency game CDN."
+      ],
+      "next": [
+        "Keep masters, briefs, provenance and backups in Drive.",
+        "Add CDN/object storage only when verified runtime binary/volume/performance need exists.",
+        "Periodically deduplicate masters/exports without deleting source-of-truth."
+      ]
+    },
+    {
+      "id": "unreal",
+      "label": "Unreal Engine · production storage",
+      "state": "NOT_YET_INSTRUMENTED",
+      "observed": {
+        "project_disk_usage": "UNKNOWN",
+        "ddc_usage": "UNKNOWN",
+        "shared_ddc": "UNKNOWN",
+        "virtual_assets": "NOT_DECIDED",
+        "source_control_for_binary_assets": "NOT_FINALIZED"
+      },
+      "guidance": [
+        "Derived Data Cache is disposable/regenerable and should not be committed to source control.",
+        "Epic recommends shared DDC/Zen Storage as teams and project size grow.",
+        "Virtual Assets can reduce local sync/disk pressure for large projects."
+      ],
+      "next": [
+        "Instrument project Content size, Saved/Intermediate size and DDC separately when Unreal production lane activates.",
+        "Choose persistent binary source strategy before multi-person Unreal production.",
+        "Do not migrate infrastructure before real size/team pain exists."
+      ]
+    },
+    {
+      "id": "runtime_surfaces",
+      "label": "Web / App / Centro de Mandos",
+      "state": "GREEN_WITH_FALLBACK",
+      "observed": {
+        "docs_registry": "portal/data/isl-docs-library-current.json",
+        "resource_registry": "portal/data/isl-resource-health-current.json",
+        "primary_sync_workflow": ".github/workflows/surface-propagation.yml",
+        "fallback_workflow": ".github/workflows/surface-propagation-fallback.yml"
+      },
+      "next": [
+        "Keep runtime registries generated from manifests where possible.",
+        "Fail CI on declared-surface drift.",
+        "Fallback repairs generated registry and raises a human issue only if repair still fails."
+      ]
+    }
+  ],
+  "missing_visibility": [
+    "Google account remaining storage/quota",
+    "GitHub Actions account-level artifact storage currently consumed",
+    "Unreal local project + DDC real sizes",
+    "future CDN/object-storage consumption",
+    "Netlify bandwidth/build quota if/when deployment resumes"
+  ]
+}
