@@ -41,4 +41,34 @@
       var gate=document.getElementById('preplayGate');if(gate)gate.hidden=false;
     };
   }
+
+  if(PATH==='isla-baile-inagotable.html'){
+    try{
+      var pending=localStorage.getItem('isl_baile_return_probe_pending')==='1';
+      var raw=JSON.parse(localStorage.getItem('isl_dance_island_v1')||'{}');
+      var hasKnots=raw.knots&&Object.keys(raw.knots).length>0;
+      if(pending&&hasKnots){
+        var pc=document.createElement('div');pc.id='islKnotReturnProbe';
+        pc.innerHTML='<div class="ifh"><small>ISL · PRUEBA DE REGRESO</small><h2>¿Qué recuerdas?</h2><p>Sin mirar explicaciones anteriores, responde con tus palabras.</p><label>¿Qué crees que cambió?</label><textarea id="ikpChanged" rows="2"></textarea><label>¿Por qué crees que cambió?</label><textarea id="ikpWhy" rows="2"></textarea><label>¿Qué esperas que ocurra si vuelves otra vez?</label><textarea id="ikpNext" rows="2"></textarea><div class="ikpActions"><button type="button" id="ikpSave">GUARDAR HUELLA</button><button type="button" id="ikpLater">AHORA NO</button></div></div>';
+        pc.style.cssText='position:fixed;inset:0;z-index:2147482960;display:grid;place-items:center;padding:16px;background:#02070be8;font-family:system-ui,sans-serif';
+        document.body.appendChild(pc);
+        var st=document.createElement('style');
+        st.textContent='#islKnotReturnProbe .ifh label{display:block;margin:10px 0 4px;font-size:10px;color:#8defff;font-weight:800}#islKnotReturnProbe textarea{width:100%;resize:vertical;border:1px solid #45636d;border-radius:9px;background:#071118;color:#eef7f4;padding:9px;font:12px system-ui}#islKnotReturnProbe .ikpActions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}';
+        document.head.appendChild(st);
+        document.getElementById('ikpLater').onclick=function(){pc.remove()};
+        document.getElementById('ikpSave').onclick=function(){
+          var changed=document.getElementById('ikpChanged').value.trim();
+          var why=document.getElementById('ikpWhy').value.trim();
+          var next=document.getElementById('ikpNext').value.trim();
+          if(!changed&&!why&&!next)return;
+          var arr=[];try{arr=JSON.parse(localStorage.getItem('isl_baile_return_evidence_v1')||'[]');if(!Array.isArray(arr))arr=[]}catch(e){arr=[]}
+          arr.push({at:new Date().toISOString(),changed:changed,why:why,next:next,knot_ids:Object.keys(raw.knots||{})});
+          localStorage.setItem('isl_baile_return_evidence_v1',JSON.stringify(arr.slice(-12)));
+          localStorage.removeItem('isl_baile_return_probe_pending');
+          pc.remove();
+        };
+      }
+    }catch(e){}
+  }
+
 })();
