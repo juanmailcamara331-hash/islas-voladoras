@@ -88,6 +88,27 @@
       main.insertBefore(box,main.firstChild);
     })();
 
+    (function installSystemsDocsBlock(){
+      var main=document.querySelector('main');
+      if(!main||document.getElementById('islSystemsDocsBlock'))return;
+      fetch('data/isl-docs-library-current.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('docs');return r.json()}).then(function(lib){
+        var docs=Array.isArray(lib.docs)?lib.docs:[];
+        var picks=[
+          docs.find(function(x){return x.id==='DOC-MKT-001'}),
+          docs.find(function(x){return x.id==='DOC-LEGAL-002'}),
+          docs.find(function(x){return x.id==='DOC-METHOD-004'}),
+          docs.find(function(x){return x.id==='DOC-METHOD-005'})
+        ].filter(Boolean);
+        var box=document.createElement('section');
+        box.id='islSystemsDocsBlock';box.className='panel';
+        box.style.cssText='border-color:#566b86;background:linear-gradient(135deg,#111c2b,#10232b);margin:0 0 14px';
+        box.innerHTML='<div class="eyebrow">SISTEMAS VIVOS · DOCS RUNTIME</div>'+
+          '<div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap"><div><h2 style="margin:4px 0 7px">Legal · Marketing · Método · Hitos</h2><div class="sub">El Centro enseña el registro runtime. Drive/GitHub siguen siendo source. Crear un doc no lo convierte en CANON.</div></div><a class="btn primary" href="galeria.html#docs">ABRIR DOCS / BRIEFS</a></div>'+
+          '<div class="grid" style="margin-top:10px">'+picks.map(function(d){return '<a class="card" target="_blank" rel="noopener" href="'+esc(d.url||'#')+'"><div class="label">'+esc(d.group||d.kind||'DOC')+'</div><h3 style="font-size:15px;color:#eaf3f3;margin:5px 0">'+esc(d.title||d.id)+'</h3><div class="meta">'+esc(d.status||'CURRENT')+'</div></a>'}).join('')+'</div>';
+        main.insertBefore(box,main.firstChild);
+      }).catch(function(){});
+    })();
+
     installPollsModule();
     loadPollState();
     // Cost-control: live poll state loads on page open and via the ACTUALIZAR button.
