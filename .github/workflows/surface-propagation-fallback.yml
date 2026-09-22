@@ -12,48 +12,88 @@ permissions:
   contents: write
   issues: write
 
+concurrency:
+  group: isl-surface-propagation-fallback
+  cancel-in-progress: false
+
 jobs:
   repair:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'failure'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
+          ref: main
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
-      - name: Regenerate docs runtime registry
-        run: python scripts/generate-docs-runtime.py
+      - name: Start from latest main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
 
-      - name: Commit repair if generated state drifted
+      - name: Regenerate and validate latest state
+        id: initial_gate
+        continue-on-error: true
+        run: |
+          python scripts/generate-docs-runtime.py
+          python scripts/surface-propagation-gate.py
+
+      - name: Repair generated registry with race-safe retry
+        if: steps.initial_gate.outcome == 'success'
         run: |
           if git diff --quiet -- portal/data/isl-docs-library-current.json; then
             echo "No generated-registry repair required."
-          else
-            git config user.name "isl-surface-fallback"
-            git config user.email "actions@users.noreply.github.com"
-            git add portal/data/isl-docs-library-current.json
-            git commit -m "Repair ISL surface registry drift"
-            git push
+            exit 0
           fi
 
-      - name: Re-run propagation gate
-        id: gate
-        continue-on-error: true
-        run: python scripts/surface-propagation-gate.py
+          git config user.name "isl-surface-fallback"
+          git config user.email "actions@users.noreply.github.com"
 
-      - name: Escalate only if repair failed
-        if: steps.gate.outcome == 'failure'
+          for attempt in 1 2 3; do
+            echo "Fallback attempt $attempt/3"
+            git add portal/data/isl-docs-library-current.json
+            if ! git diff --cached --quiet; then
+              git commit -m "Repair ISL surface registry drift"
+            fi
+
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            git fetch origin main
+            git rebase origin/main || {
+              git rebase --abort || true
+              git reset --hard origin/main
+            }
+            python scripts/generate-docs-runtime.py
+            python scripts/surface-propagation-gate.py
+          done
+
+          echo "Remote remained busy; a later scheduled fallback will retry. Do not fail only for a non-fast-forward race."
+          exit 0
+
+      - name: Final gate on current main
+        id: final_gate
+        continue-on-error: true
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+          python scripts/generate-docs-runtime.py
+          python scripts/surface-propagation-gate.py
+
+      - name: Escalate only a real propagation defect
+        if: steps.initial_gate.outcome == 'failure' || steps.final_gate.outcome == 'failure'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           TITLE="ISL surface propagation needs human review"
           EXISTING=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
           if [ -z "$EXISTING" ]; then
-            gh issue create               --title "$TITLE"               --body "The automatic surface propagation gate still fails after fallback regeneration. Check manifest/source paths and Gallery/Command Center surface wiring. Do not promote anything to CANON while repairing."
+            gh issue create               --title "$TITLE"               --body "The propagation gate fails on latest main after regeneration. This is a real manifest/surface defect, not a concurrent-push race. Check source paths and Gallery/Command Center wiring. Do not promote affected material to CANON while repairing."
           else
             echo "Existing issue #$EXISTING already tracks this failure."
           fi
