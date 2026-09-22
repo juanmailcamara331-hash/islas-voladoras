@@ -1,6 +1,6 @@
 # ISL · GIFT · LA TAZA DEL PRIMER VIENTO · CURRENT
 Fecha: 2026-09-22
-Estado: VISUAL_REFERENCE_SELECTED · SECOND LIFE PENDING · NO CANON
+Estado: VISUAL_REFERENCE_DIRECTION_CURRENT · NO_TEXT · SECOND LIFE PENDING · NO CANON
 
 ## GIFT_ID
 ISL_GIFT_FIRST_WIND_CUP_01
@@ -8,9 +8,11 @@ ISL_GIFT_FIRST_WIND_CUP_01
 ## SEED
 Objeto cotidiano de tripulación que comunica hogar dentro de una aventura enorme.
 
-Frase:
-“Si hoy no sabes por dónde ir,
-mira qué mueve el viento antes que tú.”
+Decisión vigente:
+NO TEXT.
+NO slogan.
+NO frase interior.
+La historia debe vivir en materialidad, desgaste, reparación, colocación, luz, viento y contexto.
 
 ## MASTER BRIEF
 Autoridad semántica:
@@ -22,6 +24,7 @@ Autoridad semántica:
 - sensación: “alguien vive aquí”;
 - no merchandising;
 - no fantasy genérico;
+- NO TEXT / NO slogan / NO mensaje de autoayuda;
 - reference distance activa;
 - human texture activa.
 
@@ -56,7 +59,7 @@ Input:
 4. sound/mood brief.
 
 ### VIDEO PROMPT
-Use the supplied image as VISUAL_REFERENCE_CURRENT and visual source of truth.
+Use the supplied NO-TEXT image as VISUAL_REFERENCE_CURRENT and visual source of truth.
 
 Preserve:
 - exact mug design and proportions;
@@ -70,7 +73,7 @@ Preserve:
 - lighting identity;
 - overall color balance.
 
-Do not redesign or reinterpret the image.
+Do not redesign or reinterpret the image. Do not add text, inscriptions, slogans or symbols beyond the existing teal mark.
 
 Animate only:
 - very subtle ship sway;
@@ -130,3 +133,35 @@ No encadenar todas.
 ## RETURN PRIMARY
 Después de cerrar esta derivación:
 volver a PRIMARY Velaria V2 P0 y lane B→NUDOS→CQC B×A.
+
+
+## VISUAL_REFERENCE_DIRECTION_CURRENT · NO TEXT
+Estado: HUMAN SELECTED DIRECTION.
+
+La versión visual vigente elimina todo texto de la taza.
+
+Mantener:
+- composición actual;
+- forma y proporción de la taza;
+- esmalte crema envejecido;
+- golpes/desgaste/reparación;
+- marca teal;
+- gancho/latón;
+- relación cámara-objeto;
+- nave visible;
+- luz de amanecer;
+- islas/bruma/profundidad.
+
+Eliminar:
+- cualquier frase;
+- cualquier mensaje escrito;
+- cualquier slogan;
+- cualquier lectura “autoayuda”.
+
+La narrativa debe transmitirse sólo mediante:
+MATERIALIDAD → USO → REPARACIÓN → VIENTO → LUZ → CONTEXTO → ESCALA.
+
+Para vídeo y derivados:
+usar la versión NO TEXT como VISUAL_REFERENCE_CURRENT.
+No reintroducir texto salvo decisión humana explícita futura.
+
