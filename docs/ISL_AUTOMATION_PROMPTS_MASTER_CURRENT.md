@@ -368,3 +368,28 @@ Protagonist guard actual:
 Si falta la referencia autoritativa:
 STOP → RECOVER SOURCE → RESUME.
 No crear bot nuevo.
+
+
+## 15. PRISM WORLDS / IMPOSSIBLE PHYSICS RECURSIVE TRIGGER · 2026-09-22
+Trigger:
+when a new impossible-law idea, Prism visual/video, human reading, or KEEP/MUTATE/PARK/KILL decision appears.
+
+Apply:
+ISL_PRISM_WORLDS_RECURSIVE_PIPELINE_CURRENT.
+
+Check only:
+- provenance / human source preserved;
+- ONE legible impossible law;
+- systemic + human consequence;
+- gallery registration under MUNDOS PRISMA;
+- next falsifiable action;
+- no empty recursion / duplicate world;
+- return to PRIMARY when the next iteration no longer changes a decision.
+
+Default recursion:
+IDEA → VISUAL → CHEAP TEST → HUMAN INFERENCE → CQC → ONE DERIVATIVE OR PARK.
+
+Maximum:
+ONE corrective action per automation pass.
+Do not create a new bot.
+Do not auto-CANON.
