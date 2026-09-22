@@ -60,6 +60,8 @@ for token in [
     "maybeKnotC",
     "consequence_main",
     "revisit_hooks",
+    "migrateDialecticState",
+    "DIALECTIC_BACKUP_KEY",
 ]:
     if token not in dance:
         fail(f"Isla Baile missing persistent NUDOS contract token: {token}")
