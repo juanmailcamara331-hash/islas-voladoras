@@ -1137,3 +1137,10 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Status: NO CANON · second life pending.
 - Next derivative if pursued: video continuity pass using the selected image as reference.
 - After derivative decision, return PRIMARY Velaria V2 P0 and B→NUDOS→CQC B×A.
+
+
+## 2026-09-22 · FIRST WIND CUP · NO-TEXT DIRECTION
+- La Taza del Primer Viento now uses NO TEXT as VISUAL_REFERENCE_DIRECTION_CURRENT.
+- The selected no-text image is the continuity reference for video/3D derivatives.
+- Do not reintroduce slogans or interior copy unless explicitly reopened by human decision.
+- Status remains NO CANON · second life pending.
