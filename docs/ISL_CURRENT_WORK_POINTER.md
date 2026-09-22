@@ -1477,3 +1477,11 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Therefore the touch fallback / TOCA beacon commit was NOT live in the app.
 - Public release airlock NETLIFY_DEPLOY_v0.7.2.md was intentionally bumped in commit b03ffabe511c1132262169f0f9afb6e3b3cd999b to publish the current portal for human-device retest.
 - HUMAN_DEVICE_GREEN remains PENDING until new Netlify deploy is READY and physical retest passes.
+
+
+## 2026-09-22 · PUBLIC NETLIFY RETEST BUILD READY
+- Netlify production deploy 6ab2be12bc776e0009064dd4 = READY.
+- Published commit_ref = b03ffabe511c1132262169f0f9afb6e3b3cd999b.
+- This deploy includes the Velaria touch/discoverability mutation and the mobile overflow self-check route.
+- Human retest can now resume against current production instead of stale build.
+- HUMAN_DEVICE_GREEN remains PENDING until physical-device evidence passes.
