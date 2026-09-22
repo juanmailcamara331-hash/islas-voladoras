@@ -25,7 +25,8 @@
         "observatorio"
       ],
       "next": "use_as_spatial_visual_reference_not_single_meshy_asset",
-      "notes": "Strong full-island production board. Use to derive modular assets and video references; do not reconstruct the whole board as one Meshy model."
+      "notes": "Strong full-island production board. Use to derive modular assets and video references; do not reconstruct the whole board as one Meshy model.",
+      "runtime_src": "assets/gallery-ext-baile.svg"
     },
     {
       "id": "IMG-EXT-20260920-02",
@@ -40,7 +41,8 @@
         "mission_map"
       ],
       "next": "extract_clean_front_left_right_back_views_then_meshy_multiview",
-      "meshy_priority": 2
+      "meshy_priority": 2,
+      "runtime_src": "assets/gallery-ext-medalla.svg"
     },
     {
       "id": "IMG-EXT-20260920-03",
@@ -55,7 +57,8 @@
         "observatorio"
       ],
       "next": "select_3_to_5_modules_for_individual_3d_generation",
-      "notes": "Do not generate full scene as one mesh. Candidate modules: frame/arch, curtain system, pedestal/table, lamp, stair/threshold."
+      "notes": "Do not generate full scene as one mesh. Candidate modules: frame/arch, curtain system, pedestal/table, lamp, stair/threshold.",
+      "runtime_src": "assets/gallery-ext-salon.svg"
     },
     {
       "id": "IMG-EXT-20260920-04",
@@ -72,7 +75,8 @@
       ],
       "next": "extract_clean_front_left_right_back_views_then_meshy_multiview",
       "meshy_priority": 1,
-      "notes": "Best next single-asset candidate: bounded form, clear silhouette, interaction logic and high reuse value."
+      "notes": "Best next single-asset candidate: bounded form, clear silhouette, interaction logic and high reuse value.",
+      "runtime_src": "assets/gallery-ext-brujula.svg"
     },
     {
       "id": "VID-DANCE-20260920-01",
