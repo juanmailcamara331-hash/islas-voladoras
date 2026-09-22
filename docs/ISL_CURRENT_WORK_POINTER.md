@@ -1,3 +1,11 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · CREATURES SOURCE GREEN
+
+B / criaturas: first 3 interaction test implemented in `portal/isla-baile-inagotable.html`.
+Source commit lineage: 66addacb1557bda864a8077fb466b86b1c2267b3 → CI guard 0833f982289b375e3a16392ea9616f860b777142.
+Human evidence remains PENDING; no CANON promotion.
+NEXT B BLOCK: persistent NUDOS integration → crossed CQC B×A.
+PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE OVERRIDE · 2026-09-22 · v0.88
 
 The historical content below is preserved for traceability but is NOT the active boot pointer.
