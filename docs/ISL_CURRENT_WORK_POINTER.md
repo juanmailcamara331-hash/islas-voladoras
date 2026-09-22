@@ -1617,3 +1617,14 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
   velaria-intuitive-input-v085 · moveBeacon · TOCA · touchstart · moveFromPoint.
 - Future changes cannot silently delete the touch/discoverability fix while leaving the playable gate green.
 - HUMAN_DEVICE_GREEN remains a separate physical test.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-23 · MASTER PRODUCTION LIFECYCLE CONSOLIDATION
+- New additive lifecycle spine: `docs/ISL_MASTER_PRODUCTION_LIFECYCLE_CURRENT.md`.
+- Purpose: orchestrate existing methodology by stage; it does NOT replace SAFE HARBOR, CANON, PRIMARY, Trigger Engine, Automation Quality, Deferred Work, Production Patterns, registries or checkpoints.
+- Lifecycle: DISCOVERY → CORE_VALIDATION → VERTICAL_SLICE → SYSTEM_INTEGRATION → CONTENT_PRODUCTION → PACKAGED/DEVICE → PUBLIC_READINESS → COMMUNITY/CREATOR → CROWDFUND/PHYSICAL → LAUNCH → POSTLAUNCH.
+- Existing bots wake from lifecycle events rather than creating new reminder layers.
+- External sources are routed by QUESTION → SOURCE → FUNCTION → LIMITATION → ISL TEST → EVIDENCE → ADOPT/ADAPT/PARK/REJECT.
+- Cross-media reuse is allowed only when function survives translation.
+- No deep atmospheric propagation; v0.92 lab remains bounded. Logo may proceed only via SOURCE RECOVERY → LOCK FEATURES → controlled visual ablation.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
