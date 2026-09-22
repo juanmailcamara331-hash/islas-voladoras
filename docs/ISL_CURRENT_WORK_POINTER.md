@@ -1192,3 +1192,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Essential content is never permanently locked by a label.
 - Existing progression automation trigger extended; no new bot.
 - PRIMARY remains Velaria V2 P0.
+
+
+## 2026-09-22 · ADAPTIVE ENCOUNTER / MISSION LADDER HYPOTHESIS
+- Runtime dialogue/jokes should be curated authored content, not AI-generated live by default.
+- Systemic variety comes from compatible combinations of character + relationship + place + world state + milestone + callback + recent play pattern.
+- Player-facing ladder: M0 microevent → M1 encounter → M2 side quest → M3 chain → M4 major mission → M5 milestone.
+- Observant/exploratory play can surface more ambient incidents, secrets, callbacks and side stories; direct play gets lower interruption and clearer mainline.
+- Same world truth and essential milestones remain shared.
+- Anti-FOMO: meaningful missed content can echo, return transformed or leave a rumor.
+- Existing automation trigger extended; no new bot.
