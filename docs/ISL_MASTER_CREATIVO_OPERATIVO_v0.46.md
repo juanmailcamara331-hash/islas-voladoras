@@ -902,3 +902,160 @@ una gran épica puede acabar resumida en una taza, una reparación o un animal d
 - ¿hay descanso después de caos?
 - ¿la accesibilidad es modular y no segregada?
 - ¿el autor aún puede ser sorprendido sin perder autoría?
+
+
+## 14. CULTURA VIVA / ESPECTÁCULOS / HISTORIA LATERAL · 2026-09-22
+
+### IDEA
+Las ciudades e islas no existen sólo para entregar quests.
+Pueden tener vida cultural autónoma:
+- teatro;
+- conciertos;
+- danza;
+- circo;
+- procesiones;
+- rituales;
+- festivales;
+- deportes;
+- debates;
+- exhibiciones;
+- ferias;
+- performances;
+- celebraciones;
+- actos históricos recordados o reconstruidos.
+
+El jugador puede participar, ignorar, atravesar o simplemente mirar.
+
+### OBSERVAR TAMBIÉN ES JUGAR
+Añadir SPOTS de observación:
+- sentarse;
+- apoyarse;
+- mirar desde altura;
+- escuchar;
+- quedarse hasta el final;
+- volver otro día.
+
+Un spot no debe convertirse en “pulsa X para lore”.
+Puede activar:
+- cambio de cámara;
+- mezcla de sonido;
+- crowd behaviour;
+- diálogo ambiental;
+- microevento;
+- callback;
+- recuerdo;
+- aparición de NPC;
+- variación del espectáculo.
+
+Para jugador observador:
+más profundidad, no más poder bruto.
+
+### ESPECTÁCULO COMO SISTEMA
+Cada evento cultural relevante puede declarar:
+- city/island;
+- culture_function;
+- local_history;
+- social_tension;
+- schedule/state;
+- audience;
+- player_distance;
+- participation_mode;
+- hidden_layers;
+- callback_hooks;
+- aftermath.
+
+Modos:
+OBSERVAR
+PARTICIPAR
+INTERRUMPIR
+AYUDAR
+TRABAJAR DETRÁS
+ABANDONAR
+VOLVER.
+
+### HISTORIA LATERAL / “SEGUNDONES”
+ISL puede inspirarse en episodios históricos/culturales menos convertidos en icono pop:
+- fiestas locales;
+- movimientos artísticos;
+- comunidades efímeras;
+- exposiciones;
+- ferias;
+- rituales;
+- revueltas culturales;
+- escenas musicales;
+- acontecimientos sociales extraños;
+- experimentos urbanos.
+
+No convertir un hecho histórico doloroso en skin.
+Primero:
+CONTEXTO → FUNCIÓN → CONTRADICCIÓN → MUTACIÓN ISL.
+
+### FESTIVAL / CIUDAD TEMPORAL
+Referencias como grandes festivales contraculturales pueden aportar por FUNCIÓN:
+- ciudad efímera;
+- arte participativo;
+- autoconstrucción;
+- ritual colectivo;
+- economía/socialidad alternativa;
+- espectacularidad temporal;
+- desmontaje/desaparición;
+- memoria de haber estado allí.
+
+No copiar iconografía, nombres, instalaciones, rituales o estética reconocible.
+La traducción ISL puede ser una ciudad/isla que sólo existe bajo ciertas corrientes o durante una ventana del mundo.
+
+### RELACIÓN CON M0–M5
+- M0: músico callejero / ensayo / gesto / incidente entre público.
+- M1: pequeño número, backstage, conversación, problema técnico.
+- M2: ayudar a una troupe, rivalidad, permiso, sabotaje, lesión, deuda.
+- M3: temporada/festival con callbacks y consecuencias.
+- M4: espectáculo que altera una ciudad o regla.
+- M5: hito cultural/histórico que cambia la lectura del mundo.
+
+### TIPOLOGÍA DE JUGADOR
+OBSERVADOR:
+- más capas ambientales;
+- mejores ángulos;
+- conversaciones laterales;
+- callbacks;
+- sucesos previos/posteriores al show.
+
+DIRECTO:
+- el evento puede funcionar como fondo;
+- acceso principal no bloqueado;
+- resumen diegético posterior si fue importante.
+
+SOCIAL:
+- backstage, vínculos, troupe, rivalidades.
+
+ARTESANO:
+- montaje, reparación, luces, instrumentos, estructuras.
+
+RIESGO:
+- performance peligrosa, accidentes, sabotaje, crowd pressure.
+
+BUSCADOR:
+- historia del evento, archivos, contradicciones culturales.
+
+### VIDA PROPIA
+Un espectáculo puede ocurrir aunque el jugador no esté mirando.
+Si se pierde:
+- puede quedar rumor;
+- restos físicos;
+- cartel roto;
+- conversación;
+- grabación diegética;
+- consecuencia social;
+- próxima edición distinta.
+
+Eso hace que el mundo no espere siempre al protagonista.
+
+### CQC
+- ¿la cultura explica algo de la ciudad sin exposition dump?
+- ¿merece la pena mirar incluso sin recompensa?
+- ¿el espectáculo tiene función social/histórica?
+- ¿puede existir sin el jugador?
+- ¿mirar cambia experiencia, no stats?
+- ¿hay aftermath?
+- ¿la referencia histórica está suficientemente transformada?
+- ¿el evento puede recordar algo horas después?
