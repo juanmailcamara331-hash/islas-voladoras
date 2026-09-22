@@ -1,3 +1,20 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · ROLE STARTER PACKS / REPLAY WITHOUT REPURCHASE
+- New hypothesis from Carrillo discussion: crowdfunding / physical-edition tiers may map to optional player-role starter packs rather than simple merch ladders.
+- Candidate roles are narrative/playstyle starting lenses, NOT psychological diagnosis of the player. Jungian/archetypal references may inform function only and must be transformed into original ISL systems.
+- Example role family: VIAJERO / DESCUBRIDOR / GUARDIAN / ARTESANO / TRICKSTER / CUIDADOR / NEGOCIADOR / RETADOR, with each role changing starting context, affordances, social framing, side-content weighting, route emphasis, initial relic/loadout, and some authored callbacks while preserving the same world truth and essential milestones.
+- Terry Pratchett and similar references may contribute FUNCTION only: social satire, absurd institutions, humane contradiction, comedy beside seriousness, ordinary people inside impossible systems. No imitation of characters, prose voice, jokes, plot, names or iconography.
+- Monetization principle: BUY THE GAME ONCE. Role replay should not require repurchasing the game.
+- Candidate commercial structure:
+  * base digital game = includes one starter role;
+  * physical/crowdfunding tiers = include specific themed starter role + matching physical objects/content;
+  * additional role unlock / alternate-start pack = low-cost optional add-on hypothesis (~10 EUR), usable on a new run / save without rebuying the base game;
+  * an all-roles / supporter bundle may exist, but essential story/progression must not be fragmented behind repeated payments.
+- Hard guard: no pay-to-win, no irreversible role lock, no psychological profiling, no FOMO-only mechanics, no mandatory repurchase to replay differently.
+- Better product interpretation than "class": ROLE LENS / STARTING CONTRACT. It should change how the same world talks back to the player, not merely stats.
+- Candidate validation before pricing lock: test whether two role starts produce meaningfully different first-hour stories without duplicating the whole game.
+- NO CANON / NO PRICE LOCK yet. This is a strong business+design hypothesis for Kickstarter prototyping.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE EXECUTION NOTE · 2026-09-22 · VELARIA ANDROID INPUT CHAIN DEPLOYED
 - Real-device evidence confirmed horizontal movement now works on Android/WebView.
 - Next observed blocker was interactive controls: ANCLAR / other buttons did not activate.
