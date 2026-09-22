@@ -1485,3 +1485,10 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - This deploy includes the Velaria touch/discoverability mutation and the mobile overflow self-check route.
 - Human retest can now resume against current production instead of stale build.
 - HUMAN_DEVICE_GREEN remains PENDING until physical-device evidence passes.
+
+
+## 2026-09-22 · ANCLA SUPPLIER PACKAGE STRUCTURE READY
+- docs/ISL_ANCLA_SUPPLIER_PACKAGE_MANIFEST_CURRENT.md created.
+- Supplier packet structure, filenames, locked spec and technical questions are ready.
+- Only blocking input is human reconfirmation of the exact authoritative FRONT.
+- No further supplier-side prep needed until that source is reconfirmed.
