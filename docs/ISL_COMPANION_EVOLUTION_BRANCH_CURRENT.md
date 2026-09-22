@@ -288,3 +288,35 @@ The protagonist must contrast and rhyme with the companion:
 
 PAIR TEST:
 If protagonist + companion could be mistaken for a generic fantasy-adventure duo, the design is not specific enough.
+
+
+## VISUAL IDENTITY RECOVERY · 2026-09-22
+Estado: HUMAN CORRECTION · HIGH AUTHORITY
+
+La dirección visual de la compañera se corrige por decisión humana explícita.
+
+AUTHORITATIVE DIRECTION:
+- recuperar la mascota anterior aprobada por el usuario como referencia visual superior;
+- híbrido orgánico zorro / perro / delfín / pájaro / gato, pero NO debe leerse como un zorro fantasy genérico;
+- cara más rara, tierna y ligeramente absurda;
+- hocico/boca compacta y redondeada, con lectura de "osito" amable;
+- expresión tonta, curiosa, punkarra y un poco desquiciada;
+- encanto imperfecto > belleza heroica convencional;
+- silueta reconocible incluso al evolucionar;
+- ternura + rareza + travesura;
+- evitar ojos/gestos excesivamente Disney-like o mascota premium genérica;
+- evitar convertirla en criatura noble/épica demasiado pulida.
+
+REFERENCE AUTHORITY:
+La referencia humana anterior manda sobre las generaciones recientes de esta conversación.
+Las últimas variantes "zorro aventurero premium" quedan SUPERSEDED / DO_NOT_USE como fuente de identidad.
+
+PRE-FLIGHT obligatorio antes de regenerar/derivar compañera:
+1. recuperar asset visual aprobado anterior;
+2. usarlo como AUTHORITATIVE;
+3. bloquear boca/hocico, rareza facial, proporción y energía "tonta-punkarra";
+4. generar sólo derivaciones de pose/edad/evolución/función;
+5. si el asset no está accesible, NO reconstruir desde memoria textual: pedir/relocalizar referencia.
+
+Esto no asciende el diseño final a CANON; fija autoridad visual provisional para evitar drift.
+PRIMARY Velaria sigue mandando.
