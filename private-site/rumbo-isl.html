@@ -7,8 +7,8 @@
 :root{--bg:#071017;--panel:#0c1a21;--line:#31505c;--ink:#eef7f4;--muted:#9aaeb3;--cyan:#8defff;--gold:#e1bd75;--rose:#df8394}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif}
 body{background:radial-gradient(circle at 80% 0,#183746 0,transparent 28%),linear-gradient(#071017,#09141a)}
-.wrap{width:min(1080px,94vw);margin:auto;padding:22px 0 70px}.top{display:flex;gap:12px;align-items:flex-start}.k{font-size:9px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.top h1{font-size:clamp(38px,8vw,74px);line-height:.9;margin:6px 0 8px}.top p{color:#bfd0d3;max-width:700px;line-height:1.5}.actions{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}.btn{border:1px solid #41606a;border-radius:10px;background:#0a1820;color:#e9f3f2;text-decoration:none;padding:10px 11px;font-size:9px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:14px}.card{border:1px solid var(--line);border-radius:16px;padding:15px;background:#0a171edc}.card h2{font-size:18px;margin:3px 0 8px}.card p,.card li{font-size:11px;line-height:1.55;color:#b6c6ca}.card ul{margin:8px 0 0;padding-left:18px}.hero{grid-column:1/-1;background:linear-gradient(135deg,#10242d,#121910)}.hero blockquote{font-family:Georgia,serif;font-size:clamp(24px,4vw,42px);line-height:1.05;margin:12px 0;color:#f2e7cf}.flow{font-size:11px;font-weight:900;color:#d9ebeb;line-height:1.8}.gold{color:var(--gold)}.warn{color:#ffd7de}.footer{margin-top:14px;text-align:center;color:#748b91;font-size:9px}
-@media(max-width:720px){.grid{grid-template-columns:1fr}.actions{margin-left:0}.top{flex-direction:column}}
+.wrap{width:min(1080px,94vw);margin:auto;padding:22px 0 70px}.top{display:flex;gap:12px;align-items:flex-start}.k{font-size:9px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.top h1{font-size:clamp(38px,8vw,74px);line-height:.9;margin:6px 0 8px}.top p{color:#bfd0d3;max-width:700px;line-height:1.5}.actions{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap}.btn{border:1px solid #41606a;border-radius:10px;background:#0a1820;color:#e9f3f2;text-decoration:none;padding:10px 11px;font-size:9px;font-weight:900}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-top:14px}.card{border:1px solid var(--line);border-radius:16px;padding:15px;background:#0a171edc}.card h2{font-size:18px;margin:3px 0 8px}.card p,.card li{font-size:11px;line-height:1.55;color:#b6c6ca}.card ul{margin:8px 0 0;padding-left:18px}.hero{grid-column:1/-1;background:linear-gradient(135deg,#10242d,#121910)}.hero blockquote{font-family:Georgia,serif;font-size:clamp(24px,4vw,42px);line-height:1.05;margin:12px 0;color:#f2e7cf}.flow{font-size:11px;font-weight:900;color:#d9ebeb;line-height:1.8}.gold{color:var(--gold)}.warn{color:#ffd7de}.checkframe{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;grid-column:1/-1}.checkcol{border:1px solid var(--line);border-radius:16px;background:#09161d;padding:13px}.checkcol h2{font-size:15px;margin:0 0 9px}.checkrow{display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-top:1px solid #ffffff0d;font-size:10px;line-height:1.35;color:#c4d2d4}.checkrow:first-of-type{border-top:0}.box{flex:0 0 17px;height:17px;border:1px solid #54727c;border-radius:4px;display:grid;place-items:center;font-size:12px}.done .box{border-color:#63a97f;color:#9ce3b6}.now .box{border-color:#b58a49;color:#ffd18c}.later .box{color:#7f969c}.copyStatus{grid-column:1/-1;display:flex;justify-content:flex-end}.footer{margin-top:14px;text-align:center;color:#748b91;font-size:9px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.checkframe{grid-template-columns:1fr}.actions{margin-left:0}.top{flex-direction:column}}
 @media print{
  @page{size:A4;margin:12mm}
  body{background:#fff;color:#111}.wrap{width:auto;padding:0}.actions,.footer{display:none}.grid{display:block}.card{break-inside:avoid;background:#fff;border:1px solid #bbb;margin:0 0 8mm}.card p,.card li{color:#222}.k{color:#176173}.hero blockquote{color:#111}.gold{color:#7b5515}.warn{color:#7a1f2d}.top h1{font-size:42px}
@@ -21,6 +21,29 @@ body{background:radial-gradient(circle at 80% 0,#183746 0,transparent 28%),linea
 </header>
 <section class="grid">
 <article class="card hero"><div class="k">REGLA MADRE</div><blockquote>“Menos sistemas nuevos.<br><span class="gold">Más vida entre los que ya existen.</span>”</blockquote><p>Velaria V2 P0 sigue siendo PRIMARY. HUMAN_DEVICE_GREEN sigue pendiente. Todo lo demás debe ayudar a probar, enriquecer o recordar el rumbo, no desplazarlo.</p></article>
+
+<section class="checkframe" aria-label="Rumbo con checks">
+ <article class="checkcol done"><h2>✓ HECHO</h2>
+  <div class="checkrow"><span class="box">✓</span><span>Checkpoint global v0.89 fijado.</span></div>
+  <div class="checkrow"><span class="box">✓</span><span>Galería Viva · contenido primero.</span></div>
+  <div class="checkrow"><span class="box">✓</span><span>Wind Lab vuelve a Recreo.</span></div>
+  <div class="checkrow"><span class="box">✓</span><span>R13 de patrimonio creativo iniciado.</span></div>
+  <div class="checkrow"><span class="box">✓</span><span>Carrillo → Velaria → Carrillo cerrado en código.</span></div>
+ </article>
+ <article class="checkcol now"><h2>□ AHORA</h2>
+  <div class="checkrow"><span class="box">□</span><span>Velaria V2 P0 · prueba real en móvil.</span></div>
+  <div class="checkrow"><span class="box">□</span><span>Carrillo · primera impresión humana.</span></div>
+  <div class="checkrow"><span class="box">□</span><span>Private ISL · resolver deploy.</span></div>
+  <div class="checkrow"><span class="box">□</span><span>NUDOS · recuerdo causal de regreso.</span></div>
+ </article>
+ <article class="checkcol later"><h2>□ DESPUÉS</h2>
+  <div class="checkrow"><span class="box">□</span><span>Contraste A final.</span></div>
+  <div class="checkrow"><span class="box">□</span><span>R13 · nave / protagonista / compañera.</span></div>
+  <div class="checkrow"><span class="box">□</span><span>Molino moderno sólo si la evidencia lo merece.</span></div>
+  <div class="checkrow"><span class="box">□</span><span>Device tablet · Teclast P50 cuando llegue.</span></div>
+ </article>
+ <div class="copyStatus"><button class="btn" id="copyHandoff" type="button">COPIAR RUMBO PARA CHATGPT</button></div>
+</section>
 
 <article class="card"><div class="k">ARGUMENTO</div><h2>Reencontrar antes que salvar</h2><p>La Separación dispersa a la pandilla. Cada reencuentro cambia a la persona, al grupo, al barco y al mundo. La nave crece hacia hogar colectivo. El final refleja la trayectoria, no una única elección final.</p></article>
 
@@ -55,4 +78,12 @@ body{background:radial-gradient(circle at 80% 0,#183746 0,transparent 28%),linea
 <article class="card hero"><div class="k">STOP RULE</div><h2 class="warn">No más expansión por reflejo.</h2><p>Antes de crear algo nuevo: <b>¿puedo conseguirlo cruzando lo que ya existe?</b> Si sí, combinar. Si no, prototipo barato. Si no demuestra valor, PARK/KILL.</p></article>
 </section>
 <div class="footer">ISL · Rumbo v0.89 · privado · imprimible · no CANON automático</div>
-</main></body></html>
+<script>
+(function(){
+ var b=document.getElementById('copyHandoff');if(!b)return;
+ b.onclick=function(){
+  var txt='ISL · RUMBO ACTUAL\n\n✓ HECHO\n- checkpoint v0.89\n- Galería content-first\n- Wind Lab en Recreo\n- R13 iniciado\n- Carrillo→Velaria→Carrillo cerrado\n\n□ AHORA\n- Velaria HUMAN_DEVICE_GREEN\n- primera impresión Carrillo\n- arreglar Private ISL\n- NUDOS causal recall\n\n□ DESPUÉS\n- contraste A\n- R13 nave/protagonista/compañera\n- Molino sólo con evidencia\n- Teclast P50 como DEVICE-TABLET-01\n\nRegla: MENOS SISTEMAS NUEVOS · MÁS VIDA ENTRE LOS QUE YA EXISTEN.';
+  navigator.clipboard.writeText(txt).then(function(){b.textContent='COPIADO ✓';setTimeout(function(){b.textContent='COPIAR RUMBO PARA CHATGPT'},1600)}).catch(function(){});
+ };
+})();
+</script></main></body></html>
