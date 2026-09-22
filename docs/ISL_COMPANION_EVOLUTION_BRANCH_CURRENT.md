@@ -202,3 +202,58 @@ Nunca:
 Principio:
 cada evolución debe permitir reconocer a la misma compañera que estaba al principio.
 La rareza crece; la identidad permanece.
+
+
+## SALUD / INVOLUCIÓN / RECUPERACIÓN · 2026-09-22
+La compañera puede enfermar, fatigarse, lesionarse, contaminarse o sufrir una mutación desfavorable si existe causa legible.
+
+Fuentes posibles:
+- entorno;
+- sobreuso;
+- exposición;
+- alimento/recurso;
+- combate;
+- desastre;
+- decisión de riesgo;
+- omisión relevante.
+
+No usar enfermedad como castigo moral.
+No usar muerte aleatoria opaca.
+No convertirla en barra de mantenimiento constante.
+
+Estados candidatos:
+- SANA;
+- CANSADA;
+- ALTERADA;
+- ENFERMA;
+- RECUPERANDO;
+- ADAPTADA.
+
+Una “involución” puede:
+- reducir una capacidad;
+- cambiar una preferencia;
+- alterar su comportamiento;
+- hacer que una ruta ya conocida deje de ser viable;
+- abrir una adaptación nueva tras recuperación.
+
+### MISIONES EMERGENTES
+Si la compañera entra en estado relevante, pueden aparecer secundarios causales:
+- buscar refugio;
+- conseguir alimento/medicina/material;
+- localizar a alguien que entienda la alteración;
+- dejarla descansar;
+- adaptar la nave;
+- investigar la causa;
+- aceptar una mutación en vez de revertirla.
+
+Debe haber más de una respuesta defendible cuando sea posible.
+No siempre “curarla” es la única salida correcta.
+
+### IDENTIDAD
+Incluso enferma o transformada:
+- sigue siendo reconocible;
+- conserva memoria;
+- puede expresar preferencia;
+- no se convierte en objeto-puzzle.
+
+La recuperación puede dejar cicatriz visual, habilidad distinta o recuerdo persistente.
