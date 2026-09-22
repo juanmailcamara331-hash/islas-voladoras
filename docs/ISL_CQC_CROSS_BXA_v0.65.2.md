@@ -87,3 +87,42 @@ Una pieza NO pasa por:
 - “sentirse compleja”.
 
 Pasa si función, causalidad, identidad y persistencia sobreviven juntas.
+
+
+## Ejecución B × A · 2026-09-22
+Alcance: 3 criaturas + NUDOS persistentes en Isla del Baile.
+Estado: SOURCE CQC COMPLETE · HUMAN/ART EVIDENCE PENDING · NO CANON.
+
+### Resultado por eje
+1. FUNCIÓN — KEEP
+Las tres criaturas cambian navegación, acceso/deuda o memoria; no son sólo lore.
+
+2. CAUSALIDAD — HOLD HUMAN
+La cadena acción → delta → NUDO está implementada y trazable, pero falta comprobar reconocimiento tardío con personas.
+
+3. DIALÉCTICA — KEEP
+No existe moral score; quedan preguntas abiertas y costes defendibles.
+
+4. PERSISTENCIA — KEEP SOURCE / HOLD HUMAN
+localStorage + schema v1 + migración desde estado no versionado + snapshot de rollback.
+Falta probar retorno/reapertura en dispositivo humano real.
+
+5. ARTE / ADN ISL — HOLD
+La lógica es compatible, pero este slice textual no demuestra todavía silueta/lectura visual a 3 escalas.
+
+6. REFERENCIAS — KEEP SOURCE
+No depende de copiar superficie reconocible; función y contradicción sobreviven sin referencia explícita.
+
+7. JUGABILIDAD — KEEP SOURCE / HOLD HUMAN
+Affordances e interacción sistémica existen; falta medir lectura, ritmo y fracaso interpretable con humanos.
+
+8. TÉCNICO — KEEP SOURCE
+Coste bajo, schema versionado, guardas CI, fallback conceptual, mismo estado en low/high tier y traducción futura viable.
+
+9. HUMANO — HOLD
+Pendiente ejecutar las preguntas del CQC con tester.
+
+### Decisión
+No promoción automática.
+El bloque B queda SOURCE GREEN con HUMAN/ART gates pendientes.
+Siguiente acción útil: evidencia humana sobre causalidad tardía + lectura de coste; después contraste A final.
