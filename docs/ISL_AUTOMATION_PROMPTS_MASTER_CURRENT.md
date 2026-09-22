@@ -241,6 +241,10 @@ Chequeo breve:
 - ¿un callback recuerda algo real y cierra/transforma un círculo en vez de repetirse por azar?
 - ¿el diálogo/humor está curado por voz/contexto y no generado porque “toca un chiste”?
 - ¿la historia principal sigue clara aunque el jugador ignore contenido lateral?
+- ¿la accesibilidad es modular y combinable, no un modo segregado?
+- ¿la adaptación de capacidad conserva agencia y consecuencias núcleo?
+- ¿la curva de entropía deja respirar CALMA → EXTRAÑEZA → DECISIÓN → CONSECUENCIA → CAOS → DESCANSO?
+- ¿el sistema puede sorprender mediante combinaciones válidas sin perder autoría ni tono?
 
 Si falla:
 proponer UNA corrección mínima.
