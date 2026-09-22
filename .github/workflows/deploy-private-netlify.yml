@@ -59,6 +59,7 @@ jobs:
         run: |
           npx -y netlify-cli@latest deploy \
             --dir=build/private \
+            --site="$NETLIFY_SITE_ID" \
             --alias="$PRIVATE_ALIAS" \
             --auth="$NETLIFY_AUTH_TOKEN"
 
