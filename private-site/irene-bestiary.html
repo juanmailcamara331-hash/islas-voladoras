@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a1117">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<title>ISL · Bestiario de Campo · Irene</title>
+<style>
+:root{--bg:#081017;--panel:#0d1920;--line:#36505a;--text:#eef7f5;--muted:#9aaeb3;--gold:#e0bb72;--cyan:#8defff;--green:#94dfb3}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+body{background:radial-gradient(circle at 15% 0,#17313e 0,transparent 27%),linear-gradient(#081017,#0b141a)}
+.wrap{width:min(920px,94vw);margin:auto;padding:18px 0 70px}.top{display:flex;gap:12px;align-items:center;margin-bottom:14px}.brand{font-size:9px;letter-spacing:.15em;color:var(--cyan);font-weight:900}.pill{margin-left:auto;border:1px solid #4b626a;border-radius:999px;padding:7px 9px;font-size:8px;color:#b6c7ca}
+h1{margin:3px 0 0;font-size:clamp(28px,7vw,50px)}.hero,.card{border:1px solid var(--line);border-radius:18px;background:#0c171ddd;box-shadow:0 20px 60px #0005}.hero{padding:20px}.hero h2{font-size:clamp(28px,7vw,56px);line-height:.95;margin:8px 0}.hero p,.card p{color:#b9c8cb;line-height:1.55}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;margin-top:12px}.card{padding:15px}label{display:block;font-size:9px;color:var(--cyan);font-weight:900;margin:11px 0 5px}
+input,textarea,select{width:100%;border:1px solid #38535d;border-radius:10px;background:#071118;color:#eef7f4;padding:10px;font:12px system-ui}textarea{min-height:82px;resize:vertical}
+.preview{min-height:280px;border:1px dashed #49636c;border-radius:14px;background:#071117;display:grid;place-items:center;overflow:hidden}.preview img,.preview video{width:100%;height:auto;display:block}.empty{color:#799099;font-size:10px;text-align:center;padding:20px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid #41616b;border-radius:10px;background:#0a1b22;color:#e8f2f3;padding:11px 13px;font-weight:900;font-size:10px;text-decoration:none}.btn.primary{background:#15313a;border-color:#648995}.btn.gold{background:#2a2216;border-color:#8a6a3f;color:#ffe7b2}
+.rule{margin-top:12px;border-left:3px solid var(--green);padding:10px 12px;background:#0d1c18;border-radius:8px;color:#b8d8c7;font-size:9px}.log{display:grid;gap:8px;margin-top:10px}.entry{border:1px solid #2d4650;border-radius:12px;padding:10px;background:#071218}.entry b{font-size:10px}.entry small{display:block;color:#7e969c;margin-top:3px}.entry p{font-size:10px;margin:7px 0 0;color:#b9c8ca}
+.checks{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.check{border:1px solid #35535e;border-radius:999px;padding:6px 8px;font-size:8px;color:#a9bdc1}.done{border-color:#4b765c;color:#a9e4bd}.now{border-color:#80663c;color:#ffe0a2}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top"><div><div class="brand">ISL · HUMAN TRACE</div><h1>Bestiario de Campo · Irene</h1></div><div class="pill">NO CANON · ORIGINAL PRIMERO</div></header>
+
+<section class="hero">
+<div class="brand">CUADERNO FÍSICO ↔ HUELLA DIGITAL</div>
+<h2>Dibuja raro.<br>Guárdalo humano.</h2>
+<p>Foto o vídeo del proceso, una frase y contexto mínimo. El archivo original no se altera ni se publica automáticamente. La IA no corrige el dibujo: cualquier derivado futuro nace de una copia separada y con decisión humana.</p>
+<div class="checks"><span class="check done">✓ ORIGINAL INTACTO</span><span class="check now">□ SESIÓN HUMANA</span><span class="check">□ DERIVADO OPCIONAL</span></div>
+<div class="actions"><a class="btn" href="carrillo-human-lab.html">VOLVER A CARRILLO</a><button class="btn gold" id="exportAll">EXPORTAR HUELLA JSON</button></div>
+</section>
+
+<section class="grid">
+<article class="card">
+<h3>Nueva huella</h3>
+<label>Foto o vídeo</label>
+<input id="media" type="file" accept="image/*,video/*">
+<div id="preview" class="preview"><div class="empty">Selecciona una foto o vídeo del dibujo o del proceso.</div></div>
+
+<label>Pieza</label>
+<select id="piece">
+<option>Mascota · referencia del brief</option>
+<option>Protagonista · exploración humana</option>
+<option>Criatura libre</option>
+<option>Proceso / making-of</option>
+</select>
+
+<label>Vista / momento</label>
+<select id="view">
+<option>perfil</option><option>frontal</option><option>3/4</option><option>gesto</option><option>movimiento</option><option>proceso</option>
+</select>
+
+<label>Frase de Irene</label>
+<textarea id="quote" placeholder="Ej. “La boca tiene que ser más tonta.”"></textarea>
+
+<label>Qué no tocarías</label>
+<textarea id="protect" placeholder="Un rasgo, error bonito, gesto o proporción que merece sobrevivir."></textarea>
+
+<label>Crédito / privacidad</label>
+<select id="credit">
+<option value="name">Irene · nombre visible</option>
+<option value="alias">Alias</option>
+<option value="hands">Sólo manos / proceso</option>
+<option value="private">Privado · no publicar</option>
+</select>
+<div class="actions"><button class="btn primary" id="save">GUARDAR SESIÓN</button></div>
+<div class="rule">PERSONA REAL → HUELLA DEL PROCESO → GALERÍA / MAKING-OF → posible inspiración funcional → nunca CANON automático.</div>
+</article>
+
+<article class="card">
+<h3>Sesiones guardadas</h3>
+<p>Se guarda localmente sólo la ficha. El archivo de imagen/vídeo permanece en el dispositivo.</p>
+<div id="log" class="log"></div>
+</article>
+</section>
+</main>
+
+<script>
+(function(){'use strict';
+const KEY='isl_irene_field_bestiary_v1';
+let fileMeta=null,objectUrl=null;
+const $=id=>document.getElementById(id);
+function read(){try{const x=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(x)?x:[]}catch(e){return[]}}
+function write(x){localStorage.setItem(KEY,JSON.stringify(x));render()}
+$('media').addEventListener('change',()=>{
+ const f=$('media').files[0]; if(!f)return;
+ if(objectUrl)URL.revokeObjectURL(objectUrl); objectUrl=URL.createObjectURL(f);
+ fileMeta={name:f.name,type:f.type,size:f.size,lastModified:f.lastModified};
+ $('preview').innerHTML='';
+ const el=f.type.startsWith('video/')?document.createElement('video'):document.createElement('img');
+ el.src=objectUrl;if(el.tagName==='VIDEO'){el.controls=true;el.playsInline=true}
+ $('preview').appendChild(el);
+});
+$('save').onclick=()=>{
+ const arr=read(); arr.push({
+  id:'irene_'+Date.now(),
+  created_at:new Date().toISOString(),
+  piece:$('piece').value,
+  view:$('view').value,
+  quote:$('quote').value.trim(),
+  protect:$('protect').value.trim(),
+  credit:$('credit').value,
+  media:fileMeta,
+  status:'HUMAN_TRACE_RAW',
+  canon:false
+ });
+ write(arr);$('save').textContent='GUARDADO';
+};
+function render(){
+ const arr=read().slice().reverse(),el=$('log');
+ el.innerHTML=arr.length?arr.map(x=>'<div class="entry"><b>'+x.piece+' · '+x.view+'</b><small>'+new Date(x.created_at).toLocaleString()+' · '+x.status+'</small><p>'+(x.quote||'Sin frase todavía.')+'</p></div>').join(''):'<div class="entry"><b>Aún no hay huellas.</b><small>Haz el primer boceto y guárdalo tal cual.</small></div>';
+}
+$('exportAll').onclick=()=>{
+ const payload={project:'ISL',surface:'IRENE_FIELD_BESTIARY',exported_at:new Date().toISOString(),entries:read()};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);a.download='ISL_IRENE_BESTIARIO_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+render();
+})();
+</script>
+</body>
+</html>
