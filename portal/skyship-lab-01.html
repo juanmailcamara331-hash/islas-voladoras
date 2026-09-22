@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071017">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>ISL · Skyship Lab 01</title>
+<link rel="stylesheet" href="isl-global-shell.css">
+<style>
+:root{--bg:#071017;--panel:#0d1b23;--line:#2f4e5b;--text:#eef8f5;--mut:#92aab0;--cyan:#8defff;--gold:#ffc36e;--bad:#ff9aa5;--good:#b9f28f}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:linear-gradient(#071017,#09151c);color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+.wrap{width:min(1050px,96vw);margin:auto;padding:14px 0 84px}.top{display:flex;align-items:center;justify-content:space-between;gap:8px}.k{font-size:9px;letter-spacing:.14em;color:var(--cyan);font-weight:900}.btn{border:1px solid var(--line);background:#0b1920;color:#fff;border-radius:10px;padding:9px 11px;font-weight:900;font-size:10px}
+.hero{margin:12px 0;border:1px solid #375967;border-radius:18px;background:#0a1820;padding:16px}.hero h1{font-size:clamp(34px,7vw,62px);line-height:.92;margin:4px 0 8px}.hero p{color:#b9cdd1;line-height:1.5}
+.board{border:1px solid #355764;border-radius:18px;background:radial-gradient(circle at 50% 20%,#173d4b 0,transparent 35%),#081319;padding:12px}
+.sky{position:relative;height:300px;border:1px solid #294651;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#173442,#0b171e)}
+.wind{position:absolute;left:8px;top:8px;font-size:9px;color:#c7e4ea;border:1px solid #ffffff25;border-radius:999px;padding:6px 8px;background:#07101799}.lane{position:absolute;left:5%;right:5%;height:1px;background:#ffffff18}.l1{top:33%}.l2{top:66%}
+.ship{position:absolute;width:92px;height:40px;border:1px solid #ffffff55;border-radius:50% 50% 42% 42%;display:grid;place-items:center;font-weight:900;font-size:10px;box-shadow:0 10px 28px #0008;transition:.4s}.you{left:12%;top:56%;background:#123747}.foe{right:12%;top:24%;background:#3a2425}
+.arrow{position:absolute;font-size:26px;opacity:.65}.wa{left:45%;top:46%;transform:rotate(-8deg)}
+.hud{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.panel{border:1px solid var(--line);border-radius:14px;background:#0b1820;padding:12px}.panel h2{margin:0 0 8px;font-size:17px}.beats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.beat{border:1px solid #35535e;border-radius:10px;padding:8px;min-height:95px;background:#09151c}.beat b{display:block;font-size:10px}.beat select{width:100%;margin-top:7px;background:#071017;color:#fff;border:1px solid #2d4e5a;border-radius:8px;padding:7px;font-size:10px}.tag{display:inline-block;border:1px solid #35535e;border-radius:999px;padding:4px 6px;font-size:8px;margin:2px 3px 2px 0}.log{min-height:120px;color:#b8cbd0;font-size:10px;line-height:1.55;white-space:pre-line}.meter{height:8px;border:1px solid #385461;border-radius:999px;overflow:hidden;background:#071017;margin:5px 0 10px}.meter i{display:block;height:100%;width:60%;background:linear-gradient(90deg,#8defff,#ffc36e)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.primary{border-color:#7b663e;background:#2c2317}.good{color:var(--good)}.warn{color:var(--gold)}.bad{color:var(--bad)}
+@media(max-width:700px){.hud{grid-template-columns:1fr}.beats{grid-template-columns:1fr 1fr}.sky{height:250px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="top"><div class="k">ISL · SKYSHIP LAB 01</div><a class="btn" href="index.html">VOLVER</a></div>
+<section class="hero">
+<div class="k">PROTOTIPO BARATO · NO CANON</div>
+<h1>Combate en 4 latidos</h1>
+<p>No buscamos vaciar una barra. Buscamos crear una posición. Lee viento, altura y la intención incompleta del rival; programa cuatro acciones y mira qué ventana abres.</p>
+</section>
+<section class="board">
+<div class="sky" id="sky">
+<div class="wind" id="wind">VIENTO ↗ FUERTE · altura media</div>
+<div class="lane l1"></div><div class="lane l2"></div>
+<div class="ship you" id="you">TU NAVE</div>
+<div class="ship foe" id="foe">RIVAL</div>
+<div class="arrow wa">↗</div>
+</div>
+<div class="hud">
+<section class="panel">
+<h2>Plan de ronda</h2>
+<div class="beats" id="beats"></div>
+<div class="actions"><button class="btn primary" id="run">EJECUTAR 4 LATIDOS</button><button class="btn" id="reset">REINICIAR</button></div>
+</section>
+<section class="panel">
+<h2>Lectura</h2>
+<span class="tag">RIVAL · intención: incierta</span><span class="tag">VENTANA · popa posible</span><span class="tag">RIESGO · timón</span>
+<div class="k" style="margin-top:10px">PULSO DE VIENTO</div><div class="meter"><i id="pulse"></i></div>
+<div class="log" id="log">Programa una secuencia.
+Pista: disparar en todos los latidos no suele crear la mejor posición.</div>
+</section>
+</div>
+</section>
+</main>
+<script>
+(function(){
+ const opts=[
+  ['OBSERVAR','Lee mejor rival/viento.'],
+  ['ORZAR','Gana altura; pierde velocidad.'],
+  ['DERIVA','Cede control para ganar ángulo.'],
+  ['CRUZAR POPA','Ataque posicional; exige ángulo.'],
+  ['FUEGO','Daño directo; mediocre sin posición.'],
+  ['BRACE','Protege timón/aparejo.'],
+  ['REPARAR','Recupera sistema; cede iniciativa.']
+ ];
+ const beats=document.getElementById('beats'),log=document.getElementById('log'),you=document.getElementById('you'),foe=document.getElementById('foe'),pulse=document.getElementById('pulse');
+ for(let i=0;i<4;i++){
+  const d=document.createElement('div');d.className='beat';d.innerHTML='<b>LATIDO '+(i+1)+'</b><select>'+opts.map(o=>'<option value="'+o[0]+'">'+o[0]+'</option>').join('')+'</select>';beats.appendChild(d)
+ }
+ let ran=false;
+ document.getElementById('run').onclick=()=>{
+  if(ran)return;ran=true;
+  const seq=[...document.querySelectorAll('.beat select')].map(s=>s.value);
+  let pos=0,read=0,risk=0,damage=0,p=60,out=[];
+  seq.forEach((a,i)=>{
+   if(a==='OBSERVAR'){read+=2;p=Math.min(100,p+8);out.push('L'+(i+1)+' · Lees la vela rival: parece preparar giro.')}
+   if(a==='ORZAR'){pos+=2;p-=8;out.push('L'+(i+1)+' · Subes contra viento y ganas altura.')}
+   if(a==='DERIVA'){pos+=1;risk+=1;p+=3;out.push('L'+(i+1)+' · Derivas: pierdes control fino, ganas ángulo.')}
+   if(a==='CRUZAR POPA'){if(pos+read>=3){damage+=3;pos+=1;out.push('L'+(i+1)+' · CRUZAS POPA: ventana limpia sobre sistemas.')}else{risk+=2;out.push('L'+(i+1)+' · Intentas cruzar popa sin suficiente lectura/posición. El rival te lee.')}p-=14}
+   if(a==='FUEGO'){damage+=pos>=2?2:1;p-=7;out.push('L'+(i+1)+' · Fuego '+(pos>=2?'desde buen ángulo.':'sin ventaja clara.'))}
+   if(a==='BRACE'){risk=Math.max(0,risk-2);out.push('L'+(i+1)+' · Proteges timón y aparejo.')}
+   if(a==='REPARAR'){risk=Math.max(0,risk-1);p+=5;out.push('L'+(i+1)+' · Reparación rápida; cedes iniciativa.')}
+  });
+  pulse.style.width=Math.max(8,Math.min(100,p))+'%';
+  you.style.left=(12+Math.min(40,pos*8))+'%';you.style.top=(56-Math.min(26,pos*5))+'%';
+  foe.style.right=(12+Math.min(18,read*3))+'%';
+  let verdict='';
+  if(pos>=3&&damage>=3) verdict='\n\nPASS DE DISEÑO: has creado posición antes de castigar.';
+  else if(damage>=3&&pos<2) verdict='\n\nLECTURA: mucho fuego, poca posición. La ronda fue ruidosa pero no dominante.';
+  else verdict='\n\nLECTURA: la siguiente ronda dependería de la posición que has creado.';
+  if(risk>=3) verdict+=' Timón/aparejo quedan en riesgo.';
+  log.textContent=out.join('\n')+verdict;
+ };
+ document.getElementById('reset').onclick=()=>location.reload();
+})();
+</script>
+<script defer src="isl-global-shell.js"></script>
+</body>
+</html>
