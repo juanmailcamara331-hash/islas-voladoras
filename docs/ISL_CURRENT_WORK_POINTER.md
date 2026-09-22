@@ -1,3 +1,14 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · RUMBO v1 + VELARIA HUMAN GATE
+
+- RUMBO VISUAL v1.0 rebuilt as 5-page editorial dossier; v0.91 is superseded as visual baseline.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- Velaria source is present at `portal/velaria-v2.html` with Carrillo return target, local microfeedback and source-level human loop.
+- Private Netlify canonical site: `islas-voladoras-isl-private` (site id f3cb9c63-9ff1-4de2-b6df-c8e6af403a4f).
+- Current blocker: PRIVATE_DEPLOY_NOT_VERIFIED. Netlify project exists and remains SSO-gated, but no valid current deploy is exposed by the connector.
+- Duplicate private project `islas-voladoras-isl-private-i1oq` must not become new authority.
+- Do NOT mark HUMAN_DEVICE_GREEN until a real person completes Carrillo → Velaria → Carrillo on device and evidence is saved/exported.
+- Next operational action: restore/verify the canonical private deploy, then run one real device session. No new design systems before that gate.
+
 # ACTIVE EXECUTION NOTE · 2026-09-22 · CREATURES SOURCE GREEN
 
 B / criaturas: first 3 interaction test implemented in `portal/isla-baile-inagotable.html`.
