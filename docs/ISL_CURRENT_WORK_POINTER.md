@@ -1500,3 +1500,10 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Root cause of prior stale Android experience was failed Pages navigation gate, not Velaria runtime logic alone.
 - Android WebView points to GitHub Pages, so this is the first valid app retest surface containing the Velaria touch/discoverability fix.
 - HUMAN_DEVICE_GREEN still PENDING until physical retest.
+
+
+## 2026-09-22 · VELARIA MOBILE FIX REGRESSION-GUARDED
+- Playable quality gate now requires the current mobile fix tokens:
+  velaria-intuitive-input-v085 · moveBeacon · TOCA · touchstart · moveFromPoint.
+- Future changes cannot silently delete the touch/discoverability fix while leaving the playable gate green.
+- HUMAN_DEVICE_GREEN remains a separate physical test.
