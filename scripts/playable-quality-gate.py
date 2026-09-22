@@ -45,3 +45,21 @@ if errors:
     for e in errors: print(" -",e)
     sys.exit(1)
 print("PLAYABLE QUALITY GATE GREEN: shared mobile + friend-mode contract present")
+
+
+# Persistent NUDOS contract
+dance=(P/"isla-baile-inagotable.html").read_text(encoding="utf-8")
+for token in [
+    "dialectic_schema_version",
+    "NUDO-A",
+    "NUDO-B",
+    "NUDO-C",
+    "createKnot",
+    "maybeKnotA",
+    "maybeKnotB",
+    "maybeKnotC",
+    "consequence_main",
+    "revisit_hooks",
+]:
+    if token not in dance:
+        fail(f"Isla Baile missing persistent NUDOS contract token: {token}")
