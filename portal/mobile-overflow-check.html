@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>ISL · Mobile Overflow Check</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;max-width:100%;overflow-x:hidden;background:#071017;color:#eef8f5;font-family:Inter,system-ui,sans-serif}
+main{width:min(720px,94vw);margin:auto;padding:20px 0 60px}.card{border:1px solid #34515c;border-radius:16px;background:#0b1820;padding:16px;margin:10px 0}.k{font-size:9px;letter-spacing:.14em;color:#8defff;font-weight:900}.big{font-size:clamp(34px,12vw,60px);font-weight:950;line-height:.9;margin:8px 0}.pass{color:#b9f28f}.fail{color:#ff9aa5}.muted{color:#9fb4b9;font-size:12px;line-height:1.5}button,a{border:1px solid #45626d;background:#0d2028;color:#fff;border-radius:10px;padding:10px 12px;text-decoration:none;font-weight:900}.row{display:flex;gap:8px;flex-wrap:wrap}.mono{font:11px/1.5 ui-monospace,monospace;white-space:pre-wrap;word-break:break-word;background:#071219;padding:10px;border-radius:10px;border:1px solid #243f49}
+</style>
+</head>
+<body>
+<main>
+<div class="k">ISL · DIAGNÓSTICO MÓVIL</div>
+<div class="big" id="status">COMPROBANDO…</div>
+<div class="card">
+<div class="k">VIEWPORT</div>
+<div id="metrics" class="mono"></div>
+</div>
+<div class="card">
+<div class="k">ELEMENTOS QUE DESBORDAN</div>
+<div id="offenders" class="mono">—</div>
+</div>
+<div class="row">
+<a href="index.html">ABRIR CENTRO DE MANDOS</a>
+<button id="copy">COPIAR RESULTADO</button>
+</div>
+<p class="muted">PASS significa que esta página no detecta ancho extra del documento. Después abre el Centro de Mandos y vuelve aquí si ves desplazamiento horizontal.</p>
+</main>
+<script>
+(function(){
+ const de=document.documentElement,b=document.body;
+ function scan(){
+  const vw=de.clientWidth;
+  const sw=Math.max(de.scrollWidth,b.scrollWidth);
+  const overflow=sw-vw;
+  const bad=[];
+  [...document.querySelectorAll('body *')].forEach(el=>{
+    const r=el.getBoundingClientRect();
+    if(r.right>vw+1 || r.left<-1) bad.push({tag:el.tagName,cls:el.className||'',id:el.id||'',left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)});
+  });
+  const data={innerWidth:window.innerWidth,clientWidth:vw,scrollWidth:sw,overflowPx:overflow,devicePixelRatio:window.devicePixelRatio,orientation:screen.orientation?screen.orientation.type:'unknown',offenders:bad.slice(0,20)};
+  document.getElementById('metrics').textContent=JSON.stringify(data,null,2);
+  document.getElementById('offenders').textContent=bad.length?bad.map(x=>JSON.stringify(x)).join('\n'):'NINGUNO';
+  const st=document.getElementById('status');
+  st.textContent=overflow<=1?'PASS · SIN DESBORDE':'FAIL · +'+overflow+' px';
+  st.className='big '+(overflow<=1?'pass':'fail');
+  window.ISL_OVERFLOW_RESULT=data;
+ }
+ window.addEventListener('load',()=>setTimeout(scan,120));
+ window.addEventListener('resize',()=>setTimeout(scan,60));
+ document.getElementById('copy').onclick=async()=>{
+   const txt=JSON.stringify(window.ISL_OVERFLOW_RESULT,null,2);
+   try{await navigator.clipboard.writeText(txt);alert('Resultado copiado');}
+   catch(e){prompt('Copia el resultado:',txt)}
+ };
+})();
+</script>
+</body>
+</html>
