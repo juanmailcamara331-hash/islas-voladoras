@@ -1,3 +1,18 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · ROLE FAMILY CANON DIRECTION
+- HUMAN AUTHOR DECISION: promote the ROLE LENS / STARTING CONTRACT family from hypothesis to CANON DIRECTION for ISL.
+- CANON DIRECTION roles: VIAJERO / DRUIDA / ALQUIMISTA / PIRATA PUNK as first visible family; HECHICERO / CARTÓGRAFO / CRONISTA / GUARDIÁN as second family.
+- Arquetypes remain simple, legible, playful and transversal. They are NOT psychological diagnoses and NOT rigid classes.
+- Each role must materially change how the player enters, notices, relates to and traverses the same world: context, route emphasis, authored callbacks, social framing, initial relic/loadout, optional side-content weighting and first-hour affordances.
+- BUY THE GAME ONCE remains a hard commercial principle. Role replay must not require repurchasing the base game.
+- Physical/crowdfunding packs may embody a role with coherent relics/objects, but essential story/progression remains shared.
+- Jungian, mythic, literary, streamer/creator and pop-cultural references are FUNCTION ONLY → CONTRAST → MUTATION ISL. Never copy character, voice, jokes, iconography, plot or branded identity.
+- SUPREME ROLE branch accepted as CANON DIRECTION concept: original ISL meta-archetype working name ARCHITECT OF THE PRISM / FORJADOR DEL HORIZONTE. Internal inspiration can include hyper-competent reality-bending trickster/scientist/god functions, but no direct Rick and Morty/Rick identity.
+- SUPREME ROLE gameplay guard: reality-bending / map traversal may exist as post-completion, New Game+, sandbox or supporter-expression layer. It must NOT create pay-to-win progression in the normal first playthrough.
+- Candidate signature ability: a theatrical “snap” or equivalent gesture that can fold distance / open a previously discovered route / jump between known anchors. Full unrestricted map traversal is allowed only in a clearly separated creative/sandbox replay context, not as paid superiority in the core progression.
+- Supreme physical tier may signal authorship/worldbuilder status through premium relics, artbook/map, supporter recognition, and broad replay access. No essential canon story is exclusive to that tier.
+- Individual prices, exact abilities, role-specific content volume and Kickstarter tier structure remain UNLOCKED pending prototype + CQC + commercial validation.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE EXECUTION NOTE · 2026-09-22 · ROLE STARTER PACKS / REPLAY WITHOUT REPURCHASE
 - New hypothesis from Carrillo discussion: crowdfunding / physical-edition tiers may map to optional player-role starter packs rather than simple merch ladders.
 - Candidate roles are narrative/playstyle starting lenses, NOT psychological diagnosis of the player. Jungian/archetypal references may inform function only and must be transformed into original ISL systems.
