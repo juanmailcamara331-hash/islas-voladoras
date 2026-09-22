@@ -1144,3 +1144,12 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - The selected no-text image is the continuity reference for video/3D derivatives.
 - Do not reintroduce slogans or interior copy unless explicitly reopened by human decision.
 - Status remains NO CANON · second life pending.
+
+
+## 2026-09-22 · B LANE · NUDOS SOURCE GREEN
+- 3 persistent NUDOS integrated in Isla del Baile.
+- dialectic schema v1 + migration + rollback snapshot implemented.
+- crossed CQC B×A completed at SOURCE level.
+- Remaining gates: HUMAN causal-recall test + ART/3-scale visual read.
+- No CANON promotion.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
