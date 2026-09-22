@@ -124,6 +124,6 @@ if "drive.google.com/file/d/'+encodeURIComponent(drive)+'/preview" in gallery:
 
 
 # Velaria Android regression: scene touch handler must not cancel native button/link activation.
-velaria = read("portal/velaria-v2.html")
+velaria=(P/"velaria-v2.html").read_text(encoding="utf-8",errors="ignore")
 if "e.target&&e.target.closest&&e.target.closest('button,a'))return;" not in velaria:
     fail("Velaria regression: interactive controls may be swallowed by touchstart")
