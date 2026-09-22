@@ -10,8 +10,8 @@
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,sans-serif}
 body{background:radial-gradient(circle at 72% 0,#1c3c4b 0,transparent 28%),radial-gradient(circle at 18% 22%,#2d1834 0,transparent 24%),linear-gradient(#071017,#09141a)}
 .wrap{width:min(1180px,94vw);margin:auto;padding:16px 0 58px}.top{display:flex;align-items:center;gap:12px}.top img{width:50px;height:50px;object-fit:contain}.top h1{margin:2px 0 0;font-family:Georgia,serif;font-size:clamp(25px,4vw,44px)}.k{font-size:9px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.back{margin-left:auto;color:#fff;text-decoration:none;border:1px solid #3b5964;border-radius:10px;padding:10px 12px;font-size:10px;font-weight:900;background:#0a151b}
-.hero{margin-top:14px;border:1px solid var(--line);border-radius:18px;padding:18px;background:linear-gradient(135deg,#0d1c24,#11151a)}.hero p{margin:7px 0 0;color:#c2cfd2;font-size:13px;line-height:1.55}.pulsebar{margin-top:12px;display:grid;grid-template-columns:repeat(12,1fr);gap:4px;height:26px;align-items:end}.pulsebar i{display:block;background:#456b76;height:20%;border-radius:4px;transition:.35s}.pulsebar.live i:nth-child(3n){height:90%;background:var(--cyan)}.pulsebar.live i:nth-child(2n){height:58%;background:var(--gold)}.pulsebar.tired i:nth-child(odd){height:32%;background:#a65c63}.pulsebar.rested i{height:44%;background:#7bd4b0}.district{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.node{border:1px solid var(--line);border-radius:16px;padding:15px;background:#0b171de8;min-height:220px;display:flex;flex-direction:column}.node h2{font-size:16px;margin:7px 0 6px}.node p{font-size:11px;line-height:1.5;color:#aebec2;margin:0}.node .ico{font-size:28px}.node .status{margin-top:auto;padding-top:12px;font-size:9px;color:#789097}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.btn{border:1px solid #35505b;background:#0a151b;color:#eaf3f1;border-radius:9px;padding:10px 11px;font-size:9px;font-weight:900;cursor:pointer}.btn.gold{border-color:#7d633a;background:#2f2415;color:#f8e4b6}.btn.cyan{border-color:#38616e;background:#0d2028;color:#c7f7ff}.btn.rose{border-color:#71404c;background:#271117;color:#ffd4dc}.btn:disabled{opacity:.4}.panel{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:#09141a;padding:15px}.panel h3{margin:0 0 6px;font-size:13px}.panel p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}.memory{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.mem{border:1px solid #29434e;border-radius:10px;background:#071118;padding:10px;font-size:10px;color:#aab9bd}.mem b{display:block;color:#fff;margin-bottom:4px}.secret{display:none;margin-top:10px;border-left:3px solid var(--gold);padding:11px;background:#15130d;font-size:10px;line-height:1.5}.secret.show{display:block}.creatures{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.creature{border:1px solid #29434e;border-radius:16px;background:#08151be8;padding:14px;min-height:230px;display:flex;flex-direction:column}.creature h3{margin:6px 0;font-size:15px}.creature p{margin:0;color:#aebec2;font-size:10px;line-height:1.5}.creature .telegraph{margin-top:10px;padding:9px;border-left:3px solid var(--cyan);background:#0a2028;color:#c9f5ff;font-size:10px;line-height:1.45;min-height:48px}.creature .result{margin-top:8px;color:#d9c79d;font-size:10px;line-height:1.45;min-height:44px}.creature .actions{margin-top:auto}.footer{text-align:center;color:#6f8389;font-size:9px;margin-top:11px}
-@media(max-width:780px){.district,.creatures{grid-template-columns:1fr}.memory{grid-template-columns:1fr}.node,.creature{min-height:auto}}
+.hero{margin-top:14px;border:1px solid var(--line);border-radius:18px;padding:18px;background:linear-gradient(135deg,#0d1c24,#11151a)}.hero p{margin:7px 0 0;color:#c2cfd2;font-size:13px;line-height:1.55}.pulsebar{margin-top:12px;display:grid;grid-template-columns:repeat(12,1fr);gap:4px;height:26px;align-items:end}.pulsebar i{display:block;background:#456b76;height:20%;border-radius:4px;transition:.35s}.pulsebar.live i:nth-child(3n){height:90%;background:var(--cyan)}.pulsebar.live i:nth-child(2n){height:58%;background:var(--gold)}.pulsebar.tired i:nth-child(odd){height:32%;background:#a65c63}.pulsebar.rested i{height:44%;background:#7bd4b0}.district{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.node{border:1px solid var(--line);border-radius:16px;padding:15px;background:#0b171de8;min-height:220px;display:flex;flex-direction:column}.node h2{font-size:16px;margin:7px 0 6px}.node p{font-size:11px;line-height:1.5;color:#aebec2;margin:0}.node .ico{font-size:28px}.node .status{margin-top:auto;padding-top:12px;font-size:9px;color:#789097}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.btn{border:1px solid #35505b;background:#0a151b;color:#eaf3f1;border-radius:9px;padding:10px 11px;font-size:9px;font-weight:900;cursor:pointer}.btn.gold{border-color:#7d633a;background:#2f2415;color:#f8e4b6}.btn.cyan{border-color:#38616e;background:#0d2028;color:#c7f7ff}.btn.rose{border-color:#71404c;background:#271117;color:#ffd4dc}.btn:disabled{opacity:.4}.panel{margin-top:14px;border:1px solid var(--line);border-radius:16px;background:#09141a;padding:15px}.panel h3{margin:0 0 6px;font-size:13px}.panel p{margin:0;color:var(--muted);font-size:10px;line-height:1.5}.memory{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.mem{border:1px solid #29434e;border-radius:10px;background:#071118;padding:10px;font-size:10px;color:#aab9bd}.mem b{display:block;color:#fff;margin-bottom:4px}.secret{display:none;margin-top:10px;border-left:3px solid var(--gold);padding:11px;background:#15130d;font-size:10px;line-height:1.5}.secret.show{display:block}.creatures{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.creature{border:1px solid #29434e;border-radius:16px;background:#08151be8;padding:14px;min-height:230px;display:flex;flex-direction:column}.creature h3{margin:6px 0;font-size:15px}.creature p{margin:0;color:#aebec2;font-size:10px;line-height:1.5}.creature .telegraph{margin-top:10px;padding:9px;border-left:3px solid var(--cyan);background:#0a2028;color:#c9f5ff;font-size:10px;line-height:1.45;min-height:48px}.creature .result{margin-top:8px;color:#d9c79d;font-size:10px;line-height:1.45;min-height:44px}.creature .actions{margin-top:auto}.knots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}.knot{border:1px solid #38515a;border-radius:12px;background:#071118;padding:11px;min-height:118px}.knot b{display:block;font-size:10px;color:#fff;margin-bottom:5px}.knot span{display:block;font-size:9px;color:#9eb0b5;line-height:1.45}.knot.active{border-color:#826d43;background:#15130d}.footer{text-align:center;color:#6f8389;font-size:9px;margin-top:11px}
+@media(max-width:780px){.district,.creatures,.knots{grid-template-columns:1fr}.memory{grid-template-columns:1fr}.node,.creature{min-height:auto}}
 </style>
 <link rel="stylesheet" href="isl-global-shell.css">
 </head>
@@ -111,6 +111,18 @@ body{background:radial-gradient(circle at 72% 0,#1c3c4b 0,transparent 28%),radia
   </div>
 </section>
 
+
+<section class="panel" id="knotLab">
+  <div class="k">NUDOS PERSISTENTES · SCHEMA v1 · NO MORAL SCORE</div>
+  <h3 style="margin-top:6px">Lo que ocurrió puede volver</h3>
+  <p>Un NUDO sólo aparece si hubo coste, más de una lectura defendible y un cambio verificable. Una consecuencia principal y hasta dos ecos.</p>
+  <div class="knots">
+    <div class="knot" id="knotA"><b>NUDO-A · MEMORIA / CONFIANZA</b><span id="knotAText">Dormido. El Escarabeo aún no conserva una cadena significativa.</span></div>
+    <div class="knot" id="knotB"><b>NUDO-B · REGLA / ADAPTACIÓN</b><span id="knotBText">Dormido. La Danzante aún no ha cambiado una regla persistente.</span></div>
+    <div class="knot" id="knotC"><b>NUDO-C · COSTE / PRIORIDAD</b><span id="knotCText">Dormido. El Consejero aún no ha dejado un coste persistente.</span></div>
+  </div>
+</section>
+
 <div class="footer">Tensiones activas: deseo/disciplina · intimidad/multitud · rito/improvisación · cuidado/explotación. Mismas reglas en todos los tiers.</div>
 </main>
 
@@ -140,6 +152,73 @@ function act(a){
 function creatureTrace(action,delta,tags,cost,relations=[]){
  trace(action,delta,tags,cost,'criatura',relations);
 }
+
+function ensureKnots(){
+ state.dialectic_schema_version=1;
+ state.knots=state.knots||{};
+}
+function createKnot(id,data){
+ ensureKnots();
+ if(state.knots[id]) return state.knots[id];
+ state.knots[id]={
+   knot_id:id,
+   tensions:data.tensions,
+   source_events:data.source_events,
+   world_delta_refs:data.world_delta_refs,
+   relation_refs:data.relation_refs,
+   unresolved_question:data.unresolved_question,
+   intensity_band:data.intensity_band,
+   revisit_hooks:data.revisit_hooks,
+   consequence_main:data.consequence_main,
+   echoes:data.echoes||[],
+   created_at:new Date().toISOString(),
+   version:1
+ };
+ trace('crear_nudo',id,['nudo','persistencia',...data.tensions],data.intensity_band,'mundo',data.relation_refs||[]);
+ return state.knots[id];
+}
+function maybeKnotA(change){
+ if(!change) return;
+ createKnot('NUDO-A',{
+   tensions:['intimidad_distancia','memoria_reinicio'],
+   source_events:['registrar_cambio:'+change],
+   world_delta_refs:[change],
+   relation_refs:['escarabeo_registrador'],
+   unresolved_question:'¿Qué merece ser recordado cuando sólo cabe una cadena?',
+   intensity_band:3,
+   revisit_hooks:['escarabeo_reconoce_cadena','brujula_lee_memoria'],
+   consequence_main:'escarabeo_reconoce_cadena_en_regreso',
+   echoes:['eco_relacional_archivo']
+ });
+}
+function maybeKnotB(){
+ if(state.pulse!=='varied') return;
+ createKnot('NUDO-B',{
+   tensions:['disciplina_improvisacion','claridad_exceso'],
+   source_events:['variar_pulso','responder_danzante'],
+   world_delta_refs:['ruta_variacion_abierta','referencia_danzante_cambiada'],
+   relation_refs:['danzante_aguja','baile_plaza'],
+   unresolved_question:'¿Cuándo adaptar una regla la mantiene viva y cuándo la deshace?',
+   intensity_band:3,
+   revisit_hooks:['ruta_lateral_persistente','danzante_repite_referencia'],
+   consequence_main:'ruta_lateral_permanece_legible',
+   echoes:['danzante_recuerda_referencia']
+ });
+}
+function maybeKnotC(kind){
+ const accepted=kind==='favor';
+ createKnot('NUDO-C',{
+   tensions:['cuidado_explotacion','hogar_deriva','singularidad_pensamiento_unico'],
+   source_events:[accepted?'aceptar_favor_niebla':'contradecir_consejero'],
+   world_delta_refs:[accepted?'atajo_abierto_con_deuda':'acceso_retirado'],
+   relation_refs:['consejero_niebla'],
+   unresolved_question:accepted?'¿Cuánto acceso compensa una deuda que todavía no sabes cómo se cobrará?':'¿Cuándo rechazar una mediación protege autonomía y cuándo cierra una posibilidad útil?',
+   intensity_band:4,
+   revisit_hooks:[accepted?'atajo_recuerda_deuda':'consejero_recuerda_rechazo'],
+   consequence_main:accepted?'atajo_persiste_con_deuda':'acceso_permanece_retirado',
+   echoes:[accepted?'eco_relacional_deuda':'eco_relacional_distancia']
+ });
+}
 function creatureAct(a){
  if(a==='dancer-read'){
    state.creatures=state.creatures||{};state.creatures.dancerTelegraph=true;
@@ -154,6 +233,7 @@ function creatureAct(a){
    if(varied){state.route=true;$('dancerResult').textContent='La Aguja abandona el compás dominante y señala la ruta lateral que tu variación hizo legible.'}
    else {$('dancerResult').textContent='La Aguja se sincroniza contigo y estabiliza el tránsito durante un ciclo.'}
    creatureTrace('responder_danzante',varied?'ruta_lateral_reforzada':'transito_sincronizado',['criatura','ritmo',varied?'improvisacion':'disciplina'],3,['danzante_aguja','baile_plaza']);
+   if(varied) maybeKnotB();
  }
  if(a==='counselor-favor'){
    state.creatures=state.creatures||{};state.creatures.counselor='deuda';
@@ -161,6 +241,7 @@ function creatureAct(a){
    $('counselorTelegraph').textContent='Una ficha gira hacia una escalera cerrada. La otra queda apuntando hacia ti.';
    $('counselorResult').textContent='El atajo se abre. También queda registrada una deuda relacional.';
    creatureTrace('aceptar_favor_niebla','atajo_abierto_con_deuda',['criatura','acceso','dependencia'],4,['consejero_niebla']);
+   maybeKnotC('favor');
  }
  if(a==='counselor-contradiction'){
    state.creatures=state.creatures||{};
@@ -169,6 +250,7 @@ function creatureAct(a){
    $('counselorTelegraph').textContent='Las fichas se inmovilizan antes de que cambie ningún acceso.';
    $('counselorResult').textContent=leverage?'Tu evidencia del distrito contradice su relato. Mantiene el acceso, pero pierde parte de su control.':'Sin una contradicción visible en el mundo, el Consejero retira el atajo y conserva su versión.';
    creatureTrace('contradecir_consejero',leverage?'influencia_reducida':'acceso_retirado',['criatura','poder','contradiccion'],3,['consejero_niebla']);
+   if(!leverage) maybeKnotC('rechazo');
  }
  if(a==='archivist-open'){
    state.creatures=state.creatures||{};state.creatures.archivistTelegraph=true;
@@ -188,6 +270,7 @@ function creatureAct(a){
      state.creatures.archive=change;
      $('archivistResult').textContent='Cadena conservada: '+change.replaceAll('_',' ')+'. Sustituirá a la anterior si registras un cambio más significativo.';
      creatureTrace('registrar_cambio',change,['criatura','archivo','memoria'],3,['escarabeo_registrador']);
+     maybeKnotA(change);
    } else {
      $('archivistResult').textContent='Ignora el ruido: todavía no hay un cambio del mundo que merezca ocupar su única cadena.';
      creatureTrace('rechazar_ruido','sin_cambio_significativo',['criatura','archivo','ruido'],1,['escarabeo_registrador']);
@@ -216,6 +299,11 @@ function render(){
  if(cs.counselor==='se_cierra') $('counselorResult').textContent='Retiró el acceso al no encontrar contradicción demostrable.';
  if(cs.archivistTelegraph){$('archivistTelegraph').textContent='Las placas siguen abiertas, comparando qué cambió de verdad.';document.querySelector('[data-c="archivist-record"]').disabled=false}
  if(cs.archive) $('archivistResult').textContent='Cadena conservada: '+cs.archive.replaceAll('_',' ')+'.';
+
+ const ks=state.knots||{};
+ if(ks['NUDO-A']){$('knotA').classList.add('active');$('knotAText').textContent='Activo · '+ks['NUDO-A'].consequence_main.replaceAll('_',' ')+' · pregunta abierta: '+ks['NUDO-A'].unresolved_question}
+ if(ks['NUDO-B']){$('knotB').classList.add('active');$('knotBText').textContent='Activo · '+ks['NUDO-B'].consequence_main.replaceAll('_',' ')+' · pregunta abierta: '+ks['NUDO-B'].unresolved_question}
+ if(ks['NUDO-C']){$('knotC').classList.add('active');$('knotCText').textContent='Activo · '+ks['NUDO-C'].consequence_main.replaceAll('_',' ')+' · pregunta abierta: '+ks['NUDO-C'].unresolved_question}
 
  const bar=$('pulsebar');bar.className='pulsebar '+(state.rest==='open'?'rested':state.fatigue>=2?'tired':(state.pulse?'live':''));
  const sec=$('secret');
