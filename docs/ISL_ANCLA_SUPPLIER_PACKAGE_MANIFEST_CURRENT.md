@@ -1,6 +1,6 @@
 # ISL · ANCLA DEL REGRESO · SUPPLIER PACKAGE MANIFEST · CURRENT
 Fecha: 2026-09-22
-Estado: PACKAGE STRUCTURE READY · FRONT SOURCE STILL REQUIRES HUMAN RECONFIRMATION
+Estado: AUTHORITATIVE FRONT + REVERSE LOCKED · TECHNICAL EXTRACTION / DIGITAL CQC PENDING
 Entity: ISL_PHYSICAL_001
 
 ## PURPOSE
@@ -29,12 +29,22 @@ AUTHORITATIVE FRONT + LOCKED REVERSE
 - premium collectible relic feel, not sports medal / promo coin.
 
 ## FRONT
-STATUS: BLOCKED FOR HUMAN RECONFIRMATION.
-Source must be the exact user-approved original physical mockup / front reference.
-Do not infer from recent generations.
-Do not use superseded manufacturing v0.4 outputs.
+STATUS: AUTHORITATIVE / LOCKED · HUMAN RECONFIRMED 2026-09-22.
+Source of truth: the user-reconfirmed physical front reference shown in the current lane, specifically the medal reference with:
+- large central anchor;
+- vertical stem with circular eye at top;
+- flowing wind/ribbon line wrapping the stem;
+- small floating islands/clouds around the anchor;
+- star at upper right;
+- curved bottom text: ANCLA DEL REGRESO;
+- antique-brass raised perimeter;
+- dark teal + antique brass ISL relic language.
 
-When reconfirmed, extract:
+This exact reference outranks recent generations and superseded manufacturing extractions.
+The technical mask sheet shown alongside it is SUPPORT ONLY until re-extracted or verified against this locked front.
+Do not use superseded manufacturing v0.4 outputs as authority.
+
+Extract / validate:
 - CUTLINE;
 - BASE METAL;
 - ENAMEL AREAS;
@@ -44,7 +54,8 @@ When reconfirmed, extract:
 - minimum readable feature candidates.
 
 ## REVERSE
-STATUS: AUTHORITATIVE / LOCKED.
+STATUS: AUTHORITATIVE / LOCKED · HUMAN RECONFIRMED 2026-09-22.
+Source of truth: the user-reconfirmed reverse technical sheet labelled REVERSO – ARTE FINAL · ISL · v0.2 · 48 mm.
 Required identity:
 - central navigation rose/star;
 - teal + antique brass;
@@ -82,7 +93,7 @@ The Pins Store:
 - useful benchmark / backup;
 - MOQ25 currently conflicts with prototype gate.
 
-## PACKAGE FILE NAMES WHEN READY
+## PACKAGE FILE NAMES AFTER TECHNICAL EXTRACTION + DIGITAL CQC
 ISL_ANCLA_001_FRONT_AUTHORITATIVE.pdf
 ISL_ANCLA_001_REVERSE_AUTHORITATIVE.pdf
 ISL_ANCLA_001_TECH_OVERLAY_FRONT.pdf
@@ -96,3 +107,17 @@ THE APPROVED ASSET WINS.
 NO MONEY COMMITMENT BEFORE SAMPLE GATE.
 NO SUPPLIER REDESIGN WITHOUT HUMAN REVIEW.
 NO USE OF SUPERSEDED FRONT EXTRACTIONS.
+
+
+## CURRENT OPERATION · 2026-09-22
+Authority conflict is CLOSED by explicit human reconfirmation of both sides.
+Current step is NOT supplier send and NOT production authorization.
+Current step:
+1. re-extract or verify FRONT technical layers against the exact locked front;
+2. validate REVERSE technical layers against the locked reverse sheet;
+3. run human digital CQC;
+4. assemble supplier-facing package;
+5. prepare CoinsForAnything prototype-feasibility request;
+6. send only after explicit user approval.
+
+Binary supplier attachments are not declared manufacturing-ready until the extraction/validation pass is completed.
