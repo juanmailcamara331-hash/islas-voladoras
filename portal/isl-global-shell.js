@@ -37,6 +37,16 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){panel.class
 var pulse=document.createElement('div');pulse.id='islGlobalHomePulse';pulse.textContent='JUGAR · CREAR · VER · DECIDIR · MÁS';document.body.appendChild(pulse);
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var u=a.getAttribute('href')||'';if(!/^(https?:|mailto:|tel:|#)/i.test(u)){try{sessionStorage.setItem('isl_return_to',location.href)}catch(err){}}},true);
 
+/* Meaningful Command Center actions share one methodology router.
+   Navigation stays frictionless; state-changing actions are classified/gated. */
+if(!document.querySelector('script[data-isl-action-router]')){
+  var ar=document.createElement('script');
+  ar.src='isl-action-router.js';
+  ar.defer=true;
+  ar.setAttribute('data-isl-action-router','1');
+  document.head.appendChild(ar);
+}
+
 // Stable back/forward navigation: preserve the exact place without automatic jumps.
 (function(){
   var NAVKEY='isl_nav:'+location.pathname+location.search+location.hash;
