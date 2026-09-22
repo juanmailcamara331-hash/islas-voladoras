@@ -1,3 +1,14 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · CONTRADICTION LAB v0.92
+- Additive lab checkpoint: `docs/ISL_CHECKPOINT_v0.92_CONTRADICTION_LAB_AUDIT_AND_MICROTEST_HANDOFF_2026-09-23.md`.
+- This does NOT supersede or redefine SAFE HARBOR, v0.91 protected home state, approved assets, CANON, or PRIMARY.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- Lab finding: CONTRADICCIÓN VIVA is best treated as a microscope / anti-domestication detector, not a mandatory paint layer.
+- First atmospheric propagation from 2026-09-22 is now itself under audit; no deeper propagation until evidence.
+- Keep six incompatible hypotheses alive; do not synthesize yet.
+- Next lab action: select ONE existing secondary piece for retrospective ablation or NORMAL/IMPOSSIBLE microtest; not Velaria.
+- Guard: NORMALITY IS PART OF THE SYSTEM · NO CONTRADICTION REQUIRED BY DEFAULT.
+- New conversations must preserve all previous versions/history; checkpoints are additive and rollback remains non-destructive.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · SAFE HARBOR / RED BUTTON
 - Authoritative safety anchor: `docs/ISL_SAFE_HARBOR_AND_RED_BUTTON_CURRENT.md`.
 - Human command: `BOTÓN ROJO · VOLVER A CASA`.
