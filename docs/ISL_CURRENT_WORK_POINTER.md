@@ -1212,3 +1212,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Accessibility must be modular, not a segregated “disabled mode”: timing, precision, inputs, subtitles, motion, navigation, hints, recap, one-hand/low-dexterity options where feasible.
 - Same world truth and core consequences; multiple access paths.
 - Existing automation trigger extended; no new bot.
+
+
+## 2026-09-22 · SHADOW BIOGRAPHICAL / HUMAN FRICTION DIRECTION
+- ISL should not sanitize human life: abrasive friends/NPCs, ego, laziness, ignorance, desire, adult erotic tension, antisocial behaviour, money/class, ideology, institutions, excess, shame, death and tenderness may feed fiction.
+- Runtime characters need not be likable or redeemed; behavior and consequences matter more than moral labels.
+- Political/ideological critique can exist through characters/systems/consequences without imposing one mandatory doctrine.
+- Adult eroticism is allowed only when relationally/narratively functional and consent-aware.
+- Existing Biographical World Kernel gains a sparse prompt trigger: ask the author 1–3 relevant questions only when material could improve a real scene/system.
+- References such as critical rap or irreverent comedy contribute function/contradiction only; no imitation of voice/lyrics/punchlines.
+- No new bot; PRIMARY unchanged.
