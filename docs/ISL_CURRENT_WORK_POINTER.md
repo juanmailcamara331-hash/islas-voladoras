@@ -1271,3 +1271,11 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Molino A/B/C gallery assets remain historical candidates; no automatic winner/canon.
 - Existing Inconsciente/automation master now samples 1–3 heritage items when relevant; no new bot.
 - R13 never displaces PRIMARY Velaria V2 P0.
+
+
+## 2026-09-22 · MICRO-CHECKPOINT v0.89.1
+- docs/ISL_CHECKPOINT_v0.89.1_PHYSICAL_R13_PRIVATE_BACKUP_2026-09-22.md
+- Inherits v0.89 global rumbo.
+- Adds R13 heritage re-audit, Wind Lab refresh, Carrillo logistics/brief, physical Rumbo de Bolsillo, and backup redundancy.
+- Private Netlify deploy still failing with Not Found; do not claim private URL green.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
