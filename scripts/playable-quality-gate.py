@@ -121,3 +121,9 @@ if 'content:"AMPLIAR"' in gallery:
     fail("Gallery regressed to redundant AMPLIAR overlay")
 if "drive.google.com/file/d/'+encodeURIComponent(drive)+'/preview" in gallery:
     fail("Gallery regression: blocked Google Drive preview iframe restored")
+
+
+# Velaria Android regression: scene touch handler must not cancel native button/link activation.
+velaria = read("portal/velaria-v2.html")
+if "e.target&&e.target.closest&&e.target.closest('button,a'))return;" not in velaria:
+    fail("Velaria regression: interactive controls may be swallowed by touchstart")
