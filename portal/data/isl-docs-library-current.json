@@ -265,6 +265,34 @@
         "gallery",
         "command_center"
       ]
+    },
+    {
+      "id": "DOC-METHOD-006",
+      "title": "Cross-Art Craft & Practice Layer",
+      "group": "Método / Oficios",
+      "kind": "method",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_CROSS_ART_CRAFT_AND_PRACTICE_LAYER_CURRENT.md",
+      "canon_state": "TRANSVERSAL",
+      "surfaces": [
+        "gallery",
+        "command_center"
+      ]
+    },
+    {
+      "id": "DOC-METHOD-007",
+      "title": "Real World Scan & Mutation Protocol",
+      "group": "Método / Mundo real",
+      "kind": "method",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_REAL_WORLD_SCAN_AND_MUTATION_PROTOCOL_CURRENT.md",
+      "canon_state": "TRANSVERSAL",
+      "surfaces": [
+        "gallery",
+        "command_center"
+      ]
     }
   ]
 }
