@@ -20,17 +20,28 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: isl-surface-propagation-main
+  cancel-in-progress: false
+
 jobs:
   propagate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
+      - name: Rebase on latest main for push runs
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
 
       - name: Generate runtime docs registry
         run: python scripts/generate-docs-runtime.py
@@ -38,15 +49,39 @@ jobs:
       - name: Validate surface propagation
         run: python scripts/surface-propagation-gate.py
 
-      - name: Commit generated registry
+      - name: Commit generated registry with race-safe retry
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           if git diff --quiet -- portal/data/isl-docs-library-current.json; then
             echo "Registry already synchronized."
             exit 0
           fi
+
           git config user.name "isl-surface-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add portal/data/isl-docs-library-current.json
-          git commit -m "Sync ISL docs runtime registry"
-          git push
+
+          for attempt in 1 2 3; do
+            echo "Sync attempt $attempt/3"
+
+            git add portal/data/isl-docs-library-current.json
+            if ! git diff --cached --quiet; then
+              git commit -m "Sync ISL docs runtime registry"
+            fi
+
+            if git push origin HEAD:main; then
+              echo "Registry synchronized."
+              exit 0
+            fi
+
+            echo "Remote advanced while syncing; rebasing and regenerating."
+            git fetch origin main
+            git rebase origin/main || {
+              git rebase --abort || true
+              git reset --hard origin/main
+            }
+            python scripts/generate-docs-runtime.py
+            python scripts/surface-propagation-gate.py
+          done
+
+          echo "Another writer kept advancing main. Leaving reconciliation to the fallback instead of marking this run failed."
+          exit 0
