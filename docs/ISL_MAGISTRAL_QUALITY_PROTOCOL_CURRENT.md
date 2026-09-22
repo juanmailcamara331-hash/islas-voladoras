@@ -202,3 +202,18 @@ Antes de cerrar:
 “No escatimamos en calidad. Escatimamos ferozmente en desperdicio.”
 
 Calidad ISL = precisión suficiente para sostener libertad creativa.
+
+
+## 13. CHECKFRAME / PRESENTACIÓN HUMANA · 2026-09-22
+Cuando una pieza tenga estado, rumbo o trabajo pendiente visible:
+usar preferentemente:
+[✓] HECHO · [ ] AHORA · [ ] DESPUÉS.
+
+No usarlo dentro del gameplay si rompe inmersión.
+Sí usarlo en:
+Rumbo · briefs · playtests · handoffs · PDFs · Carrillo · presentación · revisión.
+
+Regla visual:
+IMAGEN / CONTENIDO → DECISIÓN / ACCIÓN → DETALLE TÉCNICO.
+
+El detalle técnico nunca debe competir con la pieza principal en una superficie humana.
