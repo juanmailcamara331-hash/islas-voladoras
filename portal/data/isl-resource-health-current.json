@@ -35,29 +35,31 @@
     {
       "id": "google_drive",
       "label": "Google Drive · ISL workspace",
-      "state": "WATCH",
+      "state": "GREEN",
       "observed": {
         "scanned_folder_id": "0AEUN1o3grgOwUk9PVA",
         "direct_items_visible": 253,
         "folders_visible": 32,
         "summed_visible_bytes": 5997974699,
         "summed_visible_gib": 5.59,
-        "account_quota": "UNKNOWN_FROM_CONNECTOR"
+        "account_quota": "UNKNOWN_FROM_CONNECTOR",
+        "user_reported_account_capacity_tb_approx": 2,
+        "account_quota_verification": "USER_REPORTED_NOT_CONNECTOR_VERIFIED"
       },
       "reference_limits": {
         "base_consumer_account_gb": 15,
         "note": "Actual user quota may be larger via Google One/Workspace; do not infer account plan."
       },
       "risks": [
-        "Visible project footprint is already multi-GB.",
-        "Account-wide remaining quota cannot be read from the current connector.",
+        "Account-wide remaining quota cannot be verified from the current connector.",
         "Drive is archive/master storage, not a low-latency game CDN."
       ],
       "next": [
         "Keep masters, briefs, provenance and backups in Drive.",
         "Add CDN/object storage only when verified runtime binary/volume/performance need exists.",
         "Periodically deduplicate masters/exports without deleting source-of-truth."
-      ]
+      ],
+      "usage_ratio_note": "~5.59 GiB visible in the scanned ISL workspace is roughly 0.27% of a user-reported ~2 TB plan; account-wide used/remaining capacity is not exposed by the current connector."
     },
     {
       "id": "unreal",
