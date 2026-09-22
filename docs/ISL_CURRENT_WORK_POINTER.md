@@ -1222,3 +1222,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Existing Biographical World Kernel gains a sparse prompt trigger: ask the author 1–3 relevant questions only when material could improve a real scene/system.
 - References such as critical rap or irreverent comedy contribute function/contradiction only; no imitation of voice/lyrics/punchlines.
 - No new bot; PRIMARY unchanged.
+
+
+## 2026-09-22 · LIVING CULTURE / SPECTACLE DIRECTION
+- Cities/islands may host theatre, concerts, festivals, rituals, sports, fairs, performances and historical-cultural events that exist beyond quest delivery.
+- Observation spots (sit/lean/watch/listen/stay) are valid player actions and can unlock camera/audio/crowd/dialogue/callback layers without granting raw power.
+- Events can continue without the player and leave aftermath: rumors, debris, changed NPCs, posters, recordings, social consequences.
+- Player-facing mission ladder maps spectacles from M0 ambient incident to M5 historical/cultural milestone.
+- Large countercultural festivals are reference-by-function only: ephemeral city, participatory art, temporary ritual/community, teardown and memory; no copied iconography or named-event reproduction.
+- Historical “second-tier” events may feed worldbuilding after context/function/contradiction/mutation.
+- No PRIMARY displacement.
