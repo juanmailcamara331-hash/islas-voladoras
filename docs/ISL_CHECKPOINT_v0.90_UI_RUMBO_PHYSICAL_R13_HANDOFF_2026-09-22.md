@@ -129,3 +129,36 @@ Orden:
 
 ## FRASE
 “Si el contexto empieza a pesar más que la creación, checkpoint y cambio de mesa.”
+
+
+## ADDENDUM · VISUAL BRIEF / CHECKFRAME PATTERN · 2026-09-22
+Closed before next-chat handoff.
+
+Locked reusable pattern:
+- docs/ISL_VISUAL_BRIEF_CHECKFRAME_PATTERN_CURRENT.md
+- docs/ISL_EXPORTABLE_VISUAL_BRIEF_CHECKFRAME_PATTERN_v0.1.md
+
+Human-facing state grammar:
+[✓] HECHO
+[ ] AHORA
+[ ] DESPUÉS
+
+Functional dossier grammar:
+PROMISE → UNDERSTANDING → EVIDENCE → METHOD → DIRECTION.
+
+Design rule:
+hero image + editorial hierarchy + minimal human copy + few pillars + simple diagram + visible state + technical detail secondary.
+
+Surfaces updated:
+- private-site/rumbo-isl.html: official checkframe + one-tap copy handoff for ChatGPT;
+- private-site/carrillo-human-lab.html: compact mission checks;
+- docs library: patterns surfaced;
+- Automation Prompts Master: existing trigger extended;
+- Magistral Quality Protocol: presentation/checkframe rule integrated.
+
+Cross-project boundary:
+only the abstract method may travel.
+No ISL lore/assets/identity/data/code decisions travel with it.
+
+PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+No new bot.
