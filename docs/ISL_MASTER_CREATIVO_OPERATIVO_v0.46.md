@@ -564,3 +564,171 @@ Preguntar:
 - ¿un desastre abre decisiones?
 - ¿la compañera enferma sigue teniendo agencia/identidad?
 - ¿la recuperación puede transformar, no sólo resetear?
+
+
+## 12. ENCUENTROS / DIÁLOGOS / CALLBACKS ADAPTATIVOS · 2026-09-22
+
+### PRINCIPIO
+Los chistes, diálogos de pandilla, sucesos pequeños y callbacks NO necesitan generarse por IA en runtime.
+
+Preferencia:
+CONTENIDO HUMANO/CURADO
+×
+COMBINACIÓN SISTÉMICA
+=
+ESPONTANEIDAD CON COHERENCIA.
+
+El sistema combina piezas ya escritas o aprobadas según:
+- personaje;
+- relación;
+- lugar;
+- hito narrativo;
+- estado del mundo;
+- NUDOS activos;
+- misión actual;
+- tiempo desde último encuentro;
+- historial de callbacks;
+- patrones observables de juego;
+- rareza;
+- tono actual.
+
+No usar random puro.
+No disparar el mismo chiste en contextos incompatibles.
+
+### CÍRCULOS NARRATIVOS
+Una microescena puede:
+1. sembrar;
+2. reaparecer;
+3. mutar;
+4. coronar;
+5. dejar eco.
+
+Ejemplo abstracto:
+detalle absurdo temprano
+→ callback pequeño
+→ relación con un hito real
+→ payoff emocional o cómico
+→ objeto/frase/gesto que permanece.
+
+Regla:
+los callbacks deben cerrar o transformar algo real.
+No convertir el juego en una máquina de referencias internas constantes.
+
+### OBSERVACIÓN COMO ESTILO DE JUEGO
+El juego puede detectar conducta observable, por ejemplo:
+- detenerse cerca de NPC/objetos;
+- volver a lugares;
+- explorar laterales;
+- mirar/interactuar con elementos pequeños;
+- seguir rumores;
+- escuchar diálogos;
+- desviarse de la ruta principal.
+
+Si el jugador muestra alta observación:
+- aumenta probabilidad de microeventos;
+- encuentros ambientales;
+- historias laterales;
+- gestos de NPC;
+- sucesos tipo “persona caída / situación pequeña”;
+- secretos;
+- rarezas sin marcador;
+- callbacks y ecos.
+
+Si el jugador va directo:
+- menos interrupciones;
+- mayor claridad de misión principal;
+- secundarios agrupados o más visibles;
+- eventos importantes no se pierden por sistema.
+
+No premiar “mirar mucho” con poder bruto automático.
+Premiar con DENSIDAD DE MUNDO, información, historias, oportunidades y rutas.
+
+### RANGO DE MISIONES / ESCALERA
+Separar:
+- M0 · MICROEVENTO: 10–60 s, no log obligatorio;
+- M1 · ENCUENTRO: 1–5 min, consecuencia pequeña;
+- M2 · SECUNDARIA: 5–20 min, estado/relación/recurso;
+- M3 · CADENA: varios encuentros conectados;
+- M4 · MISIÓN MAYOR: altera zona/sistema;
+- M5 · HITO: cambia lectura, acceso o escala del mundo.
+
+Un M0 puede convertirse en M2/M3 sólo si el jugador muestra interés o el mundo le da continuidad.
+Una secundaria puede ascender por consecuencia, no por burocracia.
+
+### ROUTER DE DENSIDAD
+El sistema ajusta silenciosamente:
+- frecuencia de encuentros;
+- distancia de desvío tolerable;
+- explicitud de pistas;
+- peso de secundarios;
+- frecuencia de callbacks;
+- proporción misión principal / mundo lateral.
+
+Perfiles funcionales temporales:
+DIRECTO
+OBSERVADOR
+EXPLORADOR
+SOCIAL
+SISTÉMICO
+ARTESANO
+RIESGO.
+
+No son identidades.
+Cambian con el juego reciente.
+
+### PANDILLA / HUMOR
+Diálogos y bromas:
+- escritos o curados previamente;
+- etiquetados por personaje, relación, tensión y contexto;
+- combinables con callbacks y estados;
+- nunca generados sólo porque “toca un chiste”.
+
+Un remate puede ganar valor si:
+- responde a algo que ocurrió horas antes;
+- contradice una situación épica;
+- revela relación;
+- reaparece deformado;
+- corona una cadena.
+
+Máximo:
+el humor acompaña;
+no pisa hitos emocionales centrales.
+
+### OTROS PILARES DE JUGABILIDAD
+El router de misiones debe cruzarse con:
+- exploración;
+- combate;
+- navegación;
+- economía;
+- crafting/reparación;
+- vínculo/compañera;
+- secretos;
+- puzzles/sistemas;
+- descanso/hogar;
+- riesgo/desastre;
+- historia principal.
+
+No todos los jugadores reciben la misma proporción.
+Todos reciben la misma verdad del mundo y los hitos esenciales.
+
+### ANTI-FOMO
+Contenido importante:
+- no depende de estar mirando un pixel durante 2 segundos;
+- puede tener segunda oportunidad;
+- puede reaparecer transformado;
+- puede dejar una pista o rumor;
+- puede archivarse como oportunidad perdida si la pérdida tiene sentido.
+
+Lo verdaderamente efímero debe ser extra, no requisito para comprender la historia.
+
+### CQC
+Preguntar:
+- ¿parece espontáneo sin ser random puro?
+- ¿el callback recuerda algo real?
+- ¿el humor pertenece al personaje?
+- ¿el observador descubre más mundo sin convertirse en “mejor jugador”?
+- ¿el directo puede avanzar sin sentirse castigado?
+- ¿una microescena puede crecer sólo si merece crecer?
+- ¿las misiones forman escalera en vez de backlog?
+- ¿un hito narrativo recontextualiza cosas anteriores?
+- ¿el sistema sabe parar?
