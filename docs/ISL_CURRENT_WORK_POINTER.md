@@ -1385,3 +1385,14 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Cheap falsifiable test: one room + 3 living masses + readable vector + player/object affected.
 - PASS target: human can infer “I fall toward where there is more life” without explanatory text.
 - Status: PROTOTYPE SEED · NO CANON.
+
+
+## 2026-09-22 · MUNDOS PRISMA GALLERY + RECURSIVE PIPELINE
+- New Galería Viva category: MUNDOS PRISMA.
+- Registry: portal/data/isl-prism-worlds-current.json.
+- PRISM_WORLD_001 / Gravedad Viva visual 002 stored in Drive and registered in Gallery.
+- New method: docs/ISL_PRISM_WORLDS_RECURSIVE_PIPELINE_CURRENT.md.
+- Loop: HUMAN TRACE/IDEA → ONE LAW → HUMAN CONSEQUENCE → CHEAP TEST → VISUAL/VIDEO → GALLERY → HUMAN READ → CQC → KEEP/MUTATE/PARK/KILL → RETURN PRIMARY.
+- Automation Master now contains an event-triggered Prism Worlds check; no new bot.
+- Current next gate for PRISM_WORLD_001: cheap causal prototype + human inference test.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
