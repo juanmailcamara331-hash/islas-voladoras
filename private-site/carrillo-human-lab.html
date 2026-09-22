@@ -35,7 +35,7 @@ label{display:block;font-size:9px;color:var(--cyan);font-weight:900;margin:11px 
  <div class="stat"><b>DURACIÓN</b><span>5–10 min primera pasada</span></div>
  <div class="stat"><b>NO EXPLICAR ANTES</b><span>viento · ANCLAR · contradicción</span></div>
 </div>
-<div class="actions"><a class="btn primary" href="velaria-v2.html?friends=1">ABRIR VELARIA</a><button class="btn" id="startSession">INICIAR SESIÓN</button><button class="btn gold" id="exportData">EXPORTAR HUELLA</button></div>
+<div class="actions"><a class="btn primary" href="velaria-v2.html?friends=1&return=carrillo-human-lab.html" id="openVelaria">ABRIR VELARIA</a><button class="btn" id="startSession">INICIAR SESIÓN</button><button class="btn gold" id="exportData">EXPORTAR HUELLA</button></div>
 <div class="privacy">Se guarda localmente en este dispositivo. No activa cámara, micrófono ni grabación. Nada se publica automáticamente.</div>
 </section>
 
@@ -104,6 +104,7 @@ function write(s){localStorage.setItem(KEY,JSON.stringify(s));renderHistory()}
 function session(){const s=read();s.sessions=s.sessions||[];let cur=s.sessions[s.sessions.length-1];if(!cur||cur.status==='CLOSED'){cur={id:'carrillo_'+Date.now(),started_at:new Date().toISOString(),build:'Velaria V2 P0',device:'mobile_top',mission:'HUMAN_DEVICE_GREEN',status:'OPEN',blind:null,deep:null,moments:[]};s.sessions.push(cur);write(s)}return cur}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id===b.dataset.v));if(b.dataset.v==='history')renderHistory()});
 document.getElementById('startSession').onclick=()=>{session();document.getElementById('startSession').textContent='SESIÓN ABIERTA'};
+document.getElementById('openVelaria').addEventListener('click',()=>{session();});
 document.querySelectorAll('.sig').forEach(b=>b.onclick=()=>{activeSignal=b.textContent;document.querySelectorAll('.sig').forEach(x=>x.classList.toggle('on',x===b))});
 document.getElementById('saveBlind').onclick=()=>{
  const s=read();s.sessions=s.sessions||[];let cur=s.sessions[s.sessions.length-1];if(!cur||cur.status==='CLOSED'){session();return document.getElementById('saveBlind').click()}
