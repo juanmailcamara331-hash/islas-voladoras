@@ -1,0 +1,60 @@
+name: ISL surface propagation fallback
+
+on:
+  workflow_run:
+    workflows: ["ISL surface propagation"]
+    types: [completed]
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  repair:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Regenerate docs runtime registry
+        run: python scripts/generate-docs-runtime.py
+
+      - name: Commit repair if generated state drifted
+        run: |
+          if git diff --quiet -- portal/data/isl-docs-library-current.json; then
+            echo "No generated-registry repair required."
+          else
+            git config user.name "isl-surface-fallback"
+            git config user.email "actions@users.noreply.github.com"
+            git add portal/data/isl-docs-library-current.json
+            git commit -m "Repair ISL surface registry drift"
+            git push
+          fi
+
+      - name: Re-run propagation gate
+        id: gate
+        continue-on-error: true
+        run: python scripts/surface-propagation-gate.py
+
+      - name: Escalate only if repair failed
+        if: steps.gate.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="ISL surface propagation needs human review"
+          EXISTING=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+          if [ -z "$EXISTING" ]; then
+            gh issue create               --title "$TITLE"               --body "The automatic surface propagation gate still fails after fallback regeneration. Check manifest/source paths and Gallery/Command Center surface wiring. Do not promote anything to CANON while repairing."
+          else
+            echo "Existing issue #$EXISTING already tracks this failure."
+          fi
+          exit 1
