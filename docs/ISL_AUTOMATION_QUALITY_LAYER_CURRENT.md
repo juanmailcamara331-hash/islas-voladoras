@@ -186,3 +186,24 @@ NO HACER NADA
 o responder con un gesto mínimo humano.
 
 La automatización debe reducir carga, no crearla.
+
+
+## DIRECT CREATION + CONTINUITY RULE · 2026-09-22
+
+En regalos y automatizaciones creativas:
+- si ChatGPT puede crear directamente una pieza útil, favorecer esa ejecución frente a limitarse a un prompt;
+- si una herramienta externa aporta una capacidad diferencial, entregar el prompt/handoff exacto;
+- si ya existe una imagen seleccionada, cualquier vídeo o derivado visual debe consumirla como referencia de continuidad;
+- no regenerar desde cero una identidad visual ya validada.
+
+La automatización debe poder elegir entre:
+DIRECT OUTPUT
+→ OUTPUT + PROMPT
+→ EXTERNAL PROMPT ONLY
+→ MULTI-TOOL COMPARISON
+según valor real y fricción.
+
+Para continuidades:
+MASTER BRIEF = autoridad semántica.
+VISUAL_REFERENCE_CURRENT = autoridad visual.
+Si chocan, el brief gana salvo decisión humana explícita.
