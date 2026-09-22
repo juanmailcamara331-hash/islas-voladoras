@@ -1260,3 +1260,14 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Return target is constrained to a local .html filename; no arbitrary external redirect.
 - CI guard protects the Carrillo → Velaria → Carrillo loop.
 - HUMAN_DEVICE_GREEN remains PENDING until a real person completes the flow on device.
+
+
+## 2026-09-22 · R13 HERITAGE RE-AUDIT STARTED · WIND / MOLINO
+- Existing retroactive re-audit master extended with R13 for historical assets/entities using v0.89 standards.
+- Wind Lab v1.6 was found preserved but hidden from Recreo; now surfaced as TALLER DEL VIENTO and refreshed to v1.7.
+- Wind Lab refresh is intentionally light: return navigation, reduced-motion handling and local success traces; core mechanic preserved.
+- Current Wind Lab decision: KEEP + MUTATE LIGHT.
+- El Molino que Miente: KEEP / HOLD CONTEXT. Strong systemic concept, but there is no current standalone modern playable; do not pretend it is production-ready.
+- Molino A/B/C gallery assets remain historical candidates; no automatic winner/canon.
+- Existing Inconsciente/automation master now samples 1–3 heritage items when relevant; no new bot.
+- R13 never displaces PRIMARY Velaria V2 P0.
