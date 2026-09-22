@@ -1458,3 +1458,14 @@ Change:
 - stronger visible wind streaks;
 - beacon disappears after first movement.
 Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
+
+
+## 2026-09-22 · PRIVATE NETLIFY TARGET CLEANUP
+- GitHub private workflow restored to canonical site:
+  f3cb9c63-9ff1-4de2-b6df-c8e6af403a4f · islas-voladoras-isl-private.
+- Temporary i1oq fallback is no longer the workflow authority.
+- Netlify account connector can see the canonical project and confirms SSO team login.
+- GitHub Actions token still fails with “Project not found” against projects visible to the connector.
+- Diagnosis strengthened: source/build is not the blocker; GitHub NETLIFY_AUTH_TOKEN / team visibility is.
+- Do not retry deploy loops until that secret is replaced/re-authorized for team/project access.
+- PRIVATE_DEPLOY remains RED/PENDING.
