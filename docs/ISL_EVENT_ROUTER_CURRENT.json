@@ -98,6 +98,26 @@
         "retire_obsolete_boots",
         "verify_current_chain"
       ]
+    },
+    "REAL_WORLD_CAPTURED": {
+      "priority": "P2_BY_DEFAULT_P1_IF_HIGH_VALUE_OR_PRIVACY_RISK",
+      "layers": [
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M11"
+      ],
+      "required": [
+        "privacy_check",
+        "provenance",
+        "function_extraction",
+        "mutation_candidate",
+        "human_gate",
+        "persist_if_significant",
+        "return_primary"
+      ],
+      "no_auto_canon": true
     }
   },
   "post_action_hook": "docs/ISL_POST_ACTION_COMMIT_HOOK_CURRENT.md",
