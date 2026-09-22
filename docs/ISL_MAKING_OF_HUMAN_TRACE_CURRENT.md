@@ -172,3 +172,23 @@ Publicación:
 SESSION TOGETHER → CUADERNO → CREATURE_001 → VIDEO_001 → EYE_001 → HITO ISLA-COCODRILO → MUNDO DE NUBES.
 
 Esta secuencia puede convertirse más adelante en una cápsula corta de making-of porque muestra causalidad creativa real: una conversación produce un dibujo; el dibujo produce una idea; la idea produce una escena y una función jugable/narrativa.
+
+
+## REFINEMENT · DIAMOND / AIR ENTITY · IRENE
+
+Human refinement from the same session:
+- the cloud-world entity is not only white vapor;
+- its body is formed by white diamonds / crystalline fragments / condensed air;
+- many crystals continuously shift, distort, assemble and separate;
+- movement should deform light and air around the body;
+- teeth read as impossibly sharp crystalline blades;
+- silhouette carries a punk crest;
+- eyes remain empty / non-conventional;
+- target feeling: beauty + danger + strangeness + sacred/unsettling presence.
+
+Functional formula:
+LOOK → REALITY BREAK → CLOUDS → PARTICLES → CRYSTALS → CRYSTALLIZED SKY ENTITY → CONSEQUENCE.
+
+Guard:
+Do not reduce this to decorative gemstones, a generic crystal dragon, a standard boss or a conventional portal.
+Preserve Irene's human source and later derivatives as separate, provenance-linked artifacts.
