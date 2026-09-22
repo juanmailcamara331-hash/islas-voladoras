@@ -1628,3 +1628,12 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Cross-media reuse is allowed only when function survives translation.
 - No deep atmospheric propagation; v0.92 lab remains bounded. Logo may proceed only via SOURCE RECOVERY → LOCK FEATURES → controlled visual ablation.
 - PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-23 · ORGANISM RADIOGRAPHY
+- New additive health/stage map: `docs/ISL_ORGANISM_RADIOGRAPHY_CURRENT.md`.
+- It maps governance, Velaria, world systems, creatures, contradiction lab, logo, protagonist/companion, Ancla, roles, human trace, visual/3D/audio/UI, build, accessibility, security, legal, marketing, community, crowdfunding, commerce, automations, memory, research and future world-scale systems.
+- Main conclusion: ISL already has enough body. Current gains should come from circulation, evidence and play rather than new organs/layers.
+- Only three real structural gaps identified: exact visual-authority binary trace; one stage-health view; evidence-link completeness at milestone close. All should be solved by extending existing registries/hooks, not by creating new subsystems.
+- Immediate order remains conservative: recover/register exact minimal logo source → Danzante blind human read → Velaria HUMAN_DEVICE_GREEN → NUDOS/crossed CQC → reassess migration/production stage.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
