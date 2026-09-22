@@ -1365,3 +1365,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Lane state changes from WAITING_SUPPLIER_REPLY → SUPPLIER_FEEDBACK_RECEIVED.
 - Next physical action: targeted technical follow-up against AUTHORITATIVE Ancla spec; then digital proof CQC. No CANON promotion.
 - Conversation continuity rule: future chats boot from MASTER CURRENT + CURRENT WORK POINTER; supplier state lives in registry/pointer, not in chat memory alone. No new checkpoint required just for this reply.
+
+
+## 2026-09-22 · TRANSVERSAL METHOD · IMPOSSIBLE PHYSICS + HUMAN CONSEQUENCE
+- New current method: docs/ISL_IMPOSSIBLE_PHYSICS_AND_HUMAN_CONSEQUENCE_METHOD_CURRENT.md
+- Core rule: break universal laws only through ONE LEGIBLE IMPOSSIBLE LAW + systemic consequence + human consequence.
+- Prism Eye can act as diegetic bridge to refracted physical laws; never generic multiverse/menu.
+- Functional inspiration may use internally coherent comic/speculative physics, but no copying of worlds, characters, prose voice, jokes or iconography.
+- Cross only 1–3 existing systems per implementation; no new-system sprawl.
+- Status: transversal strong hypothesis · NO AUTO-CANON.
+- PRIMARY unchanged.
