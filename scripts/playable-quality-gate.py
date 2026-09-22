@@ -106,3 +106,12 @@ for token in ["TALLER DEL VIENTO","labs/wind.html?from=recreo"]:
 for token in ["ISL // WIND LAB v1.7","backRecreo","prefers-reduced-motion","isl_wind_lab_events_v1","challenge_success"]:
     if token not in wind:
         fail(f"Wind Lab missing v0.89 refresh token: {token}")
+
+
+# Gallery media-first v0.90
+gallery=(P/"galeria.html").read_text(encoding="utf-8")
+for token in ["Toca una pieza. Lo técnico queda detrás.","isl-gallery-touch-js-v090","data-drive","DETALLES"]:
+    if token not in gallery:
+        fail(f"Gallery missing media-first token: {token}")
+if 'content:"AMPLIAR"' in gallery:
+    fail("Gallery regressed to redundant AMPLIAR overlay")
