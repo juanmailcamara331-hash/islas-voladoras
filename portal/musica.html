@@ -14,26 +14,25 @@
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 82% 8%,#24495d 0,transparent 28%),linear-gradient(#071017,#09151c);color:var(--fg);font-family:system-ui,sans-serif;min-height:100vh}
 .wrap{width:min(1180px,94vw);margin:auto;padding:24px 0 90px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.k{font-size:10px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;font-weight:900}.btn{border:1px solid var(--line);background:#0d1b23;color:white;padding:10px 13px;border-radius:10px;text-decoration:none;font-weight:800;font-size:11px}
 .hero{border:1px solid #3f5962;background:linear-gradient(135deg,#0d202a,#09161e);border-radius:22px;padding:22px;margin-top:14px}h1{font:700 clamp(44px,8vw,82px)/.9 Georgia,serif;margin:10px 0}.lead{color:#d1dee1;font-size:clamp(16px,2.2vw,23px);line-height:1.45;max-width:900px}
-.truth{margin-top:16px;border-left:3px solid var(--gold);padding:10px 12px;background:#17150f;color:#ddd8cb;font-size:11px;line-height:1.45}
+.truth{display:none}
 .toolbar{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.pill{border:1px solid var(--line);background:#09161d;color:#c8d8dc;border-radius:999px;padding:7px 10px;font-size:9px;font-weight:850}.pill.on{border-color:#8c6b3d;color:#ffe4a9;background:#221b11}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}.card{border:1px solid var(--line);background:var(--panel);border-radius:17px;padding:15px;display:flex;flex-direction:column;gap:10px;min-height:250px}.card.real{border-color:#566d48;box-shadow:inset 3px 0 0 #8fcf78}.num{font-size:9px;letter-spacing:.13em;color:var(--gold)}.title{font-size:24px;font-weight:880;line-height:1}.body{color:var(--mut);font-size:11px;line-height:1.48}.tags{display:flex;gap:5px;flex-wrap:wrap}.tag{padding:4px 6px;border:1px solid #35525d;border-radius:999px;font-size:8px;color:#c9d8dc}.status{font-size:8px;font-weight:900;letter-spacing:.09em}.status.real{color:var(--good)}.status.concept{color:var(--vio)}.meta{font-size:9px;color:#81979d;line-height:1.5;margin-top:auto}.actions{display:flex;gap:7px;flex-wrap:wrap}.actions a{font-size:9px;text-decoration:none;color:white;border:1px solid #42616c;border-radius:9px;padding:8px 9px}.actions a.primary{border-color:#8a6938;background:#2b2217;color:#ffe6b6}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}.card{border:1px solid var(--line);background:var(--panel);border-radius:17px;padding:13px;display:flex;flex-direction:column;gap:8px;min-height:170px}.card details{margin-top:auto}.card details summary{font-size:8px;color:var(--mut);cursor:pointer}.card.real{border-color:#566d48;box-shadow:inset 3px 0 0 #8fcf78}.num{font-size:9px;letter-spacing:.13em;color:var(--gold)}.title{font-size:24px;font-weight:880;line-height:1}.body{color:var(--mut);font-size:11px;line-height:1.48}.tags{display:flex;gap:5px;flex-wrap:wrap}.tag{padding:4px 6px;border:1px solid #35525d;border-radius:999px;font-size:8px;color:#c9d8dc}.status{font-size:8px;font-weight:900;letter-spacing:.09em}.status.real{color:var(--good)}.status.concept{color:var(--vio)}.meta{font-size:9px;color:#81979d;line-height:1.5;margin-top:auto}.actions{display:flex;gap:7px;flex-wrap:wrap}.actions a{font-size:9px;text-decoration:none;color:white;border:1px solid #42616c;border-radius:9px;padding:8px 9px}.actions a.primary{border-color:#8a6938;background:#2b2217;color:#ffe6b6}
 .panel{margin-top:16px;border:1px solid var(--line);border-radius:16px;background:#09161d;padding:15px}.panel h2{margin:0 0 8px;font-size:20px}.mini{font-size:10px;color:var(--mut);line-height:1.5}.now{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.now strong{font-size:20px}.empty{opacity:.6}
 @media(max-width:620px){.now{grid-template-columns:1fr}.card{min-height:220px}}
 </style>
 </head>
 <body>
 <main class="wrap">
-<div class="top"><div class="k">ISL · GALERÍA DE MÚSICA / AUDIO</div><div><a class="btn" href="index.html?resume=1">← CENTRO</a> <a class="btn" href="project-observatory.html">OBSERVATORIO</a></div></div>
+<div class="top"><div class="k">ISL · MÚSICA</div><div><a class="btn" href="index.html?resume=1">← CENTRO</a></div></div>
 <section class="hero">
-<div class="k">BANDA SONORA · FUNCIÓN ANTES QUE ADORNO</div>
-<h1>La música también<br>deja huella.</h1>
-<p class="lead">Catálogo vivo de temas, funciones, lugares candidatos y fuentes reales. Una canción no asciende por sonar bonita: debe encontrar qué hace dentro del mundo.</p>
-<div class="truth"><b>REGLA:</b> SOURCE NOT WIRED ≠ canción inexistente. CONCEPT ONLY ≠ audio final. FUNCTION REVIEW ≠ canon. Datos, escucha humana y contexto permanecen separados.</div>
+<div class="k">ESCUCHA</div>
+<h1>Música.</h1>
+<p class="lead">Toca un tema. Lo técnico queda detrás.</p>
 </section>
 
 <section class="panel now">
-<div><div class="k">AHORA EN AUDIO</div><strong>Seven Thousand Paces</strong><div class="mini">Fuente real recibida · 2:58 · 44.1 kHz · estéreo · ~117.45 BPM. Hipótesis actual: travesía / recorrido sostenido. Falta escucha humana funcional.</div></div>
-<a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1svy7lNXviZZK1d58cS9H7Sh0eOjYxCjz/view">ABRIR AUDIO →</a>
+<div><div class="k">AHORA</div><strong>Seven Thousand Paces</strong></div>
+<a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1svy7lNXviZZK1d58cS9H7Sh0eOjYxCjz/view">ESCUCHAR →</a>
 </section>
 
 <div class="toolbar">
@@ -45,15 +44,7 @@
 
 <section class="grid" id="musicGrid"><div class="card empty">Cargando registro musical…</div></section>
 
-<section class="panel">
-<h2>Arco musical de apertura</h2>
-<div class="mini">Suavidad, nobleza y espacio al comienzo; después crescendo progresivo cuando el mundo se abre. La música no entra épica desde el segundo uno: se gana el vuelo. Esta dirección sigue siendo una hipótesis de producción y debe validarse por escenas y escucha humana.</div>
-</section>
 
-<section class="panel">
-<h2>Próximo gate</h2>
-<div class="mini">1) localizar/conectar las fuentes reales de los seis temas ya documentados; 2) escuchar Seven Thousand Paces contra escenas concretas; 3) decidir funciones por contexto; 4) crear stems sólo donde aporten gameplay; 5) Gallery/Observatorio registran evidencia, nunca un ganador automático.</div>
-</section>
 </main>
 <script>
 const fallbackRoles={
@@ -70,9 +61,9 @@ function card(t){
  const real=t.source_state==="DRIVE_SOURCE_AVAILABLE", review=t.status==="FUNCTION_REVIEW";
  const cls=real?"real":review?"review":"concept";
  const tags=(t.functional_role||[]).slice(0,4).map(x=>'<span class="tag">'+esc(x.replaceAll("_"," "))+'</span>').join("");
- let meta=real?((t.duration_seconds?Math.floor(t.duration_seconds/60)+":"+String(Math.round(t.duration_seconds%60)).padStart(2,"0")+" · ":"")+(t.sample_rate_hz?Math.round(t.sample_rate_hz/100)/10+" kHz · ":"")+(t.tempo_estimate_bpm?"~"+t.tempo_estimate_bpm+" BPM":"")):"Fuente de audio todavía no conectada al runtime.";
- let actions=real?'<div class="actions"><a class="primary" target="_blank" rel="noopener" href="https://drive.google.com/file/d/'+esc(t.drive_id)+'/view">ABRIR FUENTE →</a></div>':'<div class="actions"><a href="#source-pending">SOURCE NOT WIRED</a></div>';
- return '<article class="card '+(real?'real':'')+'" data-kind="'+cls+'"><div class="num">'+esc(t.id)+'</div><div class="title">'+esc(t.title)+'</div><div class="status '+(real?'real':'concept')+'">'+esc(t.status)+'</div><div class="body">'+esc(fallbackRoles[t.id]||"Función pendiente")+'</div><div class="tags">'+tags+'</div><div class="meta">'+esc(meta)+'</div>'+actions+'</article>';
+ let details=real?((t.duration_seconds?Math.floor(t.duration_seconds/60)+":"+String(Math.round(t.duration_seconds%60)).padStart(2,"0"):"")+(t.tempo_estimate_bpm?" · ~"+t.tempo_estimate_bpm+" BPM":"")):"Fuente pendiente";
+ let actions=real?'<div class="actions"><a class="primary" target="_blank" rel="noopener" href="https://drive.google.com/file/d/'+esc(t.drive_id)+'/view">ESCUCHAR →</a></div>':'';
+ return '<article class="card '+(real?'real':'')+'" data-kind="'+cls+'"><div class="title">'+esc(t.title)+'</div><div class="body">'+esc(fallbackRoles[t.id]||"")+'</div>'+actions+'<details><summary>DETALLES</summary><div class="meta">'+esc(details)+' · '+esc(t.status)+'</div></details></article>';
 }
 fetch("data/isl-music-current.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
  const tracks=d.tracks||[]; musicGrid.innerHTML=tracks.map(card).join("");
