@@ -1,0 +1,52 @@
+name: ISL surface propagation
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - 'scripts/generate-docs-runtime.py'
+      - 'scripts/surface-propagation-gate.py'
+      - 'portal/galeria.html'
+      - 'portal/isl-current-state.js'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'scripts/generate-docs-runtime.py'
+      - 'scripts/surface-propagation-gate.py'
+      - 'portal/galeria.html'
+      - 'portal/isl-current-state.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  propagate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate runtime docs registry
+        run: python scripts/generate-docs-runtime.py
+
+      - name: Validate surface propagation
+        run: python scripts/surface-propagation-gate.py
+
+      - name: Commit generated registry
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if git diff --quiet -- portal/data/isl-docs-library-current.json; then
+            echo "Registry already synchronized."
+            exit 0
+          fi
+          git config user.name "isl-surface-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add portal/data/isl-docs-library-current.json
+          git commit -m "Sync ISL docs runtime registry"
+          git push
