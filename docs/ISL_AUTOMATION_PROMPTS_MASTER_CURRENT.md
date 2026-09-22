@@ -250,3 +250,21 @@ Si falla:
 proponer UNA corrección mínima.
 No crear recordatorio nuevo.
 No bloquear PRIMARY por teoría.
+
+
+## 12. SHADOW / BIOGRAPHICAL PROMPT TRIGGER · 2026-09-22
+Trigger:
+cuando una escena, NPC, relación, sátira, secundaria o hito esté quedando demasiado limpio/genérico y material vital del autor pueda aportar verdad.
+
+Acción:
+hacer al autor 1 pregunta; excepcionalmente hasta 3.
+Elegir sólo una familia relevante:
+amistad/fricción · deseo/erotismo adulto · trabajo/vagancia · dinero/clase · autoridad/ideología · vergüenza/cuerpo · exceso · pérdida · ternura/hogar · conducta antisocial · episodio histórico/cultural.
+
+Después:
+VIDA REAL → NÚCLEO → D2/D3/D4 → MECÁNICA/ESCENA/NPC/OBJETO → LAB.
+Nunca VIDA REAL → CANON directo.
+
+No pedir detalles íntimos sin función.
+No crear recordatorio nuevo.
+No convertir cada sesión en entrevista personal.
