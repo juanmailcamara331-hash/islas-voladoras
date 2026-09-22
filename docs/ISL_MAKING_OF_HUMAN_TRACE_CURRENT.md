@@ -246,3 +246,30 @@ Candidate rule families:
 Status:
 STRONG HUMAN HYPOTHESIS · NO CANON.
 PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
+
+## PRIVATE APP · REAL MEDIA FILM TIMELINE
+
+Implemented in:
+`private-site/irene-bestiary.html`
+
+Purpose:
+Turn the human-trace surface into a small private making-of film timeline, not just metadata.
+
+Current behavior:
+- accepts real photos and videos from the device;
+- preserves the original media locally in browser storage (IndexedDB);
+- creates a chronological horizontal film-strip / timeline;
+- each shot can be opened in a private cinema viewer;
+- metadata remains HUMAN_TRACE_RAW / NO CANON;
+- no automatic publication or upload;
+- privacy/credit choice remains attached to each entry.
+
+Important limitation:
+Local browser storage is device/browser specific and is not yet the durable project archive. It is the private capture layer. Long-term master preservation still requires a deliberate storage/CDN/archive layer with provenance and consent.
+
+Design principle:
+REAL HUMAN MEDIA → PRIVATE MASTER → TIMELINE / FILM VIEW → OPTIONAL CUT / GIF → GALLERY / DOSSIER → HUMAN DECISION.
+
+Status:
+IMPLEMENTED IN SOURCE · DEPLOY VERIFICATION PENDING.
