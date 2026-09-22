@@ -20,7 +20,7 @@ label{display:block;font-size:9px;color:var(--cyan);font-weight:900;margin:11px 
 .log{display:grid;gap:8px}.entry{border:1px solid #29444e;border-radius:12px;padding:11px;background:#071219}.entry b{font-size:10px}.entry small{display:block;color:#80979d;margin-top:3px}.entry p{font-size:10px;margin:7px 0 0;color:#b9c8ca}
 .privacy{border-left:3px solid var(--green);padding:10px 12px;background:#0d1c18;border-radius:8px;font-size:9px;color:#b9d9ca;margin-top:12px}
 .quickDock{position:sticky;bottom:8px;z-index:40;margin:12px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:7px;border:1px solid #45636d;border-radius:14px;background:#061017ed;backdrop-filter:blur(12px)}.quickDock a,.quickDock button{min-height:44px;border:1px solid #35535e;border-radius:10px;background:#0a1920;color:#e8f2f3;text-decoration:none;font:900 8px/1.15 system-ui;display:flex;align-items:center;justify-content:center;text-align:center;padding:7px}.quickDock b{display:block;color:var(--gold)}
-.logistics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.logi{border:1px solid #294550;border-radius:12px;padding:10px;background:#071219}.logi b{display:block;font-size:10px}.logi span{font-size:8px;color:var(--muted);line-height:1.35}
+.miniChecks{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.miniCheck{border:1px solid #35535e;border-radius:999px;padding:6px 8px;font-size:8px;color:#a9bdc1}.miniCheck.done{border-color:#4b765c;color:#a9e4bd}.miniCheck.now{border-color:#80663c;color:#ffe0a2}.logistics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.logi{border:1px solid #294550;border-radius:12px;padding:10px;background:#071219}.logi b{display:block;font-size:10px}.logi span{font-size:8px;color:var(--muted);line-height:1.35}
 @media(max-width:720px){.grid,.mission{grid-template-columns:1fr}.signals{grid-template-columns:1fr 1fr}.qgrid{grid-template-columns:1fr 1fr}.qgrid .q:last-child{grid-column:1/-1}.logistics{grid-template-columns:1fr 1fr}.quickDock{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
@@ -39,6 +39,7 @@ label{display:block;font-size:9px;color:var(--cyan);font-weight:900;margin:11px 
 </div>
 <div class="actions"><a class="btn primary" href="velaria-v2.html?friends=1&return=carrillo-human-lab.html" id="openVelaria">ABRIR VELARIA</a><button class="btn" id="startSession">INICIAR SESIÓN</button><button class="btn gold" id="exportData">EXPORTAR HUELLA</button></div>
 <div class="privacy">Se guarda localmente en este dispositivo. No activa cámara, micrófono ni grabación. Nada se publica automáticamente.</div>
+<div class="miniChecks" aria-label="Estado de misión"><span class="miniCheck done">✓ BRIEF LISTO</span><span class="miniCheck done">✓ CIRCUITO LISTO</span><span class="miniCheck now">□ PRUEBA REAL</span><span class="miniCheck">□ EVIDENCIA</span></div>
 <div class="logistics">
  <div class="logi"><b>TIEMPO</b><span>5–10 min blind · 3–5 min huella · deep opcional</span></div>
  <div class="logi"><b>PASTA</b><span>0 € esta prueba · gastos sólo acordados antes</span></div>
