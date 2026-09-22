@@ -95,3 +95,29 @@ Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
 
 No abrir sistemas nuevos por esta sesión.
 Reutilizar Bestiario de Campo · Irene + Making-of + Galería existentes.
+
+
+## HUMAN TRACE VIDEO · IRENE · VIDEO_001
+
+Estado:
+PRESERVED PROCESS EVIDENCE · RAW · NO CANON
+
+Material observado:
+- vídeo vertical de ~69 s;
+- Irene dibujando a mano sobre papel;
+- proceso visible desde líneas iniciales hasta una forma más definida;
+- mano, herramienta, dudas y construcción progresiva permanecen visibles;
+- valor principal: demostrar creación humana y evolución real de la idea.
+
+Uso recomendado:
+- conservar clip completo como master RAW;
+- posible derivado corto de 3–8 s para GIF / making-of;
+- posible captura fija para Galería / dossier;
+- no sustituir el master por el derivado;
+- no sobreeditar ni ocultar titubeos;
+- acreditar según consentimiento de Irene.
+
+Relación con la sesión:
+- misma rama HUMAN TRACE que CREATURE_001 y el OJO / isla-cocodrilo;
+- el vídeo documenta proceso, no valida canon;
+- cualquier interpretación visual posterior debe conservar vínculo de procedencia con esta sesión humana.
