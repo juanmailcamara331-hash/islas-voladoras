@@ -393,3 +393,25 @@ Maximum:
 ONE corrective action per automation pass.
 Do not create a new bot.
 Do not auto-CANON.
+
+
+## 16. SKYSHIP COMBAT / MANOEUVRE TRIGGER · 2026-09-22
+Trigger:
+when a ship-combat mechanic, weapon, manoeuvre, crew role, boss encounter or tactical UI is proposed.
+
+Apply:
+ISL_SKYSHIP_COMBAT_MANOEUVRE_RESEARCH_CURRENT.
+
+Check:
+- function from references, not surface copying;
+- position / wind / altitude matter before raw damage;
+- at least one non-HP system can be damaged;
+- one readable tactical contradiction;
+- telegraph is probabilistic/observable rather than omniscient unless explicitly justified;
+- crew changes play through concrete functions;
+- prototype first: 1v1, 4 beats, 3 manoeuvres, 2 weapons, 1 resource;
+- no new naval meta-system until the cheap prototype produces human evidence.
+
+Maximum one reversible design correction per pass.
+No new bot.
+No auto-CANON.
