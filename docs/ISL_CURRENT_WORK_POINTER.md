@@ -1202,3 +1202,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Same world truth and essential milestones remain shared.
 - Anti-FOMO: meaningful missed content can echo, return transformed or leave a rumor.
 - Existing automation trigger extended; no new bot.
+
+
+## 2026-09-22 · ADAPTIVE HUMAN JOURNEY / ACCESSIBILITY DIRECTION
+- Long-form journey may combine Jungian tensions, transformation/return structures, satire/human-scale anchors, mechanism-horror pressure, travel companions and adaptive narrative by FUNCTION only.
+- Psychology is fictional/systemic; never diagnose or label the real player.
+- Entropy curve: CALM → STRANGENESS → DECISION → CONSEQUENCE → CHAOS → REST → RE-READING → NEW SCALE.
+- Surprise should emerge from authored pieces + systemic recombination, including long callbacks and rare valid state intersections.
+- Accessibility must be modular, not a segregated “disabled mode”: timing, precision, inputs, subtitles, motion, navigation, hints, recap, one-hand/low-dexterity options where feasible.
+- Same world truth and core consequences; multiple access paths.
+- Existing automation trigger extended; no new bot.
