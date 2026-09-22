@@ -440,3 +440,29 @@ UNA propuesta de rol/tier + hipótesis de valor + prueba barata.
 No crear bot nuevo.
 No auto-CANON.
 Return PRIMARY.
+
+
+## 18. SUPREME ROLE / REALITY-BENDING GUARD · 2026-09-22
+Trigger:
+cuando se proponga un rol “dios”, meta-arquetipo, supporter supremo, poder de atravesar el mapa o mecánica de ruptura espacial/temporal.
+
+Canon direction:
+- usar una identidad original ISL (p. ej. ARCHITECT OF THE PRISM / FORJADOR DEL HORIZONTE), nunca una adaptación literal de Rick, Morty, Zeus, Cronos u otra IP/personaje;
+- tomar sólo funciones abstractas: hipercompetencia, irreverencia, manipulación de reglas, escala mítica, viaje instantáneo, poder con coste/contradicción;
+- gesto firma permitido como lenguaje propio (chasquido/gesto equivalente) si se transforma visual y narrativamente en ISL.
+
+Hard guards:
+- no pay-to-win en la progresión normal;
+- no acceso de pago a historia esencial;
+- no superioridad competitiva;
+- traversal absoluto sólo en New Game+, post-completion, sandbox/creative mode o contexto claramente separado;
+- en campaña normal, el poder debe estar limitado por anclas descubiertas, coste, regla legible o consecuencia;
+- supporter tier = prestigio, expresión, objetos físicos, amplitud de replay y worldbuilder fantasy; no dominación comprada.
+
+Chequeo:
+¿este poder crea una nueva lectura divertida del mundo o simplemente salta el juego?
+Si sólo elimina fricción/contenido sin nueva consecuencia: MUTATE.
+
+No crear bot nuevo.
+No auto-expandir lore.
+Return PRIMARY.
