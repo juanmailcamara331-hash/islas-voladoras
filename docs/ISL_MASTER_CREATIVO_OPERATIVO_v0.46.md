@@ -732,3 +732,173 @@ Preguntar:
 - ¿las misiones forman escalera en vez de backlog?
 - ¿un hito narrativo recontextualiza cosas anteriores?
 - ¿el sistema sabe parar?
+
+
+## 13. CAMINO HUMANO ADAPTATIVO / CAPACIDAD / ENTROPÍA · 2026-09-22
+
+### PROPÓSITO
+Construir una trayectoria que pueda sentirse como novela, película y juego a la vez:
+- íntima;
+- sorprendente;
+- dialéctica;
+- jugable;
+- adaptable;
+- accesible;
+- coherente a largo plazo.
+
+No imponer una plantilla única de “camino del héroe”.
+Usar estructuras narrativas como gramáticas, no como raíles.
+
+### FUENTES FUNCIONALES
+Cruzar por FUNCIÓN, nunca por copia:
+- psicología profunda/Jung → tensiones, sombra, integración, contradicción;
+- camino del héroe → salida, prueba, transformación, retorno;
+- novela satírica/fantástica → mundo enorme sostenido por detalle humano;
+- cuento de viaje / Oz → compañeros, umbrales, lugares que cambian lectura;
+- horror de mecanismo → regla comprensible + presión + coste;
+- aventura serial → escalada progresiva de rareza y capacidad;
+- narrativa adaptativa → probabilidades condicionadas por estado;
+- diseño accesible → múltiples maneras de percibir, decidir y actuar.
+
+No copiar voz, personajes, escenas, estructuras reconocibles ni iconografía.
+
+### PSIQUE COMO SISTEMA FICCIONAL, NO DIAGNÓSTICO
+El juego puede modelar tensiones de la trayectoria:
+- seguridad / deriva;
+- control / entrega;
+- vínculo / autonomía;
+- máscara / verdad;
+- deseo / disciplina;
+- hogar / horizonte;
+- cuidado / explotación;
+- memoria / cambio;
+- singularidad / pertenencia.
+
+No etiquetar al usuario.
+No inferir salud mental, personalidad clínica ni identidad psicológica.
+El sistema sólo responde a conductas dentro del juego.
+
+### ENTROPÍA DE EXPERIENCIA
+La complejidad puede crecer y decrecer en ondas:
+
+CALMA
+→ EXTRAÑEZA
+→ DECISIÓN
+→ CONSECUENCIA
+→ CAOS
+→ DESCANSO
+→ RELECTURA
+→ NUEVA ESCALA.
+
+No mantener intensidad alta constante.
+Sorpresa necesita contraste.
+
+### ADAPTIVE STORY BAG
+Antes de servir un evento:
+1. eliminar eventos incompatibles con world state;
+2. filtrar por hitos y relaciones;
+3. ponderar por patrones recientes de juego;
+4. aplicar anti-repetición;
+5. reservar espacio a rareza real;
+6. comprobar accesibilidad/capacidad;
+7. elegir evento;
+8. registrar callback/persistencia.
+
+El jugador debe poder sorprenderse sin sentir que el mundo hace trampa.
+
+### ACCESSIBILITY / CAPABILITY
+Principio:
+MISMA VERDAD DEL MUNDO · MISMAS CONSECUENCIAS NÚCLEO · MÚLTIPLES CAMINOS DE ACCESO.
+
+Diseñar opciones independientes:
+- timing ampliado;
+- reducción de precisión;
+- input alternativo;
+- hold/toggle;
+- remapeo;
+- tamaño/contraste de UI;
+- subtítulos completos;
+- indicadores sonoros visualizables;
+- información visual traducible a audio/háptica cuando proceda;
+- reducción de motion/camera shake;
+- velocidad de juego ajustable donde no rompa sistemas;
+- auto-aim/assist cuando aplique;
+- simplificación de secuencias repetitivas;
+- checkpoints tolerantes;
+- pistas graduables;
+- reanudación de diálogo/contexto;
+- codex/recap narrativo;
+- navegación asistida opcional;
+- modo una-mano / baja destreza cuando sea viable.
+
+No crear “modo discapacitados” segregado.
+Crear un conjunto de opciones de accesibilidad combinables.
+La persona decide qué necesita.
+
+### ADAPTIVE CAPACITY ROUTER
+Separado de la narrativa de personalidad.
+
+Puede responder a señales de interacción como:
+- repetidos fallos de timing;
+- dificultad de precisión;
+- pausas frecuentes;
+- uso de ayudas;
+- ritmo de lectura;
+- necesidad de repetición;
+- preferencia manual elegida.
+
+Respuesta:
+- ofrecer ayuda;
+- ampliar ventana;
+- simplificar input;
+- repetir pista;
+- reducir simultaneidad;
+- preservar consecuencia y agencia.
+
+No bajar dificultad silenciosamente de forma que el jugador no sepa qué ocurre cuando afecte a reglas importantes.
+Preferir control explícito o ayudas discretas transparentes.
+
+### SORPRESA DEL CREADOR
+El sistema debe poder sorprender incluso al autor mediante:
+- combinaciones válidas no preordenadas;
+- callbacks de larga distancia;
+- eventos raros;
+- cruces entre NUDOS;
+- estados de criatura;
+- economía;
+- relaciones;
+- clima/desastres;
+- secundarios;
+- objetos persistentes.
+
+Pero:
+AUTORÍA DE PIEZAS
++
+SISTEMA DE COMBINACIÓN
+>
+GENERACIÓN ILIMITADA.
+
+La sorpresa debe emerger de reglas diseñadas, no de perder control de tono.
+
+### CÍRCULOS DE VIDA
+Una cadena buena puede:
+- empezar como chiste;
+- convertirse en hábito;
+- sufrir una pérdida;
+- reaparecer como mecánica;
+- volverse hito;
+- cerrar como gesto pequeño.
+
+O al revés:
+una gran épica puede acabar resumida en una taza, una reparación o un animal dormido.
+
+### CQC
+- ¿puede recorrerlo alguien con otra capacidad sin recibir “otro juego menor”?
+- ¿la adaptación conserva agencia?
+- ¿la sorpresa nace de combinaciones coherentes?
+- ¿la psique se trata como ficción/tensión y no diagnóstico?
+- ¿la historia principal sigue legible?
+- ¿los callbacks recompensan memoria sin exigir memoria perfecta?
+- ¿hay descanso después de caos?
+- ¿la accesibilidad es modular y no segregada?
+- ¿el autor aún puede ser sorprendido sin perder autoría?
