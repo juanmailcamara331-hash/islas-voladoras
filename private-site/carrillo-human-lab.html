@@ -19,7 +19,9 @@ label{display:block;font-size:9px;color:var(--cyan);font-weight:900;margin:11px 
 .qgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.q{border:1px solid #314b55;border-radius:10px;padding:8px;background:#071218}.q b{font-size:8px;color:#94abb0}.q select{margin-top:6px;padding:7px}
 .log{display:grid;gap:8px}.entry{border:1px solid #29444e;border-radius:12px;padding:11px;background:#071219}.entry b{font-size:10px}.entry small{display:block;color:#80979d;margin-top:3px}.entry p{font-size:10px;margin:7px 0 0;color:#b9c8ca}
 .privacy{border-left:3px solid var(--green);padding:10px 12px;background:#0d1c18;border-radius:8px;font-size:9px;color:#b9d9ca;margin-top:12px}
-@media(max-width:720px){.grid,.mission{grid-template-columns:1fr}.signals{grid-template-columns:1fr 1fr}.qgrid{grid-template-columns:1fr 1fr}.qgrid .q:last-child{grid-column:1/-1}}
+.quickDock{position:sticky;bottom:8px;z-index:40;margin:12px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:7px;border:1px solid #45636d;border-radius:14px;background:#061017ed;backdrop-filter:blur(12px)}.quickDock a,.quickDock button{min-height:44px;border:1px solid #35535e;border-radius:10px;background:#0a1920;color:#e8f2f3;text-decoration:none;font:900 8px/1.15 system-ui;display:flex;align-items:center;justify-content:center;text-align:center;padding:7px}.quickDock b{display:block;color:var(--gold)}
+.logistics{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}.logi{border:1px solid #294550;border-radius:12px;padding:10px;background:#071219}.logi b{display:block;font-size:10px}.logi span{font-size:8px;color:var(--muted);line-height:1.35}
+@media(max-width:720px){.grid,.mission{grid-template-columns:1fr}.signals{grid-template-columns:1fr 1fr}.qgrid{grid-template-columns:1fr 1fr}.qgrid .q:last-child{grid-column:1/-1}.logistics{grid-template-columns:1fr 1fr}.quickDock{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -37,6 +39,12 @@ label{display:block;font-size:9px;color:var(--cyan);font-weight:900;margin:11px 
 </div>
 <div class="actions"><a class="btn primary" href="velaria-v2.html?friends=1&return=carrillo-human-lab.html" id="openVelaria">ABRIR VELARIA</a><button class="btn" id="startSession">INICIAR SESIÓN</button><button class="btn gold" id="exportData">EXPORTAR HUELLA</button></div>
 <div class="privacy">Se guarda localmente en este dispositivo. No activa cámara, micrófono ni grabación. Nada se publica automáticamente.</div>
+<div class="logistics">
+ <div class="logi"><b>TIEMPO</b><span>5–10 min blind · 3–5 min huella · deep opcional</span></div>
+ <div class="logi"><b>PASTA</b><span>0 € esta prueba · gastos sólo acordados antes</span></div>
+ <div class="logi"><b>BRIEF</b><span>1 página · qué hacer / no explicar / devolver</span></div>
+ <div class="logi"><b>DOCS</b><span>Rumbo + historial + export local</span></div>
+</div>
 </section>
 
 <nav class="tabs">
@@ -94,6 +102,12 @@ label{display:block;font-size:9px;color:var(--cyan);font-weight:900;margin:11px 
 
 <section class="view" id="history"><article class="card"><h3>Historial de sesiones</h3><div class="log" id="historyLog"></div></article></section>
 <section class="view" id="footprint"><article class="card"><h3>Mi huella en ISL</h3><p>Aquí sólo aparecerán cambios reales que el proyecto marque explícitamente como derivados de tus observaciones. No puntos, karma ni ranking.</p><div class="log" id="footprintLog"><div class="entry"><b>Todavía sin cambios atribuidos.</b><small>Que una idea guste no significa que haya cambiado ISL.</small></div></div></article></section>
+<div class="quickDock" aria-label="Todo al pie">
+ <a href="carrillo-brief.html"><span><b>BRIEF</b>1 página</span></a>
+ <a href="rumbo-isl.html"><span><b>RUMBO</b>juego entero</span></a>
+ <button type="button" id="dockExport"><span><b>EXPORTAR</b>huella JSON</span></button>
+ <a href="velaria-v2.html?friends=1&return=carrillo-human-lab.html" id="dockPlay"><span><b>JUGAR</b>Velaria</span></a>
+</div>
 </main>
 <script>
 (function(){'use strict';
@@ -127,6 +141,8 @@ function renderHistory(){
  const s=read(),arr=(s.sessions||[]).slice().reverse(),el=document.getElementById('historyLog');
  el.innerHTML=arr.length?arr.map(x=>'<div class="entry"><b>'+x.build+' · '+x.device+'</b><small>'+new Date(x.started_at).toLocaleString()+' · '+x.status+'</small><p>'+(x.blind?'Primera impresión guardada. ':'')+(x.deep?'Modo Carrillo guardado. ':'')+((x.moments||[]).length)+' momento(s).</p></div>').join(''):'<div class="entry"><b>Aún no hay sesiones.</b><small>Inicia la primera misión cuando vayas a probar Velaria.</small></div>';
 }
+document.getElementById('dockExport').onclick=()=>document.getElementById('exportData').click();
+document.getElementById('dockPlay').addEventListener('click',()=>{session();});
 document.getElementById('exportData').onclick=()=>{
  const data=JSON.stringify(read(),null,2),blob=new Blob([data],{type:'application/json'}),a=document.createElement('a');
  a.href=URL.createObjectURL(blob);a.download='ISL_CARRILLO_HUMAN_LAB_EXPORT_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
