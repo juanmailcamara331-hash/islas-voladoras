@@ -32,6 +32,8 @@ for token in ["MODO COLEGAS","Hoy: Velaria.","JUGAR VELARIA","friend-browse"]:
 velaria=(P/"velaria-v2.html").read_text(encoding="utf-8",errors="ignore")
 for token in ["velaria-p0-feel-v084","windReadout","Volver a la Recreativa","jugar.html?friends=1","Perfecto. Ahora el cartel discute con el viento."]:
     if token not in velaria: fail(f"Velaria P0 contract missing: {token}")
+for token in ["velaria-intuitive-input-v085","moveBeacon","TOCA","touchstart","moveFromPoint"]:
+    if token not in velaria: fail(f"Velaria mobile touch/discoverability contract missing: {token}")
 if 'id="returnBoat" href="rpg-home.html' in velaria:
     fail("Velaria regression: finish still returns to Cartographer instead of Recreativa")
 
