@@ -24,7 +24,9 @@
       "next": "real human inference: can they say the rule without explanation?",
       "prototype_url": "prism-gravedad-viva.html",
       "test_state": "CHEAP_CAUSAL_PROTOTYPE_SOURCE_READY",
-      "runtime_src": "assets/gallery-prism-gravedad-viva.svg"
+      "runtime_src": "",
+      "runtime_preview_state": "LOCAL_CACHE_INVALID_FALLBACK_TO_PROTOTYPE",
+      "runtime_preview_note": "The previous local SVG cache is zero-byte. Gallery must show a safe local placeholder and open the cheap prototype instead of rendering a broken image. Preserve Drive source as provenance only."
     }
   ]
 }
