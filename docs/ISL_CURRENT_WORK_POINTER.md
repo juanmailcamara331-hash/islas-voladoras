@@ -1444,3 +1444,17 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Measures clientWidth vs scrollWidth and lists offending elements.
 - Mobile overflow task is now SOURCE_FIXED + HUMAN_RETEST_READY.
 - PASS criterion: document overflow <= 1 px and no visual side-drift in Command Center.
+
+
+## 2026-09-22 · VELARIA HUMAN DEVICE TEST · FIRST PASS FAIL
+Human evidence from real mobile:
+- tester reports nothing visibly moves;
+- movement affordance is not understood intuitively;
+- screenshot shows scene readable but interaction cue too weak.
+Decision: MUTATE ONE VARIABLE, not redesign.
+Change:
+- one-time pulsing TOCA beacon in walkable area;
+- explicit touchstart fallback in addition to pointer input;
+- stronger visible wind streaks;
+- beacon disappears after first movement.
+Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
