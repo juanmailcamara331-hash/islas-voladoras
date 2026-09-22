@@ -16,8 +16,8 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 .hero{margin-top:12px;border:1px solid #3d5d68;border-radius:22px;background:linear-gradient(135deg,#102630,#08131a);padding:clamp(18px,4vw,42px)}h1{font-size:clamp(44px,8vw,88px);line-height:.88;letter-spacing:-.05em;margin:8px 0 12px}.lead{max-width:950px;color:#c7d8db;line-height:1.55;font-size:clamp(15px,2vw,20px)}
 .stats{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.stat{border:1px solid #34525d;background:#08151c;border-radius:999px;padding:6px 9px;font-size:9px;color:#c9dade}.stat b{color:var(--gold)}
 .tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0;position:sticky;top:8px;z-index:10;background:#071017d9;padding:8px;border:1px solid #203842;border-radius:15px;backdrop-filter:blur(14px)}.tab{border:1px solid var(--line);background:#0a1720;color:#c7d8dc;border-radius:999px;padding:8px 11px;font-size:9px;font-weight:900}.tab.on{border-color:#8c6a3c;background:#2d2419;color:#ffe6b2}
-.section{display:none}.section.on{display:block}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:11px}.card{border:1px solid var(--line);background:var(--panel);border-radius:16px;overflow:hidden;min-width:0}.pad{padding:13px}.card h2{font-size:18px;margin:5px 0}.meta{font-size:9px;color:var(--mut);line-height:1.5}.status{display:inline-block;margin-top:7px;border:1px solid #4d6872;border-radius:999px;padding:4px 6px;font-size:7px;font-weight:900;letter-spacing:.08em}.status.good{color:var(--good);border-color:#50765a}.status.warn{color:var(--gold);border-color:#7f663c}.status.bad{color:var(--rose);border-color:#74434a}.thumb{aspect-ratio:16/10;background:radial-gradient(circle at 50% 40%,#173441,#081218 70%);display:grid;place-items:center;overflow:hidden;font-size:48px;color:var(--cyan);border-bottom:1px solid #203842}.thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block}.thumb video{background:#000}.thumb model-viewer{width:100%;height:100%;background:radial-gradient(circle at 50% 40%,#173441,#081218 70%)}.viewerHint{position:absolute;left:8px;bottom:8px;background:#041016cc;border:1px solid #35535e;border-radius:999px;padding:5px 7px;font-size:7px;font-weight:900;letter-spacing:.08em}.thumb.viewer{position:relative}.player{margin-top:10px;padding-top:10px;border-top:1px solid #213b45}.player audio{width:100%;height:38px}.disabledPlayer{margin-top:10px;border:1px dashed #35535e;border-radius:10px;padding:10px;font-size:9px;color:#7f979e}
-.panel{border:1px solid var(--line);background:#09161d;border-radius:15px;padding:14px;margin-bottom:11px}.panel h2{margin:4px 0 6px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.truth{border-left:3px solid var(--gold);padding:10px 12px;background:#17150f;color:#d8d4c8;font-size:10px;line-height:1.5;margin-top:12px}.empty{padding:18px;color:#9fb3b8}.subhead{display:flex;align-items:end;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 2px 9px}.subhead h2{margin:0;font-size:24px}.counter{font-size:9px;color:#a8bbc0}
+.section{display:none}.section.on{display:block}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:11px}.card{border:1px solid var(--line);background:var(--panel);border-radius:16px;overflow:hidden;min-width:0;cursor:pointer;transition:transform .16s ease,border-color .16s ease}.card:active{transform:scale(.985)}.pad{padding:11px 12px 12px}.card h2{font-size:17px;margin:3px 0;line-height:1.08}.meta{font-size:8px;color:var(--mut);line-height:1.4}.techMeta{display:none}.card details{margin-top:7px}.card details summary{font-size:8px;color:var(--mut);cursor:pointer}.status{display:inline-block;margin-top:7px;border:1px solid #4d6872;border-radius:999px;padding:4px 6px;font-size:7px;font-weight:900;letter-spacing:.08em}.status.good{color:var(--good);border-color:#50765a}.status.warn{color:var(--gold);border-color:#7f663c}.status.bad{color:var(--rose);border-color:#74434a}.thumb{aspect-ratio:16/10;background:radial-gradient(circle at 50% 40%,#173441,#081218 70%);display:grid;place-items:center;overflow:hidden;font-size:48px;color:var(--cyan);border-bottom:1px solid #203842}.thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block}.thumb video{background:#000}.thumb model-viewer{width:100%;height:100%;background:radial-gradient(circle at 50% 40%,#173441,#081218 70%)}.viewerHint{position:absolute;left:8px;bottom:8px;background:#041016cc;border:1px solid #35535e;border-radius:999px;padding:5px 7px;font-size:7px;font-weight:900;letter-spacing:.08em}.thumb.viewer{position:relative}.player{margin-top:10px;padding-top:10px;border-top:1px solid #213b45}.player audio{width:100%;height:38px}.disabledPlayer{margin-top:10px;border:1px dashed #35535e;border-radius:10px;padding:10px;font-size:9px;color:#7f979e}
+.panel{border:1px solid var(--line);background:#09161d;border-radius:15px;padding:11px 12px;margin-bottom:10px}.panel h2{margin:2px 0 4px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.truth{display:none}.empty{padding:18px;color:#9fb3b8}.subhead{display:flex;align-items:end;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 2px 9px}.subhead h2{margin:0;font-size:24px}.counter{font-size:9px;color:#a8bbc0}
 @media(max-width:640px){.wrap{width:calc(100vw - 12px)}h1{font-size:44px}.btn{padding:9px 10px}.tabs{top:4px}.grid{grid-template-columns:1fr 1fr}.card h2{font-size:15px}.meta{font-size:8px}.thumb{aspect-ratio:1.15}}
 @media(max-width:420px){.grid{grid-template-columns:1fr}}
 </style>
@@ -25,11 +25,11 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 
 <style id="isl-gallery-touch-v076">
 .card .thumb{cursor:zoom-in;position:relative}
-.card .thumb:after{content:"AMPLIAR";position:absolute;right:9px;bottom:9px;padding:6px 8px;border-radius:999px;background:#061018cc;border:1px solid #ffffff35;color:#eef8f5;font:900 8px system-ui;letter-spacing:.08em;pointer-events:none}
+.card .thumb:after{content:"";display:none}
 #galleryLightbox{position:fixed;inset:0;z-index:2147482500;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(2,7,11,.94)}
 #galleryLightbox.show{display:flex}
 #galleryLightbox figure{margin:0;width:min(100%,1100px);height:min(92dvh,900px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-#galleryLightbox img,#galleryLightbox video{display:block;max-width:100%;max-height:78dvh;object-fit:contain;border-radius:16px;box-shadow:0 24px 80px #000}
+#galleryLightbox img,#galleryLightbox video{display:block;max-width:100%;max-height:78dvh;object-fit:contain;border-radius:16px;box-shadow:0 24px 80px #000}#galleryLightbox iframe{box-shadow:0 24px 80px #000}
 #galleryLightbox figcaption{font-size:12px;color:#d9e7e9;text-align:center}
 #galleryLightbox button{position:absolute;right:14px;top:max(14px,env(safe-area-inset-top));width:46px;height:46px;border-radius:50%;border:1px solid #ffffff44;background:#071018;color:#fff;font-size:26px}
 @media(max-width:640px){.card .thumb:after{font-size:7px;padding:5px 7px}#galleryLightbox{padding:8px}#galleryLightbox img,#galleryLightbox video{max-height:76dvh}}
@@ -37,11 +37,11 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 </head>
 <body>
 <main class="wrap">
-<div class="top"><div class="k">ISL · GALERÍA VIVA · WEB + APP + PS4</div><div class="actions"><a class="btn" href="index.html?full=1#calendar">RUTA ISL</a><a class="btn" href="index.html?full=1#home">CENTRO</a><a class="btn" href="gym-3d-asset.html">GYM 3D</a></div></div>
+<div class="top"><div class="k">ISL · GALERÍA VIVA</div><div class="actions"><a class="btn" href="index.html?full=1#home">CENTRO</a></div></div>
 <section class="hero">
-<div class="k">ARCHIVO · EXTERNAL LAB · VÍDEO · 3D · AUDIO / MÚSICA</div>
-<h1>Todo ISL.<br>Una sola cubierta.</h1>
-<p class="lead">La Galería es la superficie madre: archivo histórico, tanda actual, vídeo, 3D y música. Los runtime se ven o escuchan aquí; Drive conserva source/master y provenance. Nada asciende a CANON por aparecer bonito.</p>
+<div class="k">MIRA · ESCUCHA · ABRE</div>
+<h1>Galería viva.</h1>
+<p class="lead">Toca una pieza. Lo técnico queda detrás.</p>
 <div class="stats"><span class="stat"><b id="countArchive">—</b> archivo</span><span class="stat"><b id="countLab">—</b> lab</span><span class="stat"><b id="count3d">—</b> 3D</span><span class="stat"><b id="countMusic">—</b> música</span></div>
 <div class="truth"><b>REGLA:</b> Gallery ≠ CANON · MASTER ≠ RUNTIME · SOURCE NOT WIRED ≠ inexistente. La interfaz enseña el estado real y no se inventa un player.</div>
 </section>
@@ -58,58 +58,51 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 </div>
 
 <section id="overview" class="section on">
-<div class="panel"><div class="k">AHORA</div><h2>Una vista, no seis cajones</h2><div class="meta">Último laboratorio + piezas 3D + música runtime/candidata + acceso al archivo completo. Si algo no puede reproducirse todavía, lo dice.</div></div>
-<div class="subhead"><h2>Última tanda</h2><span class="counter">External Lab</span></div><div class="grid" id="overviewLab"></div>
-<div class="subhead"><h2>3D / reliquias</h2><span class="counter">Asset Health</span></div><div class="grid" id="overview3d"></div>
-<div class="subhead"><h2>Música</h2><span class="counter">Soundtrack Registry</span></div><div class="grid" id="overviewMusic"></div>
-<div class="subhead"><h2>Archivo visual</h2><span class="counter">primeras 8 · pestaña Archivo para todo</span></div><div class="grid" id="overviewArchive"></div>
+<div class="subhead"><h2>Ahora</h2></div><div class="grid" id="overviewLab"></div>
+<div class="subhead"><h2>3D</h2></div><div class="grid" id="overview3d"></div>
+<div class="subhead"><h2>Música</h2></div><div class="grid" id="overviewMusic"></div>
+<div class="subhead"><h2>Archivo</h2></div><div class="grid" id="overviewArchive"></div>
 </section>
 
-<section id="archive" class="section"><div class="panel"><div class="k">ARCHIVO VISUAL / RUNTIME</div><h2>Inventario histórico completo</h2><div class="meta">La colección que antes estaba hardcodeada en PS4 ahora tiene registro compartido para web/app/PS4.</div></div><div class="grid" id="archiveGrid"></div></section>
-<section id="lab" class="section"><div class="panel"><div class="k">EXTERNAL LAB</div><h2>Precursores y evidencia reciente</h2><div class="meta">Drive = source/review. No implica runtime ni CANON.</div></div><div class="grid" id="labGrid"></div></section>
-<section id="three" class="section"><div class="panel"><div class="k">3D ASSET HEALTH</div><h2>MASTER, runtime y bloqueos sin humo</h2><div class="meta">Aquí viven BIO-001, Brújula y siguientes activos 3D según su gate actual.</div></div><div class="grid" id="threeGrid"></div></section>
-<section id="video" class="section"><div class="panel"><div class="k">VÍDEO</div><h2>Runtime + previs</h2><div class="meta">Vídeo reproducible cuando está empaquetado; source Drive cuando todavía es precursor/review.</div></div><div class="grid" id="videoGrid"></div></section>
-<section id="music" class="section"><div class="panel"><div class="k">MUSIC GALLERY / SOUNDTRACK REGISTRY</div><h2>Música dentro de la Galería</h2><div class="meta">Los temas con runtime conectado muestran <code>audio controls</code>. En móvil el navegador exige tocar PLAY: no forzamos autoplay. El resto conserva source/provenance sin fingir streaming.</div></div><div class="grid" id="musicGrid"></div></section>
-<section id="docs" class="section"><div class="panel"><div class="k">DOCS / BRIEFS / PLANES / CHECKPOINTS</div><h2>La memoria operativa también vive aquí</h2><div class="meta">Marketing, legal, metodología, briefs, supplier packs y checkpoints visibles desde una única superficie. Documento visible ≠ CANON del juego.</div></div><div class="grid" id="docsGrid"></div></section>
-<section id="phrases" class="section"><div class="panel"><div class="k">BANCO DE FRASES / HUELLA / CUARTA PARED</div><h2>Frases que merecen volver</h2><div class="meta">Semillas para interfaz, making-of, Easter eggs, carteles, objetos y escenas. Estar aquí no las convierte automáticamente en CANON.</div></div><div class="grid" id="phrasesGrid"></div></section>
+<section id="archive" class="section"><div class="grid" id="archiveGrid"></div></section>
+<section id="lab" class="section"><div class="grid" id="labGrid"></div></section>
+<section id="three" class="section"><div class="grid" id="threeGrid"></div></section>
+<section id="video" class="section"><div class="grid" id="videoGrid"></div></section>
+<section id="music" class="section"><div class="grid" id="musicGrid"></div></section>
+<section id="docs" class="section"><div class="grid" id="docsGrid"></div></section>
+<section id="phrases" class="section"><div class="grid" id="phrasesGrid"></div></section>
 </main>
 <script>
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const human=s=>String(s??'').replaceAll('_',' ').replace(/\s+/g,' ').trim().replace(/\b\w/g,m=>m.toUpperCase());
 function setTab(id){id=(id||'overview').replace('#','');if(!document.getElementById(id))id='overview';document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.tab===id));document.querySelectorAll('.section').forEach(x=>x.classList.toggle('on',x.id===id));history.replaceState(null,'','#'+id)}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
 addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
 function archiveCard(a){
- const media=a.type==='video'?'<video controls preload="metadata" src="'+esc(a.runtime_src)+'"></video>':'<img loading="lazy" src="'+esc(a.runtime_src)+'" alt="'+esc(a.title)+'">';
- return '<article class="card"><div class="thumb">'+media+'</div><div class="pad"><div class="k">'+esc(a.group)+'</div><h2>'+esc(a.title)+'</h2><div class="meta">'+esc(a.id)+'</div><span class="status warn">'+esc(a.status)+'</span></div></article>';
+ const media=a.type==='video'?'<video muted playsinline preload="metadata" src="'+esc(a.runtime_src)+'"></video>':'<img loading="lazy" src="'+esc(a.runtime_src)+'" alt="'+esc(a.title)+'">';
+ return '<article class="card mediaCard"><div class="thumb">'+media+'</div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
 }
 function labCard(a){
- const icon=a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣';
- const title=a.name||a.entity||a.id, link=a.drive_id?'https://drive.google.com/file/d/'+esc(a.drive_id)+'/view':'';
- return '<article class="card"><div class="thumb">'+icon+'</div><div class="pad"><div class="k">'+esc(a.type||a.role)+'</div><h2>'+esc(title)+'</h2><div class="meta">'+esc(a.role||'')+' · '+esc(a.status||'CANDIDATE')+'</div><span class="status warn">NOT CANON</span>'+(link?'<div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+link+'">ABRIR SOURCE</a></div>':'')+'</div></article>';
+ const title=a.name||a.entity||a.id;
+ const drive=a.drive_id||'';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(a.type||'file')+'"><div class="thumb"><span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span></div><div class="pad"><h2>'+esc(human(title))+'</h2><span class="status warn">NO CANON</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(a.role||''))+' · '+esc(human(a.status||'CANDIDATE'))+'</div></details></div></article>';
 }
 function healthCard(a){
- const state=a.state||a.status||'UNKNOWN', blocked=/BLOCK|WAIT/i.test(state);
- const src=a.runtime_ref||a.runtime_src||'';
+ const state=a.state||a.status||'UNKNOWN', src=a.runtime_ref||a.runtime_src||'';
  const viewer=src
-  ? '<div class="thumb viewer"><model-viewer src="'+esc(src)+'" camera-controls touch-action="pan-y" shadow-intensity="1" environment-image="neutral" interaction-prompt="auto" alt="'+esc(a.display_name||a.asset_id||'Asset 3D ISL')+'"></model-viewer><span class="viewerHint">ARRASTRA · GIRA · PINZA</span></div>'
+  ? '<div class="thumb viewer"><model-viewer src="'+esc(src)+'" camera-controls touch-action="pan-y" shadow-intensity="1" environment-image="neutral" alt="'+esc(a.display_name||a.asset_id||'Asset 3D ISL')+'"></model-viewer></div>'
   : '<div class="thumb">◇</div>';
- const runtimeNote=src
-  ? '<div class="disabledPlayer" style="border-style:solid;color:#bcefc6">RUNTIME 3D CONECTADO · visor interactivo activo.</div>'
-  : '<div class="disabledPlayer">GLB runtime todavía no disponible. En cuanto Asset Health tenga <code>runtime_ref</code>, esta tarjeta se vuelve interactiva automáticamente.</div>';
- return '<article class="card">'+viewer+'<div class="pad"><div class="k">3D · '+esc(a.id||a.asset_id||'ASSET')+'</div><h2>'+esc(a.display_name||a.name||a.entity_id||a.entity||a.id||a.asset_id)+'</h2><div class="meta">'+esc(state)+(a.next?' · '+esc(a.next):'')+'</div><span class="status '+(src?'good':blocked?'bad':'warn')+'">'+esc(src?'RUNTIME READY':a.human_gate||'HUMAN GATE PENDING')+'</span>'+runtimeNote+'<div class="actions"><a class="btn" href="gym-3d-asset.html">ABRIR GYM 3D</a></div></div></article>';
+ return '<article class="card">'+viewer+'<div class="pad"><h2>'+esc(human(a.display_name||a.name||a.entity_id||a.entity||a.id||a.asset_id))+'</h2><span class="status '+(src?'good':'warn')+'">'+esc(src?'3D READY':'3D PENDIENTE')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(state))+'</div></details></div></article>';
 }
 function phraseCard(p){
  return '<article class="card"><div class="pad"><div class="k">'+esc((p.destinations||[]).slice(0,3).join(' · ')||'FRASE')+'</div><h2 style="font-size:22px;line-height:1.25">“'+esc(p.text)+'”</h2><div class="meta">'+esc(p.origin||'ISL')+'</div><span class="status warn">'+esc(p.state||'SEED')+'</span></div></article>';
 }
 function docsCard(d){
- const icon=d.kind==='legal'?'⚖':d.kind==='marketing'?'↗':d.kind==='checkpoint'?'◷':d.kind==='supplier_pack'||d.kind==='rfq'?'⚒':d.kind==='automation'?'⌁':d.kind==='brief'?'✎':'▤';
- return '<article class="card"><div class="thumb">'+icon+'</div><div class="pad"><div class="k">'+esc(d.group||d.kind||'DOC')+'</div><h2>'+esc(d.title)+'</h2><div class="meta">'+esc(d.id||'')+' · '+esc(d.source||'source')+'</div><span class="status '+(/SOURCE_OF_TRUTH|CURRENT|ACTIVE|PHYSICAL_SOURCE/.test(d.status||'')?'good':'warn')+'">'+esc(d.status||'CURRENT')+'</span>'+(d.url?'<div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+esc(d.url)+'">ABRIR DOC</a></div>':'')+'</div></article>';
+ return '<article class="card" data-url="'+esc(d.url||'')+'"><div class="thumb">▤</div><div class="pad"><h2>'+esc(d.title)+'</h2><span class="status warn">'+esc(human(d.kind||'DOC'))+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(d.status||'CURRENT'))+'</div></details></div></article>';
 }
 function musicCard(t){
- const roles=(t.functional_role||[]).map(x=>x.replaceAll('_',' ')).join(' · ');
- const player=t.runtime_src?'<div class="player"><audio controls preload="none" src="'+esc(t.runtime_src)+'"></audio></div>':'<div class="disabledPlayer">SOURCE '+esc(t.source_state||'NOT WIRED')+' · runtime pendiente.</div>';
- const action=t.drive_id?'<div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://drive.google.com/file/d/'+esc(t.drive_id)+'/view">ABRIR SOURCE</a></div>':'';
- return '<article class="card"><div class="thumb">♫</div><div class="pad"><div class="k">'+esc(t.id)+'</div><h2>'+esc(t.title)+'</h2><div class="meta">'+esc(roles||'Función pendiente')+'</div><span class="status '+(t.runtime_src?'good':'warn')+'">'+esc(t.status)+'</span>'+player+action+'</div></article>';
+ const player=t.runtime_src?'<div class="player"><audio controls preload="none" src="'+esc(t.runtime_src)+'"></audio></div>':'';
+ return '<article class="card" data-drive="'+esc(t.drive_id||'')+'" data-kind="audio"><div class="thumb">♫</div><div class="pad"><h2>'+esc(t.title)+'</h2>'+player+'<details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(t.status||''))+'</div></details></div></article>';
 }
 Promise.all([
  fetch('data/isl-gallery-library-current.json',{cache:'no-store'}).then(r=>r.json()),
@@ -142,19 +135,28 @@ Promise.all([
 </script>
 <script defer src="isl-global-shell.js"></script>
 
-<script id="isl-gallery-touch-js-v076">
+<script id="isl-gallery-touch-js-v090">
 (function(){
   var lb=document.createElement('div');lb.id='galleryLightbox';lb.innerHTML='<button type="button" aria-label="Cerrar">×</button><figure><div id="galleryLbMedia"></div><figcaption id="galleryLbCaption"></figcaption></figure>';document.body.appendChild(lb);
   var media=lb.querySelector('#galleryLbMedia'),cap=lb.querySelector('#galleryLbCaption');
   function close(){lb.classList.remove('show');media.innerHTML='';document.body.style.overflow=''}
-  function openFromThumb(thumb){
-    var img=thumb.querySelector('img'),vid=thumb.querySelector('video');if(!img&&!vid)return;
-    var card=thumb.closest('.card'),title=card&&card.querySelector('h2')?card.querySelector('h2').textContent:'';
-    if(img){var c=document.createElement('img');c.src=img.currentSrc||img.src;c.alt=img.alt||title;media.replaceChildren(c)}
-    else{var v=document.createElement('video');v.src=vid.currentSrc||vid.src;v.controls=true;v.autoplay=true;v.playsInline=true;media.replaceChildren(v)}
-    cap.textContent=title;lb.classList.add('show');document.body.style.overflow='hidden';
+  function show(node,title){media.replaceChildren(node);cap.textContent=title||'';lb.classList.add('show');document.body.style.overflow='hidden'}
+  function openCard(card){
+    var title=card.querySelector('h2')?card.querySelector('h2').textContent:'';
+    var img=card.querySelector('.thumb img'),vid=card.querySelector('.thumb video');
+    if(img){var c=document.createElement('img');c.src=img.currentSrc||img.src;c.alt=img.alt||title;return show(c,title)}
+    if(vid){var v=document.createElement('video');v.src=vid.currentSrc||vid.src;v.controls=true;v.autoplay=true;v.playsInline=true;return show(v,title)}
+    var drive=card.dataset.drive;
+    if(drive){
+      var f=document.createElement('iframe');f.src='https://drive.google.com/file/d/'+encodeURIComponent(drive)+'/preview';f.allow='autoplay';f.title=title;f.style.cssText='width:min(94vw,1100px);height:min(78dvh,760px);border:0;border-radius:16px;background:#000';
+      return show(f,title)
+    }
+    var url=card.dataset.url;if(url){window.open(url,'_blank','noopener');}
   }
-  document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('.card .thumb');if(t&&!e.target.closest('audio,button,a,input')){e.preventDefault();openFromThumb(t)}});
+  document.addEventListener('click',function(e){
+    if(e.target.closest('audio,button,a,input,select,textarea,summary,details,model-viewer'))return;
+    var card=e.target.closest&&e.target.closest('.card');if(card){e.preventDefault();openCard(card)}
+  });
   lb.querySelector('button').onclick=close;lb.addEventListener('click',function(e){if(e.target===lb)close()});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('show'))close()});
 })();
 </script>
