@@ -1279,3 +1279,12 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Adds R13 heritage re-audit, Wind Lab refresh, Carrillo logistics/brief, physical Rumbo de Bolsillo, and backup redundancy.
 - Private Netlify deploy still failing with Not Found; do not claim private URL green.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
+
+## 2026-09-22 · HUMAN UI COPY REDUCTION / GALLERY MEDIA-FIRST
+- User screenshot exposed excessive system/meta copy in Galería Viva and indirect media opening.
+- Galería now follows CONTENT FIRST: tapping a card opens image/video directly in floating viewer; Drive-only items use embedded preview.
+- Technical metadata is hidden under DETALLES; redundant AMPLIAR / ABRIR SOURCE / machine-state copy removed from primary view.
+- Music surface receives same first pass: listen first, technical state behind details.
+- Cross-app rule: human-facing surfaces should show one useful phrase + one clear action; provenance/CQC/state remains available but secondary.
+- Do not delete system metadata; demote it from primary UI.
