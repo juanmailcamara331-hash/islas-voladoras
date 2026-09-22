@@ -88,6 +88,21 @@
       main.insertBefore(box,main.firstChild);
     })();
 
+    (function installPhraseSpotlight(){
+      var main=document.querySelector('main');
+      if(!main||document.getElementById('islPhraseSpotlight'))return;
+      fetch('data/isl-phrase-bank-current.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('phrases');return r.json()}).then(function(data){
+        var ps=Array.isArray(data.phrases)?data.phrases:[];
+        if(!ps.length)return;
+        var day=Math.floor(Date.now()/86400000), p=ps[day%ps.length];
+        var box=document.createElement('section');
+        box.id='islPhraseSpotlight';box.className='panel';
+        box.style.cssText='border-color:#806a43;background:linear-gradient(135deg,#261f14,#142329);margin:0 0 14px';
+        box.innerHTML='<div class="eyebrow">FRASE DE CABINA</div><div style="font-size:clamp(20px,3vw,34px);font-weight:900;line-height:1.15;margin:7px 0">“'+esc(p.text||'')+'”</div><div class="sub">'+esc(p.origin||'ISL')+' · '+esc(p.state||'SEED')+'</div><div class="actions"><a class="btn" href="galeria.html#phrases">VER BANCO DE FRASES</a></div>';
+        main.insertBefore(box,main.firstChild);
+      }).catch(function(){});
+    })();
+
     (function installResourceHealthBlock(){
       var main=document.querySelector('main');
       if(!main||document.getElementById('islResourceHealthBlock'))return;
