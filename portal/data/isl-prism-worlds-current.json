@@ -20,8 +20,10 @@
       "status": "PROTOTYPE_SEED",
       "origin": "Irene session → Prism Eye → Impossible Physics",
       "canon_state": "NO_AUTO_CANON",
-      "human_gate": "PENDING",
-      "next": "cheap causal prototype + human inference test"
+      "human_gate": "PENDING_REAL_HUMAN_INFERENCE",
+      "next": "real human inference: can they say the rule without explanation?",
+      "prototype_url": "prism-gravedad-viva.html",
+      "test_state": "CHEAP_CAUSAL_PROTOTYPE_SOURCE_READY"
     }
   ]
 }
