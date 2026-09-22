@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071017">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<link rel="manifest" href="manifest.webmanifest">
+<title>ISL · Carrillo Human Lab</title>
+<style>
+:root{--bg:#061017;--panel:#0b1a22;--line:#31505c;--text:#edf7f5;--muted:#8fa7ad;--cyan:#8defff;--gold:#e0bb72;--rose:#e47c91;--green:#96e5ba}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}body{background:radial-gradient(circle at 80% 0,#183848 0,transparent 28%),linear-gradient(#061017,#08131a)}
+.wrap{width:min(980px,94vw);margin:auto;padding:18px 0 80px}.top{display:flex;align-items:center;gap:10px;margin-bottom:14px}.brand{font-size:9px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.top h1{margin:3px 0 0;font-size:clamp(26px,6vw,48px)}.pill{margin-left:auto;border:1px solid #4f6a73;border-radius:999px;padding:7px 9px;font-size:8px;color:#b8c9cc}
+.hero,.card{border:1px solid var(--line);border-radius:18px;background:#0a171edc;box-shadow:0 20px 60px #0006}.hero{padding:20px}.hero h2{font-size:clamp(30px,7vw,58px);line-height:.95;margin:7px 0}.hero p,.card p{color:#b5c6ca;line-height:1.55}.mission{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:15px}.stat{border:1px solid #294550;border-radius:12px;padding:11px;background:#071219}.stat b{display:block;font-size:12px}.stat span{font-size:9px;color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.btn{border:1px solid #41616c;border-radius:10px;background:#0a1b22;color:#e8f2f3;padding:11px 13px;font-weight:900;font-size:10px;text-decoration:none}.btn.primary{border-color:#5d8f99;background:#12313a}.btn.gold{border-color:#8a6a3f;background:#2b2216;color:#ffe5ad}
+.tabs{display:flex;gap:7px;overflow:auto;margin:14px 0}.tab{white-space:nowrap;border:1px solid #2f4f59;border-radius:999px;background:#08161d;color:#9bb0b6;padding:8px 10px;font-size:9px;font-weight:900}.tab.on{color:#fff;border-color:#6a8790;background:#17303a}
+.view{display:none}.view.on{display:block}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{padding:15px}.card h3{font-size:14px;margin:0 0 6px}.hint{font-size:9px;color:#7e969c}.signals{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.sig{border:1px solid #344f59;border-radius:10px;background:#07141a;color:#dce8ea;padding:10px 7px;font-size:9px;font-weight:800}.sig.on{border-color:var(--gold);background:#241d13;color:#ffe7b4}
+label{display:block;font-size:9px;color:var(--cyan);font-weight:900;margin:11px 0 5px}textarea,input,select{width:100%;border:1px solid #34515c;border-radius:10px;background:#061118;color:#eef7f4;padding:10px;font:12px system-ui}textarea{resize:vertical;min-height:78px}
+.qgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.q{border:1px solid #314b55;border-radius:10px;padding:8px;background:#071218}.q b{font-size:8px;color:#94abb0}.q select{margin-top:6px;padding:7px}
+.log{display:grid;gap:8px}.entry{border:1px solid #29444e;border-radius:12px;padding:11px;background:#071219}.entry b{font-size:10px}.entry small{display:block;color:#80979d;margin-top:3px}.entry p{font-size:10px;margin:7px 0 0;color:#b9c8ca}
+.privacy{border-left:3px solid var(--green);padding:10px 12px;background:#0d1c18;border-radius:8px;font-size:9px;color:#b9d9ca;margin-top:12px}
+@media(max-width:720px){.grid,.mission{grid-template-columns:1fr}.signals{grid-template-columns:1fr 1fr}.qgrid{grid-template-columns:1fr 1fr}.qgrid .q:last-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="top"><div><div class="brand">ISL · PRIVATE HUMAN LAB</div><h1>Carrillo</h1></div><div class="pill">NO CANON · EVIDENCIA HUMANA</div></header>
+
+<section class="hero">
+<div class="brand">MISIÓN ACTUAL · VELARIA P0 · HUMAN_DEVICE_GREEN</div>
+<h2>Prueba el viento.<br>No busques aprobar.</h2>
+<p>Primera pasada sin explicación extra. Queremos saber qué entiendes, qué sientes y dónde se rompe. Después podrás entrar en Modo Carrillo para una lectura profunda.</p>
+<div class="mission">
+ <div class="stat"><b>DISPOSITIVO 1</b><span>Móvil top</span></div>
+ <div class="stat"><b>DURACIÓN</b><span>5–10 min primera pasada</span></div>
+ <div class="stat"><b>NO EXPLICAR ANTES</b><span>viento · ANCLAR · contradicción</span></div>
+</div>
+<div class="actions"><a class="btn primary" href="velaria-v2.html?friends=1">ABRIR VELARIA</a><button class="btn" id="startSession">INICIAR SESIÓN</button><button class="btn gold" id="exportData">EXPORTAR HUELLA</button></div>
+<div class="privacy">Se guarda localmente en este dispositivo. No activa cámara, micrófono ni grabación. Nada se publica automáticamente.</div>
+</section>
+
+<nav class="tabs">
+<button class="tab on" data-v="blind">PRIMERA IMPRESIÓN</button>
+<button class="tab" data-v="deep">MODO CARRILLO</button>
+<button class="tab" data-v="moments">MOMENTOS</button>
+<button class="tab" data-v="history">HISTORIAL</button>
+<button class="tab" data-v="footprint">MI HUELLA EN ISL</button>
+</nav>
+
+<section class="view on" id="blind">
+<div class="grid">
+<article class="card"><h3>Primera impresión</h3><p>Sin reconstruir la intención del diseñador. Cuéntalo como lo viviste.</p>
+<label>¿Qué entendiste que tenías que hacer?</label><textarea id="bUnderstand"></textarea>
+<label>¿Qué te apeteció hacer por iniciativa propia?</label><textarea id="bAgency"></textarea>
+<label>¿Dónde dudaste, te frenaste o algo pareció falso?</label><textarea id="bBreak"></textarea></article>
+<article class="card"><h3>Q_PLAY · weakest link</h3><p class="hint">No es una nota global. Sirve para localizar el eslabón más débil de esta sesión.</p>
+<div class="qgrid">
+ <div class="q"><b>CLARIDAD</b><select data-q="clarity"><option value="">—</option><option>fuerte</option><option>media</option><option>débil</option></select></div>
+ <div class="q"><b>AGENCIA</b><select data-q="agency"><option value="">—</option><option>fuerte</option><option>media</option><option>débil</option></select></div>
+ <div class="q"><b>FEEL</b><select data-q="feel"><option value="">—</option><option>fuerte</option><option>media</option><option>débil</option></select></div>
+ <div class="q"><b>SEGUIR</b><select data-q="desire"><option value="">—</option><option>sí</option><option>quizá</option><option>no</option></select></div>
+ <div class="q"><b>ROBUSTEZ</b><select data-q="robustness"><option value="">—</option><option>fuerte</option><option>media</option><option>débil</option></select></div>
+</div>
+<label>Una frase al terminar</label><textarea id="bFinal"></textarea>
+<div class="actions"><button class="btn primary" id="saveBlind">GUARDAR PRIMERA PASADA</button></div></article>
+</div>
+</section>
+
+<section class="view" id="deep">
+<div class="grid">
+<article class="card"><h3>Modo Carrillo</h3><p>Ahora sí: lectura cultural, filosófica y sistémica. Esta pasada se guarda separada de la primera.</p>
+<label>Contradicción que viste</label><textarea id="dContradiction"></textarea>
+<label>¿Qué regla del mundo crees que está operando?</label><textarea id="dRule"></textarea>
+<label>¿Qué te parece genuino y qué impostado?</label><textarea id="dTruth"></textarea></article>
+<article class="card"><h3>Recuerdo diferido</h3>
+<label>¿Qué crees que recordarás mañana?</label><textarea id="dMemory"></textarea>
+<label>¿Qué pregunta te deja el mundo?</label><textarea id="dQuestion"></textarea>
+<label>Una cosa que nunca sacrificarías</label><textarea id="dProtect"></textarea>
+<div class="actions"><button class="btn primary" id="saveDeep">GUARDAR MODO CARRILLO</button></div></article>
+</div>
+</section>
+
+<section class="view" id="moments">
+<article class="card"><h3>Marcar momento</h3><p>Marca primero el tipo. Describe sólo lo suficiente para poder volver a encontrarlo.</p>
+<div class="signals" id="signals">
+<button class="sig">me confundió</button><button class="sig">me sorprendió</button><button class="sig">me hizo gracia</button>
+<button class="sig">me emocionó</button><button class="sig">me pareció falso</button><button class="sig">quiero saber más</button>
+<button class="sig">bug</button><button class="sig">idea</button><button class="sig">contradicción importante</button>
+</div>
+<label>¿Qué pasó?</label><textarea id="momentText"></textarea>
+<label>Dónde / cuándo aproximadamente</label><input id="momentWhere" placeholder="Ej. tras ANCLAR / minuto 3">
+<div class="actions"><button class="btn primary" id="saveMoment">GUARDAR MOMENTO</button></div></article>
+</section>
+
+<section class="view" id="history"><article class="card"><h3>Historial de sesiones</h3><div class="log" id="historyLog"></div></article></section>
+<section class="view" id="footprint"><article class="card"><h3>Mi huella en ISL</h3><p>Aquí sólo aparecerán cambios reales que el proyecto marque explícitamente como derivados de tus observaciones. No puntos, karma ni ranking.</p><div class="log" id="footprintLog"><div class="entry"><b>Todavía sin cambios atribuidos.</b><small>Que una idea guste no significa que haya cambiado ISL.</small></div></div></article></section>
+</main>
+<script>
+(function(){'use strict';
+const KEY='isl_carrillo_human_lab_v1';
+let activeSignal='';
+function read(){try{const x=JSON.parse(localStorage.getItem(KEY)||'{}');return x&&typeof x==='object'?x:{}}catch(e){return{}}}
+function write(s){localStorage.setItem(KEY,JSON.stringify(s));renderHistory()}
+function session(){const s=read();s.sessions=s.sessions||[];let cur=s.sessions[s.sessions.length-1];if(!cur||cur.status==='CLOSED'){cur={id:'carrillo_'+Date.now(),started_at:new Date().toISOString(),build:'Velaria V2 P0',device:'mobile_top',mission:'HUMAN_DEVICE_GREEN',status:'OPEN',blind:null,deep:null,moments:[]};s.sessions.push(cur);write(s)}return cur}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id===b.dataset.v));if(b.dataset.v==='history')renderHistory()});
+document.getElementById('startSession').onclick=()=>{session();document.getElementById('startSession').textContent='SESIÓN ABIERTA'};
+document.querySelectorAll('.sig').forEach(b=>b.onclick=()=>{activeSignal=b.textContent;document.querySelectorAll('.sig').forEach(x=>x.classList.toggle('on',x===b))});
+document.getElementById('saveBlind').onclick=()=>{
+ const s=read();s.sessions=s.sessions||[];let cur=s.sessions[s.sessions.length-1];if(!cur||cur.status==='CLOSED'){session();return document.getElementById('saveBlind').click()}
+ const q={};document.querySelectorAll('[data-q]').forEach(x=>q[x.dataset.q]=x.value);
+ cur.blind={saved_at:new Date().toISOString(),understood:document.getElementById('bUnderstand').value.trim(),agency:document.getElementById('bAgency').value.trim(),breakpoint:document.getElementById('bBreak').value.trim(),final:document.getElementById('bFinal').value.trim(),qplay:q};
+ write(s);document.getElementById('saveBlind').textContent='GUARDADO';
+};
+document.getElementById('saveDeep').onclick=()=>{
+ const s=read();s.sessions=s.sessions||[];let cur=s.sessions[s.sessions.length-1];if(!cur||cur.status==='CLOSED'){session();return document.getElementById('saveDeep').click()}
+ cur.deep={saved_at:new Date().toISOString(),contradiction:document.getElementById('dContradiction').value.trim(),rule:document.getElementById('dRule').value.trim(),truth:document.getElementById('dTruth').value.trim(),memory:document.getElementById('dMemory').value.trim(),question:document.getElementById('dQuestion').value.trim(),protect:document.getElementById('dProtect').value.trim()};
+ write(s);document.getElementById('saveDeep').textContent='GUARDADO';
+};
+document.getElementById('saveMoment').onclick=()=>{
+ if(!activeSignal)return;
+ const s=read();s.sessions=s.sessions||[];let cur=s.sessions[s.sessions.length-1];if(!cur||cur.status==='CLOSED'){session();return document.getElementById('saveMoment').click()}
+ cur.moments=cur.moments||[];cur.moments.push({at:new Date().toISOString(),type:activeSignal,text:document.getElementById('momentText').value.trim(),where:document.getElementById('momentWhere').value.trim()});
+ write(s);document.getElementById('momentText').value='';document.getElementById('momentWhere').value='';
+};
+function renderHistory(){
+ const s=read(),arr=(s.sessions||[]).slice().reverse(),el=document.getElementById('historyLog');
+ el.innerHTML=arr.length?arr.map(x=>'<div class="entry"><b>'+x.build+' · '+x.device+'</b><small>'+new Date(x.started_at).toLocaleString()+' · '+x.status+'</small><p>'+(x.blind?'Primera impresión guardada. ':'')+(x.deep?'Modo Carrillo guardado. ':'')+((x.moments||[]).length)+' momento(s).</p></div>').join(''):'<div class="entry"><b>Aún no hay sesiones.</b><small>Inicia la primera misión cuando vayas a probar Velaria.</small></div>';
+}
+document.getElementById('exportData').onclick=()=>{
+ const data=JSON.stringify(read(),null,2),blob=new Blob([data],{type:'application/json'}),a=document.createElement('a');
+ a.href=URL.createObjectURL(blob);a.download='ISL_CARRILLO_HUMAN_LAB_EXPORT_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+renderHistory();
+})();
+</script>
+</body>
+</html>
