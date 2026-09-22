@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "updated": "2026-09-22",
+  "status": "PRISM_WORLDS_CURRENT",
+  "rules": {
+    "no_auto_canon": true,
+    "one_legible_impossible_law": true,
+    "human_consequence_required": true,
+    "max_active_cross_systems": 3
+  },
+  "worlds": [
+    {
+      "id": "PRISM-001-VIS-002",
+      "world_id": "PRISM_WORLD_001",
+      "title": "Gravedad Viva · donde la vida atrae el mundo",
+      "law": "La gravedad se inclina hacia los seres vivos",
+      "type": "image",
+      "drive_id": "1RtSniioiduLIEtm5xkKn4SO375j6O4fL",
+      "status": "PROTOTYPE_SEED",
+      "origin": "Irene session → Prism Eye → Impossible Physics",
+      "canon_state": "NO_AUTO_CANON",
+      "human_gate": "PENDING",
+      "next": "cheap causal prototype + human inference test"
+    }
+  ]
+}
