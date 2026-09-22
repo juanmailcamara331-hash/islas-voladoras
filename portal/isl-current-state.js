@@ -88,6 +88,29 @@
       main.insertBefore(box,main.firstChild);
     })();
 
+    (function installResourceHealthBlock(){
+      var main=document.querySelector('main');
+      if(!main||document.getElementById('islResourceHealthBlock'))return;
+      fetch('data/isl-resource-health-current.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('resource');return r.json()}).then(function(data){
+        var services=Array.isArray(data.services)?data.services:[];
+        var box=document.createElement('section');
+        box.id='islResourceHealthBlock';box.className='panel';
+        box.style.cssText='border-color:#506b5d;background:linear-gradient(135deg,#0d2019,#10232b);margin:0 0 14px';
+        var cards=services.map(function(x){
+          var obs=x.observed||{}, summary='';
+          if(x.id==='github_repo') summary=(obs.repo_api_size_mib||'—')+' MiB · '+esc(obs.visibility||'');
+          else if(x.id==='google_drive') summary=(obs.summed_visible_gib||'—')+' GiB visibles · quota '+esc(obs.account_quota||'—');
+          else if(x.id==='unreal') summary='Proyecto '+esc(obs.project_disk_usage||'—')+' · DDC '+esc(obs.ddc_usage||'—');
+          else summary='runtime + fallback';
+          return '<div class="card"><div class="label">'+esc(x.label||x.id)+'</div><div style="font-size:18px;font-weight:900;margin:5px 0">'+esc(x.state||'UNKNOWN')+'</div><div class="meta">'+summary+'</div></div>';
+        }).join('');
+        box.innerHTML='<div class="eyebrow">RECURSOS / ALMACENAMIENTO / LÍMITES</div>'+
+          '<div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap"><div><h2 style="margin:4px 0 7px">¿Qué usamos y qué falta medir?</h2><div class="sub">Snapshot técnico: GitHub, Drive, Unreal y superficies runtime. No confunde límites generales con tu cuota real.</div></div><a class="btn" target="_blank" rel="noopener" href="https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_RESOURCE_STORAGE_HEALTH_CURRENT.md">ABRIR DETALLE</a></div>'+
+          '<div class="grid" style="margin-top:10px">'+cards+'</div>';
+        main.insertBefore(box,main.firstChild);
+      }).catch(function(){});
+    })();
+
     (function installSystemsDocsBlock(){
       var main=document.querySelector('main');
       if(!main||document.getElementById('islSystemsDocsBlock'))return;
