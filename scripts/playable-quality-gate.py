@@ -95,3 +95,14 @@ for token in [
 ]:
     if token not in velaria:
         fail(f"Velaria missing safe return-loop token: {token}")
+
+
+# Wind Lab heritage route + lightweight v0.89 refresh
+recreo=(P/"recreo.html").read_text(encoding="utf-8")
+wind=(P/"labs"/"wind.html").read_text(encoding="utf-8")
+for token in ["TALLER DEL VIENTO","labs/wind.html?from=recreo"]:
+    if token not in recreo:
+        fail(f"Recreo missing Wind Lab heritage route token: {token}")
+for token in ["ISL // WIND LAB v1.7","backRecreo","prefers-reduced-motion","isl_wind_lab_events_v1","challenge_success"]:
+    if token not in wind:
+        fail(f"Wind Lab missing v0.89 refresh token: {token}")
