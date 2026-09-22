@@ -73,11 +73,18 @@ Detecta únicamente drift real:
 - duplicados/conflictos SOURCE_OF_TRUTH;
 - supplier/build/playtest states no reflejados;
 - conectores sin función;
-- lane temporal desplazando PRIMARY.
+- lane temporal desplazando PRIMARY;
+- patrimonio creativo antiguo que esté siendo reutilizado sin re-auditoría v0.89.
 
 Revisa Gmail para respuestas nuevas de proveedores del Ancla.
 Notificar sólo información útil:
 coste, muestra, tooling, límites, plazo, siguiente acción.
+
+Para R13 heritage:
+- revisar sólo 1–3 elementos por pasada;
+- preferir KEEP/MUTATE/PARK/RETIRE antes que generar reemplazos;
+- no tocar approved references sin motivo;
+- no desplazar PRIMARY.
 
 Máximo UNA corrección reversible.
 Si todo está coherente y no hay correo relevante:
