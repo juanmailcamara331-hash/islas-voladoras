@@ -1,3 +1,16 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · GLOBAL ATMOSPHERIC FIELD / CONTRADICCIÓN VIVA
+- HUMAN AUTHOR DIRECTION: ISL requires an indispensable universal atmospheric field of irreverence, punk contradiction, metaphysical corrosion, liminal futurism, meta-universe tension, fictional non-ordinary perception, material imperfection and tenderness.
+- IMPLEMENTATION RULE: do NOT create a new lane/meta-system by default. The field is inherited through existing `ISL_META_LAYER_ORCHESTRATOR_CURRENT`, `ISL_AUTOMATION_QUALITY_LAYER_CURRENT` and `ISL_AUTOMATION_PROMPTS_MASTER_CURRENT`.
+- Formal design language: REALIDAD FRACTURADA · CONTRADICCIÓN VIVA · PERCEPCIÓN NO ORDINARIA · IRREVERENCIA METAFÍSICA. Avoid psychiatric diagnoses as aesthetic labels.
+- The field is MODULATED, not constant noise: intensity 0–4 from invisible infrastructure to rare reality-folding events. If everything screams, nothing is strange.
+- Core forces: irreverence; poetic anarchy; metaphysical contradiction; meta-universe/temporal echoes; fictional altered perception; punk materiality; tenderness/humanity as counterweight.
+- HARD GUARD: punk/irreverence must never weaken security, legal/IP, privacy, consent, accessibility, factual accuracy, specs, QA, backups or reproducibility.
+- ANTI-DOMESTICATION: when a meaningful piece could belong unchanged to a generic family-friendly adventure, ask what functional contradiction or unmistakable ISL trace is missing.
+- ANTI-EDGE: adulthood != constant profanity/gore/cruelty/cynicism/randomness. Weirdness must change meaning, decision, perception or memory.
+- RETROFIT RULE: no mass rewrite. When an existing piece is touched for a real reason, preserve approved function → apply field only where identity improves → test clarity → persist significant changes only.
+- Applies across world, narrative, UI, audio, physical, relics, maps, menus, tutorials, errors, saves, loading, credits, easter eggs, fourth wall, making-of, marketing and microcopy.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. No CANON promotion by this note.
+
 
 
 # ACTIVE EXECUTION NOTE · 2026-09-22 · MINIMAL ISL SYMBOL HUMAN REFERENCE
