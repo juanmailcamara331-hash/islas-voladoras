@@ -245,6 +245,10 @@ Chequeo breve:
 - ¿la adaptación de capacidad conserva agencia y consecuencias núcleo?
 - ¿la curva de entropía deja respirar CALMA → EXTRAÑEZA → DECISIÓN → CONSECUENCIA → CAOS → DESCANSO?
 - ¿el sistema puede sorprender mediante combinaciones válidas sin perder autoría ni tono?
+- ¿una rutina/tedio construye normalidad, oficio, economía, relación o contraste?
+- ¿el tedio tiene salida mediante aprendizaje, conversación, eficiencia, decisión o sorpresa?
+- ¿la curva alterna esfuerzo, dominio, ruptura, consecuencia y descanso?
+- ¿estamos usando variables de experiencia observables en vez de simplificar todo a “dopamina”?
 
 Si falla:
 proponer UNA corrección mínima.
