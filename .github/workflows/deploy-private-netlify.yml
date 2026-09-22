@@ -14,7 +14,7 @@ jobs:
   deploy-private:
     runs-on: ubuntu-latest
     env:
-      NETLIFY_SITE_ID: 6182a9ad-e228-41b9-816a-1cf7d750e7e7
+      NETLIFY_SITE_ID: f3cb9c63-9ff1-4de2-b6df-c8e6af403a4f
       PRIVATE_ALIAS: private-command
     steps:
       - uses: actions/checkout@v4
@@ -66,4 +66,4 @@ jobs:
       - name: Deployment gate
         run: |
           echo "PRIVATE_NETLIFY_ALIAS=GREEN"
-          echo "Expected protected alias: https://private-command--islas-voladoras-isl-private-i1oq.netlify.app"
+          echo "Expected protected alias: https://private-command--islas-voladoras-isl-private.netlify.app"
