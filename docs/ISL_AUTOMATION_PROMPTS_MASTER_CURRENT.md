@@ -232,6 +232,10 @@ Chequeo breve:
 - ¿la criatura que cambia sigue siendo reconocible?
 - ¿la escala épica conserva al menos un ancla cotidiana?
 - ¿hay riesgo de power creep que vuelva irrelevante lo anterior?
+- ¿un retroceso tiene causa legible y una respuesta interesante?
+- ¿una secundaria se volvió relevante por una consecuencia real y no por guion arbitrario?
+- ¿la adaptación narrativa usa conducta observable y pesos reversibles, no perfiles psicológicos rígidos?
+- ¿enfermedad/desastre abre decisiones en vez de simple castigo?
 
 Si falla:
 proponer UNA corrección mínima.
