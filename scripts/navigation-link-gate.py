@@ -133,7 +133,7 @@ else:
 
 # Unified Gallery + production-safe Route ISL
 gallery=(ROOT/"galeria.html").read_text(encoding="utf-8",errors="ignore")
-for token in ["GALERÍA VIVA · WEB + APP + PS4","data/isl-gallery-library-current.json","data/isl-music-current.json","data/isl-external-lab-current.json","data/isl-asset-health-current.json","index.html?full=1#calendar","audio controls"]:
+for token in ["ISL · GALERÍA VIVA","MIRA · ESCUCHA · ABRE","data/isl-gallery-library-current.json","data/isl-music-current.json","data/isl-external-lab-current.json","data/isl-asset-health-current.json","galleryLightbox","audio controls"]:
     if token not in gallery: errors.append(f"unified gallery contract missing: {token}")
 shell=(ROOT/"isl-global-shell.js").read_text(encoding="utf-8",errors="ignore")
 for token in ["rpg-home.html","crear.html","galeria.html","decidir.html","huellas.html","mission-map.html","project-observatory.html","crecimiento.html","crew.html"]:
