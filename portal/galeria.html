@@ -54,6 +54,7 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 <button class="tab" data-tab="video">VÍDEO</button>
 <button class="tab" data-tab="music">MÚSICA</button>
 <button class="tab" data-tab="docs">DOCS / BRIEFS</button>
+<button class="tab" data-tab="phrases">FRASES</button>
 </div>
 
 <section id="overview" class="section on">
@@ -70,6 +71,7 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 <section id="video" class="section"><div class="panel"><div class="k">VÍDEO</div><h2>Runtime + previs</h2><div class="meta">Vídeo reproducible cuando está empaquetado; source Drive cuando todavía es precursor/review.</div></div><div class="grid" id="videoGrid"></div></section>
 <section id="music" class="section"><div class="panel"><div class="k">MUSIC GALLERY / SOUNDTRACK REGISTRY</div><h2>Música dentro de la Galería</h2><div class="meta">Los temas con runtime conectado muestran <code>audio controls</code>. En móvil el navegador exige tocar PLAY: no forzamos autoplay. El resto conserva source/provenance sin fingir streaming.</div></div><div class="grid" id="musicGrid"></div></section>
 <section id="docs" class="section"><div class="panel"><div class="k">DOCS / BRIEFS / PLANES / CHECKPOINTS</div><h2>La memoria operativa también vive aquí</h2><div class="meta">Marketing, legal, metodología, briefs, supplier packs y checkpoints visibles desde una única superficie. Documento visible ≠ CANON del juego.</div></div><div class="grid" id="docsGrid"></div></section>
+<section id="phrases" class="section"><div class="panel"><div class="k">BANCO DE FRASES / HUELLA / CUARTA PARED</div><h2>Frases que merecen volver</h2><div class="meta">Semillas para interfaz, making-of, Easter eggs, carteles, objetos y escenas. Estar aquí no las convierte automáticamente en CANON.</div></div><div class="grid" id="phrasesGrid"></div></section>
 </main>
 <script>
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -96,6 +98,9 @@ function healthCard(a){
   : '<div class="disabledPlayer">GLB runtime todavía no disponible. En cuanto Asset Health tenga <code>runtime_ref</code>, esta tarjeta se vuelve interactiva automáticamente.</div>';
  return '<article class="card">'+viewer+'<div class="pad"><div class="k">3D · '+esc(a.id||a.asset_id||'ASSET')+'</div><h2>'+esc(a.display_name||a.name||a.entity_id||a.entity||a.id||a.asset_id)+'</h2><div class="meta">'+esc(state)+(a.next?' · '+esc(a.next):'')+'</div><span class="status '+(src?'good':blocked?'bad':'warn')+'">'+esc(src?'RUNTIME READY':a.human_gate||'HUMAN GATE PENDING')+'</span>'+runtimeNote+'<div class="actions"><a class="btn" href="gym-3d-asset.html">ABRIR GYM 3D</a></div></div></article>';
 }
+function phraseCard(p){
+ return '<article class="card"><div class="pad"><div class="k">'+esc((p.destinations||[]).slice(0,3).join(' · ')||'FRASE')+'</div><h2 style="font-size:22px;line-height:1.25">“'+esc(p.text)+'”</h2><div class="meta">'+esc(p.origin||'ISL')+'</div><span class="status warn">'+esc(p.state||'SEED')+'</span></div></article>';
+}
 function docsCard(d){
  const icon=d.kind==='legal'?'⚖':d.kind==='marketing'?'↗':d.kind==='checkpoint'?'◷':d.kind==='supplier_pack'||d.kind==='rfq'?'⚒':d.kind==='automation'?'⌁':d.kind==='brief'?'✎':'▤';
  return '<article class="card"><div class="thumb">'+icon+'</div><div class="pad"><div class="k">'+esc(d.group||d.kind||'DOC')+'</div><h2>'+esc(d.title)+'</h2><div class="meta">'+esc(d.id||'')+' · '+esc(d.source||'source')+'</div><span class="status '+(/SOURCE_OF_TRUTH|CURRENT|ACTIVE|PHYSICAL_SOURCE/.test(d.status||'')?'good':'warn')+'">'+esc(d.status||'CURRENT')+'</span>'+(d.url?'<div class="actions"><a class="btn" target="_blank" rel="noopener" href="'+esc(d.url)+'">ABRIR DOC</a></div>':'')+'</div></article>';
@@ -111,10 +116,11 @@ Promise.all([
  fetch('data/isl-external-lab-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-music-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-asset-health-current.json',{cache:'no-store'}).then(r=>r.json()),
- fetch('data/isl-docs-library-current.json',{cache:'no-store'}).then(r=>r.json())
-]).then(([lib,lab,music,health,docsLib])=>{
+ fetch('data/isl-docs-library-current.json',{cache:'no-store'}).then(r=>r.json()),
+ fetch('data/isl-phrase-bank-current.json',{cache:'no-store'}).then(r=>r.json())
+]).then(([lib,lab,music,health,docsLib,phraseBank])=>{
  const archive=lib.assets||[], ext=lab.assets||[], tracks=music.tracks||[], hsAll=health.assets||health.entities||health.items||[], hs=hsAll.filter(x=>x.asset_id!=="ISL_MUSIC_GALLERY");
- const videos=[...archive.filter(x=>x.type==='video'),...ext.filter(x=>x.type==='video')], docs=docsLib.docs||[];
+ const videos=[...archive.filter(x=>x.type==='video'),...ext.filter(x=>x.type==='video')], docs=docsLib.docs||[], phrases=phraseBank.phrases||[];
  countArchive.textContent=archive.length;countLab.textContent=ext.length;count3d.textContent=hs.length;countMusic.textContent=tracks.length;
  archiveGrid.innerHTML=archive.map(archiveCard).join('')||'<div class="card empty">Sin archivo.</div>';
  labGrid.innerHTML=ext.map(labCard).join('')||'<div class="card empty">Sin External Lab.</div>';
@@ -122,6 +128,7 @@ Promise.all([
  videoGrid.innerHTML=videos.map(a=>a.runtime_src?archiveCard(a):labCard(a)).join('')||'<div class="card empty">Sin vídeo registrado.</div>';
  musicGrid.innerHTML=tracks.map(musicCard).join('')||'<div class="card empty">Sin música registrada.</div>';
  docsGrid.innerHTML=docs.map(docsCard).join('')||'<div class="card empty">Sin documentos registrados.</div>';
+ phrasesGrid.innerHTML=phrases.map(phraseCard).join('')||'<div class="card empty">Sin frases registradas.</div>';
  overviewLab.innerHTML=ext.slice(0,6).map(labCard).join('');
  overview3d.innerHTML=hs.slice(0,4).map(healthCard).join('');
  overviewMusic.innerHTML=[...tracks].sort((a,b)=>Number(!!b.runtime_src)-Number(!!a.runtime_src)||Number(!!b.drive_id)-Number(!!a.drive_id)).slice(0,4).map(musicCard).join('');
@@ -129,7 +136,7 @@ Promise.all([
  setTab(location.hash.slice(1)||'overview');
 }).catch(err=>{
  console.error(err);
- ['overviewLab','overview3d','overviewMusic','overviewArchive','archiveGrid','labGrid','threeGrid','videoGrid','musicGrid','docsGrid'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML='<div class="card empty">No se pudo cargar este registro.</div>'});
+ ['overviewLab','overview3d','overviewMusic','overviewArchive','archiveGrid','labGrid','threeGrid','videoGrid','musicGrid','docsGrid','phrasesGrid'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML='<div class="card empty">No se pudo cargar este registro.</div>'});
  setTab(location.hash.slice(1)||'overview');
 });
 </script>
