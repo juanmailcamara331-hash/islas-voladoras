@@ -12,10 +12,10 @@
       "isl_id": "ISL_PHYSICAL_001",
       "name": "Ancla del Regreso",
       "state": "SUPPLIER_FEEDBACK_RECEIVED",
-      "current_operation": "SUPPLIER_SHORTLIST_EVALUATED_AWAITING_AUTHORITATIVE_FRONT_RECONFIRMATION_AND_COINSAFORANYTHING_ARTWORK_PACKAGE",
+      "current_operation": "AUTHORITATIVE_FRONT_AND_REVERSE_LOCKED_TECHNICAL_EXTRACTION_AND_DIGITAL_CQC_PENDING",
       "front": {
-        "status": "APPROVED_REFERENCE_PENDING_TECHNICAL_EXTRACTION",
-        "source_of_truth": "User-approved original physical mockup / front reference from current physical lane",
+        "status": "AUTHORITATIVE_LOCKED_PENDING_TECHNICAL_EXTRACTION",
+        "source_of_truth": "Human-reconfirmed exact FRONT on 2026-09-22: medal reference with large central anchor, circular eye at top, flowing wind/ribbon around stem, floating islands/clouds, upper-right star, curved text 'ANCLA DEL REGRESO', antique-brass raised perimeter, dark teal + antique brass relic language.",
         "locked": [
           "overall composition",
           "anchor motif",
@@ -26,11 +26,13 @@
         "forbidden": [
           "full redesign",
           "replacement by new stylistic interpretation"
-        ]
+        ],
+        "authority_resolution": "HUMAN_RECONFIRMED_2026-09-22",
+        "support_note": "Technical mask sheet shown with the front is support only until re-extracted or verified against the locked front. Superseded v0.4 outputs remain forbidden manufacturing input."
       },
       "back": {
-        "status": "APPROVED_REFERENCE",
-        "source_of_truth": "User-provided/reconfirmed technical sheet with compass rose/star and text 'SIEMPRE HAY UN LUGAR / AL QUE VOLVER'",
+        "status": "AUTHORITATIVE_LOCKED",
+        "source_of_truth": "Human-reconfirmed exact REVERSE on 2026-09-22: technical sheet 'REVERSO – ARTE FINAL · ISL · v0.2 · 48 mm' with central navigation rose/star, floating island, clouds/wind, teal + antique brass, text 'SIEMPRE HAY UN LUGAR / AL QUE VOLVER'.",
         "locked": [
           "compass rose/star composition",
           "teal enamel",
@@ -44,9 +46,10 @@
           "replace with alternate back",
           "change to spiral/other symbol",
           "regenerate whole sheet unless explicitly requested"
-        ]
+        ],
+        "authority_resolution": "HUMAN_RECONFIRMED_2026-09-22"
       },
-      "next_action": "Human reconfirms exact Ancla FRONT source-of-truth; then assemble authoritative front+locked reverse artwork package and send CoinsForAnything prototype-feasibility reply. Keep The Pins Store draft unsent unless a first-article exception is still useful.",
+      "next_action": "Re-extract or verify FRONT technical layers against the exact locked front; validate REVERSE layers; run human digital CQC; assemble supplier package; prepare CoinsForAnything prototype-feasibility reply. SEND ONLY WITH EXPLICIT USER APPROVAL.",
       "supplier_feedback": {
         "supplier": "The Pins Store",
         "received": "2026-09-22",
@@ -122,7 +125,7 @@
           "digital_proof": true
         },
         "do_not_pay_yet": true,
-        "blocking_issue": "Authoritative FRONT still has historical authority conflict: v0.86 requires human reconfirmation before manufacturing extraction, while current registry marks approved reference pending extraction. Resolve by explicit human reconfirmation; do not infer from recent variants."
+        "blocking_issue": "RESOLVED 2026-09-22 by explicit human reconfirmation of exact authoritative FRONT and REVERSE. Remaining gate is technical extraction/validation + digital CQC, not authority."
       }
     },
     {
