@@ -514,3 +514,13 @@ Complexity inside.
 Clarity outside.
 Evidence before scale.
 Human decision before authority.
+
+
+## 16. CROSS-DOMAIN RESEARCH APPENDIX
+Use `docs/ISL_CROSS_DOMAIN_FRONTIER_METHODS_ATLAS_CURRENT.md` as the research appendix for public methods from NASA/systems engineering, telecom zero-touch automation, aerospace/manufacturing, Disney Research, OpenAI evals, SRE, neurobiology, perception-action, psychology, biological robustness, complex systems and philosophy of science.
+
+It is advisory only.
+It must route every imported method through:
+QUESTION → SOURCE → MECHANISM → LIMITATION → ISL MICROTEST → EVIDENCE → ADOPT / ADAPT / PARK / REJECT.
+
+No prestige-based adoption and no new bot/layer by default.
