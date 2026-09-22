@@ -251,3 +251,70 @@ Los datos informan.
 La memoria alimenta.
 La ficción transforma.
 El autor decide.
+
+
+## SHADOW INTAKE / VIDA ADULTA · 2026-09-22
+
+Objetivo:
+no higienizar en exceso el material humano que alimenta ISL.
+
+Cuando exista confianza/contexto suficiente, el sistema puede pedir al autor UNA pregunta breve sobre material vital real que pueda transformarse en ficción.
+
+Familias de preguntas:
+- amistades secas, agresivas, leales o contradictorias;
+- discusiones, humillaciones, orgullo, ego, cobardía, valentía;
+- deseo, atracción, erotismo adulto, celos, intimidad, rechazo;
+- vagancia, disciplina, talento desperdiciado, autoengaño;
+- ignorancia, arrogancia, curiosidad, aprendizaje;
+- clase, dinero, pobreza, riqueza, trabajo, oportunismo;
+- autoridad, burocracia, ideologías, dogmas, propaganda, instituciones;
+- crítica política o social nacida de experiencia/observación;
+- consumo, exceso, cuerpo, vergüenza, pérdida de control;
+- aislamiento, conducta antisocial, tribu, amistad, lealtad;
+- muerte, enfermedad, cuidado, deterioro;
+- ternura, hogar, reconciliación, humor negro;
+- episodios históricos o culturales que produzcan contradicción útil.
+
+Reglas:
+- preguntar 1–3 cosas como máximo por ocasión;
+- no interrogar por completar una ficha;
+- no asumir que una vivencia privada debe entrar en el juego;
+- no almacenar detalle íntimo innecesario;
+- erotismo sólo entre adultos y con función narrativa;
+- crítica política/ideológica entra como conflicto de ideas/sistemas/personajes, no como doctrina obligatoria del juego;
+- personas reales vivas requieren transformación/consentimiento si fueran identificables;
+- material delicado tiende a D3–D4.
+
+### NPCs DE FRICCIÓN
+La pandilla y secundarios pueden incluir:
+- gente cortante;
+- seca;
+- hostil;
+- agresiva;
+- egoísta;
+- cobarde;
+- vaga;
+- brillante pero insoportable;
+- ignorante pero entrañable;
+- generosa con límites;
+- manipuladora;
+- contradictoria.
+
+No todos deben ser simpáticos.
+No todos deben tener arco de redención.
+No toda rudeza necesita trauma explicativo.
+
+La clave:
+COMPORTAMIENTO → CONSECUENCIA → RELACIÓN,
+no etiqueta moral.
+
+### REFERENCIAS FUNCIONALES
+Rap crítico/satírico, comedia irreverente y sátira social pueden inspirar:
+- densidad verbal;
+- contradicción;
+- hipocresía expuesta;
+- mala leche;
+- observación de clase/poder;
+- humor que nace de una verdad incómoda.
+
+Nunca copiar versos, cadencias, voces, personajes, chistes o estilo reconocible de artistas/obras concretas.
