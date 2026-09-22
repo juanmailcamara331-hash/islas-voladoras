@@ -1,0 +1,136 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "status": "COMMAND_CENTER_ACTION_MAP_CURRENT",
+  "classes": {
+    "NAVIGATION": {
+      "gate": "NONE",
+      "layers": []
+    },
+    "EXPLORE": {
+      "gate": "NONE",
+      "layers": [
+        "context"
+      ]
+    },
+    "CREATE": {
+      "gate": "SOFT",
+      "layers": [
+        "quality",
+        "randomizer",
+        "cross_art",
+        "provenance"
+      ]
+    },
+    "TEST": {
+      "gate": "SOFT",
+      "layers": [
+        "test",
+        "evidence",
+        "human_gate"
+      ]
+    },
+    "DECIDE": {
+      "gate": "SOFT",
+      "layers": [
+        "pc30",
+        "source_of_truth",
+        "human_decision"
+      ]
+    },
+    "PROMOTE": {
+      "gate": "HARD",
+      "layers": [
+        "cqc",
+        "rights",
+        "human_gate",
+        "impact"
+      ]
+    },
+    "PUBLISH": {
+      "gate": "HARD",
+      "layers": [
+        "legal",
+        "rights",
+        "privacy",
+        "marketing",
+        "claims"
+      ]
+    },
+    "PHYSICAL": {
+      "gate": "HARD",
+      "layers": [
+        "physical",
+        "supplier_ip",
+        "sample",
+        "human_gate"
+      ]
+    },
+    "SYSTEM": {
+      "gate": "SOFT",
+      "layers": [
+        "trigger_engine",
+        "event_reflex",
+        "surface_propagation"
+      ]
+    }
+  },
+  "route_hints": [
+    {
+      "match": "galeria.html",
+      "class": "EXPLORE"
+    },
+    {
+      "match": "crear.html",
+      "class": "CREATE"
+    },
+    {
+      "match": "playtest",
+      "class": "TEST"
+    },
+    {
+      "match": "encuestas",
+      "class": "TEST"
+    },
+    {
+      "match": "decidir.html",
+      "class": "DECIDE"
+    },
+    {
+      "match": "external-lab.html",
+      "class": "CREATE"
+    },
+    {
+      "match": "crecimiento.html",
+      "class": "PUBLISH"
+    },
+    {
+      "match": "commercial-health",
+      "class": "PUBLISH"
+    },
+    {
+      "match": "gym-3d-asset.html",
+      "class": "CREATE"
+    },
+    {
+      "match": "project-observatory.html",
+      "class": "SYSTEM"
+    },
+    {
+      "match": "mission-map.html",
+      "class": "SYSTEM"
+    },
+    {
+      "match": "knowledge-health.html",
+      "class": "SYSTEM"
+    },
+    {
+      "match": "crew.html",
+      "class": "EXPLORE"
+    },
+    {
+      "match": "huellas.html",
+      "class": "EXPLORE"
+    }
+  ]
+}
