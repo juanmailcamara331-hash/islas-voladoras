@@ -56,3 +56,28 @@ A) una campanilla rota
 B) una cuerda con nudos de cada tripulante
 C) una placa reglamentaria chamuscada
 Estado: LIGERA / NO CANON / apta para TV/PS4.
+
+
+## PANDILLA / CALLBACK COMBINATOR · 2026-09-22
+Las cápsulas PANDILLA pueden reutilizarse como biblioteca curada de microbeats.
+
+Cada pieza futura debería poder etiquetarse con:
+- speaker;
+- relationship;
+- place;
+- tone;
+- world_state;
+- narrative_window;
+- callback_to;
+- excludes;
+- rarity;
+- payoff_role: seed / echo / twist / crown / release.
+
+El runtime puede seleccionar combinaciones compatibles.
+No generar diálogo nuevo por IA durante la partida.
+
+Objetivo:
+que el jugador sienta variedad y memoria sin perder voz autoral.
+
+Una línea aislada puede ser graciosa.
+Una línea que vuelve tres horas después y corona un hito puede ser memorable.
