@@ -331,3 +331,48 @@ Si una segunda vida mejora claramente el objeto:
 abrir UNA.
 
 No encadenar imagen → vídeo → 3D → físico → campaña sólo porque sea técnicamente posible.
+
+
+## DEFAULT CREATION WEIGHT / ASSISTANT-FIRST · 2026-09-22
+
+Cuando ChatGPT pueda producir directamente el artefacto con suficiente calidad y contexto, esa ruta recibe MAYOR PESO que limitarse a entregar un prompt externo.
+
+Preferencia por defecto:
+DIRECT_ASSISTANT_GENERATION > EXTERNAL_PROMPT_ONLY
+
+Especialmente para:
+- imagen / keyframe / postal;
+- edición o variación visual;
+- texto/microescena;
+- código/microinteracción;
+- análisis/CQC;
+- documentación/handoff;
+- composición de prompts derivados.
+
+Razón:
+la generación directa conserva mejor el contexto acumulado de ISL, PRIMARY, SOURCE_OF_TRUTH, restricciones, lenguaje material y decisiones previas.
+
+No es una exclusividad.
+Midjourney, Gemini, Meshy, Kiri u otras herramientas entran cuando aportan una capacidad distinta o una comparación útil.
+
+### TOOL WEIGHTING
+El router debe ponderar silenciosamente:
+1. contexto ISL disponible;
+2. capacidad de producir el output directamente;
+3. continuidad con assets previos;
+4. necesidad real de herramienta externa;
+5. calidad esperada;
+6. coste/fricción;
+7. segunda vida.
+
+Regla:
+si ChatGPT puede producir directamente una primera versión útil, hacerlo suele ser preferible a delegar inmediatamente.
+
+### CONTINUITY DEFAULT
+Una vez existe VISUAL_REFERENCE_CURRENT:
+- vídeo usa esa imagen como referencia;
+- edición visual parte de esa imagen;
+- 3D usa imagen + brief + vistas/escala;
+- derivados no deben regenerar identidad desde cero.
+
+La exploración multi-tool se usa para contraste deliberado, no por defecto.
