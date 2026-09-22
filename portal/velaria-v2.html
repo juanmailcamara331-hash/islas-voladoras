@@ -257,6 +257,9 @@ body{touch-action:none}
     moveFromPoint(e.clientX,e.clientY,e.target);
   });
   game.addEventListener('touchstart',function(e){
+    // Do not cancel native activation for buttons/links. Android WebView may suppress
+    // the synthesized click when touchstart is preventDefault()'d on an interactive control.
+    if(e.target&&e.target.closest&&e.target.closest('button,a'))return;
     if(!e.touches||!e.touches[0])return;
     var t=e.touches[0];moveFromPoint(t.clientX,t.clientY,e.target);
     e.preventDefault();
