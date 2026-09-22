@@ -1349,3 +1349,19 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Consent/credit gate before public use.
 - NO CANON automatic promotion.
 - Does not displace Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
+
+## 2026-09-22 · ANCLA SUPPLIER FEEDBACK · THE PINS STORE
+- New unread manufacturing reply received and reviewed.
+- Supplier confirms feasibility in principle: iron or zinc alloy, antique brass finish, raised relief, fine engraving, enamel details.
+- Digital proof before production: YES.
+- Supplier states they will not simplify/redesign artwork without discussing proposed changes first.
+- Mould charge and shipping to Spain included.
+- MOQ conflicts with requested prototype lane: supplier requires 25 pcs.
+- Quote: 25 = USD 650 total; 50 ≈ USD 890; 100 ≈ USD 1,280.
+- Estimated production + delivery: 3–4 weeks.
+- DO NOT COMMIT MONEY YET.
+- Missing technical confirmations: exact minimum line width, enamel cell size, relief/engraving limits, recommended iron vs zinc for this exact piece, ~3 mm thickness/top-loop confirmation, and whether a paid 1–3 first-article/sample route exists despite MOQ.
+- Lane state changes from WAITING_SUPPLIER_REPLY → SUPPLIER_FEEDBACK_RECEIVED.
+- Next physical action: targeted technical follow-up against AUTHORITATIVE Ancla spec; then digital proof CQC. No CANON promotion.
+- Conversation continuity rule: future chats boot from MASTER CURRENT + CURRENT WORK POINTER; supplier state lives in registry/pointer, not in chat memory alone. No new checkpoint required just for this reply.
