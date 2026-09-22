@@ -147,6 +147,20 @@ Promise.all([
 </script>
 <script defer src="isl-global-shell.js"></script>
 
+<script id="isl-gallery-media-fallback-v091">
+(function(){
+  document.addEventListener('error',function(e){
+    var img=e.target;
+    if(!(img instanceof HTMLImageElement)||!img.closest('.thumb'))return;
+    var card=img.closest('.card');
+    var span=document.createElement('span');
+    span.setAttribute('aria-hidden','true');
+    span.textContent=card&&card.dataset.url?'◈':'▣';
+    span.title='Vista previa no disponible';
+    img.replaceWith(span);
+  },true);
+})();
+</script>
 <script id="isl-gallery-touch-js-v090">
 (function(){
   var lb=document.createElement('div');lb.id='galleryLightbox';lb.innerHTML='<button type="button" aria-label="Cerrar">×</button><figure><div id="galleryLbMedia"></div><figcaption id="galleryLbCaption"></figcaption></figure>';document.body.appendChild(lb);
