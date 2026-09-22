@@ -1252,3 +1252,11 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Private build exposes RUMBO ISL from private Home/Command Center.
 - Page is print/PDF-friendly for calm offline review and redesign sessions.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
+
+## 2026-09-22 · VELARIA HUMAN LOOP · CLOSED
+- Carrillo Human Lab now starts/retains the current session when opening Velaria.
+- Velaria receives an explicit local return target and returns to Carrillo Human Lab after the test instead of dropping the tester in Recreativa.
+- Return target is constrained to a local .html filename; no arbitrary external redirect.
+- CI guard protects the Carrillo → Velaria → Carrillo loop.
+- HUMAN_DEVICE_GREEN remains PENDING until a real person completes the flow on device.
