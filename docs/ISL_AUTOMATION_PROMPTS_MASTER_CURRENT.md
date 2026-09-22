@@ -415,3 +415,28 @@ Check:
 Maximum one reversible design correction per pass.
 No new bot.
 No auto-CANON.
+
+
+## 17. ROLE STARTER PACK / REPLAY ECONOMY TRIGGER · 2026-09-22
+Trigger:
+cuando se diseñe un tier de Kickstarter/edición física, un nuevo arquetipo jugable, una nueva partida+ o una oferta de replay.
+
+Aplicar:
+- BUY THE GAME ONCE;
+- rol = lente/contrato de inicio, no diagnóstico psicológico ni clase pay-to-win;
+- misma verdad del mundo + hitos esenciales compartidos;
+- cada rol debe cambiar contexto, rutas laterales, callbacks, relaciones, affordances o reliquias, no sólo estadísticas;
+- referencias jungianas = función abstracta y reversible;
+- referencias literarias/humorísticas = función/contradicción, nunca copia de voz, personajes, bromas o iconografía;
+- un tier físico puede incluir un rol inicial temático + objetos coherentes;
+- nuevos roles/replays pueden venderse como add-on barato sólo si no obligan a recomprar el juego ni fragmentan la historia esencial;
+- precio orientativo (p. ej. ~10 EUR) = hipótesis, nunca lock sin test de valor;
+- evitar FOMO, exclusividad irreversible, progresión esencial de pago y ventajas competitivas;
+- validar antes de fijar catálogo: dos roles deben producir primeras horas significativamente distintas sin duplicar todo el juego.
+
+Salida máxima:
+UNA propuesta de rol/tier + hipótesis de valor + prueba barata.
+
+No crear bot nuevo.
+No auto-CANON.
+Return PRIMARY.
