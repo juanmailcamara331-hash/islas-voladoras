@@ -1,3 +1,11 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · VISUAL IDENTITY RECOVERY
+- Human correction: recent mascot generations drifted from the approved identity and are SUPERSEDED as references.
+- Companion AUTHORITATIVE DIRECTION: recover prior approved visual; compact bear-like mouth/muzzle; weird/cute; dumb-punk, curious, slightly unhinged; organic dolphin/fox/bird/dog/cat hybrid; NOT generic fantasy fox.
+- Protagonist DIRECTION: more punk, dark-playful, chaotic-creative and friendly; gothic-comedy function translated to ISL; NOT generic adventure heroine; no literal copying of existing characters.
+- Before any future character generation: RECOVER SOURCE → LOCK FEATURES → DERIVE. Never regenerate from recency alone.
+- No new visual production now. Resume operational priority: canonical private deploy → real human Carrillo → Velaria → Carrillo → HUMAN_DEVICE_GREEN decision.
+- Context risk is high enough to recommend CHECKPOINT + NEW CHAT after this correction is persisted.
+
 # ACTIVE EXECUTION NOTE · 2026-09-22 · CHARACTER VISUAL AUTHORITY RECOVERY
 
 - Human rejected the recent fox-heavy companion generations as visual drift.
