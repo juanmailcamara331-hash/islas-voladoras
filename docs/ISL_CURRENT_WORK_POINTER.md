@@ -1,3 +1,14 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · ATMOSPHERIC FIELD PROPAGATION AUDIT
+- The GLOBAL ATMOSPHERIC FIELD · CONTRADICCIÓN VIVA has now been propagated beyond the three master docs into operational generation surfaces: Method Trigger Engine, Event Reflex Loop, Human Translation Layer, Real World Scan & Mutation, Meta Gifts/Making-of/Easter Egg Trace, Production Patterns/Templates, Entity Creation, Marketing/SEO/GTM, Carrillo Human Lab, Deferred Work Queue and Surface Propagation/Visibility.
+- Global inheritance contract: ACTIVE/CURRENT identity-bearing outputs inherit the field by reference; historical docs are not rewritten en masse.
+- Explicit dual drift detection: DOMESTICATION_DRIFT vs EDGE_NOISE.
+- Explicit ANTI-ASSISTANT contamination guard: detect framework symmetry, consultant tone, forced synthesis, premature closure, generic AI aesthetics and repeated solution patterns.
+- Major creative directions should use counter-reference / anti-reference / ablation where useful. AI references are hypotheses, not authority.
+- Technical/legal/security/privacy/accessibility/backup/build truth remains SOBER/EXEMPT from atmospheric distortion.
+- Active automations updated: Inconsciente ISL, Buenos días ISL, Buenas noches ISL, monthly automation audit; PC-30 prompt updated for future re-enable.
+- Cross-project transfer remains ABSTRACT + DE-IDENTIFIED ONLY: methods may cross, never identity/assets/lore/code/data/clients/metrics/branding/decisions.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. No CANON promotion.
+
 # ACTIVE EXECUTION NOTE · 2026-09-22 · GLOBAL ATMOSPHERIC FIELD / CONTRADICCIÓN VIVA
 - HUMAN AUTHOR DIRECTION: ISL requires an indispensable universal atmospheric field of irreverence, punk contradiction, metaphysical corrosion, liminal futurism, meta-universe tension, fictional non-ordinary perception, material imperfection and tenderness.
 - IMPLEMENTATION RULE: do NOT create a new lane/meta-system by default. The field is inherited through existing `ISL_META_LAYER_ORCHESTRATOR_CURRENT`, `ISL_AUTOMATION_QUALITY_LAYER_CURRENT` and `ISL_AUTOMATION_PROMPTS_MASTER_CURRENT`.
