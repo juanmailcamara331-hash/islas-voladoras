@@ -1232,3 +1232,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Large countercultural festivals are reference-by-function only: ephemeral city, participatory art, temporary ritual/community, teardown and memory; no copied iconography or named-event reproduction.
 - Historical “second-tier” events may feed worldbuilding after context/function/contradiction/mutation.
 - No PRIMARY displacement.
+
+
+## 2026-09-22 · MEANINGFUL ROUTINE / CONTRAST PACING
+- ISL may use work, repetition and mild tedium as deliberate baseline when they build world, economy, skill, relationship or dramatic contrast.
+- No “dopamine hacking” model; design around observable expectation, surprise, effort, uncertainty, mastery, frustration, rest and reward.
+- Candidate experience curve: ROUTINE → FRICTION → MASTERY → EXPECTATION → SURPRISE → DECISION PEAK → CONSEQUENCE → DESCENT → CALM → RE-READING.
+- Ambivalent stimuli can combine comfort/threat, work/ritual, wealth/burden, home/confinement, desire/risk.
+- Tedious loops require an exit/value channel: learning, efficiency, dialogue, microevent, decision, reward or interruption.
+- Accessibility may change task form while preserving narrative/systemic function.
+- Existing automation trigger extended; no new bot.
