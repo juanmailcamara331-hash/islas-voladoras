@@ -257,3 +257,34 @@ Incluso enferma o transformada:
 - no se convierte en objeto-puzzle.
 
 La recuperación puede dejar cicatriz visual, habilidad distinta o recuerdo persistente.
+
+
+## VISUAL AUTHORITY CORRECTION · 2026-09-22
+Human correction after recent image drift.
+
+SOURCE_OF_TRUTH DIRECTION for the primary companion:
+- one strange, lovable companion; NOT a generic fox and NOT a clean heroic fantasy pet;
+- hybrid function remains dolphin + fox + bird + dog + cat, but fused into one believable species;
+- face must preserve the earlier silly/tender identity: rounded, teddy-bear-like mouth/muzzle; slightly goofy; expressive; affectionate; capable of looking a little unhinged;
+- “tonta punkarra” is a positive identity signal: curiosity, awkward confidence, mischief, warmth, oddness, unpredictable body language;
+- silhouette should remain readable and memorable even before detail;
+- aquatic/avian traits must affect silhouette/function, not look pasted on;
+- no “pretty fox with feathers” fallback;
+- no over-polished noble mascot energy;
+- no generic Pixar/AAA cute-animal smoothing;
+- RECENCY IS NOT AUTHORITY: recent fox-heavy generations are SUPERSEDED as identity reference unless the human explicitly re-promotes one.
+
+The exact earlier approved visual asset should be recovered and locked when available. Until then, this textual authority outranks newer generated candidates.
+
+### PROTAGONIST PAIRING DIRECTION
+The protagonist must contrast and rhyme with the companion:
+- young woman;
+- punk, chaotic, inventive, friendly and dark;
+- intelligent but not polished;
+- expressive, slightly dishevelled, capable of deadpan and explosive enthusiasm;
+- gothic/dark-whimsy function may be informed by references such as Wednesday/Addams/Burton, but must be transformed into original ISL language;
+- do NOT copy recognizable costume, face, hairstyle, pose, dialogue or production design from any existing character/film;
+- ISL mutation target: sky-world practicality + punk DIY + worn travel gear + strange tenderness + humor + shadow.
+
+PAIR TEST:
+If protagonist + companion could be mistaken for a generic fantasy-adventure duo, the design is not specific enough.
