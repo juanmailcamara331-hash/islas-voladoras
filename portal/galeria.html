@@ -87,7 +87,7 @@ function archiveCard(a){
 }
 function prismCard(a){
  const drive=a.drive_id||'';
- return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="image"><div class="thumb"><span aria-hidden="true">◈</span></div><div class="pad"><div class="k">MUNDO PRISMA</div><h2>'+esc(a.title||a.id)+'</h2><span class="status warn">'+esc(a.status||'PROTOTYPE SEED')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.law||'')+' · '+esc(a.canon_state||'NO CANON')+'</div></details></div></article>';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-url="'+esc(a.prototype_url||'')+'" data-kind="image"><div class="thumb"><span aria-hidden="true">◈</span></div><div class="pad"><div class="k">MUNDO PRISMA</div><h2>'+esc(a.title||a.id)+'</h2><span class="status warn">'+esc(a.status||'PROTOTYPE SEED')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.law||'')+' · '+esc(a.canon_state||'NO CANON')+'</div></details></div></article>';
 }
 function labCard(a){
  const title=a.name||a.entity||a.id;
@@ -157,11 +157,12 @@ Promise.all([
     if(img){var c=document.createElement('img');c.src=img.currentSrc||img.src;c.alt=img.alt||title;return show(c,title)}
     if(vid){var v=document.createElement('video');v.src=vid.currentSrc||vid.src;v.controls=true;v.autoplay=true;v.playsInline=true;return show(v,title)}
     var drive=card.dataset.drive;
+    var url=card.dataset.url;if(url){window.location.href=url;return}
     if(drive){
       var f=document.createElement('iframe');f.src='https://drive.google.com/file/d/'+encodeURIComponent(drive)+'/preview';f.allow='autoplay';f.title=title;f.style.cssText='width:min(94vw,1100px);height:min(78dvh,760px);border:0;border-radius:16px;background:#000';
       return show(f,title)
     }
-    var url=card.dataset.url;if(url){window.open(url,'_blank','noopener');}
+
   }
   document.addEventListener('click',function(e){
     if(e.target.closest('audio,button,a,input,select,textarea,summary,details,model-viewer'))return;
