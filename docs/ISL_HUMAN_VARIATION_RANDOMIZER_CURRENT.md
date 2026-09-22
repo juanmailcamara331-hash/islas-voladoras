@@ -187,3 +187,106 @@ Event Reflex Loop → source/provenance → registry/gallery/trace → state →
 ## STOP RULE
 Si la variación añade ruido, no usarla.
 La mejor aleatoriedad a veces es hacer algo simple y preciso.
+
+
+## SECTOR / REFERENCE WEIGHTED RANDOMIZER · 2026-09-22
+
+El randomizer puede variar no sólo forma/medio/destino, sino también el campo de conocimiento desde el que nace una pieza.
+
+### SECTORES
+Familias elegibles:
+- arte / oficio;
+- ciencia;
+- filosofía;
+- ingeniería / técnica;
+- antropología / ritual;
+- percepción / neurociencia;
+- arquitectura / espacio;
+- música / sonido;
+- literatura / narrativa;
+- diseño / UX;
+- magia / ilusionismo;
+- museografía / archivo;
+- derecho / rights / provenance;
+- marketing / editorial / framing.
+
+### SELECCIÓN
+Para outputs creativos:
+- 1 sector cercano por defecto;
+- 0–1 sector lejano opcional;
+- 1–5 calas según necesidad real;
+- la pieza puede ser directa, tool-assisted o multicapa;
+- una cala buena gana a cinco capas forzadas.
+
+### PESOS ADAPTATIVOS
+No usar pesos fijos universales.
+Calcular silenciosamente según:
+1. relevancia al PRIMARY;
+2. anti-repetición reciente;
+3. capacidad de cambiar una decisión/experiencia;
+4. coste;
+5. sorpresa útil;
+6. potencial de segunda vida.
+
+Sectores usados recientemente pierden peso temporal.
+Sectores ausentes durante varias iteraciones pueden recuperar peso si son pertinentes.
+
+### REFERENCE MODE
+Elegir también uno de estos modos:
+- NONE;
+- FUNCTIONAL_LIGHT;
+- SECTOR_REFERENCE;
+- HISTORICAL_REFERENCE;
+- LATERAL_REFERENCE;
+- DUAL_FUNCTIONAL_CROSS.
+
+La referencia nunca es obligatoria.
+NONE debe conservar probabilidad significativa para evitar outputs siempre derivados de referencias.
+
+### DISTANCE MUTATION
+Si una referencia domina demasiado:
+- cambiar medio;
+- cambiar estructura;
+- cambiar material;
+- cambiar contexto;
+- cambiar función;
+- introducir una contradicción ISL;
+- o eliminar la referencia.
+
+REFERENCE DISTANCE siempre prevalece sobre sorpresa.
+
+### ANTI-REPETITION EXTENDIDO
+Evitar repetir consecutivamente la misma combinación de:
+- sector;
+- pareja de sectores;
+- medio;
+- destino;
+- tool;
+- número de calas;
+- temperatura emocional;
+- modo de referencia;
+- grado de rareza.
+
+### OUTPUT RANGE
+El randomizer puede producir:
+- regalo directo de una sola cala;
+- imagen/postal;
+- prop/objeto;
+- audio;
+- microescena;
+- criatura;
+- arquitectura;
+- interacción;
+- reliquia;
+- UI/cuarta pared;
+- experimento perceptivo;
+- captura real mutada;
+- 3D;
+- making-of;
+- pieza física;
+- combinación multicapa cuando exista valor real.
+
+### GUARD
+SOURCE_OF_TRUTH + PRIMARY + seguridad + rights + human gate > randomizer.
+No convertir la selección interna en burocracia visible.
+No CANON automático.
