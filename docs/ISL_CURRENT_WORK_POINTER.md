@@ -1,3 +1,15 @@
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-22 · MINIMAL ISL SYMBOL HUMAN REFERENCE
+- HUMAN VISUAL DECISION: the newly supplied minimal four-point navigation-star / compass symbol is accepted as HUMAN VISUAL REFERENCE · STRONG CANDIDATE for ISL identity exploration.
+- STATUS: REFERENCE ONLY · NOT CANON · NOT FINAL LOGO.
+- Preserve exact source proportions/character before any redraw. RECENCY IS NOT AUTHORITY; this human-selected reference outranks later generated substitutions unless explicitly superseded by the human author.
+- LOCKED QUALITIES FOR REDRAW STUDY: four primary points; dominant vertical axis; compact dense center; restrained symmetry; minimal navigation/relic/seal feeling; strong monochrome readability; works as standalone symbol separated from the ISL / ISLAS VOLADORAS wordmark.
+- DO NOT automatically add island, mill, text, ornate compass rings, steampunk filigree or complex iconography.
+- Carrillo lane: hand-drawn study should start from the exact human-selected image, preserving silhouette and proportion first; stylization/mutation only after direct human comparison.
+- Existing complex `portal/isl-icon-canon.svg`, `portal/isl-icon.svg` and ISL_ICON_CANON/MASTER image family remain distinct and must not be mistaken for this minimal-symbol direction.
+- Historical embedded visual-bible mark remains a separate related reference, not evidence that the new candidate is automatically CANON.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. No CANON displacement.
 # ACTIVE EXECUTION NOTE · 2026-09-22 · ROLE FAMILY CANON DIRECTION
 - HUMAN AUTHOR DECISION: promote the ROLE LENS / STARTING CONTRACT family from hypothesis to CANON DIRECTION for ISL.
 - CANON DIRECTION roles: VIAJERO / DRUIDA / ALQUIMISTA / PIRATA PUNK as first visible family; HECHICERO / CARTÓGRAFO / CRONISTA / GUARDIÁN as second family.
