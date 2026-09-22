@@ -176,6 +176,7 @@ function createKnot(id,data){
  ensureKnots();
  try{if(!localStorage.getItem(DIALECTIC_BACKUP_KEY)) localStorage.setItem(DIALECTIC_BACKUP_KEY,JSON.stringify({saved_at:new Date().toISOString(),from_version:1,state:JSON.parse(JSON.stringify(state))}))}catch(e){}
  if(state.knots[id]) return state.knots[id];
+ try{localStorage.setItem('isl_baile_return_probe_pending','1')}catch(e){}
  state.knots[id]={
    knot_id:id,
    tensions:data.tensions,
