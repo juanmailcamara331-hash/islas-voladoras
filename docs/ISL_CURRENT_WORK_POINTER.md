@@ -1170,3 +1170,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - First mission remains Velaria P0 / HUMAN_DEVICE_GREEN.
 - Evidence modes: BLIND first impression + DEEP Carrillo pass + moments + history + local JSON export.
 - No backend complexity, no CANON authority, no PRIMARY displacement.
+
+
+## 2026-09-22 · LONGITUDINAL PROGRESSION HYPOTHESIS
+- Direction added to Master Creative: austerity → discovery → capabilities → relationships/economy → larger systemic/magical scale → human anchors.
+- Wealth is multidimensional and reversible; no moral score, no mandatory rich ending.
+- New mechanics should follow KNOWN + ONE LEGIBLE MUTATION before larger combinations.
+- Creatures and primary companion may escalate from readable forms to surprising/mythic states while preserving identity and causal continuity.
+- Pratchett is used only as functional reference for keeping huge systems human through everyday detail.
+- Existing automation master now checks progression coherence when relevant; no new bot created.
+- Does not displace Velaria P0 / HUMAN_DEVICE_GREEN.
