@@ -42,3 +42,16 @@ Gameplay idéntico.
 
 ## CQC
 Lectura de intención antes del efecto; función real en mundo; al menos una interacción no violenta; tensión dialéctica; comportamiento reproducible; low-spec sin pérdida de señal.
+
+
+## Ejecución interactiva · 2026-09-22
+Estado: SOURCE IMPLEMENTED · HUMAN EVIDENCE PENDING · NO CANON PROMOTION.
+
+Integración real en `portal/isla-baile-inagotable.html`:
+- Danzante-Aguja: telegraph de dos pulsos antes de comprometer movimiento; sincroniza o cambia de referencia según el pulso del distrito.
+- Consejero de Niebla: favor abre atajo con deuda; contradicción sólo reduce influencia si existe evidencia visible en el estado del distrito.
+- Escarabeo-Registrador: despliega placas antes de registrar; conserva una sola cadena significativa e ignora ruido cuando no hay cambio de mundo.
+- Las interacciones persisten dentro de `isl_dance_island_v1` y escriben en `isl_huellas_events_v2`.
+- CI protege presencia de las tres criaturas, sus acciones y la integración con Huellas.
+
+Siguiente bloque B: NUDOS persistentes. Después: CQC cruzado B × A. Velaria V2 P0 sigue PRIMARY y HUMAN_DEVICE_GREEN sigue pendiente.
