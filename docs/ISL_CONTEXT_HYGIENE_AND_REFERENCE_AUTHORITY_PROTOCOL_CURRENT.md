@@ -72,3 +72,16 @@ STOP → IDENTIFY LAST GOOD → MARK WRONG OUTPUT SUPERSEDED → RESTORE SOURCE_
 ## PRINCIPIO
 RECENCY IS NOT AUTHORITY.
 THE APPROVED ASSET WINS.
+
+
+## 7. IDENTITY DRIFT GUARD · 2026-09-22
+Para protagonista/compañera/personajes emblemáticos:
+- una generación reciente más bonita NO sustituye una identidad aprobada;
+- "premium", "cinematic" o "AAA" no son criterios de autoridad;
+- la rareza específica, silueta, boca, gesto, proporción y energía pueden estar LOCKED;
+- si el usuario dice "la otra era mejor", localizar LAST GOOD antes de producir otra versión;
+- cualquier salida posterior que diluya esos rasgos se marca SUPERSEDED / DO_NOT_USE.
+
+Caso activo:
+- compañera: recuperar LAST GOOD con boca/hocico más tipo osito y energía tonta-punkarra;
+- protagonista: mantener punk + oscuridad juguetona + creatividad + simpatía + caos, evitando aventurera fantasy genérica.
