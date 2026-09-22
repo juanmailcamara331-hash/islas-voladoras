@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "status": "ACTIVE",
+  "rule": "ISL_NO_DEPENDS_ON_REMEMBERING_PROTOCOLS_EVENTS_TRIGGER_CONSEQUENCES",
+  "default_primary": "VELARIA_V2_P0",
+  "events": {
+    "VISUAL_ARTIFACT_FROM_HUMAN_TRACE": {
+      "layers": [
+        "M2",
+        "M3",
+        "M4",
+        "M11"
+      ],
+      "required": [
+        "identify_source_of_truth",
+        "link_human_trace",
+        "record_provenance",
+        "register_gallery",
+        "set_canon_state",
+        "persist_asset",
+        "return_to_primary"
+      ],
+      "human_gate": false,
+      "canon": "NO_AUTO_PROMOTION"
+    },
+    "NEW_VISUAL_ARTIFACT": {
+      "layers": [
+        "M2",
+        "M11"
+      ],
+      "required": [
+        "identify_source_of_truth",
+        "record_provenance",
+        "register_gallery",
+        "persist_asset",
+        "return_to_primary"
+      ]
+    },
+    "HUMAN_TRACE_CAPTURED": {
+      "layers": [
+        "M3",
+        "M2"
+      ],
+      "required": [
+        "classify_trace",
+        "persist_trace",
+        "link_related_entities",
+        "set_canon_state",
+        "return_to_primary"
+      ],
+      "canon": "NO_AUTO_PROMOTION"
+    },
+    "NEW_PHYSICAL_ASSET_STATE": {
+      "layers": [
+        "M7",
+        "M2",
+        "M1"
+      ],
+      "required": [
+        "update_physical_registry",
+        "persist_supplier_state",
+        "human_gate_if_irreversible",
+        "return_to_primary"
+      ]
+    },
+    "SUPPLIER_OUTREACH": {
+      "layers": [
+        "M5",
+        "M7"
+      ],
+      "required": [
+        "record_outreach",
+        "preserve_supplier_thread",
+        "wait_for_reply",
+        "return_to_primary"
+      ]
+    },
+    "PLAYABLE_CHANGE": {
+      "layers": [
+        "M9",
+        "M1"
+      ],
+      "required": [
+        "capability_check",
+        "regression_check",
+        "human_device_gate",
+        "return_to_primary"
+      ]
+    },
+    "CHECKPOINT_CHANGE": {
+      "layers": [
+        "M0",
+        "M2"
+      ],
+      "required": [
+        "update_master_pointer",
+        "retire_obsolete_boots",
+        "verify_current_chain"
+      ]
+    }
+  },
+  "post_action_hook": "docs/ISL_POST_ACTION_COMMIT_HOOK_CURRENT.md",
+  "watchdog": "docs/ISL_WATCHDOG_DRIFT_REVIEW_CURRENT.md"
+}
