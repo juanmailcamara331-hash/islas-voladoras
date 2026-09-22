@@ -78,3 +78,20 @@ for token in [
 ]:
     if token not in friend:
         fail(f"Playtest friend mode missing delayed NUDO evidence token: {token}")
+
+
+# Carrillo -> Velaria -> Carrillo closed human-test loop
+carrillo=(P.parent/"private-site"/"carrillo-human-lab.html").read_text(encoding="utf-8")
+velaria=(P/"velaria-v2.html").read_text(encoding="utf-8")
+for token in [
+    "velaria-v2.html?friends=1&return=carrillo-human-lab.html",
+    "openVelaria",
+]:
+    if token not in carrillo:
+        fail(f"Carrillo Human Lab missing closed-loop token: {token}")
+for token in [
+    "safeReturnTarget",
+    "returnTarget",
+]:
+    if token not in velaria:
+        fail(f"Velaria missing safe return-loop token: {token}")
