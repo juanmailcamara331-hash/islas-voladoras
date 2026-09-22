@@ -1,9 +1,9 @@
 # ISL PRIVATE DEPLOY TRIGGER
-version=v0.89
+version=v0.90.1
 date=2026-09-22
-target=islas-voladoras-isl-private-i1oq
-site_id=6182a9ad-e228-41b9-816a-1cf7d750e7e7
-reason=first authenticated Command Center private deployment
+target=islas-voladoras-isl-private
+site_id=f3cb9c63-9ff1-4de2-b6df-c8e6af403a4f
+reason=recover canonical private deploy for Carrillo-Velaria human gate
 
 retry=explicit-netlify-site-link
 
@@ -14,3 +14,5 @@ strategy=sso-protected-alias-on-authorized-project
 trigger=deploy-v0.89-rumbo-carrillo-velaria
 
 trigger=deploy-v0.89-authorized-sso-alias
+
+trigger=deploy-v0.90.1-canonical-private-recovery
