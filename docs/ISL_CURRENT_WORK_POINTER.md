@@ -1162,3 +1162,11 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Raw answers persist locally in isl_baile_return_evidence_v1.
 - No scoring, no automatic interpretation, no CANON promotion.
 - Gate now requires real human answers before causal-recall can move from HOLD.
+
+
+## 2026-09-22 · PARALLEL LANE · CARRILLO HUMAN LAB v0.1
+- Private web source implemented at private-site/carrillo-human-lab.html.
+- Included only by netlify-private-build.sh; public portal build does not contain it.
+- First mission remains Velaria P0 / HUMAN_DEVICE_GREEN.
+- Evidence modes: BLIND first impression + DEEP Carrillo pass + moments + history + local JSON export.
+- No backend complexity, no CANON authority, no PRIMARY displacement.
