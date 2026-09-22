@@ -79,3 +79,31 @@ Guardas:
 
 Test previo a CF-30:
 comparar 2 starter roles en una misma primera hora y comprobar si el jugador percibe una experiencia distinta por decisiones/contexto/relaciones, no por simple reskin.
+
+
+## CANON DIRECTION · ROLE FAMILY · 2026-09-22
+Human author decision:
+ROLE LENS / STARTING CONTRACT is now CANON DIRECTION for ISL.
+
+First visible family:
+VIAJERO / DRUIDA / ALQUIMISTA / PIRATA PUNK.
+
+Second family:
+HECHICERO / CARTÓGRAFO / CRONISTA / GUARDIÁN.
+
+Supreme supporter/worldbuilder direction:
+ARCHITECT OF THE PRISM / FORJADOR DEL HORIZONTE (working names).
+
+Commercial boundary:
+- buy the base game once;
+- role packs expand replay, not ownership of the game;
+- starter physical tiers may embody one role;
+- low-cost additional role packs remain a pricing hypothesis, not a locked price;
+- supreme tier may bundle broad replay access + premium physical artifacts + supporter recognition;
+- no essential story, core ending, required power or competitive advantage is sold only through premium tier.
+
+Design boundary:
+- simple archetype language outside;
+- deep systemic consequences underneath;
+- same world truth, different route through it;
+- myth/pop/literary references are transformed by function, never copied.
