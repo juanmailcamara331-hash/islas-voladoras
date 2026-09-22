@@ -169,9 +169,11 @@ body{touch-action:none}
     <div class="place"><b>VELARIA</b><small>Distrito bajo · después de La Separación</small></div>
   </div>
 
-  <div class="notice" id="notice" role="status" aria-live="polite">El viento tira hacia la derecha.</div>\n  <div class="windReadout" aria-label="El viento sopla hacia la derecha"><span>VIENTO</span><b>→</b></div>
+  <div class="notice" id="notice" role="status" aria-live="polite">El viento tira hacia la derecha.</div>
+  <div class="windReadout" aria-label="El viento sopla hacia la derecha"><span>VIENTO</span><b>→</b></div>
 
-  <div class="moveBeacon" id="moveBeacon" aria-hidden="true"></div>\n  <div class="player" id="player"><span class="hair"></span><span class="head"></span><span class="body"></span></div>
+  <div class="moveBeacon" id="moveBeacon" aria-hidden="true"></div>
+  <div class="player" id="player"><span class="hair"></span><span class="head"></span><span class="body"></span></div>
   <div class="friend" id="friend"><span class="head"></span><span class="body"></span></div>
   <div class="anchorPost" id="post"></div>
   <div class="flag" id="flag"></div>
@@ -220,7 +222,17 @@ body{touch-action:none}
   var game=document.getElementById('game'),player=document.getElementById('player'),friend=document.getElementById('friend');
   var action=document.getElementById('action'),bubble=document.getElementById('bubble'),hint=document.getElementById('hint');
   var sign=document.getElementById('sign'),post=document.getElementById('post'),notice=document.getElementById('notice'),finish=document.getElementById('finish');
-  var x=15,phase=0,locked=false,moveTimer=null;\n  function safeReturnTarget(){\n    try{\n      var p=new URLSearchParams(location.search),r=p.get('return')||'';\n      if(/^[a-z0-9._-]+\\.html$/i.test(r))return r;\n    }catch(e){}\n    return 'jugar.html?friends=1';\n  }\n  var returnTarget=safeReturnTarget();\n  var returnBoat=document.getElementById('returnBoat');if(returnBoat)returnBoat.href=returnTarget;\n  function feel(ms){try{if(navigator.vibrate)navigator.vibrate(ms)}catch(e){}}
+  var x=15,phase=0,locked=false,moveTimer=null;
+  function safeReturnTarget(){
+    try{
+      var p=new URLSearchParams(location.search),r=p.get('return')||'';
+      if(/^[a-z0-9._-]+\\.html$/i.test(r))return r;
+    }catch(e){}
+    return 'jugar.html?friends=1';
+  }
+  var returnTarget=safeReturnTarget();
+  var returnBoat=document.getElementById('returnBoat');if(returnBoat)returnBoat.href=returnTarget;
+  function feel(ms){try{if(navigator.vibrate)navigator.vibrate(ms)}catch(e){}}
   function setX(v){
     if(locked)return;
     x=Math.max(9,Math.min(78,v));player.style.left=x+'%';
