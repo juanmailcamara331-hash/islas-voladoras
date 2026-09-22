@@ -239,3 +239,35 @@ App nativa sólo si aparecen necesidades reales de offline, notificaciones, cám
 ## PRINCIPIO
 Carrillo no rellena encuestas.
 Carrillo deja evidencia que cambia el mundo cuando la evidencia merece cambiarlo.
+
+
+## IMPLEMENTACIÓN WEB v0.1 · 2026-09-22
+Estado: SOURCE IMPLEMENTED · PRIVATE BUILD ONLY · HUMAN USE PENDING.
+
+Archivo:
+- private-site/carrillo-human-lab.html
+
+Incluye:
+- misión actual Velaria P0 / HUMAN_DEVICE_GREEN;
+- enlace directo a Velaria en Modo Colegas;
+- sesión local versionada;
+- FIRST IMPRESSION separada de DEEP / MODO CARRILLO;
+- Q_PLAY cualitativo por weakest link;
+- marcado de momentos;
+- historial local;
+- export JSON de evidencia;
+- superficie “Mi huella en ISL” sin puntos/karma;
+- aviso explícito de privacidad;
+- sin cámara, micrófono ni grabación por defecto.
+
+Public/private guard:
+- NO vive dentro de /portal;
+- netlify-portal-build.sh no la publica;
+- netlify-private-build.sh la incorpora expresamente al build privado.
+
+Siguiente mejora sólo tras uso real:
+- ingestión de export;
+- dedup de señales;
+- atribución real de cambios en “Mi huella en ISL”;
+- ajuste mobile/PC según evidencia.
+No construir backend complejo antes de probar este flujo.
