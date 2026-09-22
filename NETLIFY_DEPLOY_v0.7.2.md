@@ -146,3 +146,13 @@ RELEASE 2026-09-20T12:05+02:00
 - add /playtest-results short route
 - expose only aggregate sessions, cue performance, confusion/fun counts and bug severity/reproducibility
 - keep free-text notes and bug descriptions out of the public aggregate
+
+
+## RELEASE 2026-09-22 · VELARIA HUMAN DEVICE RETEST
+Reason: publish current portal changes required for real-device validation.
+Includes:
+- Velaria mobile movement discoverability/touch fallback;
+- Command Center mobile overflow containment + self-check;
+- Skyship Lab 01 cheap prototype source;
+- current ISL portal state through commit 8e84af510bd6f3718521d3352875a8c4aa3a2557 and subsequent docs-only updates.
+Gate: HUMAN_DEVICE_GREEN remains pending until physical retest.
