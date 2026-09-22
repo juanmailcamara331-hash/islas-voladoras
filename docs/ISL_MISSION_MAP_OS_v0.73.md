@@ -139,3 +139,34 @@ El Centro de Mandos debe responder en 5 segundos:
 ¿QUÉ ESPERA DE MÍ?
 ¿QUÉ ESTÁ BLOQUEADO?
 ¿QUÉ PUEDE ESPERAR?
+
+## PLAYER-FACING MISSION LADDER · 2026-09-22
+Esta clasificación describe experiencia del jugador; NO sustituye las prioridades P0–P3 de producción.
+
+- M0 MICROEVENTO — 10–60 s · observación/gesto/rareza · sin log obligatorio.
+- M1 ENCUENTRO — 1–5 min · decisión o interacción pequeña.
+- M2 SECUNDARIA — 5–20 min · coste/consecuencia/recurso/vínculo.
+- M3 CADENA — varios M1/M2 conectados mediante memoria/callback.
+- M4 MISIÓN MAYOR — altera una zona, regla o sistema.
+- M5 HITO — cambia lectura, acceso, escala o trayectoria.
+
+### ASCENSO
+M0 → M1/M2 sólo por:
+- interés demostrado;
+- consecuencia real;
+- callback;
+- relación;
+- world state;
+- hito narrativo.
+
+No promover por número de clicks.
+
+### DENSITY ROUTER
+La presentación puede variar por conducta observable:
+- jugador directo → menor interrupción lateral + señal principal más limpia;
+- jugador observador → más M0/M1, callbacks, detalles y oportunidades laterales;
+- explorador → más rutas/secretos;
+- social → más encuentros/vínculos;
+- sistémico/artesano → más reparaciones, economía, crafting y consecuencias de sistemas.
+
+Hitos M5 y verdad global del mundo permanecen compartidos.
