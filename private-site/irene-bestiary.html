@@ -17,6 +17,7 @@ input,textarea,select{width:100%;border:1px solid #38535d;border-radius:10px;bac
 .preview{min-height:280px;border:1px dashed #49636c;border-radius:14px;background:#071117;display:grid;place-items:center;overflow:hidden}.preview img,.preview video{width:100%;height:auto;display:block}.empty{color:#799099;font-size:10px;text-align:center;padding:20px}
 .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid #41616b;border-radius:10px;background:#0a1b22;color:#e8f2f3;padding:11px 13px;font-weight:900;font-size:10px;text-decoration:none}.btn.primary{background:#15313a;border-color:#648995}.btn.gold{background:#2a2216;border-color:#8a6a3f;color:#ffe7b2}
 .rule{margin-top:12px;border-left:3px solid var(--green);padding:10px 12px;background:#0d1c18;border-radius:8px;color:#b8d8c7;font-size:9px}.log{display:grid;gap:8px;margin-top:10px}.entry{border:1px solid #2d4650;border-radius:12px;padding:10px;background:#071218}.entry b{font-size:10px}.entry small{display:block;color:#7e969c;margin-top:3px}.entry p{font-size:10px;margin:7px 0 0;color:#b9c8ca}
+.timeline{display:flex;gap:10px;overflow-x:auto;padding:10px 2px 14px;scroll-snap-type:x mandatory}.shot{min-width:170px;max-width:170px;scroll-snap-align:start;border:1px solid #314b54;border-radius:14px;overflow:hidden;background:#061015;cursor:pointer}.shot .thumb{height:102px;background:#02070a;display:grid;place-items:center;overflow:hidden}.shot img,.shot video{width:100%;height:100%;object-fit:cover}.shot .meta{padding:9px}.shot .meta b{display:block;font-size:9px}.shot .meta small{display:block;color:#81989e;font-size:8px;margin-top:3px}.cinema{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:20;padding:18px}.cinema.open{display:flex}.cinemaBox{width:min(1000px,96vw);background:#05090c;border:1px solid #49636c;border-radius:16px;padding:12px}.cinemaBox video,.cinemaBox img{width:100%;max-height:78vh;object-fit:contain;background:#000;border-radius:10px}.cinemaTop{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px}.cinemaTop b{font-size:10px}.cinemaTop button{border:1px solid #49636c;background:#0c171d;color:#fff;border-radius:8px;padding:8px 10px}
 .checks{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.check{border:1px solid #35535e;border-radius:999px;padding:6px 8px;font-size:8px;color:#a9bdc1}.done{border-color:#4b765c;color:#a9e4bd}.now{border-color:#80663c;color:#ffe0a2}
 @media(max-width:720px){.grid{grid-template-columns:1fr}}
 </style>
@@ -71,22 +72,31 @@ input,textarea,select{width:100%;border:1px solid #38535d;border-radius:10px;bac
 </article>
 
 <article class="card">
+<h3>Película del proceso</h3>
+<p>Timeline privada tipo making-of. Los vídeos y fotos reales se guardan localmente en este dispositivo mediante almacenamiento del navegador; no se publican ni se suben automáticamente.</p>
+<div id="timeline" class="timeline"></div>
 <h3>Sesiones guardadas</h3>
-<p>Se guarda localmente sólo la ficha. El archivo de imagen/vídeo permanece en el dispositivo.</p>
 <div id="log" class="log"></div>
 </article>
 </section>
 </main>
+<div id="cinema" class="cinema" aria-hidden="true"><div class="cinemaBox"><div class="cinemaTop"><b id="cinemaTitle">MAKING-OF</b><button id="cinemaClose">CERRAR</button></div><div id="cinemaMedia"></div></div></div>
 
 <script>
 (function(){'use strict';
-const KEY='isl_irene_field_bestiary_v1';
-let fileMeta=null,objectUrl=null;
+const KEY='isl_irene_field_bestiary_v2';
+const LEGACY_KEY='isl_irene_field_bestiary_v1';
+const DB='isl_human_trace_media_v1', STORE='media';
+let fileMeta=null,selectedFile=null,objectUrl=null;
 const $=id=>document.getElementById(id);
-function read(){try{const x=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(x)?x:[]}catch(e){return[]}}
+function read(){try{let raw=localStorage.getItem(KEY);if(!raw){raw=localStorage.getItem(LEGACY_KEY)||'[]'}const x=JSON.parse(raw);return Array.isArray(x)?x:[]}catch(e){return[]}}
 function write(x){localStorage.setItem(KEY,JSON.stringify(x));render()}
+function dbOpen(){return new Promise((ok,no)=>{const r=indexedDB.open(DB,1);r.onupgradeneeded=()=>r.result.createObjectStore(STORE);r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)})}
+async function mediaPut(id,file){const db=await dbOpen();return new Promise((ok,no)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(file,id);tx.oncomplete=()=>ok();tx.onerror=()=>no(tx.error)})}
+async function mediaGet(id){const db=await dbOpen();return new Promise((ok,no)=>{const r=db.transaction(STORE).objectStore(STORE).get(id);r.onsuccess=()=>ok(r.result||null);r.onerror=()=>no(r.error)})}
 $('media').addEventListener('change',()=>{
  const f=$('media').files[0]; if(!f)return;
+ selectedFile=f;
  if(objectUrl)URL.revokeObjectURL(objectUrl); objectUrl=URL.createObjectURL(f);
  fileMeta={name:f.name,type:f.type,size:f.size,lastModified:f.lastModified};
  $('preview').innerHTML='';
@@ -94,9 +104,11 @@ $('media').addEventListener('change',()=>{
  el.src=objectUrl;if(el.tagName==='VIDEO'){el.controls=true;el.playsInline=true}
  $('preview').appendChild(el);
 });
-$('save').onclick=()=>{
+$('save').onclick=async()=>{
+ const id='irene_'+Date.now();
+ if(selectedFile){try{await mediaPut(id,selectedFile)}catch(e){alert('No se pudo guardar el archivo real en este navegador. La ficha sí puede guardarse.');}}
  const arr=read(); arr.push({
-  id:'irene_'+Date.now(),
+  id,
   created_at:new Date().toISOString(),
   piece:$('piece').value,
   view:$('view').value,
@@ -104,14 +116,34 @@ $('save').onclick=()=>{
   protect:$('protect').value.trim(),
   credit:$('credit').value,
   media:fileMeta,
+  media_id:selectedFile?id:null,
   status:'HUMAN_TRACE_RAW',
   canon:false
  });
- write(arr);$('save').textContent='GUARDADO';
+ write(arr);$('save').textContent='GUARDADO · TIMELINE ACTUALIZADA';
 };
-function render(){
- const arr=read().slice().reverse(),el=$('log');
- el.innerHTML=arr.length?arr.map(x=>'<div class="entry"><b>'+x.piece+' · '+x.view+'</b><small>'+new Date(x.created_at).toLocaleString()+' · '+x.status+'</small><p>'+(x.quote||'Sin frase todavía.')+'</p></div>').join(''):'<div class="entry"><b>Aún no hay huellas.</b><small>Haz el primer boceto y guárdalo tal cual.</small></div>';
+async function openShot(x){
+ const blob=x.media_id?await mediaGet(x.media_id):null;
+ if(!blob)return;
+ const url=URL.createObjectURL(blob),wrap=$('cinemaMedia');wrap.innerHTML='';
+ const el=(blob.type||'').startsWith('video/')?document.createElement('video'):document.createElement('img');
+ el.src=url;if(el.tagName==='VIDEO'){el.controls=true;el.autoplay=true;el.playsInline=true}
+ el.onload=el.onloadeddata=()=>{};
+ wrap.appendChild(el);$('cinemaTitle').textContent=x.piece+' · '+x.view;$('cinema').classList.add('open');$('cinema').dataset.url=url;
+}
+$('cinemaClose').onclick=()=>{const u=$('cinema').dataset.url;if(u)URL.revokeObjectURL(u);$('cinema').classList.remove('open');$('cinemaMedia').innerHTML=''};
+async function render(){
+ const arr=read().slice().reverse(),el=$('log'),tl=$('timeline');
+ el.innerHTML=arr.length?arr.map(x=>'<div class="entry"><b>'+x.piece+' · '+x.view+'</b><small>'+new Date(x.created_at).toLocaleString()+' · '+x.status+(x.media_id?' · MEDIA REAL':'')+'</small><p>'+(x.quote||'Sin frase todavía.')+'</p></div>').join(''):'<div class="entry"><b>Aún no hay huellas.</b><small>Haz el primer boceto y guárdalo tal cual.</small></div>';
+ tl.innerHTML='';
+ for(const x of arr){
+  const shot=document.createElement('div');shot.className='shot';
+  const th=document.createElement('div');th.className='thumb';th.innerHTML='<div class="empty">SIN MEDIA LOCAL</div>';
+  const blob=x.media_id?await mediaGet(x.media_id):null;
+  if(blob){const url=URL.createObjectURL(blob);const m=(blob.type||'').startsWith('video/')?document.createElement('video'):document.createElement('img');m.src=url;if(m.tagName==='VIDEO'){m.muted=true;m.playsInline=true;m.preload='metadata'}th.innerHTML='';th.appendChild(m)}
+  const mt=document.createElement('div');mt.className='meta';mt.innerHTML='<b>'+x.piece+'</b><small>'+new Date(x.created_at).toLocaleString()+'</small>';
+  shot.append(th,mt);shot.onclick=()=>openShot(x);tl.appendChild(shot);
+ }
 }
 $('exportAll').onclick=()=>{
  const payload={project:'ISL',surface:'IRENE_FIELD_BESTIARY',exported_at:new Date().toISOString(),entries:read()};
