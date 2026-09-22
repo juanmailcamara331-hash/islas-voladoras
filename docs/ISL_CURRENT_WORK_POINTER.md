@@ -1428,3 +1428,12 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Skyship combat remains research seed with cheap 4-beat prototype next.
 - Mechero 001 remains visual CANDIDATE.
 - Private Netlify still blocked; mobile overflow fix requires real-device retest.
+
+
+## 2026-09-22 · SKYSHIP LAB 01 · CHEAP PROTOTYPE SOURCE READY
+- portal/skyship-lab-01.html created.
+- 1v1 · 4 beats · wind · position · 7 compact actions.
+- Core contradiction: POWER vs POSITION.
+- Non-HP consequence represented as timón/aparejo risk.
+- Cheap-prototype gate satisfied at source level; human understanding still pending.
+- Do not expand fleet/economy/tech tree before human evidence.
