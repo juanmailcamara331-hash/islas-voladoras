@@ -169,3 +169,36 @@ No abrir árbol completo.
 No producción 3D final.
 Primero continuar PRIMARY Velaria y B→NUDOS→CQC B×A.
 Esta rama queda preparada para prototipo barato cuando el lane lo permita.
+
+
+## CURVA DE ESCALA DE LA COMPAÑERA · 2026-09-22
+La compañera debe crecer en paralelo a la alfabetización del jugador.
+
+Inicio:
+- conducta simple;
+- necesidades legibles;
+- pocas habilidades;
+- aspecto relativamente austero;
+- vínculo construido por presencia.
+
+Medio:
+- especialización derivada de experiencias;
+- autonomía creciente;
+- nuevas interacciones con criaturas/mundo;
+- mutaciones visuales que comunican función.
+
+Tarde:
+- capacidades sorprendentes que combinan reglas ya aprendidas;
+- lectura avanzada del mundo;
+- decisiones propias con mayor peso;
+- posibles transformaciones importantes si están causalmente ganadas.
+
+Nunca:
+- transformación gratuita por “nivel”;
+- power-up desconectado de historia;
+- escalada que borra personalidad;
+- forma final obligatoria.
+
+Principio:
+cada evolución debe permitir reconocer a la misma compañera que estaba al principio.
+La rareza crece; la identidad permanece.
