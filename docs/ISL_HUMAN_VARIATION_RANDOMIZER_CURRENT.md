@@ -290,3 +290,35 @@ El randomizer puede producir:
 SOURCE_OF_TRUTH + PRIMARY + seguridad + rights + human gate > randomizer.
 No convertir la selección interna en burocracia visible.
 No CANON automático.
+
+
+## TOOL / EXECUTION WEIGHTING · 2026-09-22
+
+El randomizer no sólo elige QUÉ crear; también CÓMO ejecutarlo.
+
+Modos:
+- DIRECT_ASSISTANT_GENERATION;
+- DIRECT_ASSISTANT_EDIT;
+- EXTERNAL_TOOL_PROMPT;
+- MULTI_TOOL_COMPARE;
+- REAL_WORLD_CAPTURE;
+- HYBRID_REFERENCE_HANDOFF.
+
+Peso por defecto cuando sea viable:
+DIRECT_ASSISTANT_GENERATION = ALTO.
+
+Motivo:
+la ejecución directa dispone del mayor contexto operativo de ISL y reduce drift entre intención, brief y resultado.
+
+External tools ganan peso cuando:
+- existe una capacidad específica no disponible directamente;
+- vídeo/motion requiere una herramienta externa;
+- 3D/scan requiere Meshy/Kiri u otra herramienta;
+- se busca deliberadamente contraste A/B/C;
+- la herramienta aporta una ventaja verificable.
+
+No randomizar herramientas por prestigio.
+No forzar Midjourney/Gemini/Meshy si la pieza puede resolverse mejor directamente.
+
+Si existe VISUAL_REFERENCE_CURRENT, todo derivado recibe CONTINUITY_BIAS alto:
+preservar identidad, composición, material, proporción, desgaste, cámara e iluminación salvo mutación explícita.
