@@ -1296,3 +1296,14 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - New process rule: assistant should proactively recommend CHECKPOINT + NEW CHAT when context density creates real risk (3+ structural changes, rumbo+implementation accumulation, or project-boundary risk).
 - Do not wait for the user to ask.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN pending.
+
+
+## 2026-09-22 · VISUAL BRIEF / CHECKFRAME PATTERN LOCKED
+- User-approved dossier grammar is now abstracted into docs/ISL_VISUAL_BRIEF_CHECKFRAME_PATTERN_CURRENT.md.
+- Functional sequence: PROMISE → UNDERSTANDING → EVIDENCE → METHOD → DIRECTION.
+- Human-facing status frame: [✓] HECHO / [ ] AHORA / [ ] DESPUÉS.
+- Rumbo private web now exposes the official checkframe and a one-tap COPY RUMBO FOR CHATGPT handoff.
+- Carrillo shows compact mission checks without adding process.
+- Automation Master and Magistral Quality Protocol now reuse the pattern; no new bot.
+- Exportable abstraction exists for other projects, explicitly excluding ISL lore/assets/identity/data.
+- Dossier visual principles: hero image, editorial hierarchy, minimal human language, simple diagrams, few pillars, status visible, technical detail secondary.
