@@ -220,6 +220,20 @@
       "source": "drive",
       "url": "https://docs.google.com/document/d/1Jn0bkemKDGIZT2iuU1wchZ9P1NQo4_MO40JDmCORnwE/edit",
       "canon_state": "HISTORICAL"
+    },
+    {
+      "id": "DOC-OPS-001",
+      "title": "Resource / Storage Health",
+      "group": "Operations / Resources",
+      "kind": "operations",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_RESOURCE_STORAGE_HEALTH_CURRENT.md",
+      "canon_state": "TRANSVERSAL",
+      "surfaces": [
+        "gallery",
+        "command_center"
+      ]
     }
   ]
 }
