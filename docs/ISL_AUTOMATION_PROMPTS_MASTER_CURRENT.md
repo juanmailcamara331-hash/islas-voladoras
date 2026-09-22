@@ -218,3 +218,22 @@ Si una automatización demuestra una mejora estable:
 actualizar este MASTER.
 Si una automation ya no aporta valor:
 retirarla.
+
+
+## 11. PROGRESSION COHERENCE TRIGGER · 2026-09-22
+Trigger:
+cuando una acción cambie progresión, economía, nave/hogar, acceso, criatura/compañera, habilidad, escala de mundo o power ceiling.
+
+Chequeo breve:
+- ¿parte de una normalidad ya aprendida?
+- ¿añade una sola mutación legible antes de combinar varias?
+- ¿riqueza/poder abre opciones y costes, no sólo números?
+- ¿amistades/vínculos conservan peso?
+- ¿la criatura que cambia sigue siendo reconocible?
+- ¿la escala épica conserva al menos un ancla cotidiana?
+- ¿hay riesgo de power creep que vuelva irrelevante lo anterior?
+
+Si falla:
+proponer UNA corrección mínima.
+No crear recordatorio nuevo.
+No bloquear PRIMARY por teoría.
