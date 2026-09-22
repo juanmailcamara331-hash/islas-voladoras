@@ -279,3 +279,33 @@ Nunca VIDA REAL → CANON directo.
 No pedir detalles íntimos sin función.
 No crear recordatorio nuevo.
 No convertir cada sesión en entrevista personal.
+
+
+## 13. VISUAL BRIEF / CHECKFRAME TRIGGER · 2026-09-22
+Trigger:
+cuando se cierre un checkpoint, se prepare un brief/PDF, se presente una pieza a humano o una superficie de rumbo empiece a acumular texto.
+
+Aplicar ISL_VISUAL_BRIEF_CHECKFRAME_PATTERN_CURRENT.
+
+Salida preferida:
+- imagen protagonista;
+- titular fuerte;
+- una frase humana;
+- 3–5 pilares;
+- [✓] HECHO / [ ] AHORA / [ ] DESPUÉS;
+- una acción;
+- criterio de salida;
+- links/docs al pie.
+
+Reglas:
+- CONTENT FIRST · SYSTEM BEHIND;
+- estados internos bajo DETALLES;
+- máximo 1–4 AHORA;
+- HECHO requiere evidencia real;
+- limpiar checks obsoletos;
+- no crear bot nuevo;
+- no crear otro documento si basta actualizar Rumbo/brief/checkpoint existente.
+
+Para metodología exportable:
+usar sólo la abstracción desidentificada.
+Nunca exportar lore/assets/identidad/datos ISL.
