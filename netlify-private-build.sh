@@ -5,6 +5,7 @@ bash netlify-portal-build.sh
 rm -rf build/private
 mv build/site build/private
 cp private-site/access-probe.html build/private/access-probe.html
+cp private-site/carrillo-human-lab.html build/private/carrillo-human-lab.html
 
 # PRIVATE HOST SECURITY HEADERS
 cat > build/private/_headers <<'EOF'
@@ -27,4 +28,7 @@ cat > build/private/_headers <<'EOF'
 /sw.js
   Cache-Control: no-cache, no-store, must-revalidate
 EOF
-echo "ISL PRIVATE build OK: full Command Center."
+test -f build/private/carrillo-human-lab.html
+grep -q "Carrillo Human Lab" build/private/carrillo-human-lab.html
+
+echo "ISL PRIVATE build OK: full Command Center + Carrillo Human Lab."
