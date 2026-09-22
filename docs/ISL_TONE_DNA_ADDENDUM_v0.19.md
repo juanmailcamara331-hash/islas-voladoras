@@ -343,3 +343,60 @@ No copiar voz, chistes, personajes ni estructuras reconocibles.
 
 Regla:
 si una escalada sólo añade tamaño/espectáculo y no aumenta decisión, vínculo, consecuencia o sorpresa sistémica, no cuenta como progresión.
+
+
+## FRICCIÓN HUMANA / EROTISMO / SÁTIRA · 2026-09-22
+
+### AMIGOS Y NPCs
+ISL no debe suavizar a todos los secundarios.
+
+Puede haber:
+- amigos secos;
+- colegas que cortan una conversación;
+- personajes agresivos;
+- gente que ayuda mal;
+- afecto expresado con roce;
+- rivalidad;
+- desprecio;
+- lealtad poco sentimental;
+- personas que a veces son divertidas y otras desagradables.
+
+La voz debe depender de quién habla y qué ha ocurrido.
+No convertir rudeza en quippy comedy constante.
+
+### EROTISMO ADULTO
+Puede existir deseo, tensión, atracción, intimidad, sensualidad, celos y rechazo entre adultos cuando:
+- revela relación;
+- altera decisión;
+- crea vulnerabilidad;
+- afecta poder/confianza;
+- introduce contradicción.
+
+Evitar:
+- erotismo como decoración obligatoria;
+- sexualizar todos los vínculos;
+- convertir consentimiento en ambigüedad estética;
+- usar intimidad como recompensa por puntos.
+
+### SÁTIRA / IDEOLOGÍAS / VIDA SOCIAL
+ISL puede satirizar:
+- dogmatismo;
+- burocracia;
+- propaganda;
+- poder;
+- desigualdad;
+- oportunismo;
+- conformismo;
+- vagancia;
+- ignorancia;
+- arrogancia;
+- culto al trabajo;
+- culto al dinero;
+- instituciones y doctrinas de signos distintos.
+
+Una crítica puede aparecer desde un personaje, institución o consecuencia.
+No hace falta que el juego declare una doctrina correcta única.
+
+Cuando una referencia sea un rapero/comedia/obra concreta:
+extraer FUNCIÓN y contradicción;
+no copiar voz, punchlines, letras, ritmo verbal reconocible ni personaje autoral.
