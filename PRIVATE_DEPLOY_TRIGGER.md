@@ -12,3 +12,5 @@ retry=hard-linked-state-json
 strategy=sso-protected-alias-on-authorized-project
 
 trigger=deploy-v0.89-rumbo-carrillo-velaria
+
+trigger=deploy-v0.89-authorized-sso-alias
