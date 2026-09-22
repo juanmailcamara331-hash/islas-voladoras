@@ -1288,3 +1288,11 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Music surface receives same first pass: listen first, technical state behind details.
 - Cross-app rule: human-facing surfaces should show one useful phrase + one clear action; provenance/CQC/state remains available but secondary.
 - Do not delete system metadata; demote it from primary UI.
+
+
+## 2026-09-22 · CHECKPOINT v0.90 · UI / RUMBO / PHYSICAL / R13 HANDOFF
+- New handoff checkpoint: docs/ISL_CHECKPOINT_v0.90_UI_RUMBO_PHYSICAL_R13_HANDOFF_2026-09-22.md
+- Future sessions should boot from v0.90.
+- New process rule: assistant should proactively recommend CHECKPOINT + NEW CHAT when context density creates real risk (3+ structural changes, rumbo+implementation accumulation, or project-boundary risk).
+- Do not wait for the user to ask.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN pending.
