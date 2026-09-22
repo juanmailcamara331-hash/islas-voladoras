@@ -236,6 +236,11 @@ Chequeo breve:
 - ¿una secundaria se volvió relevante por una consecuencia real y no por guion arbitrario?
 - ¿la adaptación narrativa usa conducta observable y pesos reversibles, no perfiles psicológicos rígidos?
 - ¿enfermedad/desastre abre decisiones en vez de simple castigo?
+- ¿un encuentro/microevento está en el rango M0–M5 correcto?
+- ¿la densidad lateral respeta si el jugador va directo u observa/explora?
+- ¿un callback recuerda algo real y cierra/transforma un círculo en vez de repetirse por azar?
+- ¿el diálogo/humor está curado por voz/contexto y no generado porque “toca un chiste”?
+- ¿la historia principal sigue clara aunque el jugador ignore contenido lateral?
 
 Si falla:
 proponer UNA corrección mínima.
