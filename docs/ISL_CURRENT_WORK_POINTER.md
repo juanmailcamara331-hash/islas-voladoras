@@ -1,3 +1,27 @@
+# ACTIVE OVERRIDE · 2026-09-22 · v0.88
+
+The historical content below is preserved for traceability but is NOT the active boot pointer.
+
+ACTIVE CHECKPOINT:
+`docs/ISL_CHECKPOINT_v0.88_GIFT_ENGINE_REFERENCE_DISTANCE_ACTION_ROUTER_RACE_SAFE_SURFACES_2026-09-22.md`
+
+PRIMARY:
+Velaria V2 P0 · HUMAN_DEVICE_GREEN = PENDING.
+
+PARALLEL:
+- Ancla supplier replies;
+- real-world capture mutation;
+- legal P1 gaps when stage-triggered;
+- marketing gated by real product readiness.
+
+NEXT MAIN DESIGN RETURN:
+B → creatures → NUDOS → crossed CQC B×A → then A as contrast/reference.
+
+DO NOT OPEN NEW META-LAYERS BY DEFAULT.
+Use the existing system.
+
+---
+
 # ISL — CURRENT WORK POINTER
 Updated: 2026-09-18
 
