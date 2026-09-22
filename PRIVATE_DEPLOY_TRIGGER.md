@@ -19,3 +19,5 @@ trigger=deploy-v0.90.1-canonical-private-recovery
 
 
 - 2026-09-22T17:17+02:00 · deploy Prism World 001 + Mundos Prisma gallery
+
+- 2026-09-22T17:45+02:00 · retry after explicit --site fix
