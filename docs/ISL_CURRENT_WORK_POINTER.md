@@ -1375,3 +1375,13 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Cross only 1–3 existing systems per implementation; no new-system sprawl.
 - Status: transversal strong hypothesis · NO AUTO-CANON.
 - PRIMARY unchanged.
+
+
+## 2026-09-22 · PRISM WORLD 001 · LIVING GRAVITY
+- New prototype seed: docs/ISL_PRISM_WORLD_001_LIVING_GRAVITY_CURRENT.md
+- Impossible law: gravity leans toward living beings rather than toward a fixed ground.
+- Core read: particles, water, cloth and architecture reveal the vector; no long tutorial.
+- Human consequence: population, forests, herds and gatherings reshape infrastructure and daily life.
+- Cheap falsifiable test: one room + 3 living masses + readable vector + player/object affected.
+- PASS target: human can infer “I fall toward where there is more life” without explanatory text.
+- Status: PROTOTYPE SEED · NO CANON.
