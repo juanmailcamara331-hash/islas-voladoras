@@ -1437,3 +1437,10 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Non-HP consequence represented as timón/aparejo risk.
 - Cheap-prototype gate satisfied at source level; human understanding still pending.
 - Do not expand fleet/economy/tech tree before human evidence.
+
+
+## 2026-09-22 · MOBILE OVERFLOW SELF-CHECK READY
+- portal/mobile-overflow-check.html created.
+- Measures clientWidth vs scrollWidth and lists offending elements.
+- Mobile overflow task is now SOURCE_FIXED + HUMAN_RETEST_READY.
+- PASS criterion: document overflow <= 1 px and no visual side-drift in Command Center.
