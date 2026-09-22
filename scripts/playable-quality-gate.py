@@ -35,6 +35,11 @@ for token in ["velaria-p0-feel-v084","windReadout","Volver a la Recreativa","jug
 if 'id="returnBoat" href="rpg-home.html' in velaria:
     fail("Velaria regression: finish still returns to Cartographer instead of Recreativa")
 
+
+dance=(P/"isla-baile-inagotable.html").read_text(encoding="utf-8",errors="ignore")
+for token in ["Danzante-Aguja","Consejero de Niebla","Escarabeo-Registrador","dancerTelegraph","counselor-favor","archivist-record","isl_huellas_events_v2"]:
+    if token not in dance: fail(f"Baile creature interaction contract missing: {token}")
+
 if errors:
     print("PLAYABLE QUALITY GATE FAILED")
     for e in errors: print(" -",e)
