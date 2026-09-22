@@ -215,3 +215,34 @@ Board direction:
 Authority:
 IRENE HUMAN SOURCE / DRAWINGS > this generated board.
 The board inspires and communicates; it does not overwrite the human source.
+
+
+## ARGUMENT / WORLD PHYSICS HYPOTHESIS · PRISM EYE
+
+Human origin:
+Irene + shared ISL session.
+
+Core:
+The narrow white-crystal eye behaves as a prism of possible worlds. White crystal contains/refracts the full spectrum, so each spectral configuration can reveal a different coherent physical contradiction rather than acting as a generic portal.
+
+Compact formula:
+WHITE CRYSTAL EYE → SPECTRAL REFRACTION → PHYSICAL CONTRADICTION → OTHER WORLD → HUMAN CONSEQUENCE → RETURN / RE-READING.
+
+Design rule:
+Each destination should have one legible physical rule + one contradiction + one human-scale consequence.
+
+Reference-by-function only:
+whimsical internally coherent speculative physics, cosmic ideas grounded in ordinary human consequences and humour. Do not imitate existing settings, characters, prose voice or iconography.
+
+Candidate rule families:
+- gravity bends toward living things;
+- shadows arrive before objects;
+- sound has weight;
+- distance depends on memory;
+- colour changes local material behaviour;
+- wind preserves or erases paths;
+- time differs across connected surfaces.
+
+Status:
+STRONG HUMAN HYPOTHESIS · NO CANON.
+PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
