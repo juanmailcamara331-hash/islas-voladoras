@@ -86,13 +86,15 @@ function archiveCard(a){
  return '<article class="card mediaCard"><div class="thumb">'+media+'</div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
 }
 function prismCard(a){
- const drive=a.drive_id||'';
- return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-url="'+esc(a.prototype_url||'')+'" data-kind="image"><div class="thumb"><span aria-hidden="true">◈</span></div><div class="pad"><div class="k">MUNDO PRISMA</div><h2>'+esc(a.title||a.id)+'</h2><span class="status warn">'+esc(a.status||'PROTOTYPE SEED')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.law||'')+' · '+esc(a.canon_state||'NO CANON')+'</div></details></div></article>';
+ const drive=a.drive_id||'',src=a.runtime_src||'';
+ const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title||a.id)+'">':'<span aria-hidden="true">◈</span>';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-url="'+esc(a.prototype_url||'')+'" data-kind="image"><div class="thumb">'+media+'</div><div class="pad"><div class="k">MUNDO PRISMA</div><h2>'+esc(a.title||a.id)+'</h2><span class="status warn">'+esc(a.status||'PROTOTYPE SEED')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.law||'')+' · '+esc(a.canon_state||'NO CANON')+'</div></details></div></article>';
 }
 function labCard(a){
  const title=a.name||a.entity||a.id;
- const drive=a.drive_id||'';
- return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(a.type||'file')+'"><div class="thumb"><span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span></div><div class="pad"><h2>'+esc(human(title))+'</h2><span class="status warn">NO CANON</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(a.role||''))+' · '+esc(human(a.status||'CANDIDATE'))+'</div></details></div></article>';
+ const drive=a.drive_id||'',src=a.runtime_src||'';
+ const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(human(title))+'">':'<span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span>';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(a.type||'file')+'"><div class="thumb">'+media+'</div><div class="pad"><h2>'+esc(human(title))+'</h2><span class="status warn">NO CANON</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(a.role||''))+' · '+esc(human(a.status||'CANDIDATE'))+'</div></details></div></article>';
 }
 function healthCard(a){
  const state=a.state||a.status||'UNKNOWN', src=a.runtime_ref||a.runtime_src||'';
