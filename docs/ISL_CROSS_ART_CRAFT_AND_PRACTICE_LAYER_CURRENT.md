@@ -109,3 +109,18 @@ usar sólo cuando una disciplina externa pueda mejorar una decisión real.
 
 ## STOP RULE
 Si el cruce suena inteligente pero no cambia una decisión o experiencia, no sirve.
+
+
+## LIVE CULTURE / CITY PERFORMANCE · 2026-09-22
+Para ciudades/islas, cruzar cuando proceda:
+- teatro → blocking, presencia, atención compartida;
+- concierto → dinámica, espera, clímax, silencio, audiencia;
+- festival → ciudad temporal, recorrido, múltiples focos, ritual;
+- museografía → observar sin obligación, capas de lectura;
+- antropología → función social, memoria, pertenencia;
+- arquitectura → plazas, graderíos, backstage, umbrales;
+- ingeniería → montaje/desmontaje, seguridad, fallos;
+- historia cultural → contexto, contradicción, huella.
+
+Regla:
+una ciudad viva debe poder ofrecer algo digno de mirar aunque el jugador no gane nada.
