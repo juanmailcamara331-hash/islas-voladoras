@@ -212,3 +212,59 @@ R4–R11 may be audited in parallel with normal production if they do not block 
 ## Principle
 Scientific rigor protects creative brutality.
 The purpose of backup/testing is to preserve freedom to experiment without losing known-good states.
+
+
+### R13 · PATRIMONIO CREATIVO / ASSETS / ENTES · v0.89 REFRESH
+Incluye:
+- assets visuales históricos;
+- vídeos/previs;
+- criaturas;
+- reliquias;
+- objetos físicos;
+- laboratorios jugables;
+- prototipos;
+- islas/regiones;
+- música/sonido cuando esté registrada;
+- piezas biográficas transformadas;
+- referencias y variantes descartadas con aprendizaje.
+
+Objetivo:
+recalificar lo creado antes de v0.89 con la metodología actual SIN destruir ni regenerar por reflejo.
+
+Cada elemento recibe como mínimo:
+- source/provenance;
+- autoridad / SOURCE_OF_TRUTH si existe;
+- función actual;
+- integración real o huérfana;
+- referencia-distancia / riesgo de copia;
+- lectura 3 escalas cuando sea visual;
+- coste técnico / runtime;
+- accesibilidad cuando sea interactivo;
+- relación con argumento/progresión actual;
+- duplicados/superseded;
+- evidencia humana disponible;
+- decisión: KEEP / MUTATE / PARK / RETIRE;
+- siguiente acción sólo si cambia algo real.
+
+Reglas:
+- REJECTED != DELETED.
+- RECENCY IS NOT AUTHORITY.
+- approved reference beats newer generation.
+- no asset asciende a CANON por nostalgia.
+- no rehacer una pieza que ya cumple su función.
+- preferir integrar/mutar antes que generar reemplazo.
+- máximo 1–3 elementos por pasada salvo auditoría explícita.
+- no bloquear PRIMARY Velaria por backlog histórico.
+
+Primera prioridad R13:
+1. Wind Lab / Molino;
+2. assets usados por Velaria;
+3. nave-hogar;
+4. protagonista/compañera;
+5. assets Molino A/B/C;
+6. resto de Galería por familias.
+
+Estado inicial v0.89:
+- Wind Lab: KEEP + MUTATE LIGHT. Mecánica útil; presentación/tooling vieja; se conserva y se refresca sin convertirlo en PRIMARY.
+- El Molino que Miente: KEEP / HOLD CONTEXT. Concepto sistémico fuerte; no existe hoy como jugable moderno independiente. Reintegrar después de HUMAN_DEVICE_GREEN, no reconstruir todavía.
+- Molino A/B/C: KEEP AS HISTORICAL CANDIDATES. No auto-promote; re-evaluar función/3-scale/reference-distance antes de producción.
