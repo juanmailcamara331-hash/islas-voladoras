@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · VELARIA ANDROID INPUT CHAIN DEPLOYED
+- Real-device evidence confirmed horizontal movement now works on Android/WebView.
+- Next observed blocker was interactive controls: ANCLAR / other buttons did not activate.
+- Root cause in source: Velaria touchstart handler called preventDefault() even when the target was a button/link, suppressing native activation in Android WebView.
+- Minimal fix deployed in commit 59f1db99e476c12199c16f4cb55ff67ecf0b31c8: interactive controls bypass the scene touch preventDefault path.
+- GitHub Pages deployment for 59f1db99 completed SUCCESS on 2026-09-22.
+- Regression guard added in d665b48ade916ca79a7d540c92c0d87afcfe9688.
+- Technical retest sequence now: move → ANCLAR → SUJETAR → MIRAR → final screen → VOLVER.
+- HUMAN_DEVICE_GREEN remains PENDING until the full sequence passes on a real device and then PC-30 blind human evidence is collected.
+- Do not add more touch listeners unless this deployed sequence still fails; if it fails, diagnose the exact container/runtime layer first.
+- PRIMARY remains Velaria V2 P0.
+
 # ACTIVE EXECUTION NOTE · 2026-09-22 · ANCLA AUTHORITY RESOLVED
 - Explicit human reconfirmation closed the historical FRONT authority conflict.
 - FRONT AUTHORITATIVE/LOCKED: central anchor; circular eye at top; wind/ribbon around stem; floating islands/clouds; upper-right star; curved text ANCLA DEL REGRESO; antique brass + dark teal relic language.
