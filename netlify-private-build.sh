@@ -8,6 +8,7 @@ cp private-site/access-probe.html build/private/access-probe.html
 cp private-site/carrillo-human-lab.html build/private/carrillo-human-lab.html
 cp private-site/carrillo-brief.html build/private/carrillo-brief.html
 cp private-site/rumbo-isl.html build/private/rumbo-isl.html
+cp private-site/irene-bestiary.html build/private/irene-bestiary.html
 
 python3 - <<'PY'
 from pathlib import Path
@@ -48,6 +49,7 @@ test -f build/private/carrillo-brief.html
 grep -q "BRIEF DE BOLSILLO" build/private/carrillo-brief.html
 grep -q "Carrillo Human Lab" build/private/carrillo-human-lab.html
 test -f build/private/rumbo-isl.html
+test -f build/private/irene-bestiary.html
 grep -q "Equilibrio vivo" build/private/rumbo-isl.html
 grep -q "islCarrilloPrivateEntry" build/private/index.html
 grep -q "islCarrilloPrivateEntry" build/private/command-center.html
