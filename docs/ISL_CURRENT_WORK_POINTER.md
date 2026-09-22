@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-22 · CHARACTER VISUAL AUTHORITY RECOVERY
+
+- Human rejected the recent fox-heavy companion generations as visual drift.
+- Companion direction restored: coherent dolphin + fox + bird + dog + cat hybrid; rounded teddy-bear-like silly mouth/muzzle; tender, odd, slightly unhinged, “tonta punkarra” energy.
+- Recent “pretty fox with feathers” outputs are SUPERSEDED as identity reference.
+- Exact earlier approved mascot asset should be recovered/locked when available; until then textual authority in `ISL_COMPANION_EVOLUTION_BRANCH_CURRENT.md` outranks recent images.
+- Protagonist direction restored: young woman, punk, chaotic, creative, friendly, dark; gothic/deadpan/dark-whimsy by function only, transformed into original ISL.
+- Automation Master now guards both visual identities; no new bot.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- Operational next action remains: restore/verify canonical private deploy, then one real Carrillo → Velaria → Carrillo device session.
+- Context drift detected in this conversation. Recommended next move after this note: CHECKPOINT + NEW CHAT.
+
 # ACTIVE EXECUTION NOTE · 2026-09-22 · RUMBO v1 + VELARIA HUMAN GATE
 
 - RUMBO VISUAL v1.0 rebuilt as 5-page editorial dossier; v0.91 is superseded as visual baseline.
