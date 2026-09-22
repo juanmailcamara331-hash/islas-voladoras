@@ -103,6 +103,22 @@
       }).catch(function(){});
     })();
 
+    (function installActionRouterStatus(){
+      var main=document.querySelector('main');
+      if(!main||document.getElementById('islActionRouterStatus'))return;
+      var trail=[];try{trail=JSON.parse(localStorage.getItem('isl_action_router_v01')||'[]')}catch(e){}
+      var meaningful=trail.filter(function(x){return x.action_class!=='NAVIGATION'&&x.action_class!=='EXPLORE'}).slice(-6).reverse();
+      var box=document.createElement('section');
+      box.id='islActionRouterStatus';box.className='panel';
+      box.style.cssText='border-color:#665b83;background:linear-gradient(135deg,#171426,#10232b);margin:0 0 14px';
+      var rows=meaningful.length?meaningful.map(function(x){return '<div class="card"><div class="label">'+esc(x.action_class||'ACTION')+' · '+esc(x.gate||'')+'</div><h3 style="font-size:14px;color:#eef8f5;margin:5px 0">'+esc(x.label||x.href||'Acción')+'</h3><div class="meta">'+esc(x.surface||'')+' · local trail</div></div>'}).join(''):'<div class="card"><div class="meta">Todavía no hay acciones significativas registradas en este dispositivo.</div></div>';
+      box.innerHTML='<div class="eyebrow">ACTION ROUTER · METODOLOGÍA EN CADA ACCIÓN</div>'+
+        '<div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap"><div><h2 style="margin:4px 0 7px">Crear · probar · decidir · publicar</h2><div class="sub">Las acciones significativas se clasifican y reciben su gate. Navegar o mirar sigue siendo libre.</div></div><a class="btn" target="_blank" rel="noopener" href="https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_COMMAND_CENTER_ACTION_ROUTER_CURRENT.md">VER CONTRATO</a></div>'+
+        '<div class="grid" style="margin-top:10px">'+rows+'</div>'+
+        '<div class="callout" style="margin-top:10px"><b>Importante:</b> este rastro es local al navegador por ahora. No fingimos que cada clic ya llega a bots externos. Las decisiones de alto valor siguen necesitando persistencia explícita.</div>';
+      main.insertBefore(box,main.firstChild);
+    })();
+
     (function installResourceHealthBlock(){
       var main=document.querySelector('main');
       if(!main||document.getElementById('islResourceHealthBlock'))return;
