@@ -6,6 +6,7 @@ rm -rf build/private
 mv build/site build/private
 cp private-site/access-probe.html build/private/access-probe.html
 cp private-site/carrillo-human-lab.html build/private/carrillo-human-lab.html
+cp private-site/carrillo-brief.html build/private/carrillo-brief.html
 cp private-site/rumbo-isl.html build/private/rumbo-isl.html
 
 python3 - <<'PY'
@@ -43,6 +44,8 @@ cat > build/private/_headers <<'EOF'
   Cache-Control: no-cache, no-store, must-revalidate
 EOF
 test -f build/private/carrillo-human-lab.html
+test -f build/private/carrillo-brief.html
+grep -q "BRIEF DE BOLSILLO" build/private/carrillo-brief.html
 grep -q "Carrillo Human Lab" build/private/carrillo-human-lab.html
 test -f build/private/rumbo-isl.html
 grep -q "Equilibrio vivo" build/private/rumbo-isl.html
