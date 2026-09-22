@@ -1115,3 +1115,17 @@ If another source-level pass does not materially improve clarity/agency/feel/des
 - Future cheap test: CERCA / LIBRE / LLAMADA + object/signal/relation outcomes + one autonomy consequence.
 - Unreal readiness and marketing implications are documented but remain gated.
 - No CANON promotion. Does not displace PRIMARY Velaria V2 P0 or current B→NUDOS→CQC B×A lane.
+
+
+## 2026-09-22 · NEXT PLEASANT ACTION · FIRST WIND CUP
+Official next pleasant gift action:
+Generate the master keyframe for “La Taza del Primer Viento” using the MAXI / Prompt C brief.
+Evaluation gate:
+- materiality;
+- intimacy;
+- wind;
+- depth;
+- implied human life (“alguien vive aquí”).
+If it has soul: open ONE second-life candidate only.
+If it does not: allow one controlled iteration or keep it as a standalone Buenos días ISL gift.
+This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
