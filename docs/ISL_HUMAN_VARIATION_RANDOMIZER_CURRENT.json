@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "status": "ACTIVE",
+  "principle": "VARY_FORM_DEPTH_MEDIUM_RHYTHM_DESTINATION_WITHOUT_CORRUPTING_TRUTH",
+  "energy_profiles": [
+    "LUCIDO",
+    "JUGUETON",
+    "ONIRICO",
+    "PUNK",
+    "CANSADO_BONITO",
+    "CAOTICO_CONTROLADO",
+    "ARCHIVISTA",
+    "ARTESANO"
+  ],
+  "depth_weights": [
+    {
+      "calas": 1,
+      "weight": 18
+    },
+    {
+      "calas": 2,
+      "weight": 26
+    },
+    {
+      "calas": 3,
+      "weight": 24
+    },
+    {
+      "calas": 4,
+      "weight": 18
+    },
+    {
+      "calas": 5,
+      "weight": 10
+    },
+    {
+      "calas": 6,
+      "weight": 4,
+      "requires": "milestone_or_explicit_exploration"
+    }
+  ],
+  "output_families": [
+    "image_postcard_keyframe",
+    "video_previs",
+    "music_audio_ambience",
+    "3d_meshy_prop",
+    "physical_mockup_gift",
+    "micro_scene_dialogue",
+    "ui_sign_board_fourth_wall",
+    "code_microinteraction",
+    "making_of",
+    "easter_egg_callback",
+    "dossier_teaser",
+    "neuroperceptual_experiment",
+    "functional_worldbuilding"
+  ],
+  "destination_families": [
+    "game",
+    "velaria",
+    "arcade",
+    "gallery",
+    "making_of",
+    "easter_egg",
+    "fourth_wall",
+    "family_friends_gift",
+    "teaser",
+    "wallpaper_postcard",
+    "physical",
+    "music",
+    "video",
+    "3d",
+    "prototype",
+    "archive",
+    "human_test",
+    "future_level"
+  ],
+  "selection_order": [
+    "anti_repetition",
+    "current_relevance",
+    "low_cost",
+    "reuse_potential",
+    "surprise",
+    "primary_compatibility"
+  ],
+  "human_texture_allowed": [
+    "composition_asymmetry",
+    "breathing_space",
+    "silence",
+    "small_gestures",
+    "lateral_humor",
+    "material_imperfection",
+    "variable_rhythm",
+    "unexplained_small_oddity"
+  ],
+  "prohibited": [
+    "deliberate_factual_errors",
+    "typos_in_specs_or_safety",
+    "false_provenance",
+    "fake_human_authorship",
+    "invented_testimonials",
+    "accessibility_degradation",
+    "canon_override"
+  ],
+  "significant_output_commit": "ISL_POST_ACTION_COMMIT_HOOK_CURRENT"
+}
