@@ -107,7 +107,16 @@ body{touch-action:none}
 .preplayPreviewCopy{position:absolute;z-index:2;left:12px;right:12px;bottom:10px}
 .preplayPreviewCopy b{display:block;font-size:12px;color:#fff}.preplayPreviewCopy span{display:block;margin-top:3px;font-size:9px;line-height:1.35;color:#c9dcdf}
 @media(max-width:520px){.preplayPreview img{height:145px}.preplayCard{max-height:92dvh}}
-</style></head>
+</style>
+<style id="velaria-intuitive-input-v085">
+.moveBeacon{position:absolute;z-index:24;left:34%;bottom:27%;transform:translateX(-50%);display:grid;place-items:center;width:62px;height:62px;border:1px solid #c8fbff88;border-radius:50%;background:#0b273080;box-shadow:0 0 0 0 #91f2ff33;pointer-events:none;animation:beaconPulse 1.35s ease-out infinite}
+.moveBeacon:before{content:"TOCA";font-size:8px;font-weight:950;letter-spacing:.12em;color:#e9fcff}
+.moveBeacon.hide{display:none}
+@keyframes beaconPulse{0%{box-shadow:0 0 0 0 #91f2ff44;transform:translateX(-50%) scale(.9)}70%{box-shadow:0 0 0 22px #91f2ff00;transform:translateX(-50%) scale(1.04)}100%{box-shadow:0 0 0 0 #91f2ff00;transform:translateX(-50%) scale(.9)}}
+.wind i{opacity:.95;height:3px;box-shadow:0 0 10px #bff8ff55}
+@media(prefers-reduced-motion:reduce){.moveBeacon{animation:none}}
+</style>        
+</head>
 <body>
 <script id="velaria-standalone-isolation-v078">
 (function(){
@@ -162,7 +171,7 @@ body{touch-action:none}
 
   <div class="notice" id="notice" role="status" aria-live="polite">El viento tira hacia la derecha.</div>\n  <div class="windReadout" aria-label="El viento sopla hacia la derecha"><span>VIENTO</span><b>→</b></div>
 
-  <div class="player" id="player"><span class="hair"></span><span class="head"></span><span class="body"></span></div>
+  <div class="moveBeacon" id="moveBeacon" aria-hidden="true"></div>\n  <div class="player" id="player"><span class="hair"></span><span class="head"></span><span class="body"></span></div>
   <div class="friend" id="friend"><span class="head"></span><span class="body"></span></div>
   <div class="anchorPost" id="post"></div>
   <div class="flag" id="flag"></div>
@@ -224,10 +233,25 @@ body{touch-action:none}
   function ripple(px,py){
     var r=document.createElement('i');r.className='tapRipple';r.style.left=px+'px';r.style.top=py+'px';game.appendChild(r);setTimeout(function(){r.remove()},600);
   }
+  var moveBeacon=document.getElementById('moveBeacon');
+  function moveFromPoint(clientX,clientY,target){
+    if(target&&target.closest&&target.closest('button,a'))return;
+    if(finish.classList.contains('show'))return;
+    var rect=game.getBoundingClientRect(),pct=(clientX-rect.left)/rect.width*100;
+    ripple(clientX,clientY);setX(pct);
+    if(moveBeacon)moveBeacon.classList.add('hide');
+  }
   game.addEventListener('pointerdown',function(e){
-    if(e.target.closest('button,a')||finish.classList.contains('show'))return;
-    var rect=game.getBoundingClientRect(),pct=(e.clientX-rect.left)/rect.width*100;
-    ripple(e.clientX,e.clientY);setX(pct);
+    moveFromPoint(e.clientX,e.clientY,e.target);
+  });
+  game.addEventListener('touchstart',function(e){
+    if(!e.touches||!e.touches[0])return;
+    var t=e.touches[0];moveFromPoint(t.clientX,t.clientY,e.target);
+    e.preventDefault();
+  },{passive:false});
+  game.addEventListener('click',function(e){
+    if(window.PointerEvent)return;
+    moveFromPoint(e.clientX,e.clientY,e.target);
   });
   document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='a')setX(x-7);if(e.key==='ArrowRight'||e.key==='d')setX(x+7)});
   action.onclick=function(){
