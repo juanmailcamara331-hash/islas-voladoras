@@ -19,7 +19,7 @@ jobs:
   portal-v068:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: v0.68 static UI gate
         run: python3 scripts/portal-v068-ui-gate.py
