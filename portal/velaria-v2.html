@@ -265,6 +265,8 @@ body{touch-action:none}
     if(window.PointerEvent)return;
     moveFromPoint(e.clientX,e.clientY,e.target);
   });
+  window.ISLVelariaMoveTo=moveFromPoint;
+  window.ISLVelariaSetX=setX;
   document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'||e.key==='a')setX(x-7);if(e.key==='ArrowRight'||e.key==='d')setX(x+7)});
   action.onclick=function(){
     if(phase===1){
@@ -351,5 +353,30 @@ body{touch-action:none}
     document.getElementById('issueSaved').style.display='block';
   });
 })();
-</script><script defer src="playtest-friends.js"></script></body>
+</script><script id="velaria-device-fallback-v086">
+(function(){
+  var last=0;
+  function interactive(t){return t&&t.closest&&t.closest('button,a,input,textarea,select,summary,details');}
+  function run(x,y,t){
+    if(interactive(t))return;
+    var game=document.getElementById('game'),player=document.getElementById('player');
+    if(!game||!player)return;
+    var now=Date.now();if(now-last<180)return;last=now;
+    if(typeof window.ISLVelariaMoveTo==='function'){
+      window.ISLVelariaMoveTo(x,y,t);
+    }else{
+      var r=game.getBoundingClientRect(),pct=Math.max(9,Math.min(78,(x-r.left)/r.width*100));
+      player.style.left=pct+'%';
+      var b=document.getElementById('moveBeacon');if(b)b.classList.add('hide');
+    }
+    var probe=document.getElementById('velariaTouchProbe');
+    if(!probe){probe=document.createElement('div');probe.id='velariaTouchProbe';probe.style.cssText='position:fixed;z-index:2147482800;left:50%;top:max(122px,calc(env(safe-area-inset-top) + 112px));transform:translateX(-50%);padding:5px 8px;border-radius:999px;background:#061018d9;border:1px solid #91f2ff66;color:#dffbff;font:800 8px system-ui;letter-spacing:.08em;pointer-events:none;opacity:0;transition:opacity .18s';document.body.appendChild(probe)}
+    probe.textContent='TOQUE RECIBIDO ✓';probe.style.opacity='1';clearTimeout(probe._t);probe._t=setTimeout(function(){probe.style.opacity='0'},650);
+  }
+  document.addEventListener('pointerup',function(e){run(e.clientX,e.clientY,e.target)},true);
+  document.addEventListener('touchend',function(e){var t=e.changedTouches&&e.changedTouches[0];if(t)run(t.clientX,t.clientY,e.target)}, {capture:true,passive:true});
+  document.addEventListener('click',function(e){if(!window.PointerEvent)run(e.clientX,e.clientY,e.target)},true);
+})();
+</script>
+<script defer src="playtest-friends.js"></script></body>
 </html>
