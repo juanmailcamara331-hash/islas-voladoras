@@ -29,3 +29,27 @@ dialectic_schema_version = 1. Guardar hechos y referencias a cambios. Una migrac
 
 ## Prueba humana
 Éxito si al regresar el jugador reconoce que un cambio actual procede de algo que hizo antes, sin que el juego le diga cuál era la respuesta correcta.
+
+
+## Ejecución interactiva · 2026-09-22
+Estado: SOURCE IMPLEMENTED · HUMAN EVIDENCE PENDING · NO CANON PROMOTION.
+
+Integración real en `portal/isla-baile-inagotable.html`:
+- NUDO-A · MEMORIA / CONFIANZA → Escarabeo-Registrador tras conservar un cambio significativo;
+- NUDO-B · REGLA / ADAPTACIÓN → Danzante-Aguja cuando una variación cambia su referencia y deja ruta persistente;
+- NUDO-C · COSTE / PRIORIDAD → Consejero de Niebla cuando un favor deja acceso + deuda o un rechazo sin leverage retira acceso.
+
+Invariantes implementados:
+- `dialectic_schema_version = 1`;
+- hechos y referencias, no lectura psicológica;
+- persistencia local;
+- creación única por knot_id para impedir farming de intensidad;
+- 1 consecuencia principal;
+- máximo 1 eco actual por NUDO;
+- pregunta no resuelta + revisit hooks;
+- sin moral score.
+
+Pendiente:
+- evidencia humana de causalidad tardía;
+- rollback/migración explícitos;
+- CQC cruzado B×A.
