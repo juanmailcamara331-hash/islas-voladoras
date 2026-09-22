@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "status": "ACTIVE",
+  "assets": [
+    {
+      "asset_id": "ISL_VISUAL_POSTCARD_001",
+      "title": "Mirador de Corrientes Tardías",
+      "type": "image",
+      "origin_event": "VISUAL_ARTIFACT_FROM_HUMAN_TRACE",
+      "source_of_truth": {
+        "drive_id": "1XjUqh_2B0DJo3UueCfoLSNraMYxJGDvJ",
+        "file_name": "ISL_VISUAL_POSTCARD_001_MIRADOR_CORRIENTES_TARDIAS.png"
+      },
+      "linked_trace": "ISL_HUELLA_REAL_002_ATARDECER_CON_LOS_TUYOS_2026-09-22",
+      "linked_entity": "MIRADOR_DE_CORRIENTES_TARDIAS",
+      "status": "CURRENT_CANDIDATE",
+      "provenance": {
+        "origin": "generated visual from user-described human trace",
+        "date": "2026-09-22",
+        "literal_people_or_place_reproduction": false
+      },
+      "storage_locations": [
+        "google_drive"
+      ],
+      "gallery_status": "REGISTERED_PENDING_RUNTIME_SURFACE",
+      "canon_status": "NO_AUTO_PROMOTION",
+      "next_action": "use_as_tone_reference_or_scene_seed_after_human_decision",
+      "primary_return": "VELARIA_V2_P0"
+    }
+  ]
+}
