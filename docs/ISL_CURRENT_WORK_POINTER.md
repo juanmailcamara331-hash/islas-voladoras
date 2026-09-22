@@ -1,3 +1,12 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · SAFE HARBOR / RED BUTTON
+- Authoritative safety anchor: `docs/ISL_SAFE_HARBOR_AND_RED_BUTTON_CURRENT.md`.
+- Human command: `BOTÓN ROJO · VOLVER A CASA`.
+- Friendly Git baseline before deep CONTRADICCIÓN VIVA propagation: `424fe4a51e8bfdb297917d124cace8604fcd1288`.
+- Rollback is NON-DESTRUCTIVE: preserve later experiments as PARKED / REJECTED_LEARNED / ALTERNATE_TIMELINE / LAB_ARCHIVE; never delete history or mass-regenerate approved assets.
+- Safe harbor preserves current state, methodology, references, entities, plans, pillars, human locks, physical/supplier gates, media lifecycles, platform/build state, legal/security/backups, and automation lineage by explicit authority/reference.
+- The harbor itself cannot be silently moved by recency or later experiments; redefining “home” requires explicit human authorization.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE EXECUTION NOTE · 2026-09-22 · ATMOSPHERIC FIELD PROPAGATION AUDIT
 - The GLOBAL ATMOSPHERIC FIELD · CONTRADICCIÓN VIVA has now been propagated beyond the three master docs into operational generation surfaces: Method Trigger Engine, Event Reflex Loop, Human Translation Layer, Real World Scan & Mutation, Meta Gifts/Making-of/Easter Egg Trace, Production Patterns/Templates, Entity Creation, Marketing/SEO/GTM, Carrillo Human Lab, Deferred Work Queue and Surface Propagation/Visibility.
 - Global inheritance contract: ACTIVE/CURRENT identity-bearing outputs inherit the field by reference; historical docs are not rewritten en masse.
