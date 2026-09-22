@@ -201,3 +201,13 @@ EVENT → MARKETING ROUTER → RIGHTS CHECK → FORMAT RANDOMIZER → DISTRIBUTI
 ## STOP RULE
 If marketing begins steering unfinished design for vanity metrics, stop.
 Product evidence outranks content performance.
+
+
+## CROWDFUNDING / ROLE PACK GUARD · 2026-09-22
+Cuando exista campaña real:
+- vender una promesa jugable comprensible, no una taxonomía psicológica;
+- tier físico = objeto + historia de uso + lente de inicio, si el test demuestra valor;
+- mensaje recomendado: “No compras otra copia del juego. Compras otra forma de atravesarlo.” sólo como copy candidato, sujeto a test humano;
+- addons de replay deben ampliar rejugabilidad sin convertir contenido esencial en micropagos;
+- medir reward mix, attach rate de addons, confusión entre tiers y coste real de fulfillment antes de fijar precios;
+- no publicar números ficticios como métricas reales.
