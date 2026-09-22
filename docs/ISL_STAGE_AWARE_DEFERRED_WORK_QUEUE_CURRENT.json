@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "status": "ACTIVE",
+  "states": [
+    "PARKED",
+    "WAITING_DEPENDENCY",
+    "WAITING_HUMAN",
+    "WAITING_DATE",
+    "READY_SOON",
+    "READY_NOW",
+    "DONE",
+    "DROPPED",
+    "SUPERSEDED"
+  ],
+  "priorities": [
+    "P0",
+    "P1",
+    "P2",
+    "P3",
+    "P4"
+  ],
+  "stages": [
+    "DISCOVERY",
+    "CORE_VALIDATION",
+    "VERTICAL_SLICE",
+    "CONTENT_PRODUCTION",
+    "PUBLIC_READINESS",
+    "STORE_PREP",
+    "DEMO_FESTIVAL",
+    "PRELAUNCH",
+    "LAUNCH",
+    "POSTLAUNCH",
+    "PHYSICAL_SAMPLE",
+    "PHYSICAL_PRODUCTION",
+    "LEGAL_COMMERCIAL",
+    "COMMUNITY_BUILD"
+  ],
+  "triggers": [
+    "ON_STAGE_ENTER",
+    "ON_STAGE_EXIT",
+    "ON_BUILD_AVAILABLE",
+    "ON_HUMAN_GATE_PENDING",
+    "ON_HUMAN_GATE_PASSED",
+    "ON_SUPPLIER_REPLY",
+    "ON_SAMPLE_RECEIVED",
+    "ON_ASSET_APPROVED",
+    "ON_RIGHTS_CLOSED",
+    "ON_PUBLICATION_CANDIDATE",
+    "ON_MARKETING_SURFACE_READY",
+    "ON_EXTERNAL_RESPONSE",
+    "ON_COLLABORATOR_JOIN",
+    "ON_METRIC_THRESHOLD",
+    "ON_DATE",
+    "ON_CALENDAR_EVENT",
+    "ON_PRIMARY_CHANGE",
+    "ON_RELEASE_CANDIDATE",
+    "ON_SECURITY_OR_LEGAL_RISK"
+  ],
+  "calendar_policy": {
+    "use_for": [
+      "supplier_deadlines",
+      "scheduled_playtests",
+      "legal_deadlines",
+      "festival_deadlines",
+      "release_dates",
+      "meetings",
+      "sample_windows",
+      "public_campaign_dates"
+    ],
+    "avoid_for": [
+      "vague_ideas",
+      "someday_tasks",
+      "low_priority_possibilities",
+      "speculative_milestones"
+    ]
+  }
+}
