@@ -262,6 +262,21 @@
         "gallery"
       ],
       "canon_state": "REFERENCE"
+    },
+    {
+      "id": "DOC-OPS-001",
+      "path": "docs/ISL_RESOURCE_STORAGE_HEALTH_CURRENT.md",
+      "title": "Resource / Storage Health",
+      "group": "Operations / Resources",
+      "kind": "operations",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_RESOURCE_STORAGE_HEALTH_CURRENT.md",
+      "surfaces": [
+        "gallery",
+        "command_center"
+      ],
+      "canon_state": "TRANSVERSAL"
     }
   ]
 }
