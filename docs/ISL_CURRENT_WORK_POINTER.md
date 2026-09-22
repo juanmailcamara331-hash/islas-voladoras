@@ -1338,3 +1338,14 @@ This does NOT displace PRIMARY Velaria V2 P0 or B→NUDOS→CQC B×A.
 - Automation Master and Magistral Quality Protocol now reuse the pattern; no new bot.
 - Exportable abstraction exists for other projects, explicitly excluding ISL lore/assets/identity/data.
 - Dossier visual principles: hero image, editorial hierarchy, minimal human language, simple diagrams, few pillars, status visible, technical detail secondary.
+
+
+## 2026-09-22 · IRENE HUMAN MAKING-OF TRACE
+- New current doc: docs/ISL_MAKING_OF_HUMAN_TRACE_CURRENT.md
+- HUMAN_TRACE_RAW preserved for Irene's hand-drawn CREATURE_001.
+- Same session spawned an in-progress eye / flying crocodile-island concept with cloud/air dragon transition.
+- Physical notebook + photos/videos/GIFs are valid making-of evidence.
+- Original human drawings are preserved before any AI/digital derivative.
+- Consent/credit gate before public use.
+- NO CANON automatic promotion.
+- Does not displace Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
