@@ -338,3 +338,33 @@ maximum 2–4 candidates only when the active lane actually needs imagery.
 No new bot.
 No CANON promotion from generation alone.
 Return PRIMARY after the visual task.
+
+
+## 14. VISUAL IDENTITY AUTHORITY TRIGGER · 2026-09-22
+Trigger:
+cuando se genere, edite o derive protagonista, compañera, criatura emblemática o asset identitario.
+
+Antes de generar:
+- buscar APPROVED_REFERENCE / AUTHORITATIVE visual;
+- RECENCY IS NOT AUTHORITY;
+- si existe referencia humana aprobada, usarla directamente;
+- variantes recientes no aprobadas = CANDIDATE o SUPERSEDED;
+- no reconstruir por texto si el asset visual existe;
+- bloquear 3–7 rasgos identitarios concretos antes de mutar pose/ropa/edad/contexto.
+
+Companion guard actual:
+- boca/hocico compacto tipo osito;
+- rareza tierna;
+- energía tonta-punkarra / curiosa / ligeramente desquiciada;
+- híbrido orgánico, no collage ni zorro fantasy genérico.
+
+Protagonist guard actual:
+- carismática, punkarra, creativa, alocada y amigable;
+- oscuridad juguetona / gótica, no heroína fantasy estándar;
+- ironía/sequedad + ternura + inventiva;
+- referencia funcional: protagonista gótica de comedia macabra, traducida a lenguaje ISL propio;
+- no copiar diseño, vestuario, peinado, gestos, voz ni composición reconocible de personajes existentes.
+
+Si falta la referencia autoritativa:
+STOP → RECOVER SOURCE → RESUME.
+No crear bot nuevo.
