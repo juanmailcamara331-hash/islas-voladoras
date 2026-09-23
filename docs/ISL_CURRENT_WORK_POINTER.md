@@ -1668,3 +1668,15 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Private Command Center/security/supplier state stays private.
 - Bots may flag stale public surfaces and making-of candidates, but may not auto-publish legacy content or auto-create navigation.
 - Immediate app/web order: inventory → classify CURRENT/ANCESTOR/ARCHIVE → freeze legacy screenshots/assets → redesign IA → build Upgrade shell → migrate proven functions → add Evolution/Making-of → reconnect Gallery/Organismo/PRIMARY → validate mobile/device → verify public/private boundary.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-23 · EXECUTABLE PREFLIGHT
+- Existing ALWAYS-ON PROMPT PREFLIGHT is now backed by `scripts/isl-preflight-gate.py`.
+- This is an execution guard, NOT a new meta-layer and NOT a new authority source.
+- Repository-side states: PASS / NEED_RECOVERY / AUTHORITY_DRIFT / HUMAN_GATE / BLOCKED.
+- Substantive work requires SUBJECT + OPERATION + SOURCE_OF_TRUTH + 1–4 relevant existing layers.
+- PROMOTE / PUBLISH / PHYSICAL require explicit human approval.
+- Guards: NO_BOOT_NO_WORK · RECENCY_NOT_AUTHORITY · NO_SOURCE_NO_MUTATION.
+- Drive↔GitHub MASTER alignment remains checked by the scheduled authority audit.
+- Direct insertion into the Pages workflow was blocked by tool security in this session; do not claim CI wiring complete until that workflow change is separately verified.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. No CANON promotion.
