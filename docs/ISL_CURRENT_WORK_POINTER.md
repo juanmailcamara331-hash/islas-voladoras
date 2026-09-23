@@ -1,3 +1,12 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · COLLECTOR VIDEO SENSOR BALA 02
+- Derived video archived: ISL_COLLECTOR_VIDEO_SENSOR_BALA_02_2026-09-23.mp4 · Drive ID 1eeoUbiLVkFWo1Cnf1xjaV0Azd8bU-SFH.
+- Technical facts: 1280x720, ~23.90 fps, 231 frames, ~9.67 s.
+- Status: SENSOR ARCHIVED · VISUAL HUMAN READ PENDING · NO CANON.
+- Intended function: physical-edition tactility / box-certificate-compass-paper-metal emphasis, separate from BALA 01 statue-led motion.
+- Inherit same guards as BALA 01: source Collector image remains visual authority; no redesign, no new objects, no campaign truth, no displacement of Gift Token HUMAN GATE.
+- Next prepared experiment: BALA 03 · miniature island ambiguity / model-versus-world contradiction, only as SENSOR.
+- PRIMARY / HUMAN_DEVICE_GREEN / SAFE HARBOR unchanged. No checkpoint.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · COLLECTOR VIDEO SENSOR BALA 01
 - Source/reference: ISL Collector / Organism strong visual sensor preserved in Drive.
 - Derived video: ISL_COLLECTOR_VIDEO_SENSOR_BALA_01_2026-09-23.mp4 · Drive ID 17ZoTJrq1m3OebcxSFrHoGkdEOrGNJJvo.
