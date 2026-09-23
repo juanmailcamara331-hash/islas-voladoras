@@ -140,3 +140,22 @@ Build only after enough foundational bullets exist to make the sequence useful.
 ## PRINCIPLE
 THE GALLERY DOES NOT PRETEND THE GAME IS FINISHED.
 IT LETS HUMANS FEEL THE WHOLE PROMISE EARLY ENOUGH TO CORRECT IT.
+
+
+## BOOT / OVERVIEW SENSOR · 2026-09-23
+Internal boot vision board registered:
+docs/ISL_BOOT_VISION_BOARD_SENSOR_RECORD_2026-09-23.md
+
+Use:
+- orientation before second-opinion sessions;
+- fast whole-game overview;
+- comparison against later foundational bullets;
+- internal Gallery entry if clearly labelled INTERNAL VISION SENSOR.
+
+Do not:
+- publish as-is;
+- treat it as gameplay proof;
+- treat it as visual authority;
+- let its explicit cultural-reference names bypass IP/reference-distance guards.
+
+The board is a map of current hypotheses, not a verdict.
