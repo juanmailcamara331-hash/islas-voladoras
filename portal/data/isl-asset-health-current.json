@@ -184,7 +184,29 @@
           "KEEP_MUTATION_02",
           "RETURN_TO_RESULT_01",
           "MUTATE_TEXTURE_AGAIN"
-        ]
+        ],
+        "technical_ab": {
+          "basecolor_mean_rgb_result01": [
+            49.72,
+            43.2,
+            40.02
+          ],
+          "basecolor_mean_rgb_mutation02": [
+            47.13,
+            45.96,
+            43.75
+          ],
+          "roughness_mean_result01": 119.53,
+          "roughness_mean_mutation02": 111.01,
+          "metallic_mean_result01": 109.82,
+          "metallic_mean_mutation02": 190.57,
+          "emissive": "effectively black in both",
+          "interpretation": "Mutation 02 materially changes PBR response while preserving geometry. Global metallic level rises substantially and roughness falls slightly; inspect visually for over-metalization versus intended metal/composite separation.",
+          "human_gate_focus": [
+            "Is metal/composite hierarchy clearer at ~60 mm without making the whole token read as metal?",
+            "Are the four rhythm marks more legible without reading as LEDs, vents, slots or symbols?"
+          ]
+        }
       }
     }
   ]
