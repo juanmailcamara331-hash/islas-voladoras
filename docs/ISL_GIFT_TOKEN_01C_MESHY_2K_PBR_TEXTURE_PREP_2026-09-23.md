@@ -192,3 +192,47 @@ Still required before KEEP of textured descendant:
 Do not promote to CANON.
 Do not overwrite the geometry source.
 Preserve source geometry and textured descendant as separate lineage-linked artifacts.
+
+
+## VISUAL / PERCEPTUAL MATERIAL CQC · RESULT 01 · 2026-09-23
+Evidence used:
+- uploaded textured GLB;
+- UV/base-color inspection;
+- metallic/roughness inspection;
+- approximate front / back / side texture-projected reads at token scale.
+
+Human/material read:
+KEEP:
+- mother shape remains dominant;
+- repair network reads coherently across front/back;
+- orange/warm repair accents support history without creating fantasy glow;
+- backside is materially related to the front;
+- side thickness remains coherent;
+- no steampunk brass overload;
+- no logo/text/rune contamination;
+- no emissive identity.
+
+MUTATE LIGHTLY:
+- metal vs technical composite separation is currently too subtle in small-scale reading;
+- four rhythm marks remain safe from becoming vents/lights, but are now close to disappearing;
+- dark field is strong and cohesive, but some local material zones need slightly clearer roughness/value differentiation;
+- warm repair color should remain restrained and localized, not increase globally.
+
+DECISION:
+MUTATE TEXTURE LIGHTLY · KEEP GEOMETRY · NO REROLL · NO CANON
+
+Result 01 is preserved as a valid descendant / comparison baseline.
+Do not overwrite or delete it.
+
+### MUTATION TARGET 02
+Change ONLY material treatment:
+1. preserve all geometry, UV topology and silhouette;
+2. increase composite-vs-metal distinction slightly through roughness + restrained value/temperature difference;
+3. lift the four rhythm marks just enough to survive ~60 mm reading without turning into lights/vents;
+4. keep repair seam warmth at current or slightly lower intensity;
+5. preserve dark overall field;
+6. do not add dirt, rust, symbols, decals or geometry;
+7. keep emissive effectively black.
+
+Success condition:
+same object, same history, same darkness — clearer material hierarchy at physical scale.
