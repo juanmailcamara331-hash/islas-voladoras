@@ -519,3 +519,49 @@ maximum ONE reversible simplification or health correction per pass.
 No new bot.
 No mass deletion.
 No CANON mutation.
+
+
+## 21. NIGHT SHIFT / HUMAN-SELECTED WORK WINDOW · 2026-09-23
+Trigger:
+el humano define explícitamente una ventana de descanso/trabajo para ESE día.
+
+No asumir horario recurrente.
+Fuera de ventana explícita: OFF.
+
+Hereda Automation Quality Layer + autoridad vigente.
+
+Cada pase:
+RECOVER
+→ NEW DELTA
+→ R0 READ o UNA R1 WRITE
+→ VERIFY
+→ MINIMAL TRACE
+→ STOP.
+
+Estados de salida permitidos:
+SAFE_ACTION_DONE
+READ_ONLY
+STOPPED_ON_ERROR
+WAITING_HUMAN
+
+Hard guards:
+- PARALLEL READ · SERIAL WRITE;
+- máximo una WRITE reversible por pase;
+- R2 siempre HUMAN GATE;
+- no retry loops;
+- no RAW grandes;
+- no producción/publicación automática;
+- no contactos/compras;
+- no secretos/permisos;
+- no master overwrite;
+- no auto-CANON;
+- no aceptar automáticamente una variante creativa;
+- no crear órgano nuevo para resolver deuda de coordinación.
+
+Último pase antes del despertar:
+no abrir nuevo trabajo;
+sintetizar HECHO / CAMBIÓ / BLOQUEADO / ERRORES O LÍMITES / NECESITA TU DECISIÓN / SIGUIENTE.
+
+Si un pase anterior dejó resultado ambiguo:
+RECOVER + VERIFY primero.
+Nunca continuar basándose en una suposición de éxito.
