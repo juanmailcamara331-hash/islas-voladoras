@@ -493,3 +493,29 @@ WORLD COMPOSITION → MOTION/LIGHT/AUDIO → NPC/ENVIRONMENT → CONTEXT PROMPT 
 Do not create a new bot.
 Do not auto-CANON implementation details.
 Return PRIMARY after the task.
+
+
+## 20. ORGANISM CURATION / HEALTH TRIGGER · 2026-09-23
+Trigger:
+monthly audit, 3+ structural changes, authority drift, major checkpoint, lifecycle transition, public/demo milestone, or boot becoming noisy/conflicting.
+
+Apply:
+docs/ISL_ORGANISM_CURATION_AND_VISUAL_HEALTH_CURRENT.md
+
+Check:
+- redundant CURRENT/boot rules;
+- dead prompts/reminders;
+- duplicated authority;
+- toxic cross-links;
+- stale gates;
+- reference overload;
+- chat-only memory dependencies;
+- internal complexity leaking into player/human surfaces;
+- organ starvation (missing evidence);
+- organ inflammation (too much process for little value).
+
+Output:
+maximum ONE reversible simplification or health correction per pass.
+No new bot.
+No mass deletion.
+No CANON mutation.
