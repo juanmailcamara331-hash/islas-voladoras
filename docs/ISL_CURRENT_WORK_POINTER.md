@@ -1,3 +1,12 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · BAILE WORLD-ORGANISM VISUAL BULLET KEEP
+- Registered: docs/ISL_VISUAL_BULLET_BAILE_WORLD_ORGANISM_KEEP_2026-09-23.md.
+- ISL-BULLET-BAILE-WORLD-ORGANISM-01 (“La isla respira porque la gente la sostiene”) = KEEP · STRONG SENSOR · LAB ONLY · NO CANON.
+- Strongest read: world-scale / playable horizon / human heart / rhythm-rest-burden circulation.
+- Rick-like/Burton-like influence remains low and functional, not surface imitation.
+- Do not auto-propagate this look or treat beauty/recency as authority.
+- Exact binary still needs stable Drive/Gallery archival + provenance registration before it is considered safely preserved.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 
 # ACTIVE EXECUTION NOTE · 2026-09-23 · CREATIVE BULLETS LAB
 - New bounded lab surface: portal/creative-bullets.html.
