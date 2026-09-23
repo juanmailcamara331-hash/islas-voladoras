@@ -96,7 +96,7 @@
       "asset_id": "GIFT_TOKEN_01_3D",
       "entity_id": "GIFT_TOKEN_01",
       "display_name": "Gift Token 01 · Human Trace",
-      "state": "TEXTURING_IN_PROGRESS_ARCHIVE_HOLD",
+      "state": "PBR_TECH_PASS_VISUAL_CQC_PENDING",
       "source_refs": [
         "Meshy_AI_Fractured_Echo_0923163321_generate.glb",
         {
@@ -111,7 +111,7 @@
         "texture_prep_doc": "docs/ISL_GIFT_TOKEN_01C_MESHY_2K_PBR_TEXTURE_PREP_2026-09-23.md"
       },
       "binary_access": "ARCHIVE_PENDING",
-      "blocker": "Exact accepted geometry GLB is not yet durably archived in Drive/Gallery; 2K PBR descendant is currently being generated and still requires Material CQC.",
+      "blocker": "Textured descendant passes technical PBR inspection, but exact source geometry still needs durable archival and visual/human Material CQC remains pending.",
       "master_ref": null,
       "runtime_ref": null,
       "qa_required": [
@@ -128,13 +128,30 @@
         "lighting_robustness",
         "independent_glb_validator"
       ],
-      "next": "finish 2K PBR texture, preserve source+descendant lineage, run Material CQC, then classify accepted textured master candidate or mutate texture only",
+      "next": "inspect front/back/side under neutral+raking+low-contrast lighting, normalize to ~60.0 x 50.15 x 9.62 mm, archive source+descendant separately, then KEEP or MUTATE TEXTURE ONLY",
       "human_gate": "PENDING",
       "canon_state": "GIFT_HUMAN_TRACE_NO_CANON",
       "master_required_target": true,
       "runtime_required_target": false,
       "master_required_now": false,
-      "runtime_required_now": false
+      "runtime_required_now": false,
+      "textured_descendant": {
+        "file_name": "Repaired Token PBR.glb",
+        "sha256": "30256dbb4a46fc5e90d51a3e03ea9328110c85380855fd0e56e0c96d408c06ae",
+        "file_size_bytes": 27413884,
+        "mesh_count": 1,
+        "vertex_count": 381772,
+        "face_count": 720895,
+        "pbr_maps": {
+          "base_color": "2048x2048",
+          "metallic_roughness": "2048x2048",
+          "normal": "2048x2048",
+          "emissive": "2048x2048_effectively_black"
+        },
+        "geometry_relation": "same_family_uniform_scale_plus_approx_5_24_percent",
+        "technical_cqc": "PASS",
+        "visual_material_cqc": "PENDING"
+      }
     }
   ]
 }
