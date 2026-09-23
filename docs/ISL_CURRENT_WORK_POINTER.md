@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · IRENE CREATURE 002 SENSOR SET PRESERVED
+- Human-requested Creature 002 side-lab now has three preserved image sensors:
+  - B01 TACTO CIEGO · Drive 1CrvYHwr33Rrv7qU1yiVb6Ol6xP6uUekh
+  - B02 GAMEPLAY CONTEXT · Drive 1Mbr_Rygq3uF8Yvoe1jQK1MNNEg69E84F
+  - B03 ALTAR DEL VIENTO CIEGO · Drive 1pKp_H9gDdZGycAqQ8EPOx1jvk6RkEZrw
+- All remain HUMAN READ PENDING · NO CANON · NO 3D.
+- Human drawing/process remain SOURCE_OF_TRUTH above generated derivatives.
+- Seedance video bullet remains PREPARED ONLY; recommended simplified authority if fired: B03/B02 scene image as single reference, no raw drawing or isolated creature unless identity drifts.
+- Do not let this lateral lab displace Gift Token Mutation 03 gate.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- No checkpoint warranted yet.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · IRENE CREATURE 002 LAB PREP
 - Explicit human-requested lateral HUMAN TRACE lab activated; no image generation yet.
 - Source drawing preserved in Drive: 1aVyZfbzjyr1tSOjC8pu-sBZYasu_SpvW.
