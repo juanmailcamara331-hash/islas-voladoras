@@ -1,3 +1,11 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · GIFT VIDEO KEEP
+- Registered docs/ISL_GIFT_AFTERNOON_01_EL_MISMO_VIENTO_VIDEO_KEEP_2026-09-23.md.
+- Video A = KEEP · HUMAN TRACE · GIFT · NO CANON · NO NEW ORGAN.
+- Technical snapshot: 7.125 s · 1280×720 · 24 fps · SHA-256 1a1bd781290a338e29223f99e3c5df03e96c3873432e80751038ab9e8058b3d8.
+- Useful lateral learning: wind can carry state through world motion/physical consequence; this strengthens but does not prove B2.3 WORLD SIGNAL → PERCEPTUAL CONFIRMATION → TEXT ONLY IF NEEDED.
+- B2.3/B2.4 remain separate; no gift aesthetic auto-propagation into gameplay.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · CINEMATIC AESTHETIC SYNTHESIZER
 - Added docs/ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT.md.
 - Purpose: synthesize lighting, shadow mass, black level, midtones, highlights, color, atmosphere, material response, composition and gameplay readability without freezing ISL into one LUT/look.
