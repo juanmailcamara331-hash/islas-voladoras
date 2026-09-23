@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · LOGO LIVED-SYMBOL BULLET PREPARED
+- Prepared: docs/ISL_BULLET_LOGO_LIVED_SYMBOL_01_PREP_2026-09-23.md.
+- ISL-BULLET-LOGO-LIVED-SYMBOL-01 = PREPARED · IDENTITY TEST · SENSOR · LAB ONLY · NO CANON.
+- world-design-bible.png panel 10 was visually inspected: it contains a historically related four-point / vertical-axis mark family, but is NOT proven to be the exact later human-selected minimal reference.
+- Therefore exact source recovery remains RED; direction remains AMBER.
+- Prompt Magistral A–J is closed with weights, 2-variable Randomizer, baseline comparison, explicit falsifiers, HUMAN GATE and RETURN HOME.
+- Do NOT generate before explicit human launch command: DISPARA / PUM / LÁNZALA / GENERA / APROBADA.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · MAGISTRAL BULLET PREPARATION RULE
 - The existing Quality Protocol now formalizes creative/visual bullet preparation; no new organ/meta-layer was created.
 - Default sequence: RECOVER → PREFLIGHT → minimal methodology cross → weights → randomizer → baseline/contrast/falsifiers → bullet card → PROMPT MAGISTRAL A–J → HUMAN GATE → generation → human read → KEEP/MUTATE/PARK/KILL/REROLL → RETURN HOME.
