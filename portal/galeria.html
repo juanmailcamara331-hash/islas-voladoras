@@ -97,8 +97,14 @@ function setTab(id){id=(id||'overview').replace('#','');if(!document.getElementB
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
 addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
 function archiveCard(a){
- const media=a.type==='video'?'<video muted playsinline preload="metadata" src="'+esc(a.runtime_src)+'"></video>':'<img loading="lazy" src="'+esc(a.runtime_src)+'" alt="'+esc(a.title)+'">';
- return '<article class="card mediaCard"><div class="thumb">'+media+'</div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
+ const drive=a.drive_id||'',src=a.runtime_src||'',kind=(a.type||'image').toLowerCase();
+ const drivePoster=drive?'https://drive.google.com/thumbnail?id='+encodeURIComponent(drive)+'&sz=w900':'';
+ let media='';
+ if(kind==='video'&&src) media='<video muted playsinline preload="metadata" src="'+esc(src)+'"></video>';
+ else if(src) media='<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title)+'">';
+ else if(drivePoster) media='<img class="drivePoster" loading="lazy" src="'+esc(drivePoster)+'" alt="'+esc(a.title)+'">';
+ else media='<span aria-hidden="true">'+(kind==='video'?'▶':kind==='audio'?'♫':kind==='3d'?'◇':'▣')+'</span>';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(kind)+'"><div class="thumb mediaThumb">'+media+'<span class="mediaBadge">'+esc(kind.toUpperCase())+'</span></div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
 }
 function prismCard(a){
  const drive=a.drive_id||'',src=a.runtime_src||'';
@@ -106,7 +112,7 @@ function prismCard(a){
  return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-url="'+esc(a.prototype_url||'')+'" data-kind="image"><div class="thumb">'+media+'</div><div class="pad"><div class="k">MUNDO PRISMA</div><h2>'+esc(a.title||a.id)+'</h2><span class="status warn">'+esc(a.status||'PROTOTYPE SEED')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.law||'')+' · '+esc(a.canon_state||'NO CANON')+'</div></details></div></article>';
 }
 function labCard(a){
- const title=a.name||a.entity||a.id;
+ const title=a.title||a.name||a.entity||a.id;
  const drive=a.drive_id||'',src=a.runtime_src||'';
  const drivePoster=drive?'https://drive.google.com/thumbnail?id='+encodeURIComponent(drive)+'&sz=w900':'';
  const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(human(title))+'">':drivePoster?'<img class="drivePoster" loading="lazy" src="'+esc(drivePoster)+'" alt="'+esc(human(title))+'">':'<span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span>';
