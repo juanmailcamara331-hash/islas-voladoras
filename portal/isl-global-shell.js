@@ -23,7 +23,7 @@ items.forEach(function(it){
   var a=document.createElement('a');a.href=it[1];a.className=it[2]||'';a.textContent=it[0];a.title=it[3];
   if(it[4]){var sub=document.createElement('small');sub.className='igsSub';sub.textContent=it[4];a.appendChild(sub);}
   var active=((path==='jugar.html'||path==='velaria-v2.html'||path==='rpg-home.html')&&it[0]==='Jugar')||
-    (path==='crear.html'&&it[0]==='Crear')||
+    ((path==='crear.html'||path==='creative-bullets.html')&&it[0]==='Crear')||
     (path==='galeria.html'&&it[0]==='Ver')||
     (path==='decidir.html'&&it[0]==='Decidir');
   if(active)a.classList.add('active');
