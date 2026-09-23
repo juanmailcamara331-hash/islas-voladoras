@@ -1,3 +1,11 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · FRIENDS INTAKE BATCH 02 · CREW LIFE / COMBAT EVOLUTION
+- Extended docs/ISL_FRIENDS_IMPROVEMENTS_INTAKE_2026-09-23.md with evolving magic/abilities, crew-life→ship-combat progression, 2.5D turn-based combat, variable party sizes, ship-centric ability architecture, island-specific argument-based gear, secret objects/friend traces and a minimal cross-system prototype.
+- Uploaded handwritten/note image is semantic scratchpad only: NOT visual reference, NOT SOURCE_OF_TRUTH, NOT art direction.
+- Strong emerging hypothesis: LIFE ABOARD → CREW ROUTINES/RELATIONS → SHARED COMBAT BEHAVIOURS → ABILITY MUTATION → ISLAND EQUIPMENT → TACTICAL SOLUTIONS → HUELLA → REPLAY REINTERPRETATION.
+- Guard: avoid giant per-character skill-tree complexity and avoid farmable identity mutations.
+- Suggested cheap test: one ship / three crew / two routines / three signature abilities / one island gear choice / one 3v3 encounter / one mutation / one Huella callback.
+- No CANON promotion. PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · FRIENDS IMPROVEMENTS INTAKE
 - Captured new friend-sourced improvements in docs/ISL_FRIENDS_IMPROVEMENTS_INTAKE_2026-09-23.md.
 - Includes creature candidates (gargoyle / giant octopus / raptor-like / Loch-Ness-like), replay-layer hypothesis (Run 1 discovery → Run 2 portal/white-room expansion → Run 3 full-crew/PRISM escalation), hidden easter-egg lane, opening VO, lightweight cooking, humour/object gags, music vignette and fictional contraband scene.
