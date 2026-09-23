@@ -156,3 +156,46 @@ Needs repeated evidence across scenes before promotion.
 PRIMARY remains Velaria V2 P0.
 HUMAN_DEVICE_GREEN = PENDING.
 SAFE HARBOR unchanged.
+
+
+## EVIDENCE CROSS · 2026-09-23
+Current external evidence strengthens the method without promoting any look to CANON.
+
+### Unreal / Epic technical evidence
+- Local Exposure is explicitly intended to preserve highlight and shadow detail when a single global exposure cannot handle high-dynamic-range scenes.
+- Epic recommends treating exposure separately from color grading; Gain is not an exposure control.
+- Filmic tonemapping is used to preserve shape/detail across bright values and support consistent display output.
+- Therefore ISL should not solve the darker-vs-brighter question with one global brightness move or one LUT.
+
+Technical sources:
+- https://dev.epicgames.com/documentation/unreal-engine/auto-exposure-in-unreal-engine
+- https://dev.epicgames.com/documentation/unreal-engine/color-grading-and-the-filmic-tonemapper-in-unreal-engine
+- https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine
+
+### Practitioner/community evidence
+Recent game-dev discussion repeatedly exposes the same conflict ISL is seeing: a lighting pass may improve mood while reducing gameplay readability, and darkness is only successful when the player can still parse relevant forms/actions.
+Treat this as failure-mode evidence, not authority or design truth.
+
+Community probes:
+- Reddit /gamedev: balancing dark atmosphere vs playability/readability.
+- Reddit /leveldesign: a prettier lighting pass can still make a gameplay space less readable.
+- Reddit /gamedevscreens: contrast/style comparisons should explicitly ask about visibility, color, contrast and character readability.
+
+### Derived ISL rule
+MOOD IS NOT A PASS CONDITION BY ITSELF.
+READABILITY IS NOT A PASS CONDITION BY ITSELF.
+The target is RELATIONAL CONTRAST: enough darkness to create emotional density, enough local separation to preserve action/world comprehension.
+
+### New test dimensions
+For every cinematic bracket, record separately:
+- MOOD / emotional density;
+- ACTION READABILITY;
+- CREW / face-hand readability;
+- WORLD DEPTH;
+- MATERIAL READABILITY;
+- BLACK SHAPE QUALITY;
+- HIGHLIGHT DETAIL;
+- DEVICE ROBUSTNESS;
+- HUD COMPATIBILITY;
+- ISL IDENTITY / lived-human feel.
+Do not collapse them into one beauty score.
