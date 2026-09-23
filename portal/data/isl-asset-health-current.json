@@ -96,7 +96,7 @@
       "asset_id": "GIFT_TOKEN_01_3D",
       "entity_id": "GIFT_TOKEN_01",
       "display_name": "Gift Token 01 · Human Trace",
-      "state": "PBR_TECH_PASS_VISUAL_CQC_PENDING",
+      "state": "MATERIAL_CQC_MUTATE_TEXTURE_LIGHTLY",
       "source_refs": [
         "Meshy_AI_Fractured_Echo_0923163321_generate.glb",
         {
@@ -128,7 +128,7 @@
         "lighting_robustness",
         "independent_glb_validator"
       ],
-      "next": "inspect front/back/side under neutral+raking+low-contrast lighting, normalize to ~60.0 x 50.15 x 9.62 mm, archive source+descendant separately, then KEEP or MUTATE TEXTURE ONLY",
+      "next": "preserve Result 01; create texture-only Mutation 02 with slightly clearer metal/composite hierarchy and slightly more legible rhythm marks; no geometry reroll",
       "human_gate": "PENDING",
       "canon_state": "GIFT_HUMAN_TRACE_NO_CANON",
       "master_required_target": true,
@@ -150,7 +150,14 @@
         },
         "geometry_relation": "same_family_uniform_scale_plus_approx_5_24_percent",
         "technical_cqc": "PASS",
-        "visual_material_cqc": "PENDING"
+        "visual_material_cqc": "MUTATE_TEXTURE_LIGHTLY",
+        "visual_notes": [
+          "mother shape dominant",
+          "repair network coherent front/back",
+          "metal vs composite separation too subtle at token-scale read",
+          "four rhythm marks risk disappearing",
+          "preserve dark field and restrained warm repair accents"
+        ]
       }
     }
   ]
