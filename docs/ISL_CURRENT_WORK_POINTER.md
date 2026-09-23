@@ -1,3 +1,12 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · CINEMATIC AESTHETIC SYNTHESIZER
+- Added docs/ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT.md.
+- Purpose: synthesize lighting, shadow mass, black level, midtones, highlights, color, atmosphere, material response, composition and gameplay readability without freezing ISL into one LUT/look.
+- Current skyship bracket: darker earlier variant = stronger mood/shadow mass; brighter clean plate = stronger readability; target hypothesis = intermediate tonal field with deep local blacks + shaped midtones + controlled highlights + readable crew/world.
+- Method: RECOVER BASELINE → DECOMPOSE AXES → 2–4 WEIGHTS → SOURCE CROSS → 2–3 BRACKET VARIANTS → DEVICE/READABILITY CHECK → HUMAN READ → KEEP/MUTATE/PARK/KILL → RECORD DELTA.
+- External research is functional only; no surface copying. Structure may be abstracted cross-project, never ISL palette/lore/assets/identity.
+- This is NOT a new organ. DO NOT ADD ORGANS. IMPROVE CIRCULATION.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · CHECKPOINT v0.94 + LIGHT SESSION DOCK
 - New handoff: docs/ISL_CHECKPOINT_v0.94_LIGHT_SESSION_DOCK_FOUNDATIONS_HANDOFF_2026-09-23.md.
 - New direction: docs/ISL_LIGHT_SESSION_DOCK_CHATGPT_BRIDGE_CURRENT.md.
