@@ -1,3 +1,19 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · GALLERY CIRCULATION FIX + TOKEN ORDER
+- Gallery v0.94 media layer is implemented in GitHub: image pinch-zoom/pan, Drive-backed thumbnails/previews, playable runtime/Drive audio, playable video, and touch 3D viewer when a runtime GLB exists.
+- Gallery registry now surfaces current gifts/sensors/Human Trace without CANON promotion, including world panorama sensor, HUD antithesis sensor, Skyship Gift Video KEEP, Organismo Vivo masters, Gift Token sheet and secondary-logo strong sensor.
+- PWA cache bumped to isl-center-v094-gallery-media and portal links now point to galeria.html?v=20260923-094 to reduce stale-device reads.
+- Public Netlify site still shows the prior deploy state; manual connector deploy is blocked and historic source notes already say automatic main->Netlify reaction is unreliable. Do NOT loop deploy retries. Publication remains an external deployment step, not a Gallery-code blocker.
+- Human Trace 1000042847.mp4 exact RAW is durably preserved in native Library as /ISL/Making Of/Human Trace/1000042847_MASTER_RAW.mp4 · SHA-256 7d69b8768caa9a33a2a8c7a2cbf79cfb826710b3385c3c86bd62dd92c5c46a65. Drive mirror remains pending due repeated large-file transport failure.
+- Human Trace 1000042992.mp4 exact RAW is also durably preserved in native Library as /ISL/Making Of/Human Trace/1000042992_MASTER_RAW.mp4 · SHA-256 1246fedce8030d7875a5316e7ff4511f89cf6a17f9a602f74b181dc49c1bbec5.
+- Gift Token exact source GLB and Result 01 PBR descendant are now durably archived in Drive; the old binary-source archival hold is RESOLVED.
+- Active construction order remains:
+  1) execute TEXTURE MUTATION 02 in Meshy;
+  2) compare to Result 01 with identical camera/scale/light and make HUMAN decision;
+  3) only then package accepted GLB as web runtime and wire interactive Gallery;
+  4) publish/deploy Gallery and perform real mobile check.
+- Do not package Result 01 as final runtime while Mutation 02 gate is open.
+- No new checkpoint. v0.94 remains current. PRIMARY / HUMAN_DEVICE_GREEN / SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · HUMAN TRACE RAW DURABLE FALLBACK
 - 1000042847.mp4 loss-risk is CLOSED at storage level: exact RAW master is now durably archived in native Library at /ISL/Making Of/Human Trace/1000042847_MASTER_RAW.mp4.
 - Exact SHA-256 remains 7d69b8768caa9a33a2a8c7a2cbf79cfb826710b3385c3c86bd62dd92c5c46a65.
