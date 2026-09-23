@@ -110,8 +110,8 @@
         "geometry_doc": "docs/ISL_GIFT_TOKEN_01B_MESHY_GEOMETRY_KEEP_2026-09-23.md",
         "texture_prep_doc": "docs/ISL_GIFT_TOKEN_01C_MESHY_2K_PBR_TEXTURE_PREP_2026-09-23.md"
       },
-      "binary_access": "ARCHIVE_PENDING",
-      "blocker": "Textured descendant passes technical PBR inspection, but exact source geometry still needs durable archival and visual/human Material CQC remains pending.",
+      "binary_access": "DRIVE_ARCHIVED",
+      "blocker": "Source and Result 01 are durably archived in Drive. Remaining blocker is human comparison after texture-only Mutation 02; interactive web runtime GLB packaging is still pending.",
       "master_ref": null,
       "runtime_ref": null,
       "qa_required": [
@@ -128,7 +128,7 @@
         "lighting_robustness",
         "independent_glb_validator"
       ],
-      "next": "preserve Result 01; create texture-only Mutation 02 with slightly clearer metal/composite hierarchy and slightly more legible rhythm marks; no geometry reroll",
+      "next": "run texture-only Mutation 02; compare against Result 01 at identical camera/scale/light; then decide KEEP MUTATION 02 / RETURN TO RESULT 01 / MUTATE TEXTURE AGAIN; package accepted GLB for interactive gallery runtime later",
       "human_gate": "PENDING",
       "canon_state": "GIFT_HUMAN_TRACE_NO_CANON",
       "master_required_target": true,
@@ -158,7 +158,10 @@
           "four rhythm marks risk disappearing",
           "preserve dark field and restrained warm repair accents"
         ]
-      }
+      },
+      "source_drive_id": "11TvDdzDU5OcCe0X2Mo349bOZvW7pj4xO",
+      "master_drive_id": "1jUmZu4cV71RyJJjd-xhjxanE2hQ4ZUJr",
+      "poster_src": "https://drive.google.com/thumbnail?id=1W8ipWm369ZVKcBqJvNobQtLM39e7_JEZ&sz=w1200"
     }
   ]
 }
