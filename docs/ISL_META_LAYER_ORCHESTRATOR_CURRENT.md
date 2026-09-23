@@ -238,3 +238,28 @@ M3 HUMAN TRACE + M2 SOURCE OF TRUTH + M11 MEDIA/GALLERY (+M4 when gift/making-of
 → never auto-promote it to CANON
 → return to PRIMARY.
 The user should not need to manually remind the system to close this loop.
+
+
+## EXECUTABLE PREFLIGHT GATE · 2026-09-23
+The existing ALWAYS-ON PROMPT PREFLIGHT is now executable through:
+`scripts/isl-preflight-gate.py`
+
+Purpose:
+- enforce the existing contract, not create a new meta-layer;
+- verify repository-side authority invariants before substantive work;
+- require SUBJECT / OPERATION / SOURCE_OF_TRUTH / 1–4 relevant layers for substantive mutations;
+- return explicit states: PASS / NEED_RECOVERY / AUTHORITY_DRIFT / HUMAN_GATE / BLOCKED;
+- require explicit human approval for PROMOTE / PUBLISH / PHYSICAL;
+- never auto-promote CANON or redefine SAFE HARBOR.
+
+CI mode:
+`python3 scripts/isl-preflight-gate.py --authority-only`
+
+Task mode example:
+`python3 scripts/isl-preflight-gate.py --subject "secondary piece" --operation mutate --source-of-truth "docs/..." --layers M2 M1 M10`
+
+Important boundary:
+This executable checks the GitHub/repository side. Drive↔GitHub MASTER alignment remains covered by the scheduled authority audit and human-visible recovery when drift is detected.
+
+Guard:
+NO_BOOT_NO_WORK · RECENCY_NOT_AUTHORITY · NO_SOURCE_NO_MUTATION.
