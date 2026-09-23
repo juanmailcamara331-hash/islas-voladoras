@@ -206,3 +206,52 @@ process theatre.
 HEALTHY ISL = strong heart + clear spine + living skin + enough memory + low bureaucratic inflammation.
 
 The system should feel conscious enough to remember, unconscious enough not to interrupt, and entropic enough to keep discovering.
+
+
+## 13. LIGHTWEIGHT QUALITY / PLAYABILITY GRADES · 2026-09-23
+These are decision aids, not scientific truth and not CANON scores.
+
+For a tested piece, estimate 0–100 only when there is actual evidence:
+C = clarity
+A = agency
+F = feel / sensory response
+D = desire to continue / remember
+R = robustness / regression resistance
+
+Core floor:
+Q_FLOOR = min(C, A, F, D, R)
+
+Balanced center:
+Q_MED = median(C, A, F, D, R)
+
+Stability across repeated tests:
+Q_STABLE = median(last N Q_MED values) - MAD(last N Q_MED values)
+
+where MAD is median absolute deviation.
+
+Interpretation:
+- Q_FLOOR exposes the weakest dimension;
+- Q_MED resists one flashy outlier;
+- Q_STABLE rewards consistent quality rather than one lucky test.
+
+Do not calculate when evidence is fake/aspirational.
+Do not compare unrelated projects as if the scores were objective rankings.
+
+For Organismo Vivo heat:
+HEALTH = function(AUTHORITY, EVIDENCE, CIRCULATION, RISK, READINESS)
+Use semantic bands rather than false precision when data is sparse.
+
+Suggested bands:
+GREEN 80–100 or strong verified evidence
+AMBER 55–79 or promising but pending evidence
+RED <55 or blocked/conflicted
+BLUE exploratory / insufficient evidence
+VIOLET high-entropy lab
+GREY archive/inactive
+
+Always pair number with:
+sample size;
+evidence source;
+date;
+uncertainty;
+human note.
