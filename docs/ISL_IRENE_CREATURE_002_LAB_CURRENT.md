@@ -486,3 +486,34 @@ KEEP_SCENE_A / MUTATE_SCENE_A / RETURN_TO_B01 / PARK_CONTEXT.
 
 ## STOP RULE
 Do not generate B02.1 player-scale variant or B02.2 HUD variant until Scene A receives a human read.
+
+
+## GENERATED SENSOR SET · 2026-09-24
+
+Status:
+PRESERVED · HUMAN READ PENDING · NO CANON · NO 3D
+
+B01 · TACTO CIEGO
+- Image sensor generated from the human drawing.
+- Gen ID: c568c070-8bab-402d-8cc6-d0e6c1fc9399
+- Drive ID: 1CrvYHwr33Rrv7qU1yiVb6Ol6xP6uUekh
+- Role: isolated creature identity / tactile sensing sensor.
+
+B02 · GAMEPLAY CONTEXT
+- Image sensor generated as playable floating-island route context.
+- Gen ID: 622783eb-1fa8-4034-ad06-b5dd2e2ed8c4
+- Drive ID: 1Mbr_Rygq3uF8Yvoe1jQK1MNNEg69E84F
+- Role: route / wind / world-integration sensor.
+
+B03 · ALTAR DEL VIENTO CIEGO
+- Image sensor generated as local mini-boss territorial encounter.
+- Gen ID: a0f433c2-e64e-400d-916f-6a3290b3dd92
+- Drive ID: 1pKp_H9gDdZGycAqQ8EPOx1jvk6RkEZrw
+- Role: mini-boss local / territory / encounter-space sensor.
+
+Important:
+- These are derivatives only. Human drawing + process remain highest authority.
+- None is CANON by recency or polish.
+- Human read is still required before KEEP / MUTATE / PARK / KILL.
+- B03 does not authorize boss design, implementation, 3D, combat tuning or world canon.
+- The prepared Seedance video lane is still PREPARED ONLY and has not been fired.
