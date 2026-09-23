@@ -135,8 +135,10 @@ function docsCard(d){
  return '<article class="card" data-url="'+esc(d.url||'')+'"><div class="thumb">▤</div><div class="pad"><h2>'+esc(d.title)+'</h2><span class="status warn">'+esc(human(d.kind||'DOC'))+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(d.status||'CURRENT'))+'</div></details></div></article>';
 }
 function musicCard(t){
- const player=t.runtime_src?'<div class="player"><audio controls preload="none" src="'+esc(t.runtime_src)+'"></audio></div>':'';
- return '<article class="card" data-drive="'+esc(t.drive_id||'')+'" data-kind="audio"><div class="thumb">♫</div><div class="pad"><h2>'+esc(t.title)+'</h2>'+player+'<details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(t.status||''))+'</div></details></div></article>';
+ const src=t.runtime_src||'',drive=t.drive_id||'',wired=!!(src||drive);
+ const player=src?'<div class="player"><audio controls preload="none" src="'+esc(src)+'"></audio></div>':'';
+ const badge=src?'AUDIO · RUNTIME':drive?'AUDIO · DRIVE':'AUDIO · SOURCE PENDIENTE';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-runtime="'+esc(src)+'" data-kind="audio"><div class="thumb mediaThumb"><span aria-hidden="true">♫</span><span class="mediaBadge">'+esc(badge)+'</span></div><div class="pad"><h2>'+esc(t.title)+'</h2>'+player+(wired?'':'<div class="disabledPlayer">Concepto registrado · todavía no hay audio conectado.</div>')+'<details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(t.status||''))+'</div></details></div></article>';
 }
 Promise.all([
  fetch('data/isl-gallery-library-current.json',{cache:'no-store'}).then(r=>r.json()),
@@ -230,6 +232,9 @@ Promise.all([
     var drive=card.dataset.drive||'',url=card.dataset.url||'';
     tools.innerHTML='';
     if(kind==='3d'||mv){var src=runtime||(mv&&mv.src)||'';return open3d(src,title,drive)}
+    if(kind==='audio'&&runtime){
+      var au=document.createElement('audio');au.src=runtime;au.controls=true;au.autoplay=true;au.style.width='min(90vw,720px)';return show(au,title)
+    }
     if(img){
       var src=img.currentSrc||img.src;
       if(img.classList.contains('drivePoster')&&drive)src='https://drive.google.com/thumbnail?id='+encodeURIComponent(drive)+'&sz=w2400';
