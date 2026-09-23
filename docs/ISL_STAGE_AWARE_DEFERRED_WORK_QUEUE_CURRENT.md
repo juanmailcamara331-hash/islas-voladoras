@@ -181,3 +181,84 @@ Trigger: ON_ASSET_APPROVED
 ## STOP RULE
 If a deferred task can be deleted with no plausible future cost, delete it.
 The queue is for useful latency, not hoarding.
+
+
+## DEFERRED · ISL MULTI-AGENT BRIDGE / NIGHT STUDIO
+Estado: PARKED · HIGH VALUE · NO IMPLEMENTAR TODAVÍA
+Fecha: 2026-09-23
+
+Idea:
+materializar en el futuro un puente web/backend neutral entre varias sesiones/agentes para trabajo nocturno coordinado, sin convertir varias cuentas o agentes en múltiples escritores compitiendo.
+
+Principio:
+MANY READERS · ONE WRITER.
+
+Objetivo:
+que varios agentes especializados puedan colaborar mediante estado persistente estructurado en vez de depender de conversaciones cruzadas.
+
+Arquitectura mínima futura:
+- ORCHESTRATOR / WRITER: único actor autorizado para mutar estado operativo.
+- RESEARCH / CQC: lectura, contraste, papers/docs, antítesis, evaluación; sin autoridad de escritura.
+- ASSET / 3D: GLB, hashes, material, runtime, Gallery; prepara pero no aprueba HUMAN GATES.
+- BUILD / WEB: CI, Gallery, cache, deploy state, regresiones; no CANON.
+- ARCHIVIST: Drive/Library/provenance/dedup/restore paths.
+
+Bridge contract sugerido:
+TASK_ID
+PRIMARY
+ACTIVE_LANE
+SOURCE_OF_TRUTH
+OPERATION
+RISK_CLASS
+INPUT_REFS
+EXPECTED_OUTPUT
+HUMAN_GATE
+STATUS
+RESULT_HASH
+
+Concurrency guard:
+- task lease / lock para cualquier WRITE;
+- sólo un writer posee la mutación durante el lease;
+- lectores pueden trabajar en paralelo;
+- ninguna cuenta/chat/modelo se considera autoridad por sí mismo.
+
+Persistencia:
+- MASTER + CURRENT_WORK_POINTER + checkpoint + task contract son la reconstrucción de estado;
+- conversaciones son evidencia/contexto, no autoridad;
+- registrar before/after hash, actor, tool, result, verification y rollback cuando aplique.
+
+Estados:
+PREPARED / COMMITTED / VERIFIED / HUMAN_GATE / BLOCKED.
+
+Integración con Night Shift:
+- ventana elegida por humano cada día;
+- pases independientes;
+- RECOVER en cada pase;
+- PARALLEL READ · SERIAL WRITE;
+- una WRITE reversible máxima por pase;
+- último pase = morning handoff;
+- si HUMAN GATE, sólo preparar/verificar.
+
+Seguridad:
+- no usar varias cuentas para saltarse límites/plataforma;
+- diseñar el sistema como multiagente legítimo con roles, permisos y trazas;
+- no compartir secretos en prompts/logs;
+- production/publication/spend/external contact = HUMAN GATE;
+- stop on ambiguity / partial writes / auth errors / rate limits.
+
+Roadmap recomendado:
+PHASE 0: Night Shift actual + MASTER/POINTER.
+PHASE 1: bridge mínimo con tasks / locks / results / human_gates / runs.
+PHASE 2: sólo 2 agentes: Writer/Orchestrator + Reader/CQC.
+PHASE 3: añadir especialistas sólo si la evidencia demuestra ganancia real.
+
+Criterio de éxito:
+menos fricción humana + más trabajo seguro verificado + cero carreras de autoridad.
+Anti-goal:
+crear una empresa de agentes administrándose entre sí mientras ISL no avanza.
+
+Regla:
+AGENTS EXIST TO REDUCE HUMAN FRICTION, NOT TO CREATE AGENT MANAGEMENT.
+
+No crear órgano nuevo ahora.
+No activar ni implementar hasta que el Night Shift simple haya producido evidencia útil.
