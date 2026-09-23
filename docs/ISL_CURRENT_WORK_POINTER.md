@@ -1,3 +1,14 @@
+
+# ACTIVE EXECUTION NOTE · 2026-09-23 · CHECKPOINT v0.93
+- Operational handoff: docs/ISL_CHECKPOINT_v0.93_ORGANISM_ENTROPIC_ARCHETYPE_BAILE_HANDOFF_2026-09-23.md.
+- Drive MASTER boot has been aligned to v0.93; prior v0.92/v0.91 remain preserved historical/protected context.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- v0.93 does NOT promote CANON, redefine SAFE HARBOR, mutate Velaria or resolve the role/archetype conflict.
+- Recovered historical continuity: gameplay conduct/trajectory should be inferred from play rather than asking the player who they want to be; identity is not farmable.
+- Existing ROLE LENS / STARTING CONTRACT remains prior CANON DIRECTION; emergent archetype is a recovered antithesis/hypothesis pending cheap test + human read.
+- Organism rule: DO NOT ADD ORGANS. IMPROVE CIRCULATION.
+- Next bounded lab action: READ-ONLY / NO-CANON latent-biography analysis from existing Huellas/event fields in Isla del Baile Inagotable.
+- NUDO guard: do not equate local NUDO-A/B/C with final-five NUDOS without lineage recovery.
 # ACTIVE EXECUTION NOTE · 2026-09-23 · CONTRADICTION LAB v0.92
 - Additive lab checkpoint: `docs/ISL_CHECKPOINT_v0.92_CONTRADICTION_LAB_AUDIT_AND_MICROTEST_HANDOFF_2026-09-23.md`.
 - This does NOT supersede or redefine SAFE HARBOR, v0.91 protected home state, approved assets, CANON, or PRIMARY.
