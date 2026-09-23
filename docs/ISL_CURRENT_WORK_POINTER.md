@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · COLLECTOR VIDEO SENSOR BALA 01
+- Source/reference: ISL Collector / Organism strong visual sensor preserved in Drive.
+- Derived video: ISL_COLLECTOR_VIDEO_SENSOR_BALA_01_2026-09-23.mp4 · Drive ID 17ZoTJrq1m3OebcxSFrHoGkdEOrGNJJvo.
+- Human/assistant read: KEEP · STRONG VIDEO SENSOR · NO CANON.
+- Cross used: M0 navigation/order; M2 context/reference authority; M4 creative momentum; M7 physical materialization relevance; M11 media/gallery lifecycle; ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT; ISL_REFERENCE_FUNCTION_AND_COHERENCE_PROTOCOL_CURRENT; ISL_HUMAN_VARIATION_RANDOMIZER_CURRENT; ISL_CONTEXT_HYGIENE_AND_REFERENCE_AUTHORITY_PROTOCOL_CURRENT.
+- Preserved functions: restrained parallax, slow push-in, subtle cloth/hair movement, material light response, product/physical readability, quiet impossible-world feeling.
+- Guards: source image remains visual authority; no surface redesign, no new objects, no auto-CANON, no promotion to campaign truth, no displacement of Gift Token HUMAN GATE.
+- Next video experiment: Collector BALA 02 may test box/certificate/compass/paper/metal tactility as a separate SENSOR only.
+- PRIMARY / HUMAN_DEVICE_GREEN / SAFE HARBOR unchanged. No checkpoint.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · COLLECTOR PREFERENCE + WORK ORDER
 - HUMAN PREFERENCE: current Collector / Organismo Vivo presentation is preferred over the older Kickstarter physical mockups with pouches/cards/stones. Older Kickstarter imagery remains PARKED historical reference; do not merge elements back by default.
 - A fresh Collector/physical campaign exploration may be created later as a new LAB sensor, but it must NOT jump ahead of the current Gift Token human gate.
