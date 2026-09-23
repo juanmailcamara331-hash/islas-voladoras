@@ -466,3 +466,30 @@ Si sólo elimina fricción/contenido sin nueva consecuencia: MUTATE.
 No crear bot nuevo.
 No auto-expandir lore.
 Return PRIMARY.
+
+
+## 19. GUIDED WORLD / MINIMAL HUD / PLAYFLOW TRIGGER · 2026-09-23
+Trigger:
+whenever a task creates or changes a zone, island, dungeon, hub, route, HUD, mission guidance, combat presentation, traversal gate, replay variation or objective flow.
+
+Authority:
+docs/ISL_GUIDED_WORLD_HUD_AND_PLAYFLOW_DIRECTION_CURRENT.md
+
+Silent checks:
+- HUD minimal by default;
+- world guidance before UI guidance;
+- no permanent mission marker/minimap dependency by default;
+- authored semi-open local freedom, not unrestricted checklist open world;
+- diegetic gates preferred (air curtains, wind, relic/crew/Huella/world-state, etc.);
+- macro-rumbo legible while local history/routes may vary by archetype/replay/Huella;
+- preserve adult dark/sensual/punk/irreverent tone without reference collage;
+- references only by function;
+- ask whether one UI/system element can be removed.
+
+If human comprehension fails:
+escalate guidance gradually:
+WORLD COMPOSITION → MOTION/LIGHT/AUDIO → NPC/ENVIRONMENT → CONTEXT PROMPT → EXPLICIT UI.
+
+Do not create a new bot.
+Do not auto-CANON implementation details.
+Return PRIMARY after the task.
