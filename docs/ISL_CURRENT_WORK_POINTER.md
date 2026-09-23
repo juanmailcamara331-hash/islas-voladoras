@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · ORGANISM CURATION + INTERACTIVE HEALTH MAP
+- New current method: docs/ISL_ORGANISM_CURATION_AND_VISUAL_HEALTH_CURRENT.md.
+- Purpose: periodically cure redundant/tangled CURRENT docs, boot noise, stale prompts, duplicate authority, toxic cross-links and internal complexity without deleting history or flattening identity.
+- Rule: DO NOT ADD ORGANS. IMPROVE CIRCULATION. DO NOT DELETE MEMORY. PRUNE ACTIVE AUTHORITY.
+- Existing monthly automation should perform light curation; major curation triggers on 3+ structural changes, authority drift, lifecycle transition, major demo/public milestone or noisy/conflicting boot.
+- Organismo Vivo internal screen direction: hover/tap explanations, floating fichas, linked docs/evidence/gates, sliders when meaningful, diagrams, heatmaps, semantic colors, size/weight hierarchy and optional word mosaics.
+- Semantic internal scale: GREEN healthy/evidenced · AMBER direction/test pending · RED blocked/conflict · BLUE lab · VIOLET PRISM/high entropy · GREY archive.
+- Player-facing HUD remains minimal. Internal health heatmaps/sliders/debug labels do NOT migrate into gameplay; only distilled hierarchy/color/material cues may cross.
+- Major generations should inherit only relevant organ health + 2–4 strongest locks + one risk + one unresolved question.
+- No new bot created.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · SKYSHIP COMBAT FOUNDATION BULLET READY
 - Next visual stress test: ISL-BULLET-SKYSHIP-COMBAT-01 · “Cuando el cielo deja de ser paisaje”.
 - Inherits guided semi-open playflow, minimal HUD, world-before-UI guidance, crew-life→combat progression and functional-reference distance.
