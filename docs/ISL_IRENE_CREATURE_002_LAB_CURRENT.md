@@ -231,3 +231,258 @@ PREP ONLY.
 NO IMAGE GENERATED.
 NO 3D GENERATED.
 NO CANON PROMOTION.
+
+
+## B02 SCENE PREFLIGHT · CONTEXTO JUGABLE · PREPARED ONLY
+
+Estado:
+PREPARED · NOT FIRED · SENSOR ONLY · NO CANON
+
+## WHY THIS NEEDS EXTRA PREFLIGHT
+B01 tested creature identity in isolation.
+B02 must test whether that identity survives:
+- world scale;
+- gameplay framing;
+- readable affordance;
+- atmospheric integration;
+- non-generic ISL scene language.
+
+Main risk:
+good creature + good environment = generic fantasy key art.
+Therefore B02 must behave like a playable moment, not a poster.
+
+## PRIMARY HYPOTHESIS · EDGE-SENSING ENCOUNTER
+Location:
+broken elevated passage / eroded island edge / exposed ruin between floating masses.
+
+Why this context:
+- gives the hand cluster something real to touch;
+- gives the tongue a meaningful airflow function;
+- creates readable risk without combat;
+- naturally exposes depth, wind and verticality;
+- supports ISL world language without requiring lore exposition.
+
+Moment:
+The player has not triggered combat.
+The creature occupies or investigates a route.
+One or two hand-like appendages contact stone / rope / edge.
+The tongue samples crosswind and particulate trace.
+The rest of the body is waiting.
+
+The playable question is:
+“Can I read what it is sensing before I choose how to cross?”
+
+## WORLD CAUSALITY
+The creature must affect the environment before it affects the player:
+- dust shifts;
+- loose cloth responds;
+- a hanging line / rope changes tension;
+- tiny debris follows crosswind;
+- one local surface contact causes a small readable response.
+
+Do not use generic magic particles.
+Environmental response must have a physical cause.
+
+## CAMERA CONTRACT
+Target = gameplay keyframe, not splash art.
+
+Camera:
+- 3/4 playable angle;
+- medium-wide;
+- player-height or slightly raised;
+- route geometry readable;
+- creature occupies ~30–45% of frame, not 80%;
+- enough negative space to understand where the player might move.
+
+Avoid:
+- centered hero framing;
+- low-angle monster worship;
+- portrait lens compression;
+- concept-sheet neutrality;
+- boss-intro composition.
+
+## SCALE CONTRACT
+The creature should feel larger than the player but not kaiju-sized.
+Desired read:
+dangerous local organism / route-shaping presence.
+
+Scale must allow:
+- navigating around it;
+- observing it;
+- interacting indirectly;
+- escaping without mandatory combat.
+
+## GAMEPLAY TELEGRAPH
+Sequence implied in a single image:
+1. one sensory hand pauses against a surface;
+2. another appendage remains idle;
+3. tongue aligns with airflow;
+4. body mass leans only slightly;
+5. route remains visibly open but uncertain.
+
+The creature must look like it is deciding, not attacking.
+
+## CREATIVE WEIGHTS FOR B02
+- GAMEPLAY READABILITY 0.30
+- HUMAN SOURCE FIDELITY 0.28
+- WORLD CAUSALITY 0.24
+- ATMOSPHERIC ISL STRANGENESS 0.18
+
+## RANDOMIZER
+May perturb only 2 variables:
+A. Contact target:
+- broken stone edge
+- rope / hanging line
+- weathered railing
+- wind-torn cloth support
+
+B. Air trace:
+- dust
+- moisture mist
+- fine mineral particulate
+- light dry pollen-like debris
+
+Randomizer may NOT alter:
+- creature anatomy;
+- tongue dominance;
+- hand cluster;
+- covered/nested-eye motif;
+- asymmetry;
+- core route layout.
+
+## DIALECTIC
+THESIS:
+Put the creature clearly in the route so gameplay reads immediately.
+
+ANTITHESIS:
+If it blocks the route too explicitly, it becomes a conventional encounter gate / boss obstacle.
+
+SYNTHESIS:
+Place it offset from the route, touching the route rather than owning it.
+The player reads both:
+- “I could pass.”
+- “It may notice me.”
+
+## THREE CONTROLLED SCENE BRACKETS
+### A · EDGE / WIND · RECOMMENDED FIRST
+Broken elevated path, crosswind, floating-island depth.
+Best for tongue + hands + navigation.
+Lowest risk of generic combat framing.
+
+### B · HANGING BRIDGE / ROPE
+More tactile and reactive.
+Risk: scene can become too adventure-cliché.
+
+### C · RUIN COURTYARD / CLOTH
+Best environmental material contrast.
+Risk: flatter verticality, weaker floating-world identity.
+
+Selection:
+Fire A first.
+Only use B or C if A fails to prove gameplay/world integration.
+
+## VISUAL WORLD LANGUAGE
+Use:
+- weathered mineral architecture;
+- worn rope / cloth / practical remnants;
+- distant floating masses;
+- cloud depth;
+- wind;
+- restrained warm-cool atmospheric contrast;
+- clear traversable geometry.
+
+Do not use:
+- fantasy cathedral overload;
+- giant glowing crystals;
+- decorative runes;
+- generic steampunk machinery;
+- “ancient magic” shorthand;
+- excessive cinematic fog.
+
+## PLAYER PRESENCE
+First B02 shot:
+NO visible player character by default.
+
+Reason:
+The route itself should imply player presence.
+This avoids introducing a second visual authority problem.
+
+If B02 succeeds:
+B02.1 may add a small distant player silhouette as scale-only evidence.
+
+## HUD
+No HUD in first scene bullet.
+HUD would confound whether the world itself communicates the encounter.
+
+If B02 succeeds:
+B02.2 may test minimal HUD separately.
+
+## MASTER SCENE PROMPT · PREPARED, DO NOT FIRE YET
+Use the previously established Irene Creature 002 visual translation and the original human drawing as the creature authority. Do not redesign the creature.
+
+Create a gameplay-like scene from ISLAS VOLADORAS / ISL, not a creature portrait and not promotional key art.
+
+Place the creature beside a broken elevated passage or eroded floating-island edge exposed to strong lateral wind. The route must remain visibly traversable but uncertain. The creature is not attacking. It is sensing.
+
+Preserve the giant projecting tongue, irregular layered mouth and teeth, covered / nested-eye band, asymmetrical hanging hand-finger cluster, long angular support limbs, awkward proportions and human-drawn strangeness.
+
+Show only a few sensory parts acting:
+one or two hand-like appendages touch a weathered stone edge or nearby practical structure;
+the tongue aligns with the airflow as an environmental sensor;
+other appendages remain partially idle;
+the body has not yet committed to movement.
+
+The environment should physically react before the creature attacks:
+fine dust, a loose cloth edge, rope tension or tiny debris should reveal the lateral airflow.
+No magical particle effect.
+
+Camera must feel like playable third-person game imagery:
+3/4 medium-wide angle, player-height or slightly elevated, clear route geometry, readable depth, creature occupying roughly one third of the composition rather than dominating the frame.
+Do not center the creature like a boss poster.
+
+World:
+floating-island depth, distant cloud layers, eroded practical ruins, worn material surfaces, restrained vegetation or weather traces, no decorative fantasy overload.
+The environment should feel inhabited, weathered and physically coherent.
+
+Mood:
+curiosity before aggression;
+quiet unease;
+human imperfection;
+living contradiction;
+tactile strangeness;
+wind as information.
+
+The viewer should understand:
+“I can move through this place, but this organism may notice me.”
+
+No HUD.
+No visible player character in this first pass.
+No attack pose.
+No boss-intro composition.
+No automatic canon.
+SENSOR ONLY.
+
+## NEGATIVE
+boss room, monster poster, splash art, centered hero creature, attack pose, roaring pose, generic fantasy ruin, cathedral fantasy, glowing runes, giant crystals, magic particles, steampunk machinery, HUD, visible quest markers, overdone fog, cinematic trailer framing, generic horror, symmetrical anatomy, redesign of the human creature, tentacle replacement, reduced tongue, normal eyes, visual noise, ornamental worldbuilding
+
+## SUCCESS TEST
+At thumbnail scale:
+- route remains visible;
+- creature silhouette remains identifiable;
+- creature does not read as generic spider/octopus;
+- image reads as “gameplay moment”.
+
+At mid scale:
+- hand/tongue sensing is legible;
+- environment explains wind/contact;
+- no attack is underway.
+
+At close scale:
+- human-source oddness survives;
+- world details support function, not decoration.
+
+Decision:
+KEEP_SCENE_A / MUTATE_SCENE_A / RETURN_TO_B01 / PARK_CONTEXT.
+
+## STOP RULE
+Do not generate B02.1 player-scale variant or B02.2 HUD variant until Scene A receives a human read.
