@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · FULL-GAME SENSORY GALLERY DIRECTION
+- New direction: docs/ISL_GALLERY_FULL_GAME_SENSORY_SIMULATION_DIRECTION_2026-09-23.md.
+- Purpose: simulate the whole ISL arc through immersive cards/chapters with image + music/ambience + minimal interaction + visible consequences for second opinions.
+- Must label truth state: REAL PLAYABLE / PROTOTYPE / STRONG SENSOR / CONCEPT / FUTURE DIRECTION.
+- No fake gameplay and no CANON promotion from presentation quality.
+- Intended foundational coverage: world/exploration → protagonist/companion → community → relic/symbol → strange rule → dungeon → land pressure/combat → skyship travel/combat → Huella/memory → high-concept irreverence → PRISM late-game → return.
+- Prefer extending existing Gallery rather than creating a new subsystem.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · LOGO LIVED-SYMBOL 01 KEEP + ABLATION 02 PREP
 - Registered exact generated sensor: docs/ISL_VISUAL_BULLET_LOGO_LIVED_SYMBOL_01_KEEP_2026-09-23.md.
 - Bullet 01 = KEEP · STRONG SENSOR · LAB ONLY · NO CANON.
