@@ -215,3 +215,28 @@ This is a controlled renovation, not a greenfield reboot.
 MASTER PHRASE:
 THE OLD ISL DOES NOT DISAPPEAR.
 IT BECOMES THE FOSSIL RECORD OF THE LIVING ONE.
+
+
+## ORGANISMO VIVO INTERACTIVE BODY · 2026-09-23
+The human-body/project metaphor should become an interactive internal surface.
+
+Interaction:
+- hover/tap organ → one-line function;
+- click → floating ficha;
+- ficha may show status, authority source, connected systems, evidence, open gate, next test;
+- sliders only for meaningful variables;
+- diagrams/flows for circulation;
+- heatmaps for internal health/risk/coverage;
+- word mosaics for themes/feedback/tensions when provenance is available.
+
+Visual language:
+- color = state;
+- size = structural weight/attention;
+- type weight = authority/importance;
+- spacing = system separation;
+- motion/pulse = recent activity or live signal;
+- line/connection = circulation/dependency.
+
+Guard:
+this complexity belongs to Command Center / Organismo surfaces.
+The player-facing HUD remains minimal and inherits only distilled hierarchy/material/semantic cues.
