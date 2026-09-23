@@ -263,3 +263,17 @@ This executable checks the GitHub/repository side. Drive↔GitHub MASTER alignme
 
 Guard:
 NO_BOOT_NO_WORK · RECENCY_NOT_AUTHORITY · NO_SOURCE_NO_MUTATION.
+
+
+## GUIDED WORLD / MINIMAL HUD INHERITANCE · 2026-09-23
+For world/zone/HUD/navigation/combat/replay creation, inherit:
+docs/ISL_GUIDED_WORLD_HUD_AND_PLAYFLOW_DIRECTION_CURRENT.md
+
+Orchestrator rule:
+- WORLD should carry orientation before HUD;
+- semi-open authored zones outrank generic open-world expansion;
+- diegetic progression gates outrank arbitrary locks;
+- local archetype/Huella/replay variation may mutate interior experience without destroying macro-rumbo;
+- reference family remains functional, never surface authority.
+
+This is a design direction, not a new meta-layer.
