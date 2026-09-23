@@ -94,3 +94,47 @@ Keep authoring/output provenance.
 PRIMARY = Velaria V2 P0
 HUMAN_DEVICE_GREEN = PENDING
 SAFE HARBOR unchanged
+
+
+## PHYSICAL / PERCEPTUAL MATERIAL CQC · ~60 MM TOKEN
+Target read order at approximately 60 mm physical width:
+
+1. MOTHER SHAPE / SILHOUETTE must dominate immediately.
+2. METAL vs COMPOSITE separation must survive ordinary viewing distance.
+3. REPAIR SEAM must read under normal and raking light without needing zoom.
+4. TOUCH WEAR should appear only in plausible handling/contact zones.
+5. MICRO-SCRATCHES / pores / tiny stress lines are tertiary and may disappear physically.
+
+Do NOT reward texture detail that only works in close digital inspection.
+
+### PASS AT PHYSICAL SCALE
+- material families still separate when the token is viewed small;
+- roughness produces readable but restrained light breakup;
+- repair seam remains history, not decoration;
+- four rhythm marks remain graphic/material rhythm, not vents/lights;
+- edge wear helps tactility without outlining the whole object;
+- backside feels intentionally related to the front;
+- no single texture feature competes with the silhouette.
+
+### DIGITAL-ONLY NOISE WARNING
+Mutate if:
+- micro-detail carries the identity more than material blocks;
+- scratches become wallpaper;
+- roughness contrast is only visible at extreme zoom;
+- AO/dirt is baked so strongly that it fakes depth;
+- texture attempts to compensate for geometry;
+- tiny marks create false symbols, text-like fragments or manufacturing noise.
+
+### LIGHTING CHECK
+Evaluate under at least:
+- neutral soft light;
+- one raking / grazing light;
+- one lower-contrast ambient setup.
+
+Goal:
+material truth should persist across lighting rather than depending on one dramatic render.
+
+### PHYSICAL TRANSLATION HOLD
+Do NOT infer printable color/material process yet.
+A physical manufacturing/material adapter is a later derived layer after MATERIAL CQC.
+MASTER texture judgment remains digital PBR + physical-scale perception first.
