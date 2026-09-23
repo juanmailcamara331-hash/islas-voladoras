@@ -164,7 +164,7 @@ Promise.all([
  overviewLab.innerHTML=ext.slice(0,6).map(labCard).join('');
  overview3d.innerHTML=hs.slice(0,4).map(healthCard).join('');
  overviewMusic.innerHTML=[...tracks].sort((a,b)=>Number(!!b.runtime_src)-Number(!!a.runtime_src)||Number(!!b.drive_id)-Number(!!a.drive_id)).slice(0,4).map(musicCard).join('');
- overviewArchive.innerHTML=archive.slice(0,8).map(archiveCard).join('');
+ overviewArchive.innerHTML=[...archive].sort((a,b)=>Number(!!b.featured)-Number(!!a.featured)).slice(0,8).map(archiveCard).join('');
  setTab(location.hash.slice(1)||'overview');
 }).catch(err=>{
  console.error(err);
