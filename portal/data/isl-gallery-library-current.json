@@ -11,6 +11,16 @@
   },
   "assets": [
     {
+      "id": "LOGO-SECONDARY-SENSOR-20260923-01",
+      "type": "image",
+      "title": "Logo secundario · Isla-Orbita",
+      "group": "Identidad / Logo secundario",
+      "status": "HUMAN_LOVED_STRONG_SENSOR",
+      "drive_id": "1UNErBlvPM8RhYUvAS6xq7JAfla0LYaOV",
+      "canon_state": "REFERENCE_ONLY_NOT_FINAL_LOGO",
+      "featured": true
+    },
+    {
       "id": "VIS-HIST-001",
       "type": "image",
       "title": "Ciudad del viento entre nubes",
@@ -296,7 +306,8 @@
       "group": "Sensores / Mundo",
       "status": "SENSOR_REFERENCE",
       "drive_id": "1g2mbvt9XcZhiDYetGYCA-OJ5GUZIN2aP",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "featured": true
     },
     {
       "id": "SENSOR-HUD-20260923-01",
@@ -305,7 +316,8 @@
       "group": "Sensores / HUD",
       "status": "ANTITHESIS_SENSOR",
       "drive_id": "1jXJyi_T3stnmjq2vwT7i08lAwRHqu2pi",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "featured": true
     },
     {
       "id": "GIFT-SKYSHIP-VIDEO-01",
@@ -314,7 +326,8 @@
       "group": "Regalos / Vídeo",
       "status": "KEEP_GIFT_NO_CANON",
       "drive_id": "1YJF9T_SaU7ubd7jtUzaoEuke2imcN_Po",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "featured": true
     },
     {
       "id": "HUMAN-TRACE-VIDEO-001",
@@ -341,7 +354,8 @@
       "group": "Regalos / Collector Art",
       "status": "HUMAN_APPROVED_STRONG_REFERENCE",
       "drive_id": "1RZTIZOR6eGgxoVq1kqdAjkSTNvcrtr7t",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "featured": true
     },
     {
       "id": "GIFT-TOKEN-SHEET-01",
@@ -350,7 +364,8 @@
       "group": "Regalos / Objeto físico",
       "status": "HUMAN_TRACE_GIFT_NO_CANON",
       "drive_id": "1W8ipWm369ZVKcBqJvNobQtLM39e7_JEZ",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "featured": true
     }
   ]
 }
