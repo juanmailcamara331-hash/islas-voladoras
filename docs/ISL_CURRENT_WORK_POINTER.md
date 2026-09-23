@@ -1,3 +1,12 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · CHECKPOINT v0.94 + LIGHT SESSION DOCK
+- New handoff: docs/ISL_CHECKPOINT_v0.94_LIGHT_SESSION_DOCK_FOUNDATIONS_HANDOFF_2026-09-23.md.
+- New direction: docs/ISL_LIGHT_SESSION_DOCK_CHATGPT_BRIDGE_CURRENT.md.
+- Session Dock goal: low-energy tablet/Play sessions with voice/text → intake → compact ChatGPT handoff → copy/open ChatGPT → end-session summary.
+- Phase 1 is local/private and credential-free; direct AI submission requires a secure server-side adapter later, never frontend API keys.
+- Current accumulated structural change warrants NEW CHAT before firing the skyship bullet.
+- Skyship bullet remains READY TO FIRE · SENSOR · LAB ONLY · NO CANON.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · ROBUST ORGANISM GRADES + EXPORTABLE METHOD
 - Added lightweight evidence-aware grades to Organism Curation and Magistral Quality Protocol.
 - Q_FLOOR=min(C,A,F,D,R); Q_MED=median(C,A,F,D,R); Q_STABLE=median(last N Q_MED)-MAD(last N Q_MED).
