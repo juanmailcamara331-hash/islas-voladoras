@@ -686,3 +686,26 @@ Immediate order:
 MASTER RULE:
 WE NOW HAVE ENOUGH BODY.
 THE NEXT GAINS COME FROM CIRCULATION, EVIDENCE AND PLAY.
+
+
+## ORGANISM CURATION / VISUAL HEALTH · 2026-09-23
+Use:
+docs/ISL_ORGANISM_CURATION_AND_VISUAL_HEALTH_CURRENT.md
+
+This radiography is not a static report.
+The Organismo Vivo surface should expose health interactively:
+hover/tap → explanation;
+click → floating card;
+expanded state → authority/evidence/gate/next test;
+optional heatmap/grade only when useful.
+
+Internal semantic scale:
+GREEN healthy/evidenced
+AMBER direction/test pending
+RED blocked/conflict
+BLUE lab/exploration
+VIOLET PRISM/high-entropy
+GREY archive/historical
+
+No color-only meaning.
+No project-health machinery leaks into gameplay HUD.
