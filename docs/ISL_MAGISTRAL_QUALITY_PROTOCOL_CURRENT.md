@@ -371,3 +371,31 @@ Cerrar cada bala declarando:
 
 Principio:
 **EL DADO PROPONE. LA METODOLOGÍA TENSIONA. LA IMAGEN REVELA. EL HUMANO DECIDE. ISL RECUERDA.**
+
+
+## 15. GUIDED PLAYFLOW / HUD QUALITY INVARIANT · 2026-09-23
+For every world-space, combat-space or navigation-facing milestone, add these quality questions:
+
+- Can the player infer the next useful direction without a mission arrow?
+- Is the HUD smaller than the world-information layer?
+- Does wandering produce discovery rather than empty traversal?
+- Is the macro path authored and legible?
+- Are locked regions explained diegetically?
+- Could a wind/light/sound/landmark cue replace a UI element?
+- Does the space remain readable when archetype/Huella/replay variants alter local content?
+- Is the experience guided without feeling corridor-like?
+- Is it semi-open without becoming checklist-open-world?
+- If the HUD vanished for 30 seconds, would the scene still communicate enough?
+
+Reference authority:
+docs/ISL_GUIDED_WORLD_HUD_AND_PLAYFLOW_DIRECTION_CURRENT.md
+
+Hard drift warnings:
+PERSISTENT_MISSION_MARKER_BY_DEFAULT
+MINIMAP_DEPENDENCY
+CHECKLIST_OPEN_WORLD_DRIFT
+ARBITRARY_INVISIBLE_WALL
+HUD_EXPLAINS_WORLD
+LOCAL_VARIATION_BREAKS_MACRO_RUMBO
+
+Correct in that order before adding new systems.
