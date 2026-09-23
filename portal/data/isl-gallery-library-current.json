@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "project": "ISLAS_VOLADORAS_ISL",
-  "generated_at": "2026-09-21",
+  "generated_at": "2026-09-23",
   "status": "GALLERY_LIBRARY_CURRENT",
   "boundary": "ISL_ONLY",
   "rules": {
@@ -287,6 +287,69 @@
       "group": "Vídeo / Reel",
       "status": "RUNTIME_REFERENCE",
       "runtime_src": "assets/isl-tv-reel-premium-1080p.mp4",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "SENSOR-WORLD-20260923-01",
+      "type": "image",
+      "title": "Mundo abierto entre islas · panorama sensor",
+      "group": "Sensores / Mundo",
+      "status": "SENSOR_REFERENCE",
+      "drive_id": "1g2mbvt9XcZhiDYetGYCA-OJ5GUZIN2aP",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "SENSOR-HUD-20260923-01",
+      "type": "image",
+      "title": "Observatorio · HUD como antítesis",
+      "group": "Sensores / HUD",
+      "status": "ANTITHESIS_SENSOR",
+      "drive_id": "1jXJyi_T3stnmjq2vwT7i08lAwRHqu2pi",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "GIFT-SKYSHIP-VIDEO-01",
+      "type": "video",
+      "title": "El mismo viento · Skyship Gift A",
+      "group": "Regalos / Vídeo",
+      "status": "KEEP_GIFT_NO_CANON",
+      "drive_id": "1YJF9T_SaU7ubd7jtUzaoEuke2imcN_Po",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "HUMAN-TRACE-VIDEO-001",
+      "type": "video",
+      "title": "Human Trace · dibujo en papel · clip 001",
+      "group": "Making-of / Human Trace",
+      "status": "RAW_HUMAN_SOURCE_PRIVATE_BY_DEFAULT",
+      "drive_id": "1kb0qIiKg1rlusR5bOj8xhciN4jBNHkR-",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "ORG-VIVO-DESKTOP-01",
+      "type": "image",
+      "title": "ISL como Organismo Vivo · master",
+      "group": "Metodología / Organismo Vivo",
+      "status": "HUMAN_APPROVED_STRONG_REFERENCE",
+      "drive_id": "1ttiWUR1-ggQw8cE0IXmsXmFoI4LhhODg",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "ORG-VIVO-COLLECTOR-01",
+      "type": "image",
+      "title": "Edición Coleccionista · Organismo Vivo",
+      "group": "Regalos / Collector Art",
+      "status": "HUMAN_APPROVED_STRONG_REFERENCE",
+      "drive_id": "1RZTIZOR6eGgxoVq1kqdAjkSTNvcrtr7t",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "GIFT-TOKEN-SHEET-01",
+      "type": "image",
+      "title": "Gift Token 01 · Reference Sheet",
+      "group": "Regalos / Objeto físico",
+      "status": "HUMAN_TRACE_GIFT_NO_CANON",
+      "drive_id": "1W8ipWm369ZVKcBqJvNobQtLM39e7_JEZ",
       "canon_state": "NOT_AUTO_CANON"
     }
   ]
