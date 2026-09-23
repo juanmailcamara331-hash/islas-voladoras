@@ -217,3 +217,157 @@ Regla visual:
 IMAGEN / CONTENIDO → DECISIÓN / ACCIÓN → DETALLE TÉCNICO.
 
 El detalle técnico nunca debe competir con la pieza principal en una superficie humana.
+
+
+## 14. PREPARACIÓN MAGISTRAL DE BALAS CREATIVAS / VISUALES · 2026-09-23
+
+Esta sección NO crea un órgano nuevo. Formaliza la manera de preparar balas dentro del Quality Router existente.
+
+Regla:
+**NO IMPROVISAR BALAS. NO PROMPT MAGISTRAL = NO BALA.**
+
+Orden operativo por defecto para una bala creativa importante:
+
+**RECOVER → PREFLIGHT → CRUCE METODOLÓGICO MÍNIMO → PESOS → RANDOMIZER → CONTRASTE/FALSADORES → FICHA DE BALA → PROMPT MAGISTRAL A–J → HUMAN GATE → GENERACIÓN → LECTURA → DECISIÓN → RETURN HOME**
+
+### 14.1 RECOVER
+Antes de imaginar:
+- recuperar PRIMARY;
+- SOURCE_OF_TRUTH;
+- autoridad humana vigente;
+- binarios/referencias exactas si existen;
+- historia y decisiones previas;
+- riesgos de recency/authority drift;
+- SAFE HARBOR;
+- estado real del órgano/pieza.
+
+Si aparece una referencia humana exacta durante RECOVER:
+**detener la deriva, elevarla a SOURCE_OF_TRUTH visual según su lock level y derivar desde ella.**
+
+### 14.2 PREFLIGHT
+Declarar:
+- SUBJECT;
+- OPERATION;
+- SOURCE_OF_TRUTH;
+- estado/gate;
+- 1–4 capas/metodologías realmente relevantes;
+- qué NO se puede tocar.
+
+Estados útiles:
+PASS / NEED_RECOVERY / AUTHORITY_DRIFT / HUMAN_GATE / BLOCKED.
+
+### 14.3 CRUCE METODOLÓGICO MÍNIMO
+Cruzar sólo lo que reduzca incertidumbre o riesgo.
+Candidatos frecuentes:
+- Meta-Layer Orchestrator;
+- Organism Radiography;
+- Authority Pruning Matrix;
+- Creative Weights Calibration;
+- Human Variation Randomizer;
+- Recursive Dialectic Quality Router;
+- Reference Function & Coherence Protocol;
+- Context Hygiene;
+- Impossible Physics / Human Consequence cuando aplique;
+- Cross-Domain Methods Atlas sólo cuando aporte evidencia o mecanismo real.
+
+No activar capas por decoración metodológica.
+
+### 14.4 PESOS
+Elegir normalmente **2–4 ejes**.
+Ponderar HIGH / MEDIUM / LOW.
+La bala debe saber qué sacrificar antes de generar.
+
+### 14.5 RANDOMIZER
+Perturbar normalmente sólo **1–2 variables**.
+El dado propone; nunca decide CANON.
+Si la perturbación cambia la gramática protegida, se descarta.
+
+### 14.6 CONTRASTE Y FALSADORES
+Antes del prompt final:
+- declarar BASELINE;
+- declarar MUTACIÓN;
+- declarar anti-referencias o referencias por función;
+- definir 3–8 falsadores concretos.
+
+Un resultado bello puede ser FAIL si:
+- pierde función;
+- rompe autoridad;
+- sólo añade decoración;
+- depende de mockup/contexto para funcionar;
+- reduce claridad;
+- deriva hacia referencias reconocibles;
+- parece “IA genérica”;
+- domestica o exagera la pieza sin necesidad.
+
+### 14.7 FICHA DE BALA
+Debe incluir como mínimo:
+- ID;
+- nombre;
+- estado;
+- pregunta;
+- hipótesis;
+- SOURCE_OF_TRUTH;
+- baseline;
+- mutación;
+- capas;
+- pesos;
+- randomizer;
+- referencia principal por función;
+- referencia lateral o NONE;
+- riesgos;
+- éxito;
+- falsadores;
+- RETURN HOME.
+
+### 14.8 PROMPT MAGISTRAL A–J
+Para balas visuales/importantes usar estructura amplia cuando mejore precisión:
+
+A · IDENTITY / STATE  
+B · QUESTION / HYPOTHESIS  
+C · SOURCE_OF_TRUTH / LOCKS  
+D · FUNCTION / ORGANISM  
+E · FORM / COMPOSITION  
+F · MATERIAL / CAUSALITY  
+G · CREATIVE WEIGHTS  
+H · RANDOMIZER / DIALECTIC  
+I · ANTI-ERROR / FALSIFIERS / REFERENCE DISTANCE  
+J · EXPECTED OUTPUT / HUMAN READ / RETURN HOME
+
+No rellenar por inercia. Cada sección debe cambiar una decisión, proteger una autoridad o mejorar la lectura.
+
+### 14.9 HUMAN GATE ANTES DE GENERAR
+Si el humano ha fijado una orden de disparo explícita, no generar antes de ella.
+Ejemplos:
+DISPARA / PUM / LÁNZALA / GENERA / APROBADA.
+
+### 14.10 DESPUÉS DE GENERAR
+La imagen es **SENSOR**, no autoridad.
+Leer por:
+- olor ISL;
+- corazón;
+- nervio;
+- causalidad;
+- jugabilidad/función;
+- memoria;
+- humanidad;
+- distancia de referencias;
+- ruido;
+- replay/reutilización cuando aplique;
+- regresión contra baseline.
+
+Decisión:
+KEEP / MUTATE / PARK / KILL / REROLL.
+
+Una imagen espectacular NO asciende automáticamente a CANON.
+
+### 14.11 RETURN HOME
+Cerrar cada bala declarando:
+- qué sigue intacto;
+- qué no ha sido promovido;
+- qué autoridad manda;
+- qué necesita comparación humana;
+- qué binario/provenance debe registrarse;
+- cómo volver a SAFE HARBOR.
+
+Principio:
+**EL DADO PROPONE. LA METODOLOGÍA TENSIONA. LA IMAGEN REVELA. EL HUMANO DECIDE. ISL RECUERDA.**
