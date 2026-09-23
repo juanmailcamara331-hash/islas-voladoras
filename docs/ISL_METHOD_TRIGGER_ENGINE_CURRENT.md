@@ -137,3 +137,22 @@ No añadir Slack/Discord/servicios por coleccionismo de conectores.
 
 ## STOP RULE
 Si el trigger engine genera más trabajo que el que ahorra, simplificar.
+
+
+## GUIDED WORLD / HUD EVENT ROUTE · 2026-09-23
+Events:
+ZONE_CREATED / ROUTE_CHANGED / HUD_CHANGED / OBJECTIVE_FLOW_CHANGED / DIEGETIC_GATE_ADDED / REPLAY_ZONE_VARIANT / COMBAT_UI_CHANGED.
+
+Route to:
+docs/ISL_GUIDED_WORLD_HUD_AND_PLAYFLOW_DIRECTION_CURRENT.md
+
+Weight:
+P1 if a change introduces persistent mission markers, compulsory minimap dependence, checklist-open-world drift, or macro-rumbo confusion.
+P2 if a local space becomes over-UI'd or a diegetic gate is replaced by arbitrary blocking without reason.
+
+Preferred correction:
+remove UI before adding UI;
+improve spatial/audio/world cue before objective marker;
+keep local freedom while restoring authored macro-rumbo.
+
+No new reminder or bot.
