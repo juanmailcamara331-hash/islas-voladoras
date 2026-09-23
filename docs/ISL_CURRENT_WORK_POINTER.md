@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · IRENE CREATURE 002 LAB PREP
+- Explicit human-requested lateral HUMAN TRACE lab activated; no image generation yet.
+- Source drawing preserved in Drive: 1aVyZfbzjyr1tSOjC8pu-sBZYasu_SpvW.
+- ~14m32s process video preserved in native Library: libfile_7fe95355f0108191b10ea813c1d5945f; Drive mirror pending after one failed upload, no retry loop.
+- Full methodology / research / bullets / prompts: docs/ISL_IRENE_CREATURE_002_LAB_CURRENT.md.
+- Prepared bullets only: B01 TACTO CIEGO; B02 LENGUA DE VIENTO; B03 CORO DE MANOS DESACORDADO.
+- Human drawing remains SOURCE_OF_TRUTH and outranks all future derivatives.
+- This lateral lab does NOT displace Gift Token Mutation 03 human gate; no 3D/new production lane opened.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged. No checkpoint.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · GIFT TOKEN MUTATION 03 PREP
 - Mutation 02 technical read: geometry preserved; metallic materially increased; roughness slightly reduced; risk = over-metalization / weakened metal-vs-composite hierarchy.
 - Human gate remains OPEN. No acceptance/rejection recorded.
