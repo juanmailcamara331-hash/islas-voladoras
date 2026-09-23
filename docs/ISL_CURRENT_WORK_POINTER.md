@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · GIFT TOKEN MESHY GEOMETRY KEEP
+- Registered docs/ISL_GIFT_TOKEN_01B_MESHY_GEOMETRY_KEEP_2026-09-23.md.
+- Meshy GLB = KEEP · MUTATE LIGHTLY · HUMAN TRACE · GIFT · NO CANON · NO NEW ORGAN.
+- Technical snapshot: 1 geometry · 360,415 vertices · 720,906 faces · watertight · single connected body · no embedded basecolor/roughness/normal maps in this pass.
+- SHA-256 = a984871046db96dc3a0868c99da4be40cdba342fc082db7b272e94b830790e99.
+- Target normalized physical scale ≈ 60.0 × 50.15 × 9.62 mm.
+- Next: light remesh/decimate → 2K PBR texture → material CQC. Do NOT reroll geometry from zero.
+- No auto-propagation to gameplay buttons; this remains a lateral human-trace test of MOTHER SHAPE + HUMAN MATERIAL TRACE.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · GIFT VIDEO KEEP
 - Registered docs/ISL_GIFT_AFTERNOON_01_EL_MISMO_VIENTO_VIDEO_KEEP_2026-09-23.md.
 - Video A = KEEP · HUMAN TRACE · GIFT · NO CANON · NO NEW ORGAN.
