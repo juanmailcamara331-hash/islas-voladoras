@@ -1,3 +1,12 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · ROBUST ORGANISM GRADES + EXPORTABLE METHOD
+- Added lightweight evidence-aware grades to Organism Curation and Magistral Quality Protocol.
+- Q_FLOOR=min(C,A,F,D,R); Q_MED=median(C,A,F,D,R); Q_STABLE=median(last N Q_MED)-MAD(last N Q_MED).
+- Scores are heuristics, never CANON truth; use qualitative bands when evidence is sparse and always attach sample size/source/date/uncertainty/human note.
+- Added de-identified exportable method candidate: docs/ABSTRACT_CREATIVE_ORGANISM_SCORING_AND_PROMPT_ROUTER_v0.1.md.
+- Cross-project transfer is STRUCTURE ONLY, never ISL identity/lore/assets/data/decisions.
+- Skyship bullet revalidated against organism-health rule: relevant organ health + 2–4 locks + one risk + one unresolved question; no full-system prompt dump.
+- Bullet remains READY TO FIRE · SENSOR · LAB ONLY · NO CANON.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · ORGANISM CURATION + INTERACTIVE HEALTH MAP
 - New current method: docs/ISL_ORGANISM_CURATION_AND_VISUAL_HEALTH_CURRENT.md.
 - Purpose: periodically cure redundant/tangled CURRENT docs, boot noise, stale prompts, duplicate authority, toxic cross-links and internal complexity without deleting history or flattening identity.
