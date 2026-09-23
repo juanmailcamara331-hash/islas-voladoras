@@ -1,3 +1,19 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · GUIDED WORLD / MINIMAL HUD / PLAYFLOW LOCK
+- New human-author direction: docs/ISL_GUIDED_WORLD_HUD_AND_PLAYFLOW_DIRECTION_CURRENT.md.
+- Status: HUMAN AUTHOR LOCK · CANON DIRECTION · additive.
+- HUD = minimal by default; Skies-of-Arcadia-like restraint by function, never surface imitation.
+- Navigation = world composition/light/wind/audio/architecture/NPC flow before markers.
+- No permanent mission tracker or mandatory minimap dependence by default.
+- World = GUIDED · SEMI-OPEN · LOCAL FREEDOM · DEEP · INTUITIVE; not corridor, not checklist open world.
+- Zones may be separated by diegetic gates such as curtains/walls of air, wind states, relic/crew/Huella capability, social/world-state or impossible-physics seams.
+- Macro-rumbo remains authored; local interior history/routes/affordances may vary by archetype, Huellas, crew and replay layer.
+- Current progression hypothesis sealed for continued testing: LIFE ABOARD → CREW ROUTINES/RELATIONS → SHARED COMBAT BEHAVIOURS → ABILITY MUTATION → ISLAND EQUIPMENT → TACTICAL SOLUTIONS → HUELLA → REPLAY REINTERPRETATION.
+- Tonal field: deep, creative, slightly dark, adult sensual/erotic when contextually appropriate, punk, irreverent, tender, philosophical and strange; childlike social references are NEVER eroticized.
+- Functional references only: Skies of Arcadia / Rick-like high-concept irreverence / Recess-like micro-societies / Burton-like outsider dark-tender contrast / Jungian attractors / Pratchett-like systemic humour.
+- Automation Master, Method Trigger Engine, Meta-Layer Orchestrator and Magistral Quality Protocol inherit this direction; no new bot.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · FRIENDS INTAKE BATCH 02 · CREW LIFE / COMBAT EVOLUTION
 - Extended docs/ISL_FRIENDS_IMPROVEMENTS_INTAKE_2026-09-23.md with evolving magic/abilities, crew-life→ship-combat progression, 2.5D turn-based combat, variable party sizes, ship-centric ability architecture, island-specific argument-based gear, secret objects/friend traces and a minimal cross-system prototype.
 - Uploaded handwritten/note image is semantic scratchpad only: NOT visual reference, NOT SOURCE_OF_TRUTH, NOT art direction.
