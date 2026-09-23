@@ -1,4 +1,14 @@
 
+# ACTIVE EXECUTION NOTE · 2026-09-23 · AUTHORITY PRUNING v0.93
+- New governance note: docs/ISL_AUTHORITY_PRUNING_MATRIX_v0.93.md.
+- Purpose: prune authority, not memory; no historical deletion or mass rewrite.
+- ACTIVE CORE remains small: MASTER / CURRENT_WORK_POINTER / SAFE_HARBOR / Lifecycle / Orchestrator / Quality Router+Matrix / Randomizer / Context Hygiene / Reference Function protocol / Organism Radiography / executable preflight.
+- ROLE LENS / STARTING CONTRACT is now treated as CONFLICT/TEST_REQUIRED for identity architecture; prior CANON DIRECTION is preserved historically and commercially but must not silently decide H1/H2/H3 before cheap test + human read.
+- GLOBAL ATMOSPHERIC FIELD / CONTRADICCIÓN VIVA is SUPPORTING / MODULATED / NON-MANDATORY; v0.92 rule NORMALITY IS PART OF THE SYSTEM and NO CONTRADICTION REQUIRED BY DEFAULT governs.
+- Strong current reference band is functional only: Terry Pratchett / Recess-La Banda del Patio / Tim Burton / Rick-like high-concept irreverence / Jung / cognitive neuroscience. NONE remains a valid randomizer outcome.
+- Do not auto-propagate any reference or atmospheric field to every output.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · CHECKPOINT v0.93
 - Operational handoff: docs/ISL_CHECKPOINT_v0.93_ORGANISM_ENTROPIC_ARCHETYPE_BAILE_HANDOFF_2026-09-23.md.
 - Drive MASTER boot has been aligned to v0.93; prior v0.92/v0.91 remain preserved historical/protected context.
