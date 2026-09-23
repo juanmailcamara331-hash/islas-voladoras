@@ -231,3 +231,223 @@ H. one opening voice-over script test.
 ## 12. PRINCIPLE
 The goal is not to stuff ISL with references.
 The goal is to make the world feel so lived, layered and replayable that references become tiny rewards inside something that already has its own identity.
+
+
+## 13. ABILITIES / MAGIC THAT EVOLVE THROUGH USE
+Human hypothesis:
+abilities and magic should not be a static list unlocked only by level.
+
+Possible evolution loop:
+USE → CONTEXT → PATTERN → ARCHETYPE TENSION → BOUNDED RANDOMIZER → MUTATION / UPGRADE.
+
+Design intent:
+- the player gradually teaches the system what kind of repertoire they are becoming;
+- repeated use may strengthen, branch, hybridize or alter an ability;
+- Jungian/archetypal logic acts as a dynamic attractor, not a fixed class or diagnosis;
+- Randomizer proposes bounded mutations and never decides identity alone;
+- rare mutations can appear when use-pattern + world event + relationship/context align.
+
+Guard:
+avoid grind/farming exploits.
+Identity and ability evolution must not be trivially farmable by repeating one cheap action.
+
+Open question:
+Should the player preview the mutation, discover it after use, or get a constrained choice between 2–3 emergent variants?
+
+Status:
+STRONG SYSTEM HYPOTHESIS · REQUIRES CHEAP PROGRESSION TEST.
+
+## 14. CREW LIFE → SHIP COMBAT
+Human direction:
+ordinary life aboard the ship should improve how the crew fights together.
+
+Key principle:
+THE SHIP IS NOT A MENU BETWEEN BATTLES.
+LIFE ABOARD IS TRAINING, COHESION AND TACTICAL MEMORY.
+
+Candidate examples:
+- cooking together → recovery / timing / morale effects;
+- repairing under pressure → emergency hull responses;
+- navigation habits → initiative / positioning / evasion;
+- arguments resolved or unresolved → combo reliability / risk;
+- shared music / rhythm → coordinated turn windows;
+- lookout routines → early-warning / ambush resistance;
+- caring for a creature/relic → unusual support effect;
+- who sleeps, works, rests or takes burden → fatigue / availability / special responses.
+
+Important simplification:
+prefer CREW / RELATIONSHIP / SHIP BEHAVIOUR bonuses over giving every crew member a giant independent ability tree.
+
+Goal:
+the player remembers “we became good at this because of how we lived together,” not “I allocated +3 to Crew Skill IV.”
+
+Status:
+VERY STRONG FIT WITH ISL HEART + HUELLA SYSTEM.
+Needs combat prototype.
+
+## 15. COMBAT PRESENTATION · 2.5D TURN-BASED
+Candidate:
+both ground combat and skyship combat can use a highly polished 2.5D turn-based presentation.
+
+Potential benefits:
+- readable silhouettes;
+- strong staging/camera;
+- painterly/3D depth without full action-combat production burden;
+- expressive crew positioning;
+- dramatic impossible-physics moments;
+- mobile/readability potential;
+- allows tactical clarity while preserving visual spectacle.
+
+Guard:
+2.5D is a presentation direction, not yet a locked engine decision.
+Must prove:
+clarity;
+tempo;
+touch readability;
+camera;
+performance;
+transition between exploration and combat.
+
+Status:
+STRONG PRESENTATION HYPOTHESIS.
+
+## 16. VARIABLE PARTY / ENCOUNTER SIZE
+Candidate:
+turn-based encounters may support:
+2 vs X
+3 vs X
+4 vs X
+5 vs 5
+and other bounded compositions.
+
+Design intent:
+party size should change the problem, not merely increase animation count.
+
+Possible meanings:
+- 2-person fights = intimacy / survival / strong pair synergies;
+- 3-person = tactical triangle;
+- 4-person = stable expedition formation;
+- 5-person = full-crew set-piece / climax.
+
+Guard:
+avoid designing every encounter for every possible count.
+Use authored encounter families and substitution rules.
+
+Status:
+KEEP FOR COMBAT PROTOTYPE.
+
+## 17. SHIP-CENTRIC ABILITY MODEL
+Human correction:
+avoid excessive “one giant skill tree per character” complexity.
+
+Alternative:
+what happens aboard ship, in relationships and in shared routines feeds combat capabilities.
+
+Possible structure:
+CHARACTERS have identity + small signature verbs.
+CREW has shared learned behaviours.
+SHIP has equipment + state + tactical affordances.
+HUELLAS provide memory/context.
+ARCHETYPE layer modulates possible mutations.
+
+This may produce:
+INDIVIDUAL SIGNATURE
+× CREW SYNERGY
+× SHIP EQUIPMENT
+× WORLD/ISLAND KNOWLEDGE
+rather than dozens of isolated per-character ability lists.
+
+Status:
+VERY STRONG ARCHITECTURAL HYPOTHESIS.
+Test against readability and character individuality.
+
+## 18. ISLAND-SPECIFIC EQUIPMENT / ARGUMENT-BASED GEAR
+Human idea:
+different islands sell/find different ship equipment, weapons, relics or abilities tied to that island's lore and social contradiction.
+
+Design rule:
+equipment should embody the island's argument, not just its visual theme.
+
+Example functions:
+- an island obsessed with punctuality sells perfect timing devices that become brittle under improvisation;
+- an island that worships rest offers defensive gear that rewards skipping turns;
+- an island built around collective labour sells equipment that becomes stronger when burden is shared;
+- an island addicted to spectacle sells devastating gear with social/attention costs.
+
+Pratchett-function:
+objects and institutions can be funny because their mechanics expose the society that made them.
+Do NOT imitate Terry Pratchett's prose or recognizable inventions.
+
+Status:
+STRONG FIT · HIGH WORLD/MECHANIC COHERENCE POTENTIAL.
+
+## 19. FRIENDS / SECRET OBJECTS / HUMAN TRACE
+Candidate:
+friends or human-inspired secondary characters can carry:
+- unusual objects;
+- one-off relics;
+- hidden recipes;
+- obscure map marks;
+- easter-egg triggers;
+- strange shop inventory;
+- rumours that only make sense on later runs.
+
+Guard:
+consent/privacy/de-identification as required.
+No real person becomes CANON merely because an anecdote is charming.
+
+Function:
+make human participation materially discoverable rather than merely credited.
+
+Status:
+KEEP · HUMAN TRACE GATES APPLY.
+
+## 20. IMAGE NOTE
+The uploaded note image “Anime Monster … magias habilidades …” is treated only as the human author's personal scratchpad / orientation note.
+
+Status:
+NOT A VISUAL REFERENCE.
+NOT SOURCE_OF_TRUTH.
+NOT ART DIRECTION.
+Its value is semantic: it helped recover the ideas captured in sections 13–19.
+
+## 21. NEW CROSS-SYSTEM HYPOTHESIS
+A potentially powerful loop now appears:
+
+LIFE ABOARD SHIP
+→ CREW RELATIONSHIPS / ROUTINES
+→ SHARED COMBAT BEHAVIOURS
+→ ABILITY MUTATIONS
+→ ISLAND-SPECIFIC EQUIPMENT
+→ DIFFERENT TACTICAL SOLUTIONS
+→ HUELLA / MEMORY
+→ LATER REPLAY REINTERPRETATION.
+
+This is promising because progression is generated by lived experience rather than disconnected menus.
+
+Risk:
+too many interacting systems can become unreadable.
+
+Therefore:
+prototype the smallest possible loop before expanding.
+
+Suggested cheap test:
+one ship;
+three crew;
+two daily routines;
+three signature abilities;
+one island equipment choice;
+one 3v3 encounter;
+one post-combat mutation;
+one Huella callback.
+
+Success question:
+Does the player understand WHY their crew now fights differently?
+
+## 22. UPDATED PRINCIPLE
+Combat progression should feel like accumulated life.
+
+The player should be able to say:
+“we fight this way because of what happened to us”
+rather than:
+“we fight this way because I filled a skill tree.”
