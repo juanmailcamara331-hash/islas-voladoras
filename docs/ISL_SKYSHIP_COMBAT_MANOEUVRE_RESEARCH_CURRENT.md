@@ -123,3 +123,36 @@ Return-home:
 PRIMARY remains Velaria V2 P0.
 HUMAN_DEVICE_GREEN remains PENDING.
 SAFE HARBOR unchanged.
+
+
+## SKYSHIP FAMILY SENSOR · 2026-09-24
+Estado: PRESERVED · HUMAN READ PENDING · SENSOR ONLY · NO CANON
+
+Two original internal references were generated and archived to reduce dependence on external visual references:
+
+1. SKYSHIP REF 01 · PLAYER HOME/MACHINE
+- Drive ID: 1lHnnUPA2kNxjXjBgWTLJoCjoOvI4odnh
+- Gen ID: 6ccdf0c3-5124-44c3-bcc1-c6da0b09beec
+- Function: test one mother silhouette that reads simultaneously as machine, home, social organism and accumulated repair history.
+- Useful cues: inhabited deck, practical rigging, patched lifting surface, greenery/domestic traces, restrained dark metal, visible crew.
+- Risk: can still drift toward generic premium fantasy airship if copied literally.
+
+2. SKYSHIP TRINITY BOARD 01 · LAS TRES QUE NO DEBÍAN LLEGAR JUNTAS
+- Drive ID: 1wXNWA0YtvHaMVRssJ93fvHMtanhGu8MQ
+- Gen ID: 49f84b7a-bae3-4a91-808d-71864af733d5
+- Function: compare a related three-vessel expedition family:
+  - light scout;
+  - medium all-rounder;
+  - large mother/home.
+- Historical inspiration is FUNCTION ONLY: complementary expedition roles. Do not recreate historical caravels, colonial iconography or named ships.
+- Terry Pratchett reference is FUNCTION ONLY: humane irony, material biography, community, logistics and imperfect objects. Do not imitate copyrighted surface style.
+
+Current hypothesis:
+SHARED MATERIAL DNA + DISTINCT SILHOUETTE + LIVED HUMAN TRACE + FUNCTIONAL ROLE
+may produce a coherent skyship family without requiring steampunk/pirate/fantasy cliché.
+
+Do not promote generated labels, dimensions, text, typography or exact board prose to world truth. Those are presentation artifacts, not authority.
+
+Next valid reads:
+KEEP / MUTATE / PARK / KILL per vessel and family.
+Do not jump directly to combat implementation until human read resolves which visual functions survive.
