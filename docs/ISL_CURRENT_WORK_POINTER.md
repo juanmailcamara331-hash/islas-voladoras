@@ -1,3 +1,20 @@
+# SESSION CLOSE · 2026-09-23 · ORDER PRESERVED
+- Human closed creative session for the day; continue tomorrow.
+- Preserve session-order routing: FROM → NOW → BLOCKER → SAFE NEXT → HUMAN GATE → AFTER.
+- ONE ACTIVE · ONE NEXT · REST PARKED.
+- ACTIVE lane remains Gift Token / Mutation 02 HUMAN A/B gate.
+- SAFE NEXT after human decision: accepted GLB runtime packaging for Gallery → deploy/mobile verification.
+- Collector video side-lane remains SENSOR-only and must not displace active lane:
+  - BALA 01: KEEP · STRONG VIDEO SENSOR · NO CANON · Drive ID 17ZoTJrq1m3OebcxSFrHoGkdEOrGNJJvo.
+  - BALA 02: SENSOR ARCHIVED · HUMAN READ PENDING · NO CANON · Drive ID 1eeoUbiLVkFWo1Cnf1xjaV0Azd8bU-SFH.
+  - BALA 03: PREPARED ONLY · NOT GENERATED.
+- Collector current visual sensor remains preferred over older Kickstarter physical mockups; old pouch/cards Kickstarter stays PARKED historical reference.
+- Multi-agent bridge / Night Studio remains PARKED HIGH VALUE in deferred queue; do not implement until simple Night Shift produces evidence.
+- No new 3D props until Gift Token lane closes; Brújula de las Huellas remains prepared NEXT, not active.
+- Carrillo/father gift-object recoveries remain PARKED.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- No checkpoint warranted by this session close alone.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · COLLECTOR VIDEO SENSOR BALA 02
 - Derived video archived: ISL_COLLECTOR_VIDEO_SENSOR_BALA_02_2026-09-23.mp4 · Drive ID 1eeoUbiLVkFWo1Cnf1xjaV0Azd8bU-SFH.
 - Technical facts: 1280x720, ~23.90 fps, 231 frames, ~9.67 s.
