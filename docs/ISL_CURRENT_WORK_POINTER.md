@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · MAGISTRAL BULLET PREPARATION RULE
+- The existing Quality Protocol now formalizes creative/visual bullet preparation; no new organ/meta-layer was created.
+- Default sequence: RECOVER → PREFLIGHT → minimal methodology cross → weights → randomizer → baseline/contrast/falsifiers → bullet card → PROMPT MAGISTRAL A–J → HUMAN GATE → generation → human read → KEEP/MUTATE/PARK/KILL/REROLL → RETURN HOME.
+- NO IMPROVISAR BALAS. NO PROMPT MAGISTRAL = NO BALA.
+- Image remains SENSOR, never authority by beauty/recency.
+- Use 2–4 weighted axes and normally perturb only 1–2 variables.
+- Falsifiers are mandatory for important bullets.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · BAILE WORLD-ORGANISM VISUAL BULLET KEEP
 - Registered: docs/ISL_VISUAL_BULLET_BAILE_WORLD_ORGANISM_KEEP_2026-09-23.md.
 - ISL-BULLET-BAILE-WORLD-ORGANISM-01 (“La isla respira porque la gente la sostiene”) = KEEP · STRONG SENSOR · LAB ONLY · NO CANON.
