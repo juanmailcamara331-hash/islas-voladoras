@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071017">
+<title>ISL · Balas Creativas</title>
+<link rel="stylesheet" href="isl-global-shell.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#173541 0,transparent 25%),linear-gradient(#071017,#09151c 58%,#071017);color:#edf7f4;font-family:Inter,system-ui,sans-serif}.wrap{width:min(1180px,94vw);margin:auto;padding:22px 0 110px}.hero{border:1px solid #35535e;border-radius:24px;padding:24px;background:linear-gradient(135deg,#112832,#0a151b);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;inset:auto -60px -85px auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#80ffcb30,transparent 62%)}.k{font-size:10px;letter-spacing:.16em;color:#8df5ff;font-weight:900}.hero h1{font-size:clamp(42px,8vw,82px);line-height:.9;margin:8px 0}.hero p{max-width:800px;color:#b8c8cc;line-height:1.5}.guard{margin-top:10px;color:#d8c89a;font-size:11px}.layout{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:14px}.panel{border:1px solid #304e59;border-radius:18px;background:#0b171de8;padding:16px}.panel h2{font-size:19px;margin:4px 0 12px}.field{display:grid;gap:5px;margin-bottom:10px}.field label{font-size:9px;letter-spacing:.1em;color:#93a8ad;font-weight:900}.field input,.field select,.field textarea{width:100%;border:1px solid #36535e;border-radius:10px;background:#071118;color:#eef7f4;padding:11px;font:inherit;font-size:12px}.field textarea{min-height:84px;resize:vertical}.weights{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.weight{border:1px solid #28434d;border-radius:12px;padding:10px;background:#08141a}.weight div{display:flex;justify-content:space-between;gap:8px;font-size:10px}.weight input{width:100%;accent-color:auto}.refs{display:flex;gap:6px;flex-wrap:wrap}.chip{border:1px solid #36535e;background:#091820;color:#c6dadd;padding:8px 9px;border-radius:999px;font-size:9px;cursor:pointer}.chip.on{border-color:#a4894f;background:#2b2415;color:#ffecbd}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid #496774;background:#0c2028;color:#ecfbff;border-radius:11px;padding:11px 13px;font-size:10px;font-weight:900;cursor:pointer}.btn.primary{border-color:#846a3c;background:#2d2314;color:#ffe7ac}.btn.ghost{background:#081319}.shotGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.shot{border:1px solid #304d57;border-radius:14px;background:#08141a;padding:12px;min-height:190px}.shot b{display:block;font-size:14px;margin:5px 0}.shot p{font-size:10px;color:#aebdc1;line-height:1.45}.shot small{font-size:8px;color:#789198}.shot .decision{display:flex;gap:4px;flex-wrap:wrap;margin-top:9px}.shot .decision button{padding:6px 7px;border-radius:8px;border:1px solid #35515b;background:#0a171d;color:#dbe8e8;font-size:8px;cursor:pointer}.shot .decision button.on{border-color:#8b7446;background:#2b2417;color:#ffe9b7}.history{display:grid;gap:7px;max-height:300px;overflow:auto}.hist{border-left:3px solid #4b6a74;background:#071118;padding:9px;font-size:9px;color:#aebfc2}.hist b{color:#fff}.brief{white-space:pre-wrap;background:#061017;border:1px solid #28434e;border-radius:12px;padding:12px;min-height:180px;font-size:10px;line-height:1.5;color:#d9e8e8}.hint{font-size:9px;color:#7f979d;margin-top:7px}.tiny{font-size:9px;color:#7e9298}.danger{color:#ffb5b5}.ok{color:#aef0ce}@media(max-width:850px){.layout{grid-template-columns:1fr}.shotGrid{grid-template-columns:1fr}.weights{grid-template-columns:1fr 1fr}}@media(max-width:520px){.weights{grid-template-columns:1fr}.hero{padding:18px}.panel{padding:13px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<div class="k">LAB · BOUNDED · NO CANON</div>
+<h1>Balas creativas.</h1>
+<p>Prepara el tiro, mezcla sólo unos pocos pesos y dispara tres variantes. La herramienta propone presión creativa; ISL decide después.</p>
+<div class="guard">FEWER NEW IDEAS · BETTER WEIGHTING · BETTER SHOTS · NONE sigue siendo una referencia válida.</div>
+</section>
+
+<section class="layout">
+<div class="panel">
+<div class="k">1 · PREPARAR BALA</div><h2>¿Qué pieza vamos a tocar?</h2>
+<div class="field"><label>SUJETO / SOURCE OF TRUTH</label><input id="subject" value="Isla del Baile Inagotable · docs/ISL_ISLA_BAILE_INAGOTABLE_v1.md"></div>
+<div class="field"><label>INTENCIÓN</label><textarea id="intent">Encontrar una dirección visual con corazón, nervio y rareza funcional sin romper el esqueleto existente.</textarea></div>
+<div class="field"><label>ÓRGANO OBJETIVO</label><select id="organ"><option>corazón</option><option>músculo</option><option>sistema nervioso</option><option>sangre / huellas</option><option>memoria</option><option>piel</option><option>pulmones</option><option>esqueleto</option></select></div>
+<div class="field"><label>ENTROPÍA</label><select id="entropy"><option value="0">0 · NORMALIDAD</option><option value="1">1 · FRICCIÓN</option><option value="2" selected>2 · ANOMALÍA</option><option value="3">3 · FRACTURA</option><option value="4">4 · PRISMA</option></select></div>
+
+<div class="k" style="margin:14px 0 8px">PESOS · ACTIVA 2–4</div>
+<div class="weights" id="weights"></div>
+
+<div class="k" style="margin:14px 0 8px">REFERENCIAS FUNCIONALES · 0–2</div>
+<div class="refs" id="refs"></div>
+<div class="actions"><button class="btn ghost" id="reset">NORMALIZAR</button><button class="btn primary" id="fire">🎲 TIRAR 3 BALAS</button></div>
+<div class="hint">El dado usa pesos, anti-repetición y una pequeña perturbación. No cambia CANON ni SOURCE_OF_TRUTH.</div>
+</div>
+
+<div class="panel">
+<div class="k">2 · MUNICIÓN</div><h2>Tres tiros como máximo</h2>
+<div class="shotGrid" id="shots"></div>
+<div class="actions"><button class="btn" id="copy">COPIAR BRIEF PARA CHATGPT / IMAGEN</button><button class="btn ghost" id="save">GUARDAR SESIÓN LOCAL</button></div>
+<div class="tiny" id="status">Sin disparar.</div>
+</div>
+</section>
+
+<section class="layout">
+<div class="panel"><div class="k">3 · BRIEF</div><h2>Lo que sale del arma</h2><div id="brief" class="brief">Dispara una ronda para construir el brief.</div></div>
+<div class="panel"><div class="k">4 · MEMORIA LOCAL</div><h2>Olor de los últimos tiros</h2><div id="history" class="history"></div><div class="actions"><button class="btn ghost" id="clearHistory">LIMPIAR HISTORIAL LOCAL</button></div></div>
+</section>
+</main>
+<script>
+(()=>{
+const WEIGHTS=[
+['W1','CORAZÓN HUMANO'],['W2','MÚSCULO JUGABLE'],['W3','CAUSALIDAD'],['W4','MEMORIA / RETORNO'],['W5','MICROSOCIEDAD'],['W6','OSCURO / TIERNO'],['W7','IRREVERENCIA HIGH-CONCEPT'],['W8','ARQUETIPO EMERGENTE'],['W9','NEUROPERCEPCIÓN'],['W10','MATERIALIDAD PUNK'],['W11','PRISMA / LIMINAL'],['W12','NORMALIDAD CONTRASTE'],['W13','HUMOR LATERAL'],['W14','PIEL VISUAL / AUDIO']
+];
+const REFS=['NONE','Terry Pratchett','La Banda del Patio / Recess','Tim Burton','Rick-like high-concept','Jung','Neurobiología / prediction error'];
+const weights=document.getElementById('weights'), refs=document.getElementById('refs');
+WEIGHTS.forEach((x,i)=>{const d=document.createElement('div');d.className='weight';d.innerHTML='<div><b>'+x[0]+' · '+x[1]+'</b><span id="v'+i+'">'+(i===0||i===2||i===11?70:20)+'</span></div><input data-w="'+i+'" type="range" min="0" max="100" step="10" value="'+(i===0||i===2||i===11?70:20)+'">';weights.appendChild(d)});
+refs.innerHTML=REFS.map((r,i)=>'<button class="chip'+(i===0?' on':'')+'" data-ref="'+i+'">'+r+'</button>').join('');
+weights.addEventListener('input',e=>{if(e.target.matches('[data-w]'))document.getElementById('v'+e.target.dataset.w).textContent=e.target.value});
+refs.addEventListener('click',e=>{if(!e.target.matches('[data-ref]'))return;const idx=+e.target.dataset.ref;if(idx===0){refs.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));e.target.classList.add('on');return}refs.querySelector('[data-ref="0"]').classList.remove('on');e.target.classList.toggle('on');const on=[...refs.querySelectorAll('.chip.on')].filter(x=>x.dataset.ref!=='0');if(on.length>2)on[0].classList.remove('on');if(!refs.querySelector('.chip.on'))refs.querySelector('[data-ref="0"]').classList.add('on')});
+function selectedWeights(){return [...document.querySelectorAll('[data-w]')].map((e,i)=>({id:WEIGHTS[i][0],name:WEIGHTS[i][1],v:+e.value})).filter(x=>x.v>=50).sort((a,b)=>b.v-a.v).slice(0,4)}
+function selectedRefs(){const a=[...refs.querySelectorAll('.chip.on')].map(x=>REFS[+x.dataset.ref]);return a.length?a:['NONE']}
+const flavors=[
+['A · CERCA','preserva el corazón y altera lo mínimo necesario','más legible, humana y contenida'],
+['B · LATERAL','introduce una desviación social o relacional inesperada','más juguetona, punk o absurda'],
+['C · SALVAJE','rompe una expectativa aprendida con una consecuencia legible','más fracturada, prisma o high-concept']
+];
+function pick(arr,n){return arr[Math.abs(n)%arr.length]}
+function buildShot(i,w,r,ent){
+ const seed=Date.now()+i*37+Math.floor(Math.random()*999);
+ const core=w.length?w.map(x=>x.name).join(' + '):'NORMALIDAD + CORAZÓN';
+ const ref=r.join(' × ');
+ const verbs=['observar antes de explicar','hacer que una relación cambie','dejar una huella persistente','convertir una regla en affordance','introducir un coste humano','hacer visible una contradicción'];
+ const mutation=pick(verbs,seed);
+ return {title:flavors[i][0],thesis:flavors[i][1],tone:flavors[i][2],core,ref,entropy:ent,mutation,decision:''};
+}
+let current=[];
+function fire(){
+ const w=selectedWeights(),r=selectedRefs(),ent=+document.getElementById('entropy').value;
+ current=[0,1,2].map(i=>buildShot(i,w,r,Math.max(0,Math.min(4,ent+(i===0?-1:i===2?1:0)))));
+ renderShots();buildBrief();document.getElementById('status').textContent='Ronda preparada · decide por olor antes de teorizar.';
+}
+function renderShots(){
+ const el=document.getElementById('shots');el.innerHTML=current.map((s,i)=>'<article class="shot"><small>'+s.title+'</small><b>'+s.tone+'</b><p>'+s.thesis+'.<br><br><strong>Pesos:</strong> '+s.core+'.<br><strong>Referencia:</strong> '+s.ref+'.<br><strong>Entropía:</strong> '+s.entropy+'/4.<br><strong>Presión:</strong> '+s.mutation+'.</p><div class="decision">'+['KEEP','MUTATE','PARK','KILL','REROLL'].map(d=>'<button data-dec="'+i+'" data-v="'+d+'" class="'+(s.decision===d?'on':'')+'">'+d+'</button>').join('')+'</div></article>').join('');
+}
+document.getElementById('shots').addEventListener('click',e=>{if(!e.target.matches('[data-dec]'))return;current[+e.target.dataset.dec].decision=e.target.dataset.v;renderShots();buildBrief()});
+function buildBrief(){
+ const subject=document.getElementById('subject').value.trim(),intent=document.getElementById('intent').value.trim(),organ=document.getElementById('organ').value;
+ const w=selectedWeights(),r=selectedRefs(),ent=document.getElementById('entropy').value;
+ const lines=['ISL · BALA ENTRÓPICA CREATIVA · LAB ONLY · NO CANON','','SUBJECT / SOURCE_OF_TRUTH: '+subject,'INTENCIÓN: '+intent,'ÓRGANO OBJETIVO: '+organ,'ENTROPÍA BASE: '+ent+'/4','PESOS ACTIVOS: '+(w.length?w.map(x=>x.id+' '+x.name+' '+x.v).join(' · '):'NINGUNO >50'),'REFERENCIAS FUNCIONALES: '+r.join(' × '),'','GUARDS: preservar esqueleto · normalidad tiene peso · referencia por función, no superficie · máximo 3 variantes · ninguna gana automáticamente.',''];
+ current.forEach((s,i)=>lines.push(s.title+': '+s.tone+' | '+s.thesis+' | '+s.mutation+' | decisión '+(s.decision||'PENDIENTE')));
+ lines.push('','GENERAR/ANALIZAR LAS 3 VARIANTES COMO LA MISMA ESCENA BASE. PRIORIDAD: olor ISL, corazón, nervio, causalidad, memorabilidad y distancia respecto a referencias. TERMINAR KEEP / MUTATE / PARK / KILL / REROLL.');
+ document.getElementById('brief').textContent=lines.join('\n');
+}
+document.getElementById('fire').onclick=fire;
+document.getElementById('copy').onclick=async()=>{buildBrief();try{await navigator.clipboard.writeText(document.getElementById('brief').textContent);document.getElementById('status').textContent='Brief copiado.'}catch(e){document.getElementById('status').textContent='No se pudo copiar; selecciónalo manualmente.'}};
+const KEY='isl_creative_bullets_v1';
+function readHistory(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+function renderHistory(){const a=readHistory();document.getElementById('history').innerHTML=a.length?a.slice().reverse().map(x=>'<div class="hist"><b>'+x.date+' · '+x.subject+'</b><br>'+x.weights+'<br>'+x.refs+'<br>'+x.decisions+'</div>').join(''):'<div class="tiny">Aún no hay sesiones guardadas.</div>'}
+document.getElementById('save').onclick=()=>{if(!current.length)return;const a=readHistory();const w=selectedWeights(),r=selectedRefs();a.push({date:new Date().toLocaleString(),subject:document.getElementById('subject').value,weights:w.map(x=>x.id+':'+x.v).join(' · '),refs:r.join(' × '),decisions:current.map(s=>s.title+' '+(s.decision||'PENDIENTE')).join(' · ')});localStorage.setItem(KEY,JSON.stringify(a.slice(-20)));renderHistory();document.getElementById('status').textContent='Sesión guardada sólo en este dispositivo.'};
+document.getElementById('clearHistory').onclick=()=>{localStorage.removeItem(KEY);renderHistory()};
+document.getElementById('reset').onclick=()=>{document.querySelectorAll('[data-w]').forEach((e,i)=>{e.value=(i===0||i===2||i===11?70:20);document.getElementById('v'+i).textContent=e.value});refs.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));refs.querySelector('[data-ref="0"]').classList.add('on');document.getElementById('entropy').value='2';current=[];renderShots();document.getElementById('brief').textContent='Dispara una ronda para construir el brief.';document.getElementById('status').textContent='Normalizado.'};
+renderHistory();renderShots();
+})();
+</script>
+<script defer src="isl-global-shell.js"></script>
+</body></html>
