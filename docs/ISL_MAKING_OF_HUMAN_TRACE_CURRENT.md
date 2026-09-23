@@ -302,3 +302,21 @@ distributed soft-limb control + sparse biological-motion perception; never surfa
 
 Boundary:
 Human source outranks derivatives. No automatic correction, generation, 3D, publication or CANON promotion.
+
+
+## CREATURE_002 · DERIVATIVE SENSOR SET · 2026-09-24
+
+Human source remains primary.
+Generated derivative sequence preserved:
+1. B01 TACTO CIEGO · isolated tactile-creature sensor · Drive `1CrvYHwr33Rrv7qU1yiVb6Ol6xP6uUekh`.
+2. B02 GAMEPLAY CONTEXT · floating-route / wind / environment integration sensor · Drive `1Mbr_Rygq3uF8Yvoe1jQK1MNNEg69E84F`.
+3. B03 ALTAR DEL VIENTO CIEGO · local mini-boss territorial encounter sensor · Drive `1pKp_H9gDdZGycAqQ8EPOx1jvk6RkEZrw`.
+
+Status:
+PRESERVED · HUMAN READ PENDING · NO CANON.
+
+Making-of causal chain:
+RAW DRAWING → RAW PROCESS VIDEO → B01 CREATURE READ → B02 GAMEPLAY CONTEXT → B03 TERRITORIAL MINI-BOSS SENSOR.
+
+Do not hide the human source when presenting this lineage internally.
+No automatic publication. Credit/privacy rules remain in force.
