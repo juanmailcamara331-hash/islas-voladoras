@@ -291,3 +291,40 @@ Use docs/ISL_ORGANISM_CURATION_AND_VISUAL_HEALTH_CURRENT.md when:
 Routing rule:
 load only relevant organ health + strongest locks + one risk + one unresolved question.
 Do not dump the full organism into every task.
+
+
+## SESSION / WORK ORDER ROUTING · 2026-09-23
+Purpose:
+keep every working session —human-active or automated/night— oriented by:
+FROM → NOW → BLOCKER → SAFE NEXT → HUMAN GATE → AFTER.
+
+This is NOT a new meta-layer. It extends M0 NAVIGATION and coordinates existing layers.
+
+At the start of every substantive session:
+1. FROM: identify the last verified state and relevant preserved baseline.
+2. NOW: identify the single active lane.
+3. BLOCKER: identify the nearest unresolved gate.
+4. SAFE NEXT: choose the smallest action that actually reduces that blocker.
+5. HUMAN GATE: mark any point requiring taste, authority, privacy, publication, money or irreversible change.
+6. AFTER: keep at most 1–3 queued next actions; everything else stays PARKED.
+
+Rules:
+- one active construction lane by default;
+- one prepared next lane allowed;
+- one background maintenance lane allowed only if it cannot mutate the active creative decision;
+- historical/recovered ideas are PARKED until explicitly reactivated;
+- a strong old artifact may remain reference without re-entering production;
+- no new lane may jump ahead of an unresolved HUMAN GATE merely because it is exciting or recent.
+
+Night Shift inheritance:
+- each automated pass re-runs this order from persistent authority;
+- automated work may advance SAFE NEXT only;
+- if BLOCKER is HUMAN GATE, background work switches to READ_ONLY / preparation / verification;
+- last pass produces morning handoff using FROM / NOW / BLOCKER / DONE / NEEDS HUMAN / NEXT.
+
+Checkpoint rule:
+session-order cleanup alone does not justify a checkpoint.
+Checkpoint only when existing structural thresholds are met.
+
+Anti-chaos shorthand:
+ONE ACTIVE · ONE NEXT · REST PARKED.
