@@ -1658,3 +1658,13 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
   - `ISL_ORGANISMO_VIVO_KICKSTARTER_COLLECTOR_MASTER.png`
 - Locked visual qualities: living-relic feeling; symbolic human anatomy; glowing heart/core; strong central spine/eje; subtle nervous filigree; ivory-stone + aged bronze/gold + dark cloth materials; floating-island/compass base; poetic wear/asymmetry; premium editorial product presentation; minimal functional copy; body ↔ project ↔ world relation.
 - Guards: not protagonist authority; not automatic gameplay character; no production quantity/price/manufacturing authorization; later generations do not supersede these masters by recency.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-23 · APP/WEB UPGRADE + ANCESTOR LAYER
+- New direction: `docs/ISL_APP_WEB_EVOLUTION_LAYER_CURRENT.md`.
+- The app/web is NOT rebooted from zero. Use a controlled renovation: current Upgrade surface on top; previous app/web becomes ANCESTOR / LEGACY historical layer for Gallery, Evolution and Making-of.
+- Required public lens: NOW → PREVIOUS → WHY IT CHANGED → EVIDENCE → WHAT SURVIVED.
+- Legacy material may inform but cannot silently regain authority.
+- Private Command Center/security/supplier state stays private.
+- Bots may flag stale public surfaces and making-of candidates, but may not auto-publish legacy content or auto-create navigation.
+- Immediate app/web order: inventory → classify CURRENT/ANCESTOR/ARCHIVE → freeze legacy screenshots/assets → redesign IA → build Upgrade shell → migrate proven functions → add Evolution/Making-of → reconnect Gallery/Organismo/PRIMARY → validate mobile/device → verify public/private boundary.
