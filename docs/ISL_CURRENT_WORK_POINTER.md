@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · SKYSHIP FAMILY SENSOR PRESERVED
+- New lateral visual lineage preserved:
+  - SKYSHIP REF 01 · player home/machine sensor · Drive 1lHnnUPA2kNxjXjBgWTLJoCjoOvI4odnh
+  - SKYSHIP TRINITY BOARD 01 · scout / all-rounder / mother-home family sensor · Drive 1wXNWA0YtvHaMVRssJ93fvHMtanhGu8MQ
+- Status: HUMAN READ PENDING · SENSOR ONLY · NO CANON.
+- Functional inspiration only from historical three-vessel expedition logic; no historical replica / colonial surface authority.
+- Terry Pratchett influence restricted to humane irony / lived material biography / social-logistical function, never visual imitation.
+- Generated board text, dimensions and labels are presentation artifacts, NOT world truth.
+- Do not let this lateral skyship lane displace Gift Token Mutation 03 human gate.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- No checkpoint warranted yet.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · IRENE CREATURE 002 SENSOR SET PRESERVED
 - Human-requested Creature 002 side-lab now has three preserved image sensors:
   - B01 TACTO CIEGO · Drive 1CrvYHwr33Rrv7qU1yiVb6Ol6xP6uUekh
