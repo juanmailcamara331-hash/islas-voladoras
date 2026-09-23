@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · LOGO LIVED-SYMBOL 01 KEEP + ABLATION 02 PREP
+- Registered exact generated sensor: docs/ISL_VISUAL_BULLET_LOGO_LIVED_SYMBOL_01_KEEP_2026-09-23.md.
+- Bullet 01 = KEEP · STRONG SENSOR · LAB ONLY · NO CANON.
+- Exact runtime binary SHA-256 = 27d33a53ffb880f50a66af4760509f1d2b1acd10988adde77351e25e8435a9d2.
+- Generation id = 6f2523ae-caf8-48c8-9e0f-1705307ca02c.
+- Stable Drive/Gallery archival still required; hash registration prevents silent substitution but is not itself durable binary storage.
+- Prepared sibling ablation: docs/ISL_BULLET_LOGO_LIVED_SYMBOL_02_MATERIALITY_ABLATION_PREP_2026-09-23.md.
+- Ablation question: is the lived identity carried mainly by FORM, MATERIALITY, or their interaction?
+- Preserve geometry/composition; reduce wear ~60–70%; Randomizer effectively OFF.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · LOGO LIVED-SYMBOL BULLET PREPARED
 - Prepared: docs/ISL_BULLET_LOGO_LIVED_SYMBOL_01_PREP_2026-09-23.md.
 - ISL-BULLET-LOGO-LIVED-SYMBOL-01 = PREPARED · IDENTITY TEST · SENSOR · LAB ONLY · NO CANON.
