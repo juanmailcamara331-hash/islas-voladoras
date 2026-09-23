@@ -273,3 +273,32 @@ REAL HUMAN MEDIA → PRIVATE MASTER → TIMELINE / FILM VIEW → OPTIONAL CUT / 
 
 Status:
 IMPLEMENTED IN SOURCE · DEPLOY VERIFICATION PENDING.
+
+
+## HUMAN TRACE · IRENE · CREATURE_002 · 2026-09-24
+
+Estado:
+HUMAN_TRACE_RAW · STRONG SEED · LAB ONLY · NO CANON · NO IMAGE GENERATION YET
+
+Preserved source:
+- drawing RAW: Drive ID `1aVyZfbzjyr1tSOjC8pu-sBZYasu_SpvW`
+- drawing SHA-256: `f2076f084778154605525f9081fd72af4cc06a5e670260a7a748690435b4bfbc`
+- process RAW video: native Library `libfile_7fe95355f0108191b10ea813c1d5945f`
+- video SHA-256: `e03a7ed8951dd19ebcbdcee4137b2ace4ef311ec185026a1d84ac05be2363e49`
+- process duration: ~14m32s
+- Drive video mirror pending after one failed upload; no retry loop.
+
+Observed human invariants:
+giant tongue; irregular layered mouth/teeth; covered/nested-eye motif; asymmetrical drooping hand/finger appendages; angular support limbs; valuable awkward proportions.
+
+Prepared methodology:
+`docs/ISL_IRENE_CREATURE_002_LAB_CURRENT.md`
+
+Prepared bullets:
+B01 TACTO CIEGO · B02 LENGUA DE VIENTO · B03 CORO DE MANOS DESACORDADO.
+
+Research-by-function:
+distributed soft-limb control + sparse biological-motion perception; never surface copying.
+
+Boundary:
+Human source outranks derivatives. No automatic correction, generation, 3D, publication or CANON promotion.
