@@ -73,3 +73,21 @@ No automatic propagation.
 PRIMARY = Velaria V2 P0
 HUMAN_DEVICE_GREEN = PENDING
 SAFE HARBOR unchanged
+
+
+## ARCHIVAL HOLD · 2026-09-23
+Drive search did not locate the exact source binary under:
+- Meshy_AI_Fractured_Echo_0923163321_generate.glb
+- Fractured Echo
+- Meshy
+
+Therefore:
+- KEEP status remains valid for the inspected geometry;
+- SHA-256 preserves identity but is NOT durable binary storage;
+- exact GLB archival in Drive / registered 3D Gallery remains PENDING;
+- do not overwrite, regenerate or silently substitute the source geometry;
+- when the textured derivative is exported, preserve BOTH the accepted geometry source and the textured descendant as separate lineage-linked artifacts.
+
+This is a circulation/lineage hold only.
+NO CANON change.
+NO new organ.
