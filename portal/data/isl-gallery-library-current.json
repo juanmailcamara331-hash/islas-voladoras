@@ -11,6 +11,34 @@
   },
   "assets": [
     {
+      "id": "IRENE-CREATURE-002-B03",
+      "type": "image",
+      "title": "Irene Creature 002 · B03 Altar del Viento Ciego",
+      "group": "Making-of / Human Trace / Irene",
+      "status": "SENSOR_HUMAN_READ_PENDING",
+      "drive_id": "1pKp_H9gDdZGycAqQ8EPOx1jvk6RkEZrw",
+      "canon_state": "NOT_AUTO_CANON",
+      "featured": true
+    },
+    {
+      "id": "IRENE-CREATURE-002-B02",
+      "type": "image",
+      "title": "Irene Creature 002 · B02 Gameplay Context",
+      "group": "Making-of / Human Trace / Irene",
+      "status": "SENSOR_HUMAN_READ_PENDING",
+      "drive_id": "1Mbr_Rygq3uF8Yvoe1jQK1MNNEg69E84F",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "IRENE-CREATURE-002-B01",
+      "type": "image",
+      "title": "Irene Creature 002 · B01 Tacto Ciego",
+      "group": "Making-of / Human Trace / Irene",
+      "status": "SENSOR_HUMAN_READ_PENDING",
+      "drive_id": "1CrvYHwr33Rrv7qU1yiVb6Ol6xP6uUekh",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
       "id": "HUMAN-TRACE-IRENE-CREATURE-002-DRAWING",
       "type": "image",
       "title": "Irene · Creature 002 · dibujo humano RAW",
