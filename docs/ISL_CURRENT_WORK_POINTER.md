@@ -1,3 +1,11 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · SKYSHIP COMBAT FOUNDATION BULLET READY
+- Next visual stress test: ISL-BULLET-SKYSHIP-COMBAT-01 · “Cuando el cielo deja de ser paisaje”.
+- Inherits guided semi-open playflow, minimal HUD, world-before-UI guidance, crew-life→combat progression and functional-reference distance.
+- Core test: POWER vs POSITION; wind / altitude / geometry must read before raw firepower.
+- Visual target: 1v1 skyship confrontation, 2.5D turn-based presentation hypothesis, human crew visible, one non-HP damaged system, one crew-derived tactical advantage, no fleet clutter.
+- Fail if it becomes generic steampunk/naval fantasy, HUD-heavy, pure broadside spectacle or loses lived-home feeling.
+- Status: PREPARED · SENSOR · LAB ONLY · NO CANON. Human launch gate still applies.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · BOOT VISION BOARD SENSOR
 - Internal boot/vision board archived in Drive as ISL_BOOT_VISION_BOARD_SENSOR_2026-09-23.png · Drive ID 1stzj0ZEZHnnLRz7BPVUW-CzwWgrarVqq.
 - Status: KEEP · INTERNAL SENSOR · NO CANON · NOT ART AUTHORITY · NOT PUBLIC AS-IS.
