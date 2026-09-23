@@ -1645,3 +1645,16 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Official organ map: cerebro, columna vertebral, corazón, pulmones, sistema nervioso, músculo, sangre, piel, sistema inmune, memoria.
 - Human principle: automation reduces friction, never authorship; if the heart does not beat, skin is not enough.
 - Guard: this metaphor simplifies and connects existing systems; it must not create a parallel authority hierarchy or new meta-layer by default.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-23 · ORGANISMO VIVO COLLECTOR ART FREEZE
+- HUMAN VISUAL DECISION: the Organismo Vivo collectible-art family is frozen as HUMAN-APPROVED STRONG VISUAL REFERENCE · NO AUTO-CANON · NO PRODUCTION AUTHORIZATION.
+- Drive authority doc: `ISL_COLLECTOR_ART_ORGANISMO_VISUAL_REFERENCE_CURRENT` · Google Doc ID `1Li-_Ew8sL7sUrzulW3ybYF8tKU71dPBWHBLUAxZ2-v8`.
+- Exact binary masters are stored in Drive folder: `/Google Drive/ISL/Visual Authority/Organismo Vivo`.
+- Frozen files:
+  - `ISL_ORGANISMO_VIVO_INFOGRAPHIC_DESKTOP_MASTER.png`
+  - `ISL_ORGANISMO_VIVO_INFOGRAPHIC_MOBILE_MASTER.png`
+  - `ISL_ORGANISMO_VIVO_COLLECTIBLE_CONCEPT_MASTER.png`
+  - `ISL_ORGANISMO_VIVO_KICKSTARTER_COLLECTOR_MASTER.png`
+- Locked visual qualities: living-relic feeling; symbolic human anatomy; glowing heart/core; strong central spine/eje; subtle nervous filigree; ivory-stone + aged bronze/gold + dark cloth materials; floating-island/compass base; poetic wear/asymmetry; premium editorial product presentation; minimal functional copy; body ↔ project ↔ world relation.
+- Guards: not protagonist authority; not automatic gameplay character; no production quantity/price/manufacturing authorization; later generations do not supersede these masters by recency.
