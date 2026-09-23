@@ -1,3 +1,9 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · BOOT VISION BOARD SENSOR
+- Internal boot/vision board archived in Drive as ISL_BOOT_VISION_BOARD_SENSOR_2026-09-23.png · Drive ID 1stzj0ZEZHnnLRz7BPVUW-CzwWgrarVqq.
+- Status: KEEP · INTERNAL SENSOR · NO CANON · NOT ART AUTHORITY · NOT PUBLIC AS-IS.
+- Cross with guided-world/HUD direction, friends-intake progression hypotheses and full-game sensory Gallery direction.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · GUIDED WORLD / MINIMAL HUD / PLAYFLOW LOCK
 - New human-author direction: docs/ISL_GUIDED_WORLD_HUD_AND_PLAYFLOW_DIRECTION_CURRENT.md.
 - Status: HUMAN AUTHOR LOCK · CANON DIRECTION · additive.
