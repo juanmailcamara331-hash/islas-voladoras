@@ -1,3 +1,12 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · FRIENDS IMPROVEMENTS INTAKE
+- Captured new friend-sourced improvements in docs/ISL_FRIENDS_IMPROVEMENTS_INTAKE_2026-09-23.md.
+- Includes creature candidates (gargoyle / giant octopus / raptor-like / Loch-Ness-like), replay-layer hypothesis (Run 1 discovery → Run 2 portal/white-room expansion → Run 3 full-crew/PRISM escalation), hidden easter-egg lane, opening VO, lightweight cooking, humour/object gags, music vignette and fictional contraband scene.
+- Anime/series inspirations are FUNCTIONAL REFERENCES ONLY. No recognizable copyrighted characters, names, costumes, dialogue, branded props or story beats enter shipped ISL without permission/licensing.
+- Drug/dealer idea is routed to fictional contraband/worldbuilding only; no real-world procurement/use guidance.
+- No auto-CANON. Needs microtests + human read.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · FULL-GAME SENSORY GALLERY DIRECTION
 - New direction: docs/ISL_GALLERY_FULL_GAME_SENSORY_SIMULATION_DIRECTION_2026-09-23.md.
 - Purpose: simulate the whole ISL arc through immersive cards/chapters with image + music/ambience + minimal interaction + visible consequences for second opinions.
