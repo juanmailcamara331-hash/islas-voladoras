@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "project": "ISLAS_VOLADORAS_ISL",
-  "generated_at": "2026-09-23",
+  "generated_at": "2026-09-24",
   "status": "GALLERY_LIBRARY_CURRENT",
   "boundary": "ISL_ONLY",
   "rules": {
@@ -10,6 +10,16 @@
     "master_is_not_runtime": true
   },
   "assets": [
+    {
+      "id": "HUMAN-TRACE-IRENE-CREATURE-002-DRAWING",
+      "type": "image",
+      "title": "Irene · Creature 002 · dibujo humano RAW",
+      "group": "Making-of / Human Trace / Irene",
+      "status": "HUMAN_TRACE_RAW_STRONG_SEED",
+      "drive_id": "1aVyZfbzjyr1tSOjC8pu-sBZYasu_SpvW",
+      "canon_state": "NOT_AUTO_CANON",
+      "featured": true
+    },
     {
       "id": "LOGO-SECONDARY-SENSOR-20260923-01",
       "type": "image",
