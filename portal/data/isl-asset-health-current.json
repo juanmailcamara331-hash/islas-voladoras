@@ -128,7 +128,7 @@
         "lighting_robustness",
         "independent_glb_validator"
       ],
-      "next": "run texture-only Mutation 02; compare against Result 01 at identical camera/scale/light; then decide KEEP MUTATION 02 / RETURN TO RESULT 01 / MUTATE TEXTURE AGAIN; package accepted GLB for interactive gallery runtime later",
+      "next": "Human A/B: compare Result 01 vs Mutation 02 with identical camera, scale and lighting. Do not package final runtime until this gate is resolved.",
       "human_gate": "PENDING",
       "canon_state": "GIFT_HUMAN_TRACE_NO_CANON",
       "master_required_target": true,
@@ -161,7 +161,31 @@
       },
       "source_drive_id": "11TvDdzDU5OcCe0X2Mo349bOZvW7pj4xO",
       "master_drive_id": "1jUmZu4cV71RyJJjd-xhjxanE2hQ4ZUJr",
-      "poster_src": "https://drive.google.com/thumbnail?id=1W8ipWm369ZVKcBqJvNobQtLM39e7_JEZ&sz=w1200"
+      "poster_src": "https://drive.google.com/thumbnail?id=1W8ipWm369ZVKcBqJvNobQtLM39e7_JEZ&sz=w1200",
+      "mutation_02": {
+        "status": "CANDIDATE_ARCHIVED_TECHNICAL_PREFLIGHT_PASS_HUMAN_GATE_PENDING",
+        "file_name": "Gift_Token_01_Mutation_02_CANDIDATE.glb",
+        "sha256": "612f234ed595a5d88672df32ac5c5a3fc20cdb0d3451a5e295fac4116973e3a3",
+        "drive_id": "1nENtr5HZH5ptK7Dn9gkEAOsXkPDK7dM1",
+        "bytes": 28742296,
+        "mesh_count": 1,
+        "face_count": 720895,
+        "vertex_count": 381777,
+        "extents": [
+          2,
+          1.671794056892395,
+          0.3206599950790405
+        ],
+        "textures_2k": 4,
+        "emissive_effectively_black": true,
+        "baseline_result_01_sha256": "30256dbb4a46fc5e90d51a3e03ea9328110c85380855fd0e56e0c96d408c06ae",
+        "geometry_assessment": "NO_GROSS_GEOMETRY_REGRESSION; same faces and extents; +5 vertices compatible with seam/rewrite; visual/material human A-B still required",
+        "allowed_human_decisions": [
+          "KEEP_MUTATION_02",
+          "RETURN_TO_RESULT_01",
+          "MUTATE_TEXTURE_AGAIN"
+        ]
+      }
     }
   ]
 }
