@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · HUMAN TRACE RAW DURABLE FALLBACK
+- 1000042847.mp4 loss-risk is CLOSED at storage level: exact RAW master is now durably archived in native Library at /ISL/Making Of/Human Trace/1000042847_MASTER_RAW.mp4.
+- Exact SHA-256 remains 7d69b8768caa9a33a2a8c7a2cbf79cfb826710b3385c3c86bd62dd92c5c46a65.
+- Google Drive mirror remains PENDING because repeated large-file transport upload failed; do not misreport this as missing or chat-only.
+- 1000042992.mp4 also has durable Library master at /ISL/Making Of/Human Trace/1000042992_MASTER_RAW.mp4 · SHA-256 1246fedce8030d7875a5316e7ff4511f89cf6a17f9a602f74b181dc49c1bbec5.
+- 1000042993.mp4 is already archived in Drive and Gallery as the reproducible/private-by-default Human Trace clip.
+- Human RAW privacy remains PRIVATE BY DEFAULT · NO AUTO-PUBLISH · NO CANON.
+- Next active construction lane remains GIFT TOKEN MUTATION 02 PREPARED · TEXTURE ONLY.
+- No new checkpoint. PRIMARY / HUMAN_DEVICE_GREEN / SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · SECONDARY LOGO HUMAN PREFERENCE
 - Human decision: the supplied island-with-orbit mark is strongly liked as a SECONDARY LOGO / SECONDARY MARK direction.
 - Status: HUMAN-LOVED STRONG SENSOR · REFERENCE ONLY · NOT FINAL LOGO · NO AUTO-CANON.
