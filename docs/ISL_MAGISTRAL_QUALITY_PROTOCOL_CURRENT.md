@@ -399,3 +399,16 @@ HUD_EXPLAINS_WORLD
 LOCAL_VARIATION_BREAKS_MACRO_RUMBO
 
 Correct in that order before adding new systems.
+
+
+## 16. ROBUST QUALITY READING · 2026-09-23
+When enough human/playtest evidence exists, complement Q = min(C,A,F,D,R) with:
+- Q_MED = median(C,A,F,D,R)
+- Q_STABLE = median(last N Q_MED) - MAD(last N Q_MED)
+
+Purpose:
+avoid a beautiful outlier hiding a weak dimension and avoid one noisy session defining the project.
+
+No score replaces human reading.
+No score promotes CANON.
+If sample size is tiny, show qualitative bands instead of fake precision.
