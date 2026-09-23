@@ -1,4 +1,14 @@
 
+# ACTIVE EXECUTION NOTE · 2026-09-23 · CREATIVE WEIGHTS CALIBRATION v0.93.1
+- New lab note: docs/ISL_CREATIVE_WEIGHTS_CALIBRATION_v0.93.1.md.
+- New micro-checkpoint: docs/ISL_MICRO_CHECKPOINT_v0.93.1_CREATIVE_WEIGHTS_CALIBRATION_2026-09-23.md.
+- Current creative strategy for the next several sessions: FEWER NEW IDEAS · BETTER WEIGHTING · BETTER SHOTS.
+- Prefer one real piece + 2–4 weighted axes + max 3 variants + baseline comparison + KEEP/MUTATE/PARK/KILL/REROLL.
+- Strong reference family under calibration: Terry Pratchett / Recess-La Banda del Patio / Tim Burton / Rick-like high-concept irreverence / Jung / cognitive neuroscience.
+- NONE remains a valid reference outcome; no reference auto-propagates.
+- Do not add new organs/meta-layers during calibration unless a demonstrated structural gap appears.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · AUTHORITY PRUNING v0.93
 - New governance note: docs/ISL_AUTHORITY_PRUNING_MATRIX_v0.93.md.
 - Purpose: prune authority, not memory; no historical deletion or mass rewrite.
