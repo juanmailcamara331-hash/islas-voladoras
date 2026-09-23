@@ -1,3 +1,18 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · COLLECTOR PREFERENCE + WORK ORDER
+- HUMAN PREFERENCE: current Collector / Organismo Vivo presentation is preferred over the older Kickstarter physical mockups with pouches/cards/stones. Older Kickstarter imagery remains PARKED historical reference; do not merge elements back by default.
+- A fresh Collector/physical campaign exploration may be created later as a new LAB sensor, but it must NOT jump ahead of the current Gift Token human gate.
+- SESSION ORDER:
+  FROM = Gift Token source + Result 01 preserved; Mutation 02 technically preflighted and archived.
+  NOW = Human A/B on Mutation 02.
+  BLOCKER = decide material hierarchy + four rhythm marks at ~60 mm.
+  SAFE NEXT after human decision = package accepted GLB runtime for Gallery.
+  AFTER = Gallery deploy/mobile check.
+  PREPARED NEXT = physical/Collector recovery + one new Collector exploration.
+  PARKED = older Kickstarter physical mockups, Carrillo/father gift-object recoveries, additional 3D props until active lane closes.
+- Apply META-LAYER ORCHESTRATOR session routing: ONE ACTIVE · ONE NEXT · REST PARKED.
+- Night Shift may prepare/test/verify around this order but cannot cross the Mutation 02 HUMAN GATE.
+- No checkpoint. PRIMARY / HUMAN_DEVICE_GREEN / SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · GALLERY CIRCULATION FIX + TOKEN ORDER
 - Gallery v0.94 media layer is implemented in GitHub: image pinch-zoom/pan, Drive-backed thumbnails/previews, playable runtime/Drive audio, playable video, and touch 3D viewer when a runtime GLB exists.
 - Gallery registry now surfaces current gifts/sensors/Human Trace without CANON promotion, including world panorama sensor, HUD antithesis sensor, Skyship Gift Video KEEP, Organismo Vivo masters, Gift Token sheet and secondary-logo strong sensor.
