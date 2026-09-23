@@ -1637,3 +1637,11 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Only three real structural gaps identified: exact visual-authority binary trace; one stage-health view; evidence-link completeness at milestone close. All should be solved by extending existing registries/hooks, not by creating new subsystems.
 - Immediate order remains conservative: recover/register exact minimal logo source → Danzante blind human read → Velaria HUMAN_DEVICE_GREEN → NUDOS/crossed CQC → reassess migration/production stage.
 - PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
+
+# ACTIVE EXECUTION NOTE · ORGANISMO VIVO / HUMANIDAD
+- Drive methodology source: `ISL_ORGANISMO_VIVO_METODOLOGIA_CURRENT` · Google Doc ID `14ikZebZRAqdkMut10doTYohQZ63op-eV8s_hYV59QxI`.
+- Purpose: preserve the human-body metaphor as a living methodology and communication surface for app/web, making-of, collaborators and investors.
+- Official organ map: cerebro, columna vertebral, corazón, pulmones, sistema nervioso, músculo, sangre, piel, sistema inmune, memoria.
+- Human principle: automation reduces friction, never authorship; if the heart does not beat, skin is not enough.
+- Guard: this metaphor simplifies and connects existing systems; it must not create a parallel authority hierarchy or new meta-layer by default.
