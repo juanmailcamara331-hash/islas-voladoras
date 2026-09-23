@@ -1,6 +1,6 @@
 {
   "schema": "isl.asset.health.v0.1",
-  "generated_at": "2026-09-21",
+  "generated_at": "2026-09-23",
   "boundary": "ISL_ONLY",
   "rules": {
     "master_is_not_runtime": true,
@@ -89,6 +89,50 @@
       ],
       "human_gate": "PENDING",
       "canon_state": "MIXED_NON_CANON_REVIEW",
+      "master_required_now": false,
+      "runtime_required_now": false
+    },
+    {
+      "asset_id": "GIFT_TOKEN_01_3D",
+      "entity_id": "GIFT_TOKEN_01",
+      "display_name": "Gift Token 01 · Human Trace",
+      "state": "TEXTURING_IN_PROGRESS_ARCHIVE_HOLD",
+      "source_refs": [
+        "Meshy_AI_Fractured_Echo_0923163321_generate.glb",
+        {
+          "role": "SOURCE_HASH",
+          "sha256": "a984871046db96dc3a0868c99da4be40cdba342fc082db7b272e94b830790e99"
+        }
+      ],
+      "provenance": {
+        "source_tool": "Meshy",
+        "geometry_decision": "KEEP_MUTATE_LIGHTLY",
+        "geometry_doc": "docs/ISL_GIFT_TOKEN_01B_MESHY_GEOMETRY_KEEP_2026-09-23.md",
+        "texture_prep_doc": "docs/ISL_GIFT_TOKEN_01C_MESHY_2K_PBR_TEXTURE_PREP_2026-09-23.md"
+      },
+      "binary_access": "ARCHIVE_PENDING",
+      "blocker": "Exact accepted geometry GLB is not yet durably archived in Drive/Gallery; 2K PBR descendant is currently being generated and still requires Material CQC.",
+      "master_ref": null,
+      "runtime_ref": null,
+      "qa_required": [
+        "exact_geometry_binary_archived",
+        "2k_basecolor",
+        "2k_roughness",
+        "2k_normal",
+        "metallic_if_exposed",
+        "material_separation",
+        "repair_seam_readability",
+        "touch_wear_logic",
+        "front_back_side_coherence",
+        "physical_scale_read_at_approx_60mm",
+        "lighting_robustness",
+        "independent_glb_validator"
+      ],
+      "next": "finish 2K PBR texture, preserve source+descendant lineage, run Material CQC, then classify accepted textured master candidate or mutate texture only",
+      "human_gate": "PENDING",
+      "canon_state": "GIFT_HUMAN_TRACE_NO_CANON",
+      "master_required_target": true,
+      "runtime_required_target": false,
       "master_required_now": false,
       "runtime_required_now": false
     }
