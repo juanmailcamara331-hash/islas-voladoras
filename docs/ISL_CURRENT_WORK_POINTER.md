@@ -1,3 +1,16 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · GIFT TOKEN MUTATION 02 PREPARED
+- Geometry authority unchanged: KEEP · MUTATE LIGHTLY · HUMAN TRACE · GIFT · NO CANON · NO REROLL.
+- Result 01 remains preserved as comparison baseline and valid lineage descendant.
+- Mutation 02 is now PREPARED as TEXTURE ONLY.
+- Only two variables may move: (1) metal vs technical-composite separation; (2) small-scale legibility of the four rhythm marks at ~60 mm.
+- Locked: geometry, UV topology, silhouette, top aperture, thickness, repair seam geometry, proportions, dark overall field, non-emissive character.
+- Comparison must use same camera / scale / lighting against Result 01.
+- Allowed decisions after human read: KEEP MUTATION 02 / RETURN TO RESULT 01 / MUTATE TEXTURE AGAIN.
+- Any geometry change, glow, vent/LED drift, steampunk/brass drift, global grime, invented symbols or fake depth = FAIL.
+- Exact source binary archival in Drive/Gallery remains pending.
+- No gameplay/UI propagation. PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- v0.94 remains current; no new checkpoint justified.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · GIFT TOKEN PBR RESULT 01 CQC
 - Lane remains GIFT TOKEN MESHY GEOMETRY KEEP · HUMAN TRACE · GIFT · NO CANON · NO NEW ORGAN.
 - Geometry source remains KEEP · MUTATE LIGHTLY · do NOT reroll from zero.
