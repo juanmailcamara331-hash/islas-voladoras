@@ -277,3 +277,17 @@ Orchestrator rule:
 - reference family remains functional, never surface authority.
 
 This is a design direction, not a new meta-layer.
+
+
+## ORGANISM HEALTH / CURATION INHERITANCE · 2026-09-23
+Use docs/ISL_ORGANISM_CURATION_AND_VISUAL_HEALTH_CURRENT.md when:
+- current docs become redundant;
+- boot grows noisy;
+- authority duplicates;
+- automation prompts overlap;
+- a new surface needs project-health visualization;
+- a major generation risks inheriting too much context.
+
+Routing rule:
+load only relevant organ health + strongest locks + one risk + one unresolved question.
+Do not dump the full organism into every task.
