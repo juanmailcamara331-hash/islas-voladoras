@@ -138,3 +138,57 @@ material truth should persist across lighting rather than depending on one drama
 Do NOT infer printable color/material process yet.
 A physical manufacturing/material adapter is a later derived layer after MATERIAL CQC.
 MASTER texture judgment remains digital PBR + physical-scale perception first.
+
+
+## MATERIAL CQC · UPLOADED RESULT · 2026-09-23
+Input inspected:
+Repaired Token PBR.glb
+
+Technical identity:
+- file size: 27,413,884 bytes
+- SHA-256: 30256dbb4a46fc5e90d51a3e03ea9328110c85380855fd0e56e0c96d408c06ae
+- GLB / glTF 2.0
+- 1 mesh / 1 node / 1 material
+- 381,772 vertices
+- 720,895 faces
+- single connected geometry family preserved
+- extents: 2.000000 × 1.671794 × 0.320660 source units
+
+Geometry comparison against 01B:
+- original extents: 1.90042 × 1.58855 × 0.30469
+- result is approximately a uniform +5.24% scale
+- proportions remain materially unchanged
+- face count differs by only 11 faces; vertex increase is compatible with UV/material seam splitting rather than a geometry reroll
+- classification: GEOMETRY PRESERVED WITH UNIFORM SCALE NORMALIZATION REQUIRED
+- do NOT regenerate geometry
+
+Embedded PBR:
+- Base Color: 2048×2048
+- Metallic/Roughness: 2048×2048
+- Normal: 2048×2048
+- Emissive: 2048×2048, effectively black / non-glowing
+- no evidence of meaningful emissive glow despite channel presence
+
+Material technical read:
+- dark material field preserved
+- warm repaired/material accents present
+- metallic/roughness variation is non-flat
+- normal map is restrained rather than strongly embossed
+- emissive channel does not currently violate NO GLOW
+
+CQC decision:
+TECHNICAL MATERIAL PASS · VISUAL/HUMAN MATERIAL READ PENDING
+
+Still required before KEEP of textured descendant:
+- inspect front / back / side renders;
+- confirm metal vs composite separation at ~60 mm read;
+- confirm repair seam reads as repair rather than decoration;
+- confirm four rhythm marks do not become vents/lights;
+- confirm touch wear follows plausible contact zones;
+- confirm backside coherence;
+- test neutral, raking and low-contrast lighting;
+- normalize final physical target to approximately 60.0 × 50.15 × 9.62 mm.
+
+Do not promote to CANON.
+Do not overwrite the geometry source.
+Preserve source geometry and textured descendant as separate lineage-linked artifacts.
