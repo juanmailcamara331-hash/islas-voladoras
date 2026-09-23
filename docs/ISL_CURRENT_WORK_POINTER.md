@@ -1,4 +1,13 @@
 
+# ACTIVE EXECUTION NOTE · 2026-09-23 · CREATIVE BULLETS LAB
+- New bounded lab surface: portal/creative-bullets.html.
+- Purpose: prepare/weight/max-3 creative shots, compare by smell/heart/nervio, and export a clean brief for ChatGPT/image generation.
+- Local-only session memory; no backend telemetry, no CANON, no SOURCE_OF_TRUTH mutation.
+- Integrated as CREATE in portal/data/isl-command-action-map-current.json.
+- Linked from portal/crear.html and global Labs menu.
+- Uses v0.93.1 calibration rule: FEWER NEW IDEAS · BETTER WEIGHTING · BETTER SHOTS.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · CREATIVE WEIGHTS CALIBRATION v0.93.1
 - New lab note: docs/ISL_CREATIVE_WEIGHTS_CALIBRATION_v0.93.1.md.
 - New micro-checkpoint: docs/ISL_MICRO_CHECKPOINT_v0.93.1_CREATIVE_WEIGHTS_CALIBRATION_2026-09-23.md.
