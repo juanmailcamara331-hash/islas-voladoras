@@ -236,3 +236,98 @@ Change ONLY material treatment:
 
 Success condition:
 same object, same history, same darkness — clearer material hierarchy at physical scale.
+
+
+## MUTATION 02 · CLOSED TEXTURE BRIEF · 2026-09-23
+Status:
+PREPARED · TEXTURE ONLY · NO GEOMETRY CHANGE · NO CANON · HUMAN GATE REQUIRED
+
+### LOCKS
+Do not change:
+- mesh topology / geometry;
+- silhouette;
+- top aperture;
+- thickness;
+- front/back/side structure;
+- four rhythm marks geometry;
+- repair seam geometry;
+- UV topology;
+- object scale proportions;
+- overall dark field;
+- non-emissive character.
+
+### VARIABLES ALLOWED TO MOVE
+Only:
+1. metal vs technical-composite material separation;
+2. small-scale legibility of the four rhythm marks.
+
+### TEXTURE PROMPT · MUTATION 02
+Retexture the exact provided token while preserving the geometry, UV topology, silhouette, aperture, thickness, repair seam, rhythm marks and front/back/side structure unchanged.
+
+Use the existing Result 01 as the baseline. Keep the same overall dark, intimate, repaired, human-used character.
+
+Make only two controlled changes:
+
+1. Increase the distinction between dark repaired metal and technical ceramic/composite slightly.
+Do this mainly through believable roughness response and a restrained value/temperature shift, not through bright color blocks.
+The metal should feel slightly cooler, denser and more variably worn.
+The composite should feel slightly warmer, more matte and subtly less metallic.
+Both materials must remain visually related and subdued.
+
+2. Increase the visibility of the four rhythm marks just enough to survive approximately 60 mm physical-scale viewing.
+Do not make them glow, do not turn them into vents, LEDs, slots, symbols or graphic icons.
+They should remain material/structural rhythm, visible through local roughness/value contrast only.
+
+Preserve the current repair seam warmth or reduce it slightly.
+Keep the repair readable as repair, not ornament.
+
+Preserve restrained edge and touch wear.
+Do not increase global dirt, rust, scratches, oxidation or contrast.
+
+Keep emissive effectively black.
+
+Priority order:
+1. mother shape remains dominant;
+2. metal/composite hierarchy becomes clearer;
+3. four rhythm marks survive small-scale reading;
+4. repair remains believable;
+5. tactile wear remains plausible;
+6. no new visual idea is introduced.
+
+### NEGATIVE / FALSIFIERS
+Fail immediately if any of these appear:
+- any geometry change;
+- new grooves, holes, panels or embossing;
+- brighter or more saturated repair accents than Result 01;
+- glowing marks;
+- vent/LED interpretation of rhythm marks;
+- fantasy ceramic, bone, stone or gemstone read;
+- brass/steampunk drift;
+- luxury-polished merchandising finish;
+- military badge/device look;
+- global rust/grime;
+- random decals or text-like fragments;
+- symbolic marks not already present;
+- mirrored/glossy material dominance;
+- loss of dark overall field;
+- backside material treatment diverging from front;
+- texture trying to fake new geometry.
+
+### COMPARISON RULE
+Judge Mutation 02 directly against Result 01 at the same camera, scale and lighting.
+
+Mutation 02 passes only if:
+- material hierarchy is clearer at ~60 mm;
+- rhythm marks are more legible without becoming semantic icons/lights;
+- mother shape remains equally or more dominant;
+- repair warmth does not increase;
+- object still feels like the same lived token, not a redesign.
+
+Possible decisions:
+KEEP MUTATION 02
+or
+RETURN TO RESULT 01
+or
+MUTATE TEXTURE AGAIN
+
+Never reroll geometry from this comparison.
