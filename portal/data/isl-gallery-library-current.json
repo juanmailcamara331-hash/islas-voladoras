@@ -11,6 +11,25 @@
   },
   "assets": [
     {
+      "id": "SKYSHIP-TRINITY-BOARD-01",
+      "type": "image",
+      "title": "Skyship Trinity Board 01 · Las tres que no debían llegar juntas",
+      "group": "Skyships / Lab",
+      "status": "SENSOR_HUMAN_READ_PENDING",
+      "drive_id": "1wXNWA0YtvHaMVRssJ93fvHMtanhGu8MQ",
+      "canon_state": "NOT_AUTO_CANON",
+      "featured": true
+    },
+    {
+      "id": "SKYSHIP-REF-01-PLAYER-HOME-MACHINE",
+      "type": "image",
+      "title": "Skyship Ref 01 · Casa que aprendió a volar",
+      "group": "Skyships / Lab",
+      "status": "SENSOR_HUMAN_READ_PENDING",
+      "drive_id": "1lHnnUPA2kNxjXjBgWTLJoCjoOvI4odnh",
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
       "id": "IRENE-CREATURE-002-B03",
       "type": "image",
       "title": "Irene Creature 002 · B03 Altar del Viento Ciego",
