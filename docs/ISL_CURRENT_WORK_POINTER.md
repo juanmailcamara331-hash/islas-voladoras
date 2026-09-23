@@ -1,3 +1,12 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · SECONDARY LOGO HUMAN PREFERENCE
+- Human decision: the supplied island-with-orbit mark is strongly liked as a SECONDARY LOGO / SECONDARY MARK direction.
+- Status: HUMAN-LOVED STRONG SENSOR · REFERENCE ONLY · NOT FINAL LOGO · NO AUTO-CANON.
+- Do not replace the current primary-logo exploration or the LIVED-SYMBOL lane by recency.
+- Preserve as a separate identity role: secondary mark / world-seal / editorial-signature candidate.
+- Exact supplied screenshot is archived in Drive as ISL_SECONDARY_LOGO_SENSOR_1000043007.png · Drive ID 1UNErBlvPM8RhYUvAS6xq7JAfla0LYaOV.
+- Gallery entry added as LOGO-SECONDARY-SENSOR-20260923-01.
+- No new organ. PRIMARY, HUMAN_DEVICE_GREEN and SAFE HARBOR unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · GIFT TOKEN MUTATION 02 PREPARED
 - Geometry authority unchanged: KEEP · MUTATE LIGHTLY · HUMAN TRACE · GIFT · NO CANON · NO REROLL.
 - Result 01 remains preserved as comparison baseline and valid lineage descendant.
