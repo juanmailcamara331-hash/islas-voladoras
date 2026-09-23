@@ -131,6 +131,10 @@
     {
       "match": "huellas.html",
       "class": "EXPLORE"
+    },
+    {
+      "match": "creative-bullets.html",
+      "class": "CREATE"
     }
   ]
 }
