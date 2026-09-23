@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-23 · GIFT TOKEN PBR RESULT 01 CQC
+- Lane remains GIFT TOKEN MESHY GEOMETRY KEEP · HUMAN TRACE · GIFT · NO CANON · NO NEW ORGAN.
+- Geometry source remains KEEP · MUTATE LIGHTLY · do NOT reroll from zero.
+- Textured descendant inspected: Repaired Token PBR.glb · SHA-256 30256dbb4a46fc5e90d51a3e03ea9328110c85380855fd0e56e0c96d408c06ae.
+- PBR technical pass: Base Color / Metallic-Roughness / Normal at 2048×2048; emissive channel effectively black; geometry family preserved with uniform ~+5.24% scale only.
+- Visual/material CQC Result 01 = MUTATE TEXTURE LIGHTLY · KEEP GEOMETRY · NO REROLL · NO CANON.
+- Preserve Result 01 as comparison baseline; do not overwrite/delete it.
+- Next bounded uncertainty = texture-only Mutation 02: slightly clearer metal-vs-composite hierarchy + slightly more legible four rhythm marks at ~60 mm; preserve dark field, repair warmth, UVs, silhouette, geometry and non-emissive character.
+- Exact geometry source binary archival in Drive/Gallery remains pending; hash identity is preserved but does not replace durable storage.
+- No propagation to gameplay/UI. PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- Checkpoint v0.94 remains current; no new checkpoint justified by this bounded descendant/CQC update.
+
 # ACTIVE EXECUTION NOTE · 2026-09-23 · GIFT TOKEN MESHY GEOMETRY KEEP
 - Registered docs/ISL_GIFT_TOKEN_01B_MESHY_GEOMETRY_KEEP_2026-09-23.md.
 - Meshy GLB = KEEP · MUTATE LIGHTLY · HUMAN TRACE · GIFT · NO CANON · NO NEW ORGAN.
