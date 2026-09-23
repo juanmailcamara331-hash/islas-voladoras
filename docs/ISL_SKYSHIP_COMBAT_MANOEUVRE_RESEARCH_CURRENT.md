@@ -69,3 +69,57 @@ PASS si el tester entiende:
 
 ## NO HACER TODAVÍA
 flotas masivas · 20 armas · economía naval completa · árbol tecnológico · PvP · simulación física compleja.
+
+
+## VISUAL BULLET LEARNING · B2.2 · INTUITIVE WEIRD HUD
+Fecha: 2026-09-23
+Estado: SENSOR · LAB ONLY · NO CANON · EVIDENCE PENDING
+
+Recovered visual authority:
+- FIRST SKYSHIP BULLET = LAST GOOD for compact HUD scale / restraint / readability.
+- anomaly variant = SUPPORTING for lived strange sky physics and crew consequence.
+- large fantasy-card HUD variant = LEARNING ONLY / DO NOT USE AS VISUAL AUTHORITY.
+RECENCY IS NOT AUTHORITY.
+
+Hypothesis:
+a small stable family of controls can become faster to recognize if each action receives a subtle, function-linked perceptual signature while preserving shared form, stable placement, icon and text.
+
+Candidate mapping:
+- MANIOBRA → slight lateral bend / drift cue.
+- DISPARAR → tension / compression / outward release.
+- DEFENDER → enclosing contour / absorb cue.
+- REPARAR → visible seam / rejoin cue.
+- TRIPULACIÓN → small clustered nodes / converge cue.
+
+Creative weights for next sensor:
+- clarity / action = CRITICAL;
+- ISL identity = CRITICAL;
+- baseline continuity = CRITICAL;
+- perceptual intuition = CRITICAL;
+- humanity / materiality = IMPORTANT;
+- weirdness = SUPPORTING;
+- external reference = LIGHT.
+
+Reference-function guard:
+high-concept irreverence may enter as strange everyday technology with functional consequence.
+Never copy recognizable franchise surface language, characters, portals, iconography or props.
+
+Randomizer constraint:
+perturb at most:
+1. material repair trace;
+2. one semantic particle / micro-motion behaviour.
+Do not randomize size, position, action semantics or global HUD grammar.
+
+Human test:
+1. first exposure with labels;
+2. brief recognition with labels removed;
+3. repeat after short play exposure;
+4. neutral-icon interference;
+5. equal-shape ablation.
+Measure hesitation / errors / recognition improvement.
+Human evidence informs; no automatic CANON promotion.
+
+Return-home:
+PRIMARY remains Velaria V2 P0.
+HUMAN_DEVICE_GREEN remains PENDING.
+SAFE HARBOR unchanged.
