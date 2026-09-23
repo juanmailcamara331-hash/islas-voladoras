@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · GIFT TOKEN MUTATION 03 PREP
+- Mutation 02 technical read: geometry preserved; metallic materially increased; roughness slightly reduced; risk = over-metalization / weakened metal-vs-composite hierarchy.
+- Human gate remains OPEN. No acceptance/rejection recorded.
+- Prepared reversible next sensor: Mutation 03 · texture-only correction · NOT GENERATED · NO CANON.
+- Mutation 03 purpose: reduce global metallic response, restore clearer repaired-metal vs technical-ceramic/composite hierarchy, preserve four rhythm marks and all geometry/UV/silhouette/aperture/thickness/repair structure.
+- Compare only on: (1) material hierarchy, (2) four-mark small-scale legibility, (3) tactile human-used character vs generic gadget feel.
+- Allowed outcomes after human read: KEEP_MUTATION_03 / RETURN_TO_MUTATION_02 / RETURN_TO_RESULT_01 / MUTATE_TEXTURE_AGAIN.
+- Do not open Brújula/Carrillo/Collector/new 3D until this human gate closes.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged. No checkpoint.
+
 # SESSION CLOSE · 2026-09-23 · ORDER PRESERVED
 - Human closed creative session for the day; continue tomorrow.
 - Preserve session-order routing: FROM → NOW → BLOCKER → SAFE NEXT → HUMAN GATE → AFTER.
