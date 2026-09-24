@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · VISUAL FIDELITY LADDER ADOPTED
+- Human preference: use the incremental “visual fidelity ladder” rather than jumping directly to final 3D/gameplay.
+- Method integrated into ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT and routed through META_LAYER_ORCHESTRATOR.
+- Ladder: SMALL OBJECT → RUNTIME/TARGET DEVICE → COMPLEX PROP/VEHICLE → MICRO-SCENE → ATMOSPHERIC SCENE → INTERACTIVE SENSOR → VISUAL GAMEPLAY SLICE.
+- Core rule: higher polish cannot compensate for failed lower-rung form/material/runtime evidence.
+- Lighting is diagnostic/expressive, not a rescue layer.
+- Use existing Gallery/web surfaces where possible; do not create a parallel organ.
+- Skyship 3D remains PREPARED ONLY; no 3D generated yet.
+- Gift Token Mutation 03 file has been supplied by the human but its human/technical gate is not closed in this note.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- No checkpoint warranted by this methodological refinement alone.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · SKYSHIP FAMILY SENSOR PRESERVED
 - New lateral visual lineage preserved:
   - SKYSHIP REF 01 · player home/machine sensor · Drive 1lHnnUPA2kNxjXjBgWTLJoCjoOvI4odnh
