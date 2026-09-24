@@ -2184,3 +2184,18 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Brújula de las Huellas may synthesize causal trace clusters after discovery; it must not become an objective pointer.
 - Automation Prompts Master now routes LIVING BREADCRUMB / DISTRIBUTED MEMORY events through Guided World + Brújula/Huellas + Human Trace where relevant; no new bot.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · FULL-GAME 3×3 → VIDEO CONTINUITY PREP
+- The full-game 3×3 vision is now explicitly a NINE-KEYFRAME FILM SENSOR, not a collage.
+- Generation remains gated until SHOT_DNA_LOCK + 9 beats + 8 transition bridges are prepared.
+- Cinematic Aesthetic Synthesizer now carries the full continuity contract: character/companion/friend/object/world anchors, entry/exit pose, camera/motion/wind/light vectors, color carryover and match-cut bridges.
+- Proposed bridge chain: book→landscape → wind/ribbon→diagram → model/object→broken low point → rescuing hand→ship rail → horizon→encounter → creature eye/sky tear→fractured reality → floating amulet→real hand → small island/model→built archipelago.
+- Silent cut must work before music or voice-over; music/VO may deepen meaning but cannot rescue broken continuity.
+- Soundtrack Bible now routes the film through ONE melodic motif mutating across life stages; Gemini-like generation should create a coherent family, not nine unrelated cues.
+- Video derivative rule: exact selected still as reference wherever possible; preserve identities and archive still/prompt/generation IDs/clip lineage.
+- Midjourney-like visual generation remains derivative exploration; it cannot silently replace authoritative character/world DNA.
+- CapCut/editor assembly should prefer motion/match cuts and preserve handles; avoid using effects/fades to conceal identity drift.
+- Father/Carrillo first read = no methodology, no text overlays, spontaneous story reconstruction first.
+- Late-game 'empire' remains a creation/world-building hypothesis: island construction + community + stewardship/power contradiction, not automatic authoritarian imagery.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
