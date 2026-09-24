@@ -1510,3 +1510,205 @@ For the next 3×3:
 raise NON-NORMATIVE ISL MUTATION as a qualitative constraint.
 Do not simply raise chaos.
 CONTINUITY FIRST → MUTATE FAMILIAR SOLUTIONS SECOND.
+
+
+## FULL-GAME 3×3 BULLET v0.2 · LIGHT AUTHORITY + CELL MUTATION MAP · 2026-09-24
+Estado: PREPARED · PRE-FIRE · NO GENERATION YET
+
+### LIGHT AUTHORITY
+Human correction:
+Use the SECOND supplied reference image as the lighting authority for the 3×3 bullet.
+
+Functional read:
+- strong late-afternoon / golden-hour directional light;
+- volumetric cloud depth;
+- bright sun breaks;
+- warm highlights against deep readable shadow;
+- strong atmospheric separation;
+- luminous sky without washing out materials;
+- dramatic contrast that still preserves faces, decks, ropes and world detail;
+- danger / motion can live inside beautiful light rather than switching to flat dark grading.
+
+Rule:
+LIGHTING AUTHORITY = SECOND REFERENCE.
+STYLE AUTHORITY != SECOND REFERENCE.
+Borrow light logic, not surface design.
+
+### LIGHT CONTINUITY ACROSS 9 CELLS
+Do not clone the exact same golden-hour state nine times.
+Carry the same solar physics through a temporal/emotional arc:
+
+1 CARE:
+warm low-angle amber entering a darker interior; small pockets of human light.
+
+2 HORIZON:
+same sun direction now opens into huge cloud depth and bright world scale.
+
+3 STUDY:
+same warm light refracted through workshop/interior; stronger local blacks; cooler exterior sky.
+
+4 FALL:
+storm / rain / occlusion reduces the same warm source to a small human rescue light.
+
+5 SKYSHIP:
+clouds open and the same solar family returns in a heroic but lived-in way.
+
+6 ENCOUNTER:
+same sun becomes backlight through smoke/cloud/rigging; high tension, not a new palette.
+
+7 FRACTURE:
+established sunlight refracts into impossible spectrum / memory-light, retaining warm anchor.
+
+8 REENCOUNTER:
+sun lowers into tactile sunset; skin, cloth and objects feel human again.
+
+9 CREATION:
+same world reaches dawn-like openness / luminous horizon while keeping dark lived-in materials.
+
+### THREE RECURRING NON-NORMATIVE MOTIFS
+MOTIF A · LIVING MACHINE
+Plants / fungi / roots / small ecologies have practical roles in machines, homes and ships.
+Not decorative greenery.
+
+MOTIF B · MEMORY OBJECT CHANGES JOB
+The same object family moves through practical uses:
+toy/model → tool → broken trace → repair aid → navigation clue → symbolic object → shared memory → construction reference.
+
+MOTIF C · COMPANION LATE-REACTION
+The companion repeatedly reacts a beat late or to the wrong thing, but occasionally notices what humans miss.
+Humour + gameplay/world-reading function.
+
+These three motifs must recur across multiple cells.
+
+### CELL-BY-CELL NON-NORMATIVE EVENT MAP
+01 CARE
+Non-normative event:
+a household object is also a tiny functioning island/weather model that caregivers use for something ordinary.
+The companion is fascinated by the wrong moving piece.
+Function:
+domestic ↔ cosmic from frame one.
+
+02 HORIZON
+Non-normative event:
+the route is partly remembered by wind-bent plants / cloth remnants / animal behavior rather than signs.
+One small bridge or path visibly changes with wind pressure.
+Function:
+nature remembers + navigation without GPS.
+
+03 STUDY
+Non-normative event:
+the protagonist's theory apparatus is physically made from domestic scraps, relic pieces, living roots and navigation hardware.
+One model gives a useful prediction and one absurd false prediction.
+Function:
+intelligence + fallibility + DIY science.
+
+04 FALL
+Non-normative event:
+the broken memory object still performs one small practical function in the rescue scene.
+The protector uses it imperfectly rather than treating it as magic.
+Function:
+past identity remains useful while the person is lost.
+
+05 SKYSHIP
+Non-normative event:
+ship has a visible domestic/ecological ritual integrated into navigation or maintenance.
+Example family:
+crew feeds/rotates living ballast garden; roots/fungi read humidity; patched sails carry family marks.
+Function:
+ship = home + machine + ecology.
+
+06 ENCOUNTER
+Non-normative event:
+the encounter is not won by bigger guns.
+Wind, living rigging, crew positioning, strange creature behavior or a ridiculous companion observation shifts POWER vs POSITION.
+Function:
+ISL combat grammar visible in one frame.
+
+07 FRACTURE
+Non-normative event:
+one intimate object becomes cosmically scaled while a cosmic mechanism performs something embarrassingly ordinary.
+Friends/memory traces may appear in contradictory symbolic forms.
+Function:
+domestic ↔ cosmic inversion; absurdity with emotional consequence.
+
+08 REENCOUNTER
+Non-normative event:
+friends reconstruct a memory differently from the protagonist.
+Nature/object evidence contradicts one version.
+Nobody receives a perfect truth reveal.
+Function:
+reencounter = negotiated memory, not exposition.
+
+09 CREATE
+Non-normative event:
+the protagonist's new islands are visibly unfinished, self-modifying and co-built.
+One structure is partly grown, partly repaired, partly improvised.
+Community uses the protagonist's old memory-object logic in ways the protagonist did not control.
+Function:
+creation without sterile empire; authorship becomes distributed.
+
+### PUNK / DARK-WHIMSICAL DISTRIBUTION
+Do not saturate every cell equally.
+
+1:
+tender oddness > punk.
+
+2:
+wonder + mild asymmetry.
+
+3:
+DIY punk strongest in objects/workshop.
+
+4:
+black mass / outsider tenderness strongest.
+
+5:
+punk repair culture + sky wonder.
+
+6:
+irreverence under pressure.
+
+7:
+dark-whimsical + cosmic absurdity peak.
+
+8:
+human warmth, scars and repaired objects.
+
+9:
+large-scale creation still visibly patched, strange and alive.
+
+### PANEL DENSITY RULE
+Each cell:
+ONE primary emotion.
+ONE primary action.
+ONE non-normative ISL event.
+ONE transition object.
+Maximum two secondary weird details.
+
+If more:
+PARK.
+The grid must remain readable when cropped and animated.
+
+### FINAL BULLET QUESTION
+After one silent look, can a human say:
+“I saw one person grow through one impossible world, lose the thread, recover it through people/nature/objects, and eventually learn to build worlds without the world becoming generic?”
+
+If NO:
+MUTATE, do not decorate.
+
+### PRE-FIRE STATUS v0.2
+LIGHT AUTHORITY = LOCKED.
+9 BEATS = LOCKED.
+8 BRIDGES = LOCKED.
+GRID EXTRACTION = LOCKED.
+NON-NORMATIVE GUARD = LOCKED.
+3 RECURRING WEIRD MOTIFS = LOCKED.
+CELL MUTATION MAP = LOCKED.
+MUSIC = OFF FOR FIRST VIDEO MASTER.
+CAPCUT HANDOFF = PREPARED.
+
+Remaining visual identity gate:
+- protagonist exact visual re-lock;
+- companion exact visual re-lock.
+
+No fire until those are explicitly accepted or deliberately replaced by human decision.
