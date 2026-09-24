@@ -666,3 +666,29 @@ F0 one friend-memory symbol
 → F7 late-game shared-reality sequence.
 
 Higher rung cannot replace an unearned relationship beat.
+
+
+## FULL-GAME 3×3 · HUMAN TRACE / STORY COHERENCE CROSS · 2026-09-24
+The promo film must preserve one human life through impossible scale.
+
+Story spine:
+CARE
+→ DESIRE
+→ MODEL/OBSESSION
+→ CONTRADICTION/FALL
+→ RESCUE/REENTRY
+→ WORLD PRESSURE
+→ HELL / ADVERSARIAL CERTAINTY
+→ ASCENT / REENCOUNTER
+→ CREATION / OPEN CONSEQUENCE.
+
+Human Trace guard:
+- family/friends are not exposition devices;
+- rescue is relational, not saviour spectacle;
+- suffering is not romanticised;
+- altered/infernal/paradisal states do not establish real-world supernatural claims;
+- relationships, memory objects and nature participate in recovery/re-reading;
+- creation remains shared, unfinished and socially inhabited.
+
+Humour under pressure should preserve humanity, not trivialise pain.
+Voice-over, if later used, should reveal one human question or memory rather than explain lore.
