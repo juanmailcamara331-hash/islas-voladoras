@@ -156,3 +156,42 @@ Regla de continuidad:
 ### GEMINI ITERATION INSTRUCTION
 After generating one promising version:
 "Keep the same melodic DNA, emotional world, instrumentation family and handcrafted character. Do not make it bigger. Make it more specific. Reduce generic fantasy gestures by 30%. Increase air, asymmetry, small acoustic imperfections and memorable motif clarity. Preserve the sense of a flying ship that is also a home."
+
+
+## 3×3 FILM MUSIC CONTINUITY · 2026-09-24
+Estado: PREPARED AUDIO BRACKET · NO FINAL SCORE LOCK
+
+For the full-game nine-shot sensory film, music should behave as ONE THEME MUTATING THROUGH LIFE rather than nine separate tracks.
+
+Core:
+ONE MEMORABLE MOTIF
+→ CARE VARIANT
+→ CURIOSITY VARIANT
+→ STUDY/OBSESSION VARIANT
+→ DESCENT FRACTURE
+→ SKY REOPENING
+→ DANGER / RHYTHMIC PRESSURE
+→ IMPOSSIBLE / HARMONIC FRACTURE
+→ REENCOUNTER RETURN
+→ CREATION / OPEN END.
+
+Continuity anchors:
+- preserve 3–5 note melodic DNA or one rhythmic cell;
+- keep one recurring human/acoustic timbre;
+- allow instrumentation to mutate with the visual arc;
+- retain air/wind as connective texture;
+- use silence strategically around fall/rescue and reality fracture;
+- final cue should transform opening material, not replace it.
+
+For Gemini or another music generator:
+generate ONE promising master family first, then request controlled variations with the same melodic DNA.
+Do not generate nine unrelated prompts/tracks.
+
+Suggested first experiment:
+45–75 s instrumental cue with internal chapter transitions and edit-friendly stems/sections if the tool supports them.
+
+Voice-over:
+LAST.
+It should add human meaning, not describe what the viewer can already see.
+
+No imitation of identifiable composers/tracks.
