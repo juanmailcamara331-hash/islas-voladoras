@@ -373,3 +373,22 @@ SOURCE? ADAPTER? TARGET? ROUNDTRIP? FAILURE? TEST? ROLLBACK? PROVENANCE? COST?
 
 Guard:
 do not activate every method mechanically. “Use everything” means the orchestrator considers the whole toolbox and activates every layer that materially changes the decision, while preserving the anti-bureaucracy rule.
+
+
+## UNREAL UNIVERSE / ONE-JOURNEY COHERENCE ROUTING · 2026-09-24
+Use docs/ISL_UNREAL_UNIVERSE_BRIDGE_AND_COHERENCE_LAB_CURRENT.md when a task crosses multiple runtime representations or mixes Unreal readiness with gameplay complexity, pacing, mythology/easter eggs, human traces, external adapters or night-studio preparation.
+
+Guard:
+this is a bridge routine, not another meta-orchestrator.
+Route through the existing M0–M12 layers.
+
+Core questions:
+- ONE SOURCE OF TRUTH?
+- ONE WORLD STATE?
+- ONE JOURNEY?
+- DOES COMPLEXITY IMPROVE CHOICE?
+- DOES THE MODE CHANGE PRESERVE IDENTITY?
+- DOES THE HUMAN TRACE DEEPEN RATHER THAN DISTRACT?
+- CAN THE WHOLE THING BE EXPORTED/TESTED/ROLLED BACK?
+
+Do not use “dopamine” as a design score. Use observable pacing, comprehension, replay and memory evidence.
