@@ -156,3 +156,44 @@ improve spatial/audio/world cue before objective marker;
 keep local freedom while restoring authored macro-rumbo.
 
 No new reminder or bot.
+
+
+## LADDER EVENTS / RUNG ROUTING · 2026-09-24
+New event vocabulary:
+- LADDER_RUNG_PREPARED
+- LADDER_RUNG_TESTED
+- LADDER_RUNG_FAILED
+- LADDER_RUNG_HUMAN_READ
+- LADDER_RUNG_PROMOTION_CANDIDATE
+- LADDER_REGRESSION
+- LADDER_DEPENDENCY_CHANGED
+
+For each ladder event, resolve:
+DOMAIN
+CURRENT_RUNG
+LAST_GOOD
+SOURCE_OF_TRUTH
+DEPENDENCIES
+EVIDENCE
+HUMAN_GATE
+ROLLBACK.
+
+Priority guidance:
+P1:
+- higher rung is being used to bypass a failed lower rung;
+- state/authority is being promoted without evidence;
+- character/Human Trace material is being made public without provenance/consent gate;
+- protagonist or world direction silently overwrites a conflicting CURRENT candidate.
+
+P2:
+- a rung is ready but evidence is not linked;
+- repeated work suggests reusable ladder pattern;
+- a parked rung should wake because its dependency changed.
+
+P3:
+- speculative future rung with no current dependency.
+
+Preferred correction:
+RETURN TO LAST GOOD → name uncertainty → test lowest sufficient rung.
+
+No new reminders if an existing event/hook can carry the wake-up.
