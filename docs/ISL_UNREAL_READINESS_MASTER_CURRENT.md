@@ -374,3 +374,148 @@ Before real implementation:
 ### STOP RULE
 Simulation should expose risk, not create fake production.
 Do not implement U4+ before U0/U1 evidence exists.
+
+
+## UNREAL ECOSYSTEM READINESS AUDIT · 2026-09-24
+Estado: ACTIVE RECURRING METHOD · PREPARATION ONLY · NO AUTO-ADOPTION
+
+## WHY
+Unreal readiness is a strategic weak point with high leverage. A stale pipeline can silently create manual work, data drift, import duplication, broken saves, build regressions, connector lock-in and late production rewrites.
+
+Therefore Unreal readiness is not a one-time document. It is a recurring ecosystem audit.
+
+## AUDIT SCOPE
+Review, when relevant:
+- Unreal release notes / migration notes / deprecations;
+- Interchange import/export framework and pipeline-stack changes;
+- Asset Manager / Primary Assets / Data Assets / DataTables;
+- Data Registries and data-source/override patterns;
+- Gameplay Tags / Enhanced Input / CommonUI;
+- World Partition / Data Layers / HLOD / PCG;
+- SaveGame / versioning / migration patterns;
+- Automation / Functional Tests / Screenshot Comparison / Gauntlet;
+- BuildGraph / UAT / packaging / CI;
+- Insights / memory / GPU / device profiles / scalability;
+- audio / MetaSounds;
+- animation / StateTree / Behavior Trees / AI systems;
+- Python / Blueprint / C++ editor automation;
+- supported import formats, glTF/MaterialX/FBX status and asset pipeline changes;
+- official MCP/assistant/editor automation features when they materially affect production;
+- plugin maturity / platform support / licensing / rollback.
+
+## EXTERNAL ECOSYSTEM SCOPE
+Evaluate adapters around Unreal, never let them become implicit core dependencies:
+- ISL web / Gallery / 3D viewers;
+- SEO / public metadata / structured content;
+- Kickstarter / campaign media / rewards / public-facing asset export;
+- Netlify / web deployment;
+- Drive / GitHub / Library provenance and artifact storage;
+- image/video/3D generation providers;
+- analytics/telemetry when adopted;
+- console/mobile packaging and distribution surfaces;
+- future connectors/plugins only after M5 security and dependency review.
+
+Rule:
+EXTERNAL SURFACE → ADAPTER/EXPORT CONTRACT → ISL SOURCE_OF_TRUTH
+never
+EXTERNAL SURFACE → hidden gameplay truth.
+
+## CURRENT WATCH CANDIDATES · VERIFIED 2026-09-24
+- Interchange is Unreal's extensible import/export framework; it is format-agnostic, asynchronous and customizable, with pipeline stacks and Blueprint/Python/C++ extension points. Treat as a strong candidate for future ISL import automation, not an automatic production choice.
+- Data Registries can aggregate structured read-only data from multiple sources with fallback/override behavior. Treat as a candidate when ISL needs layered or context-specific content lookup; do not use for mutable session/save state.
+- Unreal 5.8 release notes include additional tooling changes across rendering, worldbuilding, PCG and other areas, plus MCP-related animation assistant tooling. This is WATCH evidence only until an ISL use case, version freeze and support test exist.
+
+## FULL-METHOD CROSS
+Every significant Unreal ecosystem change routes through the existing system, not a parallel methodology:
+M0 NAVIGATION
+→ M2 SOURCE / ENTITY
+→ M12 DATA / FORMULAS / PARAMETERS when schema or tuning changes
+→ M8 UNREAL READINESS
+→ M5 SECURITY / PLUGINS / CONNECTORS when external
+→ M9 BUILD / TEST / DEVICE
+→ M1 QUALITY / DIALECTIC
+→ M3 HUMAN TEST when experience changes
+→ M11 ASSET / GALLERY / MEDIA when visual/runtime assets move.
+
+Use:
+- Meta-Layer Orchestrator;
+- Recursive Dialectic Quality Router;
+- Human Variation Randomizer only for creative/perceptual variants, never for IDs/schemas/build determinism;
+- Visual Fidelity Ladder for graphics/runtime;
+- U0–U8 Unreal production simulation;
+- T0–T8 regression ladder;
+- M12 formula/parameter versioning;
+- Organism Radiography / Curation to prevent duplicated infrastructure;
+- Context Hygiene / Authority Pruning to prevent recency from becoming truth.
+
+## RANDOMIZER BOUNDARY
+Randomizer MAY perturb:
+- visual brackets;
+- human test order;
+- non-destructive creative alternatives;
+- scenario combinations for robustness testing.
+
+Randomizer MUST NOT perturb:
+- stable IDs;
+- save schema versions;
+- import paths after freeze;
+- build configuration;
+- security permissions;
+- canonical data migrations;
+- deterministic regression expectations.
+
+## ECOSYSTEM SIMULATION MATRIX
+For every new integration or important Unreal capability, simulate:
+1. SOURCE: what ISL truth enters?
+2. ADAPTER: what transformation occurs?
+3. TARGET: which Unreal/external structure receives it?
+4. ROUNDTRIP: can we export/read it back without ambiguity?
+5. FAILURE: what happens if provider/plugin/schema disappears?
+6. TEST: what automated guard catches breakage?
+7. HUMAN: does this reduce work or add ceremony?
+8. ROLLBACK: can we return to last good state?
+9. PROVENANCE: can we prove what source/version generated it?
+10. COST: build time, runtime cost, maintenance and cognitive load.
+
+Reject integrations that add more hidden state than leverage.
+
+## SEO / KICKSTARTER / VIEWER CONTRACT
+Public/campaign/presentation systems receive derived exports, never become AUTHORITATIVE gameplay databases.
+
+Example:
+ENTITY PASSPORT / GALLERY REGISTRY
+→ PUBLIC EXPORT LAYER
+→ SEO metadata / campaign page / 3D web viewer / press kit.
+
+Any public edits that matter to the game must return through an explicit intake/review path before affecting SOURCE_OF_TRUTH.
+
+## PERIODIC CADENCE
+Run a light audit approximately monthly and a focused audit at:
+- Unreal version freeze;
+- plugin adoption;
+- platform target change;
+- vertical-slice gate;
+- major data-schema change;
+- new external connector;
+- large asset-pipeline change;
+- save/persistence redesign.
+
+Each audit returns at most:
+- meaningful external changes;
+- one compatibility risk;
+- one reversible recommendation;
+- one doc/schema update if justified.
+NO CHANGE is a valid outcome.
+
+## DEFINITION OF LAZY-MAGISTRAL
+The Unreal pipeline is successful when:
+- content is described once;
+- imports are repeatable;
+- updates are syncable by stable ID;
+- validation is automatic;
+- packaging is reproducible;
+- regressions are caught early;
+- humans spend time on play, art and decisions rather than transcription.
+
+More automation is not automatically better.
+The best pipeline removes repeated work while preserving human authority.
