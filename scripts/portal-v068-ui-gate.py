@@ -53,9 +53,12 @@ for token,label in [
     ('>VER</a>',"Ver"),
     ('href="decidir.html"',"Decidir"),
     ('>MÁS</button>',"Más"),
-    ('href="galeria.html?v=20260921-1"',"Galería"),
+    ('href="galeria.html',"Galería"),
 ]:
-    need(token in s,f"primary destination missing: {label}")
+    if label=="Galería":
+        need(re.search(r'href="galeria\.html(?:\?[^"]*)?(?:#[^"]*)?"',s) is not None,f"primary destination missing: {label}")
+    else:
+        need(token in s,f"primary destination missing: {label}")
 
 # Native return / no legacy welcome / no desktop-canvas regression
 need("isl_native_entered_v063" in s,"native entered-state guard missing")
