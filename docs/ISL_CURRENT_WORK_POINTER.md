@@ -2107,3 +2107,17 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Drive↔GitHub MASTER alignment remains checked by the scheduled authority audit.
 - Direct insertion into the Pages workflow was blocked by tool security in this session; do not claim CI wiring complete until that workflow change is separately verified.
 - PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. No CANON promotion.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · LADDER-FIRST PRODUCTION PATTERN
+- Human direction confirmed: the incremental Visual Fidelity Ladder should generalize by function across ISL, not remain only a 3D graphics method.
+- Existing docs were extended; no new meta-organ created.
+- Canonical transversal pattern now lives in ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT and is routed by ISL_META_LAYER_ORCHESTRATOR_CURRENT.
+- Domains covered: visual/3D, combat, skyship, UI/HUD, audio, world, narrative/Human Trace, build/save, performance and Unreal.
+- Rule: ONE ACTIVE RUNG · ONE NEXT RUNG · REST PARKED.
+- Every bullet should identify BASELINE + LADDER/RUNG + 1–2 VARIABLES + FAILURE CONDITIONS + HUMAN READ + ROLLBACK.
+- Higher fidelity/complexity cannot rescue a failed lower rung.
+- UC0 and skyship are now explicitly staged: state ownership → representation → interaction → encounter → world context → skyship sensor → skyship combat → representative slice.
+- Dragón Nada remains preserved as HUMAN_TRACE_RAW / PARKED seed and does not displace the current bridge uncertainty.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+- No new checkpoint justified by this methodological circulation alone.
