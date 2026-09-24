@@ -1441,3 +1441,72 @@ return to SHOT DNA v0.1 + exact character refs; mutate only failed pair/variable
 STATE:
 NEED_RECOVERY only for character visual binaries.
 All other pre-fire structure = READY.
+
+
+## NON-NORMATIVE ISL VISUAL GUARD · 2026-09-24
+Estado: HARD RULE · FULL-GAME 3×3 + FUTURE PROMO SENSORS
+
+Human correction:
+ISL must not default to familiar, safe, generic fantasy solutions.
+
+Core:
+NOT WEIRD FOR WEIRD'S SAKE.
+WEIRD WITH INTERNAL LOGIC + HUMAN CONSEQUENCE + GAMEPLAY MEMORY.
+
+Formula:
+FAMILIAR FUNCTION
+→ BREAK ONE EXPECTATION
+→ ADD ONE HUMAN TRACE
+→ ADD ONE WORLD-RULE CONSEQUENCE
+→ PRESERVE READABILITY
+→ CREATE MEMORABLE SILHOUETTE OR BEHAVIOR.
+
+Apply to:
+protagonist; companion; friends; ships; islands; flora/fauna; architecture; relics; workshops; encounters; reality fractures; late-game construction.
+
+FAIL if:
+- ship reads as standard steampunk airship;
+- island reads as generic floating rock with grass;
+- companion reads as generic cute fox/dog mascot;
+- protagonist reads as standard young-adult fantasy hero;
+- relic reads as standard magic medallion;
+- workshop reads as generic inventor clutter;
+- fracture reads as generic portal/multiverse;
+- architecture reads as castle/cathedral pasted onto a floating rock;
+- late-game creation reads as clean utopia or imperial capital.
+
+Desired qualities:
+slightly wrong; handmade; repaired; asymmetrical; emotionally specific; socially inhabited; scientifically improvised; biologically odd; funny at the edge; beautiful without becoming polite; surprising after first glance.
+
+Wildness may come from:
+- coherent impossible scale;
+- one absurd behavior;
+- one structural contradiction;
+- one unusual social custom;
+- one material used unexpectedly;
+- one creature adaptation;
+- one architectural decision;
+- one intimate object operating at cosmic scale;
+- one cosmic mechanism used for an ordinary domestic need.
+
+3×3 rule:
+Each of the 9 cells must include at least ONE distinctly ISL non-normative event/object.
+At least 3 weird motifs must recur across multiple cells so the grid feels like one authored world, not nine gimmicks.
+
+Candidate recurring motifs:
+- companion's delayed/awkward reactions;
+- impossible household-science device;
+- living plant integrated into machinery;
+- relic with practical/social behavior rather than generic magic;
+- architecture shaped by wind/history;
+- creature ecology with comic consequence;
+- skyship domestic ritual;
+- memory object whose practical use evolves across life.
+
+Reference distance:
+dark-whimsical, cosmic-sci-fi and punk references remain functional only. No recognizable character silhouette, portal, costume, prop, color code or franchise-specific surface.
+
+For the next 3×3:
+raise NON-NORMATIVE ISL MUTATION as a qualitative constraint.
+Do not simply raise chaos.
+CONTINUITY FIRST → MUTATE FAMILIAR SOLUTIONS SECOND.
