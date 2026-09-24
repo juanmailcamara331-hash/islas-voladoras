@@ -700,3 +700,30 @@ No final music/VO commitment until father/Carrillo or trusted human read confirm
 Maximum one continuity repair per automation pass.
 No new bot.
 No auto-CANON.
+
+
+## FULL-GAME PROMO / TRAILER ROUTING · 2026-09-24
+When event relates to 3×3 film, promo, Kickstarter trailer, CapCut assembly or image-to-video:
+route through Cinematic Aesthetic Synthesizer + Soundtrack Bible + Human Trace + Guided World where relevant.
+
+Hard order:
+SOURCE/REFS
+→ SHOT DNA
+→ CAUSAL STORY
+→ GRID EXTRACTION
+→ IDENTITY CONTINUITY
+→ CAMERA/MOTION CONTINUITY
+→ LIGHT/BLACKS
+→ MATERIAL/PHYSICS
+→ CAUSAL VFX
+→ SFX/AMBIENCE
+→ HUMAN READ
+→ SCORE
+→ VO.
+
+Do not spend first-pass generation budget on music, titles, captions or decorative transitions.
+Do not use fades/glitches to hide continuity failures.
+First video master = NO MUSIC.
+Voice-over = later derivative layer.
+Max one continuity repair per pass.
+No auto-CANON from promo quality.
