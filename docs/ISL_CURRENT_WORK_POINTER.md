@@ -2247,3 +2247,14 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Earlier accidental 3×3 generation is explicitly treated as PROCESS ERROR / NON-AUTHORITATIVE SENSOR; it cannot become baseline by recency.
 - Only unresolved pre-fire inputs: protagonist exact visual reference + companion exact approved reference (or explicit human re-lock of replacements).
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · NON-NORMATIVE VISUAL GUARD
+- Full-game 3×3 and future promo sensors now have a hard anti-generic rule.
+- Formula: FAMILIAR FUNCTION → BREAK ONE EXPECTATION → HUMAN TRACE → WORLD-RULE CONSEQUENCE → READABILITY → MEMORABLE SILHOUETTE/BEHAVIOR.
+- Applies across characters, companion, ships, islands, architecture, relics, workshops, encounters, reality fracture and late-game construction.
+- Wildness must remain coherent; random visual noise is not a substitute for originality.
+- Each 3×3 cell must contain at least one distinctly ISL non-normative event/object, while at least three unusual motifs recur across cells to preserve world continuity.
+- Explicit FAIL defaults include generic steampunk ships, generic floating islands, generic cute mascot, standard fantasy hero, generic magic medallion, generic portal, pasted castle/cathedral and sterile imperial-utopia end state.
+- Next grid generation must raise ISL mutation while preserving continuity first.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
