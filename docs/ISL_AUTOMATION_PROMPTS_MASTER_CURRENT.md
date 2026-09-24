@@ -579,3 +579,59 @@ Prompt contract:
 - Never auto-adopt plugins, never change engine version, never promote CANON, never rewrite save schema without human gate.
 - Return NO CHANGE if nothing materially improves reliability, simplicity or creative leverage.
 - At most one reversible corrective proposal per routine pass.
+
+
+## 22. LADDER-FIRST / RUNG-AWARE TRIGGER · 2026-09-24
+Trigger:
+when a substantive ISL task asks to improve fidelity, complexity, production readiness, character growth, world depth, combat, UI, audio, save/build, performance, Unreal readiness or a Human Trace arc.
+
+Apply:
+- CROSS-SYSTEM LADDER DOCTRINE in ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT;
+- LADDER-FIRST ROUTING in ISL_META_LAYER_ORCHESTRATOR_CURRENT;
+- task-specific CURRENT source.
+
+Automation must determine:
+DOMAIN
+CURRENT_RUNG
+LAST_GOOD
+NEXT_UNCERTAINTY
+CHEAPEST_RUNG_THAT_CAN_ANSWER_IT
+EVIDENCE_REQUIRED
+HUMAN_GATE
+ROLLBACK.
+
+Output:
+maximum ONE rung correction / preparation per pass.
+
+Hard guards:
+- ONE ACTIVE RUNG · ONE NEXT · REST PARKED;
+- no jumping to representative slice because a concept is exciting;
+- no higher rung may hide a lower-rung failure;
+- do not wake parked rungs without dependency/evidence change;
+- no CANON promotion;
+- no new bot.
+
+### Narrative / protagonist special case
+If the event touches protagonist life-span, family/friends, religion/culture, substances, altered-reality fiction, memorials or reenounter:
+- route to ISL_MAKING_OF_HUMAN_TRACE_CURRENT;
+- distinguish HUMAN_TRACE from fictional mutation;
+- preserve private-by-default and consent/provenance gates;
+- do not convert real mental-health experiences into supernatural claims;
+- do not turn substance material into real-world optimization/dosing advice;
+- person-first for cultural friendships;
+- preserve internal contradiction rather than forcing moral binary resolution.
+
+### Character ladder candidate
+L0 CARE/WONDER
+→ L1 IMITATE/LEARN
+→ L2 DIFFERENTIATE/CREATE
+→ L3 OBSESS/MODEL
+→ L4 BREAK/DOUBT
+→ L5 DESCEND/LOSE ORIENTATION
+→ L6 RESCUE/RETURN
+→ L7 FRACTURE REALITY/EXTREMES
+→ L8 RECOGNIZE OTHERS AGAIN
+→ L9 REENCOUNTER/CHOSEN CONSTELLATION
+→ L10 SKY/PARADISE/CONTINUED LEARNING.
+
+Do not treat these as mandatory chapters; they are evidence/routing rungs.
