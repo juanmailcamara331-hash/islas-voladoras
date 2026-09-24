@@ -300,3 +300,39 @@ HECHO / CAMBIÓ / BLOQUEADO / ERRORES O LÍMITES / NECESITA TU DECISIÓN / SIGUI
 
 AUTOMATION MAY PREPARE AND TEST.
 HUMAN DECIDES AUTHORITY.
+
+
+## RUNG-AWARE AUTOMATION QUALITY · 2026-09-24
+Automation quality now includes rung awareness.
+
+Before producing a substantive output, ask:
+- What ladder/domain is this?
+- What is the CURRENT rung?
+- What evidence made the previous rung survive?
+- What single uncertainty justifies climbing?
+- Can this be answered without climbing?
+- What does failure look like?
+- What is LAST GOOD?
+- Is a HUMAN/DEVICE gate required?
+
+Good automation behavior:
+PREPARE THE NEXT TEST, NOT THE FINAL FANTASY.
+
+Bad automation behavior:
+- generating a polished final scene while form/material/interaction are unresolved;
+- expanding a narrative life arc before one beat has been tested;
+- adding tactical layers before the simple encounter is understood;
+- adding UI before world guidance fails;
+- adding bots/reminders because a rung is waiting.
+
+For Human Trace / protagonist:
+automation may preserve, classify, cross-link, prepare contrasts and propose cheap tests.
+It may not:
+- decide intimate family/memorial meaning;
+- publish private traces;
+- canonize identity;
+- resolve spiritual/political contradictions for the user;
+- treat real-world suffering as aesthetic material without consequence/dignity.
+
+Maximum:
+one rung advance OR one rung repair per pass.
