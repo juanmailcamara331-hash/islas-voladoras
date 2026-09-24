@@ -152,3 +152,225 @@ Después: volver a Velaria HUMAN_DEVICE_GREEN.
 - docs/ISL_UNREAL_IMPORT_MANIFEST_SCHEMA_CURRENT.json
 - docs/ISL_UNREAL_TEST_AND_REGRESSION_BRIDGE_CURRENT.md
 - docs/ISL_UNREAL_PLUGIN_AND_DEPENDENCY_ALLOWLIST_CURRENT.md
+
+
+## UNREAL TRANSFER SIMULATION · COPY-ONCE / PASTE-LIGHT · 2026-09-24
+Estado: ACTIVE PREPARATION · SIMULATION ONLY · NO MASS IMPORT
+
+Human concern addressed:
+ISL must not arrive at Unreal as a pile of prose, screenshots and manual copy/paste.
+The goal is:
+CREATE ONCE → STRUCTURE ONCE → EXPORT → IMPORT → VALIDATE → PLAYTEST → ITERATE.
+
+### CORE TRANSLATION MODEL
+ISL SOURCE_OF_TRUTH
+→ ENTITY PASSPORT
+→ MACHINE-READABLE MANIFEST
+→ UNREAL TARGET CLASS
+→ GENERATED/IMPORTED DATA
+→ VALIDATION
+→ AUTOMATION
+→ PLAYABLE BUILD
+→ HUMAN READ
+→ DELTA BACK TO SOURCE.
+
+### WHAT SHOULD BE DATA VS CODE VS BLUEPRINT
+Use DATA for:
+- IDs;
+- tuning values;
+- relationships;
+- costs;
+- thresholds;
+- tags;
+- spawn/config references;
+- dialogue/state metadata;
+- asset references;
+- encounter definitions.
+
+Use C++ / reusable components for:
+- deterministic reusable logic;
+- save/versioning;
+- core state transitions;
+- performance-critical systems;
+- validators/import helpers;
+- systems requiring strong tests.
+
+Use Blueprints for:
+- composition;
+- prototyping;
+- level scripting;
+- readable assembly;
+- interaction glue;
+- designer iteration.
+
+Do not encode content truth in random Blueprint nodes when it can live in data.
+
+### ZERO-PASTE TARGET
+Manual copy/paste from ChatGPT/docs into Unreal should be an exception.
+
+Preferred routes:
+1. JSON/CSV/structured source generated from ISL manifests.
+2. Unreal import tool or Editor Utility reads that source.
+3. It creates/updates DataTable rows or Data Assets/Primary Data Assets.
+4. Stable isl_id decides identity; display names may change safely.
+5. Import is idempotent where practical: rerunning updates known entities instead of duplicating them.
+6. Validation reports missing fields/references before packaging.
+7. Human approves gameplay/art state separately.
+
+### CURRENT UNREAL DATA SHAPES
+Recommended mapping:
+- tuning/mass tabular values → DataTable / CurveTable when row-shaped;
+- content entities with richer structure/asset refs → Data Asset;
+- loadable top-level content families → Primary Data Asset + Asset Manager;
+- classification/state/event vocabulary → Gameplay Tags;
+- runtime instance state → Actor/Component/SaveGame, never hidden in source content tables;
+- cross-system identity → immutable ISL_ID independent of asset/display name.
+
+### SIMULATED IMPORT RECIPE
+For every READY_UNREAL entity:
+A. Validate SOURCE_OF_TRUTH + canon_state.
+B. Emit/update manifest entry.
+C. Normalize:
+   - units to cm;
+   - axis;
+   - path;
+   - tags;
+   - asset refs;
+   - platform tier;
+   - save impact.
+D. Choose target:
+   DataTable / PrimaryDataAsset / Actor / Component / Level / UI / Audio.
+E. Import/create/update by isl_id.
+F. Run Data Validation.
+G. Run relevant Automation/Functional tests.
+H. Open cheap test map.
+I. Package smoke build.
+J. Device run.
+K. Human play/read.
+L. Record delta and rollback path.
+
+### SIMULATION BULLETS
+These bullets simulate the future game production now, without opening full Unreal production.
+
+BULLET U0 · BOOT SKELETON
+- empty project;
+- one map;
+- one PrimaryDataAsset;
+- one Gameplay Tag dictionary seed;
+- one SaveGame schema version;
+- one test;
+- one package.
+PASS = reproducible boot/package/test.
+
+BULLET U1 · ONE ENTITY END-TO-END
+Example class: Gift Token or one creature.
+- one manifest entry;
+- one import;
+- one runtime representation;
+- one interaction;
+- save/load;
+- screenshot regression;
+- packaged device test.
+PASS = no manual re-entry of core metadata.
+
+BULLET U2 · ONE ENCOUNTER
+- player + one creature or one skyship interaction;
+- data-driven tuning;
+- entry/exit;
+- fail/retry;
+- save checkpoint;
+- functional test.
+PASS = loop survives repeated runs without state corruption.
+
+BULLET U3 · ONE WORLD CELL
+- one small island/zone;
+- one streaming boundary if useful;
+- one world-state variant;
+- one audio/light state;
+- one device performance pass.
+PASS = enter/play/leave/re-enter/save/load without bug.
+
+BULLET U4 · GOLDEN PATH 10–15 MIN
+- arrival;
+- traversal;
+- dialogue/social beat;
+- one mechanic;
+- one encounter;
+- reward/consequence;
+- save/load/resume.
+PASS = blind human can finish without developer rescue.
+
+BULLET U5 · CONTENT SCALE TEST
+- import N entities from manifests;
+- load/validate all;
+- detect duplicates/missing refs;
+- stress asset loading;
+- compile Blueprints;
+- package.
+PASS = scaling content does not become manual chaos.
+
+BULLET U6 · REGRESSION WEEK
+- repeated packaged runs;
+- save migration;
+- screenshot baselines;
+- performance budgets;
+- known-bug guards.
+PASS = fixes stay fixed.
+
+BULLET U7 · FUN / COMPREHENSION GATE
+- Carrillo/friend blind test;
+- minimal explanation;
+- record where they hesitate, laugh, explore, quit or exploit;
+- separate bugs from boredom from confusion.
+PASS = humans understand core loop and voluntarily want one more action.
+
+BULLET U8 · VERTICAL SLICE GO/NO-GO
+- only after lower bullets pass;
+- representative art + audio + gameplay + save + device build;
+- one stable golden path;
+- reproducible build pipeline;
+- rollback.
+PASS = this is credible evidence for serious Unreal production.
+
+### BUG-PREVENTION MODEL
+Every milestone asks four questions:
+1. DATA: is the content valid and uniquely identified?
+2. LOGIC: does the state transition behave under repetition/failure?
+3. BUILD: does packaged/device behavior match editor assumptions?
+4. HUMAN: is it understandable and fun?
+
+A bug is not closed until the cheapest relevant regression guard exists when practical.
+
+### FUN IS A TEST DIMENSION
+Automated tests cannot prove fun.
+Track human observations separately:
+- comprehension;
+- intention;
+- surprise;
+- boredom;
+- frustration;
+- voluntary replay;
+- remembered moment;
+- exploit/creative use.
+Do not collapse these into one score.
+
+### CARRILLO / HUMAN TEST ROLE
+Carrillo/friends may enter at U2/U4/U7:
+- blind or semi-blind depending question;
+- no methodology dump;
+- observe first;
+- ask non-leading questions after;
+- preserve raw trace;
+- findings inform iteration but do not auto-CANON.
+
+### ENGINE FREEZE RULE
+Before real implementation:
+- choose exact UE version;
+- re-check current official docs;
+- verify plugin/platform support;
+- freeze import schema version;
+- create migration/rollback note.
+
+### STOP RULE
+Simulation should expose risk, not create fake production.
+Do not implement U4+ before U0/U1 evidence exists.
