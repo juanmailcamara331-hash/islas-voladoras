@@ -519,3 +519,27 @@ The Unreal pipeline is successful when:
 
 More automation is not automatically better.
 The best pipeline removes repeated work while preserving human authority.
+
+
+## FAILURE-SIMULATION BRIDGE · 2026-09-24
+Detailed cross-domain method:
+- docs/ISL_UNREAL_FAILURE_SIMULATION_AND_HISTORICAL_LESSONS_CURRENT.md
+
+Deterministic rehearsal helper:
+- scripts/isl-unreal-risk-sim.py
+
+Purpose:
+turn historical/community/scientific lessons into bounded, reproducible U0–U8 failure scenarios rather than accumulating advice.
+
+Use external evidence as:
+CLAIM → ISL RISK → CHEAP TEST → DECISION.
+Never as “best practice therefore adopt”.
+
+Current source families:
+- Epic official engine/release documentation;
+- NASA systems engineering + FMEA/FMECA;
+- MIT STPA/CAST;
+- Google SRE / reliability / fuzzing research;
+- NIST SSDF / software supply-chain provenance;
+- Reddit/forums as failure-mode sensors;
+- Archive.org / historical postmortems when discoverable and relevant.
