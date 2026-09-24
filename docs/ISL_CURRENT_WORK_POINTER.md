@@ -1,3 +1,14 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL ONE-JOURNEY COHERENCE LAB
+- Added bridge routine: docs/ISL_UNREAL_UNIVERSE_BRIDGE_AND_COHERENCE_LAB_CURRENT.md.
+- This is NOT a new meta-orchestrator; it routes through existing M0–M12.
+- Adds game-theory/complex-game abstraction, one-journey coherence across 3D/2.5D/skyship/UI, mythology/easter-egg intake, private human-trace callbacks, candidate Unreal bridge-app gate, and A++ night-studio work-packet templates.
+- Explicit guard: no dopamine-hacking model; use observable expectation/surprise/effort/mastery/frustration/rest/reward/consequence/memory/replay.
+- First rehearsal candidate UC0: one 10-minute thread across 3D exploration → human/world beat → 2.5D combat → consequence → 3D return → hidden human/mythic trace → save/reload.
+- Second rehearsal candidate UC1: complexity-without-confusion ablation.
+- Do not build bridge app until repeated manual friction proves value.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- New-chat boot is appropriate before executing UC0/UC1, but no prompt has been finalized yet.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · HYBRID 2.5D↔3D TRANSITION CONTRACT
 - New dedicated readiness contract: docs/ISL_HYBRID_2_5D_3D_TRANSITION_CONTRACT_CURRENT.md.
 - Purpose: rehearse representation/mode boundaries such as 3D exploration → 2.5D combat → 3D return without state duplication or manual glue.
