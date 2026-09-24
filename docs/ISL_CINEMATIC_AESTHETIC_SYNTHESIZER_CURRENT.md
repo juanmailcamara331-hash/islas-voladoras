@@ -371,3 +371,161 @@ No new ladder registry until repeated manual friction proves one is needed.
 ### PRINCIPLE
 DO NOT BUILD THE FINAL THING FIRST.
 BUILD THE NEXT THING THAT CAN PROVE THE PREVIOUS THING DESERVES TO EXIST.
+
+
+## FULL-GAME 3×3 → VIDEO CONTINUITY CONTRACT · 2026-09-24
+Estado: PREPARED · SENSOR PIPELINE · NO GENERATION AUTHORITY · NO AUTO-CANON
+
+Purpose:
+Prepare the 3×3 full-game vision grid as nine consecutive keyframes of ONE FILM, so later image-to-video generation and editing can join them with minimal visible seams.
+
+Core rule:
+DO NOT DESIGN 9 IMAGES.
+DESIGN 1 CONTINUOUS FILM EXPRESSED AS 9 KEYFRAMES.
+
+### SHOT DNA LOCK
+Before firing the visual bullet, lock a compact continuity bible:
+- protagonist face/age progression anchors;
+- protagonist silhouette + hair family;
+- one recurring scarf/fabric/amulet family;
+- companion creature mother-shape + goofy/dim-witted affect;
+- 2–3 recurring friend silhouettes;
+- protector/uncle silhouette;
+- 3–4 recurring memory objects;
+- skyship design family;
+- island architecture/material family;
+- wind language;
+- color script;
+- lens/framing family;
+- world material wear;
+- visual scale relationships.
+
+No downstream tool may silently redesign these anchors.
+
+### TRANSITION BRIDGES
+Every panel must hand one visual/motion element to the next.
+Preferred bridge classes:
+- object match cut;
+- hand/gesture continuity;
+- wind direction;
+- scarf/ribbon trajectory;
+- gaze direction;
+- horizon line;
+- camera travel direction;
+- light-source direction;
+- shape morph;
+- sound motif;
+- repeated prop;
+- environmental trace.
+
+Target sequence:
+1→2 book/map becomes landscape/route.
+2→3 ribbon/wind becomes study-string/diagram movement.
+3→4 model/orb or notebook fragment becomes broken/fallen object.
+4→5 rescuing hand/cloth becomes hand gripping ship rail / sail line.
+5→6 same horizon/wind reveals threat/encounter.
+6→7 eye/mouth/impact/sky tear becomes impossible-world aperture.
+7→8 floating amulet/trace resolves into physical object in a friend's hand.
+8→9 small model/map/island fragment expands into constructed archipelago.
+
+This is a continuity hypothesis; human/video test may mutate individual bridges.
+
+### MOTION CONTINUITY
+For video generation, each shot card should carry:
+ENTRY_POSE
+EXIT_POSE
+CAMERA_VECTOR
+SUBJECT_VECTOR
+WIND_VECTOR
+LIGHT_DIRECTION
+FOCAL_TARGET
+MOTION_ENERGY
+TRANSITION_OBJECT.
+
+Default:
+the EXIT state of shot N should be a plausible ENTRY state for shot N+1.
+
+Avoid:
+random camera reversals;
+character teleporting across frame;
+wardrobe resets;
+sun direction jumping without narrative cause;
+companion disappearing/reappearing arbitrarily;
+architecture families changing between shots;
+massive focal-length changes with no transition.
+
+### AGE / LIFE CONTINUITY
+Age progression must be gradual.
+Use immutable identity anchors across growth:
+eyes / brow relation;
+hair growth logic;
+scar/accessory family;
+gesture habit;
+carried object;
+companion recognition;
+friend silhouettes.
+
+Do not change facial identity simply to make age legible.
+Do not lock exact age until the character synthesis gate.
+
+### COLOR SCRIPT CONTINUITY
+Color is a temporal journey, not nine palettes:
+CARE/WARMTH
+→ OPEN SKY
+→ STUDY/WARM-COOL DUALITY
+→ DESCENT/NEAR-BLACK HUMAN LIGHT
+→ REOPENED SKY
+→ DANGER/WIND
+→ IMPOSSIBLE SPECTRUM
+→ REENCOUNTER/SUNSET HUMANITY
+→ LARGE-SCALE DAWN / LIVED MATERIAL.
+
+Each step must preserve at least one color/motif from the previous.
+
+### VIDEO TOOL HANDOFF
+When animating:
+- use the exact selected keyframe as start/reference whenever the tool supports it;
+- preserve character/creature/world identity over style novelty;
+- animate only the scene's intended motion;
+- keep short clip duration initially;
+- prefer camera/body/environment motion that can end on the next keyframe;
+- do not ask the video model to invent the next scene from text alone if an exact next frame exists;
+- preserve seed/reference identifiers where tools expose them;
+- archive selected still + prompt + generation ID + derivative clip IDs.
+
+Image-to-video tool is a DERIVATIVE SURFACE, never SOURCE_OF_TRUTH.
+
+### EDIT ASSEMBLY
+For the first sensory film:
+- no title cards inside the nine-shot sequence;
+- no explanatory on-screen text;
+- cut on movement, gaze, shape, light or sound;
+- use 3–8 second clips as a first bracket, not a lock;
+- leave handles at start/end of each clip for edit overlap;
+- use short dissolves only when the world transition itself justifies them;
+- prefer match cuts / motion cuts over generic crossfades;
+- do not hide continuity failures with excessive effects.
+
+### FAILURE CONDITIONS
+FAIL / MUTATE if:
+- a character looks like a different person between adjacent panels;
+- companion mother-shape drifts;
+- skyship/architecture becomes another franchise;
+- the cut only works because of a fade-to-black;
+- motion vectors fight between clips;
+- age jump feels like recasting;
+- cosmic fracture looks like an unrelated game;
+- late creation/empire frame loses human-scale continuity;
+- the sequence needs captions to explain basic causality.
+
+### HUMAN READ
+Show the silent cut first.
+Ask:
+- Is this one life?
+- Is this one game?
+- Where did you feel a jump?
+- Which transition felt inevitable?
+- Which character/object did you track without trying?
+- What changed, and what stayed the same?
+
+The silent visual cut must survive before voice-over or music is used to rescue it.
