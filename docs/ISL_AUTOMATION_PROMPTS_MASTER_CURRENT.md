@@ -659,3 +659,44 @@ one micro-cell / one friend cue / one nature cue / one object cue / no marker.
 
 No new bot.
 No auto-CANON.
+
+
+## 24. FULL-GAME GRID / VIDEO CONTINUITY TRIGGER · 2026-09-24
+Trigger:
+when the 3×3 full-game grid, image-to-video derivative, trailer sensor, father/Carrillo cut, music pass or voice-over pass is prepared.
+
+Route:
+CINEMATIC AESTHETIC SYNTHESIZER
++ GALLERY FULL-GAME SENSORY SIMULATION
++ SOUNDTRACK BIBLE
++ HUMAN TRACE / PRIVACY when real people are referenced
++ M11 asset lifecycle.
+
+Before generation:
+require SHOT_DNA_LOCK + 9 BEATS + 8 TRANSITION_BRIDGES.
+
+For every adjacent shot pair verify:
+IDENTITY
+WARDROBE/AGE LOGIC
+PROP CONTINUITY
+WORLD MATERIAL FAMILY
+CAMERA VECTOR
+MOTION VECTOR
+WIND
+LIGHT
+COLOR CARRYOVER
+ENTRY/EXIT COMPATIBILITY.
+
+Tool routing:
+- still-image generator / Midjourney-like surface: visual exploration/derivative, not authority;
+- image-to-video / Seedance-like surface: exact selected still as reference when possible; preserve identity;
+- Gemini-like music surface: one motif family with controlled variations, not nine unrelated tracks;
+- CapCut/editor: assembly, pacing, VO/subtitles later; never used to hide a continuity failure.
+
+Human gate:
+silent cut first.
+No final music/VO commitment until father/Carrillo or trusted human read confirms the sequence feels like one journey.
+
+Maximum one continuity repair per automation pass.
+No new bot.
+No auto-CANON.
