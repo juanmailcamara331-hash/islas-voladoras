@@ -1,0 +1,98 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "generated_at": "2026-09-24",
+  "id": "ISL-PROMO-FILM-V1-JOURNEY",
+  "title": "ISL PROMO FILM V1 · PRIVATE PREVIEW",
+  "state": "KEEP · PRIVATE PREVIEW · CROWN-JEWEL CANDIDATE · NO AUTO-CANON",
+  "journey_state": "01–09 COMPLETE",
+  "sharing": "TRUSTED PRIVATE PREVIEW",
+  "rights": "IP REVIEW ACTIVE",
+  "clean_master": "PENDING",
+  "public_release": "LOCKED",
+  "master_access": "PRIVATE_NOT_EXPOSED_IN_PUBLIC_GALLERY",
+  "memory_hypothesis": "MEMORY PAIR THROUGH CONTRASTIVE PAYOFF",
+  "nodes": [
+    {
+      "n": "01",
+      "beat": "CARE / FIRST WORLD",
+      "state": "KEEP",
+      "memory": "—",
+      "sentence": "Cuidado y primer contacto con el mundo."
+    },
+    {
+      "n": "02",
+      "beat": "HORIZON / DESIRE / FRIENDSHIP",
+      "state": "KEEP",
+      "memory": "—",
+      "sentence": "El horizonte abre deseo, vínculo y viaje."
+    },
+    {
+      "n": "03",
+      "beat": "THEORY / STUDY / OBSESSION",
+      "state": "KEEP",
+      "memory": "—",
+      "sentence": "La curiosidad se vuelve búsqueda y obsesión."
+    },
+    {
+      "n": "04",
+      "beat": "FALL / CONTRADICTION / RESCUE",
+      "state": "KEEP",
+      "memory": "—",
+      "sentence": "La caída rompe la estabilidad y obliga a responder."
+    },
+    {
+      "n": "05",
+      "beat": "REENTRY / SKYSHIP / WORLD REOPENED",
+      "state": "KEEP",
+      "memory": "—",
+      "sentence": "El mundo vuelve a abrirse mediante viaje y posibilidad."
+    },
+    {
+      "n": "06",
+      "beat": "PRESSURE / ENCOUNTER",
+      "state": "KEEP",
+      "memory": "—",
+      "sentence": "La presión prepara el umbral sin resolverlo todavía."
+    },
+    {
+      "n": "07",
+      "beat": "HELL / BREAKTHROUGH",
+      "state": "KEEP",
+      "memory": "STRONG",
+      "pair": "07↔08",
+      "sentence": "Valle: peligro, intimidad, gesto humano y misterio."
+    },
+    {
+      "n": "08",
+      "beat": "ASCENT / PARADISE / REUNION",
+      "state": "KEEP",
+      "memory": "EMERGING / SECONDARY",
+      "pair": "07↔08",
+      "sentence": "Liberación: vuelo, alegría y expansión tras el valle."
+    },
+    {
+      "n": "09",
+      "beat": "CREATE / BUILD / CONTINUE",
+      "state": "KEEP",
+      "memory": "—",
+      "sentence": "Crear no cierra el viaje: lo deja continuar."
+    }
+  ],
+  "milestones": [
+    "STILL MASTER",
+    "SHOT GENERATION",
+    "9-SHOT ASSEMBLY",
+    "SOUNDTRACK",
+    "HUMAN RECALL",
+    "IP / SECURITY",
+    "CLEAN MASTER",
+    "PUBLIC RELEASE GATE"
+  ],
+  "guards": [
+    "RECENCY IS NOT AUTHORITY",
+    "NO AUTO-CANON",
+    "DO NOT ADD ORGANS. IMPROVE CIRCULATION",
+    "PRIVATE MASTER NOT EXPOSED"
+  ]
+}
