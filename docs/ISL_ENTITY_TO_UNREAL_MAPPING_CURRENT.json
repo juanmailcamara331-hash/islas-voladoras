@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "project": "ISLAS_VOLADORAS_ISL",
   "status": "PREPARED_NOT_PRODUCTION",
   "engine_version": "UNFROZEN",
@@ -194,6 +194,33 @@
         "migration_path",
         "rollback",
         "compatibility_tests"
+      ]
+    },
+    "mode_transition": {
+      "unreal_targets": [
+        "PrimaryDataAsset",
+        "GameplayTags",
+        "Camera/Input integration"
+      ],
+      "optional": [
+        "GameplayCameras",
+        "StateTree",
+        "LevelInstance",
+        "Paper2D"
+      ],
+      "required_fields": [
+        "isl_id",
+        "from_mode",
+        "to_mode",
+        "trigger",
+        "state_ownership",
+        "spatial_mapping",
+        "camera_profile",
+        "input_context",
+        "save_policy",
+        "failure_recovery",
+        "return_mapping",
+        "tests"
       ]
     }
   },
