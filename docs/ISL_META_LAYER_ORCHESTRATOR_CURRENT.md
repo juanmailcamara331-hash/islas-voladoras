@@ -354,3 +354,22 @@ do not skip lower-rung evidence merely to obtain a prettier image.
 Lighting/post-processing cannot promote a structurally weak asset.
 Use the lowest rung that resolves the current uncertainty.
 This is routing, not a new organ.
+
+
+## UNREAL ECOSYSTEM AUDIT ROUTING · 2026-09-24
+Trigger:
+- meaningful Unreal release/deprecation;
+- new import/data/runtime feature;
+- plugin/connector proposal;
+- SEO/Kickstarter/viewer/public integration that touches ISL data/assets;
+- schema/save/build/platform change;
+- periodic monthly health check.
+
+Route:
+M0 → M2 → M8 → add M12 for schema/formula changes → add M5 for external connectors/plugins → add M9 for build/runtime/device → M1 decision → M11/M3 only when assets or humans are affected.
+
+Mandatory questions:
+SOURCE? ADAPTER? TARGET? ROUNDTRIP? FAILURE? TEST? ROLLBACK? PROVENANCE? COST?
+
+Guard:
+do not activate every method mechanically. “Use everything” means the orchestrator considers the whole toolbox and activates every layer that materially changes the decision, while preserving the anti-bureaucracy rule.
