@@ -1837,3 +1837,98 @@ FAIL if:
 ### EMOTIONAL FUNCTION
 This should be the darkest-to-brightest swing of the entire film.
 Its job is to make the later sky feel earned.
+
+
+## 3×3 REFERENCE PACK LOCK · 2026-09-24
+Estado: FUNCTIONAL AUTHORITY PACK · NO CHARACTER FACE AUTHORITY · NO GENERATION YET
+
+Four supplied references are now assigned explicit roles so they cannot bleed into one another.
+
+### REF A · SHIP FAMILY AUTHORITY
+Use for:
+- patched balloon/airship family;
+- lived decks;
+- rigging density;
+- repair culture;
+- domestic-use details;
+- hierarchy of light / medium / mothership scale;
+- same-material / different-function family logic.
+
+Do not copy:
+- exact ship silhouette;
+- exact insignia;
+- exact layout/text.
+
+Mutation requirement:
+ships must become stranger and less normative than this reference while preserving lived-in credibility.
+
+### REF B · LIGHTING AUTHORITY
+Use for:
+- late-afternoon directional sun;
+- volumetric cloud depth;
+- bright breaks through storm/cloud masses;
+- warm highlights against deep readable shadows;
+- smoke / rigging / silhouette separation;
+- dramatic but legible action lighting.
+
+This remains the PRIMARY LIGHT AUTHORITY.
+
+Do not copy:
+- exact combat composition;
+- red sail emblem;
+- exact ship battle staging.
+
+### REF C · WORLD-SCALE / EXPLORATION AUTHORITY
+Use for:
+- vast floating-island scale;
+- waterfalls / bridges / travel depth;
+- readable civilization at multiple distances;
+- tiny protagonist + companion against huge world;
+- layered aerial routes and settlement density;
+- “one world, many distances” feeling.
+
+Do not copy:
+- exact city/island arrangement;
+- exact architecture;
+- exact sky-route pattern.
+
+Mutation requirement:
+islands must avoid generic floating-rock repetition and include ISL-specific geology / ecology / memory causality.
+
+### REF D · MATERIAL / ORNAMENT / DARK-WHIMSY AUTHORITY
+Use for:
+- aged bronze / dark cloth / ivory-stone relationship;
+- asymmetrical crafted ornament;
+- talismans / dangling objects / relic detail;
+- elegant dark-whimsical silhouette function;
+- premium tactile material language;
+- poetic wear / handcrafted object density.
+
+Do NOT treat this figure as protagonist identity authority.
+Do NOT copy exact anatomy, costume or collector-poster composition.
+
+### CROSS-REFERENCE RULE
+A = SHIP FAMILY.
+B = LIGHT.
+C = WORLD SCALE.
+D = MATERIAL / ORNAMENT.
+
+No single reference may dominate all four axes.
+
+### CHARACTER LOCK STATUS
+Protagonist:
+- silhouette family can borrow practical explorer + dark-whimsical crafted detail;
+- exact face/body identity remains HUMAN RE-LOCK REQUIRED.
+
+Companion:
+- tiny world-scale pair relation can borrow REF C's “small companion beside enormous world” function;
+- exact anatomy/face remains HUMAN RE-LOCK REQUIRED.
+
+### REFERENCE DISTANCE TEST
+Before generation ask:
+Could a viewer point to one supplied reference and say “this is basically that image redone”?
+If yes:
+FAIL.
+
+Correct result:
+all four functions are metabolized into one original ISL frame language.
