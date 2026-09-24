@@ -2258,3 +2258,18 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Explicit FAIL defaults include generic steampunk ships, generic floating islands, generic cute mascot, standard fantasy hero, generic magic medallion, generic portal, pasted castle/cathedral and sterile imperial-utopia end state.
 - Next grid generation must raise ISL mutation while preserving continuity first.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · 3×3 BULLET v0.2 PREPARED
+- Second supplied reference image is now the LIGHTING AUTHORITY for the grid by function only: late-afternoon directional light, volumetric cloud depth, bright sun breaks, warm highlights, deep readable shadows and strong atmospheric separation.
+- Lighting authority does NOT replace style/world authority.
+- Three recurring non-normative motifs locked across multiple cells:
+  A) LIVING MACHINE — plants/fungi/roots serve real practical machine/home/ship functions;
+  B) MEMORY OBJECT CHANGES JOB — same object family evolves from toy/model to tool/trace/navigation/shared memory/construction reference;
+  C) COMPANION LATE-REACTION — comic delayed reactions sometimes reveal something humans miss.
+- All 9 cells now have one specific non-normative ISL event, preventing generic fantasy defaults while preserving continuity.
+- Density rule locked: ONE primary emotion + ONE primary action + ONE strange ISL event + ONE transition object per cell; max two secondary weird details.
+- Punk/dark-whimsical intensity is intentionally uneven across the nine cells; panel 7 is the peak of cosmic/dark-whimsical mutation, panel 8 restores human warmth, panel 9 remains patched/alive rather than sterile.
+- Grid remains NO-GENERATION until protagonist and companion visual identities are explicitly re-locked by the human.
+- FIRST VIDEO MASTER remains NO MUSIC; CapCut handoff already prepared.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
