@@ -318,3 +318,32 @@ This bridge succeeds if ISL becomes easier to make as it grows:
 - personal/mythic traces that deepen the world;
 - nightly work that returns useful packets;
 - humans can still understand, enjoy and remember the journey.
+
+
+## UC0 / SKYSHIP LADDER CROSS · 2026-09-24
+The Universe Bridge inherits the cross-system ladder doctrine.
+
+Do not jump directly from UC0 paper architecture to polished 3D/2.5D skyship combat.
+
+Recommended sequence:
+R0 STATE: prove one owner per mutable state + deterministic transition contract.
+R1 REPRESENTATION: one actor/world context survives 3D → constrained 2.5D → 3D unchanged.
+R2 INTERACTION: one meaningful combat choice and clean return.
+R3 ENCOUNTER: one small 2.5D encounter with result delta + retry.
+R4 WORLD CONTEXT: encounter occurs inside a real 3D world cell and returns to the same place/state.
+R5 SKYSHIP SENSOR: apply the same bridge to navigation/skyship context with minimal visual complexity.
+R6 SKYSHIP COMBAT: 1v1 · four beats · POWER vs POSITION · wind/geometry/crew consequence.
+R7 REPRESENTATIVE SLICE: art/audio/HUD/performance/save/device/human read together.
+
+Each rung inherits:
+LAST GOOD
++ explicit owner map
++ failure injection
++ packaged/device distinction when relevant
++ human read
++ rollback.
+
+Dragón Nada / human-trace seeds remain PARKED unless a rung specifically needs a world/human beat; they must not hijack the technical uncertainty being tested.
+
+Success:
+the skyship becomes evidence that ONE WORLD · ONE JOURNEY · MANY REPRESENTATIONS works, rather than a separate minigame.
