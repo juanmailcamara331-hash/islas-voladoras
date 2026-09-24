@@ -1712,3 +1712,128 @@ Remaining visual identity gate:
 - companion exact visual re-lock.
 
 No fire until those are explicitly accepted or deliberately replaced by human decision.
+
+
+## HELL → DEVIL-CONFRONTATION → PARADISE ASCENT · 2026-09-24
+Estado: STRONG LATE-ARC VISUAL BEAT · NO AUTO-CANON · FULL-GAME 3×3 CANDIDATE
+
+Human direction:
+The full-game visual arc should contain a genuinely dark descent in which the protagonist confronts a devil-like adversarial force in an infernal realm, then rises / flies toward paradisal worlds.
+
+### FUNCTION
+This is not generic religious boss spectacle.
+Use the sequence as a dialectical confrontation:
+DESCENT
+→ TEMPTATION / ACCUSATION / CONTROL
+→ FIGHT / REFUSAL / REFRAMING
+→ BREAKTHROUGH
+→ ASCENT
+→ PARADISE(S) AS CONTINUED LEARNING, NOT FINAL CERTAINTY.
+
+The adversary may embody one or more:
+- total control;
+- ego made absolute;
+- guilt;
+- nihilism;
+- dogma;
+- power without relationship;
+- certainty without curiosity;
+- freedom without responsibility;
+- memory turned into prison.
+
+### RELIGIOUS / CULTURAL GUARD
+Do not claim one real religion is literally correct.
+Do not use sacred imagery as decorative shock.
+Infernal/paradisal imagery should be an original ISL synthesis, informed by comparative religious/philosophical function where needed.
+
+### VISUAL GRAMMAR
+HELL:
+- deepest black mass in the entire 3×3;
+- red/ember/orange only as controlled accents, not full-frame cliché;
+- impossible geology;
+- architecture that folds downward / inward;
+- memory objects become burdens / chains / repeating loops;
+- wind reverses or dies;
+- companion behavior becomes unusually still or strangely attentive;
+- human traces appear distorted but recognizable.
+
+DEVIL-LIKE FORCE:
+- original silhouette;
+- intelligent / seductive / contradictory;
+- not simply horned muscular demon;
+- may be elegant, bureaucratic, intimate, familiar, cosmic, fragmented or multi-scale;
+- should visually echo something from protagonist/world, creating uncomfortable recognition.
+
+FIGHT:
+- not merely sword-vs-monster.
+- include one cognitive / relational / world-rule choice.
+- protagonist must use learned relationships, memory objects, world-reading or self-contradiction, not raw power only.
+
+ASCENT:
+- vertical release after compression;
+- wind returns;
+- cloth/scarf lifts upward;
+- black masses split into luminous cloud corridors;
+- fragments of hell become seeds/material for paradise rather than being erased;
+- protagonist literally rises/flys.
+
+PARADISE(S):
+plural and contradictory.
+Possible qualities:
+- impossible beauty;
+- freedom;
+- humor;
+- strange ecology;
+- peaceful but not sterile;
+- friends / traces / creatures reappear in altered, non-final forms;
+- no “the end” feeling.
+
+### 3×3 INTEGRATION OPTION
+Preferred revision:
+Panel 7 becomes a COMPOSITE LATE-ARC KEYFRAME centered on HELL-CONFRONTATION, with visual evidence of the upward escape beginning inside the same frame.
+Panel 8 becomes REENCOUNTER / ASCENT INTO PARADISAL ZONE.
+Panel 9 remains CREATE / BUILD / CONTINUE.
+
+Thus:
+6 ENCOUNTER
+→ 7 HELL / DEVIL / BREAKTHROUGH
+→ 8 ASCENT / PARADISE / REENCOUNTER
+→ 9 CREATE WORLDS.
+
+This preserves the 9-cell limit without adding a tenth disconnected scene.
+
+### TRANSITION REVISION
+T06:
+creature eye / impact / cloud tear
+→ infernal aperture / downward fold.
+
+T07:
+hell confrontation climax
+→ amulet / hand / scarf / wind flips upward
+→ paradise ascent / reencounter.
+
+T08:
+paradise/reencounter object or miniature world
+→ built archipelago / creator state.
+
+### NON-NORMATIVE REQUIREMENT
+Hell must contain at least one distinctly ISL absurdity:
+for example, a cosmic mechanism used for a mundane punishment, a bureaucratic infernal ritual, a creature behaving idiotically during a terrifying moment, or a domestic object enlarged into metaphysical machinery.
+
+Paradise must also resist cliché:
+no generic white clouds / angel city.
+It should feel biologically, socially and physically strange while still emotionally relieving.
+
+### FAIL
+FAIL if:
+- devil = generic red horned boss;
+- hell = standard lava dungeon;
+- paradise = generic heaven cloud city;
+- fight is solved only by violence;
+- ascension erases prior pain rather than integrating it;
+- religious symbolism becomes literal doctrinal claim;
+- the sequence feels like another franchise.
+
+### EMOTIONAL FUNCTION
+This should be the darkest-to-brightest swing of the entire film.
+Its job is to make the later sky feel earned.
