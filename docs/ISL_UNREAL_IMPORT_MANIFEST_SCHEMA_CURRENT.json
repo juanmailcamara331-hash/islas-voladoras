@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "project": "ISLAS_VOLADORAS_ISL",
   "manifest_type": "UNREAL_IMPORT_DRAFT",
   "engine_version": "UNFROZEN",
@@ -42,7 +42,12 @@
       "unreal_class": "",
       "suggested_path": "",
       "primary_asset": false,
-      "gameplay_tags": []
+      "gameplay_tags": [],
+      "sync": {
+        "mode": "CREATE_OR_UPDATE_BY_ISL_ID",
+        "importer": "UNDECIDED",
+        "idempotent_expected": true
+      }
     },
     "transform": {
       "units": "cm",
@@ -74,13 +79,37 @@
       "visual": false,
       "performance": false,
       "device": false,
-      "human": false
+      "human": false,
+      "schema": false,
+      "duplicate_id": false,
+      "reference_integrity": false,
+      "save_compatibility": false,
+      "packaged_smoke": false,
+      "fun_human_gate": false
     },
     "tests": [],
     "rollback": {
       "master_required": true,
       "previous_runtime_uri": ""
     },
-    "decision": "DRAFT"
+    "decision": "DRAFT",
+    "source_data": {
+      "format": "JSON|CSV|DATA_ASSET_SEED|OTHER",
+      "schema_id": "",
+      "schema_version": "",
+      "row_or_object_key": "isl_id"
+    },
+    "build_receipt": {
+      "engine_version": "UNFROZEN",
+      "import_timestamp": "",
+      "importer_version": "",
+      "source_manifest_sha256": "",
+      "generated_assets": []
+    }
+  },
+  "rules": {
+    "identity_key": "isl_id",
+    "sync_policy": "UPDATE_BY_ISL_ID_NO_DUPLICATE",
+    "manual_copy_paste": "EXCEPTION_ONLY"
   }
 }
