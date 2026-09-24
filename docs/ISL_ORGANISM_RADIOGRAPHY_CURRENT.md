@@ -709,3 +709,238 @@ GREY archive/historical
 
 No color-only meaning.
 No project-health machinery leaks into gameplay HUD.
+
+
+## 32. MASTER ACTIVE-LADDERS MAP · 2026-09-24
+Estado: ACTIVE OPERATIONAL MAP · NO NEW ORGAN · NO AUTO-CANON
+
+Purpose:
+Expose, in one place, the CURRENT rung, NEXT rung, evidence needed and parked ambition for the major active ISL ladders.
+This is the stage-health view requested by the human. It extends this radiography; it is not a parallel registry.
+
+Rule:
+ONE ACTIVE RUNG · ONE NEXT RUNG · REST PARKED.
+CURRENT_RUNG is operational, not prestige.
+A domain may move backward after regression.
+A later lifecycle stage does not force a higher rung.
+
+### A. PRIMARY / VELARIA PLAYABLE
+CURRENT_RUNG:
+real-device retest candidate after touch/discoverability fix.
+NEXT:
+HUMAN_DEVICE_GREEN.
+EVIDENCE:
+physical-device completion; movement understood; no stale build; navigation responds; save/progress preserved.
+PARKED:
+new major playable systems, large visual expansion, migration pressure.
+
+### B. VISUAL / 3D FIDELITY
+CURRENT_RUNG:
+SMALL OBJECT → RUNTIME/TARGET DEVICE evidence exists in active asset work; complex prop/vehicle work is candidate/sensor.
+NEXT:
+prove one COMPLEX PROP / VEHICLE under diagnostic lighting and target-device/runtime inspection.
+EVIDENCE:
+form/material/scale/contact readability + provenance + device check + LAST GOOD comparison.
+PARKED:
+full atmospheric gameplay slice; final post stack; spectacle-first rendering.
+
+### C. UC0 3D ↔ 2.5D ↔ 3D BRIDGE
+CURRENT_RUNG:
+R0 STATE / paper-rehearsal ownership and transition contract.
+NEXT:
+R1 REPRESENTATION — one entity/world context survives 3D → constrained 2.5D → 3D unchanged.
+EVIDENCE:
+single owner per mutable field; deterministic return; no duplicate state; rollback.
+PARKED:
+polished transition, separate combat instance, Paper2D, full production.
+
+### D. SKYSHIP
+CURRENT_RUNG:
+cheap source prototype + combat research; visual skyship bullet prepared; human understanding not yet proven.
+NEXT:
+SKYSHIP SENSOR — ship/world/navigation read before richer combat spectacle.
+EVIDENCE:
+scale + inhabited-home feeling + wind/position readability + human comprehension.
+PARKED:
+fleet/economy/tech tree; large bosses; representative final combat slice.
+
+### E. LAND / GENERAL COMBAT
+CURRENT_RUNG:
+conceptual/research + isolated encounter logic; no representative combat proof yet.
+NEXT:
+one readable exchange with meaningful counterplay and one consequence.
+EVIDENCE:
+human understands choice/cost/response without explanation; repeat does not collapse into dominant action.
+PARKED:
+large skill trees; multi-resource complexity; final VFX.
+
+### F. WORLD / GUIDANCE / EXPLORATION
+CURRENT_RUNG:
+guided-semi-open direction locked; world guidance ladder defined.
+NEXT:
+one micro-cell where composition/nature/friends/objects guide return and next action without permanent marker.
+EVIDENCE:
+blind human can orient, leave, return and explain why they chose a route.
+PARKED:
+large open world; global map complexity; permanent mission tracker.
+
+### G. MEMORY / HUELLAS / MATERIAL RECALL
+CURRENT_RUNG:
+Brújula de las Huellas v2 + persistent trace grammar; memory-object direction newly strong but not yet prototyped.
+NEXT:
+one MEMORY ANCHOR loop: object/natural cue/friend cue recalls one real prior beat and changes interpretation or route.
+EVIDENCE:
+player links cue to prior action/relationship without lore dump; no “quest GPS” reading.
+PARKED:
+large collectible inventory; completionist checklist; final life-puzzle constellation.
+
+### H. PROTAGONIST LIFE-SPAN
+CURRENT_RUNG:
+L0–L10 arc exists as strong human hypothesis; exact age/gender synthesis remains unresolved.
+NEXT:
+test ONE early-life beat that proves CARE/WONDER + IMITATION/LEARNING without needing full biography.
+EVIDENCE:
+human read distinguishes genuine care/joy from exposition and sees early pattern-recognition/individuality.
+PARKED:
+locking age ~12; late-life paradise; full chronology; final identity.
+
+### I. RELATIONSHIPS / REENCOUNTER
+CURRENT_RUNG:
+relationship formula and reunion thesis are defined; no dedicated playable relational beat yet.
+NEXT:
+one remembered relationship beat that later returns changed.
+EVIDENCE:
+player remembers the person/gesture without prompt; second meeting changes interpretation.
+PARKED:
+large reunion finale; universal forgiveness; all-family synthesis.
+
+### J. FRIEND CONSTELLATION / ALTERED REALITY
+CURRENT_RUNG:
+F0/F1 concept-level: one friend-memory symbol / symbolic mutation.
+NEXT:
+one symbolic friend mutation with a concrete consequence and clean return to ordinary relationship.
+EVIDENCE:
+symbol reveals relation rather than becoming spectacle; ambiguity remains legible.
+PARKED:
+multi-friend constellation; late-game shared reality; cosmic ensemble finale.
+
+### K. HUMAN TRACE / MEMORIAL
+CURRENT_RUNG:
+raw human traces + provenance/consent method are operational.
+NEXT:
+convert one trace into one respectful functional mutation while preserving source and privacy.
+EVIDENCE:
+source ↔ derivative linkage; human approval where needed; dignity preserved.
+PARKED:
+public memorial presentation; literal likeness; promotional use.
+
+### L. CREATURES
+CURRENT_RUNG:
+strong behavior/visual seeds + Danzante ablation prepared; Human Read pending.
+NEXT:
+blind read of one creature/function.
+EVIDENCE:
+recognizable function/behavior without methodology explanation; no generic-enemy reading.
+PARKED:
+ecosystem scale; bestiary expansion; final boss family.
+
+### M. UI / HUD
+CURRENT_RUNG:
+minimal-HUD direction + skyship control-family hypotheses.
+NEXT:
+one affordance family tested with world-first guidance and ablation.
+EVIDENCE:
+recognition/hesitation/error + accessibility; UI does not overpower world.
+PARKED:
+full production HUD; dense instrumentation; decorative systems.
+
+### N. AUDIO
+CURRENT_RUNG:
+creative direction / candidate references; weak integrated evidence.
+NEXT:
+attach one cue/ambient state to a real playable or sensor scene.
+EVIDENCE:
+audio improves orientation/emotion/memory without explanation; device playback sanity.
+PARKED:
+full soundtrack expansion; final mix.
+
+### O. BUILD / SAVE / REGRESSION
+CURRENT_RUNG:
+strong CI/known-bug discipline; packaged/device truth still gates current playable.
+NEXT:
+repeatable save/load + one transition/feature across packaged/device where relevant.
+EVIDENCE:
+build receipt, deterministic state, rollback, regression guard.
+PARKED:
+large migration matrix; release-candidate hardening.
+
+### P. PERFORMANCE / DEVICE
+CURRENT_RUNG:
+policy/budget direction + some mobile checks; representative measured scene not yet established.
+NEXT:
+measure one representative current sensor/build on target low/normal device class.
+EVIDENCE:
+frame pacing/memory/load + visual/readability impact.
+PARKED:
+final scalability matrix; shipping ceilings.
+
+### Q. UNREAL READINESS
+CURRENT_RUNG:
+U0/U1 preparation + contracts; NO REAL PRODUCTION.
+NEXT:
+UC0/R1 representation rehearsal before opening serious Unreal work.
+EVIDENCE:
+state ownership, manifest identity, transition invariants, reproducible minimal test.
+PARKED:
+engine freeze; plugins; mass import; U4+.
+
+### R. PRISM / IMPOSSIBLE WORLDS
+CURRENT_RUNG:
+PRISM_WORLD_001 cheap causal source ready; human inference pending.
+NEXT:
+real human inference test.
+EVIDENCE:
+person infers the impossible rule without tutorial.
+PARKED:
+world expansion; multiple Prism worlds; lore cosmology.
+
+### S. PHYSICAL / RELICS
+CURRENT_RUNG:
+Ancla design strong; supplier/sample path gated.
+NEXT:
+technical validation / proof/sample when human/supplier lane wakes.
+EVIDENCE:
+manufacturing limits + digital/physical CQC.
+PARKED:
+production run; catalog expansion.
+
+### T. APP / COMMAND CENTER / GALLERY
+CURRENT_RUNG:
+useful but complex existing surface; Upgrade/Ancestor direction prepared.
+NEXT:
+simplify/renovate only where it closes a real workflow loop.
+EVIDENCE:
+less friction, mobile sanity, no duplicate truth.
+PARKED:
+new dashboard modules; Unreal Bridge App.
+
+### CURRENT CROSS-DOMAIN PRIORITY
+ACTIVE:
+Velaria HUMAN_DEVICE_GREEN remains the actual PRIMARY gate.
+
+ACTIVE SUPPORT:
+UC0 R0→R1 rehearsal;
+master ladder map;
+one memory-breadcrumb microtest when it can reuse an existing playable/sensor.
+
+NEXT SUPPORT:
+Skyship Sensor after representation/state lesson;
+one protagonist/relation micro-beat rather than full life arc.
+
+REST:
+parked until evidence wakes it.
+
+### MASTER RULE
+The map is not a to-do list.
+It is a pressure map.
+Only the rung that answers the current uncertainty earns attention.
