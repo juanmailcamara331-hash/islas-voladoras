@@ -1,3 +1,14 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL TRANSFER SIMULATION
+- Human priority: avoid future manual copy/paste chaos when moving ISL into Unreal.
+- Unreal Readiness now includes a paste-light transfer model: SOURCE_OF_TRUTH → PASSPORT → MANIFEST → IMPORT/SYNC BY ISL_ID → VALIDATION → TEST → PACKAGE → DEVICE → HUMAN READ.
+- Import manifest evolved to schema 0.2 with immutable isl_id identity, CREATE_OR_UPDATE_BY_ISL_ID sync intent, schema/reference/save/package/human validation fields and build receipts.
+- Production rehearsal bullets U0–U8 added: boot skeleton → one entity → one encounter → one world cell → 10–15 min golden path → content scale → regression week → fun/comprehension → vertical slice GO/NO-GO.
+- Test bridge maps U0–U8 onto T0–T8. Editor pass, packaged pass, device pass and human pass are explicitly different gates.
+- Carrillo/friends may be blind/semi-blind human gates at U2/U4/U7; raw trace informs but never auto-CANON.
+- This remains SIMULATION / PREPARATION, not Unreal production. Engine version stays UNFROZEN until explicit migration gate.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- No checkpoint required by this preparation alone.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · VISUAL FIDELITY LADDER ADOPTED
 - Human preference: use the incremental “visual fidelity ladder” rather than jumping directly to final 3D/gameplay.
 - Method integrated into ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT and routed through META_LAYER_ORCHESTRATOR.
