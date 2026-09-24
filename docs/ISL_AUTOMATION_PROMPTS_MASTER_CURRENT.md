@@ -565,3 +565,17 @@ sintetizar HECHO / CAMBIÓ / BLOQUEADO / ERRORES O LÍMITES / NECESITA TU DECISI
 Si un pase anterior dejó resultado ambiguo:
 RECOVER + VERIFY primero.
 Nunca continuar basándose en una suposición de éxito.
+
+
+## UNREAL ECOSYSTEM READINESS WATCH · 2026-09-24
+Trigger: monthly light review and event-driven review when a major Unreal/platform/plugin/data-pipeline change becomes relevant.
+
+Prompt contract:
+- Check current official Unreal documentation/release notes first.
+- Compare meaningful changes against ISL_UNREAL_READINESS_MASTER_CURRENT, import manifest, entity mapping, asset contract and test bridge.
+- Include external adapters only when they materially touch ISL: web/Gallery/3D viewer, SEO/public metadata, Kickstarter/campaign exports, storage/connectors, packaging/distribution.
+- Run SOURCE → ADAPTER → TARGET → ROUNDTRIP → FAILURE → TEST → ROLLBACK → PROVENANCE → COST.
+- Use M12 when data/formulas/schema are affected.
+- Never auto-adopt plugins, never change engine version, never promote CANON, never rewrite save schema without human gate.
+- Return NO CHANGE if nothing materially improves reliability, simplicity or creative leverage.
+- At most one reversible corrective proposal per routine pass.
