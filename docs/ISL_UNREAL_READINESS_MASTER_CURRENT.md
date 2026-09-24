@@ -543,3 +543,22 @@ Current source families:
 - NIST SSDF / software supply-chain provenance;
 - Reddit/forums as failure-mode sensors;
 - Archive.org / historical postmortems when discoverable and relevant.
+
+
+## HYBRID MODE-TRANSITION BRIDGE · 2026-09-24
+Dedicated contract:
+- docs/ISL_HYBRID_2_5D_3D_TRANSITION_CONTRACT_CURRENT.md
+
+Use it whenever gameplay changes presentation/runtime mode: 3D ↔ 2.5D, traversal ↔ combat, world ↔ tactical scene, vehicle ↔ on-foot, cinematic handover with input ownership changes, or any future representation boundary.
+
+Core invariant:
+SAME WORLD · SAME STATE · DIFFERENT PRESENTATION.
+
+First prototype hypothesis for 3D exploration → 2.5D combat:
+keep the encounter physically 3D and constrain camera/movement/input before testing separate combat instances or a Paper2D-specific pipeline. This is a complexity-reduction hypothesis, not CANON.
+
+Official 5.8 watch:
+- Gameplay Camera System supports camera rigs/directors/transitions but is experimental;
+- Enhanced Input supports runtime mapping-context changes;
+- Paper2D supports hybrid 2D/3D projects.
+Revalidate on engine-version freeze.
