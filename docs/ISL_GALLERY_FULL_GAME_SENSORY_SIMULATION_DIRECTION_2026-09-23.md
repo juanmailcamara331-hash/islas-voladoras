@@ -159,3 +159,27 @@ Do not:
 - let its explicit cultural-reference names bypass IP/reference-distance guards.
 
 The board is a map of current hypotheses, not a verdict.
+
+
+## REENCOUNTER ARC CROSS · 2026-09-24
+Strong human-direction candidate:
+“LA VIDA ES EL ARTE DEL REENCUENTRO.”
+
+The full-game sensory arc should test whether ISL gradually transforms:
+ARRIVAL / SEPARATION
+→ CURIOSITY / WORLD STUDY
+→ FRIENDSHIP / CREW
+→ MISREADING / FRICTION
+→ DISTANCE / LOSS
+→ SELF-MADE MAPS / MODELS / EQUATIONS
+→ RECOGNITION OF CHANGE
+→ FAMILY / FRIEND RETURN
+→ REUNION OR ACCEPTED SEPARATION
+→ WORLD RE-READING.
+
+This is not permission to make every chapter sentimental.
+Humour, erotic tension, aggression, study, substances, punk irreverence, politics, science and absurdity may coexist, but each must serve character/world consequence rather than a checklist.
+
+The protagonist should not have a “wellness optimization” arc. Her contradictory choices may accidentally produce care, damage, knowledge, connection or all four. Human/device testing should ask what players infer from consequences without telling them the intended lesson.
+
+Memorial traces for father / deceased friend / uncle remain HUMAN TRACE lanes and may enter the sensory simulation only through dignified, provenance-linked, consent-aware mutation. No auto-publication and no forced literal likeness.
