@@ -1204,3 +1204,240 @@ FAIL if:
 4. validate 8 bridges;
 5. preflight;
 6. FIRE ONE 3×3 SENSOR.
+
+
+## FULL-GAME 3×3 · 9 BEATS + 8 BRIDGES · PRE-FIRE v0.1 · 2026-09-24
+Estado: NARRATIVE/VISUAL FLOW LOCKED · CHARACTER BINARY GATE PENDING · NO GENERATION
+
+### 9 BEATS
+01 · CARE / FIRST WORLD
+Function:
+genuine cared-for childhood, warmth, books/maps, caregivers, first curiosity, companion nearby.
+Visual handoff:
+open book / drawn map / small handmade island model.
+Emotion:
+safety + curiosity.
+
+02 · FIRST HORIZON / FRIENDSHIP
+Function:
+first large floating-world reveal with friend(s), companion and nature-as-memory.
+Visual handoff:
+wind/scarf/ribbon + path/flower cue.
+Emotion:
+wonder + possibility.
+
+03 · STUDY / THEORY / OBSESSION
+Function:
+not sterile academia; playful obsessive model-building, notebooks, equations, relics, improvised tools, self-made cosmology.
+Visual handoff:
+orb/model/notebook fragment.
+Emotion:
+curiosity becoming intensity.
+
+04 · FALL / DOUBT / RESCUE
+Function:
+dark low point; dignity; social/existential fracture; protector/uncle rescues/returns protagonist toward shelter.
+Visual handoff:
+hand + cloak + broken/fallen object.
+Emotion:
+fragility + human rescue.
+Guard:
+do not romanticize suffering.
+
+05 · SKYSHIP / WORLD REOPENED
+Function:
+the same life opens physically into the sky; ship is home + machine + crew organism.
+Visual handoff:
+hand on rail / sail line + same horizon direction.
+Emotion:
+freedom earned, not reset.
+
+06 · ENCOUNTER / CONSEQUENCE
+Function:
+one readable sky/world confrontation; POWER vs POSITION feeling; strange creature / danger; companion remains present as lived-world continuity.
+Visual handoff:
+creature eye / atmospheric rupture / impact shape.
+Emotion:
+pressure + agency.
+
+07 · FRACTURE / IMPOSSIBLE REALITY
+Function:
+mind/world ambiguity, friends as symbolic traces, cosmic extremes, impossible physics, one absurd beat amid philosophical scale.
+Visual handoff:
+floating amulet / object / familiar gesture.
+Emotion:
+awe + disorientation + recognition seed.
+Guard:
+not unrelated multiverse wallpaper.
+
+08 · REENCOUNTER / LIVING BREADCRUMBS
+Function:
+friend/family/object/nature traces reconnect protagonist with life thread; affection + friction; world remembers with you.
+Visual handoff:
+physical amulet / notebook / small island model held/shared.
+Emotion:
+recognition + tenderness + unresolved life.
+
+09 · CREATE / BUILD / CONTINUE
+Function:
+late-game capacity to create islands, routes, workshops, communities, systems and a personal archipelago.
+Not throne/empire propaganda.
+Power contradiction remains visible: creation can liberate, centralize, burden or fragment.
+Visual endpoint:
+small model / map expands into lived archipelago; one living element continues moving.
+Emotion:
+earned scale + open future.
+
+### 8 TRANSITION BRIDGES
+T01 · BOOK/MAP → LANDSCAPE
+Panel 1 exit:
+camera/eye settles on map or model.
+Panel 2 entry:
+same shape/line becomes real island/horizon.
+Preferred cut:
+shape match + slow push-through.
+
+T02 · WIND/RIBBON → DIAGRAM
+Panel 2 exit:
+scarf/ribbon/grass moves one direction.
+Panel 3 entry:
+same directional curve survives in hanging notes/diagram/string/tool.
+Preferred cut:
+motion match.
+
+T03 · MODEL/ORB → FALLEN OBJECT
+Panel 3 exit:
+protagonist releases/sets/loses grip on model/notebook/orb.
+Panel 4 entry:
+same or related object on wet ground / damaged / beside protagonist.
+Preferred cut:
+object continuity + sound bridge.
+
+T04 · RESCUE HAND/CLOAK → SHIP RAIL/SAIL
+Panel 4 exit:
+protector's hand/cloak creates dominant diagonal.
+Panel 5 entry:
+same diagonal becomes protagonist hand/rope/rail/sail.
+Preferred cut:
+gesture/shape match.
+
+T05 · HORIZON/WIND → THREAT
+Panel 5 exit:
+protagonist/crew gaze into same horizon.
+Panel 6 entry:
+threat emerges from that exact screen direction.
+Preferred cut:
+eyeline + horizon continuity.
+
+T06 · EYE/IMPACT → REALITY APERTURE
+Panel 6 exit:
+creature eye / impact / cloud tear fills focal region.
+Panel 7 entry:
+same circular/organic geometry becomes impossible-world opening.
+Preferred cut:
+graphic match, no generic portal.
+
+T07 · FLOATING AMULET → HUMAN HAND
+Panel 7 exit:
+known object suspended/rotating.
+Panel 8 entry:
+same object physically rests in friend/protagonist hand.
+Preferred cut:
+object match + sound resolves from impossible to tactile.
+
+T08 · SMALL MODEL → BUILT ARCHIPELAGO
+Panel 8 exit:
+small map/model/island/relic cluster establishes topology.
+Panel 9 entry:
+camera pulls back/reveals the same topology at world scale.
+Preferred cut:
+scale match / expansion.
+
+### SCREEN-DIRECTION CONTRACT
+Default journey direction:
+LEFT/BOTTOM INTIMATE → RIGHT/UP OPENING.
+Do not flip screen direction arbitrarily between adjacent panels.
+Panel 4 may compress/descend.
+Panel 5 reopens upward/right.
+Panel 7 may deliberately destabilize orientation.
+Panel 8 restores grounded horizon.
+Panel 9 opens widest.
+
+### RECURRING OBJECT PLACEMENT
+NOTEBOOK:
+1, 3, 4 trace, 8, 9 echo.
+RETURN RELIC / ANCLA:
+1 background seed, 4/5 rescue-return echo, 8 tactile, 9 community/world echo.
+HUELLAS/BRÚJULA:
+2/3 seed, 8 interpretation, 9 no longer central.
+PERSONAL AMULET:
+2 gift/seed, 7 symbolic, 8 physical resolution.
+
+### COMPANION PRESENCE RHYTHM
+Present visibly:
+1, 2, 5, 6, 8, 9.
+Optional/subtle:
+3.
+Absent or edge-presence:
+4 to protect emotional seriousness.
+Symbolic or transformed trace:
+7.
+Identity must still read as same companion.
+
+### FRIEND PRESENCE RHYTHM
+Friend A:
+2 → 3/5 optional → 7 symbolic → 8 physical → 9 community.
+Friend B:
+2/5 seed → 8/9.
+Friend C:
+3/4 relational absence/friction implied → 7 symbolic → 8 changed return.
+No crowd of anonymous friends replacing continuity.
+
+### PRE-FLIGHT v0.1
+SUBJECT:
+ISL FULL-GAME 3×3 FILM SENSOR.
+
+OPERATION:
+GENERATE ONE CONTACT-SHEET SENSOR AFTER CHARACTER SOURCE LOCK.
+
+SOURCE_OF_TRUTH:
+v0.94 + CURRENT visual/narrative/Human Trace/Guided World/Cinematic docs + recovered exact protagonist/companion refs when supplied.
+
+ACTIVE LAYERS:
+M0 Orchestrator;
+M1 Dialectic Quality;
+M2 Authority/Context;
+M3 Human Read;
+Cinematic Aesthetic Synthesizer;
+Human Variation Randomizer limited to 1–2 non-identity variables.
+
+BASELINE:
+no valid final grid yet.
+Earlier generated grid = PROCESS ERROR / NON-AUTHORITATIVE SENSOR, useful only as failure evidence.
+
+VARIABLES ALLOWED:
+1. intensity of dark-whimsical black/outsider tenderness;
+2. degree of cosmic irreverence in panels 6–7.
+
+VARIABLES LOCKED:
+character identity;
+companion identity;
+9 beats;
+8 transitions;
+object families;
+world material family;
+skyship family;
+grid geometry;
+screen direction logic.
+
+HUMAN READ:
+father/Carrillo silent first.
+No methodology explanation.
+No music/VO first.
+
+ROLLBACK:
+return to SHOT DNA v0.1 + exact character refs; mutate only failed pair/variable, not whole project.
+
+STATE:
+NEED_RECOVERY only for character visual binaries.
+All other pre-fire structure = READY.
