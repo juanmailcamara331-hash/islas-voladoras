@@ -2273,3 +2273,17 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Grid remains NO-GENERATION until protagonist and companion visual identities are explicitly re-locked by the human.
 - FIRST VIDEO MASTER remains NO MUSIC; CapCut handoff already prepared.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · HELL → PARADISE ARC ADDED TO 3×3
+- Strong late-arc addition: protagonist descends into an original infernal ISL realm, confronts a devil-like adversarial force, then rises/flys toward paradisal worlds.
+- Function is dialectical, not doctrinal: adversary may embody control, ego, guilt, nihilism, dogma, certainty without curiosity, or freedom without responsibility.
+- Preferred 9-cell integration preserves grid count:
+  6 encounter → 7 hell/devil/breakthrough → 8 ascent/paradise/reencounter → 9 create/build/continue.
+- Hell must use the deepest structural blacks of the grid and remain original; no generic lava dungeon / horned boss.
+- Paradise must be plural, strange and alive; no generic white-cloud heaven.
+- Fight should use relationships, memory, world-reading and contradiction, not raw violence alone.
+- Ascension must visually integrate prior pain rather than erase it.
+- Religious/cultural guard remains: no real-world doctrine presented as objective truth; sacred references by function/context, not decorative shock.
+- This becomes the darkest-to-brightest emotional swing of the promo film.
+- Grid still remains NO-GENERATION until protagonist + companion visual identity are explicitly re-locked.
