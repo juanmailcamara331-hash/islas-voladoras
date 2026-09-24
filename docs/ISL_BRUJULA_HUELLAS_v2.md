@@ -70,3 +70,35 @@ CAB-10..50 y P-00..P-100 aplican.
 ## Experimento mínimo
 Una sesión de 12–15 min con 3 decisiones físicamente distintas, una omisión y una escena rítmica. Al final, probar SENDERO + ECO + TRANCE.
 Promoción: sólo tras playtest humano y PC-70/90/100.
+
+
+## DISTRIBUTED MEMORY CROSS · 2026-09-24
+The Brújula does not have to carry memory alone.
+
+Strong direction:
+FRIENDS + NATURE + OBJECTS + PLACES + HUELLAS can act as distributed external memory for the protagonist/player.
+
+The Brújula remains:
+“No señala dónde ir. Señala de dónde vienes.”
+
+Therefore living breadcrumbs should not become GPS inputs.
+Instead, Brújula may:
+- notice that several traces belong to the same past thread;
+- reveal causal relation after the player has encountered traces;
+- surface contradiction between remembered meaning and current evidence;
+- help assemble a life-puzzle without declaring one final personality truth.
+
+Candidate trace sources:
+SOCIAL_TRACE
+NATURE_TRACE
+OBJECT_TRACE
+PLACE_TRACE
+CREW_TRACE
+SKY_TRACE.
+
+All must still serialize down to event/context/relation/world-state evidence.
+No mystical omniscience by default.
+
+Cheap integration target:
+one prior action → one friend cue + one nature cue + one object cue → SENDERO/ECO interpretation.
+PASS if the player reconstructs the thread without reading the Brújula as quest navigation.
