@@ -199,3 +199,95 @@ For every cinematic bracket, record separately:
 - HUD COMPATIBILITY;
 - ISL IDENTITY / lived-human feel.
 Do not collapse them into one beauty score.
+
+
+## VISUAL FIDELITY LADDER · 2026-09-24
+Estado: ACTIVE SUPPORT METHOD · NO AUTO-CANON · ISL ONLY
+
+Purpose:
+Reach the desired visual standard by climbing through falsifiable, low-risk steps instead of jumping directly from concept art to a full scene/game slice.
+
+Core rule:
+DO NOT CHASE THE CEILING DIRECTLY.
+BUILD A LADDER THAT MAKES THE CEILING REACHABLE.
+
+### THE LADDER
+1. SMALL OBJECT
+   - validate silhouette, material separation, roughness/metal response, camera, interaction and basic lighting.
+   - example class: Gift Token / relic / handheld object.
+
+2. OBJECT + RUNTIME VIEWER + TARGET DEVICE
+   - validate web/mobile loading, orbit/zoom/touch, thumbnail, framing, material robustness and real-device readability.
+   - the viewer must expose defects rather than hide them.
+
+3. COMPLEX PROP / VEHICLE
+   - validate larger volume hierarchy, functional asymmetry, repeated materials, traversable scale and human traces.
+   - example class: skyship sensor.
+
+4. MICRO-SCENE
+   - one asset in a small world context.
+   - validate contact shadow, scale, atmosphere, ground/world relationship and one clear affordance.
+
+5. ATMOSPHERIC SCENE
+   - add weather, depth, wind, local exposure, controlled highlights and readable shadow mass.
+   - no gameplay complexity yet.
+
+6. INTERACTIVE SCENE / GAMEPLAY SENSOR
+   - add player scale, route, camera, minimal interaction and world-before-UI readability.
+   - test whether cinematic intent survives interaction.
+
+7. VISUAL GAMEPLAY SLICE
+   - only after lower steps pass.
+   - combine art, lighting, material, motion, world causality, HUD restraint, performance and target-device evidence.
+   - this is the first level where “are these the graphics we want?” can be judged with meaningful confidence.
+
+### GATE RULE
+A higher rung cannot compensate for a failed lower rung.
+If a model looks weak under neutral inspection, do not use dramatic lighting/post to fake a pass.
+If a scene only works as a still, do not call it gameplay-ready.
+If a desktop result fails on target mobile/tablet, HUMAN_DEVICE_GREEN remains pending.
+
+### DELTA DISCIPLINE
+At each rung:
+- preserve LAST GOOD;
+- change only the smallest number of variables that reduce uncertainty;
+- record what improved and what regressed;
+- use KEEP / MUTATE / PARK / KILL;
+- promote only after human/device evidence when required.
+
+### LIGHTING CONTRACT
+Lighting is a diagnostic and expressive layer, not a rescue operation.
+Order:
+FORM → MATERIAL → SCALE → CONTACT → LIGHT → ATMOSPHERE → INTERACTION → HUD/POST.
+
+Do not invert this into:
+POST → BLOOM → FOG → “looks expensive”.
+
+### WEB / GALLERY CONTRACT
+When a 3D asset reaches a runtime rung:
+- prefer existing Gallery / web surfaces;
+- do not create a parallel viewer subsystem unless current surface cannot host the test;
+- support touch-first orbit/zoom and stable framing;
+- record master vs runtime derivative;
+- label SENSOR / PROTOTYPE / CANON status truthfully;
+- measure loading/performance on real target device.
+
+### CROSS WITH CURRENT METHODS
+Invoke:
+- M0 for rung/order and active lane;
+- M1 for PASS / ITERATE / PARK / KILL;
+- M2 for SOURCE_OF_TRUTH and LAST GOOD;
+- M9 for runtime/device/performance;
+- M11 for master/runtime/gallery lifecycle;
+- M10 when the asset introduces world-scale or causal meaning;
+- Cinematic Aesthetic Synthesizer only after form/material readability exists.
+
+### ANTI-BUREAUCRACY
+Not every asset must climb all seven rungs.
+Choose the lowest rung that answers the current uncertainty.
+Stop when additional fidelity no longer changes the decision.
+
+### EXPORTABLE STRUCTURE
+This ladder may be abstracted to other projects as:
+SMALL → RUNTIME → COMPLEX → MICRO-SCENE → ATMOSPHERE → INTERACTION → SLICE.
+Do not export ISL art direction, lore, palette, entities or specific visual references.
