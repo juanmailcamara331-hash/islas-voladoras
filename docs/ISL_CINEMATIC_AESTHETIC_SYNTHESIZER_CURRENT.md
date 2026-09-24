@@ -739,3 +739,119 @@ PASS if they independently report:
 - desire to know what happens between the shown moments.
 
 If music or narration is required to make the story coherent, visual continuity is NOT YET PASS.
+
+
+## FULL-GAME 3×3 · VISUAL DNA LOCK PREP · 2026-09-24
+Estado: PREPARED IN PROGRESS · NO GENERATION YET · SENSOR ONLY
+
+Purpose:
+Before firing the full-game 3×3 bullet, lock a coherent visual DNA so all nine frames feel like one authored ISL film.
+
+### BLACK / GOTHIC-WHIMSY FUNCTION
+Functional reference lane may draw from dark whimsical gothic cinema by FUNCTION only:
+- deep local blacks with readable near-black texture;
+- elongated / crooked silhouettes;
+- outsider tenderness;
+- macabre + playful coexistence;
+- architecture with asymmetry, lean, bend and handmade imperfection;
+- moon / branch / tower / stair / roofline silhouettes used as emotional composition;
+- childhood warmth contrasted against later shadow rather than replacing it;
+- deadpan visual humor inside serious scenes;
+- beauty that can be slightly uncomfortable;
+- romantic melancholy without polished luxury.
+
+Do NOT imitate a living filmmaker's exact visual style, compositions, characters, costumes or signature designs.
+Translate function into original ISL language.
+
+### ISL MUTATION
+GOTHIC-WHIMSY FUNCTION
++ SKY / WIND / FLOATING ISLANDS
++ PUNK IMPROVISATION
++ HUMAN TRACE
++ LIVED MATERIAL
++ COSMIC ABSURDITY
++ NATURE AS MEMORY
++ SCIENCE / EQUATIONS / RELICS
+= ORIGINAL ISL VISUAL FIELD.
+
+### BLACKS CONTRACT
+Black must be a structural material, not a global darkness filter.
+Use:
+- large black/near-black silhouette masses;
+- pockets of warm human light;
+- controlled edge-light;
+- readable faces/hands when emotionally necessary;
+- dark cloth, oxidized metal, wet stone, ink, char, deep foliage and sky voids;
+- negative space to make strange forms memorable.
+
+Avoid:
+- grey fog everywhere;
+- crushed blacks that erase play/readability;
+- glossy generic dark-fantasy look;
+- horror-only grading.
+
+### PUNK CONTRACT
+Punk comes from:
+- repaired / patched / repurposed materials;
+- asymmetry with function;
+- hand-painted marks;
+- improvised science tools;
+- straps, ropes, charms, scribbles, notes, knots;
+- personal modifications to uniforms/gear;
+- defiant posture and humor;
+- community workshops / DIY construction;
+not simply spikes, leather or neon.
+
+### COSMIC IRREVERENCE
+High-concept animated sci-fi irreverence by FUNCTION:
+- domestic problem can suddenly become cosmic;
+- absurd creature can coexist with serious philosophy;
+- impossible science follows an internal rule;
+- authority can be punctured by a tiny joke;
+- scale can jump from kitchen table to universe;
+- jokes have consequences.
+
+No recognizable franchise surface, portal language, character silhouette or color code.
+
+### COMPANION MOTHER-SHAPE
+The companion should read as:
+WEIRD + TENDER + SILLY + SLIGHTLY VACANT + LOYAL + PUNK-MISCHIEF.
+
+Functional traits:
+- compact teddy-bear-like mouth/muzzle;
+- slightly awkward eye alignment or delayed gaze;
+- oversized or uneven ears/fins;
+- one memorable asymmetry;
+- body language that often reacts half a beat late;
+- sincere emotional attachment;
+- occasional inappropriate curiosity in serious moments.
+
+Humor must come from design/timing/behavior, not derogatory disability coding.
+
+### VISUAL DNA TO LOCK BEFORE BULLET
+1. protagonist face/silhouette family;
+2. gradual age progression;
+3. companion mother-shape;
+4. protector/uncle silhouette;
+5. 2–3 recurring friend silhouettes;
+6. 3–4 memory objects/amulets;
+7. skyship mother-shape;
+8. floating-island geology;
+9. architecture/material family;
+10. black/shadow grammar;
+11. color script;
+12. wind/cloth/motion language;
+13. recurring nature-memory cues;
+14. camera/lens family.
+
+### PRE-GENERATION GATE
+NO IMAGE until:
+- these 14 anchors are described compactly;
+- 9 beats are locked;
+- 8 transition bridges are locked;
+- reference functions are distance-checked;
+- 2–4 creative weights are selected;
+- one anti-reference is named;
+- FAIL CONDITIONS are explicit.
+
+Then fire ONE grid sensor.
