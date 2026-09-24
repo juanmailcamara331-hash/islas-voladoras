@@ -2225,3 +2225,14 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - 14 visual anchors must be locked before the bullet fires: protagonist, age progression, companion, protector, friends, memory objects, skyship, geology, architecture/materials, blacks, color, wind/motion, nature-memory cues, camera/lens family.
 - Generation remains blocked until this lock + 9 beats + 8 transitions + weights + anti-reference + fail conditions are complete.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · 3×3 SHOT DNA v0.1
+- Full-game film sensor now has a compact SHOT DNA LOCK v0.1 in Cinematic Aesthetic Synthesizer.
+- 12/14 anchors are lockable without inventing: age logic, protector function, 3 friend families, 4 memory-object families, skyship family, geology, architecture/materials, blacks, color script, wind/motion, nature-memory cues, camera/lens grammar.
+- Two visual-source gates remain intentionally BLOCKED: protagonist exact visual source and companion exact approved visual source.
+- Existing methodology explicitly forbids reconstructing those identities from recent drift/text and calling them authoritative.
+- Candidate generation weights: 32% human continuity/reencounter · 26% dark-whimsical black/outsider tenderness · 24% sky/cosmic wonder · 18% punk DIY/irreverent humour.
+- Anti-reference locked: generic polished fantasy-adventure collage / clean steampunk / perfect heroic cast / generic cute mascot / same golden-hour mood / disconnected spectacle panels.
+- Grid generation remains blocked until protagonist + companion visual authority is recovered/re-locked, then 9 beats + 8 bridges pass final preflight.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
