@@ -2161,3 +2161,12 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Character life-span ladder remains a hypothesis/evidence structure, not a mandatory chapter list.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
 - No new scheduled automation created; existing triggers/hooks should absorb this behavior.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · LATE-GAME FRIEND CONSTELLATION
+- Added strong late-game hypothesis: friends may reappear in fractured/altered reality as symbolic mutations, talismans/avatars/figures/constellations or impossible doubles.
+- Function is relational re-reading, not spectacle or literal supernatural claim.
+- Formula: FRIEND SOURCE → LIVED RELATIONSHIP → MEMORY DISTORTION → SYMBOLIC MUTATION → INTERACTION/CONSEQUENCE → RETURN TO REAL PERSON/WORLD.
+- The protagonist's “theory of everything” should ultimately fail if it excludes relationships; possible synthesis = COSMOS/MODELS + FRIENDS/FAMILY/LOSS → CHOSEN CONSTELLATION.
+- New friend-constellation ladder F0–F7 added to Human Trace; no jump to endgame scene before earlier relationship evidence survives.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
