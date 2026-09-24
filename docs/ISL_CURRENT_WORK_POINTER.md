@@ -2199,3 +2199,16 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Father/Carrillo first read = no methodology, no text overlays, spontaneous story reconstruction first.
 - Late-game 'empire' remains a creation/world-building hypothesis: island construction + community + stewardship/power contradiction, not automatic authoritarian imagery.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · CAPCUT / AI TRAILER ASSEMBLY MASTER
+- Reusable full-game presentation-film assembly prompt added to ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT.
+- Intended uses: father/Carrillo vision film, internal sensory sensor, later Kickstarter/trailer/pitch foundation.
+- First master = NO MUSIC · NO TEXT · NO VO; prioritize continuity, physical SFX, ambience, VFX, camera/motion coherence and sound bridges.
+- Music added later as a separate coherent ISL motif family; optional opening VO added after silent/SFX continuity passes.
+- External evidence cross used current CapCut prompting guidance + ByteDance Seedance multi-shot/continuity guidance + DGA/BFI filmmaking analysis by function.
+- Kling official site could not be reliably retrieved in the research pass, so no unsupported Kling-specific capability is treated as authority.
+- Edit principle: one film / nine keyframes, not nine unrelated shots.
+- Emotional attention uses earned curiosity/tension/reveal/wonder/reunion, not dopamine-hacking mechanics.
+- Public use remains gated by truth-labeling: SENSOR/PROMO FOUNDATION, never fake gameplay.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
