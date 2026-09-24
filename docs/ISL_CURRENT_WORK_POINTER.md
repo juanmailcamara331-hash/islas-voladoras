@@ -1,3 +1,14 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL ECOSYSTEM AUDIT CONTRACT
+- Unreal readiness is now a recurring ecosystem concern, not a one-time migration checklist.
+- Monthly/event-driven audit contract added across Unreal Readiness, Meta-Layer Orchestrator and Automation Prompts.
+- Scope includes Unreal feature/deprecation/import/data/test/build changes plus external adapters: web/Gallery/viewers, SEO/public metadata, Kickstarter/campaign exports, storage/connectors and distribution surfaces.
+- External systems consume explicit derived exports; they never become hidden gameplay authority.
+- Verified watch candidates: Interchange pipeline automation and Data Registries; evaluate only by use case/version/support evidence.
+- “Use all methodology” is interpreted through the Orchestrator: consider the full toolbox, activate every materially relevant layer, never dump all methods blindly.
+- Stable IDs/save/build/security remain deterministic and outside Randomizer.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- No checkpoint warranted by this methodology reinforcement alone.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL TRANSFER SIMULATION
 - Human priority: avoid future manual copy/paste chaos when moving ISL into Unreal.
 - Unreal Readiness now includes a paste-light transfer model: SOURCE_OF_TRUTH → PASSPORT → MANIFEST → IMPORT/SYNC BY ISL_ID → VALIDATION → TEST → PACKAGE → DEVICE → HUMAN READ.
