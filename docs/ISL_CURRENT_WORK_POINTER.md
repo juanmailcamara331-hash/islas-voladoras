@@ -2148,3 +2148,16 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Street/rescue lane should use reciprocity, not saviour fantasy: someone once rescued may later be capable of helping others, and help may flow both ways.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
 - No checkpoint required by this narrative expansion alone.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · RUNG-AWARE AUTOMATION / DATA CROSS
+- Ladder-first production is now propagated into existing operational automation surfaces; no new bot/system created.
+- Updated: Automation Prompts Master, Method Trigger Engine, Automation Quality Layer, Stage-Aware Deferred Work Queue and Master Production Lifecycle.
+- New operational principle: automation prepares/tests ONE rung or repairs ONE failed rung per pass; it must not jump to final outputs.
+- Ladder events now distinguish PREPARED / TESTED / FAILED / HUMAN_READ / PROMOTION_CANDIDATE / REGRESSION / DEPENDENCY_CHANGED.
+- Deferred work can carry ladder_domain/current_rung/target_rung/wake_evidence/LAST_GOOD/rollback so ambitious late-stage ideas sleep safely until earned.
+- Lifecycle stage and ladder rung are intentionally separate: a mature project can still have an early-rung subsystem.
+- Protagonist/Human Trace routing inherits private-by-default, consent/provenance, non-tokenizing culture, no real-world supernatural claims from mental-health experiences, and no substance optimization/dosing.
+- Character life-span ladder remains a hypothesis/evidence structure, not a mandatory chapter list.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+- No new scheduled automation created; existing triggers/hooks should absorb this behavior.
