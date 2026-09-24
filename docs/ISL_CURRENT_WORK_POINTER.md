@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL FAILURE-SIMULATION METHOD
+- Added cross-domain adversarial method: docs/ISL_UNREAL_FAILURE_SIMULATION_AND_HISTORICAL_LESSONS_CURRENT.md.
+- Added deterministic helper: scripts/isl-unreal-risk-sim.py for bounded U0–U8 failure scenario decks.
+- Research ladder now explicitly combines Epic official truth, NASA FMEA/FMECA, MIT STPA/CAST, Google SRE/fuzzing, NIST supply-chain/provenance, historical postmortems/Archive.org when useful, and Reddit/forums as failure sensors only.
+- Core intake: SOURCE → CLAIM → EVIDENCE TYPE → ISL RISK → CONTRADICTION/LIMIT → CHEAP TEST → DECISION → ARCHIVE.
+- New failure deck covers DATA / ASSET / SAVE / BUILD / WORLD / UI-INPUT / PERF / EXTERNAL / HUMAN.
+- Goal is not “perfect/no bugs”; goal is early detection, reproducibility, recovery, regression guards and preserved fun.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- No checkpoint warranted yet.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL ECOSYSTEM AUDIT CONTRACT
 - Unreal readiness is now a recurring ecosystem concern, not a one-time migration checklist.
 - Monthly/event-driven audit contract added across Unreal Readiness, Meta-Layer Orchestrator and Automation Prompts.
