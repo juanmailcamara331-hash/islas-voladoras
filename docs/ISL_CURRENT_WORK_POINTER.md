@@ -2318,3 +2318,14 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Clean-room next-chat rule: do not re-theorize; recover this CURRENT section + exact chosen protagonist/companion refs → final preflight → FIRE ONE GRID → inspect → KEEP/MUTATE/PARK/KILL.
 - No checkpoint promotion required; v0.94 remains current.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · FULL PROMO FILM MASTER PERSISTED
+- Canonical reusable promo/trailer package now exists as Google Doc: ISL_FULL_GAME_3X3_PROMO_FILM_MASTER_CURRENT (Drive ID 148ji4wPBoWSljQPOMVuPhOk5g038KZ88wStmO_4yz-s).
+- GitHub cross-propagation completed into Cinematic Aesthetic Synthesizer, Soundtrack Bible, Automation Prompts Master, Human Trace and Guided World.
+- Package preserves: 9-beat causal arc, setup/knot/resolution, hell→devil-like confrontation→paradise ascent, garden-grandeur ecology, Pratchett-like functional humour, non-normative ISL mutation, four-reference functional authority split, REF B lighting authority, structural blacks, 8 transition bridges and true 3×3 CapCut extraction.
+- First video master remains NO MUSIC / NO VO / NO TITLES. All available generation/editing attention should prioritize continuity → identity → motion → lighting → materiality → causal VFX → SFX/ambience. Score and VO are later derivative layers.
+- Deliverable chain: GRID MASTER → 9 EXACT CROPS → SFX MASTER → SCORE MIX → OPTIONAL OPENING VO MIX.
+- Voice-over is intentionally added after visual/SFX continuity passes; it should introduce a human question/memory, not explain visible action.
+- Clean-room next chat should recover this master and CURRENT docs, re-lock exact protagonist/companion visual refs, run final preflight, FIRE ONE GRID, then KEEP/MUTATE/PARK/KILL.
+- v0.94 remains current; no checkpoint promotion required solely for this documentation pass.
