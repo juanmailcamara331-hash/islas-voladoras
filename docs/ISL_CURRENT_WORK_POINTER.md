@@ -2134,3 +2134,17 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Existing Human Trace doc now carries the detailed contract and a reunion ladder R0–R7.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
 - No checkpoint justified by this addition alone.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · LIFE-SPAN / MIND-WORLD PROTAGONIST HYPOTHESIS
+- Strong human direction added to Human Trace: protagonist may grow across a large portion of life instead of remaining a static-age avatar.
+- Candidate opening age ~12 is UNFROZEN; it is useful as a wonder/imitation/care sensor but is not CANON.
+- Existing charismatic punk-leaning female protagonist direction remains a separate candidate; no silent overwrite. Character synthesis/CQC must reconcile age, gender presentation and long-term growth.
+- Candidate life arc: cared-for childhood → imitation/learning → differentiation/creation → obsessive study/model-making → friction/degradation → rescue/return → reality-fracture worlds → recognition of others → reenounter/chosen constellation → sky/paradise → continued learning.
+- Mind/theory lane: notebooks, equations, provisional theories-of-everything and self-made cosmologies are gameplay/narrative candidates; models must be breakable by evidence and relationships.
+- Apparent “magic through the mind” is allowed as fictional ambiguity between perception, mastery, impossible ISL physics and symbolic representation; never use real-world mental-health episodes as proof of supernatural power.
+- Religion/culture lane may draw from Qur'an/Islamic thought and multiple other traditions through primary/scholarly/context-aware study; no exoticized sacred skinning or monolithic cultures.
+- Cross-cultural friendships (e.g. Sierra Leone, China, Chile and others) must be person-first, reciprocal and non-tokenizing.
+- Street/rescue lane should use reciprocity, not saviour fantasy: someone once rescued may later be capable of helping others, and help may flow both ways.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+- No checkpoint required by this narrative expansion alone.
