@@ -2212,3 +2212,16 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Emotional attention uses earned curiosity/tension/reveal/wonder/reunion, not dopamine-hacking mechanics.
 - Public use remains gated by truth-labeling: SENSOR/PROMO FOUNDATION, never fake gameplay.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · 3×3 VISUAL DNA LOCK BEFORE FIRE
+- Full-game 3×3 remains NOT READY TO GENERATE.
+- Missing gate identified: coherent VISUAL DNA LOCK across all nine keyframes.
+- Dark whimsical gothic cinema enters by FUNCTION only: deep readable blacks, crooked/elongated silhouettes, outsider tenderness, macabre+playful coexistence, asymmetrical architecture, romantic melancholy and deadpan visual humour. No exact style imitation or recognizable surface copying.
+- ISL mutation = gothic-whimsy function + floating sky world + punk DIY + Human Trace + cosmic absurdity + nature-memory + equations/relics.
+- Black is structural material, not a darkness filter.
+- Punk = repaired/repurposed/asymmetric/personal/DIY, not generic spikes/neon.
+- Companion mother-shape strengthened: weird, tender, silly, slightly vacant, delayed/awkward reactions, compact teddy-bear-like muzzle, memorable asymmetry; humor from timing/design, never disability caricature.
+- 14 visual anchors must be locked before the bullet fires: protagonist, age progression, companion, protector, friends, memory objects, skyship, geology, architecture/materials, blacks, color, wind/motion, nature-memory cues, camera/lens family.
+- Generation remains blocked until this lock + 9 beats + 8 transitions + weights + anti-reference + fail conditions are complete.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
