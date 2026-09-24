@@ -262,3 +262,42 @@ AGENTS EXIST TO REDUCE HUMAN FRICTION, NOT TO CREATE AGENT MANAGEMENT.
 
 No crear órgano nuevo ahora.
 No activar ni implementar hasta que el Night Shift simple haya producido evidencia útil.
+
+
+## LADDER-AWARE DEFERRED WORK · 2026-09-24
+Deferred items may now declare:
+ladder_domain
+current_rung
+target_rung
+wake_evidence
+last_good
+rollback.
+
+Wake only when:
+- prior rung PASS evidence exists;
+- a failed rung has a specific repair;
+- a dependency becomes available;
+- Human Gate is explicitly ready;
+- stage changes make the target rung relevant.
+
+Do NOT wake because:
+- later rung sounds more exciting;
+- new reference/image appeared;
+- recency suggests progress;
+- another subsystem is ahead.
+
+Example:
+SKYSHIP representative combat slice
+status: PARKED
+wake: R5 SKYSHIP SENSOR + R6 1v1 HUMAN_READ evidence
+not: “we found a cool ship image”.
+
+Example:
+protagonist paradise/late-life world
+status: PARKED
+wake: earlier relationship/reunion beats demonstrate remembered emotional causality
+not: “we have a spectacular heaven concept”.
+
+Queue principle:
+DEFERRED RUNG != LOST RUNG.
+It is protected ambition waiting for earned evidence.
