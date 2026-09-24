@@ -102,3 +102,27 @@ Do not use it as an excuse to automate taste.
 ## STOP RULE
 Do not build a huge test farm before the first Unreal skeleton.
 The bridge defines what must exist; implementation scales with evidence and milestone.
+
+
+## PRODUCTION SIMULATION MILESTONE MATRIX · 2026-09-24
+Use the U0–U8 bullets defined in ISL_UNREAL_READINESS_MASTER_CURRENT as the rehearsal of future production.
+
+Minimum evidence per milestone:
+- U0: T0 + T2/T3 + packaged boot.
+- U1: T0–T4 + T6 + T7 + save roundtrip.
+- U2: T2–T4 + retry/reset + repeated state transitions.
+- U3: T4 + T5 + T7 + streaming/re-entry/save.
+- U4: GoldenPath functional test + packaged/device + human completion.
+- U5: T0/T2/T5 at content scale; duplicate/ref integrity.
+- U6: full regression selection + save migration + screenshot baselines.
+- U7: T8 human evidence; fun/comprehension kept separate from technical PASS.
+- U8: all relevant T0–T8 evidence for a representative vertical slice.
+
+Build rule:
+EDITOR PASS != PACKAGED PASS.
+PACKAGED PASS != DEVICE PASS.
+DEVICE PASS != HUMAN PASS.
+All four may be required depending on milestone.
+
+Bug rule:
+when a bug is fixed, attach the cheapest stable regression guard that would catch its recurrence, unless the cost is disproportionate; document exceptions.
