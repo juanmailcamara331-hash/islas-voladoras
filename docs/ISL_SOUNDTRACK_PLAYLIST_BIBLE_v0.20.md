@@ -195,3 +195,44 @@ LAST.
 It should add human meaning, not describe what the viewer can already see.
 
 No imitation of identifiable composers/tracks.
+
+
+## FULL-GAME 3×3 PROMO FILM · AUDIO / VO CROSS · 2026-09-24
+State: REUSABLE PROMO/TRAILER FOUNDATION · NO MUSIC IN FIRST MASTER
+
+Audio order:
+1. Build visual continuity first.
+2. Build physical SFX + ambience.
+3. Validate silent/SFX cut with humans.
+4. Add ONE coherent ISL score family.
+5. Add optional opening VO last.
+
+First master:
+NO MUSIC · NO SONG · NO GENERATED SCORE.
+Preserve wind, cloth, rope, wood, metal, footsteps, pages, rain, creature sounds, skyship movement, impacts, atmospheric rupture and room tone.
+Use sound bridges between shots.
+Use near-silence before strongest reveal.
+
+Music later:
+one melodic/rhythmic DNA mutating across life stages, not nine unrelated tracks.
+Deliverables:
+A · SFX MASTER
+B · SCORE MIX
+C · SCORE + OPTIONAL OPENING VO
+
+Voice-over:
+short, human and cinematic;
+opens with a question/memory/tension;
+must not narrate visible action;
+reduces after opening so image + SFX + score carry the arc.
+
+Mix intent:
+VO foreground;
+SFX/ambience continuous bed;
+music ducks under VO/critical SFX;
+music blooms on release/reveal;
+strategic silence remains available.
+
+Processing priority:
+do not spend generative/editing capacity on music during visual assembly.
+CONTINUITY > IDENTITY > MOTION > LIGHT > MATERIALS > CAUSAL VFX > SFX > DECORATION > MUSIC.
