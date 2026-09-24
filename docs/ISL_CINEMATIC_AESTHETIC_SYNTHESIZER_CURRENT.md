@@ -529,3 +529,213 @@ Ask:
 - What changed, and what stayed the same?
 
 The silent visual cut must survive before voice-over or music is used to rescue it.
+
+
+## KICKSTARTER / PRESENTATION FILM · AI ASSEMBLY MASTER CONTRACT · 2026-09-24
+Estado: PREPARED REUSABLE TEMPLATE · SENSOR/PROMO SUPPORT · NO FALSE GAMEPLAY · NO AUTO-CANON
+
+Purpose:
+Create a reusable assembly brief for CapCut Creative Lab / AI Lab or equivalent editor so nine ISL keyframes/derived clips become ONE continuous film rather than a montage of unrelated AI shots.
+
+External evidence cross:
+- CapCut current guidance recommends treating prompts as shot direction: subject, action, setting, lighting, style, camera; when a still already fixes the look, spend prompt budget on motion and what must remain stable.
+- CapCut current workflow supports AI generation as a first pass followed by timing/overlay/export refinement.
+- Seedance supports multi-shot narrative continuity and image-conditioned generation; recent Seed guidance demonstrates continuous-take prompting with timed action blocks, reference images, camera movement and natural occlusion.
+- Film-language cross: use blocking/camera to reduce aesthetic distance and place the audience inside the experience; camera choreography should clarify story rather than advertise technique.
+
+ISL translation:
+DO NOT COPY A DIRECTOR'S SURFACE STYLE.
+USE FUNCTION:
+IMMERSION
++ VISUAL CAUSALITY
++ CONTROLLED REVEAL
++ REACTION
++ MOTION CONTINUITY
++ EMOTIONAL ESCALATION
++ HUMAN RETURN.
+
+### ATTENTION / EMOTION RULE
+No dopamine-hacking objective.
+Use earned emotional peaks:
+CURIOSITY
+→ ANTICIPATION
+→ SMALL REWARD
+→ FRICTION
+→ TENSION
+→ REVEAL
+→ WONDER
+→ HUMAN QUIET
+→ LARGER ASCENT
+→ AFTERIMAGE.
+
+The viewer should want the next shot because the current one creates an unresolved visual/emotional question.
+
+### AUDIO STRATEGY
+FIRST MASTER CUT = NO MUSIC.
+
+Preserve and build:
+- wind;
+- cloth/scarf;
+- wood/metal/rope;
+- footsteps;
+- creature breaths/vocalisations;
+- page turns / pencils / mechanisms;
+- distant city/crew;
+- rain;
+- impact;
+- atmospheric rupture;
+- skyship engines/sails;
+- intimate room tone.
+
+Why:
+the AI/editor should spend generative attention on image continuity, motion, physical sound cues and scene transitions rather than inventing a generic score.
+
+MUSIC LATER:
+single coherent ISL score family added as a separate layer.
+VOICE-OVER LATER:
+optional opening narration and sparse later callbacks.
+Mix should allow:
+VO foreground
+→ ambience/SFX bed
+→ music bloom
+→ music duck under dialogue/critical SFX
+→ music swell during visual release
+→ strategic near-silence before major reveal.
+
+### MASTER CAPCUT CREATIVE LAB PROMPT
+Use the nine supplied ISL images/clips in their exact intended order as consecutive chapters of ONE continuous cinematic journey. Do not treat them as a slideshow or independent montage.
+
+PRIMARY GOAL:
+Create a seamless, emotionally escalating fantasy-adventure film in which the same protagonist, companion, friends, objects, skyship, architecture, materials and world visibly persist and evolve across time. The viewer must feel one life and one universe without obvious temporal or visual discontinuities.
+
+ABSOLUTE CONTINUITY:
+Preserve character identity, facial structure, hair family, clothing evolution, recurring scarf/cloth, companion creature mother-shape, friend silhouettes, protector/uncle identity, memory objects, skyship design language, floating-island geology, architecture, material wear, wind direction logic and recurring visual motifs.
+Do not redesign characters or world elements.
+Do not invent replacement costumes, faces, creatures, props or architecture unless strictly necessary for interpolation.
+Age progression must be gradual and read as the same person growing, never recasting.
+
+EDITING PRINCIPLE:
+Every shot must inherit a visual or motion element from the previous shot and pass one forward to the next.
+Prefer match cuts, movement continuity, gaze continuity, shape echoes, light-direction continuity, foreground wipes, natural occlusions, cloth/scarf motion, object handoffs and horizon continuity.
+Avoid hard unexplained temporal jumps.
+Avoid generic crossfades used to conceal mismatched shots.
+Avoid fade-to-black except if deliberately required by the story.
+
+TRANSITION CHAIN:
+1. book/map or childhood object visually opens into the first landscape;
+2. wind/ribbon/scarf continues into study lines, diagrams or hanging objects;
+3. model/orb/notebook fragment falls or changes into the low-point scene;
+4. rescuing hand/cloak motion becomes a hand gripping the skyship rail or sail line;
+5. the same horizon and wind reveal the coming encounter;
+6. creature eye / impact / atmospheric rupture becomes the portal into fractured reality;
+7. a floating amulet, object or memory trace resolves into a real object held by a friend;
+8. small model/map/island fragment expands into the final constructed archipelago.
+
+CAMERA:
+Use motivated, smooth camera movement.
+Prefer slow push-ins, gentle lateral tracking, subtle orbiting, controlled pull-backs and foreground-to-background reveals.
+Let blocking and subject movement create transitions when possible.
+Camera movement must follow story intention and physical momentum, not move constantly for spectacle.
+Keep screen direction coherent between adjacent shots.
+Use foreground objects, sails, people, cloth, rock edges, cloud masses or creature movement as natural wipes/occlusions when useful.
+Do not use aggressive random zooms, whip pans or drone-style moves unless the source frame clearly supports them.
+
+PACING:
+Begin intimate and tactile.
+Open the world gradually.
+Allow the study/obsession section to become denser and faster.
+Slow down visibly at the fall/rescue.
+Reopen scale through the skyship.
+Increase kinetic pressure for the encounter.
+Let fractured reality become the strangest and most expansive section.
+Return to human-scale warmth for the reunion.
+Finish with a large but emotionally earned reveal of the created archipelago/world.
+
+EMOTIONAL RHYTHM:
+wonder → curiosity → obsession → fragility → rescue → freedom → danger → impossible revelation → recognition → creation.
+Do not rush every beat.
+Include micro-pauses before important reveals.
+Use reaction shots, stillness and held frames as part of the rhythm.
+
+VISUAL TONE:
+original ISL universe; handmade, lived-in, tactile, slightly punk, irreverent, tender, philosophical and strange.
+Cosmic absurdity must coexist with ordinary human detail.
+Do not imitate recognizable franchise designs.
+Do not turn the final world into sterile imperial grandeur: it must still show community, construction, repair, nature, workshops, routes, objects and lived human scale.
+
+COMPANION:
+Preserve the same goofy, lovable, slightly vacant / clumsy creature throughout.
+Its humor should come from timing, physical awkwardness, confused reactions and sincere loyalty.
+Never replace it with a majestic generic fantasy mascot.
+
+SOUND DESIGN:
+NO MUSIC.
+NO GENERATED SONG.
+NO MUSICAL SCORE.
+Prioritize cinematic environmental sound and physical effects:
+wind, fabric, ropes, wood, metal, footsteps, pages, rain, creature noises, machinery, distant voices, skyship movement, impact, atmospheric distortion and room tone.
+Keep sound perspective spatial and continuous across transitions.
+Use sound bridges so the next scene is sometimes heard before it is fully seen.
+Use silence or near-silence immediately before the strongest visual revelation when appropriate.
+
+TEXT:
+No titles.
+No captions.
+No subtitles.
+No logos.
+No explanatory cards.
+No generated dialogue unless it already exists in the supplied source.
+The first master must work as pure visual story + environmental sound.
+
+VFX:
+Spend visual-processing emphasis on continuity, physically coherent motion, atmospheric depth, cloud/wind interaction, particles, cloth, lighting continuity, seamless transformations and restrained impossible-physics moments.
+Effects must follow scene causality.
+No decorative particle spam.
+No generic portal effect unless it grows from an existing eye/object/sky rupture.
+Preserve material texture and human imperfections.
+
+OUTPUT INTENT:
+Produce a cinematic presentation-film master suitable as:
+- private father/Carrillo vision film;
+- internal full-game sensory sensor;
+- later Kickstarter presentation/trailer foundation;
+- future pitch/demo mood-film foundation.
+
+This is not proof of finished gameplay.
+Do not invent UI or fake playable footage.
+
+ENDING:
+Do not close like a finished fairy tale.
+End with the protagonist overlooking/entering the created archipelago while some small living element continues moving — wind, creature, friend, worker, distant ship, growing plant, unresolved path — to imply that learning and creation continue.
+
+### FIRST EDIT BRACKET
+Recommended first test:
+45–75 seconds total.
+Use short clips with edit handles.
+Generate/export a clean NO-MUSIC master first.
+Then create:
+A · SILENT/SFX MASTER
+B · SCORE MIX
+C · SCORE + OPTIONAL OPENING VO
+without regenerating the visual master unless continuity fails.
+
+### VOICE-OVER LAYER
+If later added in CapCut:
+keep opening VO short and cinematic.
+Do not narrate every image.
+VO should introduce one human question or memory, then let the world answer visually.
+After the opening, reduce spoken language and allow SFX + music + images to carry the arc.
+
+### HUMAN CQC
+Before Kickstarter/public use:
+show the NO-MUSIC / NO-VO cut to trusted humans.
+PASS if they independently report:
+- one protagonist;
+- one world;
+- coherent growth;
+- clear emotional progression;
+- memorable recurring friend/object/creature;
+- no obvious AI continuity jump;
+- desire to know what happens between the shown moments.
+
+If music or narration is required to make the story coherent, visual continuity is NOT YET PASS.
