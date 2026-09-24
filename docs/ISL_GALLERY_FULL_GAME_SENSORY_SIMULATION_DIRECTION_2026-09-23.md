@@ -214,3 +214,58 @@ Important:
 
 Age ~12 is a candidate opening sensor only, not locked.
 Existing female protagonist direction remains unresolved against this life-span hypothesis until a deliberate character synthesis test.
+
+
+## 3×3 FULL-GAME FILM SENSOR · 2026-09-24
+Estado: BULLET PREP · SILENT FIRST · NO FALSE GAMEPLAY
+
+The planned 3×3 grid is not a poster collage.
+It is a nine-keyframe film sensor for father / Carrillo / trusted human read.
+
+Rule:
+GRID DESIGN = VIDEO PREVIS.
+
+Each cell must retain:
+- continuous protagonist identity;
+- recurring companion/friends;
+- recurring relic/object anchors;
+- world material family;
+- one outgoing transition bridge.
+
+First validation order:
+1. nine stills read as one journey;
+2. adjacent stills pass continuity review;
+3. short image-to-video clips preserve identity;
+4. silent edit works;
+5. music is added;
+6. optional voice-over added last.
+
+Do not let narration explain continuity that the images failed to create.
+
+### VIDEO-FIRST STORY RHYTHM
+CARE
+→ FIRST HORIZON
+→ OBSESSION / MODEL
+→ FALL / RESCUE
+→ SKYSHIP OPENING
+→ ENCOUNTER
+→ REALITY FRACTURE
+→ REENCOUNTER
+→ CREATE / BUILD / CONTINUE.
+
+Late-game island-building / 'empire' direction:
+translate as earned world-making / archipelago stewardship / construction capacity / community scale.
+Do not default to authoritarian throne imagery.
+The contradiction may remain open: creation at scale can liberate, burden, centralize or fragment power.
+
+### FAMILY DELIVERY
+For first father/Carrillo read:
+- no methodology dump;
+- no text overlays;
+- no reference-name explanation;
+- show full cut;
+- capture spontaneous reaction;
+- ask what story they think they saw;
+- only after response explain intended beats.
+
+This is a SENSOR, not marketing proof.
