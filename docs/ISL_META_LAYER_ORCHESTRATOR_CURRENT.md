@@ -328,3 +328,29 @@ Checkpoint only when existing structural thresholds are met.
 
 Anti-chaos shorthand:
 ONE ACTIVE · ONE NEXT · REST PARKED.
+
+
+## VISUAL FIDELITY LADDER ROUTING · 2026-09-24
+When the user asks to “reach the graphics we want”, improve 3D/web presentation, or move a visual asset toward playable quality, route through the Visual Fidelity Ladder in:
+`docs/ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT.md`.
+
+Routing:
+SMALL OBJECT
+→ RUNTIME / TARGET DEVICE
+→ COMPLEX PROP OR VEHICLE
+→ MICRO-SCENE
+→ ATMOSPHERIC SCENE
+→ INTERACTIVE SENSOR
+→ VISUAL GAMEPLAY SLICE.
+
+Activate only layers that change the decision:
+M0 + M1 + M2 always;
+add M9 at runtime/device rungs;
+add M11 for master/runtime/gallery;
+add M10 for world/causal integration.
+
+Guard:
+do not skip lower-rung evidence merely to obtain a prettier image.
+Lighting/post-processing cannot promote a structurally weak asset.
+Use the lowest rung that resolves the current uncertainty.
+This is routing, not a new organ.
