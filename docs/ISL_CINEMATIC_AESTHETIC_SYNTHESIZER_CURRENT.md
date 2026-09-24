@@ -291,3 +291,83 @@ Stop when additional fidelity no longer changes the decision.
 This ladder may be abstracted to other projects as:
 SMALL → RUNTIME → COMPLEX → MICRO-SCENE → ATMOSPHERE → INTERACTION → SLICE.
 Do not export ISL art direction, lore, palette, entities or specific visual references.
+
+
+## CROSS-SYSTEM LADDER DOCTRINE · 2026-09-24
+Estado: ACTIVE TRANSVERSAL PATTERN · NO NEW META-LAYER · NO AUTO-CANON
+
+Human direction:
+The successful Visual Fidelity Ladder is not a one-off graphics trick. ISL should use the same incremental logic wherever a domain can otherwise jump from idea to expensive complexity.
+
+Core pattern:
+INTENT
+→ CHEAPEST LEGIBLE FORM
+→ TARGET/RUNTIME CHECK
+→ SMALL COMBINATION
+→ CONTEXTUAL SCENE/SYSTEM
+→ INTERACTIVE/INTEGRATED SENSOR
+→ REPRESENTATIVE SLICE
+→ HUMAN/DEVICE GATE
+→ SCALE.
+
+Every ladder must:
+- answer one important uncertainty per rung;
+- preserve LAST GOOD;
+- mutate the smallest useful variables;
+- define PASS / ITERATE / PARK / KILL;
+- expose defects instead of hiding them with polish;
+- include rollback;
+- stop when added fidelity/complexity stops changing the decision.
+
+Candidate ladders:
+- VISUAL/3D: object → runtime/device → complex prop/vehicle → micro-scene → atmosphere → interaction → gameplay slice.
+- COMBAT: one choice → readable exchange → counterplay → small encounter → repeated encounter → mixed-system encounter → representative combat slice.
+- SKYSHIP: silhouette/scale → deck/material read → navigation sensor → one manoeuvre → 1v1 four-beat combat → world-context encounter → representative skyship slice.
+- UI/HUD: one affordance → one state → one screen → one flow → device/safe-area test → repeated-use test → representative shell.
+- AUDIO: one cue → loop/transition → local mix → scene mix → interactive state change → device/headphone/speaker check → representative sequence.
+- WORLD: one rule → one consequence → one POI → micro-cell → re-entry/persistence → multi-system cell → representative journey segment.
+- NARRATIVE/HUMAN TRACE: one beat → one choice/read → consequence → re-read later → hidden trace/easter egg → repeated-world interpretation → representative arc fragment.
+- BUILD/SAVE: boot → one entity → one transition → one encounter → one world cell → repeated save/load → packaged/device golden path.
+- PERFORMANCE: survival/stress → stable baseline → representative scene → worst-case feature → repeated transition → thermal/memory/device pass → target tier evidence.
+
+These are templates, not mandatory bureaucracy. A task may skip rungs only when earlier uncertainty is already evidenced.
+
+### QUALITY LOCK
+GRAPHICAL QUALITY is judged progressively, not by one final glamour shot.
+At every visual rung separate:
+FORM
+MATERIAL
+SCALE
+CONTACT
+LIGHT
+ATMOSPHERE
+MOTION
+INTERACTION
+READABILITY
+PERFORMANCE
+HUMAN FEEL.
+
+Higher layers may enrich lower ones but cannot rescue a failed foundation.
+
+### BULLET CONTRACT
+A creative/technical “bullet” should declare which ladder and rung it is testing.
+A bullet is not “make it better”; it is:
+BASELINE + RUNG + 1–2 VARIABLES + FAILURE CONDITIONS + HUMAN READ + ROLLBACK.
+
+### CROSS-METHOD ROUTING
+Use this pattern through existing systems:
+M0 order / rung selection
+M1 dialectic quality decision
+M2 authority + LAST GOOD
+M3 human read when experience changes
+M8 Unreal translation when relevant
+M9 runtime/build/device/regression
+M10 world consequence
+M11 master/runtime asset lifecycle
+M12 tuning/formulas when quantitative.
+
+No new ladder registry until repeated manual friction proves one is needed.
+
+### PRINCIPLE
+DO NOT BUILD THE FINAL THING FIRST.
+BUILD THE NEXT THING THAT CAN PROVE THE PREVIOUS THING DESERVES TO EXIST.
