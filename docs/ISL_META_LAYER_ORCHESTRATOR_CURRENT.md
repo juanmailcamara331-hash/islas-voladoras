@@ -392,3 +392,30 @@ Core questions:
 - CAN THE WHOLE THING BE EXPORTED/TESTED/ROLLED BACK?
 
 Do not use “dopamine” as a design score. Use observable pacing, comprehension, replay and memory evidence.
+
+
+## LADDER-FIRST ROUTING · 2026-09-24
+When a task asks to improve quality, fidelity, complexity, production readiness or “clavar” a domain, prefer a bounded ladder over a direct jump to the final target.
+
+Canonical pattern lives in:
+docs/ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT.md
+section: CROSS-SYSTEM LADDER DOCTRINE.
+
+Routing rule:
+1. identify domain;
+2. identify CURRENT rung / LAST GOOD;
+3. identify the next uncertainty;
+4. fire one bounded bullet at the lowest rung that can answer it;
+5. test;
+6. KEEP / MUTATE / PARK / KILL;
+7. only then climb.
+
+Applies by function to:
+visual/3D, combat, skyship, UI/HUD, audio, world, narrative/human trace, build/save, performance and future Unreal production.
+
+Guard:
+DO NOT create one separate meta-system per ladder.
+The ladder is a reusable production pattern routed through M0/M1/M2 and only the task-relevant layers.
+
+Anti-sprawl:
+ONE ACTIVE RUNG · ONE NEXT RUNG · REST PARKED.
