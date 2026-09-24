@@ -316,3 +316,73 @@ Fail / mutate if:
 
 Origin:
 ISL-BULLET-SKYSHIP-COMBAT-01 · B2.2 HUD exploration · 2026-09-23.
+
+
+## 12. DISTRIBUTED MEMORY / LIVING BREADCRUMBS · 2026-09-24
+Estado: STRONG DIRECTION · PROTOTYPE REQUIRED · NO QUEST-GPS
+
+Human direction:
+The protagonist carries too much in mind to remember life as a clean internal chronology.
+Friends, natural phenomena, objects, places and Huellas can help recall where they were going and what they had already become.
+
+Principle:
+THE WORLD REMEMBERS WITH YOU.
+
+Candidate cues:
+- friend repeats a phrase, joke, habit or disagreement;
+- plant growth / bent grass / damaged bark / flowers / fungi / nests;
+- wind pattern or recurring sound;
+- animal behavior;
+- object/amulet left, gifted, broken or repaired;
+- altered architecture;
+- footprints / rope / cloth / paint / ash / paper;
+- constellation / sky cue;
+- crew routine;
+- a place that has changed because of an earlier choice.
+
+These are not objective markers.
+They are causal traces.
+
+Formula:
+PAST ACTION / RELATION
+→ WORLD OR SOCIAL TRACE
+→ PRESENT PERCEPTION
+→ MEMORY / HYPOTHESIS
+→ ROUTE OR RELATIONAL CHOICE
+→ NEW TRACE.
+
+### MEMORY BREADCRUMB LADDER
+B0 one causal environmental trace
+→ B1 one friend/object cue
+→ B2 two cues that converge
+→ B3 one cue that contradicts remembered meaning
+→ B4 route recovered without explicit marker
+→ B5 old route changes because world/friend changed
+→ B6 network of living breadcrumbs across a micro-cell
+→ B7 long-term journey where the player reconstructs personal history through world traces.
+
+### GUARDS
+- no breadcrumb every ten meters;
+- no magical omniscience;
+- no false memory inserted as fact without framing;
+- no collectible checklist;
+- no friend reduced to navigation tool;
+- nature must have ecological/world cause, not glow because “quest here”;
+- accessibility may add explicit support, but should layer over rather than replace the world cue.
+
+### CHEAP TEST
+One micro-cell:
+- one past action;
+- one friend cue;
+- one natural cue;
+- one object/amulet;
+- no permanent objective marker.
+
+Ask blind human:
+1. where do you think you were going?
+2. what reminded you?
+3. which cue felt like part of the world rather than UI?
+4. did any cue change what you remembered?
+
+PASS:
+human recovers approximate rumbo and one past relationship/action without being told the answer.
