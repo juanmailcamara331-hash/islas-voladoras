@@ -524,3 +524,42 @@ It must route every imported method through:
 QUESTION → SOURCE → MECHANISM → LIMITATION → ISL MICROTEST → EVIDENCE → ADOPT / ADAPT / PARK / REJECT.
 
 No prestige-based adoption and no new bot/layer by default.
+
+
+## 17. LADDER × LIFECYCLE CROSS · 2026-09-24
+Every lifecycle stage should prefer rung-appropriate evidence.
+
+DISCOVERY:
+rungs may remain textual/paper/isolated.
+Question = does the idea/function deserve a prototype?
+
+CORE_VALIDATION:
+prove lowest functional rungs.
+Question = does the mechanic/relationship/world rule create the intended consequence?
+
+VERTICAL_SLICE:
+combine only ladders whose lower rungs have survived.
+Question = do the systems remain coherent when integrated?
+
+SYSTEM_INTEGRATION / CONTENT_PRODUCTION:
+scale repeatable surviving patterns.
+Question = can quality survive repetition without manual chaos?
+
+PACKAGED/DEVICE:
+test target hardware, persistence, input, performance and presentation together.
+
+PUBLIC_READINESS:
+only expose claims supported by real rung evidence.
+
+Rule:
+LIFECYCLE STAGE DOES NOT AUTOMATICALLY PROMOTE A LADDER RUNG.
+A project may be advanced in one domain and early in another.
+
+Milestone receipt should include:
+ACTIVE_LADDERS
+CURRENT_RUNGS
+LAST_GOOD
+FAILED_RUNGS
+PARKED_AMBITION
+NEXT_UNCERTAINTY
+HUMAN_GATES.
