@@ -1,3 +1,14 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · PROMO CINEMATIC JOURNEY MAP IN GALLERY
+- Lane executed: B) CINEMATIC JOURNEY MAP only. Video/master remains untouched.
+- Existing Gallery extended; no new app organ created.
+- Added portal/data/isl-cinematic-journey-current.json with the preserved 01→09 arc, production milestones, release locks and memory-sensor metadata.
+- Gallery now has VIAJE 01→09 view with a horizontal voyage route and explicit private-master protection.
+- SHOT 07 = STRONG memory sensor; SHOT 08 = EMERGING / SECONDARY; shown as 07↔08 MEMORY PAIR THROUGH CONTRASTIVE PAYOFF, not as winners and not as CANON.
+- The private preview binary is NOT exposed in Gallery; public release remains LOCKED and IP REVIEW ACTIVE.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+- RECENCY IS NOT AUTHORITY · NO AUTO-CANON · DO NOT ADD ORGANS. IMPROVE CIRCULATION.
+- Next action after human visual check: either KEEP the Gallery map as-is or make a small UI-only mutation. Do not reopen audio/video work by default.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL LAB HANDOFF PROMPT READY
 - Human reviewed the new-chat Unreal Universe / One-Journey prompt and considers it substantially correct.
 - Curated decision: do NOT expand the prompt further before use; current coverage is sufficient and further additions risk theory-sprawl.
