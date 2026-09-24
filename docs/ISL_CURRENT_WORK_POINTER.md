@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL LAB HANDOFF PROMPT READY
+- Human reviewed the new-chat Unreal Universe / One-Journey prompt and considers it substantially correct.
+- Curated decision: do NOT expand the prompt further before use; current coverage is sufficient and further additions risk theory-sprawl.
+- The prompt should boot from CURRENT authority, then execute RECOVER → PREFLIGHT → UC0 rehearsal plan → HUMAN GATE before implementation.
+- Preserve all current guards: PRIMARY Velaria V2 P0, HUMAN_DEVICE_GREEN=PENDING, SAFE HARBOR intact, engine version UNFROZEN, NO AUTO-CANON, NO AUTO-PLUGIN, NO AUTO-BOTS.
+- Key integration contracts already covered: U0–U8, T0–T8, zero-paste/import-by-ISL_ID, failure simulation, 2.5D↔3D transition, one-journey coherence, game-theory abstraction, myth/easter-egg Human Trace, external adapters, night-work packets, Visual Fidelity Ladder, and anti-bureaucracy.
+- No new organ/doc is required before opening the new conversation.
+- If the new conversation discovers a concrete missing schema/template/script, add only that smallest missing artifact after evidence.
+- New chat is appropriate before executing UC0/UC1.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL ONE-JOURNEY COHERENCE LAB
 - Added bridge routine: docs/ISL_UNREAL_UNIVERSE_BRIDGE_AND_COHERENCE_LAB_CURRENT.md.
 - This is NOT a new meta-orchestrator; it routes through existing M0–M12.
