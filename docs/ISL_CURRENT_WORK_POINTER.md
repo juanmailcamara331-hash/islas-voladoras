@@ -2287,3 +2287,18 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Religious/cultural guard remains: no real-world doctrine presented as objective truth; sacred references by function/context, not decorative shock.
 - This becomes the darkest-to-brightest emotional swing of the promo film.
 - Grid still remains NO-GENERATION until protagonist + companion visual identity are explicitly re-locked.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · 3×3 FOUR-REFERENCE PACK LOCK
+- Four supplied images now have explicit non-overlapping functional authority roles:
+  A ship-family authority;
+  B lighting authority;
+  C world-scale/exploration authority;
+  D material/ornament/dark-whimsy authority.
+- REF B remains PRIMARY LIGHT AUTHORITY.
+- REF D is NOT protagonist identity authority.
+- REF C may inform protagonist+companion scale relationship only, not exact character anatomy.
+- Cross-reference guard: no single reference may dominate ship + light + world + material simultaneously.
+- Reference-distance test added: if the output can be identified as a direct redo of one source image, FAIL.
+- Remaining unresolved human lock is narrow: exact protagonist identity + exact companion identity.
+- Grid remains NO-GENERATION until those two are deliberately re-locked.
