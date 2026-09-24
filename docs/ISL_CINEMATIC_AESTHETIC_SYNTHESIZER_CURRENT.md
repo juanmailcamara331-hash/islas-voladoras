@@ -855,3 +855,92 @@ NO IMAGE until:
 - FAIL CONDITIONS are explicit.
 
 Then fire ONE grid sensor.
+
+
+## 3×3 GRID EXTRACTION / CAPCUT HANDOFF CONTRACT · 2026-09-24
+Estado: HARD PRE-GENERATION REQUIREMENT · NO GENERATION YET
+
+Purpose:
+The full-game image must be generated as a true extractable 3×3 contact sheet whose nine cells can be separated into independent keyframes for CapCut / image-to-video / trailer assembly.
+
+### GRID GEOMETRY
+- exact 3 columns × 3 rows;
+- nine equal-size cells;
+- straight, consistent gutters;
+- no decorative frame crossing cell boundaries;
+- no character/object may intentionally overlap into an adjacent cell;
+- no shared typography or title spanning cells;
+- no montage blending between cells;
+- each cell must remain compositionally complete when cropped alone.
+
+Preferred master:
+square contact sheet, high resolution, with enough pixel density that every cropped cell remains useful as an image-to-video keyframe.
+
+### SAFE CROP
+Inside every cell:
+- keep protagonist face / primary subject away from gutter edges;
+- keep important hands, relics, companion and transition objects inside safe margins;
+- do not crop essential silhouettes at panel boundaries;
+- preserve extra environmental space for later video pan/zoom;
+- avoid extreme close-ups unless that panel specifically requires one.
+
+### CONTINUITY + SEPARABILITY
+Paradox to solve:
+THE GRID MUST READ AS ONE FILM
+while
+EACH CELL MUST WORK AS AN INDEPENDENT VIDEO START FRAME.
+
+Therefore continuity is carried by:
+identity + pose logic + motifs + vectors + color + props + world causality,
+NOT by objects physically crossing panel borders.
+
+### ORDER LOCK
+CapCut/video order:
+1 TOP LEFT
+2 TOP CENTER
+3 TOP RIGHT
+4 MIDDLE LEFT
+5 MIDDLE CENTER
+6 MIDDLE RIGHT
+7 BOTTOM LEFT
+8 BOTTOM CENTER
+9 BOTTOM RIGHT.
+
+Never reorder after human selection without re-checking transition bridges.
+
+### EXTRACTION RECEIPT
+After selecting the final grid:
+1. preserve full master;
+2. crop nine cells losslessly;
+3. name sequentially:
+ISL_FILM_3X3_01
+...
+ISL_FILM_3X3_09;
+4. preserve master generation/provenance ID;
+5. keep a mapping:
+CELL_ID
+BEAT
+ENTRY
+EXIT
+TRANSITION_OBJECT
+NEXT_CELL;
+6. use exact crops as downstream image-to-video references.
+
+Do not regenerate nine independent approximations after the grid is selected unless continuity failure forces a controlled repair.
+
+### CAPCUT RULE
+CapCut receives:
+- 9 extracted keyframes in fixed order;
+- the continuity assembly master prompt;
+- no music for first master;
+- optional SFX/ambience generation;
+- later score + VO layered separately.
+
+### FAIL
+Grid FAIL if:
+- one crop cannot stand alone;
+- panel borders cut identity-critical features;
+- lighting/character/world drift makes adjacent crops look unrelated;
+- a transition depends on a visual element that is outside the cropped cell;
+- extraction reduces resolution below useful video-reference quality;
+- the contact sheet is visually impressive but operationally unusable for nine-shot video generation.
