@@ -2170,3 +2170,17 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - The protagonist's “theory of everything” should ultimately fail if it excludes relationships; possible synthesis = COSMOS/MODELS + FRIENDS/FAMILY/LOSS → CHOSEN CONSTELLATION.
 - New friend-constellation ladder F0–F7 added to Human Trace; no jump to endgame scene before earlier relationship evidence survives.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · MASTER ACTIVE-LADDERS MAP + LIVING BREADCRUMBS
+- Organism Radiography now contains the single human-readable MASTER ACTIVE-LADDERS MAP; no new registry/document created.
+- Each major domain now exposes CURRENT_RUNG / NEXT / EVIDENCE / PARKED: PRIMARY, visual/3D, UC0 bridge, skyship, combat, world, memory/Huellas, protagonist life-span, relationships/reencounter, friend constellation, Human Trace, creatures, UI/HUD, audio, build/save, performance, Unreal, Prism, physical and app/Gallery.
+- This map is a pressure map, NOT a giant to-do list.
+- Current real gate remains Velaria HUMAN_DEVICE_GREEN; UC0 R0→R1 is support rehearsal, not a new PRIMARY.
+- Strong direction added: THE WORLD REMEMBERS WITH YOU.
+- Friends + nature + objects + places + Huellas may act as distributed memory/breadcrumbs that help reconstruct rumbo and life history without turning into quest GPS.
+- Breadcrumb formula: PAST ACTION/RELATION → WORLD/SOCIAL TRACE → PRESENT PERCEPTION → MEMORY/HYPOTHESIS → ROUTE/RELATIONAL CHOICE → NEW TRACE.
+- Guided World now includes a B0–B7 Living Breadcrumb ladder and a cheap micro-cell test.
+- Brújula de las Huellas may synthesize causal trace clusters after discovery; it must not become an objective pointer.
+- Automation Prompts Master now routes LIVING BREADCRUMB / DISTRIBUTED MEMORY events through Guided World + Brújula/Huellas + Human Trace where relevant; no new bot.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
