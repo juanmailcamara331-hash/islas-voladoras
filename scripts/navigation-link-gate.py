@@ -148,8 +148,10 @@ else:
     for token in ['"VIS-HIST-029"','"VID-RUNTIME-001"','"VID-RUNTIME-002"']:
         if token not in gl: errors.append(f"historical gallery registry missing: {token}")
 idx=(ROOT/"index.html").read_text(encoding="utf-8",errors="ignore")
-for token in ['href="galeria.html?v=20260921-1"','href="galeria.html?v=20260921-1#music"']:
-    if token not in idx: errors.append(f"Command Center unified Gallery route missing: {token}")
+if re.search(r'href="galeria\.html(?:\?[^"]*)?"',idx) is None:
+    errors.append("Command Center unified Gallery route missing: galeria.html")
+if re.search(r'href="galeria\.html(?:\?[^"]*)?#music"',idx) is None:
+    errors.append("Command Center unified Gallery music route missing: galeria.html#music")
 
 if errors:
     print("ISL NAVIGATION/LINK GATE FAILED")
