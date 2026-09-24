@@ -386,3 +386,28 @@ Ask blind human:
 
 PASS:
 human recovers approximate rumbo and one past relationship/action without being told the answer.
+
+
+## FULL-GAME 3×3 · GARDEN-GRANDEUR / WORLD MEMORY CROSS · 2026-09-24
+Promo/world sensor may use panoramic garden-like compositional function:
+high horizon, multiple readable depth planes, tiny humans against vast ecology, strange living systems and second/third-glance discovery.
+
+Calm grandeur guard:
+ONE dominant large form
++ ONE human-scale anchor
++ ONE main eye path
++ 2–3 secondary discoveries
++ negative space
++ readable horizon
++ atmospheric depth.
+
+Nature-memory continuity across film:
+one impossible plant/tree family;
+one airborne small-species family;
+one wind-shaped flower family;
+one root/fungus-machine symbiosis.
+These recur in care/world/hell/paradise/creation with changed function.
+
+Nature does not become quest GPS.
+World traces remain causal and discoverable.
+Late-game building should learn from ecological logic rather than visually conquer it.
