@@ -425,3 +425,170 @@ R0 HUMAN TRACE RAW
 → R7 REPRESENTATIVE ARC FRAGMENT.
 
 ONE ACTIVE RUNG · ONE NEXT · REST PARKED.
+
+
+## PROTAGONIST LIFE-SPAN / MIND-WORLD HYPOTHESIS · 2026-09-24
+Estado:
+STRONG HUMAN DIRECTION · NO AUTO-CANON · AGE/GENDER UNFROZEN WHERE CONFLICT EXISTS
+
+Human direction:
+The protagonist may be designed as a life that grows with the player rather than a static heroic avatar.
+
+Candidate long arc:
+CARED-FOR CHILDHOOD
+→ IMITATION / ABSORPTION
+→ INTELLECTUAL DIFFERENTIATION
+→ OBSESSIVE STUDY / MODEL-MAKING
+→ FREEDOM / EXPERIMENTATION
+→ RELATIONAL FRICTION
+→ DEGRADATION / DOUBT / DISORIENTATION
+→ RESCUE / RETURN
+→ REALITY-FRACTURE WORLDS
+→ LEARNING FROM EXTREMES
+→ RECOGNITION OF FRIENDS/FAMILY
+→ BUILDING A CHOSEN CONSTELLATION
+→ REENCOUNTER
+→ SKY / PARADISE / CONTINUED LEARNING.
+
+### CHILDHOOD
+Candidate opening:
+- unusually cared-for childhood;
+- affectionate caregivers who provide warmth, safety, attention and play;
+- early intelligence expressed through imitation, pattern recognition, curiosity and fast absorption;
+- protagonist imitates others intensely, then gradually differentiates from them;
+- early world is not only trauma-preparation: joy, care and beauty must be real.
+
+Age hypothesis:
+~12 years may be a useful starting sensor because it permits wonder, dependency, intelligence, imitation and the beginning of self-authorship.
+NOT LOCKED.
+Existing protagonist gender/visual direction remains a separate candidate until reconciled by character CQC/human review.
+
+### MIND / THEORY-OF-EVERYTHING LANE
+The protagonist may:
+- obsessively study mind, nature, physics, history, religion, politics, mathematics, language and systems;
+- create notebooks, equations, diagrams, private cosmologies and provisional “theories of everything”;
+- destroy earlier models and rebuild them;
+- mistake models for reality, then learn where they fail;
+- use knowledge as play, refuge, weapon, social bridge and source of error.
+
+Game-function:
+LEARN
+→ MODEL
+→ PREDICT
+→ ACT
+→ CONTRADICTION
+→ MODEL BREAKS
+→ REBUILD
+→ WORLD RE-READING.
+
+No theory becomes ultimate truth by authorial decree.
+The strongest models should eventually collide with evidence, people and consequences.
+
+### APPARENT MAGIC / MIND MECHANIC
+Candidate fiction:
+The protagonist may appear to manipulate reality “magically”, while the game leaves open multiple in-world readings:
+- extreme pattern recognition;
+- learned systems mastery;
+- altered perception;
+- symbolic/subjective world representation;
+- actual impossible physics of ISL;
+- mixtures of the above.
+
+Guard:
+Never present a real-world mental-health episode as proof of supernatural power.
+In fiction, ambiguity is allowed; real-world claims remain grounded.
+The mechanic should earn its interpretation through game rules and consequence.
+
+Possible play grammar:
+OBSERVE → FORM HYPOTHESIS → FOCUS / REFRAME → WORLD RESPONSE → COST / ERROR → REVISION.
+Power fantasy must be balanced by uncertainty and consequences.
+
+### REALITY FRACTURE / PARADISE-HELL CONTRADICTION
+Extreme worlds may represent or externalize:
+- heaven / paradise;
+- hell / repetition / confinement;
+- beauty beyond comprehension;
+- moral absolutism;
+- moral emptiness;
+- radical freedom;
+- total control;
+- memory;
+- loss;
+- reunion.
+
+Rule:
+No world is “the correct religion” or the final metaphysical answer.
+Each world exposes one extreme, one contradiction and one human consequence.
+Return to ordinary relationships remains as important as cosmic revelation.
+
+### RELIGION / CULTURE LEARNING LANE
+The protagonist may learn from multiple religious and philosophical traditions, including the Qur'an/Islamic thought, Christianity, Judaism, Buddhist traditions, Hindu traditions, African traditions, secular philosophy and local/folk cosmologies when relevant.
+
+Method:
+SOURCE
+→ HISTORICAL/RELIGIOUS CONTEXT
+→ HUMAN FUNCTION
+→ CONTRADICTION / INTERNAL DIVERSITY
+→ ISL MUTATION
+→ HUMAN CONSEQUENCE
+→ DISTANCE FROM SOURCE.
+
+Guard:
+- do not reduce a religion to exotic visuals;
+- do not present one community as a monolith;
+- distinguish scripture, interpretation, history and lived practice;
+- use primary/scholarly sources when a factual claim matters;
+- preserve dignity and avoid using sacred material as decorative shock.
+
+### FRIENDSHIP / CROSS-CULTURAL ABSORPTION
+Candidate human direction:
+The protagonist may be deeply changed by friends encountered across social and cultural worlds, including people connected to Sierra Leone, China, Chile and other places.
+
+Function:
+not “collecting cultures”, but learning specific people.
+
+Rule:
+PERSON FIRST → RELATIONSHIP → CONCRETE HABIT/STORY/KNOWLEDGE → MUTUAL CHANGE → WORLD ECHO.
+
+Avoid tokenism:
+- no nationality-as-personality;
+- no friend exists only to teach a cultural fact;
+- friendship must include humour, disagreement, ordinary life, reciprocity and independent agency.
+
+### STREET / RESCUE REVERSAL
+The protagonist may later encounter people living at the edge of social systems and, after having once needed rescue, become capable of helping others.
+Do not turn this into saviour fantasy.
+Prefer:
+RECIPROCITY / COMPANIONSHIP / PRACTICAL HELP / MUTUAL RECOGNITION.
+A rescued person may later rescue the protagonist in another domain.
+
+### LIFE-AS-DIALECTIC
+The protagonist is allowed to be:
+brilliant and wrong;
+cared for and later abandoned;
+self-destructive and generative;
+imitative and original;
+skeptical and spiritual;
+aggressive and tender;
+erotic and familial in age-appropriate phases;
+free and dependent;
+cosmic and domestic.
+
+The target is not contradiction for style.
+Contradictions must create:
+CHOICE + CONSEQUENCE + CHANGE + RECOGNITION.
+
+### LIFE-SPAN LADDER
+L0 · CARE / WONDER
+L1 · IMITATE / LEARN
+L2 · DIFFERENTIATE / CREATE
+L3 · OBSESS / MODEL
+L4 · BREAK / DOUBT
+L5 · DESCEND / LOSE ORIENTATION
+L6 · RESCUE / RETURN
+L7 · FRACTURE REALITY / EXTREMES
+L8 · RECOGNIZE OTHERS AGAIN
+L9 · REENCOUNTER / CHOSEN CONSTELLATION
+L10 · SKY / PARADISE / CONTINUED LEARNING
+
+This ladder is narrative evidence structure, not mandatory chapter count.
