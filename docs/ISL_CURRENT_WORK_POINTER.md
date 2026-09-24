@@ -2302,3 +2302,19 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Reference-distance test added: if the output can be identified as a direct redo of one source image, FAIL.
 - Remaining unresolved human lock is narrow: exact protagonist identity + exact companion identity.
 - Grid remains NO-GENERATION until those two are deliberately re-locked.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · 3×3 BULLET v0.3 FINAL PREP / CLEAN-ROOM NEXT
+- Added Bosch-function nature grandeur lane: high horizon, broad panoramic depth, multiple readable planes, mythic scale shifts and strange ecology, without copying creatures/symbols/iconography/composition.
+- Calm-grandeur rule prevents overload: one dominant large form + one human anchor + one main eye path + 2–3 secondary discoveries + negative space.
+- Panel 2 is now primary GARDEN-GRANDEUR sensor; panel 7 inverts ecology in hell; panel 8 restores living ecology in paradise/reencounter; panel 9 shows construction learning from ecology rather than conquering it.
+- Added Pratchett-like narrative FUNCTION only: impossible world + recognisable human behaviour + humour under pressure + satire through systems + moral weight without sermon. No prose/joke/character imitation.
+- Full 9-cell story now has explicit spine:
+  SETUP/CARE → DESIRE/HORIZON → EXPANSION/THEORY → CONTRADICTION/FALL → REENTRY/SKYSHIP → ORDEAL/WORLD PRESSURE → ORDEAL/HELL → TRANSFORMATION/ASCENT/REENCOUNTER → CREATION/OPEN CONSEQUENCE.
+- Narrative causality guard: every cell must exist BECAUSE OF previous cell and create the next problem; no “cool shot only” cells.
+- NUDO/DESENLACE now explicit: 1–3 setup; 4–7 knot; 8–9 resolution/open future.
+- Prior lighting/shadow authority preserved: REF B remains primary light authority; structural blacks, shaped midtones, controlled highlights, hell darkest compression, paradise largest release, creation retains dark anchors.
+- Final bullet weights v0.3: 30 human continuity/causal story · 22 dark-whimsical black/outsider tenderness · 18 garden grandeur/ecology · 15 sky/impossible scale/cinematic light · 15 punk DIY/absurd humour/non-normative mutation.
+- Clean-room next-chat rule: do not re-theorize; recover this CURRENT section + exact chosen protagonist/companion refs → final preflight → FIRE ONE GRID → inspect → KEEP/MUTATE/PARK/KILL.
+- No checkpoint promotion required; v0.94 remains current.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
