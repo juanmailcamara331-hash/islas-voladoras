@@ -2236,3 +2236,14 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Anti-reference locked: generic polished fantasy-adventure collage / clean steampunk / perfect heroic cast / generic cute mascot / same golden-hour mood / disconnected spectacle panels.
 - Grid generation remains blocked until protagonist + companion visual authority is recovered/re-locked, then 9 beats + 8 bridges pass final preflight.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+# ACTIVE EXECUTION NOTE · 2026-09-24 · 3×3 PRE-FIRE FLOW COMPLETE
+- Library/dossier recovery inspected multiple visual candidates.
+- Recent fox-heavy companion candidates are confirmed unsuitable under existing authority and remain SUPERSEDED; they are not promoted by availability.
+- No exact approved companion binary or exact protagonist visual authority was proven from inspected Library material.
+- Therefore character-source guard remains intact: RECOVER/RELOCK exact refs before grid generation.
+- Everything else is now pre-fire ready: 9 beats, 8 explicit transition bridges, screen-direction contract, recurring-object placement, companion/friend presence rhythm and preflight v0.1 are stored in Cinematic Aesthetic Synthesizer.
+- Earlier accidental 3×3 generation is explicitly treated as PROCESS ERROR / NON-AUTHORITATIVE SENSOR; it cannot become baseline by recency.
+- Only unresolved pre-fire inputs: protagonist exact visual reference + companion exact approved reference (or explicit human re-lock of replacements).
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
