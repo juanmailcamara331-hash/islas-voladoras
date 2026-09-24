@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-24 · HYBRID 2.5D↔3D TRANSITION CONTRACT
+- New dedicated readiness contract: docs/ISL_HYBRID_2_5D_3D_TRANSITION_CONTRACT_CURRENT.md.
+- Purpose: rehearse representation/mode boundaries such as 3D exploration → 2.5D combat → 3D return without state duplication or manual glue.
+- Core invariant: SAME WORLD · SAME STATE · DIFFERENT PRESENTATION.
+- First cheap hypothesis: remain physically 3D and constrain camera/movement/input; test separate combat instance or Paper2D pipeline only if evidence demands it.
+- Mapping schema now includes mode_transition entity profile.
+- Contract covers state ownership, spatial mapping, camera/input/audio/save/streaming/perf, failure injection, ablations, U0–U8 integration, human repeated-use tests and discipline-specific night work packets.
+- External developer/creator review should receive compact evidence pack, not the whole methodology.
+- Unreal 5.8 Gameplay Cameras is experimental; no production lock before engine freeze and evidence.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR unchanged.
+- This accumulation now approaches a structural checkpoint threshold; checkpoint/new chat is appropriate before implementing the first U0/U1 rehearsal.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · UNREAL FAILURE-SIMULATION METHOD
 - Added cross-domain adversarial method: docs/ISL_UNREAL_FAILURE_SIMULATION_AND_HISTORICAL_LESSONS_CURRENT.md.
 - Added deterministic helper: scripts/isl-unreal-risk-sim.py for bounded U0–U8 failure scenario decks.
