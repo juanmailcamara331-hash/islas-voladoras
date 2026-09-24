@@ -49,6 +49,37 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 .thumb .drivePoster{width:100%;height:100%;object-fit:cover}
 @media(max-width:640px){#galleryLbMedia{height:min(79dvh,760px)}#galleryLbMedia model-viewer{height:72dvh}.galleryViewerTools{left:8px;top:max(8px,env(safe-area-inset-top))}}
 </style>
+<style id="isl-cinematic-journey-v095">
+.journeyHero{position:relative;overflow:hidden;border:1px solid #4a5f66;border-radius:22px;background:
+ radial-gradient(circle at 16% 18%,rgba(135,239,255,.14),transparent 24%),
+ radial-gradient(circle at 82% 72%,rgba(255,195,110,.12),transparent 26%),
+ linear-gradient(150deg,#102630,#08131a);padding:clamp(18px,4vw,38px);margin-bottom:12px}
+.journeyHero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:
+ radial-gradient(circle at 14% 42%,#fff 0 1px,transparent 1.6px),
+ radial-gradient(circle at 43% 22%,#fff 0 1px,transparent 1.5px),
+ radial-gradient(circle at 71% 38%,#fff 0 1px,transparent 1.5px),
+ radial-gradient(circle at 90% 18%,#fff 0 1px,transparent 1.6px)}
+.journeyHero h2{font-size:clamp(30px,5vw,58px);line-height:.95;margin:5px 0 8px;letter-spacing:-.04em}
+.journeyHero p{max-width:820px;color:#c6d6d9;line-height:1.55;margin:0}
+.journeyBadges{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.journeyRoute{position:relative;display:grid;grid-template-columns:repeat(9,minmax(155px,1fr));gap:10px;overflow-x:auto;padding:18px 4px 12px;scroll-snap-type:x proximity}
+.journeyRoute:before{content:"";position:absolute;left:7%;right:7%;top:54px;height:2px;background:linear-gradient(90deg,#365661,#7ea2a7,#8b6840);opacity:.75}
+.journeyNode{position:relative;z-index:1;scroll-snap-align:center;border:1px solid #34525d;border-radius:18px;background:linear-gradient(180deg,#10212a,#09151c);padding:12px;min-height:210px;box-shadow:0 14px 38px rgba(0,0,0,.22)}
+.journeyNode:before{content:"";display:block;width:19px;height:19px;border-radius:50%;margin:24px auto 16px;background:#8defff;border:4px solid #0a161d;box-shadow:0 0 0 1px #54717b}
+.journeyNode.memoryStrong{border-color:#9f565e;background:linear-gradient(180deg,#2b1519,#0c151b)}
+.journeyNode.memoryStrong:before{background:#ff9aa5}
+.journeyNode.memoryEmerging{border-color:#927241;background:linear-gradient(180deg,#251f15,#0c161b)}
+.journeyNode.memoryEmerging:before{background:#ffc36e}
+.journeyNode .jn{font-size:9px;letter-spacing:.14em;color:#8defff;font-weight:950}
+.journeyNode h3{font-size:16px;line-height:1.08;margin:5px 0 8px}
+.journeyNode p{font-size:10px;color:#a8bbc0;line-height:1.45;margin:0}
+.journeyNode .memory{display:inline-block;margin-top:10px;border:1px solid #4a626b;border-radius:999px;padding:4px 6px;font-size:7px;font-weight:900;letter-spacing:.08em}
+.journeyBridge{border:1px dashed #775e3d;border-radius:16px;padding:11px 12px;margin:4px 0 12px;background:#17150f;color:#e6d4ad;font-size:10px;line-height:1.5}
+.journeyMilestones{display:flex;gap:7px;overflow-x:auto;padding:4px 0 10px}
+.journeyMilestones span{white-space:nowrap;border:1px solid #304d57;background:#09161d;border-radius:999px;padding:7px 9px;font-size:8px;color:#b9cbd0}
+.journeyLock{border:1px solid #6e5432;background:#20190f;border-radius:14px;padding:12px;margin-top:8px;color:#f0d8a5;font-size:10px;line-height:1.5}
+@media(max-width:640px){.journeyRoute{grid-template-columns:repeat(9,74vw);padding-top:10px}.journeyRoute:before{top:46px}.journeyNode{min-height:190px}.journeyNode:before{margin-top:18px}}
+</style>
 </head>
 <body>
 <main class="wrap">
@@ -68,6 +99,7 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 <button class="tab" data-tab="lab">EXTERNAL LAB</button>
 <button class="tab" data-tab="three">3D</button>
 <button class="tab" data-tab="video">VÍDEO</button>
+<button class="tab" data-tab="journey">VIAJE 01→09</button>
 <button class="tab" data-tab="music">MÚSICA</button>
 <button class="tab" data-tab="docs">DOCS / BRIEFS</button>
 <button class="tab" data-tab="phrases">FRASES</button>
@@ -86,6 +118,9 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 <section id="lab" class="section"><div class="grid" id="labGrid"></div></section>
 <section id="three" class="section"><div class="grid" id="threeGrid"></div></section>
 <section id="video" class="section"><div class="grid" id="videoGrid"></div></section>
+<section id="journey" class="section">
+  <div id="journeyMount"><div class="card empty">Cargando viaje cinematográfico…</div></div>
+</section>
 <section id="music" class="section"><div class="grid" id="musicGrid"></div></section>
 <section id="docs" class="section"><div class="grid" id="docsGrid"></div></section>
 <section id="phrases" class="section"><div class="grid" id="phrasesGrid"></div></section>
@@ -134,6 +169,19 @@ function phraseCard(p){
 function docsCard(d){
  return '<article class="card" data-url="'+esc(d.url||'')+'"><div class="thumb">▤</div><div class="pad"><h2>'+esc(d.title)+'</h2><span class="status warn">'+esc(human(d.kind||'DOC'))+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(d.status||'CURRENT'))+'</div></details></div></article>';
 }
+function journeyView(j){
+ const nodes=(j.nodes||[]).map(n=>{
+   const cls=n.memory==='STRONG'?'memoryStrong':(String(n.memory||'').includes('EMERGING')?'memoryEmerging':'');
+   const mem=n.memory&&n.memory!=='—'?'<span class="memory">'+esc(n.memory)+'</span>':'';
+   return '<article class="journeyNode '+cls+'"><div class="jn">SHOT '+esc(n.n)+'</div><h3>'+esc(n.beat)+'</h3><p>'+esc(n.sentence)+'</p>'+mem+'</article>';
+ }).join('');
+ const ms=(j.milestones||[]).map(x=>'<span>'+esc(x)+'</span>').join('');
+ return '<div class="journeyHero"><div class="k">CINEMATIC JOURNEY · HITO PRESERVADO</div><h2>'+esc(j.title)+'</h2><p>El vídeo está terminado. Esta vista documenta su recorrido sin tocar el master ni convertir recuerdo humano en autoridad creativa.</p><div class="journeyBadges"><span class="status good">'+esc(j.state)+'</span><span class="status warn">'+esc(j.rights)+'</span><span class="status bad">'+esc(j.public_release)+'</span></div></div>'
+ +'<div class="journeyRoute">'+nodes+'</div>'
+ +'<div class="journeyBridge"><b>07 ↔ 08 · MEMORY PAIR THROUGH CONTRASTIVE PAYOFF</b><br>Valle / gesto humano / misterio → umbral sostenido → vuelo / alegría / expansión. Sensor humano, no fórmula y no CANON.</div>'
+ +'<div class="k" style="margin:8px 2px 7px">RECORRIDO DE PRODUCCIÓN</div><div class="journeyMilestones">'+ms+'</div>'
+ +'<div class="journeyLock"><b>MASTER PRIVADO PROTEGIDO.</b> Esta Gallery no expone el binario ni enlaces de descarga. CLEAN MASTER: '+esc(j.clean_master)+' · PUBLIC RELEASE: '+esc(j.public_release)+' · '+esc(j.master_access)+'</div>';
+}
 function musicCard(t){
  const src=t.runtime_src||'',drive=t.drive_id||'',wired=!!(src||drive);
  const player=src?'<div class="player"><audio controls preload="none" src="'+esc(src)+'"></audio></div>':'';
@@ -147,8 +195,9 @@ Promise.all([
  fetch('data/isl-music-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-asset-health-current.json',{cache:'no-store'}).then(r=>r.json()),
  fetch('data/isl-docs-library-current.json',{cache:'no-store'}).then(r=>r.json()),
- fetch('data/isl-phrase-bank-current.json',{cache:'no-store'}).then(r=>r.json())
-]).then(([lib,prism,lab,music,health,docsLib,phraseBank])=>{
+ fetch('data/isl-phrase-bank-current.json',{cache:'no-store'}).then(r=>r.json()),
+ fetch('data/isl-cinematic-journey-current.json',{cache:'no-store'}).then(r=>r.json())
+]).then(([lib,prism,lab,music,health,docsLib,phraseBank,journey])=>{
  const archive=lib.assets||[], prisms=prism.worlds||[], ext=lab.assets||[], tracks=music.tracks||[], hsAll=health.assets||health.entities||health.items||[], hs=hsAll.filter(x=>x.asset_id!=="ISL_MUSIC_GALLERY");
  const videos=[...archive.filter(x=>x.type==='video'),...ext.filter(x=>x.type==='video')], docs=docsLib.docs||[], phrases=phraseBank.phrases||[];
  countArchive.textContent=archive.length;countPrism.textContent=prisms.length;countLab.textContent=ext.length;count3d.textContent=hs.length;countMusic.textContent=tracks.length;
@@ -160,6 +209,7 @@ Promise.all([
  musicGrid.innerHTML=tracks.map(musicCard).join('')||'<div class="card empty">Sin música registrada.</div>';
  docsGrid.innerHTML=docs.map(docsCard).join('')||'<div class="card empty">Sin documentos registrados.</div>';
  phrasesGrid.innerHTML=phrases.map(phraseCard).join('')||'<div class="card empty">Sin frases registradas.</div>';
+ journeyMount.innerHTML=journeyView(journey);
  overviewPrism.innerHTML=prisms.slice(0,4).map(prismCard).join('');
  overviewLab.innerHTML=ext.slice(0,6).map(labCard).join('');
  overview3d.innerHTML=hs.slice(0,4).map(healthCard).join('');
@@ -168,7 +218,7 @@ Promise.all([
  setTab(location.hash.slice(1)||'overview');
 }).catch(err=>{
  console.error(err);
- ['overviewPrism','overviewLab','overview3d','overviewMusic','overviewArchive','archiveGrid','prismGrid','labGrid','threeGrid','videoGrid','musicGrid','docsGrid','phrasesGrid'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML='<div class="card empty">No se pudo cargar este registro.</div>'});
+ ['overviewPrism','overviewLab','overview3d','overviewMusic','overviewArchive','archiveGrid','prismGrid','labGrid','threeGrid','videoGrid','musicGrid','docsGrid','phrasesGrid','journeyMount'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML='<div class="card empty">No se pudo cargar este registro.</div>'});
  setTab(location.hash.slice(1)||'overview');
 });
 </script>
