@@ -635,3 +635,27 @@ L0 CARE/WONDER
 → L10 SKY/PARADISE/CONTINUED LEARNING.
 
 Do not treat these as mandatory chapters; they are evidence/routing rungs.
+
+
+## 23. LIVING BREADCRUMB / DISTRIBUTED MEMORY TRIGGER · 2026-09-24
+Trigger:
+when a friend, object, natural phenomenon, location change, Huella or memory cue is proposed as guidance/recall.
+
+Route:
+GUIDED WORLD + BRÚJULA/HUELLAS + HUMAN TRACE when personal.
+
+Check:
+- cue has a causal source in prior world/relationship state;
+- it reminds/interprets rather than commands;
+- nature behaves as world/nature, not glowing quest UI;
+- friend retains independent agency;
+- object is not empty collectible;
+- cue may be ambiguous but must be learnable;
+- accessibility fallback exists if needed;
+- no permanent mission marker is added unless world-first ladder fails.
+
+Preferred cheap test:
+one micro-cell / one friend cue / one nature cue / one object cue / no marker.
+
+No new bot.
+No auto-CANON.
