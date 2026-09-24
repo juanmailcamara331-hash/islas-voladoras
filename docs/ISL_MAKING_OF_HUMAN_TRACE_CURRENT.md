@@ -592,3 +592,77 @@ L9 · REENCOUNTER / CHOSEN CONSTELLATION
 L10 · SKY / PARADISE / CONTINUED LEARNING
 
 This ladder is narrative evidence structure, not mandatory chapter count.
+
+
+## LATE-GAME FRIEND CONSTELLATION / SHARED-REALITY HYPOTHESIS · 2026-09-24
+Estado:
+STRONG LATE-GAME SENSOR · HUMAN TRACE DERIVATIVE · NO AUTO-CANON
+
+Human direction:
+Late in the protagonist's life arc, friends may reappear inside altered / fractured reality as symbolic, exaggerated or impossible versions of themselves.
+
+Possible forms:
+- talismans / carried tokens;
+- masks / figures / effigies;
+- constellations;
+- avatars;
+- impossible doubles;
+- giant/small distorted forms;
+- voices distributed through the environment;
+- creatures carrying one recognizable relational trait;
+- temporary party manifestations;
+- shared dream / prism-world versions.
+
+Rule:
+FRIEND SOURCE
+→ LIVED RELATIONSHIP
+→ MEMORY DISTORTION
+→ SYMBOLIC MUTATION
+→ INTERACTION / CONSEQUENCE
+→ RETURN TO REAL PERSON / WORLD.
+
+The altered version must reveal something about the relationship, not replace the person.
+
+### COHERENCE GUARD
+Do not use “delirium” merely as spectacle.
+The sequence should answer:
+- why this friend appears now;
+- what unresolved relation or memory is being re-read;
+- what changes after the encounter;
+- whether the player can distinguish symbolic layer from ordinary-world continuity when the game needs clarity.
+
+Possible ambiguity:
+The game may leave open whether the manifestations are:
+- subjective perception;
+- impossible ISL physics;
+- memory made spatial;
+- dream / altered state;
+- collective symbolic experience;
+- some mixture.
+
+Do not present real-world hallucination/delusion as evidence of supernatural power.
+
+### SOCIAL CONSTELLATION ENDGAME
+Candidate function:
+the protagonist's “theory of everything” ultimately fails if it excludes people.
+
+Late-game synthesis:
+COSMOS / EQUATIONS / MODELS
++ FRIENDS / FAMILY / LOSS
++ CONTRADICTION / MEMORY
+→ CHOSEN CONSTELLATION.
+
+Friends are not collectible buffs.
+Each should retain agency and may refuse, contradict, disappear, return or remain unresolved.
+
+### LADDER
+F0 one friend-memory symbol
+→ F1 one symbolic mutation
+→ F2 one interaction with consequence
+→ F3 two friends in contradictory roles
+→ F4 social constellation scene
+→ F5 reality-fracture encounter
+→ F6 return to ordinary-world relationship
+→ F7 late-game shared-reality sequence.
+
+Higher rung cannot replace an unearned relationship beat.
