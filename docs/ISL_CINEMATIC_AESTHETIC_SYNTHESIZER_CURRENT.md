@@ -1932,3 +1932,242 @@ FAIL.
 
 Correct result:
 all four functions are metabolized into one original ISL frame language.
+
+
+## FULL-GAME 3×3 BULLET v0.3 · GARDEN / NARRATIVE SPINE / CLEAN-ROOM FINAL PREP · 2026-09-24
+Estado: PREPARED · CLEAN-ROOM FIRE NEXT · NO GENERATION IN THIS PASS
+
+This pass closes the missing environmental and narrative composition layers for the full-game 3×3 promo sensor.
+
+### GARDEN / NATURE GRANDEUR LANE
+Functional reference:
+large panoramic nature-composition inspired by the compositional logic of Bosch's Garden of Earthly Delights, by FUNCTION ONLY.
+
+Use:
+- high horizon / broad world visibility;
+- multiple readable depth planes;
+- tiny human figures against enormous natural systems;
+- strange plants / animals / structures coexisting in one ecology;
+- scale shifts that feel mythic;
+- visual discovery at first, second and third glance;
+- nature that appears to have its own social / biological logic.
+
+Do NOT use:
+- copied creatures;
+- copied symbolic scenes;
+- copied sexual/religious iconography;
+- copied architecture;
+- copied triptych composition literally.
+
+ISL mutation:
+GARDEN GRANDEUR
++ FLOATING ECOLOGY
++ WIND
++ LIVING MACHINES
++ HUMAN TRACE
++ MEMORY CAUSALITY
++ DARK READABLE MASSES
++ PUNK REPAIR CULTURE.
+
+### CALM GRANDEUR RULE
+The world can be bizarre without visually shouting everywhere.
+
+Every wide environmental frame should preserve:
+- one dominant large form;
+- one clear human-scale anchor;
+- one main path for the eye;
+- two or three secondary discoveries;
+- quiet negative-space zones;
+- readable horizon;
+- atmospheric depth.
+
+The viewer should feel:
+“this world is impossibly rich”
+not:
+“I do not know where to look.”
+
+### NATURE CELL INTEGRATION
+Panel 2:
+FIRST HORIZON becomes the main GARDEN-GRANDEUR SENSOR.
+Large calm ecological panorama.
+Strange flora/fauna/living structures appear as part of one ecosystem.
+
+Panel 7:
+HELL may invert nature:
+roots grow inward;
+plants consume architecture;
+weather behaves as memory;
+biological forms repeat errors.
+
+Panel 8:
+PARADISE / REENCOUNTER restores living ecology in a calmer register.
+Nature participates in recognition rather than spectacle.
+
+Panel 9:
+CREATION shows human construction learning from ecological logic rather than conquering it.
+
+### NATURE CONTINUITY MOTIFS
+Choose and recur:
+- one impossible tree/plant family;
+- one flock / small airborne species;
+- one wind-shaped flowering species;
+- one root/fungus-machine symbiosis.
+
+These must recur altered by context:
+CARE / WORLD / HELL / PARADISE / CREATION.
+
+### PRATCHETT-LIKE NARRATIVE FUNCTION · ORIGINAL ISL
+Functional reference only:
+- absurd world, emotionally credible people;
+- humour emerges from how ordinary people respond to impossible situations;
+- satire comes from systems / institutions / habits, not speeches;
+- darkness can contain humour without losing moral weight;
+- characters are ridiculous, contradictory, decent, selfish, brave, cowardly and recognisably human;
+- no fantasy-archaic grandiosity unless punctured by ordinary practical life.
+
+Do NOT imitate prose voice, characters, jokes, Discworld structures or named institutions.
+
+### STORY SPINE
+The nine images must form:
+SETUP
+→ DESIRE
+→ EXPANSION
+→ CONTRADICTION
+→ FALL
+→ REENTRY
+→ ORDEAL
+→ TRANSFORMATION / REENCOUNTER
+→ CREATION WITH OPEN CONSEQUENCE.
+
+Mapped:
+01 SETUP / CARE:
+Who is this person before the world breaks open?
+
+02 DESIRE / HORIZON:
+What do they want to know / reach?
+
+03 EXPANSION / MODEL:
+They try to understand everything.
+
+04 CONTRADICTION / FALL:
+The model of life fails against life.
+
+05 REENTRY / SKYSHIP:
+Other people / craft / world allow movement again.
+
+06 ORDEAL I / WORLD PRESSURE:
+Action proves that knowledge without context is insufficient.
+
+07 ORDEAL II / HELL:
+They confront a force that offers certainty/control/power at the cost of relation.
+
+08 TRANSFORMATION / ASCENT / REENCOUNTER:
+They rise toward paradise(s), but what saves them is not pure transcendence: people, memory, nature, humour, contradiction and recognition return.
+
+09 CREATION / OPEN CONSEQUENCE:
+They can now build worlds — but those worlds remain inhabited, contested, unfinished and able to surprise their creator.
+
+### NARRATIVE CAUSALITY CONTRACT
+Each cell must answer:
+BECAUSE OF THE PREVIOUS CELL...
+THEREFORE THIS CELL HAPPENS...
+WHICH CREATES THE NEXT PROBLEM.
+
+No cell may exist only because it looks cool.
+
+### PRATCHETT FUNCTIONAL HUMOUR PLACEMENT
+Humour should arrive at pressure points:
+- companion misreads a solemn moment;
+- crew solves grand metaphysical problem with embarrassingly practical workaround;
+- infernal bureaucracy / ritual has mundane friction;
+- cosmic object has household use;
+- paradise contains ordinary inconvenience;
+- creator-protagonist discovers community has repurposed their grand design.
+
+Humour must deepen humanity or world logic.
+No meme interruption.
+
+### NUDO / DESENLACE
+ACT I · 1–3:
+care → horizon → theory.
+
+NUDO · 4–7:
+fall → return to movement → pressure → hell confrontation.
+
+DESENLACE · 8–9:
+ascent/reencounter → creation/open future.
+
+This is a film spine, not a mandatory game chapter structure.
+
+### DARKNESS / BLACKS / CINEMA PRESERVATION
+Keep prior authority unchanged:
+- black is structural material;
+- deep readable near-blacks;
+- shaped midtones;
+- controlled highlights;
+- REF B lighting remains primary light authority;
+- dramatic volumetric sky;
+- warm highlights against dark material;
+- no global grey fog;
+- no same golden-hour treatment in all cells;
+- hell = darkest black compression;
+- paradise = largest luminous release;
+- creation retains dark anchors so paradise does not erase the journey.
+
+### FINAL 3×3 BULLET WEIGHTS v0.3
+30% HUMAN CONTINUITY / CAUSAL STORY
+22% DARK-WHIMSICAL BLACK / OUTSIDER TENDERNESS
+18% WORLD / GARDEN GRANDEUR / ECOLOGY
+15% SKY / IMPOSSIBLE SCALE / CINEMATIC LIGHT
+15% PUNK DIY / ABSURD HUMOUR / NON-NORMATIVE MUTATION
+
+Weights guide attention only.
+
+### FINAL ANTI-REFERENCE STACK
+FAIL if output becomes:
+- generic fantasy concept sheet;
+- theme-park gothic;
+- standard steampunk;
+- YA hero poster;
+- cute mascot commercial;
+- chaotic Bosch-like density with no eye path;
+- Discworld imitation;
+- Tim-Burton cosplay;
+- Rick-like surface copy;
+- generic hell;
+- generic heaven;
+- sterile utopia;
+- disconnected moodboard.
+
+### FINAL PRE-FIRE CHECKLIST
+RECOVER = PASS except character exact visual binaries.
+PREFLIGHT = PASS FOR CLEAN-ROOM PREP.
+9 BEATS = PASS.
+8 BRIDGES = PASS.
+NARRATIVE CAUSALITY = PASS.
+NUDO/DESENLACE = PASS.
+LIGHT AUTHORITY = PASS.
+BLACKS / SHADOWS = PASS.
+GARDEN-GRANDEUR = PASS.
+NON-NORMATIVE GUARD = PASS.
+REFERENCE DISTANCE = PASS.
+GRID EXTRACTION = PASS.
+CAPCUT HANDOFF = PASS.
+NO-MUSIC FIRST MASTER = PASS.
+HUMAN READ = PREPARED.
+
+BLOCKERS:
+1. explicit protagonist visual re-lock;
+2. explicit companion visual re-lock.
+
+### CLEAN-ROOM RULE
+Next chat should not re-theorize this bullet.
+It should:
+RECOVER this CURRENT section
+→ recover exact chosen character refs
+→ run final preflight
+→ FIRE ONE GRID
+→ inspect
+→ KEEP/MUTATE/PARK/KILL.
+
+No new narrative additions before first controlled sensor unless they repair a blocker.
