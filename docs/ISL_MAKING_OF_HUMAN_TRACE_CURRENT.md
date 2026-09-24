@@ -320,3 +320,108 @@ RAW DRAWING → RAW PROCESS VIDEO → B01 CREATURE READ → B02 GAMEPLAY CONTEXT
 
 Do not hide the human source when presenting this lineage internally.
 No automatic publication. Credit/privacy rules remain in force.
+
+
+## HUMAN CORE / REENCOUNTER AXIS · 2026-09-24
+Estado:
+STRONG HUMAN DIRECTION · PRIVATE SOURCE · NO AUTO-CANON
+
+Human-origin thesis candidate:
+“LA VIDA ES EL ARTE DEL REENCUENTRO.”
+
+Function:
+Not a slogan pasted onto ISL, but a candidate human spine for how the protagonist learns to see, lose, remember, recognize and reunite with people and with parts of herself.
+
+Candidate protagonist movement:
+- begins by pursuing freedom, curiosity, intensity, knowledge and creation rather than explicit self-care;
+- follows a contradictory path in which choices made for discovery, pleasure, study, rebellion or experimentation may sometimes support her and sometimes cost her;
+- learns through consequences rather than a moral-health meter;
+- studies the world obsessively but playfully: history, science, substances/culture, politics, mythology, systems, mathematics, equations, nature, art and strange local knowledge;
+- creates her own models, notebooks, maps, formulas and miniature universes;
+- gradually learns to recognize friends as changing people rather than fixed roles;
+- must sometimes change how she relates to them, let them change her, separate, forgive, return or accept distance;
+- gradually learns to recognize family again as people rather than inherited positions;
+- reunion is not restoration of the past: RETURN must include MUTATION.
+
+Important contradiction:
+SELF-NEGLECT / IMPULSE
+↔
+CURIOSITY / LEARNING / CONNECTION
+↔
+UNINTENDED CARE / CONSEQUENCE.
+
+No binary “healthy vs unhealthy” morality.
+No health stat as the philosophical answer.
+The world can show benefit, risk, dependence, relief, curiosity, excess, harm and recovery without turning one outcome into universal doctrine.
+
+### SUBSTANCES / ESCOHOTADO FUNCTION
+Antonio Escohotado may inform the lane by FUNCTION:
+curiosity, anti-dogma, studying prohibition/power, intellectual independence, responsibility for choices, and willingness to examine taboo subjects rigorously.
+
+Guard:
+- do not imitate his prose/voice;
+- do not turn him into an unquestionable guru;
+- do not present real-world substance use as medical advice, optimization advice or a guaranteed path to health/creativity;
+- no dosing/instructional content;
+- fictional use must preserve consequence, uncertainty, context and agency;
+- when a real-world factual claim matters, use evidence appropriate to the claim.
+
+### FRIENDS / FAMILY AS LIVING ENTITIES
+Relationship design should support:
+RECOGNIZE → MISREAD → FRICTION → DISTANCE/CHANGE → NEW INFORMATION → RECOGNIZE AGAIN → REUNION OR ACCEPTED SEPARATION.
+
+Friends/family do not exist only as rewards or exposition.
+They may:
+- disagree;
+- leave;
+- return changed;
+- remember differently;
+- become stronger or stranger without the protagonist;
+- refuse reconciliation;
+- create their own paths.
+
+The protagonist's growth includes learning that love does not mean freezing another person in memory.
+
+### MEMORIAL / HONOR LANE
+Human traces connected to father, deceased friend, uncle and other close people may become:
+- phrase;
+- object/relic;
+- habit;
+- room/place;
+- constellation/mark;
+- sound cue;
+- microquest;
+- NPC mutation;
+- environmental ritual;
+- hidden encounter;
+- making-of dedication.
+
+Rules:
+- dignity before recognizability;
+- private by default;
+- provenance preserved;
+- identifiable publication only with appropriate family/person consent/context where relevant;
+- no sentimental exploitation;
+- no obligation to reproduce literal likeness;
+- the strongest tribute may be a function, gesture, rhythm, joke, craft, lesson or recurring act rather than a portrait.
+
+### REUNION TEST
+A reunion beat succeeds when:
+1. the player remembers the earlier relationship without a lore dump;
+2. at least one person has genuinely changed;
+3. the return alters future play/world state;
+4. the scene contains both affection and friction;
+5. it avoids guaranteed forgiveness;
+6. it creates a new relationship rather than simply restoring the old one.
+
+### LADDER
+R0 HUMAN TRACE RAW
+→ R1 ONE MEMORY / ONE BEAT
+→ R2 ONE RELATIONSHIP CHANGE
+→ R3 CONSEQUENCE / DISTANCE
+→ R4 RECOGNITION AGAIN
+→ R5 REUNION / ACCEPTED NON-REUNION
+→ R6 WORLD ECHO
+→ R7 REPRESENTATIVE ARC FRAGMENT.
+
+ONE ACTIVE RUNG · ONE NEXT · REST PARKED.
