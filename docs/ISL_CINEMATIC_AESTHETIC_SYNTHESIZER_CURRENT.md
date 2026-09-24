@@ -944,3 +944,263 @@ Grid FAIL if:
 - a transition depends on a visual element that is outside the cropped cell;
 - extraction reduces resolution below useful video-reference quality;
 - the contact sheet is visually impressive but operationally unusable for nine-shot video generation.
+
+
+## FULL-GAME 3×3 · SHOT DNA LOCK v0.1 · 2026-09-24
+Estado: 12/14 LOCKABLE · 2 VISUAL SOURCE GATES · NO GENERATION YET
+
+Purpose:
+Compact continuity bible for the nine-keyframe ISL film sensor.
+This is a lock of FUNCTIONS / FAMILIES / CONTINUITY RULES, not final CANON character art.
+
+### 01 · PROTAGONIST FACE / SILHOUETTE FAMILY
+STATUS: BLOCKED ON EXACT VISUAL SOURCE RECOVERY.
+Textual authority:
+- young woman direction currently strongest;
+- punk, chaotic, inventive, friendly, dark-playful;
+- intelligent but not polished;
+- slightly dishevelled;
+- capable of deadpan stillness and explosive enthusiasm;
+- sky-world practicality + punk DIY + worn travel gear + strange tenderness + humor + shadow.
+Guard:
+do not generate a new face from textual memory and call it authoritative.
+For grid fire: exact recovered approved/source visual or explicit human re-lock required.
+
+### 02 · AGE PROGRESSION
+STATUS: LOCKABLE AS LOGIC, NOT EXACT AGES.
+Use one continuous identity.
+Suggested visual ages for sensor only:
+A · cared-for child / early adolescent;
+B · adolescent explorer;
+C · older adolescent / emerging adult study phase;
+D · young adult crisis;
+E–H · young adult journey / fracture / reencounter;
+I · mature young adult creator.
+Rule:
+age through proportion, posture, wear, hair evolution and accumulated objects; not through facial recasting.
+Exact starting age remains UNFROZEN.
+
+### 03 · COMPANION MOTHER-SHAPE
+STATUS: BLOCKED ON EXACT APPROVED VISUAL SOURCE RECOVERY.
+Textual authority:
+- one primary companion;
+- organic dolphin + fox + bird + dog + cat fusion;
+- not generic fox;
+- compact rounded teddy-bear-like muzzle;
+- strange, tender, goofy, affectionate, slightly unhinged;
+- “tonta punkarra” energy;
+- readable silhouette;
+- aquatic/avian traits must affect function/silhouette, not collage;
+- awkward delayed reactions / unpredictable body language;
+- identity must survive evolution.
+Guard:
+recent premium-fox generations = SUPERSEDED / DO_NOT_USE.
+
+### 04 · PROTECTOR / UNCLE FUNCTION SILHOUETTE
+STATUS: LOCKABLE BY FUNCTION.
+Not a literal portrait by default.
+Visual role:
+- grounded older human presence;
+- practical, warm, imperfect;
+- protective without heroic posing;
+- coat/cloth/working-hands silhouette;
+- visually belongs to same lived world as protagonist;
+- rescue gesture is more important than costume iconography.
+Continuity motif:
+hand / cloak / transport-home action.
+
+### 05 · RECURRING FRIEND SILHOUETTES
+STATUS: LOCKABLE AS 3 FUNCTIONAL FAMILIES, PERSONAL DETAILS PENDING.
+FRIEND A · closest lateral mirror:
+quick, warm, mischievous, can disagree; compact readable silhouette.
+FRIEND B · cross-cultural world-opener:
+calmer or differently paced silhouette; carries one ordinary personal object, not ethnic shorthand.
+FRIEND C · friction / return:
+more angular or distant silhouette; visually easy to recognize after separation.
+Rules:
+person-first;
+no nationality-as-costume;
+no tokenism;
+all three must look like they have lives outside protagonist.
+
+### 06 · MEMORY OBJECT FAMILY
+STATUS: LOCKABLE.
+Choose 4 recurring anchors:
+A · NOTEBOOK / MAP BOOK:
+equations, routes, theories, annotations; evolves physically across life.
+B · ANCLA / RETURN RELIC:
+antique brass + dark teal family; return / belonging function.
+C · BRÚJULA / HUELLA OBJECT:
+not GPS; dual-reading / trace / past-causality function.
+D · SMALL PERSONAL AMULET / GIFT:
+human-scale, worn, tactile, suitable for handoff between friend/family/memory states.
+Rule:
+objects age, scratch, repair and accumulate meaning.
+No collectible-glow language.
+
+### 07 · SKYSHIP MOTHER-SHAPE
+STATUS: LOCKABLE AS FAMILY SENSOR.
+Function:
+machine + home + social organism + accumulated repair history.
+Cues:
+- inhabited deck;
+- practical rigging;
+- patched lifting surface;
+- greenery/domestic traces;
+- restrained dark metal;
+- visible crew use;
+- asymmetrical repairs;
+- no pristine luxury-fantasy vessel.
+Guard:
+not generic premium steampunk airship.
+Same mother-shape in panels 5/6/9 if present.
+
+### 08 · FLOATING-ISLAND GEOLOGY
+STATUS: LOCKABLE.
+ISL islands should read as:
+- lived landmasses, not decorative rocks;
+- layered erosion / roots / fractured mineral shelves;
+- vegetation interacting with wind;
+- underside tells physical history;
+- routes / settlements respond to topography;
+- scale readable through people/structures/creatures;
+- occasional impossible-physics rule, never random floating debris everywhere.
+Continuity:
+one recognizable geology family across all nine frames.
+
+### 09 · ARCHITECTURE / MATERIAL FAMILY
+STATUS: LOCKABLE.
+Materials:
+dark oxidized metal;
+aged brass accents;
+dark teal patina;
+ivory/stone;
+weathered timber;
+cloth/canvas;
+rope;
+glass/mineral;
+paper;
+hand-painted repairs;
+plant growth.
+Architecture:
+crooked/asymmetric where function and age justify it;
+verticals, towers, stairs, bridges, roofs and suspended elements may carry dark-whimsical silhouette;
+must remain buildable/lived-in rather than theme-park gothic.
+Community-made > palace-perfect.
+
+### 10 · BLACK / SHADOW GRAMMAR
+STATUS: LOCKED FUNCTIONALLY.
+Deep local blacks + shaped midtones + controlled highlights.
+Black = structural mass.
+Use:
+dark cloth, sky void, wet stone, foliage, oxidized cavities, interiors, silhouettes.
+Always preserve:
+face/hand/action readability when emotionally needed.
+No grey-fog wash.
+No crushed-black glamour pass.
+
+### 11 · COLOR SCRIPT
+STATUS: LOCKABLE.
+1 CARE: warm amber / ivory / dark teal seeds.
+2 DISCOVERY: sky blue + green + retained warm accent.
+3 STUDY: warm desk light + cool cyan/indigo outside.
+4 FALL: deep blue-black / wet charcoal + one human amber.
+5 FLIGHT: reopened blue / ivory cloud / brass / teal.
+6 ENCOUNTER: wind-cold field + controlled warm danger accent.
+7 FRACTURE: impossible spectrum emerges from established palette, not rainbow reset.
+8 REENCOUNTER: sunset warmth + surviving darks.
+9 CREATION: dawn / luminous sky + lived dark material anchors.
+Rule:
+every frame carries at least one color from prior frame.
+
+### 12 · WIND / CLOTH / MOTION LANGUAGE
+STATUS: LOCKABLE.
+Wind is a continuity actor.
+Recurring:
+- scarf/ribbon;
+- hanging notes;
+- sail/rigging;
+- hair movement;
+- grass/flowers;
+- ash/paper;
+- banners;
+- creature ears/fins.
+Direction changes only for narrative/physical reason.
+Use wind vector to bridge adjacent shots.
+Avoid random cinematic wind in every frame.
+
+### 13 · NATURE-AS-MEMORY CUES
+STATUS: LOCKABLE.
+Recurring families:
+- bent grass / path return;
+- one persistent flower/plant family;
+- branches/roots shaped by past presence;
+- bird/creature route;
+- weathered ribbon/cloth;
+- repaired tree/structure interface;
+- sky pattern / cloud route.
+Rule:
+cue must have causal world history.
+Never “quest plant glows here”.
+
+### 14 · CAMERA / LENS FAMILY
+STATUS: LOCKABLE.
+Base grammar:
+- human-scale 35–50mm equivalent feeling for intimate beats;
+- wider 24–35mm feeling for world reveals;
+- avoid extreme ultra-wide distortion except one intentional fracture moment;
+- camera usually at or slightly below human eye level for intimacy / wonder;
+- slow lateral / forward movement;
+- foreground occlusion for transitions;
+- horizon continuity;
+- reaction before spectacle where possible.
+Panel 7 may deliberately break grammar, then panel 8 restores it.
+
+### SHOT DNA STATUS
+LOCKABLE NOW:
+02, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14.
+
+BLOCKED:
+01 PROTAGONIST EXACT VISUAL SOURCE.
+03 COMPANION EXACT APPROVED VISUAL SOURCE.
+
+### CREATIVE WEIGHTS · PRELOCK
+Candidate weights for the bullet:
+- 32% HUMAN CONTINUITY / REENCOUNTER
+- 26% DARK-WHIMSICAL BLACK / OUTSIDER TENDERNESS
+- 24% SKY / COSMIC WONDER / IMPOSSIBLE SCALE
+- 18% PUNK DIY / IRREVERENT HUMOUR
+
+These are generation weights, not quality scores.
+
+### ANTI-REFERENCE
+ANTI-REFERENCE:
+generic polished fantasy-adventure concept-art collage with perfect heroic characters, clean steampunk, uniform golden-hour lighting, generic cute mascot and nine disconnected spectacle shots.
+
+If output drifts toward that:
+FAIL / MUTATE.
+
+### GRID FAIL CONDITIONS · FINAL PREP
+FAIL if:
+- same protagonist cannot be tracked without explanation;
+- companion looks like a generic fox/AAA mascot;
+- dark-whimsical influence becomes costume cosplay or copied film surface;
+- all panels use same mood/light;
+- blacks destroy readability;
+- punk becomes decorative spikes/neon;
+- friends become ethnic archetypes;
+- family/rescue becomes melodrama;
+- panel 7 becomes unrelated multiverse wallpaper;
+- panel 9 reads as sterile imperial domination;
+- objects do not recur;
+- nature cues feel like quest markers;
+- cropped cells fail independently;
+- CapCut continuity depends on hiding cuts with effects.
+
+### REMAINING PRE-FIRE GATE
+1. recover / relock protagonist visual source;
+2. recover exact approved companion visual source;
+3. validate 9 beats against this DNA;
+4. validate 8 bridges;
+5. preflight;
+6. FIRE ONE 3×3 SENSOR.
