@@ -183,3 +183,34 @@ Humour, erotic tension, aggression, study, substances, punk irreverence, politic
 The protagonist should not have a “wellness optimization” arc. Her contradictory choices may accidentally produce care, damage, knowledge, connection or all four. Human/device testing should ask what players infer from consequences without telling them the intended lesson.
 
 Memorial traces for father / deceased friend / uncle remain HUMAN TRACE lanes and may enter the sensory simulation only through dignified, provenance-linked, consent-aware mutation. No auto-publication and no forced literal likeness.
+
+
+## LIFE-SPAN SENSORY ARC CANDIDATE · 2026-09-24
+The Gallery/full-game simulation may eventually test a longitudinal protagonist arc rather than presenting only one fixed-age slice.
+
+Candidate sensory progression:
+CARE / CHILDHOOD
+→ CURIOSITY
+→ IMITATION
+→ SELF-MADE KNOWLEDGE
+→ FRIENDSHIP / CULTURAL CROSSING
+→ OBSESSION / THEORY
+→ FRICTION / LOSS
+→ DARK DESCENT
+→ RESCUE
+→ REALITY FRACTURE
+→ EXTREME WORLDS
+→ RECOGNITION
+→ REENCOUNTER
+→ SKY / PARADISE
+→ CONTINUED LEARNING.
+
+Important:
+- the beginning must contain genuine joy and care, not merely foreshadowing;
+- later darkness cannot erase the earlier love;
+- cosmic sections must eventually reconnect to ordinary people and consequences;
+- paradise is not “game completed”; it may open a wider field of learning;
+- no metaphysical scene claims objective real-world truth.
+
+Age ~12 is a candidate opening sensor only, not locked.
+Existing female protagonist direction remains unresolved against this life-span hypothesis until a deliberate character synthesis test.
