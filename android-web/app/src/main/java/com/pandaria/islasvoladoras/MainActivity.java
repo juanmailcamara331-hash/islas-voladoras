@@ -142,7 +142,21 @@ public class MainActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (web != null && web.canGoBack()) web.goBack();
-        else super.onBackPressed();
+        if (web == null) {
+            super.onBackPressed();
+            return;
+        }
+        web.evaluateJavascript(
+            "(function(){try{if(window.__islGoBack){window.__islGoBack();return 'handled';}" +
+            "var p=sessionStorage.getItem('isl_return_to');" +
+            "if(p&&p!==location.href){sessionStorage.setItem('isl_return_to',location.href);location.href=p;return 'handled';}" +
+            "}catch(e){}return 'fallback';})()",
+            result -> {
+                if ("\"fallback\"".equals(result)) {
+                    if (web.canGoBack()) web.goBack();
+                    else web.loadUrl(HOME);
+                }
+            }
+        );
     }
 }
