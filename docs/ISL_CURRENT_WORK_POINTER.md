@@ -2340,3 +2340,11 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Voice-over is intentionally added after visual/SFX continuity passes; it should introduce a human question/memory, not explain visible action.
 - Clean-room next chat should recover this master and CURRENT docs, re-lock exact protagonist/companion visual refs, run final preflight, FIRE ONE GRID, then KEEP/MUTATE/PARK/KILL.
 - v0.94 remains current; no checkpoint promotion required solely for this documentation pass.
+
+
+## ACTIVE EXECUTION NOTE · UX HYGIENE / CONFUSION CULL · 2026-09-25
+- Method: `docs/ISL_UX_HYGIENE_AND_CONFUSION_CULL_CURRENT.md`
+- Mother rule: **ONE ACTION · ONE PLACE · CLEAR RETURN · NO FAKE INTERACTIVITY · NO DUPLICATE NOISE**.
+- Triggered by physical tablet evidence: duplicated menus, ambiguous back/home, external Drive leakage, dead-looking media/3D states.
+- Scope: circulation only; no CANON/PRIMARY/SAFE HARBOR changes.
+- Apply one reversible simplification at a time, deploy, then re-test on device.
