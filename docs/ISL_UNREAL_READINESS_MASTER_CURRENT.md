@@ -562,3 +562,105 @@ Official 5.8 watch:
 - Enhanced Input supports runtime mapping-context changes;
 - Paper2D supports hybrid 2D/3D projects.
 Revalidate on engine-version freeze.
+
+
+## UNREAL TYPE / FORMAT / DATA COVERAGE DOCTRINE · 2026-09-25
+Goal:
+make ISL increasingly Unreal-portable without forcing premature implementation.
+
+The project should not arrive at Unreal as prose + screenshots + chat memory.
+It should arrive as a typed, validated, traceable organism.
+
+### Universal entity passport
+For every entity that survives long enough to matter, capture when justified:
+- isl_id;
+- entity_type;
+- subtype / family;
+- authority/source_of_truth;
+- lifecycle_state;
+- canon_state;
+- human_gate;
+- dependencies;
+- references/provenance;
+- runtime needs;
+- asset/media refs;
+- data/schema version;
+- platform/device constraints;
+- security/privacy class;
+- export format(s);
+- intended Unreal target;
+- validation rules;
+- tests;
+- rollback/fallback;
+- owner / next action.
+
+Not every field must be filled early.
+Unknown is valid.
+Invisible/unrecorded is not.
+
+### Type families to support over time
+WORLD
+REGION / ISLAND / ZONE
+LEVEL / CELL / ROUTE / GATE
+CHARACTER / NPC / CREATURE / COMPANION
+ROLE / ARCHETYPE / CONTRACT
+ITEM / RELIC / GIFT / PHYSICAL
+SHIP / VEHICLE / COMPONENT
+ABILITY / MANOEUVRE / WEAPON
+QUEST / MISSION / EVENT / ENCOUNTER
+DIALOGUE / MEMORY / HUELLA
+UI / HUD / ACTION / INPUT
+AUDIO / MUSIC / SFX / VO
+IMAGE / VIDEO / CINEMATIC / POSTER
+3D ASSET / MATERIAL / TEXTURE / ANIMATION
+RULE / FORMULA / PARAMETER / TAG
+SAVE STATE / PROGRESSION / UNLOCK
+TEST / BUG / RISK / HUMAN EVIDENCE
+CAMPAIGN / PUBLIC EXPORT / PRESS ASSET
+
+### Machine-readable formats
+Prefer explicit, versionable formats:
+- JSON for structured nested entities/manifests;
+- CSV/TSV for simple tabular tuning and bulk review;
+- GLB/glTF where appropriate for portable 3D preview/runtime interchange;
+- PNG/JPEG/WebP for image derivatives with master provenance elsewhere;
+- WAV/FLAC master + delivery derivatives when audio pipeline matures;
+- MP4/H.264 or project-approved delivery codec for previews/derived video;
+- Markdown/Docs for human reasoning, never as the sole machine source when structure matters.
+
+Format choice must answer:
+ROUNDTRIP?
+VERSIONABLE?
+VALIDATABLE?
+DIFFABLE?
+IMPORTABLE?
+PORTABLE?
+RIGHTS/PROVENANCE PRESERVED?
+
+### Unreal target coverage
+Map typed source entities toward:
+DataTable / CurveTable
+Data Asset / Primary Data Asset
+Gameplay Tags
+Actor / Component
+Level / World Partition cell / Data Layer
+Widget / CommonUI
+Enhanced Input mapping/action
+Audio/MetaSound assets
+Animation / StateTree / BehaviorTree only when justified
+SaveGame/runtime state
+Automation/Functional/Gauntlet tests
+BuildGraph/UAT/CI artifacts
+
+### Coverage health
+Monthly curation should ask:
+- which high-value type families lack a schema?
+- which schemas exist but have no validator?
+- which validators exist but no human/device evidence?
+- which assets have provenance but no runtime derivative?
+- which runtime surfaces have no source roundtrip?
+- which entities depend on manual copy/paste?
+- which mappings would break if a provider disappears?
+
+Do not fill every possible taxonomy now.
+Prioritize the types touched by ONE ACTIVE / ONE NEXT.
