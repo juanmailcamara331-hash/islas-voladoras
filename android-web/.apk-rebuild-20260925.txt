@@ -1,4 +1,11 @@
-Trigger rebuild for physical Android tablet test.
+Trigger rebuild for consolidated physical Android tablet test.
 Date: 2026-09-25
-Purpose: produce a fresh ISL Command Center APK artifact for human device testing.
-No runtime behavior change.
+Purpose: produce a fresh ISL Command Center APK after native back/home repair + Gallery UX hygiene + 3D/media state fixes + duplicate-navigation cleanup.
+No CANON/PRIMARY/SAFE HARBOR change.
+Expected app behavior:
+- one primary home navigation
+- clear ISL home + back semantics
+- Android Back returns to prior ISL surface when possible
+- Gallery stays internal by default
+- pending 3D/media states are explicit
+- no silent Google/Drive fallback
