@@ -80,3 +80,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,[t
 
 /* v0.76 mobile spacing contract: pages own content clearance; shell must not add a second gutter. */
 @media(max-width:640px){body{padding-bottom:0!important}}
+
+/* v0.96 physical-tablet nav repair: one clear back action, home stays on ISL. */
+#islGlobalShell .igsBack{min-width:42px!important;width:42px!important;font-size:18px!important;color:var(--isl-shell-cyan)!important;border:1px solid #31515c!important;background:#091a22!important}
+@media(max-width:640px){#islGlobalShell .igsBack{min-width:38px!important;width:38px!important;padding:5px!important}}
