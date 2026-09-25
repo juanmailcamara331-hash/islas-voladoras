@@ -727,3 +727,57 @@ First video master = NO MUSIC.
 Voice-over = later derivative layer.
 Max one continuity repair per pass.
 No auto-CANON from promo quality.
+
+
+## 25. RECURSIVE AUTOMATION CURATION TRIGGER · 2026-09-25
+Trigger:
+- monthly organism curation;
+- after adding/removing/retuning a recurring reminder;
+- after 3+ meaningful automation/method changes;
+- when human notices missing alerts, alert spam, stale prompts, duplicated watchers or unexplained silence;
+- before major lifecycle transition / Unreal production freeze.
+
+Apply:
+- docs/ISL_ORGANISM_CURATION_AND_VISUAL_HEALTH_CURRENT.md · RECURSIVE CURATION OF CURATION;
+- docs/ISL_KNOWLEDGE_GRAPH_AND_RECURSIVE_AUDIT_CURRENT.md;
+- docs/ISL_META_LAYER_ORCHESTRATOR_CURRENT.md;
+- docs/ISL_STAGE_AWARE_DEFERRED_WORK_QUEUE_CURRENT.md.
+
+Audit active recurring tasks as a graph:
+AUTOMATION
+→ AUTHORITY INPUTS
+→ TRIGGER/CADENCE
+→ COVERAGE DOMAIN
+→ OUTPUT
+→ HUMAN VISIBILITY
+→ WRITE PERMISSION
+→ ROLLBACK
+→ OVERLAP.
+
+Check for:
+ORPHAN WATCHER
+DUPLICATE WATCHER
+STALE PROMPT
+MISSING DOMAIN COVERAGE
+TOO-HIGH CADENCE
+SILENT-BUT-IMPORTANT FAILURE
+NOISY-BUT-LOW-VALUE OUTPUT
+HIDDEN WRITE POWER
+AUTHORITY DRIFT
+UNREAL/PERFORMANCE/SECURITY BLIND SPOT.
+
+Default decision:
+RETUNE or MERGE before ADD.
+
+Maximum:
+ONE watcher-level structural change per routine pass.
+A batch consolidation is allowed only with explicit human instruction or checkpoint-level curation.
+
+Output:
+- ACTIVE COVERAGE MAP;
+- one detected gap/overlap if material;
+- one reversible change;
+- NO CHANGE when healthy.
+
+Hard rule:
+THE WATCHDOGS ARE PART OF THE ORGANISM, NOT ABOVE IT.
