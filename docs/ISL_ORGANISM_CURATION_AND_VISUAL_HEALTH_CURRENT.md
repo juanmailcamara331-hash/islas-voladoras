@@ -255,3 +255,98 @@ evidence source;
 date;
 uncertainty;
 human note.
+
+
+## 14. RECURSIVE CURATION OF CURATION · 2026-09-25
+Purpose:
+the systems that watch ISL must themselves be watched, simplified and revalidated.
+
+Name:
+**RECURSIVE ENTROPIC CURATION LOOP**
+
+This is NOT a new organ. It is a maintenance behavior applied to the existing nervous system.
+
+Loop:
+PROJECT CHANGES
+→ WATCHERS / REMINDERS / ROUTERS OBSERVE
+→ HUMAN + AUTOMATION EVIDENCE ACCUMULATES
+→ CURATION AUDITS THE WATCHERS THEMSELVES
+→ MERGE / RETIRE / RETUNE / LINK
+→ VERIFY COVERAGE
+→ RETURN TO QUIET STATE
+
+Questions for every recurring reminder / automation / router:
+- What uncertainty does it reduce?
+- What authority does it read?
+- What output can it change?
+- Does another reminder already do this?
+- Is its cadence still justified?
+- Does it generate useful signal or noise?
+- Does it preserve dedup/freshness?
+- Does it know when to stay silent?
+- Does it create a new dependency or hidden authority?
+- Is it still necessary at the current lifecycle stage?
+- Can its function be folded into an existing watcher?
+- Is the prompt now stale relative to CURRENT methods?
+- Does it cover graph health, method health, performance/cost, UX, security, provenance and Unreal-readiness where materially relevant?
+
+Allowed recursive actions:
+KEEP
+RETUNE
+MERGE
+SLEEP
+REPLACE_BY_LINK
+RETIRE_FROM_ACTIVE_CIRCULATION
+
+Never:
+- auto-delete historical evidence;
+- create a watcher to watch every watcher;
+- increase cadence merely because more telemetry exists;
+- treat notification volume as health;
+- let an automation become authority over PRIMARY/CANON/HUMAN GATES.
+
+### Coverage invariant
+The active maintenance stack must collectively cover, without pointless duplication:
+AUTHORITY
+ORDER / DEFERRED WORK
+KNOWLEDGE GRAPH / DEPENDENCIES
+METHOD HEALTH
+UX / HUMAN COMPREHENSION
+BUILD / PERFORMANCE / COST
+SECURITY / PRIVACY / IP
+PROVENANCE / BACKUP
+SURFACE PROPAGATION
+ASSET / MEDIA / 3D HEALTH
+UNREAL READINESS / SCHEMA / IMPORT-EXPORT
+CHECKPOINT / NEW-CONVERSATION THRESHOLD
+
+If one area is uncovered, strengthen an existing watcher before creating a new one.
+
+### Entropy budget
+Healthy entropy = new evidence, contradiction, creative possibility and useful unknowns.
+Unhealthy entropy = duplicated authority, stale prompts, dead links, hidden state, contradictory reminders, unbounded scope and manual transcription.
+
+Curation should remove unhealthy entropy while preserving the creative kind.
+
+### Family-scale principle
+The system should be simple enough that a trusted family member can understand:
+- what is current;
+- what is blocked;
+- what is safe to touch;
+- what needs a human decision;
+- how to return to a known-good state.
+
+Complexity may exist underneath, but human-facing surfaces must stay legible.
+
+### Unreal-scale principle
+Every meaningful project entity should progressively become portable through explicit types, formats and contracts so Unreal migration is structured rather than improvised.
+This does not mean filling every field now.
+It means preserving the ability to answer later:
+- WHAT TYPE IS THIS?
+- WHAT IS ITS STABLE ID?
+- WHAT SOURCE OWNS IT?
+- WHAT FORMAT EXPORTS IT?
+- WHAT UNREAL TARGET RECEIVES IT?
+- WHAT VALIDATES IT?
+- WHAT TESTS IT?
+- WHAT ROLLS IT BACK?
