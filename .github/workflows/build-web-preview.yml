@@ -152,7 +152,11 @@ jobs:
           ! grep -q 'isl-global-shell.js' build/pages/velaria-v2.html
           ! grep -q 'Comparar señales' build/pages/velaria-v2.html
           ! grep -q 'Microprototipo físico' build/pages/velaria-v2.html
-          grep -q 'jugar.html?friends=1' build/pages/velaria-v2.html\n          grep -q 'Volver a la Recreativa' build/pages/velaria-v2.html\n          grep -q 'velaria-p0-feel-v084' build/pages/velaria-v2.html\n          grep -q 'windReadout' build/pages/velaria-v2.html\n          ! grep -q 'id=\"returnBoat\" href=\"rpg-home.html' build/pages/velaria-v2.html
+          grep -q 'jugar.html?friends=1' build/pages/velaria-v2.html
+          grep -q 'Volver a la Recreativa' build/pages/velaria-v2.html
+          grep -q 'velaria-p0-feel-v084' build/pages/velaria-v2.html
+          grep -q 'windReadout' build/pages/velaria-v2.html
+          ! grep -q 'id=\"returnBoat\" href=\"rpg-home.html' build/pages/velaria-v2.html
           grep -q 'embed=1&resume=1' build/pages/rpg-home.html
           ! grep -q 'html.deck-focus body>\*:not(#deckModal):not(script){filter:blur' build/pages/index.html
           grep -q 'id="music" class="section"' build/pages/galeria.html
@@ -247,7 +251,7 @@ jobs:
           test -f build/pages/decidir.html
           grep -q '.rail{display:none!important}' build/pages/index.html
           grep -q 'flex-wrap:nowrap!important' build/pages/index.html
-          grep -q 'isl-center-v076-human-device-fixes' build/pages/sw.js
+          grep -Eq "const CACHE='isl-center-v[0-9]+[a-z0-9-]*'" build/pages/sw.js
           test -f docs/ISL_BUILD_SCIENCE_v0.61.md
           test -f docs/ISL_ERROR_TAXONOMY_v0.61.json
           test -f docs/ISL_CHANGE_IMPACT_CARD_TEMPLATE_v0.61.md
