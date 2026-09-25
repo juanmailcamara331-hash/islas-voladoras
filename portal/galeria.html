@@ -80,6 +80,12 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 .journeyLock{border:1px solid #6e5432;background:#20190f;border-radius:14px;padding:12px;margin-top:8px;color:#f0d8a5;font-size:10px;line-height:1.5}
 @media(max-width:640px){.journeyRoute{grid-template-columns:repeat(9,74vw);padding-top:10px}.journeyRoute:before{top:46px}.journeyNode{min-height:190px}.journeyNode:before{margin-top:18px}}
 </style>
+<style id="isl-gallery-runtime-honesty-v096">
+.internalPending{width:100%;height:100%;display:grid;place-items:center;align-content:center;gap:10px;background:radial-gradient(circle at 50% 45%,#123344,#07151d 68%);color:#91f2ff;text-align:center;padding:18px}
+.internalPending>span{font-size:42px;line-height:1}
+.internalPending>small{font-size:8px;letter-spacing:.12em;color:#a8bdc2;font-weight:900}
+.padOnly3d>.thumb{margin:0}
+</style>
 </head>
 <body>
 <main class="wrap">
@@ -133,11 +139,10 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>setTab(b.dataset.tab)
 addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
 function archiveCard(a){
  const drive=a.drive_id||'',src=a.runtime_src||'',kind=(a.type||'image').toLowerCase();
- const drivePoster=drive?'https://drive.google.com/thumbnail?id='+encodeURIComponent(drive)+'&sz=w900':'';
  let media='';
  if(kind==='video'&&src) media='<video muted playsinline preload="metadata" src="'+esc(src)+'"></video>';
  else if(src) media='<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title)+'">';
- else if(drivePoster) media='<img class="drivePoster" loading="lazy" src="'+esc(drivePoster)+'" alt="'+esc(a.title)+'">';
+ else if(drive) media='<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">▣</span><small>PREVIEW PENDIENTE</small></div>';
  else media='<span aria-hidden="true">'+(kind==='video'?'▶':kind==='audio'?'♫':kind==='3d'?'◇':'▣')+'</span>';
  return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(kind)+'"><div class="thumb mediaThumb">'+media+'<span class="mediaBadge">'+esc(kind.toUpperCase())+'</span></div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
 }
@@ -149,19 +154,21 @@ function prismCard(a){
 function labCard(a){
  const title=a.title||a.name||a.entity||a.id;
  const drive=a.drive_id||'',src=a.runtime_src||'';
- const drivePoster=drive?'https://drive.google.com/thumbnail?id='+encodeURIComponent(drive)+'&sz=w900':'';
- const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(human(title))+'">':drivePoster?'<img class="drivePoster" loading="lazy" src="'+esc(drivePoster)+'" alt="'+esc(human(title))+'">':'<span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span>';
+ const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(human(title))+'">':drive?'<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span><small>FUENTE ARCHIVADA · PREVIEW PENDIENTE</small></div>':'<span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span>';
  return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(a.type||'file')+'"><div class="thumb">'+media+'</div><div class="pad"><h2>'+esc(human(title))+'</h2><span class="status warn">NO CANON</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(a.role||''))+' · '+esc(human(a.status||'CANDIDATE'))+'</div></details></div></article>';
 }
 function healthCard(a){
- const state=a.state||a.status||'UNKNOWN', src=a.runtime_ref||a.runtime_src||'', drive=a.drive_id||a.master_drive_id||'', poster=a.poster_src||a.thumbnail_src||(drive?'https://drive.google.com/thumbnail?id='+encodeURIComponent(drive)+'&sz=w900':'');
+ const state=a.state||a.status||'UNKNOWN', src=a.runtime_ref||a.runtime_src||'', drive=a.drive_id||a.master_drive_id||'';
+ const rawPoster=a.poster_src||a.thumbnail_src||'';
+ const poster=(rawPoster && !/^https?:\/\/drive\.google\.com/i.test(rawPoster))?rawPoster:'';
  const name=human(a.display_name||a.name||a.entity_id||a.entity||a.id||a.asset_id);
+ const blocker=a.blocker||'', next=a.next||'';
  const viewer=src
   ? '<div class="thumb viewer"><model-viewer src="'+esc(src)+'" camera-controls touch-action="pan-y" shadow-intensity="1" environment-image="neutral" alt="'+esc(name)+'"></model-viewer><span class="mediaBadge">3D · GIRAR</span></div>'
   : poster
-    ? '<div class="thumb mediaThumb"><img class="drivePoster" loading="lazy" src="'+esc(poster)+'" alt="'+esc(name)+'"><span class="mediaBadge">3D · PREVIEW</span></div>'
-    : '<div class="thumb mediaThumb">◇<span class="mediaBadge">3D</span></div>';
- return '<article class="card mediaCard" data-kind="3d" data-runtime="'+esc(src)+'" data-drive="'+esc(drive)+'">'+viewer+'<div class="pad"><h2>'+esc(name)+'</h2><span class="status '+(src?'good':'warn')+'">'+esc(src?'3D INTERACTIVO':'3D · RUNTIME PENDIENTE')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(state))+'</div></details></div></article>';
+    ? '<div class="thumb mediaThumb"><img loading="lazy" src="'+esc(poster)+'" alt="'+esc(name)+'"><span class="mediaBadge">3D · PREVIEW</span></div>'
+    : '<div class="thumb mediaThumb"><div class="internalPending"><span aria-hidden="true">◇</span><small>3D · PREVIEW PENDIENTE</small></div><span class="mediaBadge">3D</span></div>';
+ return '<article class="card mediaCard" data-kind="3d" data-runtime="'+esc(src)+'" data-drive="'+esc(drive)+'" data-state="'+esc(state)+'" data-blocker="'+esc(blocker)+'" data-next="'+esc(next)+'"><div class="padOnly3d">'+viewer+'</div><div class="pad"><h2>'+esc(name)+'</h2><span class="status '+(src?'good':'warn')+'">'+esc(src?'3D INTERACTIVO':'3D · RUNTIME PENDIENTE')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(state))+'</div></details></div></article>';
 }
 function phraseCard(p){
  return '<article class="card"><div class="pad"><div class="k">'+esc((p.destinations||[]).slice(0,3).join(' · ')||'FRASE')+'</div><h2 style="font-size:22px;line-height:1.25">“'+esc(p.text)+'”</h2><div class="meta">'+esc(p.origin||'ISL')+'</div><span class="status warn">'+esc(p.state||'SEED')+'</span></div></article>';
@@ -262,19 +269,21 @@ Promise.all([
     stage.addEventListener('touchend',function(){lastDist=0},{passive:true});
     show(stage,title);
   }
-  function driveBox(drive,title,kind){
-    var wrap=document.createElement('div');
-    var iframe=document.createElement('iframe');iframe.src='https://drive.google.com/file/d/'+encodeURIComponent(drive)+'/preview';iframe.allow='autoplay; fullscreen';iframe.title=title||'ISL media';
-    wrap.appendChild(iframe);show(wrap,title);
-    addTool('ABRIR ↗',function(){window.open('https://drive.google.com/file/d/'+encodeURIComponent(drive)+'/view','_blank','noopener')});
+  function statusBox(title,label,body,drive){
+    var box=document.createElement('div');box.className='card empty';box.style.maxWidth='720px';box.style.margin='auto';box.style.padding='28px';
+    box.innerHTML='<div class="k">'+esc(label||'ESTADO REAL')+'</div><h2 style="margin:8px 0">'+esc(title||'ISL')+'</h2><p style="line-height:1.55;color:#bfd0d4">'+esc(body||'Esta pieza está registrada, pero todavía no tiene runtime empaquetado dentro de la app.')+'</p>';
+    show(box,title);
+    if(drive)addTool('FUENTE DRIVE ↗',function(){window.open('https://drive.google.com/file/d/'+encodeURIComponent(drive)+'/view','_blank','noopener')});
   }
-  function open3d(src,title,drive){
+  function open3d(src,title,drive,card){
     if(src){
       var mv=document.createElement('model-viewer');mv.src=src;mv.setAttribute('camera-controls','');mv.setAttribute('touch-action','pan-y');mv.setAttribute('shadow-intensity','1');mv.setAttribute('environment-image','neutral');mv.alt=title||'ISL 3D';
       show(mv,title);addTool('CENTRAR',function(){try{mv.cameraOrbit='auto auto auto';mv.fieldOfView='30deg'}catch(e){}});
       return;
     }
-    if(drive)return driveBox(drive,title,'3d');
+    var state=card&&card.dataset.state?human(card.dataset.state):'RUNTIME PENDIENTE';
+    var blocker=card&&card.dataset.blocker?card.dataset.blocker:'El modelo 3D está registrado, pero todavía no existe un GLB runtime accesible dentro de la Gallery.';
+    statusBox(title,'3D · '+state,blocker,drive);
   }
   function openCard(card){
     var title=card.querySelector('h2')?card.querySelector('h2').textContent:'';
@@ -282,7 +291,7 @@ Promise.all([
     var img=card.querySelector('.thumb img'),vid=card.querySelector('.thumb video'),mv=card.querySelector('.thumb model-viewer');
     var drive=card.dataset.drive||'',url=card.dataset.url||'';
     tools.innerHTML='';
-    if(kind==='3d'||mv){var src=runtime||(mv&&mv.src)||'';return open3d(src,title,drive)}
+    if(kind==='3d'||mv){var src=runtime||(mv&&mv.src)||'';return open3d(src,title,drive,card)}
     if(kind==='audio'&&runtime){
       var au=document.createElement('audio');au.src=runtime;au.controls=true;au.autoplay=true;au.style.width='min(90vw,720px)';return show(au,title)
     }
@@ -293,12 +302,11 @@ Promise.all([
     }
     if(img){
       var src=img.currentSrc||img.src;
-      if(img.classList.contains('drivePoster')&&drive)src='https://drive.google.com/thumbnail?id='+encodeURIComponent(drive)+'&sz=w2400';
       return zoomImage(src,img.alt||title,title)
     }
     if(vid){var v=document.createElement('video');v.src=vid.currentSrc||vid.src;v.controls=true;v.autoplay=true;v.playsInline=true;return show(v,title)}
     if(url){window.location.href=url;return}
-    if(drive)return driveBox(drive,title,kind);
+    if(drive)return statusBox(title,'ARCHIVO · FUENTE EXTERNA','La pieza está archivada en Drive, pero su preview todavía no está empaquetado dentro de la app. Ya no se abre Google automáticamente.',drive);
   }
   document.addEventListener('click',function(e){
     var pending=e.target.closest('[data-music-pending]');if(pending){var c=pending.closest('.mediaCard');if(c)openCard(c);return}
