@@ -4,6 +4,27 @@ try{Array.from(document.body.childNodes).forEach(function(n){if(n.nodeType===3&&
 if(document.getElementById('islGlobalShell'))return;
 try{sessionStorage.setItem('isl_native_entered_v063','1');sessionStorage.setItem('isl_center_entered','1')}catch(e){}
 var path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+
+function rememberReturn(){
+  try{sessionStorage.setItem('isl_return_to',location.href)}catch(e){}
+}
+window.__islGoBack=function(){
+  var prev='';try{prev=sessionStorage.getItem('isl_return_to')||''}catch(e){}
+  if(prev && prev!==location.href){
+    try{sessionStorage.setItem('isl_return_to',location.href)}catch(e){}
+    location.href=prev;return true;
+  }
+  if(history.length>1){history.back();return true}
+  location.href='index.html?full=1#home';return true;
+};
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;
+  var u=a.getAttribute('href')||'';
+  if(!/^(https?:|mailto:|tel:|#)/i.test(u))rememberReturn();
+},true);
+
+// The Command Center owns its own primary navigation. Never inject a second shell there.
+if(path==='index.html'||path==='command-center.html')return;
 function href(file,hash){
   var native=/[?&]app=1(?:&|$)/.test(location.search)||sessionStorage.getItem('isl_native_shell')==='1';
   if(/[?&]app=1(?:&|$)/.test(location.search)){try{sessionStorage.setItem('isl_native_shell','1')}catch(e){}}
@@ -19,6 +40,7 @@ var items=[
 ];
 var shell=document.createElement('nav');shell.id='islGlobalShell';shell.setAttribute('aria-label','Navegación global ISL');
 var row=document.createElement('div');row.className='igsRow';
+var back=document.createElement('button');back.type='button';back.className='igsBack';back.textContent='←';back.title='Volver a la página anterior';back.setAttribute('aria-label','Volver a la página anterior');back.onclick=function(){window.__islGoBack()};row.appendChild(back);
 items.forEach(function(it){
   var a=document.createElement('a');a.href=it[1];a.className=it[2]||'';a.textContent=it[0];a.title=it[3];
   if(it[4]){var sub=document.createElement('small');sub.className='igsSub';sub.textContent=it[4];a.appendChild(sub);}
@@ -35,7 +57,6 @@ more.onclick=function(e){e.stopPropagation();panel.classList.toggle('open');more
 document.addEventListener('pointerdown',function(e){if(!panel.classList.contains('open'))return;if(panel.contains(e.target)||more.contains(e.target))return;panel.classList.remove('open');more.setAttribute('aria-expanded','false')});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){panel.classList.remove('open');more.setAttribute('aria-expanded','false')}});
 var pulse=document.createElement('div');pulse.id='islGlobalHomePulse';pulse.textContent='JUGAR · CREAR · VER · DECIDIR · MÁS';document.body.appendChild(pulse);
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var u=a.getAttribute('href')||'';if(!/^(https?:|mailto:|tel:|#)/i.test(u)){try{sessionStorage.setItem('isl_return_to',location.href)}catch(err){}}},true);
 
 /* Meaningful Command Center actions share one methodology router.
    Navigation stays frictionless; state-changing actions are classified/gated. */
