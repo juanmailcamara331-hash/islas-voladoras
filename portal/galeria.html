@@ -186,7 +186,8 @@ function musicCard(t){
  const src=t.runtime_src||'',drive=t.drive_id||'',wired=!!(src||drive);
  const player=src?'<div class="player"><audio controls preload="none" src="'+esc(src)+'"></audio></div>':'';
  const badge=src?'AUDIO · RUNTIME':drive?'AUDIO · DRIVE':'AUDIO · SOURCE PENDIENTE';
- return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-runtime="'+esc(src)+'" data-kind="audio"><div class="thumb mediaThumb"><span aria-hidden="true">♫</span><span class="mediaBadge">'+esc(badge)+'</span></div><div class="pad"><h2>'+esc(t.title)+'</h2>'+player+(wired?'':'<div class="disabledPlayer">Concepto registrado · todavía no hay audio conectado.</div>')+'<details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(t.status||''))+'</div></details></div></article>';
+ const pending=wired?'':'<button class="disabledPlayer" type="button" data-music-pending="1" aria-label="Audio todavía no conectado">AUDIO TODAVÍA NO CONECTADO · TOCA PARA VER ESTADO</button>';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-runtime="'+esc(src)+'" data-kind="'+(wired?'audio':'audio-pending')+'" data-music-title="'+esc(t.title)+'" data-music-state="'+esc(t.source_state||t.status||'SOURCE_NOT_WIRED')+'"><div class="thumb mediaThumb"><span aria-hidden="true">♫</span><span class="mediaBadge">'+esc(badge)+'</span></div><div class="pad"><h2>'+esc(t.title)+'</h2>'+player+pending+'<details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(t.status||''))+'</div></details></div></article>';
 }
 Promise.all([
  fetch('data/isl-gallery-library-current.json',{cache:'no-store'}).then(r=>r.json()),
@@ -285,6 +286,11 @@ Promise.all([
     if(kind==='audio'&&runtime){
       var au=document.createElement('audio');au.src=runtime;au.controls=true;au.autoplay=true;au.style.width='min(90vw,720px)';return show(au,title)
     }
+    if(kind==='audio-pending'){
+      var box=document.createElement('div');box.className='card empty';box.style.maxWidth='680px';box.style.margin='auto';box.style.padding='28px';
+      box.innerHTML='<div class="k">MÚSICA · ESTADO REAL</div><h2 style="margin:8px 0">'+esc(title)+'</h2><p style="line-height:1.55;color:#bfd0d4">Esta pista está registrada, pero el archivo de audio todavía no está conectado al runtime de la Gallery. No es un fallo de reproducción del dispositivo.</p><p style="line-height:1.55;color:#8fa7ad">Estado: '+esc(card.dataset.musicState||'SOURCE_NOT_WIRED')+'</p>';
+      return show(box,title)
+    }
     if(img){
       var src=img.currentSrc||img.src;
       if(img.classList.contains('drivePoster')&&drive)src='https://drive.google.com/thumbnail?id='+encodeURIComponent(drive)+'&sz=w2400';
@@ -295,6 +301,7 @@ Promise.all([
     if(drive)return driveBox(drive,title,kind);
   }
   document.addEventListener('click',function(e){
+    var pending=e.target.closest('[data-music-pending]');if(pending){var c=pending.closest('.mediaCard');if(c)openCard(c);return}
     if(e.target.closest('audio,button,a,input,select,textarea,summary,model-viewer'))return;
     var card=e.target.closest('.mediaCard,.card[data-drive],.card[data-runtime]');if(card)openCard(card);
   });
