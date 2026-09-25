@@ -18,7 +18,7 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 .tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0;position:sticky;top:8px;z-index:10;background:#071017d9;padding:8px;border:1px solid #203842;border-radius:15px;backdrop-filter:blur(14px)}.tab{border:1px solid var(--line);background:#0a1720;color:#c7d8dc;border-radius:999px;padding:8px 11px;font-size:9px;font-weight:900}.tab.on{border-color:#8c6a3c;background:#2d2419;color:#ffe6b2}
 .section{display:none}.section.on{display:block}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:11px}.card{border:1px solid var(--line);background:var(--panel);border-radius:16px;overflow:hidden;min-width:0;cursor:pointer;transition:transform .16s ease,border-color .16s ease}.card:active{transform:scale(.985)}.pad{padding:11px 12px 12px}.card h2{font-size:17px;margin:3px 0;line-height:1.08}.meta{font-size:8px;color:var(--mut);line-height:1.4}.techMeta{display:none}.card details{margin-top:7px}.card details summary{font-size:8px;color:var(--mut);cursor:pointer}.status{display:inline-block;margin-top:7px;border:1px solid #4d6872;border-radius:999px;padding:4px 6px;font-size:7px;font-weight:900;letter-spacing:.08em}.status.good{color:var(--good);border-color:#50765a}.status.warn{color:var(--gold);border-color:#7f663c}.status.bad{color:var(--rose);border-color:#74434a}.thumb{aspect-ratio:16/10;background:radial-gradient(circle at 50% 40%,#173441,#081218 70%);display:grid;place-items:center;overflow:hidden;font-size:48px;color:var(--cyan);border-bottom:1px solid #203842}.thumb img,.thumb video{width:100%;height:100%;object-fit:cover;display:block}.thumb video{background:#000}.thumb model-viewer{width:100%;height:100%;background:radial-gradient(circle at 50% 40%,#173441,#081218 70%)}.viewerHint{position:absolute;left:8px;bottom:8px;background:#041016cc;border:1px solid #35535e;border-radius:999px;padding:5px 7px;font-size:7px;font-weight:900;letter-spacing:.08em}.thumb.viewer{position:relative}.player{margin-top:10px;padding-top:10px;border-top:1px solid #213b45}.player audio{width:100%;height:38px}.disabledPlayer{margin-top:10px;border:1px dashed #35535e;border-radius:10px;padding:10px;font-size:9px;color:#7f979e}
 .panel{border:1px solid var(--line);background:#09161d;border-radius:15px;padding:11px 12px;margin-bottom:10px}.panel h2{margin:2px 0 4px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.truth{display:none}.empty{padding:18px;color:#9fb3b8}.subhead{display:flex;align-items:end;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:18px 2px 9px}.subhead h2{margin:0;font-size:24px}.counter{font-size:9px;color:#a8bbc0}
-@media(max-width:640px){.wrap{width:calc(100vw - 12px)}h1{font-size:44px}.btn{padding:9px 10px}.tabs{top:4px}.grid{grid-template-columns:1fr 1fr}.card h2{font-size:15px}.meta{font-size:8px}.thumb{aspect-ratio:1.15}}
+@media(max-width:640px){.wrap{width:calc(100vw - 12px);padding-top:max(48px,calc(20px + env(safe-area-inset-top)))}h1{font-size:44px}.btn{padding:9px 10px}.tabs{top:max(44px,calc(4px + env(safe-area-inset-top)))}.grid{grid-template-columns:1fr 1fr}.card h2{font-size:15px}.meta{font-size:8px}.thumb{aspect-ratio:1.15}}
 @media(max-width:420px){.grid{grid-template-columns:1fr}}
 </style>
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
@@ -162,13 +162,14 @@ function healthCard(a){
  const state=a.state||a.status||'UNKNOWN', src=a.runtime_ref||a.runtime_src||'', drive=a.drive_id||a.master_drive_id||'';
  const rawPoster=a.poster_src||a.thumbnail_src||'';
  const poster=(rawPoster && !/^https?:\/\/drive\.google\.com/i.test(rawPoster))?rawPoster:'';
- const name=human(a.display_name||a.name||a.entity_id||a.entity||a.id||a.asset_id);
+ const rawName=a.display_name||a.name||a.entity_id||a.entity||a.id||a.asset_id;
+ const name=(a.display_name||a.name)?String(rawName):human(rawName);
  const blocker=a.blocker||'', next=a.next||'';
  const viewer=src
   ? '<div class="thumb viewer"><model-viewer src="'+esc(src)+'" camera-controls touch-action="pan-y" shadow-intensity="1" environment-image="neutral" alt="'+esc(name)+'"></model-viewer><span class="mediaBadge">3D · GIRAR</span></div>'
   : poster
     ? '<div class="thumb mediaThumb"><img loading="lazy" src="'+esc(poster)+'" alt="'+esc(name)+'"><span class="mediaBadge">3D · PREVIEW</span></div>'
-    : '<div class="thumb mediaThumb"><div class="internalPending"><span aria-hidden="true">◇</span><small>3D · PREVIEW PENDIENTE</small></div><span class="mediaBadge">3D</span></div>';
+    : '<div class="thumb mediaThumb"><div class="internalPending"><span aria-hidden="true">◇</span><small>PREVIEW 3D PENDIENTE</small></div></div>';
  return '<article class="card mediaCard" data-kind="3d" data-runtime="'+esc(src)+'" data-drive="'+esc(drive)+'" data-state="'+esc(state)+'" data-blocker="'+esc(blocker)+'" data-next="'+esc(next)+'"><div class="padOnly3d">'+viewer+'</div><div class="pad"><h2>'+esc(name)+'</h2><span class="status '+(src?'good':'warn')+'">'+esc(src?'3D INTERACTIVO':'3D · RUNTIME PENDIENTE')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(state))+'</div></details></div></article>';
 }
 function phraseCard(p){
@@ -273,7 +274,7 @@ Promise.all([
   function statusBox(title,label,body,drive){
     var box=document.createElement('div');box.className='card empty';box.style.maxWidth='720px';box.style.margin='auto';box.style.padding='28px';
     box.innerHTML='<div class="k">'+esc(label||'ESTADO REAL')+'</div><h2 style="margin:8px 0">'+esc(title||'ISL')+'</h2><p style="line-height:1.55;color:#bfd0d4">'+esc(body||'Esta pieza está registrada, pero todavía no tiene runtime empaquetado dentro de la app.')+'</p>';
-    show(box,title);
+    show(box,'');
     if(drive)addTool('FUENTE DRIVE ↗',function(){window.open('https://drive.google.com/file/d/'+encodeURIComponent(drive)+'/view','_blank','noopener')});
   }
   function open3d(src,title,drive,card){
@@ -283,8 +284,11 @@ Promise.all([
       return;
     }
     var state=card&&card.dataset.state?human(card.dataset.state):'RUNTIME PENDIENTE';
-    var blocker=card&&card.dataset.blocker?card.dataset.blocker:'El modelo 3D está registrado, pero todavía no existe un GLB runtime accesible dentro de la Gallery.';
-    statusBox(title,'3D · '+state,blocker,drive);
+    var hasDrive=!!drive;
+    var message=hasDrive
+      ? 'El modelo 3D está archivado, pero todavía no está preparado para girarlo dentro de la app.'
+      : 'El modelo 3D está registrado, pero todavía falta preparar su versión interactiva para la app.';
+    statusBox(title,'3D · PREPARACIÓN PENDIENTE',message,drive);
   }
   function openCard(card){
     var title=card.querySelector('h2')?card.querySelector('h2').textContent:'';
@@ -307,7 +311,7 @@ Promise.all([
     }
     if(vid){var v=document.createElement('video');v.src=vid.currentSrc||vid.src;v.controls=true;v.autoplay=true;v.playsInline=true;return show(v,title)}
     if(url){window.location.href=url;return}
-    if(drive)return statusBox(title,'ARCHIVO · FUENTE EXTERNA','La pieza está archivada en Drive, pero su preview todavía no está empaquetado dentro de la app. Ya no se abre Google automáticamente.',drive);
+    if(drive)return statusBox(title,'ARCHIVO · PREVIEW PENDIENTE','La pieza está guardada, pero todavía falta preparar su vista dentro de ISL.',drive);
   }
   document.addEventListener('click',function(e){
     var pending=e.target.closest('[data-music-pending]');if(pending){var c=pending.closest('.mediaCard');if(c)openCard(c);return}
