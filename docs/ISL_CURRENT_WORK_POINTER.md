@@ -2348,3 +2348,12 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Triggered by physical tablet evidence: duplicated menus, ambiguous back/home, external Drive leakage, dead-looking media/3D states.
 - Scope: circulation only; no CANON/PRIMARY/SAFE HARBOR changes.
 - Apply one reversible simplification at a time, deploy, then re-test on device.
+
+
+## ACTIVE EXECUTION NOTE · 2026-09-25 · RECURSIVE ENTROPIC CURATION + UNREAL COVERAGE
+- Existing organism curation now audits the watchers/reminders themselves; no new organ was created.
+- New doctrine: RECURSIVE CURATION OF CURATION — RETUNE/MERGE/SLEEP before ADD.
+- Monthly curation must maintain an ACTIVE COVERAGE MAP across authority, order, graph/dependencies, method health, UX, build/performance/cost, security/IP/privacy, provenance/backup, propagation, asset/media/3D health, Unreal readiness/data schemas and checkpoint migration.
+- Unreal readiness now includes incremental type/format/data coverage: stable IDs, typed entities, source authority, schema/version, export format, Unreal target, validators, tests and rollback when the active lane justifies them.
+- Family-scale rule: complexity can live underneath, but a trusted family member should still understand current / blocked / human decision / safe return.
+- No mass taxonomy fill and no automation inflation; prioritize ONE ACTIVE · ONE NEXT.
