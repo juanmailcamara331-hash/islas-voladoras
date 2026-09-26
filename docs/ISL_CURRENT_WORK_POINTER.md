@@ -1,3 +1,17 @@
+# ACTIVE EXECUTION NOTE · 2026-09-26 · GALLERY REAL-TABLET VISUAL EVIDENCE
+- Four real-device screenshots supplied by the human from the current private Gallery lane; all are 1536×960.
+- Evidence fingerprints:
+  - tablet-01 SHA-256 `a44323e08bf17e321a412d6ba213bce38a18beb86aca93bd474ed6d442b93e07`
+  - tablet-02 SHA-256 `b51d4de162213035e1235b9755d8b9386445a20b86fdf239bd1aadda9337dffa`
+  - tablet-03 SHA-256 `993d2cf788f7a4f73b3c8b6ad7fb9fc723c71952434f324505c3da93df167b7d`
+  - tablet-04 SHA-256 `b5c117cca279e9bf5151d1e06d987a5cf0500ef8e07e20347a38c7984ce4ae81`
+- These screenshots are accepted as REAL-TABLET VISUAL evidence for private-surface rendering/navigation and honest non-interactive 3D presentation.
+- DEVICE VISUAL SURFACE = PASS.
+- Do NOT infer audible audio output or continuous video playback from static screenshots alone. AUDIO PLAYBACK / VIDEO CONTINUOUS PLAYBACK remain HUMAN CONFIRMATION PENDING unless directly observed/reported.
+- Gallery overall HUMAN/DEVICE gate remains PENDING until the two media-playback observations are explicitly confirmed.
+- This does NOT alter Velaria V2 P0 HUMAN_DEVICE_GREEN, PRE50, CANON or SAFE HARBOR.
+- Three.js Local Asset Lab remains NEXT, not ACTIVE, until Gallery overall validation closes.
+
 # ACTIVE EXECUTION NOTE · 2026-09-26 · GALLERY EXACT PRIVATE DEPLOY READY
 - Gallery top-quality machine lane deployed from commit `3864074d6cb5cb9e42eb183d2b90dff8fbb943f2`.
 - GitHub Actions run 36251008966 = SUCCESS; checkout SHA verified in logs.
