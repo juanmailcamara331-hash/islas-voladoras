@@ -17,11 +17,10 @@ python3 - <<'PY'
 from pathlib import Path
 p=Path('build/private/decidir.html')
 s=p.read_text(encoding='utf-8')
-old='<a class="go" href="galeria.html">MIRAR / TOCAR →</a>'
-new='<div class="links" style="margin-top:12px"><a class="go" href="decision-engine.html">NECESITA TU OJO →</a><a class="go" href="creative-dna.html">REENCUENTRO / FOUND GOLD →</a></div>'
-if old in s:
-    s=s.replace(old,new)
-s=s.replace('Prueba un momento la Galería/app. Si algo chirría, deja una sola huella. No hace falta arreglarlo tú: sólo notar dónde molesta.','Aquí aparecen cosas que de verdad necesitan tu criterio. Puedes comparar, revisar evidencia o reencontrar una pieza sin tener que abrir ChatGPT.')
+needle='<div class="links"><a href="encuestas.html">Encuestas</a><a href="playtest-review.html">Review</a><a href="playtest-lab.html">Playtest</a></div>'
+extra='<div class="links"><a href="encuestas.html">Encuestas</a><a href="playtest-review.html">Review</a><a href="playtest-lab.html">Playtest</a><a href="decision-engine.html">Decision Engine</a><a href="creative-dna.html">Found Gold</a></div>'
+if needle in s:
+    s=s.replace(needle,extra)
 p.write_text(s,encoding='utf-8')
 PY
 
@@ -29,7 +28,7 @@ python3 - <<'PY'
 from pathlib import Path
 p=Path('build/private/crear.html')
 s=p.read_text(encoding='utf-8')
-needle='<a class="card" href="galeria.html"><div class="k">MIRAR</div><b>Galería</b><span>Todo lo que ya existe</span></a>'
+needle='<a class="card" href="galeria.html"><div class="k">SÓLO MIRAR</div><b>Galería</b><span>Disfrutar lo que ya existe</span></a>'
 entry='<a class="card" href="creative-dna.html"><div class="k">REENCUENTRO</div><b>Found Gold</b><span>Algo reaparece · qué te toca · qué función sigue viva</span></a>\\n'+needle
 if 'href="creative-dna.html"' not in s and needle in s:
     s=s.replace(needle,entry)
