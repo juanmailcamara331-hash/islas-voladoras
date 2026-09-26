@@ -48,7 +48,8 @@
       "drive_id": "1wXNWA0YtvHaMVRssJ93fvHMtanhGu8MQ",
       "runtime_src": "assets/gallery-local/skyship-trinity.webp",
       "canon_state": "NOT_AUTO_CANON",
-      "featured": true
+      "featured": true,
+      "thumbnail_src": "assets/gallery-local/skyship-trinity.webp"
     },
     {
       "id": "SKYSHIP-REF-01-PLAYER-HOME-MACHINE",
@@ -57,7 +58,9 @@
       "group": "Skyships / Lab",
       "status": "SENSOR_HUMAN_READ_PENDING",
       "drive_id": "1lHnnUPA2kNxjXjBgWTLJoCjoOvI4odnh",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/gallery-local/skyship-home-machine-thumb.webp",
+      "runtime_src": "assets/gallery-local/skyship-home-machine-view.webp"
     },
     {
       "id": "IRENE-CREATURE-002-B03",
@@ -67,7 +70,9 @@
       "status": "SENSOR_HUMAN_READ_PENDING",
       "drive_id": "1pKp_H9gDdZGycAqQ8EPOx1jvk6RkEZrw",
       "canon_state": "NOT_AUTO_CANON",
-      "featured": true
+      "featured": true,
+      "thumbnail_src": "assets/gallery-local/irene-b03-thumb.webp",
+      "runtime_src": "assets/gallery-local/irene-b03-view.webp"
     },
     {
       "id": "IRENE-CREATURE-002-B02",
@@ -76,7 +81,9 @@
       "group": "Making-of / Human Trace / Irene",
       "status": "SENSOR_HUMAN_READ_PENDING",
       "drive_id": "1Mbr_Rygq3uF8Yvoe1jQK1MNNEg69E84F",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/gallery-local/irene-b02-thumb.webp",
+      "runtime_src": "assets/gallery-local/irene-b02-view.webp"
     },
     {
       "id": "IRENE-CREATURE-002-B01",
@@ -85,7 +92,9 @@
       "group": "Making-of / Human Trace / Irene",
       "status": "SENSOR_HUMAN_READ_PENDING",
       "drive_id": "1CrvYHwr33Rrv7qU1yiVb6Ol6xP6uUekh",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/gallery-local/irene-b01-thumb.webp",
+      "runtime_src": "assets/gallery-local/irene-b01-view.webp"
     },
     {
       "id": "HUMAN-TRACE-IRENE-CREATURE-002-DRAWING",
@@ -96,7 +105,8 @@
       "drive_id": "1aVyZfbzjyr1tSOjC8pu-sBZYasu_SpvW",
       "runtime_src": "assets/gallery-local/irene-raw.webp",
       "canon_state": "NOT_AUTO_CANON",
-      "featured": true
+      "featured": true,
+      "thumbnail_src": "assets/gallery-local/irene-raw.webp"
     },
     {
       "id": "LOGO-SECONDARY-SENSOR-20260923-01",
@@ -107,7 +117,8 @@
       "drive_id": "1UNErBlvPM8RhYUvAS6xq7JAfla0LYaOV",
       "runtime_src": "assets/gallery-local/logo-secondary.webp",
       "canon_state": "REFERENCE_ONLY_NOT_FINAL_LOGO",
-      "featured": true
+      "featured": true,
+      "thumbnail_src": "assets/gallery-local/logo-secondary.webp"
     },
     {
       "id": "VIS-HIST-001",
@@ -116,7 +127,8 @@
       "group": "Mundo / Isla 01",
       "status": "REFERENCE_STRONG",
       "runtime_src": "assets/city-wind.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/city-wind.png"
     },
     {
       "id": "VIS-HIST-002",
@@ -125,7 +137,8 @@
       "group": "Nave / Hogar",
       "status": "REFERENCE",
       "runtime_src": "assets/ship-between-islands.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/ship-between-islands.png"
     },
     {
       "id": "VIS-HIST-003",
@@ -134,7 +147,8 @@
       "group": "Mundo / Viaje",
       "status": "ITERATION",
       "runtime_src": "assets/epic-journey.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/epic-journey.png"
     },
     {
       "id": "VIS-HIST-004",
@@ -143,7 +157,8 @@
       "group": "Nivel 01 / Layout",
       "status": "ITERATION",
       "runtime_src": "assets/level-celestial-ruins.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/level-celestial-ruins.png"
     },
     {
       "id": "VIS-HIST-005",
@@ -152,7 +167,8 @@
       "group": "Nivel 01 / Mirador",
       "status": "ITERATION",
       "runtime_src": "assets/level01-lookout.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/level01-lookout.png"
     },
     {
       "id": "VIS-HIST-006",
@@ -161,7 +177,8 @@
       "group": "Dirección de arte",
       "status": "REFERENCE",
       "runtime_src": "assets/art-bible-journey.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/art-bible-journey.png"
     },
     {
       "id": "VIS-HIST-007",
@@ -170,7 +187,8 @@
       "group": "Nivel 01 / Isla",
       "status": "ITERATION",
       "runtime_src": "assets/floating-island-level.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/floating-island-level.png"
     },
     {
       "id": "VIS-HIST-008",
@@ -179,7 +197,8 @@
       "group": "Dirección de arte",
       "status": "REFERENCE",
       "runtime_src": "assets/world-design-bible.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/world-design-bible.png"
     },
     {
       "id": "VIS-HIST-009",
@@ -188,7 +207,8 @@
       "group": "Dirección de arte",
       "status": "REFERENCE",
       "runtime_src": "assets/visual-bible-islands.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/visual-bible-islands.png"
     },
     {
       "id": "VIS-HIST-010",
@@ -197,7 +217,8 @@
       "group": "Nivel 01 / Mapa",
       "status": "ITERATION",
       "runtime_src": "assets/floating-islands-map.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/floating-islands-map.png"
     },
     {
       "id": "VIS-HIST-011",
@@ -206,7 +227,8 @@
       "group": "Nivel 01 / Puente",
       "status": "ITERATION",
       "runtime_src": "assets/bridge-worlds.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/bridge-worlds.png"
     },
     {
       "id": "VIS-HIST-012",
@@ -215,7 +237,8 @@
       "group": "Producción / Modular",
       "status": "BAKE_OFF",
       "runtime_src": "assets/modular-island-kit.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/modular-island-kit.png"
     },
     {
       "id": "VIS-HIST-013",
@@ -224,7 +247,8 @@
       "group": "Nivel 01 / Mirador",
       "status": "ITERATION",
       "runtime_src": "assets/floating-islands-lookout.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/floating-islands-lookout.png"
     },
     {
       "id": "VIS-HIST-014",
@@ -233,7 +257,8 @@
       "group": "Producción / 3D",
       "status": "BAKE_OFF",
       "runtime_src": "assets/art-and-wind.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/art-and-wind.png"
     },
     {
       "id": "VIS-HIST-015",
@@ -242,7 +267,8 @@
       "group": "Mundo / Ruinas",
       "status": "ITERATION",
       "runtime_src": "assets/floating-ruins-guide.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/floating-ruins-guide.png"
     },
     {
       "id": "VIS-HIST-016",
@@ -251,7 +277,8 @@
       "group": "Nivel 01 / Cascadas",
       "status": "ITERATION",
       "runtime_src": "assets/waterfall-level-map.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/waterfall-level-map.png"
     },
     {
       "id": "VIS-HIST-017",
@@ -260,7 +287,8 @@
       "group": "Producción / Modular",
       "status": "BAKE_OFF",
       "runtime_src": "assets/floating-island-art-kit.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/floating-island-art-kit.png"
     },
     {
       "id": "VIS-HIST-018",
@@ -269,7 +297,8 @@
       "group": "Nivel 01 / Sendero",
       "status": "ITERATION",
       "runtime_src": "assets/floating-path-board.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/floating-path-board.png"
     },
     {
       "id": "VIS-HIST-019",
@@ -278,7 +307,8 @@
       "group": "Nivel 01 / Inicio",
       "status": "ITERATION",
       "runtime_src": "assets/start-zone-guide.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/start-zone-guide.png"
     },
     {
       "id": "VIS-HIST-020",
@@ -287,7 +317,8 @@
       "group": "Nave / Hogar",
       "status": "REFERENCE",
       "runtime_src": "assets/ship-home-stars.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/ship-home-stars.png"
     },
     {
       "id": "VIS-HIST-021",
@@ -296,7 +327,8 @@
       "group": "Personaje / Protagonista",
       "status": "ITERATION",
       "runtime_src": "assets/protagonist-sheet.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/protagonist-sheet.png"
     },
     {
       "id": "VIS-HIST-022",
@@ -305,7 +337,8 @@
       "group": "Mundo / Landmark",
       "status": "ITERATION",
       "runtime_src": "assets/tower-echoes.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/tower-echoes.png"
     },
     {
       "id": "VIS-HIST-023",
@@ -314,7 +347,8 @@
       "group": "Mundo / Isla",
       "status": "ITERATION",
       "runtime_src": "assets/island-a-master.jpg",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/island-a-master.jpg"
     },
     {
       "id": "VIS-HIST-024",
@@ -323,7 +357,8 @@
       "group": "Mundo / Isla",
       "status": "ITERATION",
       "runtime_src": "assets/island-b-master.jpg",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/island-b-master.jpg"
     },
     {
       "id": "VIS-HIST-025",
@@ -332,7 +367,8 @@
       "group": "Lab / Viento",
       "status": "ITERATION",
       "runtime_src": "assets/wind-lab-sunset.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/wind-lab-sunset.png"
     },
     {
       "id": "VIS-HIST-026",
@@ -341,7 +377,8 @@
       "group": "Producción / 3D",
       "status": "BAKE_OFF",
       "runtime_src": "assets/pipeline-board-current.png",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/pipeline-board-current.png"
     },
     {
       "id": "VIS-HIST-027",
@@ -350,7 +387,8 @@
       "group": "Molino R1",
       "status": "VOTING",
       "runtime_src": "assets/molino-a-top.jpg",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/molino-a-top.jpg"
     },
     {
       "id": "VIS-HIST-028",
@@ -359,7 +397,8 @@
       "group": "Molino R1",
       "status": "VOTING",
       "runtime_src": "assets/molino-b-top.jpg",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/molino-b-top.jpg"
     },
     {
       "id": "VIS-HIST-029",
@@ -368,7 +407,8 @@
       "group": "Molino R1",
       "status": "VOTING",
       "runtime_src": "assets/molino-c-top.jpg",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/molino-c-top.jpg"
     },
     {
       "id": "VID-RUNTIME-001",
@@ -396,7 +436,9 @@
       "status": "SENSOR_REFERENCE",
       "drive_id": "1g2mbvt9XcZhiDYetGYCA-OJ5GUZIN2aP",
       "canon_state": "NOT_AUTO_CANON",
-      "featured": true
+      "featured": true,
+      "thumbnail_src": "assets/gallery-local/sensor-world-thumb.webp",
+      "runtime_src": "assets/gallery-local/sensor-world-view.webp"
     },
     {
       "id": "SENSOR-HUD-20260923-01",
@@ -406,7 +448,9 @@
       "status": "ANTITHESIS_SENSOR",
       "drive_id": "1jXJyi_T3stnmjq2vwT7i08lAwRHqu2pi",
       "canon_state": "NOT_AUTO_CANON",
-      "featured": true
+      "featured": true,
+      "thumbnail_src": "assets/gallery-local/sensor-hud-thumb.webp",
+      "runtime_src": "assets/gallery-local/sensor-hud-view.webp"
     },
     {
       "id": "GIFT-SKYSHIP-VIDEO-01",
@@ -434,7 +478,9 @@
       "group": "Metodología / Organismo Vivo",
       "status": "HUMAN_APPROVED_STRONG_REFERENCE",
       "drive_id": "1ttiWUR1-ggQw8cE0IXmsXmFoI4LhhODg",
-      "canon_state": "NOT_AUTO_CANON"
+      "canon_state": "NOT_AUTO_CANON",
+      "thumbnail_src": "assets/gallery-local/organismo-vivo-thumb.webp",
+      "runtime_src": "assets/gallery-local/organismo-vivo-view.webp"
     },
     {
       "id": "ORG-VIVO-COLLECTOR-01",
@@ -444,7 +490,9 @@
       "status": "HUMAN_APPROVED_STRONG_REFERENCE",
       "drive_id": "1RZTIZOR6eGgxoVq1kqdAjkSTNvcrtr7t",
       "canon_state": "NOT_AUTO_CANON",
-      "featured": true
+      "featured": true,
+      "thumbnail_src": "assets/gallery-local/organismo-collector-thumb.webp",
+      "runtime_src": "assets/gallery-local/organismo-collector-view.webp"
     },
     {
       "id": "GIFT-TOKEN-SHEET-01",
@@ -454,7 +502,9 @@
       "status": "HUMAN_TRACE_GIFT_NO_CANON",
       "drive_id": "1W8ipWm369ZVKcBqJvNobQtLM39e7_JEZ",
       "canon_state": "NOT_AUTO_CANON",
-      "featured": true
+      "featured": true,
+      "thumbnail_src": "assets/gallery-local/gift-token-sheet-thumb.webp",
+      "runtime_src": "assets/gallery-local/gift-token-sheet-view.webp"
     }
   ]
 }
