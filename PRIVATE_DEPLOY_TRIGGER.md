@@ -20,3 +20,7 @@ retry=token-refresh-access-check-2026-09-26
 retry=gallery-top-quality-head-sync-2026-09-26
 expected_head=11f2677ecdd8736a80670b65a43e55b57b02f4e5
 purpose=deploy current Gallery runtime assets for real-device verification
+
+retry=gallery-tablet-repair-video-3d-audio-2026-09-26
+expected_head=a118579b6911dc149a9968ac88d7efe77c5077b2
+purpose=repair tablet video thumbnails, prioritize visible 3D preview, expose chunk-audio play control
