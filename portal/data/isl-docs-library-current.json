@@ -321,6 +321,20 @@
         "gallery",
         "command_center"
       ]
+    },
+    {
+      "id": "DOC-VISUAL-001",
+      "title": "Cinematic Aesthetic Synthesizer",
+      "group": "Visual / Cinematic",
+      "kind": "method",
+      "status": "CURRENT",
+      "source": "github",
+      "url": "https://github.com/juanmailcamara331-hash/islas-voladoras/blob/main/docs/ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT.md",
+      "canon_state": "TRANSVERSAL",
+      "surfaces": [
+        "gallery",
+        "command_center"
+      ]
     }
   ]
 }
