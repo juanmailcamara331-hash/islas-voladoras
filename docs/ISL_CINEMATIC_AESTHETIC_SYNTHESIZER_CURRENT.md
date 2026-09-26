@@ -2171,3 +2171,116 @@ RECOVER this CURRENT section
 → KEEP/MUTATE/PARK/KILL.
 
 No new narrative additions before first controlled sensor unless they repair a blocker.
+
+
+## CINEMATIC LIGHTING QUALITY FLOOR · ALWAYS-ON VISUAL GATE · 2026-09-26
+Estado: ACTIVE METHOD · EXISTING ORGAN EXTENSION · NO NEW ORGAN · NO AUTO-CANON
+
+### WHY
+A visually strong ISL image can still regress if lighting collapses into generic bright fantasy, flat toon exposure, global golden-hour wash, muddy darkness or uncontrolled glow.
+Recent human evidence exposed this exact failure mode: composition/world content may survive while the established ISL cinematic lighting language drops below the project's normal quality floor.
+
+Therefore lighting is not a late polish.
+For every material visual generation / edit / image-to-video derivative, lighting is a FIRST-CLASS QUALITY AXIS.
+
+### QUALITY FLOOR
+Unless a task explicitly requires another lighting logic, the default ISL cinematic floor is:
+
+DEEP LOCAL BLACKS
++ SHAPED / MODELED MIDTONES
++ CONTROLLED HIGHLIGHTS
++ CLEAR SUBJECT/WORLD LEGIBILITY
++ ATMOSPHERIC DEPTH
++ MATERIAL SEPARATION
++ PURPOSEFUL WARM/COOL RELATION
++ NO GLOBAL EXPOSURE WASH.
+
+REF B remains PRIMARY LIGHT AUTHORITY by function when the current visual lane inherits the four-reference pack.
+
+### MEDIAN-QUALITY RULE
+A new visual candidate must not be accepted merely because composition, colour or spectacle is exciting if lighting falls materially below the established recent ISL median.
+
+Human shorthand:
+THE LIGHT MUST CARRY THE EMOTION, NOT JUST ILLUMINATE THE ASSET.
+
+When evidence is sparse, do not invent a numeric score.
+Use qualitative comparison:
+LAST GOOD / CURRENT CANDIDATE / LIGHTING FAILURE / CHEAP REPAIR.
+
+### LIGHTING PREFLIGHT
+Before substantive visual generation, silently resolve:
+1. PRIMARY LIGHT DIRECTION
+2. SHADOW MASS / STRUCTURAL BLACKS
+3. MIDTONE MODELING
+4. HIGHLIGHT BUDGET
+5. WARM/COOL FUNCTION
+6. ATMOSPHERIC DEPTH
+7. MATERIAL RESPONSE
+8. SUBJECT READABILITY
+9. WORLD READABILITY
+10. WHAT MUST STAY DARK.
+
+### LIGHTING CQC
+FAIL / MUTATE if any of these appear without explicit purpose:
+- same brightness across all planes;
+- all-cloud white exposure;
+- every important object glowing;
+- generic golden-hour wash;
+- flat toon key/fill;
+- shadows with no readable structure;
+- black crush that destroys gameplay/readability;
+- no separation between wood/metal/cloth/crystal/cloud/skin;
+- background as bright/sharp as foreground;
+- highlight density that erases eye path;
+- image looks beautiful but no longer cinematic ISL.
+
+### STILL → VIDEO INHERITANCE
+Any image-to-video derivative must preserve:
+- key-light direction;
+- shadow hierarchy;
+- black masses;
+- midtone modeling;
+- highlight placement/budget;
+- warm/cool semantic relation;
+- material-light behaviour.
+
+Motion, VFX or exposure changes may not flatten the approved still.
+If video introduces lighting drift:
+RETURN TO STILL MASTER → RELIGHT / LOCK → RETEST.
+
+### CHEAP REPAIR ORDER
+When lighting fails, do not reroll the whole concept first.
+Try:
+1. RELIGHT / EXPOSURE HIERARCHY
+2. BLACKS / MIDTONES / HIGHLIGHTS
+3. WARM-COOL FUNCTION
+4. ATMOSPHERIC DEPTH
+5. MATERIAL SEPARATION
+6. ONLY THEN broader regeneration if identity/composition also failed.
+
+### ROUTING
+Triggers:
+VISUAL_GENERATION
+IMAGE_EDIT
+KEY_ART
+PROMO_FRAME
+CINEMATIC_FRAME
+IMAGE_TO_VIDEO
+VISUAL_REFERENCE_CURRENT
+GALLERY_HERO
+PUBLICATION_CANDIDATE
+
+Route through:
+CINEMATIC AESTHETIC SYNTHESIZER
++ Meta-Layer Orchestrator M1 QUALITY
++ M2 SOURCE / IDENTITY
++ M11 MEDIA / ASSET LIFECYCLE
+(+ task-specific layer only if it reduces uncertainty).
+
+### HUMAN GATE
+AI may diagnose lighting drift and prepare a relight candidate.
+Human decides KEEP / MUTATE / PARK / KILL.
+
+No automatic CANON promotion.
+No new lighting bot.
+Use existing watchers and curation.
