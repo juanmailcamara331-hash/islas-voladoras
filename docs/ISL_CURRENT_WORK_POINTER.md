@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-26 · v0.96 AUTHORITY MIGRATION + PRIVATE DEPLOY GREEN
+- New additive checkpoint: docs/ISL_CHECKPOINT_v0.96_AUTHORITY_MIGRATION_CINEMATIC_DNA_LIGHT_UX_HANDOFF_2026-09-26.md.
+- Drive ISL_CHECKPOINT_MASTER_CURRENT now boots from v0.96; v0.94 and earlier remain preserved historical authority.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. SAFE HARBOR intact. NO AUTO-CANON.
+- v0.96 consolidates existing Cinematic Lighting Quality Floor, Exposure/Shadow-Mass Gate, Visual Coherence & Load, Human-First light UX, Creative DNA Crossing/Serendipity routing and current private deployment state. No new organ/bot.
+- PRIVATE_DEPLOY_GREEN = PASS. GitHub Actions run 36230864583 passed token project-access check, security gate, private build, artifact verification, canonical project link, private SSO alias deploy and deployment gate.
+- Netlify project remains PRIVATE with Team login / SSO required for production and previews; privacy was not weakened.
+- ONE ACTIVE = human read of the deployed private surface on real mobile/device.
+- ONE NEXT = distant-milestones image recovery/relight bullet; no reroll and no generation without explicit human FIRE.
+- Distant-milestones lighting correction: deep local blacks + modeled midtones + controlled highlights + denser shadow mass + lower saturation outside focus. RELIGHT BEFORE REROLL.
+- Creative memory Seed Pass result remains methodological only: identity seed + separable layers + mutation rules + human rediscovery. HUMAN READ PENDING · NO ASSET IMPORT · NO AUTO-KEEP.
+
 # ACTIVE EXECUTION NOTE · 2026-09-26 · CINEMATIC EXPOSURE / SHADOW-MASS GATE
 - Human review confirmed a recurring failure mode: recent ISL frames can become too open, too saturated and too uniformly readable even when composition improves.
 - Existing Cinematic Aesthetic Synthesizer extended; NO new bot/organ.
