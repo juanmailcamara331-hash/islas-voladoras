@@ -48,9 +48,13 @@
 <div class="card"><img src="assets/physical/patch.webp" alt="Parche ISL"><div class="pad"><span class="tag">CREW PATCH 01</span><h3>Pertenecer sin uniforme.</h3></div></div>
 </div></section>
 
-<section class="section panel gate"><div class="eyebrow">HUMAN GATE · LOCAL ONLY</div><h2>¿Qué sigue vivo cuando cierras esta página?</h2><p>Esta lectura es provisional, se guarda sólo en este navegador y no cambia CANON ni autoridad.</p><div class="choices" id="choices"><button>KEEP</button><button>MUTATE</button><button>PARK</button><button>KILL</button></div><p class="small" id="saved">Sin decisión todavía.</p></section>
+<section class="section panel" id="route"><div class="eyebrow">CAMPAIGN ROUTE · OBJECT BIOGRAPHY</div><h2>El objeto no termina cuando lo recibes.</h2><p>La campaña se comporta como una sola biografía: un error produce una huella, la huella entra en el pasaporte y algunas huellas reaparecen más tarde como procedencia de una reliquia.</p><div class="grid">
+<div class="card"><div class="pad"><span class="tag">01 · CONTRABANDO</span><h3>Llega algo.</h3><p>No siempre a quien debía.</p></div></div>
+<div class="card"><div class="pad"><span class="tag">02 · MÁQUINA</span><h3>El error deja memoria.</h3><p>La próxima visita puede devolverte una consecuencia, no sólo otro resultado.</p></div></div>
+<div class="card"><div class="pad"><span class="tag">03 · PASAPORTE</span><h3>La huella se queda.</h3><p>La pieza envejece con experiencias reales, no con desgaste falso.</p></div></div>
+</div><div class="panel" style="margin-top:12px;background:#0b0a08"><div class="eyebrow">04 · REENCUENTRO</div><h2 style="font-size:36px">Algo que parecía inútil vuelve a tener sentido.</h2><p id="reunionCopy">Todavía no hay suficiente historia local para un reencuentro.</p></div></section><section class="section panel gate"><div class="eyebrow">HUMAN GATE · LOCAL ONLY</div><h2>¿Qué sigue vivo cuando cierras esta página?</h2><p>Esta lectura es provisional, se guarda sólo en este navegador y no cambia CANON ni autoridad.</p><div class="choices" id="choices"><button>KEEP</button><button>MUTATE</button><button>PARK</button><button>KILL</button></div><p class="small" id="saved">Sin decisión todavía.</p></section>
 
-<div class="footer">PRIVATE DEVELOPMENT SURFACE · CONCEPT ART / MOCKUPS · NOT YET MANUFACTURED · NO PURCHASE FLOW · NO PRODUCTION CLAIM · ISL ONLY</div>
+<div class="footer">PRIVATE DEVELOPMENT SURFACE · CONCEPT ART / MOCKUPS · OBJECT BIOGRAPHY TEST · NOT YET MANUFACTURED · NO PURCHASE FLOW · NO PRODUCTION CLAIM · ISL ONLY</div>
 </main>
 <script>
 (function(){
@@ -68,6 +72,16 @@
  const bt=document.getElementById('wrongButton'),tt=document.getElementById('wrongTitle'),tx=document.getElementById('wrongText'),mt=document.getElementById('wrongMeta');
  function show(o){tt.textContent=o[0];tx.textContent=o[1];mt.textContent='HUELLA LOCAL · '+o[2]}
  const old=JSON.parse(localStorage.getItem(WK)||'[]'); if(old.length) show(outcomes[old[old.length-1]%outcomes.length]);
- bt.onclick=()=>{let h=JSON.parse(localStorage.getItem(WK)||'[]');let i=(h.length*3+1)%outcomes.length;h.push(i);localStorage.setItem(WK,JSON.stringify(h.slice(-12)));show(outcomes[i])}
+ function reunion(){
+ const h=JSON.parse(localStorage.getItem(WK)||'[]');
+ const r=document.getElementById('reunionCopy');
+ if(!r)return;
+ if(h.length>=3){
+   const old=outcomes[h[Math.max(0,h.length-3)]%outcomes.length];
+   r.textContent='La máquina recuerda: “'+old[0]+'”. Algo de aquella pieza vuelve a cruzarse contigo.';
+ }else r.textContent='Todavía no hay suficiente historia local para un reencuentro.';
+}
+bt.onclick=()=>{let h=JSON.parse(localStorage.getItem(WK)||'[]');let i=(h.length*3+1)%outcomes.length;h.push(i);localStorage.setItem(WK,JSON.stringify(h.slice(-12)));show(outcomes[i]);reunion()}
+reunion()
 })();
 </script></body></html>
