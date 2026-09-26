@@ -362,3 +362,225 @@ Representative Unreal ingestion smoke:
 1 VFX prototype.
 
 No mass asset factory until these five lanes pass.
+
+
+## CROSS-STANDARD GAP AUDIT · 2026-09-26
+Comparado contra NASA Systems Engineering / V&V / Configuration Management, Google SRE, Twitch Extension/Broadcast operational constraints y Unreal Engine 5.8 official testing/profiling docs.
+
+No crear órganos nuevos. Estos son contratos faltantes a insertar gradualmente en capas existentes.
+
+### GAP 1 · REQUIREMENT → VERIFICATION → VALIDATION TRACE
+Estado: PARTIAL.
+Ya existen U0–U8 / T0–T8, human gates y tests, pero falta una matriz mínima que distinga:
+- REQUIREMENT / INTENT
+- VERIFICATION METHOD
+- VALIDATION METHOD
+- TARGET ENVIRONMENT
+- EVIDENCE
+- STATUS
+- OWNER/HUMAN GATE.
+
+Regla:
+VERIFICATION = “¿lo construimos conforme al contrato?”
+VALIDATION = “¿sirve de verdad al humano en el entorno previsto?”
+
+Aplicar primero a:
+Gallery
+Velaria P0
+save/state
+Unreal import
+input
+cross-device
+audio/video/3D runtime.
+
+### GAP 2 · INTERFACE CONTROL CONTRACT
+Estado: PARTIAL.
+Cada frontera material debe tener un contrato pequeño:
+SOURCE → FORMAT → ID → VERSION → AUTHORITY → FAILURE MODE → FALLBACK → TEST.
+
+Primeras interfaces:
+Drive ↔ Gallery
+GitHub ↔ Netlify
+Gallery ↔ local media runtime
+3D source ↔ GLB web ↔ FBX/UE
+Web/app ↔ localStorage/save
+Unreal ↔ external derived exports.
+
+No duplicar datos por conveniencia sin autoridad explícita.
+
+### GAP 3 · SLO / ERROR BUDGET FOR DEVELOPMENT SURFACES
+Estado: MISSING FORMALIZATION.
+No usar “99.99%” ficticio.
+Definir sólo SLOs humanos y medibles cuando exista suficiente evidencia.
+
+Ejemplos de SLIs:
+- Gallery card opens correct asset
+- thumbnail visible
+- media starts
+- wrong-content rate
+- broken-button rate
+- cold load time
+- device crash rate
+- save/reload correctness.
+
+Policy:
+if repeated regressions exceed agreed tolerance, freeze feature expansion on that surface and spend the next cycle on reliability/security/regression fixes.
+
+### GAP 4 · CANARY / STAGED DELIVERY
+Estado: PARTIAL.
+Carrillo/private preview already acts as human canary, but formalize:
+BUILD
+→ automated smoke
+→ private device canary
+→ second device/profile
+→ broader private cohort
+→ public only after explicit gate.
+
+Rollback must be known before promotion.
+Never use production/public as first realistic test.
+
+### GAP 5 · INCIDENT / BUG POSTMORTEM THRESHOLD
+Estado: PARTIAL.
+BUG → METHOD exists.
+Add lightweight postmortem only for:
+- repeated user-visible regression
+- data loss/corruption
+- security/privacy boundary failure
+- rollback required
+- monitoring/test failed to detect a major issue.
+
+Template:
+IMPACT
+→ TIMELINE
+→ ROOT/CONTRIBUTING CAUSES
+→ WHAT WORKED
+→ WHAT FAILED
+→ WHERE WE GOT LUCKY
+→ ONE PREVENTIVE GUARD.
+
+Blameless: fix system/process, not person.
+
+### GAP 6 · SCREENSHOT / CONTENT-STRESS REGRESSION
+Estado: MISSING EXECUTION.
+Unreal Automation supports unit / feature / smoke / content stress / screenshot comparison.
+
+Adopt when Unreal lane opens:
+- load all critical maps/packages
+- compile/load representative Blueprints/assets
+- screenshot baseline for lighting/UI/gameplay gates
+- resolution/device-profile checks
+- save/load golden path.
+
+Do not baseline unstable art prematurely.
+
+### GAP 7 · LOCAL STATE MIGRATION / EXPORT
+Estado: MISSING.
+Collector/Passport/Gallery experiments use browser-local state.
+Before human history matters:
+- version local schema
+- provide export/import
+- define reset
+- define migration
+- distinguish ephemeral sensor state from durable human trace.
+
+Never let browser clear/cache loss silently destroy a HUMAN TRACE that was supposed to persist.
+
+### GAP 8 · STORAGE / RESTORE EVIDENCE
+Estado: MISSING EXECUTION, METHOD PRESENT.
+Git mirror / second backup / Drive are planned, but restore evidence is not yet demonstrated.
+
+Required future drill:
+1. fresh empty workspace
+2. restore repo from independent copy
+3. restore one crown-jewel media master
+4. rebuild private surface
+5. verify hashes/IDs
+6. record result.
+
+BACKUP WITHOUT RESTORE TEST = UNVERIFIED BACKUP.
+
+### GAP 9 · DEPENDENCY / BUILD REPRODUCIBILITY
+Estado: PARTIAL.
+Before Unreal scale-up:
+- pin critical tool/runtime versions when feasible
+- archive dependency manifests
+- record Unreal engine version once frozen
+- record plugin versions
+- preserve build scripts
+- produce build receipt.
+
+No hidden “works on my machine” dependency.
+
+### GAP 10 · STREAM / TWITCH-STYLE REVIEW MODE
+Estado: PREPARED CONCEPT ONLY.
+Lessons transferable without adopting Twitch as architecture:
+- sandbox/CSP explicit
+- media/audio controls visible; avoid surprise autoplay
+- mobile readability/accessibility
+- review build must load without secret manual setup
+- bandwidth/test mode for stream integration
+- production credentials/stream keys never in client/repo.
+
+Use only if streaming surface becomes active.
+
+### GAP 11 · RESOURCE ENVELOPE / SATURATION
+Estado: PARTIAL.
+Asset budget exists; add milestone resource envelope based on real measurements:
+- repo bytes
+- Drive bytes
+- build bytes
+- media runtime bytes
+- texture memory
+- VRAM/RAM
+- shader/PSO growth
+- package time
+- upload/deploy time.
+
+No arbitrary panic threshold.
+After 10–20 representative assets, fit real distributions and project P50/P90 growth.
+
+### GAP 12 · LAUNCH READINESS MATRIX
+Estado: PARTIAL.
+Campaign/SEO/legal/security exist in separate methods, but before public milestone produce ONE compact launch matrix:
+PRODUCT
+BUILD
+DEVICE
+PERFORMANCE
+ACCESSIBILITY
+PRIVACY
+SECURITY
+IP/RIGHTS
+STORE/PLATFORM
+CAMPAIGN CLAIMS
+SEO/PUBLIC METADATA
+BACKUP/ROLLBACK
+SUPPORT/COMMUNICATION
+FULFILLMENT if physical.
+
+Public gate remains HUMAN.
+
+## PRIORITY
+Do not execute all gaps now.
+
+P0 NOW:
+1. Gallery runtime + top-quality view + local previews.
+2. local-state/runtime correctness.
+3. real-device validation.
+
+P1 NEXT:
+4. Three.js asset lab.
+5. first Requirement→V&V trace rows.
+6. interface contracts for GLB/FBX/runtime.
+
+P2 WHEN UNREAL OPENS:
+7. screenshot/content-stress automation.
+8. Device Profiles/perf envelope.
+9. staged/canary packaged builds.
+
+P3 BEFORE PUBLIC CAMPAIGN:
+10. launch matrix.
+11. IP/rights ledger.
+12. restore drill + verified independent mirror.
+
+ANTI-BUREAUCRACY:
+If a matrix is not changing a decision, reducing risk or proving readiness, do not fill it in.
