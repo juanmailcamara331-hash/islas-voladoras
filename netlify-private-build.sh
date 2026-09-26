@@ -55,7 +55,7 @@ test -f build/private/rumbo-isl.html
 test -f build/private/irene-bestiary.html
 test -f build/private/creative-dna.html
 test -f build/private/data/isl-creative-dna-current.json
-grep -q "Creative DNA / Serendipity" build/private/creative-dna.html
+grep -q "PRIVATE LAB · REENCUENTRO CREATIVO" build/private/creative-dna.html
 grep -q "Equilibrio vivo" build/private/rumbo-isl.html
 grep -q "islCarrilloPrivateEntry" build/private/index.html
 grep -q "islCarrilloPrivateEntry" build/private/command-center.html
