@@ -21,7 +21,6 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 @media(max-width:640px){body:before{content:"";position:fixed;left:0;right:0;top:0;height:max(44px,env(safe-area-inset-top));background:#071017;z-index:9;pointer-events:none}.wrap{width:calc(100vw - 12px);padding-top:max(52px,calc(24px + env(safe-area-inset-top)));padding-bottom:150px}h1{font-size:44px}.btn{padding:9px 10px}.tabs{top:max(44px,calc(4px + env(safe-area-inset-top)))}.grid{grid-template-columns:1fr 1fr}.card h2{font-size:15px}.meta{font-size:8px}.thumb{aspect-ratio:1.15}}
 @media(max-width:420px){.grid{grid-template-columns:1fr}}
 </style>
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
 
 <style id="isl-gallery-touch-v076">
 .card .thumb{cursor:zoom-in;position:relative}
@@ -135,7 +134,13 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 <script>
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const human=s=>String(s??'').replaceAll('_',' ').replace(/\s+/g,' ').trim().replace(/\b\w/g,m=>m.toUpperCase());
-const driveThumb=(id,w=900)=>id?('https://drive.google.com/thumbnail?id='+encodeURIComponent(id)+'&sz=w'+w):'';
+const driveThumb=()=>''; // Remote Drive thumbnails are intentionally disabled in runtime.
+const chunksAttr=a=>encodeURIComponent(JSON.stringify(Array.isArray(a&&a.runtime_chunks)?a.runtime_chunks:[]));
+const mimeOf=(a,fallback)=>a&&a.runtime_mime?a.runtime_mime:fallback;
+function safePoster(a){
+ const p=(a&&((a.poster_src||a.thumbnail_src)))||'';
+ return isInternalUrl(p)?p:'';
+}
 const isInternalUrl=u=>!!u && !/^(?:https?:)?\/\//i.test(u) && !/^mailto:|^tel:/i.test(u);
 function primaryDrive(a){
  if(!a)return '';
@@ -149,29 +154,31 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>setTab(b.dataset.tab)
 addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
 function archiveCard(a){
  const drive=a.drive_id||'',src=a.runtime_src||'',kind=(a.type||'image').toLowerCase();
+ const poster=safePoster(a),chunks=chunksAttr(a),mime=mimeOf(a,kind==='video'?'video/mp4':kind==='audio'?'audio/mpeg':'');
  let media='';
- if(kind==='video'&&src) media='<video muted playsinline preload="metadata" src="'+esc(src)+'"></video>';
+ if(kind==='video'&&poster) media='<img loading="lazy" src="'+esc(poster)+'" alt="'+esc(a.title)+'">';
+ else if(kind==='video'&&src) media='<video muted playsinline preload="metadata" src="'+esc(src)+'"></video>';
  else if(src) media='<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title)+'">';
- else if(drive&&kind!=='audio'&&kind!=='3d') media='<img class="drivePoster" loading="lazy" src="'+esc(driveThumb(drive,900))+'" alt="'+esc(a.title)+'">';
- else if(drive) media='<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">'+(kind==='audio'?'♫':kind==='3d'?'◇':'▣')+'</span><small>PREVIEW PENDIENTE</small></div>';
+ else if(poster) media='<img loading="lazy" src="'+esc(poster)+'" alt="'+esc(a.title)+'">';
+ else if(drive) media='<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">'+(kind==='audio'?'♫':kind==='3d'?'◇':'▣')+'</span><small>PREVIEW LOCAL PENDIENTE</small></div>';
  else media='<span aria-hidden="true">'+(kind==='video'?'▶':kind==='audio'?'♫':kind==='3d'?'◇':'▣')+'</span>';
- return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(kind)+'"><div class="thumb mediaThumb">'+media+'<span class="mediaBadge">'+esc(kind.toUpperCase())+'</span></div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-runtime="'+esc(src)+'" data-chunks="'+esc(chunks)+'" data-mime="'+esc(mime)+'" data-kind="'+esc(kind)+'"><div class="thumb mediaThumb">'+media+'<span class="mediaBadge">'+esc(kind.toUpperCase())+'</span></div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
 }
 function prismCard(a){
- const drive=a.drive_id||'',src=a.runtime_src||'';
- const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title||a.id)+'">':drive?'<img class="drivePoster" loading="lazy" src="'+esc(driveThumb(drive,900))+'" alt="'+esc(a.title||a.id)+'">':'<span aria-hidden="true">◈</span>';
+ const drive=a.drive_id||'',src=a.runtime_src||'',poster=safePoster(a);
+ const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title||a.id)+'">':poster?'<img loading="lazy" src="'+esc(poster)+'" alt="'+esc(a.title||a.id)+'">':drive?'<div class="internalPending"><span aria-hidden="true">◈</span><small>PREVIEW LOCAL PENDIENTE</small></div>':'<span aria-hidden="true">◈</span>';
  return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-url="'+esc(a.prototype_url||'')+'" data-kind="image"><div class="thumb">'+media+'</div><div class="pad"><div class="k">MUNDO PRISMA</div><h2>'+esc(a.title||a.id)+'</h2><span class="status warn">'+esc(a.status||'PROTOTYPE SEED')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.law||'')+' · '+esc(a.canon_state||'NO CANON')+'</div></details></div></article>';
 }
 function labCard(a){
  const title=a.title||a.name||a.entity||a.id;
- const drive=a.drive_id||'',src=a.runtime_src||'';
- const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(human(title))+'">':(drive&&a.type!=='audio'&&a.type!=='3d')?'<img class="drivePoster" loading="lazy" src="'+esc(driveThumb(drive,900))+'" alt="'+esc(human(title))+'">':drive?'<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">'+(a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span><small>FUENTE ARCHIVADA · PREVIEW PENDIENTE</small></div>':'<span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span>';
+ const drive=a.drive_id||'',src=a.runtime_src||'',poster=safePoster(a);
+ const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(human(title))+'">':poster?'<img loading="lazy" src="'+esc(poster)+'" alt="'+esc(human(title))+'">':drive?'<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">'+(a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span><small>FUENTE ARCHIVADA · PREVIEW LOCAL PENDIENTE</small></div>':'<span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span>';
  return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(a.type||'file')+'"><div class="thumb">'+media+'</div><div class="pad"><h2>'+esc(human(title))+'</h2><span class="status warn">NO CANON</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(a.role||''))+' · '+esc(human(a.status||'CANDIDATE'))+'</div></details></div></article>';
 }
 function healthCard(a){
  const state=a.state||a.status||'UNKNOWN', src=a.runtime_ref||a.runtime_src||'', drive=primaryDrive(a);
  const rawPoster=a.poster_src||a.thumbnail_src||'';
- const poster=rawPoster||driveThumb(drive,900);
+ const poster=isInternalUrl(rawPoster)?rawPoster:'';
  const rawName=a.display_name||a.name||a.entity_id||a.entity||a.id||a.asset_id;
  const name=(a.display_name||a.name)?String(rawName):human(rawName);
  const blocker=a.blocker||'', next=a.next||'';
@@ -202,10 +209,11 @@ function journeyView(j){
  +'<div class="journeyLock"><b>MASTER PRIVADO PROTEGIDO.</b> Esta Gallery no expone el binario ni enlaces de descarga. CLEAN MASTER: '+esc(j.clean_master)+' · PUBLIC RELEASE: '+esc(j.public_release)+' · '+esc(j.master_access)+'</div>';
 }
 function musicCard(t){
- const src=t.runtime_src||'',drive=t.drive_id||'',wired=!!(src||drive);
+ const src=t.runtime_src||'',drive=t.drive_id||'',chunks=chunksAttr(t),hasChunks=Array.isArray(t.runtime_chunks)&&t.runtime_chunks.length>0;
  const player=src?'<div class="player"><audio controls preload="none" src="'+esc(src)+'"></audio></div>':'';
- const badge=src?'AUDIO · LISTO':drive?'AUDIO · ARCHIVADO':'AUDIO · PENDIENTE';
- return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-runtime="'+esc(src)+'" data-kind="'+(src?'audio':drive?'audio-archive':'audio-pending')+'" data-music-title="'+esc(t.title)+'" data-music-state="'+esc(t.source_state||t.status||'SOURCE_NOT_WIRED')+'"><div class="thumb mediaThumb"><span aria-hidden="true">♫</span><span class="mediaBadge">'+esc(badge)+'</span></div><div class="pad"><h2>'+esc(t.title)+'</h2>'+player+'<details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(t.status||''))+'</div></details></div></article>';
+ const badge=(src||hasChunks)?'AUDIO · LISTO':drive?'AUDIO · ARCHIVADO':'AUDIO · PENDIENTE';
+ const kind=(src||hasChunks)?'audio':drive?'audio-archive':'audio-pending';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-runtime="'+esc(src)+'" data-chunks="'+esc(chunks)+'" data-mime="'+esc(mimeOf(t,'audio/mpeg'))+'" data-kind="'+kind+'" data-music-title="'+esc(t.title)+'" data-music-state="'+esc(t.source_state||t.status||'SOURCE_NOT_WIRED')+'"><div class="thumb mediaThumb"><span aria-hidden="true">♫</span><span class="mediaBadge">'+esc(badge)+'</span></div><div class="pad"><h2>'+esc(t.title)+'</h2>'+player+'<details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(t.status||''))+'</div></details></div></article>';
 }
 Promise.all([
  fetch('data/isl-gallery-library-current.json',{cache:'no-store'}).then(r=>r.json()),
@@ -259,7 +267,26 @@ Promise.all([
 (function(){
   var lb=document.createElement('div');lb.id='galleryLightbox';lb.innerHTML='<div class="galleryViewerTools" id="galleryViewerTools"></div><button type="button" aria-label="Cerrar">×</button><figure><div id="galleryLbMedia"></div><figcaption id="galleryLbCaption"></figcaption></figure>';document.body.appendChild(lb);
   var media=lb.querySelector('#galleryLbMedia'),cap=lb.querySelector('#galleryLbCaption'),tools=lb.querySelector('#galleryViewerTools');
-  function close(){lb.classList.remove('show');media.innerHTML='';tools.innerHTML='';document.body.style.overflow=''}
+  var activeObjectUrls=[];
+  function clearObjectUrls(){activeObjectUrls.forEach(function(u){try{URL.revokeObjectURL(u)}catch(e){}});activeObjectUrls=[]}
+  async function blobUrlFromChunks(encoded,mime){
+    var paths=[];
+    try{paths=JSON.parse(decodeURIComponent(encoded||'%5B%5D'))}catch(e){paths=[]}
+    if(!Array.isArray(paths)||!paths.length) return '';
+    var parts=[];
+    for(var i=0;i<paths.length;i++){
+      var r=await fetch(paths[i],{cache:'force-cache'});
+      if(!r.ok) throw new Error('chunk '+(i+1)+'/'+paths.length+' '+r.status);
+      parts.push((await r.text()).trim());
+    }
+    var binary=atob(parts.join('').replace(/\s+/g,''));
+    var bytes=new Uint8Array(binary.length);
+    for(var j=0;j<binary.length;j++)bytes[j]=binary.charCodeAt(j);
+    var u=URL.createObjectURL(new Blob([bytes],{type:mime||'application/octet-stream'}));
+    activeObjectUrls.push(u);
+    return u;
+  }
+  function close(){lb.classList.remove('show');media.innerHTML='';tools.innerHTML='';clearObjectUrls();document.body.style.overflow=''}
   function show(node,title){media.replaceChildren(node);cap.textContent=title||'';lb.classList.add('show');document.body.style.overflow='hidden'}
   function addTool(label,fn){var b=document.createElement('button');b.type='button';b.textContent=label;b.onclick=function(e){e.stopPropagation();fn()};tools.appendChild(b);return b}
   function zoomImage(src,alt,title){
@@ -284,28 +311,38 @@ Promise.all([
     show(box,'');
     if(drive)addTool('ABRIR FUENTE EXTERNA · DRIVE ↗',function(){window.open('https://drive.google.com/file/d/'+encodeURIComponent(drive)+'/view','_blank','noopener')});
   }
-  function open3d(src,title,drive,card){
-    if(src){
+  function open3d(src,title,drive,card,img){
+    if(src&&customElements.get('model-viewer')){
       var mv=document.createElement('model-viewer');mv.src=src;mv.setAttribute('camera-controls','');mv.setAttribute('touch-action','pan-y');mv.setAttribute('shadow-intensity','1');mv.setAttribute('environment-image','neutral');mv.alt=title||'ISL 3D';
       show(mv,title);addTool('CENTRAR',function(){try{mv.cameraOrbit='auto auto auto';mv.fieldOfView='30deg'}catch(e){}});
       return;
     }
-    var state=card&&card.dataset.state?human(card.dataset.state):'RUNTIME PENDIENTE';
-    var hasDrive=!!drive;
-    var message=hasDrive
-      ? 'El modelo 3D está archivado, pero todavía no está preparado para girarlo dentro de la app.'
-      : 'El modelo 3D está registrado, pero todavía falta preparar su versión interactiva para la app.';
-    statusBox(title,'3D · PREPARACIÓN PENDIENTE',message,drive);
+    if(img){
+      zoomImage(img.currentSrc||img.src,img.alt||title,title);
+      addTool('3D',function(){statusBox(title,'3D · RUNTIME LOCAL PENDIENTE','Esta vista grande es el poster local. El GLB interactivo sólo se activará cuando el visor 3D también esté empaquetado dentro de ISL.',drive)});
+      return;
+    }
+    statusBox(title,'3D · RUNTIME LOCAL PENDIENTE','El modelo está registrado, pero no se abrirá mediante un CDN externo. Falta empaquetar GLB + visor local dentro de ISL.',drive);
   }
-  function openCard(card){
+  async function openCard(card){
     var title=card.querySelector('h2')?card.querySelector('h2').textContent:'';
     var kind=(card.dataset.kind||'').toLowerCase(), runtime=card.dataset.runtime||'';
+    var chunks=card.dataset.chunks||'',mime=card.dataset.mime||'';
     var img=card.querySelector('.thumb img'),vid=card.querySelector('.thumb video'),mv=card.querySelector('.thumb model-viewer');
     var drive=card.dataset.drive||'',url=card.dataset.url||'',sourceUrl=card.dataset.sourceUrl||'';
     tools.innerHTML='';
-    if(kind==='3d'||mv){var src=runtime||(mv&&mv.src)||'';return open3d(src,title,drive,card)}
-    if(kind==='audio'&&runtime){
-      var au=document.createElement('audio');au.src=runtime;au.controls=true;au.autoplay=true;au.style.width='min(90vw,720px)';return show(au,title)
+    if(kind==='3d'||mv){var src3=runtime||(mv&&mv.src)||'';return open3d(src3,title,drive,card,img)}
+    if(kind==='audio'&&(runtime||chunks)){
+      try{
+        var ausrc=runtime||await blobUrlFromChunks(chunks,mime||'audio/mpeg');
+        var au=document.createElement('audio');au.src=ausrc;au.controls=true;au.autoplay=true;au.style.width='min(90vw,720px)';return show(au,title)
+      }catch(err){return statusBox(title,'AUDIO · ERROR DE RUNTIME','No se pudieron reconstruir los fragmentos locales: '+err.message,drive)}
+    }
+    if(kind==='video'&&(runtime||chunks)){
+      try{
+        var vsrc=runtime||await blobUrlFromChunks(chunks,mime||'video/mp4');
+        var vv=document.createElement('video');vv.src=vsrc;vv.controls=true;vv.autoplay=true;vv.playsInline=true;vv.style.maxWidth='100%';vv.style.maxHeight='78dvh';return show(vv,title)
+      }catch(err){return statusBox(title,'VÍDEO · ERROR DE RUNTIME','No se pudieron reconstruir los fragmentos locales: '+err.message,drive)}
     }
     if(kind==='audio-archive'){
       return statusBox(title,'MÚSICA · ARCHIVADA','La pista está guardada, pero todavía falta preparar su reproducción dentro de ISL.',drive)
@@ -335,7 +372,7 @@ Promise.all([
   }
   document.addEventListener('click',function(e){
     if(e.target.closest('audio,button,a,input,select,textarea,summary,model-viewer'))return;
-    var card=e.target.closest('.mediaCard,.card[data-drive],.card[data-runtime]');if(card)openCard(card);
+    var card=e.target.closest('.mediaCard,.card[data-drive],.card[data-runtime]');if(card){openCard(card).catch(function(err){console.error(err)})}
   });
   lb.querySelector('button[aria-label="Cerrar"]').onclick=close;
   lb.onclick=function(e){if(e.target===lb)close()};
