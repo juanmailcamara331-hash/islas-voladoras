@@ -16,3 +16,7 @@ retry=creative-dna-human-first-build-verified-2026-09-26
 retry=lightweight-create-decide-build-check-2026-09-26
 
 retry=token-refresh-access-check-2026-09-26
+
+retry=gallery-top-quality-head-sync-2026-09-26
+expected_head=11f2677ecdd8736a80670b65a43e55b57b02f4e5
+purpose=deploy current Gallery runtime assets for real-device verification
