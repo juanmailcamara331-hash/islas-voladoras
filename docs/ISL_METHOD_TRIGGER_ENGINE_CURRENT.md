@@ -197,3 +197,34 @@ Preferred correction:
 RETURN TO LAST GOOD → name uncertainty → test lowest sufficient rung.
 
 No new reminders if an existing event/hook can carry the wake-up.
+
+
+## VISUAL LIGHTING REGRESSION ROUTE · 2026-09-26
+New event vocabulary:
+- VISUAL_GENERATION
+- VISUAL_RELIGHT
+- LIGHTING_REGRESSION
+- IMAGE_TO_VIDEO_LIGHT_DRIFT
+
+Route:
+docs/ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT.md
+→ CINEMATIC LIGHTING QUALITY FLOOR
+→ M1 QUALITY + M2 SOURCE + M11 MEDIA.
+
+P1 when:
+- an approved/strong visual direction loses the established lighting hierarchy in a candidate intended for hero/promo/publication;
+- an image-to-video derivative materially flattens or changes an approved still's light;
+- lighting drift harms identity, readability or material separation.
+
+P2 when:
+- candidate is still LAB/SENSOR and a bounded relight can repair it.
+
+Preferred correction:
+LAST GOOD LIGHTING
+→ name exact regression
+→ RELIGHT / MUTATE LIGHTLY
+→ compare against baseline
+→ HUMAN READ.
+
+Do not create a new reminder or visual bot.
+Existing organism watcher carries the alert.
