@@ -10,6 +10,9 @@ cp private-site/carrillo-brief.html build/private/carrillo-brief.html
 cp private-site/rumbo-isl.html build/private/rumbo-isl.html
 cp private-site/irene-bestiary.html build/private/irene-bestiary.html
 cp private-site/creative-dna.html build/private/creative-dna.html
+cp private-site/physical-lab.html build/private/physical-lab.html
+mkdir -p build/private/assets/physical
+cp private-site/assets/physical/* build/private/assets/physical/
 mkdir -p build/private/data
 cp private-site/data/isl-creative-dna-current.json build/private/data/isl-creative-dna-current.json
 
@@ -44,7 +47,7 @@ for name in ['index.html','command-center.html']:
         continue
     entry='''<!-- ISL CARRILLO PRIVATE ENTRY -->
 <a id="islCarrilloPrivateEntry" href="carrillo-human-lab.html" style="position:fixed;right:12px;bottom:12px;z-index:2147482000;border:1px solid #5e7b84;background:#07151ddd;color:#dff6f7;text-decoration:none;border-radius:999px;padding:9px 11px;font:900 9px/1 system-ui;letter-spacing:.08em;box-shadow:0 8px 26px #0008">CARRILLO · HUMAN LAB</a>\n<a id="islRumboPrivateEntry" href="rumbo-isl.html" style="position:fixed;right:12px;bottom:54px;z-index:2147482000;border:1px solid #8b7448;background:#17130ddd;color:#ffe7b6;text-decoration:none;border-radius:999px;padding:9px 11px;font:900 9px/1 system-ui;letter-spacing:.08em;box-shadow:0 8px 26px #0008">RUMBO ISL</a>\n<a id="islCreativeDnaPrivateEntry" href="creative-dna.html" style="position:fixed;right:12px;bottom:96px;z-index:2147482000;border:1px solid #755c9e;background:#181126dd;color:#eadcff;text-decoration:none;border-radius:999px;padding:9px 11px;font:900 9px/1 system-ui;letter-spacing:.08em;box-shadow:0 8px 26px #0008">CREATIVE DNA</a>\n'''
-    s=s.replace('</body>',entry+'</body>')
+    s=s.replace('</body>',entry+'<a id="islPhysicalLabPrivateEntry" href="physical-lab.html" style="position:fixed;right:12px;bottom:138px;z-index:2147482000;border:1px solid #75613c;background:#21190ddd;color:#f5ddad;text-decoration:none;border-radius:999px;padding:9px 11px;font:900 9px/1 system-ui;letter-spacing:.08em;box-shadow:0 8px 26px #0008">OBJETOS ISL</a>\n</body>')
     p.write_text(s,encoding='utf-8')
 PY
 
@@ -76,6 +79,12 @@ grep -q "Carrillo Human Lab" build/private/carrillo-human-lab.html
 test -f build/private/rumbo-isl.html
 test -f build/private/irene-bestiary.html
 test -f build/private/creative-dna.html
+test -f build/private/physical-lab.html
+test -f build/private/assets/physical/cap.webp
+test -f build/private/assets/physical/patch.webp
+test -f build/private/assets/physical/lighter.webp
+test -f build/private/assets/physical/flask.webp
+test -f build/private/assets/physical/logo-board.webp
 grep -q 'href="creative-dna.html"' build/private/crear.html
 grep -q 'href="decision-engine.html"' build/private/decidir.html
 grep -q 'href="creative-dna.html"' build/private/decidir.html
