@@ -2357,3 +2357,16 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Unreal readiness now includes incremental type/format/data coverage: stable IDs, typed entities, source authority, schema/version, export format, Unreal target, validators, tests and rollback when the active lane justifies them.
 - Family-scale rule: complexity can live underneath, but a trusted family member should still understand current / blocked / human decision / safe return.
 - No mass taxonomy fill and no automation inflation; prioritize ONE ACTIVE · ONE NEXT.
+
+
+## ACTIVE EXECUTION NOTE · 2026-09-26 · CINEMATIC LIGHTING QUALITY FLOOR
+- Human visual review exposed a reusable failure mode: composition/world/energy can survive while lighting regresses below the established ISL cinematic median.
+- Existing Cinematic Aesthetic Synthesizer now owns an ALWAYS-ON lighting quality floor; no new organ created.
+- Default visual floor: deep local blacks + modeled midtones + controlled highlights + purposeful warm/cool function + atmospheric depth + material separation + human/world readability.
+- New visual/image-edit/image-to-video work routes through M2 SOURCE/IDENTITY → M1 QUALITY + LIGHTING FLOOR → M11 MEDIA/PROVENANCE.
+- Preferred repair is RELIGHT / MUTATE LIGHTLY before full reroll when composition/identity are still strong.
+- Method Trigger Engine now detects LIGHTING_REGRESSION / IMAGE_TO_VIDEO_LIGHT_DRIFT.
+- Cinematic Aesthetic Synthesizer is surfaced to Gallery + Command Center through the propagation manifest.
+- Daily organism watcher now includes VISUAL_LIGHTING regression detection; no new lighting bot was added.
+- REF B remains PRIMARY LIGHT AUTHORITY by function when the four-reference pack applies.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
