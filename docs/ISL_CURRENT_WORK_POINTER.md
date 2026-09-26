@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-26 · CINEMATIC EXPOSURE / SHADOW-MASS GATE
+- Human review confirmed a recurring failure mode: recent ISL frames can become too open, too saturated and too uniformly readable even when composition improves.
+- Existing Cinematic Aesthetic Synthesizer extended; NO new bot/organ.
+- New derived rules: LIGHT THE DRAMA, NOT THE ASSET. CINEMATIC DARKNESS = SELECTIVE INFORMATION LOSS.
+- Functional film-craft cross only: Cundey/Spielberg/Kaminski used to strengthen motivated light, selective reveal, shadow mass and per-scene dramatic exposure. No surface imitation.
+- Preferred target shorthand: CLEAN LENS + DENSER MIDTONES + DEEPER LOCAL SHADOW MASS + SOFTER DISTANT CONTRAST + LOWER SATURATION OUTSIDE FOCUS.
+- Pre-fire now requires explicit answers for what stays dark, largest shadow mass, motivated key, 2–3 highlight priorities, dense midtones, contrast falloff, saturation falloff and dark facets on white/crystal subjects.
+- Three-way bracket retained: A TOO OPEN control / B ISL TARGET / C TOO DARK control.
+- Recent bright stills are retained as TOO-OPEN sensors, not target authority.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact · NO AUTO-CANON.
+- Next safe action: prepare one LIGHTING AUTHORITY CARD B / ISL TARGET before any new cinematic generation.
+
 # ACTIVE EXECUTION NOTE · 2026-09-24 · PROMO CINEMATIC JOURNEY MAP IN GALLERY
 - Lane executed: B) CINEMATIC JOURNEY MAP only. Video/master remains untouched.
 - Existing Gallery extended; no new app organ created.
