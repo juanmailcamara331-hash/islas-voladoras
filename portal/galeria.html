@@ -135,6 +135,15 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1500px,96vw);margin:auto;pa
 <script>
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const human=s=>String(s??'').replaceAll('_',' ').replace(/\s+/g,' ').trim().replace(/\b\w/g,m=>m.toUpperCase());
+const driveThumb=(id,w=900)=>id?('https://drive.google.com/thumbnail?id='+encodeURIComponent(id)+'&sz=w'+w):'';
+const isInternalUrl=u=>!!u && !/^(?:https?:)?\/\//i.test(u) && !/^mailto:|^tel:/i.test(u);
+function primaryDrive(a){
+ if(!a)return '';
+ if(a.drive_id||a.master_drive_id||a.source_drive_id)return a.drive_id||a.master_drive_id||a.source_drive_id;
+ const refs=Array.isArray(a.source_refs)?a.source_refs:[];
+ const hit=refs.find(x=>x&&typeof x==='object'&&x.drive_id);
+ return hit?hit.drive_id:'';
+}
 function setTab(id){id=(id||'overview').replace('#','');if(!document.getElementById(id))id='overview';document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.dataset.tab===id));document.querySelectorAll('.section').forEach(x=>x.classList.toggle('on',x.id===id));history.replaceState(null,'','#'+id)}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
 addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
@@ -143,25 +152,26 @@ function archiveCard(a){
  let media='';
  if(kind==='video'&&src) media='<video muted playsinline preload="metadata" src="'+esc(src)+'"></video>';
  else if(src) media='<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title)+'">';
- else if(drive) media='<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">▣</span><small>PREVIEW PENDIENTE</small></div>';
+ else if(drive&&kind!=='audio'&&kind!=='3d') media='<img class="drivePoster" loading="lazy" src="'+esc(driveThumb(drive,900))+'" alt="'+esc(a.title)+'">';
+ else if(drive) media='<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">'+(kind==='audio'?'♫':kind==='3d'?'◇':'▣')+'</span><small>PREVIEW PENDIENTE</small></div>';
  else media='<span aria-hidden="true">'+(kind==='video'?'▶':kind==='audio'?'♫':kind==='3d'?'◇':'▣')+'</span>';
  return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(kind)+'"><div class="thumb mediaThumb">'+media+'<span class="mediaBadge">'+esc(kind.toUpperCase())+'</span></div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
 }
 function prismCard(a){
  const drive=a.drive_id||'',src=a.runtime_src||'';
- const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title||a.id)+'">':'<span aria-hidden="true">◈</span>';
+ const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title||a.id)+'">':drive?'<img class="drivePoster" loading="lazy" src="'+esc(driveThumb(drive,900))+'" alt="'+esc(a.title||a.id)+'">':'<span aria-hidden="true">◈</span>';
  return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-url="'+esc(a.prototype_url||'')+'" data-kind="image"><div class="thumb">'+media+'</div><div class="pad"><div class="k">MUNDO PRISMA</div><h2>'+esc(a.title||a.id)+'</h2><span class="status warn">'+esc(a.status||'PROTOTYPE SEED')+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.law||'')+' · '+esc(a.canon_state||'NO CANON')+'</div></details></div></article>';
 }
 function labCard(a){
  const title=a.title||a.name||a.entity||a.id;
  const drive=a.drive_id||'',src=a.runtime_src||'';
- const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(human(title))+'">':drive?'<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span><small>FUENTE ARCHIVADA · PREVIEW PENDIENTE</small></div>':'<span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span>';
+ const media=src?'<img loading="lazy" src="'+esc(src)+'" alt="'+esc(human(title))+'">':(drive&&a.type!=='audio'&&a.type!=='3d')?'<img class="drivePoster" loading="lazy" src="'+esc(driveThumb(drive,900))+'" alt="'+esc(human(title))+'">':drive?'<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">'+(a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span><small>FUENTE ARCHIVADA · PREVIEW PENDIENTE</small></div>':'<span aria-hidden="true">'+(a.type==='video'?'▶':a.type==='audio'?'♫':a.type==='3d'?'◇':'▣')+'</span>';
  return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-kind="'+esc(a.type||'file')+'"><div class="thumb">'+media+'</div><div class="pad"><h2>'+esc(human(title))+'</h2><span class="status warn">NO CANON</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(a.role||''))+' · '+esc(human(a.status||'CANDIDATE'))+'</div></details></div></article>';
 }
 function healthCard(a){
- const state=a.state||a.status||'UNKNOWN', src=a.runtime_ref||a.runtime_src||'', drive=a.drive_id||a.master_drive_id||'';
+ const state=a.state||a.status||'UNKNOWN', src=a.runtime_ref||a.runtime_src||'', drive=primaryDrive(a);
  const rawPoster=a.poster_src||a.thumbnail_src||'';
- const poster=(rawPoster && !/^https?:\/\/drive\.google\.com/i.test(rawPoster))?rawPoster:'';
+ const poster=rawPoster||driveThumb(drive,900);
  const rawName=a.display_name||a.name||a.entity_id||a.entity||a.id||a.asset_id;
  const name=(a.display_name||a.name)?String(rawName):human(rawName);
  const blocker=a.blocker||'', next=a.next||'';
@@ -176,7 +186,7 @@ function phraseCard(p){
  return '<article class="card"><div class="pad"><div class="k">'+esc((p.destinations||[]).slice(0,3).join(' · ')||'FRASE')+'</div><h2 style="font-size:22px;line-height:1.25">“'+esc(p.text)+'”</h2><div class="meta">'+esc(p.origin||'ISL')+'</div><span class="status warn">'+esc(p.state||'SEED')+'</span></div></article>';
 }
 function docsCard(d){
- return '<article class="card" data-url="'+esc(d.url||'')+'"><div class="thumb">▤</div><div class="pad"><h2>'+esc(d.title)+'</h2><span class="status warn">'+esc(human(d.kind||'DOC'))+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(d.status||'CURRENT'))+'</div></details></div></article>';
+ return '<article class="card mediaCard" data-kind="document" data-source-url="'+esc(d.url||'')+'"><div class="thumb">▤</div><div class="pad"><h2>'+esc(d.title)+'</h2><span class="status warn">'+esc(human(d.kind||'DOC'))+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(d.status||'CURRENT'))+' · fuente externa disponible</div></details></div></article>';
 }
 function journeyView(j){
  const nodes=(j.nodes||[]).map(n=>{
@@ -239,11 +249,9 @@ Promise.all([
     var img=e.target;
     if(!(img instanceof HTMLImageElement)||!img.closest('.thumb'))return;
     var card=img.closest('.card');
-    var span=document.createElement('span');
-    span.setAttribute('aria-hidden','true');
-    span.textContent=card&&card.dataset.url?'◈':'▣';
-    span.title='Vista previa no disponible';
-    img.replaceWith(span);
+    var box=document.createElement('div');box.className='internalPending';
+    box.innerHTML='<span aria-hidden="true">'+(card&&card.dataset.kind==='video'?'▶':card&&card.dataset.kind==='3d'?'◇':'▣')+'</span><small>PREVIEW NO DISPONIBLE</small>';
+    img.replaceWith(box);
   },true);
 })();
 </script>
@@ -274,7 +282,7 @@ Promise.all([
     var box=document.createElement('div');box.className='card empty';box.style.maxWidth='720px';box.style.margin='auto';box.style.padding='28px';
     box.innerHTML='<div class="k">'+esc(label||'ESTADO REAL')+'</div><h2 style="margin:8px 0">'+esc(title||'ISL')+'</h2><p style="line-height:1.55;color:#bfd0d4">'+esc(body||'Esta pieza está registrada, pero todavía no tiene runtime empaquetado dentro de la app.')+'</p>';
     show(box,'');
-    if(drive)addTool('FUENTE DRIVE ↗',function(){window.open('https://drive.google.com/file/d/'+encodeURIComponent(drive)+'/view','_blank','noopener')});
+    if(drive)addTool('ABRIR FUENTE EXTERNA · DRIVE ↗',function(){window.open('https://drive.google.com/file/d/'+encodeURIComponent(drive)+'/view','_blank','noopener')});
   }
   function open3d(src,title,drive,card){
     if(src){
@@ -293,7 +301,7 @@ Promise.all([
     var title=card.querySelector('h2')?card.querySelector('h2').textContent:'';
     var kind=(card.dataset.kind||'').toLowerCase(), runtime=card.dataset.runtime||'';
     var img=card.querySelector('.thumb img'),vid=card.querySelector('.thumb video'),mv=card.querySelector('.thumb model-viewer');
-    var drive=card.dataset.drive||'',url=card.dataset.url||'';
+    var drive=card.dataset.drive||'',url=card.dataset.url||'',sourceUrl=card.dataset.sourceUrl||'';
     tools.innerHTML='';
     if(kind==='3d'||mv){var src=runtime||(mv&&mv.src)||'';return open3d(src,title,drive,card)}
     if(kind==='audio'&&runtime){
@@ -310,8 +318,20 @@ Promise.all([
       return zoomImage(src,img.alt||title,title)
     }
     if(vid){var v=document.createElement('video');v.src=vid.currentSrc||vid.src;v.controls=true;v.autoplay=true;v.playsInline=true;return show(v,title)}
-    if(url){window.location.href=url;return}
-    if(drive)return statusBox(title,'ARCHIVO · PREVIEW PENDIENTE','La pieza está guardada, pero todavía falta preparar su vista dentro de ISL.',drive);
+    if(url&&isInternalUrl(url)){window.location.href=url;return}
+    if(kind==='document'||sourceUrl){
+      var box=document.createElement('div');box.className='card empty';box.style.maxWidth='720px';box.style.margin='auto';box.style.padding='28px';
+      box.innerHTML='<div class="k">DOC / BRIEF · VISTA INTERNA</div><h2 style="margin:8px 0">'+esc(title||'Documento ISL')+'</h2><p style="line-height:1.55;color:#bfd0d4">La Galería mantiene el contexto dentro de ISL. La fuente original sólo se abre si tú lo eliges explícitamente.</p>';
+      show(box,'');
+      if(sourceUrl)addTool('ABRIR FUENTE EXTERNA ↗',function(){window.open(sourceUrl,'_blank','noopener')});
+      return;
+    }
+    if(url){
+      var ext=document.createElement('div');ext.className='card empty';ext.style.maxWidth='720px';ext.style.margin='auto';ext.style.padding='28px';
+      ext.innerHTML='<div class="k">ENLACE EXTERNO</div><h2 style="margin:8px 0">'+esc(title||'ISL')+'</h2><p style="line-height:1.55;color:#bfd0d4">Este destino está fuera de la app. No se abrirá automáticamente.</p>';
+      show(ext,'');addTool('ABRIR FUENTE EXTERNA ↗',function(){window.open(url,'_blank','noopener')});return;
+    }
+    if(drive)return statusBox(title,'ARCHIVO · PREVIEW PENDIENTE','La pieza está guardada, pero todavía falta preparar su vista completa dentro de ISL.',drive);
   }
   document.addEventListener('click',function(e){
     if(e.target.closest('audio,button,a,input,select,textarea,summary,model-viewer'))return;
