@@ -15,6 +15,18 @@ cp private-site/data/isl-creative-dna-current.json build/private/data/isl-creati
 
 python3 - <<'PY'
 from pathlib import Path
+p=Path('build/private/decidir.html')
+s=p.read_text(encoding='utf-8')
+old='<a class="go" href="galeria.html">MIRAR / TOCAR →</a>'
+new='<div class="links" style="margin-top:12px"><a class="go" href="decision-engine.html">NECESITA TU OJO →</a><a class="go" href="creative-dna.html">REENCUENTRO / FOUND GOLD →</a></div>'
+if old in s:
+    s=s.replace(old,new)
+s=s.replace('Prueba un momento la Galería/app. Si algo chirría, deja una sola huella. No hace falta arreglarlo tú: sólo notar dónde molesta.','Aquí aparecen cosas que de verdad necesitan tu criterio. Puedes comparar, revisar evidencia o reencontrar una pieza sin tener que abrir ChatGPT.')
+p.write_text(s,encoding='utf-8')
+PY
+
+python3 - <<'PY'
+from pathlib import Path
 p=Path('build/private/crear.html')
 s=p.read_text(encoding='utf-8')
 needle='<a class="card" href="galeria.html"><div class="k">MIRAR</div><b>Galería</b><span>Todo lo que ya existe</span></a>'
@@ -66,6 +78,8 @@ test -f build/private/rumbo-isl.html
 test -f build/private/irene-bestiary.html
 test -f build/private/creative-dna.html
 grep -q 'href="creative-dna.html"' build/private/crear.html
+grep -q 'href="decision-engine.html"' build/private/decidir.html
+grep -q 'href="creative-dna.html"' build/private/decidir.html
 test -f build/private/data/isl-creative-dna-current.json
 grep -q "PRIVATE LAB · REENCUENTRO CREATIVO" build/private/creative-dna.html
 grep -q "Equilibrio vivo" build/private/rumbo-isl.html
