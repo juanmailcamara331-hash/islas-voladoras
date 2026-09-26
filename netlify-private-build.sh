@@ -11,8 +11,33 @@ cp private-site/rumbo-isl.html build/private/rumbo-isl.html
 cp private-site/irene-bestiary.html build/private/irene-bestiary.html
 cp private-site/creative-dna.html build/private/creative-dna.html
 cp private-site/physical-lab.html build/private/physical-lab.html
+cp private-site/collector-relic.html build/private/collector-relic.html
 mkdir -p build/private/assets/physical
 cp private-site/assets/physical/* build/private/assets/physical/
+
+python3 - <<'PY'
+from pathlib import Path
+import json
+p=Path('build/private/data/isl-gallery-library-current.json')
+if p.exists():
+    data=json.loads(p.read_text(encoding='utf-8'))
+    assets=data.get('assets',[])
+    aid='COLLECTOR-RELIC-CAMPAIGN-ANCHOR-01'
+    if not any(x.get('id')==aid for x in assets):
+        assets.insert(0,{
+          'id':aid,
+          'type':'image',
+          'title':'Collector Relic · Pequeñas islas, grandes futuros',
+          'group':'Physical / Collector Relic / Campaign Proof',
+          'status':'PRIVATE_PROOF_LAB_ONLY_NO_CANON',
+          'runtime_src':'assets/physical/collector-relic-hero.webp',
+          'master_drive_id':'14czuc_f6BG3mDY6xRr2Zh66GHhcnm_Cm',
+          'canon_state':'NOT_AUTO_CANON',
+          'featured':True
+        })
+        data['assets']=assets
+        p.write_text(json.dumps(data,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+PY
 mkdir -p build/private/data
 cp private-site/data/isl-creative-dna-current.json build/private/data/isl-creative-dna-current.json
 
@@ -80,6 +105,8 @@ test -f build/private/rumbo-isl.html
 test -f build/private/irene-bestiary.html
 test -f build/private/creative-dna.html
 test -f build/private/physical-lab.html
+test -f build/private/collector-relic.html
+test -f build/private/assets/physical/collector-relic-hero.webp
 test -f build/private/assets/physical/cap.webp
 test -f build/private/assets/physical/patch.webp
 test -f build/private/assets/physical/lighter.webp
