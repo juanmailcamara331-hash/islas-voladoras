@@ -2284,3 +2284,186 @@ Human decides KEEP / MUTATE / PARK / KILL.
 No automatic CANON promotion.
 No new lighting bot.
 Use existing watchers and curation.
+
+
+## CINEMATIC EXPOSURE / SHADOW-MASS GATE · 2026-09-26
+Estado: ACTIVE METHOD EXTENSION · EXISTING ORGAN ONLY · NO NEW BOT · NO AUTO-CANON
+
+### WHY
+Repeated human review exposed a specific failure mode: visually attractive ISL frames can remain too open, too saturated and too uniformly readable to feel cinematic. The problem is not simply "too much brightness". It is insufficient control of what the image chooses to reveal.
+
+Derived rule:
+LIGHT THE DRAMA, NOT THE ASSET.
+CINEMATIC DARKNESS = SELECTIVE INFORMATION LOSS.
+
+### EXTERNAL FUNCTION CROSS
+Film-production evidence used only for FUNCTION, never surface imitation:
+- Dean Cundey / Jurassic Park: lighting can improve a scene by removing light; shadow is used to conceal just as light reveals; practical/motivated sources and selective reveal support suspense and scale.
+- Jurassic Park bunker/interior logic: dark-but-still-daylight can be achieved with local sources, backlight and atmosphere rather than a global dark filter.
+- The Lost World / Janusz Kaminski: mood can deepen by allowing subjects/creatures to absorb more light and by shaping the look per dramatic sequence rather than imposing one universal grade.
+- Spielberg craft lineage: lighting style follows dramatic function; source placement and darkness are scene-dependent, not LUT-dependent.
+
+External references are craft lineage only. Do not copy recognizable Jurassic Park / Spielberg surface treatment.
+
+### CORE ORDER
+For cinematic ISL frames, resolve in this order before color polish:
+SHADOW MASS
+→ MIDTONE SHAPE
+→ GLOBAL-TO-LOCAL EXPOSURE RELATION
+→ HIGHLIGHT BUDGET
+→ SATURATION HIERARCHY
+→ ATMOSPHERIC DEPTH
+→ MATERIAL RESPONSE
+→ DEVICE / HUMAN READ.
+
+Do not solve this with one global exposure slider, one dark LUT, one grey veil or global desaturation.
+
+### CLEAN-LENS RULE
+Preferred functional shorthand:
+CLEAN LENS
++ DENSER MIDTONES
++ DEEPER LOCAL SHADOW MASS
++ SOFTER DISTANT CONTRAST
++ LOWER SATURATION OUTSIDE FOCUS
++ DIRTY / VOLUMETRIC AIR ONLY WHEN CAUSAL.
+
+"Darker" does NOT mean:
+- black crush;
+- grey overlay;
+- fake lens dirt;
+- universal vignette;
+- low visibility everywhere.
+
+### LIGHTING AUTHORITY CARD · B / ISL TARGET
+Target hypothesis for the current cinematic family:
+- one legible primary light direction;
+- one meaningful structural shadow mass large enough to organize the frame;
+- dense modeled midtones rather than uniformly lifted exposure;
+- local readable window on protagonist / interaction-critical subject;
+- background loses contrast, micro-detail and saturation with distance;
+- highlights are scarce and semantically assigned;
+- white cloud is allowed to fall into grey / blue / near-shadow instead of remaining globally bright;
+- white prism/crystal is NOT self-emissive by default: some facets fall dark, some disappear into cloud/air, only selected edges/refractions catch light;
+- warm light remains localized to human/material intimacy;
+- cool atmospheric depth remains broad but subordinate;
+- no "everything visible on first glance" requirement.
+
+### PRE-FIRE QUESTIONS
+Before any important cinematic image/video bullet, resolve:
+1. WHAT MUST STAY DELIBERATELY DARK?
+2. WHERE IS THE LARGEST SHADOW MASS?
+3. WHAT IS THE PRIMARY MOTIVATED LIGHT SOURCE?
+4. WHICH 2–3 AREAS MAY RECEIVE TRUE HIGHLIGHT PRIORITY?
+5. WHICH MIDTONES MUST REMAIN DENSE RATHER THAN OPEN?
+6. WHICH PLANE LOSES CONTRAST FIRST WITH DISTANCE?
+7. WHERE MUST SATURATION DROP OUTSIDE FOCUS?
+8. WHAT CAN DISAPPEAR PARTLY WITHOUT HARMING COMPREHENSION?
+9. IF A CREATURE/OBJECT IS WHITE OR CRYSTALLINE, WHICH PARTS REMAIN DARK?
+10. DOES THE FRAME STILL WORK ON TARGET MOBILE/TABLET WITHOUT LIFTING EVERYTHING?
+
+If these questions are unresolved: NO FIRE.
+
+### THREE-WAY TONAL BRACKET
+A · TOO OPEN / CONTROL
+- lifted clouds and world;
+- high global readability;
+- broad saturation;
+- weak shadow organization;
+- useful only as the bright failure boundary.
+
+B · ISL TARGET
+- deep local blacks;
+- one strong shadow mass;
+- dense modeled midtones;
+- local readability on protagonist/action;
+- restrained highlights;
+- softer distant contrast and saturation;
+- creature/world selectively revealed;
+- intended candidate, never assumed winner.
+
+C · TOO DARK / CONTROL
+- stronger shadow pressure;
+- used to locate the point where face/material/action/world readability begins to fail;
+- never accepted merely because it feels moodier.
+
+LOCK composition, identity, world content and semantic action while testing tonal bracket whenever possible.
+Perturb primarily SHADOW MASS and GLOBAL↔LOCAL EXPOSURE RELATION.
+Do not vary global saturation as a shortcut.
+
+### VISUAL INFORMATION RULE
+If every major form is equally readable at first glance, the frame is probably overlit or over-resolved.
+
+Healthy cinematic hierarchy may intentionally allow:
+- part of the deck to merge into shadow;
+- part of clothing/fur to lose nonessential detail;
+- distant architecture to collapse into mass and atmosphere;
+- cloud volume to contain true shadow;
+- creature anatomy to be revealed by parts rather than fully exposed.
+
+Loss of nonessential information is acceptable when focal routing and gameplay/scene comprehension improve.
+
+### REVEAL-BY-PARTS RULE
+For monumental or uncanny entities, especially the white prism creature:
+- prefer partial occlusion by cloud, air, architecture or shadow;
+- permit progressive reveal across shot/time;
+- avoid full-body bright exposure unless narratively earned;
+- scale should come from relation to cloud/world/horizon, not from filling the entire frame.
+
+### SATURATION CONTRACT
+Saturation follows hierarchy; it does not rescue weak lighting.
+Prefer:
+- localized human warmth;
+- controlled spectral prism accents;
+- desaturated / lower-chroma distance;
+- danger color only when narratively active.
+
+FAIL if orange, cyan, magenta, red and white all become simultaneous hero signals.
+
+### ATMOSPHERE CONTRACT
+Atmosphere should reveal depth or motivated beams, not milk the entire frame.
+Prefer:
+- localized haze;
+- cloud occlusion;
+- volumetric shafts with causal source;
+- distance falloff.
+Avoid:
+- global fog blanket;
+- bloom used to simulate expensive lighting;
+- bright mist flattening all planes.
+
+### CQC FAIL CONDITIONS
+FAIL / MUTATE if:
+- sky, cloud, subject and world all sit near the same exposure level;
+- background remains as contrasty/saturated as foreground;
+- white prism creature reads as neon/self-illuminated everywhere;
+- every metal edge receives a rim highlight;
+- face is fully front-lit without dramatic motivation;
+- no large dark/quiet mass exists;
+- "cinematic" is being faked with vignette, bloom, fog or LUT alone;
+- global desaturation replaces real exposure/shadow shaping;
+- readability is achieved by lighting everything;
+- mood is achieved by crushing everything.
+
+### CURRENT HUMAN SENSOR · 2026-09-26
+Human read on recent ISL stills:
+- composition can improve while lighting still regresses toward bright fantasy key art;
+- current target is slightly darker / denser than the latest bright reference, but NOT globally underexposed;
+- the desired shift is deeper local shadow, denser midtones, reduced distant contrast and lower saturation outside focus;
+- current reference is useful as a TOO-OPEN sensor rather than a target.
+
+### ROUTING / MEMORY
+This gate is part of the existing CINEMATIC AESTHETIC SYNTHESIZER.
+Do NOT create a parallel lighting bot unless repeated manual failures prove the gate cannot be reliably applied.
+
+Trigger automatically in preparation whenever the task includes:
+CINEMATIC STILL
+KEY ART
+PROMO FRAME
+SKYSHIP SCENE
+PRISM CREATURE
+STILL→VIDEO
+IMAGE RELIGHT
+MAJOR WORLD VISTA.
+
+Human still decides KEEP / MUTATE / PARK / KILL.
+PRIMARY, SAFE HARBOR and CANON authority remain unchanged.
