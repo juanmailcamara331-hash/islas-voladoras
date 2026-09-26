@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>ISL · Creative DNA / Serendipity</title>
+<link rel="stylesheet" href="isl-global-shell.css">
+<style>
+*{box-sizing:border-box}html,body{margin:0;background:#071017;color:#eef8f5;font-family:Inter,system-ui,sans-serif}body{min-height:100vh}
+main{width:min(1180px,94vw);margin:auto;padding:24px 0 120px}.hero,.panel{border:1px solid #31505c;border-radius:22px;background:linear-gradient(135deg,#10242d,#0a151b);box-shadow:0 18px 55px #0006}
+.hero{padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;inset:auto -10% -55% 35%;height:230px;background:radial-gradient(circle,#9a6cff2c,transparent 68%);pointer-events:none}
+.k{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#8defff;font-weight:900}.hero h1{font-size:clamp(42px,8vw,78px);line-height:.92;margin:8px 0 12px;max-width:850px}.hero p{max-width:820px;color:#b5c7cb;line-height:1.55}.status{display:inline-block;border:1px solid #557864;border-radius:999px;padding:7px 10px;color:#caffdf;background:#10271e;font-size:10px;font-weight:900;letter-spacing:.08em}
+.guard{margin-top:14px;padding:13px;border:1px solid #725f3a;border-radius:14px;background:#211a10;color:#f1ddb3}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}.panel{padding:20px}.panel h2{margin:5px 0 10px;font-size:28px}.muted{color:#91a7ad;line-height:1.5}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{border:1px solid #35545e;border-radius:999px;padding:6px 9px;background:#0a171e;color:#c8d8dc;font-size:11px}.chip.safe{border-color:#426c59;color:#c9ffe1}.chip.stop{border-color:#704d58;color:#ffd2db}
+.graph{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.node{min-height:105px;border:1px solid #365865;background:#0b1b23;border-radius:16px;padding:14px;text-align:left;color:inherit;cursor:pointer}.node:hover,.node.active{outline:2px solid #8defff}.node b{display:block;margin-top:5px;font-size:16px}.node small{color:#90a5aa}.detail{margin-top:10px;border:1px dashed #46616b;border-radius:14px;padding:12px;min-height:54px;color:#c7d5d8}
+.flow{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.flow span{padding:7px 9px;border-radius:10px;background:#111d25;border:1px solid #334c57;font-size:10px;font-weight:800}.flow i{font-style:normal;color:#6f8790;align-self:center}
+.case{border-left:3px solid #aa7cff}.case h3{font-size:24px;margin:6px 0}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.list{margin:8px 0 0;padding-left:18px;color:#c6d4d7}.list li{margin:6px 0}.routebox{display:grid;grid-template-columns:1fr 1fr;gap:10px}.routebox label{font-size:10px;color:#8defff;font-weight:900;letter-spacing:.08em}.routebox select,.routebox textarea{width:100%;margin-top:5px;background:#071218;color:#eef8f5;border:1px solid #36515d;border-radius:12px;padding:10px}.routebox textarea{min-height:92px;resize:vertical}.routerOut{margin-top:10px;border:1px solid #475568;border-radius:14px;padding:13px;background:#101622;white-space:pre-wrap;color:#dbe8eb;min-height:80px}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.btn{appearance:none;border:1px solid #3d5964;background:#10222a;color:#eef8f5;border-radius:12px;padding:10px 12px;font-weight:900;cursor:pointer;text-decoration:none}.btn:hover{border-color:#8defff}.btn.keep{border-color:#4b7b5f}.btn.mutate{border-color:#79673d}.btn.park{border-color:#52677e}.btn.kill{border-color:#704651}.decision{margin-top:10px;color:#b7c8cc;font-size:12px}.private{border-color:#734c62;background:linear-gradient(135deg,#21131c,#0c1820)}.public{border-color:#5b6f54;background:linear-gradient(135deg,#132016,#0c1820)}.reminders{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.reminder{border:1px solid #36525d;border-radius:14px;padding:13px;background:#0a171d}.reminder b{display:block;font-size:16px;margin:4px 0}.foot{margin-top:14px;color:#73898f;font-size:11px;text-align:center}
+@media(max-width:760px){.grid,.two,.routebox{grid-template-columns:1fr}.graph{grid-template-columns:repeat(2,1fr)}.reminders{grid-template-columns:1fr}.hero{min-height:240px}}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+  <div class="k">PRIVATE LAB · CREATIVE DNA CROSSING · SERENDIPITY</div>
+  <h1>Recordar sin quedarse atrapado en la memoria.</h1>
+  <p>Una superficie para ver cómo una pieza sobrevive distancia, revelar su función profunda y decidir qué arquitectura puede volver al método sin mover assets, lore ni autoridad entre proyectos.</p>
+  <div><span class="status">NO AUTO-CANON · HUMAN FIRST</span></div>
+  <div class="guard"><b>Frontera:</b> Case 001 pertenece a SPIELBERG. Aquí sólo existe como caso metodológico/provenance sanitizado.</div>
+</section>
+
+<section class="grid">
+  <article class="panel">
+    <div class="k">SERENDIPITY LOOP</div><h2>La vida es el arte del reencuentro.</h2>
+    <div class="flow" id="flow"></div>
+  </article>
+  <article class="panel">
+    <div class="k">LIVING ARTIFACT</div><h2>Que pueda cambiar sin dejar de ser él.</h2>
+    <div class="flow" id="livingFlow"></div>
+    <div class="detail" id="livingQ"></div>
+  </article>
+</section>
+
+<section class="panel" style="margin-top:14px">
+  <div class="k">INTERACTIVE GRAPH</div><h2>Circulación, no órganos nuevos.</h2>
+  <p class="muted">Toca un nodo. El grafo no decide autoridad: sólo muestra la ruta mínima desde fuente hasta respuesta humana y regreso al método.</p>
+  <div class="graph" id="graph"></div><div class="detail" id="graphDetail">Selecciona un nodo.</div>
+</section>
+
+<section class="grid">
+  <article class="panel case">
+    <div class="k">CASE 001 · FOUND GOLD</div><h3 id="caseTitle">—</h3>
+    <div class="muted" id="caseClass"></div>
+    <p><b>Origen:</b> <span id="caseSource"></span></p>
+    <p><b>Respuesta humana:</b> <span id="caseResponse"></span></p>
+    <p><b>Provenance:</b> <code id="caseProv"></code></p>
+  </article>
+  <article class="panel">
+    <div class="k">FOUND GOLD</div><h2>Lo que sobrevivió.</h2>
+    <div id="foundGold"></div>
+  </article>
+</section>
+
+<section class="two" style="margin-top:14px">
+  <article class="panel public"><div class="k">PUEDE CRUZAR</div><h2>Arquitectura</h2><div class="chips" id="crossSafe"></div></article>
+  <article class="panel private"><div class="k">NO CRUZA POR DEFECTO</div><h2>Superficie / identidad</h2><div class="chips" id="crossStop"></div></article>
+</section>
+
+<section class="panel" style="margin-top:14px">
+  <div class="k">DNA CROSSING ROUTER</div><h2>Separar parecido de función.</h2>
+  <div class="routebox">
+    <div><label>¿QUÉ ESTÁS VIENDO?</label><select id="routeKind"><option>surface similarity</option><option>deep functional recurrence</option><option>conceptual overlap</option><option>strong human response</option></select></div>
+    <div><label>¿QUÉ QUIERES CRUZAR?</label><select id="routeTransfer"><option>function</option><option>grammar</option><option>tension</option><option>rhythm</option><option>emotional_architecture</option><option>literal_asset</option><option>lore</option><option>project_identity</option></select></div>
+    <div style="grid-column:1/-1"><label>NOTA HUMANA</label><textarea id="routeNote" placeholder="Qué te ha tocado, qué se repite, qué duda quieres falsar…"></textarea></div>
+  </div>
+  <div class="actions"><button class="btn" id="routeBtn">ENRUTAR SIN PROMOVER</button></div>
+  <div class="routerOut" id="routeOut">Elige una señal y una transferencia.</div>
+</section>
+
+<section class="panel" style="margin-top:14px">
+  <div class="k">HUMAN GATE</div><h2>La interfaz no tiene voto.</h2>
+  <p class="muted">Esta decisión queda sólo en este navegador. No cambia CANON, PRIMARY, SOURCE OF TRUTH ni SAFE HARBOR.</p>
+  <div class="actions"><button class="btn keep" data-decision="KEEP">KEEP</button><button class="btn mutate" data-decision="MUTATE">MUTATE</button><button class="btn park" data-decision="PARK">PARK</button><button class="btn kill" data-decision="KILL">KILL</button></div>
+  <div class="decision" id="decisionState">Sin decisión local.</div>
+</section>
+
+<section class="panel" style="margin-top:14px">
+  <div class="k">PROCEDENCIA + PUBLIC / PRIVATE</div><h2>Lo privado no se vuelve público por comodidad.</h2>
+  <div class="two">
+    <div><b>PRIVATE MASTER</b><p class="muted">Caso, trazas, respuestas humanas, provenance y decisiones. La fuente del repo sigue siendo públicamente inspeccionable, por eso este runtime contiene sólo metadatos sanitizados.</p></div>
+    <div><b>FUTURO SANITIZADO</b><p class="muted">Kickstarter/inversores sólo después de revisión humana: método, aprendizaje y diagrama; nunca masters, secretos, historial sensible ni transferencia silenciosa de assets.</p></div>
+  </div>
+</section>
+
+<section class="panel" style="margin-top:14px">
+  <div class="k">ORCHESTRATOR · REMINDER INTEGRATION</div><h2>Tres ritmos, cero bot nuevo.</h2>
+  <div class="reminders"><div class="reminder"><div class="k">WEEKLY</div><b>Seed Pass</b><span class="muted">1–3 seeds o NO SIGNAL.</span></div><div class="reminder"><div class="k">FORTNIGHTLY</div><b>Found Gold</b><span class="muted">Sólo si algo sobrevivió distancia y tiene provenance.</span></div><div class="reminder"><div class="k">MONTHLY</div><b>DNA Crossing</b><span class="muted">Comparar función, no superficie. Sin auto-canon.</span></div></div>
+  <div class="guard">Plan: retunar <b>Vigilar organismo ISL</b> para Seed/Found Gold por cadencia y <b>Curar organismo ISL</b> para el pase mensual. NO SIGNAL = silencio.</div>
+</section>
+
+<div class="foot">ISL · Creative DNA / Serendipity · PRIVATE BUILD ONLY · HUMAN DECIDES AUTHORITY</div>
+</main>
+<script>
+(function(){
+const DATA='data/isl-creative-dna-current.json', KEY='isl_creative_dna_human_gate_v01';
+function el(id){return document.getElementById(id)}
+function chip(x,c){return '<span class="chip '+(c||'')+'">'+x.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span>'}
+function arrowFlow(arr,root){root.innerHTML=arr.map((x,i)=>'<span>'+x+'</span>'+(i<arr.length-1?'<i>→</i>':'')).join('')}
+fetch(DATA,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('data');return r.json()}).then(d=>{
+  arrowFlow(d.serendipity_loop,el('flow')); arrowFlow(d.living_artifact.formula,el('livingFlow'));
+  el('livingQ').textContent=d.living_artifact.questions[0]; document.querySelectorAll('#livingFlow span').forEach((s,i)=>s.onclick=()=>el('livingQ').textContent=d.living_artifact.questions[i]||'');
+  const notes={source:'Preserva la fuente exacta antes de reinterpretar.',distance:'La distancia sólo vale si permite una lectura menos intoxicada por el hype.',response:'Respuesta humana espontánea = evidencia, no CANON.',trace:'Procedencia y fronteras primero.',function:'Extrae función profunda antes de copiar superficie.',living:'Semilla + capas + relaciones + mutación + contexto.',router:'Prueba convergencia, overlap, prior humano y contaminación directa.',gate:'KEEP / MUTATE / PARK / KILL: decide una persona.',method:'Lo valioso vuelve como método, no como asset robado.'};
+  d.graph.nodes.forEach(n=>{let b=document.createElement('button');b.className='node';b.innerHTML='<small>'+n.kind.toUpperCase()+'</small><b>'+n.label+'</b>';b.onclick=()=>{document.querySelectorAll('.node').forEach(x=>x.classList.remove('active'));b.classList.add('active');el('graphDetail').textContent=notes[n.id]||n.label};el('graph').appendChild(b)});
+  el('caseTitle').textContent=d.case_001.title;el('caseClass').textContent=d.case_001.classification;el('caseSource').textContent=d.case_001.source_project;el('caseResponse').textContent=d.case_001.human_response;el('caseProv').textContent=d.case_001.provenance_ref;
+  el('foundGold').innerHTML=d.found_gold.map(x=>'<div class="detail"><b>'+x.id+' · '+x.signal+'</b><br>'+x.deep_function+'<br><small>'+x.next_action+'</small></div>').join('');
+  el('crossSafe').innerHTML=d.case_001.what_crosses.map(x=>chip(x,'safe')).join(''); el('crossStop').innerHTML=d.case_001.what_does_not_cross.map(x=>chip(x,'stop')).join('');
+  el('routeBtn').onclick=()=>{let kind=el('routeKind').value, tr=el('routeTransfer').value, note=el('routeNote').value.trim();let blocked=d.dna_router.blocked_by_default.includes(tr);let out='SIGNAL: '+kind+'\nTRANSFER: '+tr+'\n';if(blocked){out+='ROUTE: STOP · literal/surface transfer is blocked by default. Trace source + rights + explicit human authorization before any asset movement.'}else{out+='ROUTE: FUNCTION-FIRST · test H1A/H1B/H1C/H2 → cheap ablation → HUMAN GATE.'}if(note)out+='\nHUMAN NOTE: '+note;el('routeOut').textContent=out};
+}).catch(()=>{el('graphDetail').textContent='No se pudo cargar el dataset privado.'});
+function renderDecision(){let v=null;try{v=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){}el('decisionState').textContent=v?('Decisión local: '+v.choice+' · '+v.at+' · sin efecto de autoridad'):'Sin decisión local.'}
+document.querySelectorAll('[data-decision]').forEach(b=>b.onclick=()=>{try{localStorage.setItem(KEY,JSON.stringify({choice:b.dataset.decision,at:new Date().toISOString(),case_id:'CASE-001',authority_effect:'NONE'}))}catch(e){}renderDecision()});renderDecision();
+})();
+</script>
+<script defer src="isl-global-shell.js"></script>
+</body></html>
