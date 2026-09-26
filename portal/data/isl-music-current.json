@@ -84,20 +84,32 @@
     {
       "id": "MUS-007",
       "title": "Seven Thousand Paces",
-      "status": "FUNCTION_REVIEW",
+      "status": "FUNCTION_REVIEW_PRIVATE_RUNTIME",
       "functional_role": [
         "traversal_candidate",
         "journey_candidate",
         "sustained_movement_candidate"
       ],
-      "source_state": "DRIVE_SOURCE_AVAILABLE",
+      "source_state": "PRIVATE_RUNTIME_AVAILABLE",
       "drive_id": "1svy7lNXviZZK1d58cS9H7Sh0eOjYxCjz",
       "duration_seconds": 178.808,
       "sample_rate_hz": 44100,
       "channels": 2,
       "codec": "mp3",
       "bitrate_bps": 192000,
-      "tempo_estimate_bpm": 117.45
+      "tempo_estimate_bpm": 117.45,
+      "runtime_chunks": [
+        "data/media/seven-thousand-paces.part00.b64",
+        "data/media/seven-thousand-paces.part01.b64",
+        "data/media/seven-thousand-paces.part02.b64",
+        "data/media/seven-thousand-paces.part03.b64",
+        "data/media/seven-thousand-paces.part04.b64",
+        "data/media/seven-thousand-paces.part05.b64",
+        "data/media/seven-thousand-paces.part06.b64",
+        "data/media/seven-thousand-paces.part07.b64",
+        "data/media/seven-thousand-paces.part08.b64"
+      ],
+      "runtime_mime": "audio/mpeg"
     },
     {
       "id": "MUS-REF-001",
