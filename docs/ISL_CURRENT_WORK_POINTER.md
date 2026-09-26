@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-26 · GALLERY EXACT PRIVATE DEPLOY READY
+- Gallery top-quality machine lane deployed from commit `3864074d6cb5cb9e42eb183d2b90dff8fbb943f2`.
+- GitHub Actions run 36251008966 = SUCCESS; checkout SHA verified in logs.
+- Canonical private Netlify site remains `islas-voladoras-isl-private` with Team Login / SSO protection intact.
+- Exact Netlify deploy ID = `6ab7e0aa7c6500e757aa8866` · state = READY.
+- Protected alias = `private-command--islas-voladoras-isl-private.netlify.app`.
+- Netlify deploy summary explicitly reports `galeria.html` among newly uploaded pages; current private build copies the full portal tree, including Gallery local thumbnails/HQ views and runtime media chunks.
+- MACHINE/VERIFICATION lane = PASS for current Gallery package.
+- HUMAN/VALIDATION lane remains PENDING: real tablet must verify thumbnail, HQ image, video playback, audio playback, honest 3D state and mobile navigation.
+- Do not open Three.js Local Asset Lab until this human/device Gallery validation passes.
+- PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact · NO AUTO-CANON.
+
 # ACTIVE EXECUTION NOTE · 2026-09-26 · v0.96 AUTHORITY MIGRATION + PRIVATE DEPLOY GREEN
 - New additive checkpoint: docs/ISL_CHECKPOINT_v0.96_AUTHORITY_MIGRATION_CINEMATIC_DNA_LIGHT_UX_HANDOFF_2026-09-26.md.
 - Drive ISL_CHECKPOINT_MASTER_CURRENT now boots from v0.96; v0.94 and earlier remain preserved historical authority.
