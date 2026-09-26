@@ -11,6 +11,35 @@
   },
   "assets": [
     {
+      "id": "VID-DISTANT-MILESTONES-RELIGHT-20260926",
+      "type": "video",
+      "title": "Hitos lejanos · El futuro ya se ve",
+      "group": "Vídeo / Cinematic / Distant Milestones",
+      "status": "HUMAN_LOVED_PRIVATE_RUNTIME_NO_CANON",
+      "drive_id": "1bFqu3XusHL8-sFEthmCdw58WttNQh5b6",
+      "poster_src": "assets/isl-distant-milestones-relight-gemini-2026-09-26-poster.jpg",
+      "runtime_chunks": [
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part00.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part01.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part02.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part03.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part04.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part05.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part06.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part07.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part08.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part09.b64",
+        "data/media/isl-distant-milestones-relight-gemini-2026-09-26.part10.b64"
+      ],
+      "runtime_mime": "video/mp4",
+      "duration_seconds": 10.005,
+      "resolution": "1280x720",
+      "fps": 24,
+      "audio": "AAC stereo 48 kHz · quiet diegetic ambience",
+      "canon_state": "NOT_AUTO_CANON",
+      "featured": true
+    },
+    {
       "id": "SKYSHIP-TRINITY-BOARD-01",
       "type": "image",
       "title": "Skyship Trinity Board 01 · Las tres que no debían llegar juntas",
