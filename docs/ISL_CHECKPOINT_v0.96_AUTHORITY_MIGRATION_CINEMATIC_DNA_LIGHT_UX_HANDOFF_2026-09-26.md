@@ -143,17 +143,21 @@ Previous deploy failure was diagnosed from workflow logs as:
 This was not evidence that SAML must be added.
 Workflow now contains a pre-deploy API check that verifies whether NETLIFY_AUTH_TOKEN can access the canonical project before build/deploy.
 
-PRIVATE_DEPLOY_GREEN is PENDING until:
+PRIVATE_DEPLOY_GREEN = PASS · 2026-09-26.
+Verified GitHub Actions run 36230864583:
 TOKEN PROJECT ACCESS = GREEN
-→ security gate
-→ private build
-→ artifact verification
-→ deploy alias
-→ protected alias verification.
+→ security gate = PASS
+→ private build = PASS
+→ artifact verification = PASS
+→ canonical project link = PASS
+→ private SSO alias deploy = PASS
+→ deployment gate = PASS.
+
+Netlify project access control remains PRIVATE with team-login protection required for production and previews. Privacy was not weakened to achieve deployment.
 
 ## 9 · CURRENT WORK ORDER
 ONE ACTIVE:
-close private deploy + human read of human-first private surface.
+human read of human-first private surface on real mobile/device.
 
 ONE NEXT:
 human review of the distant-milestones visual recovery / relight bullet, then fire only if explicitly requested.
@@ -167,7 +171,7 @@ REST PARKED:
 
 ## 10 · HUMAN GATES STILL OPEN
 - Velaria real-device uninformed human retest.
-- PRIVATE_DEPLOY_GREEN.
+- Human read of the newly deployed private surface.
 - Human read of Creative DNA / Found Gold surface.
 - Distant-milestones image relight decision before generation.
 - Other previously open physical/3D gates retain their own authority and are not resolved here.
