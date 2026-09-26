@@ -1,3 +1,22 @@
+# COLD PREP NOTE · 2026-09-26 · THREE.JS LOCAL ASSET LAB STAGED, NOT ACTIVE
+- Activation condition remains unchanged: Gallery HUMAN/DEVICE validation must close first.
+- Gallery media machine completeness rechecked before staging:
+  - Distant Milestones video runtime chunks: 11/11 present.
+  - Seven Thousand Paces audio runtime chunks: 9/9 present.
+  - runtime MIME contracts remain video/mp4 and audio/mpeg.
+- Therefore remaining Gallery blocker is HUMAN sensory confirmation only, not missing media packaging.
+- Three.js lab must reuse this existing organ; DO NOT create a new app/organ before activation.
+- First activation packet, once Gallery passes:
+  1. Load ONE representative GLB only: Gift Token 01 / Human Trace derivative, never the source authority.
+  2. Package Three.js + GLTFLoader locally under private CSP; zero CDN runtime dependency.
+  3. Modes: neutral studio / ISL cinematic bracket / harsh validation / silhouette / material-debug / wireframe-normals / mobile-low.
+  4. Controls: touch orbit + pinch zoom + reset view; no ornamental UI.
+  5. Record: GLB bytes, geometry/vertex-face counts, texture bytes, material count, draw calls, cold load, first interaction, FPS/frame time where measurable.
+  6. Compare against existing poster/sheet baseline; web preview validates defects, it does not replace source/master authority.
+  7. Human gate: KEEP / MUTATE / PARK before any second asset family.
+- First asset family = HERO RELIC only. Static prop/environment/creature remain parked until the pipeline proves itself.
+- No mass generation. No Unreal import yet. No CANON change.
+
 # ISL · UNREAL READINESS + ASSET FACTORY CURRENT
 Fecha: 2026-09-26
 Estado: TRANSVERSAL IMPLEMENTATION PACK · ISL ONLY · NO NEW ORGAN · NO AUTO-CANON
