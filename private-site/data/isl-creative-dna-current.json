@@ -1,0 +1,130 @@
+{
+  "schema_version": "0.1",
+  "project": "ISLAS_VOLADORAS_ISL",
+  "surface": "PRIVATE_CREATIVE_DNA_SERENDIPITY",
+  "updated_at": "2026-09-26",
+  "boundary": {
+    "runtime": "PRIVATE_BUILD_ONLY",
+    "source_repo_visibility": "PUBLIC_SOURCE_REPOSITORY",
+    "rule": "Do not place secret/private masters, literal cross-project assets, full prompt history or credentials in this dataset.",
+    "public_future": "SANITIZED_CASE_STUDY_ONLY_AFTER_HUMAN_REVIEW"
+  },
+  "authority": {
+    "primary": "Velaria V2 P0",
+    "human_device_green": "PENDING",
+    "safe_harbor": "UNCHANGED",
+    "auto_canon": false,
+    "recency_is_authority": false
+  },
+  "principles": [
+    "La vida es el arte del reencuentro.",
+    "No pedir sólo un artefacto bonito. Pedir un artefacto capaz de convertirse en sistema.",
+    "No necesitamos mover canciones entre proyectos. Podemos mover la arquitectura emocional que hace que algo tenga alma."
+  ],
+  "serendipity_loop": [
+    "CREATE",
+    "EMBED",
+    "ARCHIVE",
+    "DISTANCE",
+    "REENCOUNTER",
+    "HUMAN RESPONSE",
+    "TRACE",
+    "LOCK SOURCE",
+    "EXTRACT FUNCTION",
+    "RETURN TO METHOD"
+  ],
+  "living_artifact": {
+    "formula": ["SEED", "LAYERS", "RELATIONS", "MUTATION", "CONTEXT", "RETURN"],
+    "questions": [
+      "¿Cuál es la semilla mínima de identidad?",
+      "¿Qué capas pueden separarse sin romperla?",
+      "¿Qué puede mutar?",
+      "¿Qué relaciones sostienen el conjunto?",
+      "¿Qué cambia con el contexto?",
+      "¿Cómo vuelve a la semilla sin repetirse?"
+    ]
+  },
+  "case_001": {
+    "id": "CASE-001",
+    "title": "WHERE EVERY THOUGHT BLOOMS",
+    "classification": "FOUND GOLD · STRONG HUMAN RESPONSE · PROVENANCE RECOVERED · NO ISL CANON",
+    "source_project": "SPIELBERG Creative Gameverse / Suspense Stage",
+    "source_asset_policy": "SOURCE PROJECT ONLY · NO AUTOMATIC ASSET TRANSFER",
+    "provenance_ref": "SPIELBERG_WHERE_EVERY_THOUGHT_BLOOMS_CREATION_TRACE_CURRENT",
+    "what_crosses": [
+      "emotional architecture",
+      "pacing / breathing macro-dynamics",
+      "reveal logic",
+      "mutation logic",
+      "human-scale anchor against immensity",
+      "open invitation after peak"
+    ],
+    "what_does_not_cross": [
+      "literal audio asset",
+      "project lore",
+      "recognizable project surface",
+      "private prompt history",
+      "source identity"
+    ],
+    "human_response": "Strong spontaneous rediscovery response after distance; evidence of resonance, not authority.",
+    "status": "METHODOLOGY_CASE_ONLY"
+  },
+  "found_gold": [
+    {
+      "id": "FG-001",
+      "case_id": "CASE-001",
+      "signal": "SURVIVED_DISTANCE",
+      "deep_function": "BREATH → REVEAL → PULLBACK → EXPANSION → MUTATION → OPEN WITHDRAWAL",
+      "contamination_risk": "LOW_IF_FUNCTION_ONLY",
+      "next_action": "Use only as an abstract comparison lens in a cheap ISL test; human decides KEEP / MUTATE / PARK / KILL."
+    }
+  ],
+  "dna_router": {
+    "default_cross": ["function", "grammar", "tension", "rhythm", "emotional_architecture"],
+    "blocked_by_default": ["literal_asset", "lore", "project_identity", "recognizable_surface"],
+    "hypotheses": [
+      "H1A · FUNCTIONAL CONVERGENCE",
+      "H1B · CONCEPTUAL / LEXICAL OVERLAP",
+      "H1C · RECURRING HUMAN CREATIVE PRIOR",
+      "H2 · DIRECT PROJECT CONTAMINATION"
+    ]
+  },
+  "human_gate": {
+    "choices": ["KEEP", "MUTATE", "PARK", "KILL"],
+    "storage": "LOCAL_BROWSER_ONLY",
+    "authority_effect": "NONE_UNTIL_EXPLICITLY_PERSISTED_TO_SOURCE_OF_TRUTH"
+  },
+  "reminder_integration": {
+    "strategy": "RETUNE_EXISTING_ORCHESTRATOR_AUTOMATIONS · NO NEW BOT",
+    "seed_pass": "WEEKLY",
+    "found_gold_pass": "FORTNIGHTLY",
+    "dna_crossing_pass": "MONTHLY",
+    "notification_rule": "NO SIGNAL = NO NOTIFICATION · MAX 1–3 FINDINGS",
+    "candidate_existing_automation": "Vigilar organismo ISL",
+    "monthly_cross_candidate": "Curar organismo ISL"
+  },
+  "graph": {
+    "nodes": [
+      {"id":"source","label":"LOCK SOURCE","kind":"memory"},
+      {"id":"distance","label":"DISTANCE","kind":"serendipity"},
+      {"id":"response","label":"HUMAN RESPONSE","kind":"human"},
+      {"id":"trace","label":"PROVENANCE","kind":"immune"},
+      {"id":"function","label":"EXTRACT FUNCTION","kind":"method"},
+      {"id":"living","label":"LIVING ARTIFACT","kind":"method"},
+      {"id":"router","label":"DNA ROUTER","kind":"nervous"},
+      {"id":"gate","label":"HUMAN GATE","kind":"human"},
+      {"id":"method","label":"RETURN TO METHOD","kind":"memory"}
+    ],
+    "edges": [
+      ["source","distance"],
+      ["distance","response"],
+      ["response","trace"],
+      ["trace","function"],
+      ["function","living"],
+      ["living","router"],
+      ["router","gate"],
+      ["gate","method"],
+      ["method","source"]
+    ]
+  }
+}
