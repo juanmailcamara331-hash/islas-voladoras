@@ -2467,3 +2467,81 @@ MAJOR WORLD VISTA.
 
 Human still decides KEEP / MUTATE / PARK / KILL.
 PRIMARY, SAFE HARBOR and CANON authority remain unchanged.
+
+
+## VISUAL COHERENCE & LOAD GATE · 2026-09-26
+Estado: ACTIVE METHOD EXTENSION · EXISTING ORGAN ONLY · NO NEW BOT · NO AUTO-CANON
+
+### CORE RULE
+ONE FRAME ≠ WHOLE GAME.
+A frame should imply a larger world, not inventory it.
+
+### ATTENTION HIERARCHY
+Default cinematic hierarchy:
+1 PRIMARY focal family;
+1 SECONDARY discovery;
+1 ENVIRONMENTAL FIELD.
+Everything else must be subordinated by contrast, saturation, detail, scale, occlusion or distance.
+
+### DENSITY BUDGET
+If removing an element preserves meaning but improves the eye path, remove or reduce it.
+Prefer a few strong masses over many equally assertive objects.
+
+### NEGATIVE SPACE FLOOR
+Preserve breathing room around the primary silhouette and any major mythic/secondary presence.
+Negative space may be sky, cloud, fog, shadow, water, distance or low-information material field.
+
+### CONTRAST BUDGET
+Do not allow every major form to receive maximum contrast + saturation + sharpness + highlight simultaneously.
+Primary may hold the strongest combination; secondary receives less; background normally receives the least.
+
+### DETAIL FALLOFF
+FOREGROUND = high detail.
+MIDGROUND = medium detail.
+BACKGROUND = low detail / mass / atmosphere.
+Distance should reduce microcontrast, saturation and descriptive detail.
+
+### NARRATIVE LOAD
+Normal target per cinematic frame:
+- 1 action;
+- 1 relationship;
+- 1 visual question.
+Avoid parallel hero subplots unless narratively necessary.
+
+### COLOR COMPETITION
+Color follows hierarchy.
+Avoid simultaneous hero signals from warm sunset + cyan engines + magenta prism + red danger + gold lamps + white waterfalls.
+Base palette may remain broad, but high-chroma accents must be scarce and functional.
+
+### ANTI-SPECTACLE RULE
+Spectacle is not a pass condition.
+If 20–40% less visible event-density improves comprehension without losing the scene's meaning, prefer the lighter load.
+
+### TWO-SECOND HUMAN READ
+After ~2 seconds, ask:
+- what was seen first?
+- what was seen second?
+- what remains in memory after looking away?
+Healthy result = ordered recall, not five simultaneous hero answers.
+
+### THUMBNAIL TEST
+At small mobile-thumbnail scale, the main masses must still read.
+FAIL if the frame collapses into a bright, saturated texture soup.
+
+### FAIL CONDITIONS
+FAIL / MUTATE if:
+- multiple elements compete at equal visual authority;
+- background is as sharp/bright/saturated as foreground;
+- every empty area is filled;
+- world detail becomes a feature catalog;
+- removing a third of secondary content immediately improves the frame;
+- the image is impressive only when zoomed in;
+- visual density overwhelms character/world relation;
+- the result reads as generic maximal fantasy key art instead of a lived ISL moment.
+
+### ROUTING
+Apply with the CINEMATIC EXPOSURE / SHADOW-MASS GATE before major cinematic generation.
+Lighting controls emotion and selective reveal.
+Composition controls attention.
+Density controls comprehension.
+No new coherence bot until repeated manual evidence proves the gate is insufficient.
