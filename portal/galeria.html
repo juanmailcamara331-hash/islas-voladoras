@@ -232,7 +232,7 @@ Promise.all([
  prismGrid.innerHTML=prisms.map(prismCard).join('')||'<div class="card empty">Sin mundos prisma todavía.</div>';
  labGrid.innerHTML=ext.map(labCard).join('')||'<div class="card empty">Sin External Lab.</div>';
  threeGrid.innerHTML=hs.map(healthCard).join('')||'<div class="card empty">Sin Asset Health.</div>';
- videoGrid.innerHTML=videos.map(a=>a.runtime_src?archiveCard(a):labCard(a)).join('')||'<div class="card empty">Sin vídeo registrado.</div>';
+ videoGrid.innerHTML=videos.map(a=>(a.runtime_src||(Array.isArray(a.runtime_chunks)&&a.runtime_chunks.length))?archiveCard(a):labCard(a)).join('')||'<div class="card empty">Sin vídeo registrado.</div>';
  musicGrid.innerHTML=tracks.map(musicCard).join('')||'<div class="card empty">Sin música registrada.</div>';
  docsGrid.innerHTML=docs.map(docsCard).join('')||'<div class="card empty">Sin documentos registrados.</div>';
  phrasesGrid.innerHTML=phrases.map(phraseCard).join('')||'<div class="card empty">Sin frases registradas.</div>';
@@ -240,7 +240,7 @@ Promise.all([
  overviewPrism.innerHTML=prisms.slice(0,4).map(prismCard).join('');
  overviewLab.innerHTML=ext.slice(0,6).map(labCard).join('');
  overview3d.innerHTML=hs.slice(0,4).map(healthCard).join('');
- overviewMusic.innerHTML=[...tracks].sort((a,b)=>Number(!!b.runtime_src)-Number(!!a.runtime_src)||Number(!!b.drive_id)-Number(!!a.drive_id)).slice(0,4).map(musicCard).join('');
+ overviewMusic.innerHTML=[...tracks].sort((a,b)=>Number(!!(b.runtime_src||(b.runtime_chunks||[]).length))-Number(!!(a.runtime_src||(a.runtime_chunks||[]).length))||Number(!!b.drive_id)-Number(!!a.drive_id)).slice(0,4).map(musicCard).join('');
  overviewArchive.innerHTML=[...archive].sort((a,b)=>Number(!!b.featured)-Number(!!a.featured)).slice(0,8).map(archiveCard).join('');
  setTab(location.hash.slice(1)||'overview');
 }).catch(err=>{
