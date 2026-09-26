@@ -138,7 +138,15 @@ const driveThumb=()=>''; // Remote Drive thumbnails are intentionally disabled i
 const chunksAttr=a=>encodeURIComponent(JSON.stringify(Array.isArray(a&&a.runtime_chunks)?a.runtime_chunks:[]));
 const mimeOf=(a,fallback)=>a&&a.runtime_mime?a.runtime_mime:fallback;
 function safePoster(a){
- const p=(a&&((a.poster_src||a.thumbnail_src)))||'';
+ const p=(a&&a.poster_src)||'';
+ return isInternalUrl(p)?p:'';
+}
+function safeThumb(a){
+ const p=(a&&a.thumbnail_src)||'';
+ return isInternalUrl(p)?p:'';
+}
+function safeRuntimeImage(a){
+ const p=(a&&a.runtime_src)||'';
  return isInternalUrl(p)?p:'';
 }
 const isInternalUrl=u=>!!u && !/^(?:https?:)?\/\//i.test(u) && !/^mailto:|^tel:/i.test(u);
@@ -154,15 +162,16 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>setTab(b.dataset.tab)
 addEventListener('hashchange',()=>setTab(location.hash.slice(1)));
 function archiveCard(a){
  const drive=a.drive_id||'',src=a.runtime_src||'',kind=(a.type||'image').toLowerCase();
- const poster=safePoster(a),chunks=chunksAttr(a),mime=mimeOf(a,kind==='video'?'video/mp4':kind==='audio'?'audio/mpeg':'');
+ const poster=safePoster(a),thumb=safeThumb(a),chunks=chunksAttr(a),mime=mimeOf(a,kind==='video'?'video/mp4':kind==='audio'?'audio/mpeg':'');
  let media='';
  if(kind==='video'&&poster) media='<img loading="lazy" src="'+esc(poster)+'" alt="'+esc(a.title)+'">';
  else if(kind==='video'&&src) media='<video muted playsinline preload="metadata" src="'+esc(src)+'"></video>';
+ else if(kind==='image'&&(thumb||src)) media='<img loading="lazy" src="'+esc(thumb||src)+'" alt="'+esc(a.title)+'">';
  else if(src) media='<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title)+'">';
  else if(poster) media='<img loading="lazy" src="'+esc(poster)+'" alt="'+esc(a.title)+'">';
  else if(drive) media='<div class="internalPending" aria-label="Vista previa todavía no empaquetada"><span aria-hidden="true">'+(kind==='audio'?'♫':kind==='3d'?'◇':'▣')+'</span><small>PREVIEW LOCAL PENDIENTE</small></div>';
  else media='<span aria-hidden="true">'+(kind==='video'?'▶':kind==='audio'?'♫':kind==='3d'?'◇':'▣')+'</span>';
- return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-runtime="'+esc(src)+'" data-chunks="'+esc(chunks)+'" data-mime="'+esc(mime)+'" data-kind="'+esc(kind)+'"><div class="thumb mediaThumb">'+media+'<span class="mediaBadge">'+esc(kind.toUpperCase())+'</span></div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
+ return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-runtime="'+esc(src)+'" data-fullimage="'+esc(kind==='image'?src:'')+'" data-chunks="'+esc(chunks)+'" data-mime="'+esc(mime)+'" data-kind="'+esc(kind)+'"><div class="thumb mediaThumb">'+media+'<span class="mediaBadge">'+esc(kind.toUpperCase())+'</span></div><div class="pad"><h2>'+esc(a.title)+'</h2><span class="status warn">'+esc(a.status)+'</span><details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(a.group)+' · '+esc(a.id)+'</div></details></div></article>';
 }
 function prismCard(a){
  const drive=a.drive_id||'',src=a.runtime_src||'',poster=safePoster(a);
@@ -326,7 +335,7 @@ Promise.all([
   }
   async function openCard(card){
     var title=card.querySelector('h2')?card.querySelector('h2').textContent:'';
-    var kind=(card.dataset.kind||'').toLowerCase(), runtime=card.dataset.runtime||'';
+    var kind=(card.dataset.kind||'').toLowerCase(), runtime=card.dataset.runtime||'', fullImage=card.dataset.fullimage||'';
     var chunks=card.dataset.chunks||'',mime=card.dataset.mime||'';
     var img=card.querySelector('.thumb img'),vid=card.querySelector('.thumb video'),mv=card.querySelector('.thumb model-viewer');
     var drive=card.dataset.drive||'',url=card.dataset.url||'',sourceUrl=card.dataset.sourceUrl||'';
@@ -351,7 +360,7 @@ Promise.all([
       return statusBox(title,'MÚSICA · PENDIENTE','La pista está registrada, pero todavía falta conectar el archivo de audio.',drive)
     }
     if(img){
-      var src=img.currentSrc||img.src;
+      var src=(kind==='image'&&fullImage)?fullImage:(img.currentSrc||img.src);
       return zoomImage(src,img.alt||title,title)
     }
     if(vid){var v=document.createElement('video');v.src=vid.currentSrc||vid.src;v.controls=true;v.autoplay=true;v.playsInline=true;return show(v,title)}
