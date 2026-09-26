@@ -2394,3 +2394,18 @@ Gate remains HUMAN_DEVICE_GREEN=PENDING until retest.
 - Daily organism watcher now includes VISUAL_LIGHTING regression detection; no new lighting bot was added.
 - REF B remains PRIMARY LIGHT AUTHORITY by function when the four-reference pack applies.
 - PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+
+## ACTIVE EXECUTION NOTE · 2026-09-26 · UNREAL READINESS + ASSET FACTORY
+- New implementation pack: `docs/ISL_UNREAL_READINESS_AND_ASSET_FACTORY_CURRENT.md`.
+- Existing M8/M11/M6/M1 now share a single asset factory contract: SOURCE LOCK → MULTIVIEW → 3D → WEB PREVIEW → CQC → PERFORMANCE BUDGET → HUMAN GATE → UNREAL IMPORT → DEVICE TEST.
+- Three.js/WebGL is restored as cheap pre-Unreal validation lab, not renderer authority.
+- FBX 2020.2 / glTF 2.0 / optional USD scene composition / local web runtime / scale and device budgets are now explicit.
+- Mass asset generation remains blocked until representative lanes pass static / relic / environment / skeletal / audio-VFX ingestion smoke.
+- Gallery fix adopts THUMB → TOP VIEW → MASTER separation; private runtime must not depend on blocked external CDN thumbnails or model-viewer.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING · SAFE HARBOR intact.
+
+## ACTIVE EXECUTION NOTE · 2026-09-26 · AI CAPACITY / CREDIT CADENCE
+- New operations note: `docs/ISL_AI_CAPACITY_AND_CREDIT_CADENCE_CURRENT.md`.
+- Verified billing cycles from receipts: Midjourney 11→11; Meshy 20→20. Suno Pro active but exact cycle still unverified. Gemini daily cap remains human-reported until account evidence is captured.
+- Rule: PREPARE OFFLINE, SPEND ONLINE. Quota availability never promotes CANON.
