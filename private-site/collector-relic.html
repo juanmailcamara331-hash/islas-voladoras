@@ -36,10 +36,10 @@
 
 <section class="section panel" id="contrabando"><div class="eyebrow">CONTRABANDO DE VIENTO</div><h2>Algunas cosas llegan donde deberían.<br>Éstas no.</h2><p>Un paquete puede traer una ficha, una nota, un parche, un sello, un fragmento de mapa o algo que parece pertenecer a otra persona. El error es narrativo; no es una compra aleatoria ni una loot box.</p></section>
 
-<section class="section machine"><div class="lever"><button id="wrongButton">DAME ALGO<br>QUE NO PEDÍ</button></div><div class="result"><div class="eyebrow">LA MÁQUINA QUE DA COSAS EQUIVOCADAS</div><strong id="wrongTitle">Todavía no se ha equivocado contigo.</strong><p id="wrongText">Pulsa la máquina. El resultado se guarda sólo en este navegador.</p><div class="small" id="wrongMeta"></div></div></section>
+<section class="section machine"><div class="lever"><button id="wrongButton">DAME ALGO<br>QUE NO PEDÍ</button></div><div class="result"><div class="eyebrow">LA MÁQUINA QUE DA COSAS EQUIVOCADAS</div><strong id="wrongTitle">Todavía no se ha equivocado contigo.</strong><p id="wrongText">Pulsa la máquina. El resultado se guarda sólo en este navegador.</p><div class="small" id="wrongMeta"></div><div style="margin-top:14px"><div class="eyebrow">3 PRIMEROS SELLOS · 1–3–∞</div><div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:8px"><span class="tag">ADUANA DEL VIENTO · NO CONSTA</span><span class="tag">DESTINATARIO PROBABLEMENTE OTRO</span><span class="tag">DEVUÉLVELO CUANDO TE ACUERDES</span></div></div></div></section>
 
 <section class="section twocol" id="pasaporte">
-<div class="passport"><div class="eyebrow" style="color:#705a3f">CREW PASSPORT 01</div><h3>No se estropea.<br>Se estropea contigo.</h3><p>No fabricamos desgaste falso. Empieza limpio y termina pareciéndose a lo que hiciste: sellos, dobleces, notas, reparaciones y errores administrativos reales.</p><span class="stamp">ESTADO · SIN VIAJES TODAVÍA</span></div>
+<div class="passport"><div class="eyebrow" style="color:#705a3f">CREW PASSPORT 01</div><h3>No se estropea.<br>Se estropea contigo.</h3><p>No fabricamos desgaste falso. Empieza limpio y termina pareciéndose a lo que hiciste: sellos, dobleces, notas, reparaciones y errores administrativos reales.</p><span class="stamp">ESTADO · SIN VIAJES TODAVÍA</span><div style="margin-top:18px;border-top:1px solid #b9a17b;padding-top:14px"><div class="eyebrow" style="color:#705a3f">ERRORES HEREDADOS</div><div id="passportErrors" style="margin-top:8px;font-size:12px;line-height:1.6;color:#5b4d3f">Todavía no has heredado ninguno.</div></div></div>
 <div class="panel"><div class="eyebrow">SMALL ISLANDS GRAMMAR</div><h2 style="font-size:40px">Un mundo abajo. Nunca un estampado.</h2><p>Las pequeñas islas aparecen en bordes, pies de página, certificados y sellos sólo como susurro. Deben descubrirse al segundo vistazo.</p></div></section>
 
 <section class="section panel"><div class="eyebrow">OBJECTS RECOVERED SO FAR</div><h2>Objetos, no catálogo.</h2><div class="grid">
@@ -72,7 +72,15 @@
  const bt=document.getElementById('wrongButton'),tt=document.getElementById('wrongTitle'),tx=document.getElementById('wrongText'),mt=document.getElementById('wrongMeta');
  function show(o){tt.textContent=o[0];tx.textContent=o[1];mt.textContent='HUELLA LOCAL · '+o[2]}
  const old=JSON.parse(localStorage.getItem(WK)||'[]'); if(old.length) show(outcomes[old[old.length-1]%outcomes.length]);
- function reunion(){
+ function passport(){
+ const h=JSON.parse(localStorage.getItem(WK)||'[]');
+ const p=document.getElementById('passportErrors');
+ if(!p)return;
+ if(!h.length){p.textContent='Todavía no has heredado ninguno.';return;}
+ const labels=h.slice(-3).map(i=>outcomes[i%outcomes.length][0]);
+ p.innerHTML=labels.map(x=>'• '+x).join('<br>');
+}
+function reunion(){
  const h=JSON.parse(localStorage.getItem(WK)||'[]');
  const r=document.getElementById('reunionCopy');
  if(!r)return;
@@ -81,7 +89,7 @@
    r.textContent='La máquina recuerda: “'+old[0]+'”. Algo de aquella pieza vuelve a cruzarse contigo.';
  }else r.textContent='Todavía no hay suficiente historia local para un reencuentro.';
 }
-bt.onclick=()=>{let h=JSON.parse(localStorage.getItem(WK)||'[]');let i=(h.length*3+1)%outcomes.length;h.push(i);localStorage.setItem(WK,JSON.stringify(h.slice(-12)));show(outcomes[i]);reunion()}
-reunion()
+bt.onclick=()=>{let h=JSON.parse(localStorage.getItem(WK)||'[]');let i=(h.length*3+1)%outcomes.length;h.push(i);localStorage.setItem(WK,JSON.stringify(h.slice(-12)));show(outcomes[i]);passport();reunion()}
+passport();reunion()
 })();
 </script></body></html>
