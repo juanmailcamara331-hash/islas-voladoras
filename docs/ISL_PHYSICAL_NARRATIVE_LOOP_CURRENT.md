@@ -235,3 +235,115 @@ Decisión: KEEP / MUTATE / PARK / KILL.
 Sólo si el Pasaporte pasa:
 CONTRABANDO DE VIENTO BOX 01
 con UNA huella del pasaporte convertida en objeto físico.
+
+
+## VISUAL REBASE · PASSPORT + WRONG MACHINE · 2026-09-26
+Estado: REJECTED-LEARNED → REBUILD VISUAL SURFACE · STRUCTURE PRESERVED.
+
+### WHAT FAILED
+Prototype Zero proved page structure and interaction flow, but visual surface was below ISL quality floor:
+- generic printable layout;
+- insufficient world-material identity;
+- weak editorial hierarchy;
+- too little lived contradiction;
+- Wrong Machine read as generic dark web UI rather than an ISL world artifact.
+
+Do NOT discard:
+- 8-page narrative architecture;
+- 3-stamp grammar;
+- local memory;
+- Machine → Trace → Passport → Reunion loop.
+
+### PASSPORT VISUAL DNA
+Target:
+COLLECTOR RELIC EDITORIAL RESTRAINT
++ IMPOSSIBLE BUREAUCRACY
++ HUMAN MATERIAL TRACE
++ SMALL-ISLAND WHISPER
++ ONE CONTROLLED CONTRADICTION.
+
+Cover:
+- charcoal / warm ivory / oxidized muted brass / one faded bureaucratic ink;
+- asymmetric crop or interrupted rule;
+- secondary ISL symbol used as provenance, not logo wallpaper;
+- micro-island baseline;
+- one visually “wrong” registration mark, stamp or cut line;
+- tactile paper / board / stitched or visible binding logic;
+- NO fake antique.
+
+Interior system:
+- editorial grid that sometimes breaks once, intentionally;
+- broad blank zones for lived use;
+- typographic hierarchy closer to field dossier / strange civil document than fantasy passport;
+- micro-coordinates / route marks / air-pressure notations only when functional;
+- page-edge navigation grammar;
+- stamps physically imperfect;
+- each spread contains at most one contradiction.
+
+ERRORES HEREDADOS:
+must be the visual crown:
+official-looking bureaucracy interrupted by impossible consequence.
+Three stamp seats, one returning trace, one blank future slot.
+
+### WRONG MACHINE VISUAL DNA
+Target:
+A SMALL ILLEGAL CUSTOMS DEVICE THAT SOMEONE BOLTED INTO AN AIRSHIP,
+not casino, not arcade, not website.
+
+Surface:
+- dark technical ceramic/composite;
+- repaired metal edge;
+- restrained brass/copper accent;
+- paper slot;
+- mechanical lever/button with perceptual-action grammar;
+- small physical label plates;
+- asymmetric human repair;
+- subtle island/provenance mark;
+- no neon, no gambling visual grammar, no lootbox language.
+
+UI:
+world-first.
+The screen is a component of the machine, not the machine itself.
+Result should feel physically issued: ticket / stamp / misrouted document.
+One action only:
+DAME ALGO QUE NO PEDÍ.
+
+### CROSS-MEDIA COHERENCE
+Passport, envelope, Machine, Collector Relic and future Contraband box share:
+- paper/ink/metal/composite material family;
+- provenance marks;
+- small-island whisper;
+- controlled imperfection;
+- bureaucracy vs impossible world tension;
+- real handling / repair capacity.
+
+Do NOT force identical palette or motif everywhere.
+
+### FIRST VISUAL TEST
+Generate exactly TWO visual masters:
+A. Passport spread / Errores Heredados.
+B. Wrong Machine physical-device hero.
+
+Lock:
+- same material family;
+- same provenance grammar;
+- same shadow/highlight philosophy;
+- different silhouette and function.
+
+Human gate:
+Do these look like two artifacts from the same lived world without feeling like a merch collection?
+
+### NEGATIVE GUARDS
+No generic steampunk.
+No pirate parchment.
+No “premium black-and-gold luxury brand”.
+No casino/lootbox.
+No theme-park prop.
+No cyberpunk vending machine.
+No decorative lore dump.
+No AI pseudo-text everywhere.
+No corporate Kickstarter merch sheet.
+
+### RESULT RULE
+Prototype Zero remains STRUCTURAL BASELINE only.
+Future visual version must not overwrite it until human KEEP.
