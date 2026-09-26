@@ -12,3 +12,5 @@ trigger=deploy-v0.95-creative-dna-human-first-retry-01
 guardrails=PRIMARY_UNCHANGED · SAFE_HARBOR_UNCHANGED · NO_AUTO_CANON · NO_CROSS_PROJECT_ASSET_IMPORT
 
 retry=creative-dna-human-first-build-verified-2026-09-26
+
+retry=lightweight-create-decide-build-check-2026-09-26
