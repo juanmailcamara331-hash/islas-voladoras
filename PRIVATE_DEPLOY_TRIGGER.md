@@ -14,3 +14,5 @@ guardrails=PRIMARY_UNCHANGED · SAFE_HARBOR_UNCHANGED · NO_AUTO_CANON · NO_CRO
 retry=creative-dna-human-first-build-verified-2026-09-26
 
 retry=lightweight-create-decide-build-check-2026-09-26
+
+retry=token-refresh-access-check-2026-09-26
