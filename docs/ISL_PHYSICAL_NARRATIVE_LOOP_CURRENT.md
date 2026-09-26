@@ -80,3 +80,158 @@ No abrir Kickstarter público.
 No crear nueva meta-capa.
 
 DO NOT ADD ORGANS. IMPROVE CIRCULATION.
+
+
+## CREW PASSPORT 01 · EXECUTABLE BULLET
+
+Estado: PREPARED · LAB ONLY · NO CANON · HUMAN FIRE PENDING.
+
+### NORTH STAR
+No diseñar un “pasaporte vintage”.
+Diseñar un objeto físico limpio que pueda adquirir biografía real.
+
+Frase madre:
+“NO SE ESTROPEA. SE ESTROPEA CONTIGO.”
+
+### SOURCE / AUTHORITY
+- Mantener PRIMARY y SAFE HARBOR intactos.
+- Usar la gramática visual Collector Relic como referencia funcional: carbón, marfil, latón contenido, pequeñas islas, editorial elegante.
+- Contradicción Viva entra sólo como grieta controlada; normalidad primero.
+- Creative DNA entra como arquitectura: semilla + capas + mutación + provenance + reencuentro.
+- No importar surface expression de otros proyectos.
+
+### FORM FACTOR
+Preferencia:
+- tamaño pasaporte realista, compacto;
+- cubierta flexible o semirrígida;
+- cosido/grapado creíble;
+- papel que admita sellos, notas y reparación;
+- sin envejecimiento falso preimpreso dominante.
+
+### COVER
+Frontal:
+- ISL o símbolo aprobado como sensor;
+- “PASAPORTE DE TRIPULACIÓN”;
+- muy poco texto;
+- una línea inferior de pequeñas islas como susurro.
+
+No:
+- escudo militar;
+- exceso de dorado;
+- ornamentación steampunk;
+- textura “antigua” agresiva;
+- sellos falsos impresos desde fábrica.
+
+### PAGE SYSTEM
+1. IDENTIDAD / TRIPULACIÓN
+2. VIAJES
+3. SELLOS
+4. ERRORES HEREDADOS
+5. OBJETOS ASIGNADOS
+6. REPARACIONES
+7. PERSONAS / LUGARES
+8. COSAS QUE NO DEBERÍAN ESTAR AQUÍ
+
+Cada bloque debe poder empezar casi vacío.
+
+### FIRST THREE STAMPS
+A. ADUANA DEL VIENTO · NO CONSTA
+- circular / aduanero
+- ligeramente imperfecto
+- función: “pasaste por algo que oficialmente no existe”
+
+B. DESTINATARIO PROBABLEMENTE OTRO
+- rectangular / burocrático
+- función: objeto o mensaje mal asignado
+
+C. DEVUÉLVELO CUANDO TE ACUERDES
+- más personal, menos oficial
+- función: promesa diferida / reencuentro
+
+### PAGE: ERRORES HEREDADOS
+Debe permitir registrar:
+- qué salió de la Máquina;
+- cuándo apareció;
+- si volvió después;
+- si acabó convertido en objeto físico;
+- si cambió de significado.
+
+No convertirlo en checklist técnico visible.
+La UI/página física debe sentirse narrativa, simple y humana.
+
+### SMALL ISLANDS GRAMMAR
+Usar pequeñas islas sólo:
+- en pie de página;
+- borde de sello;
+- separador de sección;
+- marca de procedencia;
+- microdetalle de cubierta.
+
+Regla:
+SMALL ISLANDS ARE A WHISPER, NOT A PATTERN.
+
+### HUMAN TRACE
+El pasaporte debe aceptar:
+- dobleces;
+- sellos;
+- firmas;
+- tachones;
+- notas;
+- reparación con cinta/hilo;
+- manchas accidentales;
+- pegatinas;
+- pequeñas marcas de objetos.
+
+No simular todas estas huellas desde el día 1.
+
+### VISUAL BULLET
+Primera imagen a generar:
+- pasaporte abierto sobre mesa de navegación ISL;
+- una mitad limpia / inicial;
+- otra mitad con primeras huellas;
+- página “ERRORES HEREDADOS” visible;
+- tres sellos;
+- pequeñas islas discretas abajo;
+- una sola reparación o nota humana;
+- luz cálida lateral;
+- negros profundos, medios tonos densos, highlights controlados;
+- materialidad de papel y tinta creíble;
+- cero texto falso innecesario;
+- cero sobrecarga.
+
+### COMPOSITION
+Hero 16:9.
+Pasaporte ocupa 55–70% del cuadro.
+Mesa/entorno sólo como contexto.
+Una ruta visual clara:
+TÍTULO → SELLO → ERROR → HUELLA → ISL MICRO-ISLANDS.
+
+### NEGATIVE GUARDS
+Evitar:
+- passport prop genérico de fantasía;
+- mapa pirata;
+- exceso de brújulas;
+- steampunk;
+- grunge global;
+- cuero falso premium;
+- caligrafía ilegible por todas partes;
+- veinte sellos;
+- lorem ipsum visual;
+- exceso de dorado;
+- corporate luxury;
+- cosplay.
+
+### HUMAN GATE
+Después del mockup:
+- ¿parece un objeto que querrías usar?
+- ¿entiendes que empieza limpio?
+- ¿se percibe que la historia la crea la persona?
+- ¿los sellos son memorables sin parecer gimmick?
+- ¿las pequeñas islas están presentes sin invadir?
+
+Decisión: KEEP / MUTATE / PARK / KILL.
+
+### NEXT AFTER PASS
+Sólo si el Pasaporte pasa:
+CONTRABANDO DE VIENTO BOX 01
+con UNA huella del pasaporte convertida en objeto físico.
