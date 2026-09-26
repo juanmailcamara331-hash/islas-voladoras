@@ -165,7 +165,7 @@ function archiveCard(a){
  const poster=safePoster(a),thumb=safeThumb(a),chunks=chunksAttr(a),mime=mimeOf(a,kind==='video'?'video/mp4':kind==='audio'?'audio/mpeg':'');
  let media='';
  if(kind==='video'&&poster) media='<img loading="lazy" src="'+esc(poster)+'" alt="'+esc(a.title)+'">';
- else if(kind==='video'&&src) media='<video muted playsinline preload="metadata" src="'+esc(src)+'"></video>';
+ else if(kind==='video'&&src) media='<div class="internalPending videoReady"><span aria-hidden="true">▶</span><small>VÍDEO LOCAL · TOCA PARA REPRODUCIR</small></div>';
  else if(kind==='image'&&(thumb||src)) media='<img loading="lazy" src="'+esc(thumb||src)+'" alt="'+esc(a.title)+'">';
  else if(src) media='<img loading="lazy" src="'+esc(src)+'" alt="'+esc(a.title)+'">';
  else if(poster) media='<img loading="lazy" src="'+esc(poster)+'" alt="'+esc(a.title)+'">';
@@ -219,7 +219,7 @@ function journeyView(j){
 }
 function musicCard(t){
  const src=t.runtime_src||'',drive=t.drive_id||'',chunks=chunksAttr(t),hasChunks=Array.isArray(t.runtime_chunks)&&t.runtime_chunks.length>0;
- const player=src?'<div class="player"><audio controls preload="none" src="'+esc(src)+'"></audio></div>':'';
+ const player=src?'<div class="player"><audio controls preload="none" src="'+esc(src)+'"></audio></div>':hasChunks?'<div class="player"><button type="button" class="btn primary chunkAudioPlay">REPRODUCIR</button></div>':'';
  const badge=(src||hasChunks)?'AUDIO · LISTO':drive?'AUDIO · ARCHIVADO':'AUDIO · PENDIENTE';
  const kind=(src||hasChunks)?'audio':drive?'audio-archive':'audio-pending';
  return '<article class="card mediaCard" data-drive="'+esc(drive)+'" data-runtime="'+esc(src)+'" data-chunks="'+esc(chunks)+'" data-mime="'+esc(mimeOf(t,'audio/mpeg'))+'" data-kind="'+kind+'" data-music-title="'+esc(t.title)+'" data-music-state="'+esc(t.source_state||t.status||'SOURCE_NOT_WIRED')+'"><div class="thumb mediaThumb"><span aria-hidden="true">♫</span><span class="mediaBadge">'+esc(badge)+'</span></div><div class="pad"><h2>'+esc(t.title)+'</h2>'+player+'<details><summary>DETALLES</summary><div class="meta techMeta" style="display:block">'+esc(human(t.status||''))+'</div></details></div></article>';
@@ -236,11 +236,12 @@ Promise.all([
 ]).then(([lib,prism,lab,music,health,docsLib,phraseBank,journey])=>{
  const archive=lib.assets||[], prisms=prism.worlds||[], ext=lab.assets||[], tracks=music.tracks||[], hsAll=health.assets||health.entities||health.items||[], hs=hsAll.filter(x=>x.asset_id!=="ISL_MUSIC_GALLERY");
  const videos=[...archive.filter(x=>x.type==='video'),...ext.filter(x=>x.type==='video')], docs=docsLib.docs||[], phrases=phraseBank.phrases||[];
+ const hsSorted=[...hs].sort((a,b)=>Number(!!(b.runtime_ref||b.runtime_src||b.poster_src||b.thumbnail_src))-Number(!!(a.runtime_ref||a.runtime_src||a.poster_src||a.thumbnail_src)));
  countArchive.textContent=archive.length;countPrism.textContent=prisms.length;countLab.textContent=ext.length;count3d.textContent=hs.length;countMusic.textContent=tracks.length;
  archiveGrid.innerHTML=archive.map(archiveCard).join('')||'<div class="card empty">Sin archivo.</div>';
  prismGrid.innerHTML=prisms.map(prismCard).join('')||'<div class="card empty">Sin mundos prisma todavía.</div>';
  labGrid.innerHTML=ext.map(labCard).join('')||'<div class="card empty">Sin External Lab.</div>';
- threeGrid.innerHTML=hs.map(healthCard).join('')||'<div class="card empty">Sin Asset Health.</div>';
+ threeGrid.innerHTML=hsSorted.map(healthCard).join('')||'<div class="card empty">Sin Asset Health.</div>';
  videoGrid.innerHTML=videos.map(a=>(a.runtime_src||(Array.isArray(a.runtime_chunks)&&a.runtime_chunks.length))?archiveCard(a):labCard(a)).join('')||'<div class="card empty">Sin vídeo registrado.</div>';
  musicGrid.innerHTML=tracks.map(musicCard).join('')||'<div class="card empty">Sin música registrada.</div>';
  docsGrid.innerHTML=docs.map(docsCard).join('')||'<div class="card empty">Sin documentos registrados.</div>';
@@ -248,7 +249,7 @@ Promise.all([
  journeyMount.innerHTML=journeyView(journey);
  overviewPrism.innerHTML=prisms.slice(0,4).map(prismCard).join('');
  overviewLab.innerHTML=ext.slice(0,6).map(labCard).join('');
- overview3d.innerHTML=hs.slice(0,4).map(healthCard).join('');
+ overview3d.innerHTML=hsSorted.slice(0,4).map(healthCard).join('');
  overviewMusic.innerHTML=[...tracks].sort((a,b)=>Number(!!(b.runtime_src||(b.runtime_chunks||[]).length))-Number(!!(a.runtime_src||(a.runtime_chunks||[]).length))||Number(!!b.drive_id)-Number(!!a.drive_id)).slice(0,4).map(musicCard).join('');
  overviewArchive.innerHTML=[...archive].sort((a,b)=>Number(!!b.featured)-Number(!!a.featured)).slice(0,8).map(archiveCard).join('');
  setTab(location.hash.slice(1)||'overview');
@@ -380,6 +381,8 @@ Promise.all([
     if(drive)return statusBox(title,'ARCHIVO · PREVIEW PENDIENTE','La pieza está guardada, pero todavía falta preparar su vista completa dentro de ISL.',drive);
   }
   document.addEventListener('click',function(e){
+    var chunkBtn=e.target.closest('.chunkAudioPlay');
+    if(chunkBtn){var c=chunkBtn.closest('.mediaCard');if(c){openCard(c).catch(function(err){console.error(err)})}return;}
     if(e.target.closest('audio,button,a,input,select,textarea,summary,model-viewer'))return;
     var card=e.target.closest('.mediaCard,.card[data-drive],.card[data-runtime]');if(card){openCard(card).catch(function(err){console.error(err)})}
   });
