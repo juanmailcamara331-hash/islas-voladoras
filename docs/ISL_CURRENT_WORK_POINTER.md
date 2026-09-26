@@ -1,3 +1,18 @@
+# ACTIVE EXECUTION NOTE · 2026-09-26 · GALLERY MEDIA TABLET EVIDENCE UPDATE
+- Additional five real-tablet screenshots supplied by the human.
+- Evidence fingerprints:
+  - media-tablet-01 SHA-256 `eebe3de9971717e5393358fd21398598046bcd08976816e4be225eb042f45f7a`
+  - media-tablet-02 SHA-256 `5d346750546c3a52e6b19badc1f17d1ea1ca24b3d71d86d17c52225609fbd09d`
+  - media-tablet-03 SHA-256 `3aa1a2c42e7e1b394997ec8ee21c179d60d43e54c5e49081216524780dd1d7dc`
+  - media-tablet-04 SHA-256 `cb08b8a5e96a7acd3714baf2429f548b847460af7acffba96fc8ea35eba611b9`
+  - media-tablet-05 SHA-256 `a44323e08bf17e321a412d6ba213bce38a18beb86aca93bd474ed6d442b93e07`
+- VIDEO CONTINUOUS PLAYBACK = PASS by sequential real-device visual evidence showing media state/frame progression.
+- AUDIO PLAYER RUNTIME/PROGRESS = VISUALLY OBSERVED.
+- AUDIBLE AUDIO OUTPUT = HUMAN CONFIRMATION PENDING; static screenshots cannot prove acoustic output.
+- Gallery overall HUMAN/DEVICE gate remains open only for audible-audio confirmation.
+- Do not alter Velaria V2 P0 HUMAN_DEVICE_GREEN or PRE50.
+- Three.js Local Asset Lab remains staged NEXT until Gallery overall validation closes.
+
 # ACTIVE EXECUTION NOTE · 2026-09-26 · GALLERY REAL-TABLET VISUAL EVIDENCE
 - Four real-device screenshots supplied by the human from the current private Gallery lane; all are 1536×960.
 - Evidence fingerprints:
