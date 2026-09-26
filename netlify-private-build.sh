@@ -9,6 +9,9 @@ cp private-site/carrillo-human-lab.html build/private/carrillo-human-lab.html
 cp private-site/carrillo-brief.html build/private/carrillo-brief.html
 cp private-site/rumbo-isl.html build/private/rumbo-isl.html
 cp private-site/irene-bestiary.html build/private/irene-bestiary.html
+cp private-site/creative-dna.html build/private/creative-dna.html
+mkdir -p build/private/data
+cp private-site/data/isl-creative-dna-current.json build/private/data/isl-creative-dna-current.json
 
 python3 - <<'PY'
 from pathlib import Path
@@ -18,7 +21,7 @@ for name in ['index.html','command-center.html']:
     if 'ISL CARRILLO PRIVATE ENTRY' in s:
         continue
     entry='''<!-- ISL CARRILLO PRIVATE ENTRY -->
-<a id="islCarrilloPrivateEntry" href="carrillo-human-lab.html" style="position:fixed;right:12px;bottom:12px;z-index:2147482000;border:1px solid #5e7b84;background:#07151ddd;color:#dff6f7;text-decoration:none;border-radius:999px;padding:9px 11px;font:900 9px/1 system-ui;letter-spacing:.08em;box-shadow:0 8px 26px #0008">CARRILLO · HUMAN LAB</a>\n<a id="islRumboPrivateEntry" href="rumbo-isl.html" style="position:fixed;right:12px;bottom:54px;z-index:2147482000;border:1px solid #8b7448;background:#17130ddd;color:#ffe7b6;text-decoration:none;border-radius:999px;padding:9px 11px;font:900 9px/1 system-ui;letter-spacing:.08em;box-shadow:0 8px 26px #0008">RUMBO ISL</a>\n'''
+<a id="islCarrilloPrivateEntry" href="carrillo-human-lab.html" style="position:fixed;right:12px;bottom:12px;z-index:2147482000;border:1px solid #5e7b84;background:#07151ddd;color:#dff6f7;text-decoration:none;border-radius:999px;padding:9px 11px;font:900 9px/1 system-ui;letter-spacing:.08em;box-shadow:0 8px 26px #0008">CARRILLO · HUMAN LAB</a>\n<a id="islRumboPrivateEntry" href="rumbo-isl.html" style="position:fixed;right:12px;bottom:54px;z-index:2147482000;border:1px solid #8b7448;background:#17130ddd;color:#ffe7b6;text-decoration:none;border-radius:999px;padding:9px 11px;font:900 9px/1 system-ui;letter-spacing:.08em;box-shadow:0 8px 26px #0008">RUMBO ISL</a>\n<a id="islCreativeDnaPrivateEntry" href="creative-dna.html" style="position:fixed;right:12px;bottom:96px;z-index:2147482000;border:1px solid #755c9e;background:#181126dd;color:#eadcff;text-decoration:none;border-radius:999px;padding:9px 11px;font:900 9px/1 system-ui;letter-spacing:.08em;box-shadow:0 8px 26px #0008">CREATIVE DNA</a>\n'''
     s=s.replace('</body>',entry+'</body>')
     p.write_text(s,encoding='utf-8')
 PY
@@ -50,10 +53,15 @@ grep -q "BRIEF DE BOLSILLO" build/private/carrillo-brief.html
 grep -q "Carrillo Human Lab" build/private/carrillo-human-lab.html
 test -f build/private/rumbo-isl.html
 test -f build/private/irene-bestiary.html
+test -f build/private/creative-dna.html
+test -f build/private/data/isl-creative-dna-current.json
+grep -q "Creative DNA / Serendipity" build/private/creative-dna.html
 grep -q "Equilibrio vivo" build/private/rumbo-isl.html
 grep -q "islCarrilloPrivateEntry" build/private/index.html
 grep -q "islCarrilloPrivateEntry" build/private/command-center.html
 grep -q "islRumboPrivateEntry" build/private/index.html
 grep -q "islRumboPrivateEntry" build/private/command-center.html
+grep -q "islCreativeDnaPrivateEntry" build/private/index.html
+grep -q "islCreativeDnaPrivateEntry" build/private/command-center.html
 
 echo "ISL PRIVATE build OK: full Command Center + Carrillo Human Lab."
