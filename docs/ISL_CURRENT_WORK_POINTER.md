@@ -1,3 +1,21 @@
+# ACTIVE EXECUTION NOTE · 2026-09-26 · GALLERY REAL-TABLET FAILURE EVIDENCE
+- Human real-tablet report + screenshots supersede previous inferred media pass where conflicting.
+- Observed truth:
+  - AUDIO: only one music item is audibly working on device. Overall audio gallery != PASS.
+  - 3D: no 3D item is visibly rendering on device. 3D visual lane = FAIL.
+  - VIDEO: thumbnails are not visible on device. Video thumbnail lane = FAIL.
+  - Video playback state may still work after opening an item, but thumbnail failure blocks Gallery top-quality PASS.
+- Therefore GALLERY HUMAN/DEVICE = FAIL / REPAIR REQUIRED, not PASS.
+- Previous static-screenshot inference of video/audio sufficiency must not override this direct human report.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- SAFE HARBOR intact. PRE50 unchanged.
+- ACTIVE remains Gallery repair.
+- NEXT Three.js Local Asset Lab stays staged but MUST NOT activate until Gallery repair passes.
+- Repair priority:
+  1. VIDEO THUMBNAILS runtime/poster mapping.
+  2. 3D visible honest poster/render state for every 3D card.
+  3. MUSIC catalog/runtime mapping so working-state is explicit per track and no dead controls imply availability.
+
 # ACTIVE EXECUTION NOTE · 2026-09-26 · GALLERY MEDIA TABLET EVIDENCE UPDATE
 - Additional five real-tablet screenshots supplied by the human.
 - Evidence fingerprints:
