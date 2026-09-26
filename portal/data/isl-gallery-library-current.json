@@ -46,6 +46,7 @@
       "group": "Skyships / Lab",
       "status": "SENSOR_HUMAN_READ_PENDING",
       "drive_id": "1wXNWA0YtvHaMVRssJ93fvHMtanhGu8MQ",
+      "runtime_src": "assets/gallery-local/skyship-trinity.webp",
       "canon_state": "NOT_AUTO_CANON",
       "featured": true
     },
@@ -103,6 +104,7 @@
       "group": "Identidad / Logo secundario",
       "status": "HUMAN_LOVED_STRONG_SENSOR",
       "drive_id": "1UNErBlvPM8RhYUvAS6xq7JAfla0LYaOV",
+      "runtime_src": "assets/gallery-local/logo-secondary.webp",
       "canon_state": "REFERENCE_ONLY_NOT_FINAL_LOGO",
       "featured": true
     },
