@@ -15,6 +15,17 @@ cp private-site/data/isl-creative-dna-current.json build/private/data/isl-creati
 
 python3 - <<'PY'
 from pathlib import Path
+p=Path('build/private/crear.html')
+s=p.read_text(encoding='utf-8')
+needle='<a class="card" href="galeria.html"><div class="k">MIRAR</div><b>Galería</b><span>Todo lo que ya existe</span></a>'
+entry='<a class="card" href="creative-dna.html"><div class="k">REENCUENTRO</div><b>Found Gold</b><span>Algo reaparece · qué te toca · qué función sigue viva</span></a>\\n'+needle
+if 'href="creative-dna.html"' not in s and needle in s:
+    s=s.replace(needle,entry)
+p.write_text(s,encoding='utf-8')
+PY
+
+python3 - <<'PY'
+from pathlib import Path
 for name in ['index.html','command-center.html']:
     p=Path('build/private')/name
     s=p.read_text(encoding='utf-8')
@@ -54,6 +65,7 @@ grep -q "Carrillo Human Lab" build/private/carrillo-human-lab.html
 test -f build/private/rumbo-isl.html
 test -f build/private/irene-bestiary.html
 test -f build/private/creative-dna.html
+grep -q 'href="creative-dna.html"' build/private/crear.html
 test -f build/private/data/isl-creative-dna-current.json
 grep -q "PRIVATE LAB · REENCUENTRO CREATIVO" build/private/creative-dna.html
 grep -q "Equilibrio vivo" build/private/rumbo-isl.html
