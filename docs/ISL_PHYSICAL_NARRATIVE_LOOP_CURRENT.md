@@ -1,3 +1,19 @@
+# ACTIVE EVIDENCE NOTE · 2026-09-26 · PASSPORT / WRONG MACHINE / ROUTINE SENSOR INTAKE
+- Boundary: ISL ONLY. NO AUTO-CANON. ONE ACTIVE remains Gallery human/device validation.
+- Newly re-supplied human-visible binaries were fingerprinted for continuity:
+  - PASSPORT VISUAL SENSOR upload · 1536×838 · SHA-256 `8b8ae47d6a3d484534e43689cb34bc67b0ed59f07e896193c3ec08207b1cc42d`.
+  - WRONG MACHINE / ENVELOPE FORM SENSOR upload · 1536×960 · SHA-256 `d402a6b29c9654c55ba491c39dd5d15cf74d44700627f292f358c4054b261f8c`.
+  - CONTEXT SCREENSHOT upload · 1536×960 · SHA-256 `5149c91c5a78185d579f581e77dbfe277d249d96a8df16f742d7a797f08ad646`.
+  - Routine Becomes a Mistake A · 74.6 s · SHA-256 `da11919904c9c04a2fc03a911968f13c5cf4e1621487c917d23c386085112856`.
+  - Routine Becomes a Mistake B · 74.6 s · SHA-256 `0ad4fa609715348e42881b1da0a67bf9dbddc8b6b9bbadcd5bb345fc03700c8e`.
+- HUMAN/CREATIVE READ:
+  - Passport = STRONG SENSOR · preserve. It materially improves over Prototype Zero through editorial restraint, tactile paper/object credibility, bureaucratic absurdity and small-island whisper.
+  - Wrong Machine envelope = FORM SENSOR · preserve, but provenance/ISL contradiction remains weaker than Passport; do not promote by beauty alone.
+  - Routine A/B = AUDIO RHYTHM SENSORS for Wrong Machine cadence. They are distinct binaries despite identical duration; retain as A/B rather than deduplicating.
+- No manufacturing authorization. No Kickstarter opening. No 50-stamp expansion.
+- Preferred next physical mutation, when SIDE FUN is explicitly chosen: change only ONE axis at a time on the envelope/machine surface — either provenance marks OR impossible-bureaucracy tension — while preserving material restraint.
+- Do not let this lane displace Gallery → tablet human validation → Three.js Local Asset Lab.
+
 # ISL · PHYSICAL NARRATIVE LOOP CURRENT
 Fecha: 2026-09-26
 Estado: ACTIVE LAB DIRECTION · ISL ONLY · NO CANON · NO NEW ORGAN
