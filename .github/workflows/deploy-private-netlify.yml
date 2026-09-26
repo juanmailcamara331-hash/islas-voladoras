@@ -29,6 +29,27 @@ jobs:
             exit 9
           fi
 
+      - name: Verify Netlify token can access canonical project
+        shell: bash
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          set -Eeuo pipefail
+          code="$(curl -sS -o /tmp/netlify-project.json -w '%{http_code}' \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            -H "Accept: application/json" \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID")"
+          if [ "$code" != "200" ]; then
+            echo "::error::NETLIFY_AUTH_TOKEN cannot access canonical project $NETLIFY_SITE_ID (HTTP $code). Create a fresh Netlify personal access token while signed into the team that owns islas-voladoras-isl-private, then replace the GitHub Actions secret NETLIFY_AUTH_TOKEN. Do not change project visibility."
+            exit 10
+          fi
+          python3 - <<'PY'
+          import json
+          p=json.load(open('/tmp/netlify-project.json'))
+          assert p.get('id')=='f3cb9c63-9ff1-4de2-b6df-c8e6af403a4f', 'unexpected Netlify project'
+          print('NETLIFY PROJECT ACCESS=GREEN · '+str(p.get('name','canonical-private')))
+          PY
+
       - name: Security gate
         run: python3 scripts/security-gate.py
 
