@@ -161,7 +161,8 @@
       },
       "source_drive_id": "11TvDdzDU5OcCe0X2Mo349bOZvW7pj4xO",
       "master_drive_id": "1jUmZu4cV71RyJJjd-xhjxanE2hQ4ZUJr",
-      "poster_src": "https://drive.google.com/thumbnail?id=1W8ipWm369ZVKcBqJvNobQtLM39e7_JEZ&sz=w1200",
+      "poster_src": "assets/gallery-local/gift-token-sheet-view.webp",
+      "thumbnail_src": "assets/gallery-local/gift-token-sheet-thumb.webp",
       "mutation_02": {
         "status": "CANDIDATE_ARCHIVED_TECHNICAL_PREFLIGHT_PASS_HUMAN_GATE_PENDING",
         "file_name": "Gift_Token_01_Mutation_02_CANDIDATE.glb",
