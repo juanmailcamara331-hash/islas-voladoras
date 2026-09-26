@@ -419,3 +419,32 @@ The ladder is a reusable production pattern routed through M0/M1/M2 and only the
 
 Anti-sprawl:
 ONE ACTIVE RUNG · ONE NEXT RUNG · REST PARKED.
+
+
+## CINEMATIC LIGHTING FLOOR INHERITANCE · 2026-09-26
+This is NOT a new meta-layer.
+
+For any substantive visual generation/edit/video-derivative event, M1 QUALITY must check the existing CINEMATIC LIGHTING QUALITY FLOOR in docs/ISL_CINEMATIC_AESTHETIC_SYNTHESIZER_CURRENT.md.
+
+Routing:
+VISUAL / KEY ART / PROMO FRAME / IMAGE-TO-VIDEO
+→ M2 SOURCE / IDENTITY
+→ M1 QUALITY + LIGHTING FLOOR
+→ M11 MEDIA / PROVENANCE
+→ task-specific layer only if needed.
+
+Minimum silent check:
+LIGHT DIRECTION
+→ STRUCTURAL BLACKS
+→ MODELED MIDTONES
+→ CONTROLLED HIGHLIGHTS
+→ WARM/COOL FUNCTION
+→ ATMOSPHERIC DEPTH
+→ MATERIAL SEPARATION
+→ HUMAN/WORLD LEGIBILITY.
+
+If composition is strong but lighting falls below established ISL quality:
+do NOT discard the whole asset by default.
+Prefer RELIGHT / MUTATE LIGHTLY before reroll.
+
+Human remains authority for KEEP.
