@@ -50,4 +50,7 @@ jobs:
           test -f build/private/command-center.html
           grep -q 'id="finalCommandCenter"' build/private/command-center.html
           test -f build/private/access-probe.html
+          test -f build/private/creative-dna.html
+          test -f build/private/data/isl-creative-dna-current.json
+          grep -q 'CREATIVE DNA' build/private/index.html
           echo "PUBLIC_PRIVATE_BOUNDARY=GREEN"
