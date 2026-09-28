@@ -102,3 +102,34 @@ No mystical omniscience by default.
 Cheap integration target:
 one prior action → one friend cue + one nature cue + one object cue → SENDERO/ECO interpretation.
 PASS if the player reconstructs the thread without reading the Brújula as quest navigation.
+
+
+## LIVING TRACE SOURCE · 2026-09-28
+Candidate extension to DISTRIBUTED MEMORY:
+LIVING_TRACE may join SOCIAL_TRACE / NATURE_TRACE / OBJECT_TRACE / PLACE_TRACE / CREW_TRACE / SKY_TRACE.
+
+Constraint:
+LIVING_TRACE is not mystical truth and does not infer intention.
+It records only observable world-state relation:
+- where the creature was;
+- what environmental state existed;
+- what changed before/after;
+- whether the player later recognized the association.
+
+Example candidate:
+a small ship creature repeatedly changes position before a specific class of current.
+Later, after a remembered route or storm, its changed behavior can act as an ECO of prior travel.
+
+Brújula role:
+may connect the trace AFTER the player has encountered it.
+Must not turn the creature into a hidden GPS.
+
+Serialization target:
+actor=world/living_entity
+action_class=position_or_behavior_change
+context_id=ship_or_route
+world_state_delta=environmental_state
+relation_ids=[] or relevant crew/ship relation when justified.
+
+Status:
+PROTOTYPE CANDIDATE ONLY.
