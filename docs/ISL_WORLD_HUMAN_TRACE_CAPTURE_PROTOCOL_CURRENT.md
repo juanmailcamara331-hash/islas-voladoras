@@ -158,3 +158,68 @@ Guard:
 No desplaza PRIMARY.
 No crea un sistema social nuevo por sí solo.
 No convierte Human Lab en requisito de producción.
+
+
+## LIVING TRACE 001 · DAVID / PEZ REAL DEL AUTOR · 2026-09-28
+Estado: SEED · COLOR_LANE · LAB_ONLY · NO AUTO-CANON
+
+Fuente:
+pez real del autor, llamado David.
+Especie reportada por el humano: neón chino / White Cloud Mountain Minnow (Tanichthys albonubes).
+
+Regla:
+NO convertir el animal real en herramienta ni hacer experimentos sobre él.
+Sólo observar vida cotidiana normal y transformar patrones de forma ficticia.
+
+Flujo:
+SER VIVO REAL
+→ OBSERVACIÓN SIN INTERFERENCIA
+→ PATRÓN DE MOVIMIENTO / DESCANSO / GRUPO / REFUGIO
+→ FUNCIÓN
+→ CONTRADICCIÓN
+→ MUTACIÓN ISL
+→ CHEAP TEST
+→ HUMAN READ.
+
+Núcleo funcional:
+PEQUEÑO ↔ ORIENTADOR
+SILENCIO ↔ INFORMACIÓN
+HOGAR ↔ MUNDO SALVAJE
+FRAGILIDAD APARENTE ↔ LECTURA DEL ENTORNO
+
+Mutación candidata:
+PEZ DE LAS CORRIENTES.
+
+No tiene que parecerse visualmente a David.
+Puede vivir en un pequeño depósito, estanque suspendido, cápsula de agua o sistema vivo del dirigible.
+No da misiones.
+No habla.
+Su posición, ritmo o conducta puede ayudar a leer cambios del entorno o del propio barco.
+
+Funciones candidatas:
+- living barometer / lector diegético de estados del mundo;
+- ancla de hogar y rutina a bordo;
+- pausa contemplativa;
+- Huella viva que cambia tras tormentas, rutas o acontecimientos;
+- tutorial ambiental sin texto;
+- pequeño elemento recurrente que hace que el dirigible parezca casa y no menú.
+
+Regla de ficción:
+cualquier capacidad de “leer viento / anomalías / corrientes mágicas” pertenece a la MUTACIÓN ISL y no debe presentarse como capacidad zoológica real de la especie fuente.
+
+Cheap test:
+una escena de 30–60 s en la nave con dos versiones:
+A) indicador UI explícito del estado ambiental;
+B) pez/criatura cambia de zona, profundidad o patrón de movimiento y el entorno refuerza la lectura.
+
+Pregunta:
+“¿Entendiste que algo había cambiado sin que el juego te lo dijera?”
+
+Cruces máximos:
+NAVE/HOGAR · HUELLAS/MEMORIA · NAVEGACIÓN/MUNDO.
+
+Estado actual:
+KEEP AS SEED.
+No producción.
+No CANON.
+No desplaza Gallery retest ni Velaria V2 P0.
