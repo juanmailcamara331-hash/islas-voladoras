@@ -1,3 +1,14 @@
+# ACTIVE EXECUTION NOTE · 2026-09-28 · LIVING TRACE 001 / DAVID
+- New real-life source captured as LIVING TRACE 001: the author's fish David.
+- Route: existing Human Trace only; NO new organ/bot.
+- Candidate fictional mutation = PEZ DE LAS CORRIENTES.
+- Core transfer: SMALL↔ORIENTING · SILENCE↔INFORMATION · HOME↔WILD WORLD.
+- Candidate function: tiny living diegetic reader of ship/world state, home anchor, contemplation, Huella callback.
+- Any magical/environmental sensing belongs to ISL fiction; do not imply zoological fact about the real fish.
+- Status = SEED · COLOR_LANE · LAB_ONLY · NO AUTO-CANON.
+- No production and no displacement of PRIMARY.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE EXECUTION NOTE · 2026-09-28 · GAME VISION VISUAL ARGUMENT / EXTERNAL CRAFT DNA
 - Prepared and persisted: `docs/ISL_GAME_VISION_VISUAL_ARGUMENT_BULLET_2026-09-28.md`.
 - Purpose: make `portal/game-vision.html` read like a coherent game/presentation through existing ISL imagery, not a generic dashboard.
