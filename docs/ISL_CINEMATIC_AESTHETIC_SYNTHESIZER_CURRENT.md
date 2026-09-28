@@ -2679,3 +2679,54 @@ FAIL if:
 ### PRINCIPLE
 THE SOUL OF THE SCENE IS NOT WHETHER THE WORLD IS DARK OR BEAUTIFUL.
 IT IS WHETHER A SMALL HUMAN PRESENCE CAN STILL EXIST INSIDE SOMETHING LARGER THAN IT.
+
+
+## WAITING / GAZE / ECHO PROPAGATION · 2026-09-28
+Source: human artwork reading via Human Trace. Function-only transfer.
+
+### GAME-WIDE ARGUMENT TOUCH
+The game's special tone may repeatedly use:
+EVENT → RUPTURE → THRESHOLD → WAITING → DESCENT/ASCENT → RESIDUE → CONTINUED PRESENCE.
+
+Do not use all beats in every scene.
+Treat them as a deep rhythm that can appear in different media.
+
+Examples:
+- CHARACTER: body waits while gaze/action intention arrives first.
+- CREATURE: stillness precedes impossible movement.
+- LOCATION: architecture seems to wait for a condition.
+- RELIC: consequence is delayed and stored.
+- SKYSHIP: quiet domestic state before pressure/current shift.
+- PORTAL: crossing leaves residue rather than resetting the world.
+- DARK LANE: threshold compresses the subject.
+- PARADISE LANE: threshold becomes inhabitable but retains one scar/echo.
+- HUMOR: absurd waiting can interrupt grandiosity without destroying stakes.
+
+### EYES
+Candidate cinematic rule:
+EYES MAY CARRY TEMPORAL LEAD.
+The gaze can imply that perception has crossed a threshold before the body acts.
+
+Use as:
+- close-up or silhouette-readable eye emphasis;
+- character/creature reaction before explicit exposition;
+- a small focal highlight inside large shadow mass.
+
+Fail if:
+- every character uses the same “intense eyes” trope;
+- gaze becomes generic gothic styling;
+- readability depends on tiny facial detail on mobile;
+- it copies the artwork's literal face.
+
+### WAITING
+WAITING is not dead time.
+It may be:
+PRESSURE HELD
++ POSSIBILITY UNRESOLVED
++ BODY RESTRAINED
++ WORLD ABOUT TO CHANGE.
+
+Use to improve pacing:
+ACTION should not erase STILLNESS.
+PARADISE should contain pauses.
+HELL should contain held breath.
