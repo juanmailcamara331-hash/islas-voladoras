@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "project": "ISLAS_VOLADORAS_ISL",
-  "generated_at": "2026-09-22",
+  "generated_at": "2026-09-28",
   "status": "PHRASE_BANK_CURRENT",
   "rule": "Phrases are seeds, interface texture and making-of material. Not game CANON automatically.",
   "phrases": [
@@ -76,6 +76,32 @@
         "docs"
       ],
       "canon_state": "TRANSVERSAL"
+    },
+    {
+      "id": "PHR-007",
+      "text": "La pieza no muestra sólo a una figura en una grieta; muestra la huella de un descenso a través de un portal, como si el mundo hubiera sido rasgado por un grito y todavía conservase su eco en las sombras.",
+      "origin": "Irene Abstract Work 01 · human reading",
+      "state": "STRONG_SENSOR_PHRASE",
+      "destinations": [
+        "gallery",
+        "making_of",
+        "dark_paradise",
+        "scene_seed"
+      ],
+      "canon_state": "NOT_AUTO_CANON"
+    },
+    {
+      "id": "PHR-008",
+      "text": "El cuerpo espera. Los ojos ya han llegado.",
+      "origin": "Irene Abstract Work 01 · gaze/waiting abstraction",
+      "state": "SOUL_GRAMMAR_SEED",
+      "destinations": [
+        "characters",
+        "creatures",
+        "gallery",
+        "scene_seed"
+      ],
+      "canon_state": "NOT_AUTO_CANON"
     }
   ]
 }
