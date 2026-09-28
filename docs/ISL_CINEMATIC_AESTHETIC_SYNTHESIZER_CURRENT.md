@@ -2545,3 +2545,137 @@ Lighting controls emotion and selective reveal.
 Composition controls attention.
 Density controls comprehension.
 No new coherence bot until repeated manual evidence proves the gate is insufficient.
+
+
+## THRESHOLD SOUL GRAMMAR · DARK / PARADISE CROSS · 2026-09-28
+Estado: STRONG AESTHETIC / NARRATIVE PATTERN · HUMAN-SOURCED · NO AUTO-CANON
+
+Origin:
+abstracted from a human-made Irene artwork and the subsequent human reading:
+CONTENCIÓN + VIGILANCIA + ABISMO + UMBRAL + RESISTENCIA.
+Key phrase:
+“Una persona que vive en la grieta entre desaparecer y seguir ahí.”
+
+This is NOT a requirement to reproduce the artwork.
+It is a transferable emotional grammar.
+
+### CORE PATTERN
+SMALL HUMAN PRESENCE
++ VAST ENVIRONMENTAL MASS
++ NARROW THRESHOLD / PASSAGE
++ BODY UNDER PRESSURE
++ PRESENCE THAT DOES NOT SURRENDER
++ AMBIGUITY BETWEEN FALL / SHELTER / ASCENT
++ SILENCE BEFORE EXPLANATION.
+
+### DARK LANE
+Darkness should not mean:
+- generic evil;
+- black-on-black unreadability;
+- torture-porn;
+- villain décor;
+- endless despair.
+
+Preferred dark function:
+- pressure larger than the person;
+- controlled information loss;
+- narrow safe/visible space;
+- a human figure retaining agency inside overwhelming scale;
+- stillness that feels dangerous;
+- a threshold that can be refuge and trap simultaneously.
+
+Dark formula:
+ABYSS
+→ HUMAN COMPRESSION
+→ WATCHFUL PRESENCE
+→ THRESHOLD
+→ DECISION / ENDURANCE
+→ CHANGE.
+
+### PARADISE LANE
+Paradise should NOT erase the prior darkness.
+Avoid:
+- generic heaven;
+- reward-screen brightness;
+- pure white/gold triumph;
+- “everything is healed now” closure.
+
+Preferred paradise function:
+the same soul grammar after pressure has changed relation to scale.
+
+Paradise formula:
+VASTNESS
+→ HUMAN SMALLNESS
+→ OPEN THRESHOLD
+→ BREATH / RELEASE
+→ RESIDUAL SCAR / MEMORY
+→ CONTINUED LIFE.
+
+The figure may still be small.
+The world may still be enormous.
+The difference is not “dark vs bright”.
+The difference is:
+TRAPPED THRESHOLD ↔ INHABITABLE THRESHOLD.
+PRESSURE ↔ BREATH.
+ERASURE THREAT ↔ CONTINUED PRESENCE.
+
+### DUALITY RULE
+HELL and PARADISE should rhyme compositionally when useful.
+
+Candidate rhyme:
+- same vertical opening / passage;
+- same protagonist scale;
+- same object / garment / pose family;
+- same horizon logic;
+- altered light behavior and body openness;
+- one remembered imperfection preserved.
+
+This enables:
+“the world changed, and so did how the person occupies it”
+instead of:
+“level 7 was red; level 8 is gold.”
+
+### CHARACTER / ENTITY CROSS
+Applicable to:
+- protagonist;
+- companions;
+- NPCs;
+- creatures;
+- relics;
+- locations;
+- skyship spaces;
+- portals;
+- world events.
+
+Transfer only function:
+CONTAINMENT ↔ PRESENCE
+SMALLNESS ↔ DIGNITY
+EDGE ↔ POSSIBILITY
+DARKNESS ↔ ATTENTION
+PARADISE ↔ CAPACITY TO REMAIN / BREATHE.
+
+Do not repeat the same silhouette/composition across all entities.
+The grammar must mutate per entity.
+
+### SHOT / SCENE TEST
+Ask:
+1. What is overwhelming the subject?
+2. What tiny thing proves the subject is still present?
+3. What is the threshold?
+4. Is it trap, refuge, route, or all three?
+5. What changes between dark and paradise besides exposure/palette?
+6. What scar / object / gesture survives the transition?
+7. Does the scene work without explanatory text?
+
+### QUALITY FAILURE
+FAIL if:
+- darkness is just low exposure;
+- paradise is just high exposure;
+- scale removes human agency;
+- symbolism becomes so abstract that the player cannot feel a concrete situation;
+- the same artwork is cosmetically repeated;
+- emotional meaning depends on knowing Irene or the source artwork.
+
+### PRINCIPLE
+THE SOUL OF THE SCENE IS NOT WHETHER THE WORLD IS DARK OR BEAUTIFUL.
+IT IS WHETHER A SMALL HUMAN PRESENCE CAN STILL EXIST INSIDE SOMETHING LARGER THAN IT.
