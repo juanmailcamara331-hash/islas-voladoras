@@ -1,3 +1,14 @@
+# ACTIVE EXECUTION NOTE · 2026-09-28 · WAITING PRESENCE GRAMMAR
+- Consolidated current Irene artwork reading into a transferable timing grammar:
+  BODY WAITS · EYES ARRIVE FIRST · MOUTH RETAINS.
+- Interpretation: waiting is not passivity; it can contain vigilance, withheld action, withheld speech and recognition before execution.
+- Phrase seeds preserved:
+  - “El cuerpo espera. Los ojos ya han llegado.”
+  - “La boca no calla porque no tenga nada que decir; calla porque todavía no ha llegado el momento.”
+- Applicable by function to characters, creatures, portals, relics, places and cinematics.
+- Transfer timing/tension only; do not copy literal face or artwork.
+- NO AUTO-CANON. PRIMARY unchanged.
+
 # ACTIVE EXECUTION NOTE · 2026-09-28 · IRENE ARTWORK SOUL EXTRACTION / GAME-WIDE PROPAGATION
 - Full conversation around Irene Abstract Work 01 recovered into Human Trace as a structured source packet.
 - Preserve layers separately: WORK ITSELF / MAKER TESTIMONY / OBSERVER READING / ISL ABSTRACTION.
