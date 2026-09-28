@@ -223,3 +223,29 @@ KEEP AS SEED.
 No producción.
 No CANON.
 No desplaza Gallery retest ni Velaria V2 P0.
+
+
+## HUMAN TRACE → SOUL GRAMMAR EXTRACTION · 2026-09-28
+When a human artwork, phrase or lived observation reveals a strong emotional mechanism, ISL may extract a SOUL GRAMMAR.
+
+SOUL GRAMMAR ≠ literal asset.
+SOUL GRAMMAR = relation between scale, gesture, pressure, contradiction, threshold and persistence.
+
+Current example:
+MASSIVE DARK FIELD + WHITE RIFT + SMALL HUMAN FIGURE
+was abstracted to:
+SMALL PRESENCE + OVERWHELMING SCALE + THRESHOLD + RESISTANCE + AMBIGUOUS FALL/SHELTER.
+
+Transfer rule:
+- preserve emotional function;
+- mutate medium, composition, entity and context;
+- do not require source recognition;
+- do not attribute fictional meaning back to the real person;
+- keep provenance privately;
+- public result must stand on its own.
+
+Use:
+characters · creatures · locations · relics · cinematics · UI/world cues · dark/paradise contrast.
+
+Guard:
+a powerful human source should deepen ISL, not make ISL dependent on one person or one private interpretation.
