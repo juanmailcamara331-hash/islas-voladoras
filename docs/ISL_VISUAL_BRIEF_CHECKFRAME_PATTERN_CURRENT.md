@@ -512,3 +512,329 @@ HOW ISL THINKS
 → HOW ISL SHOWS EVIDENCE
 → HOW ISL LEAVES ROOM TO BREATHE
 → HOW A HUMAN KNOWS WHAT TO DO NEXT.
+
+
+## ISL THEMATIC EDITORIAL SKIN · JOURNEY / HEART / CRESCENDO · 2026-09-28
+
+Estado:
+ACTIVE THEMATIC LAYER · APPLIES TO HUMAN-FACING ISL PDFs · NO NEW ORGAN · FUNCTIONAL THEMATIZATION
+
+### WHY
+La gramática editorial maestra no debe quedarse en claridad neutra.
+Los documentos humanos importantes deben llevar dentro la misma respiración del juego.
+
+Tema editorial =
+VIENTO
++ VIAJE
++ NAVE/HOGAR
++ HORIZONTE
++ CRIATURAS
++ HUELLA
++ GRIETA
++ DESCENSO
++ ASCENSO
++ CREACIÓN / CONTINUACIÓN.
+
+No como decoración literal.
+Como ritmo, jerarquía, tensión, silencio, continuidad y materialidad.
+
+### CORE JOURNEY
+Cuando el documento admita recorrido narrativo, usar como curva profunda:
+
+01 CUIDADO
+→ 02 HORIZONTE
+→ 03 CURIOSIDAD / OBSESIÓN
+→ 04 CAÍDA
+→ 05 REENTRADA / HOGAR
+→ 06 PRESIÓN
+→ 07 INFIERNO / UMBRAL
+→ 08 ASCENSO / REENCUENTRO
+→ 09 CREAR / CONTINUAR.
+
+No todos los PDFs necesitan 9 capítulos.
+Pero su ritmo puede derivarse de este arco:
+entrada íntima
+→ apertura
+→ complejidad
+→ tensión
+→ caída
+→ respiración
+→ resolución provisional
+→ salida con deseo.
+
+### CRESCENDO RULE
+Los documentos de visión, presentación, colaboración o narrativa deben construir intensidad.
+
+No:
+todas las páginas al mismo volumen.
+
+Sí:
+QUIET
+→ OPEN
+→ DISCOVER
+→ PRESSURE
+→ BREAK
+→ BREATHE
+→ RISE
+→ CONTINUE.
+
+La densidad, escala de imagen, tamaño de titular, oscuridad, contraste y espacio negativo pueden acompañar el crescendo.
+
+### WIND AS EDITORIAL MOTIF
+El viento puede aparecer de forma abstracta mediante:
+- diagonales leves;
+- flujo entre bloques;
+- líneas de conexión;
+- espacio negativo;
+- movimiento visual izquierda→derecha / abajo→arriba;
+- textiles/materiales en imagen;
+- microanotaciones que parecen desplazadas por una corriente;
+- mapas de ruta;
+- respiración amplia alrededor de elementos.
+
+Evitar:
+- iconos de viento repetidos;
+- remolinos decorativos;
+- partículas gratuitas.
+
+El viento debe ORIENTAR.
+
+### SKYSHIP / HOME MATERIALITY
+La nave-hogar puede inspirar materialidad editorial:
+- madera gastada / latón / tela / papel / cuerda como referencia funcional;
+- reparaciones visibles;
+- objetos usados;
+- pequeñas imperfecciones;
+- calidez localizada;
+- sensación de documento vivido, no corporativo.
+
+No convertir PDF en interfaz steampunk.
+
+Objetivo:
+HOME + JOURNEY + USE.
+
+### HORIZONTE
+Toda pieza importante debe tener una sensación de destino.
+
+Visualmente:
+- apertura;
+- aire;
+- grandes márgenes;
+- una línea de horizonte;
+- una imagen o esquema que apunte a algo fuera de la página;
+- cierre que no clausura.
+
+Editorialmente:
+WHAT EXISTS
+→ WHAT CALLS US NEXT.
+
+### CREATURE / WORLD PRESENCE
+En documentos de mundo, criaturas o narrativa:
+la criatura no aparece como ficha de bestiario por defecto.
+
+Mostrarla como:
+- presencia;
+- conducta;
+- relación;
+- huella;
+- escala;
+- cambio por acto;
+- consecuencia ecológica/social.
+
+CREATURE ≠ CARD.
+CREATURE = LIVING WORLD SIGNAL.
+
+### TRACE / MEMORY
+Una idea importante puede reaparecer más tarde transformada.
+
+Ejemplos:
+- mismo símbolo con distinto significado;
+- misma frase reducida;
+- objeto repetido;
+- color que cambia de función;
+- diagrama que vuelve simplificado;
+- imagen del comienzo reflejada en cierre.
+
+Esto crea CALLBACK EDITORIAL.
+
+No repetir por branding.
+Repetir para crear MEMORIA.
+
+### RIFT / THRESHOLD
+Para cambios de sección de alta importancia:
+usar UMBRAL, no simple separador.
+
+El cambio puede sentirse mediante:
+- caída brusca de densidad;
+- gran masa oscura;
+- página casi vacía;
+- ruptura de grid;
+- cambio de orientación;
+- una sola frase;
+- contraste fuerte entre before/after.
+
+Función:
+“algo ha cambiado”.
+
+No usar grietas literales en cada documento.
+
+### DARK / LIGHT RHYME
+Aplicar la misma regla del mundo:
+oscuridad no es “poner fondo negro”;
+ascenso no es “poner todo blanco/dorado”.
+
+DARK:
+más presión
++ menos información
++ foco estrecho
++ masa/silencio.
+
+ASCENT:
+más respiración
++ apertura
++ continuidad
++ memoria de la presión anterior.
+
+El cierre debe conservar una cicatriz visual o semántica.
+Nada vuelve exactamente al punto cero.
+
+### MUSIC / RHYTHM TRANSLATION
+Aunque un PDF no tenga audio, puede tener ritmo musical.
+
+Traducir música a:
+- repetición;
+- pausa;
+- crescendo;
+- leitmotiv;
+- silencio;
+- síncopa;
+- retorno transformado.
+
+Una página puede actuar como “compás”.
+Una doble página puede ser “cambio de movimiento”.
+
+No maquetar mecánicamente por compases.
+Usar ritmo como herramienta editorial.
+
+### LANGUAGE THEMING
+La voz editorial debe compartir el tono de ISL:
+
+- directa;
+- poética sólo cuando condensa;
+- humana;
+- un poco extraña;
+- con humor lateral cuando corresponda;
+- oscura sin grandilocuencia;
+- tierna sin azúcar;
+- épica sin marketing vacío.
+
+Preferir frases como:
+“Volvimos y el mundo se acordaba.”
+“Lo que cambia deja huella.”
+“Primero se siente. Después se explica.”
+“Crear no cierra el viaje.”
+
+Evitar:
+“solución innovadora”, “experiencia disruptiva”, “ecosistema 360º”, “journey del usuario” salvo contexto técnico.
+
+### HUMAN SCALE
+Incluso en páginas de enorme escala:
+preservar una ancla humana.
+
+Puede ser:
+- una silueta;
+- una mano;
+- una taza;
+- una nota;
+- una frase;
+- una decisión;
+- un error;
+- una huella.
+
+GRANDEZA SIN ANCLA HUMANA = FAIL ISL.
+
+### THEMATIC PAGE ROLES
+Cada página humana importante puede asumir UN rol dominante:
+
+HARBOR
+HORIZON
+DISCOVERY
+PRESSURE
+RIFT
+DESCENT
+RETURN
+ASCENT
+CREATION.
+
+El rol influye en ritmo y composición, no impone contenido literal.
+
+### PDF FAMILY THEMING
+A · ONE-PAGER / BRIEF
+Rol típico: HARBOR → HORIZON.
+
+B · DOSSIER / VISION
+Puede recorrer casi todo el arco.
+
+C · PLAYTEST
+HARBOR → DISCOVERY → TRACE → RETURN.
+
+D · TECH HANDOFF
+HARBOR / ORIENTATION primero; RIFT sólo para riesgo; RETURN = verify/rollback.
+
+E · PHYSICAL
+OBJECT / HOME / MATERIALITY → SAMPLE → RETURN.
+
+F · NARRATIVE / CREATURE
+DISCOVERY → PRESSURE → TRACE / CHANGE.
+
+G · INVESTOR / COLLABORATOR
+HARBOR → HORIZON → EVIDENCE → CREATION / CONTINUE.
+
+H · CHECKPOINT
+FROM / RIFT → NOW → RETURN → NEXT HORIZON.
+
+### LANDING ↔ PDF COHERENCE
+La landing GAME VISION y los PDFs humanos deben sentirse hijos del mismo mundo.
+
+Compartir:
+- arco emocional;
+- aire;
+- jerarquía;
+- materialidad;
+- frase corta;
+- imágenes con función;
+- continuidad;
+- escalada;
+- memoria;
+- cierre abierto.
+
+No compartir mecánicamente:
+- mismos bloques;
+- mismas animaciones;
+- mismas composiciones;
+- mismos textos.
+
+ONE GAME · DIFFERENT SURFACES.
+
+### THEMATIC CQC
+Antes de cerrar un PDF humano:
+1. ¿se siente viaje o sólo documentación?
+2. ¿hay una entrada tranquila?
+3. ¿hay al menos una apertura/horizonte?
+4. ¿existe un cambio de presión o tensión cuando procede?
+5. ¿hay respiración?
+6. ¿algo vuelve transformado?
+7. ¿hay una ancla humana?
+8. ¿las criaturas/mundo aparecen como vida y no catálogo?
+9. ¿el documento termina abriendo rumbo?
+10. ¿sigue siendo legible si quitamos toda ornamentación temática?
+
+Si la tematización compite con claridad:
+CLARITY WINS.
+Si la claridad elimina toda alma:
+MUTATE UNTIL BOTH SURVIVE.
+
+### FINAL THEMATIC RULE
+THE PDF SHOULD NOT LOOK LIKE THE GAME.
+
+IT SHOULD FEEL AS IF IT CAME FROM THE SAME JOURNEY.
