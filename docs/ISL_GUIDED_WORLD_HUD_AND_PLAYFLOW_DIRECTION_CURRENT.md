@@ -411,3 +411,42 @@ These recur in care/world/hell/paradise/creation with changed function.
 Nature does not become quest GPS.
 World traces remain causal and discoverable.
 Late-game building should learn from ecological logic rather than visually conquer it.
+
+
+## LIVING TRACE CROSS · PEZ DE LAS CORRIENTES · 2026-09-28
+Estado: CANDIDATE · CHEAP TEST ONLY · NO AUTO-CANON
+
+Purpose:
+use one tiny living presence aboard the skyship as a WORLD cue before UI, without turning it into a quest marker or pet-management system.
+
+Candidate behavior:
+ENVIRONMENT / SHIP STATE
+→ subtle change in creature position / depth / group orientation / activity
+→ matching wind / sound / material cue
+→ player hypothesis
+→ optional confirmation through consequence.
+
+Rules:
+- no explicit objective arrow;
+- no “fish says go left”;
+- no universal reliable oracle;
+- behavior must remain ambiguous enough to feel alive, but legible enough to support learning after repeated exposure;
+- important information still needs accessibility fallback;
+- creature behavior cannot be the only safety-critical cue;
+- fictional sensing abilities are ISL-world rules, not claims about real fish biology.
+
+Cheap prototype:
+one skyship room / tank / suspended water chamber;
+three states only:
+CALM · PRESSURE FRONT · ANOMALOUS CURRENT.
+
+Compare:
+A = HUD icon only.
+B = creature + environment only.
+C = creature + environment + subtle optional text backup.
+
+Measure:
+orientation time, wrong interpretation, recall 10 minutes later, perceived aliveness, whether player describes it as “indicator” or “creature”.
+
+Target:
+WORLD CUE FIRST, UI BACKUP SECOND.
