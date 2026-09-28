@@ -1,5 +1,20 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>ISL · Distrito Recreo</title><link rel="stylesheet" href="recreo-pixel.css"><link rel="stylesheet" href="isl-global-shell.css">
-</head>
+<style id="isl-living-trace-fish-lab">
+.currentFishLab{grid-column:1/-1}
+.currentTank{position:relative;height:170px;margin-top:10px;border:1px solid #335967;border-radius:14px;overflow:hidden;background:
+linear-gradient(180deg,#173846 0%,#0b2834 48%,#081c27 100%)}
+.currentTank:before{content:"";position:absolute;inset:0;background:
+repeating-linear-gradient(165deg,transparent 0 20px,#8defff0a 21px 22px,transparent 23px 43px);opacity:.85;transition:transform .8s ease}
+.currentTank .currentFish{position:absolute;left:18%;top:51%;width:58px;height:20px;border-radius:65% 45% 45% 65%;background:linear-gradient(90deg,#d6ded2,#9fb7a6 55%,#e2a15d);box-shadow:0 0 14px #cfefff2a;transition:left .8s ease,top .8s ease,transform .8s ease}
+.currentTank .currentFish:before{content:"";position:absolute;right:-15px;top:3px;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:18px solid #dd8b4f}
+.currentTank .currentFish:after{content:"";position:absolute;left:10px;top:8px;width:3px;height:3px;border-radius:50%;background:#071017;box-shadow:19px 0 0 #edf5d8}
+.currentTank.pressure:before{transform:translateX(-26px)}
+.currentTank.pressure .currentFish{left:66%;top:61%;transform:rotate(-7deg)}
+.currentTank.anomaly:before{transform:translateX(32px) skewY(-5deg)}
+.currentTank.anomaly .currentFish{left:43%;top:25%;transform:rotate(13deg)}
+.currentRead{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.currentRead button{font-size:8px}
+.currentHint{margin-top:8px;font-size:8px;line-height:1.45;color:#9fb3b8}
+</style></head>
 <body class="pixel-isl"><main class="pixelShell">
 <div class="pixelTop"><div class="pixelBrand">ISL // DISTRITO RECREO // NO CANON</div><div class="pixelNav"><a class="pixelBtn" href="rpg-home.html">← CABINA RPG</a><a class="pixelBtn" href="index.html?full=1">CENTRO DE MANDOS</a></div></div>
 <section class="pixelPanel"><div class="pixelBrand">MAPA VIVO DE RECREO</div><h1 class="pixelTitle">Distrito Recreo</h1><p class="pixelLead">Un rincón del archipiélago para jugar sin deberle productividad a nadie. Entras por una isla, haces una tontería, pescas algo imposible, truecas basura o descubres una zona que no debería existir. Todo deja huella local en tu perfil RPG.</p></section>
@@ -24,6 +39,15 @@
   <article class="pixelCard"><div class="pixelBrand">PASEO RÁPIDO</div><b>La mascota huele cosas</b><small>Una pulsación = un pequeño evento. Puede traer chatarra, semillas, rumores u objetos raros.</small><div class="pixelLog" id="walkLog">Hoy el cielo se está portando demasiado bien.</div></article>
   <article class="pixelCard"><div class="pixelBrand">CRAFTING TONTO</div><b>Banco de chapuzas</b><small>2 chatarra + 1 semilla de nube. Nada de +5 DPS.</small><div class="pixelLog" id="craftLog">Todavía no has construido nada cuestionable.</div><div style="margin-top:10px"><button class="pixelBtn gold" id="craft" type="button">IMPROVISAR</button></div></article>
   <article class="pixelCard"><div class="pixelBrand">BOLSILLOS</div><b>Materiales de recreo</b><small>Persisten en este navegador y reaparecen en la Cabina RPG.</small><div class="pixelLog"><span id="junk">0</span> chatarra · <span id="cloud">0</span> semillas · <span id="rumor">0</span> rumores</div></article>
+  <article class="pixelCard currentFishLab"><div class="pixelBrand">LIVING TRACE 001 · LAB · NO CANON</div><b>PEZ DE LAS CORRIENTES</b><small>Una criatura mínima del barco intenta contar algo sin convertirse en HUD. Cambia la corriente y observa primero; luego revela el estado.</small>
+    <div class="currentTank" id="currentTank" aria-label="Cámara de agua experimental"><i class="currentFish" aria-hidden="true"></i></div>
+    <div class="currentRead">
+      <button class="pixelBtn" id="currentShift" type="button">CAMBIAR CORRIENTE</button>
+      <button class="pixelBtn gold" id="currentReveal" type="button">REVELAR</button>
+    </div>
+    <div class="pixelLog" id="currentLog">Observa al pez y al agua. ¿Qué crees que está pasando?</div>
+    <div class="currentHint">Test: si necesitas el texto para entenderlo siempre, la señal del mundo todavía no funciona.</div>
+  </article>
 </section>
 </main>
 <script>
@@ -45,6 +69,24 @@ var events=[
 document.getElementById('wander').onclick=function(){S.turn++;S.pet++;document.getElementById('walkLog').textContent=events[Math.floor(Math.random()*events.length)]();save();paint()};
 document.getElementById('craft').onclick=function(){if(S.junk<2||S.cloud<1){document.getElementById('craftLog').textContent='Faltan 2 chatarra y 1 semilla de nube.';return}S.junk-=2;S.cloud--;S.turn++;var c=[['silbato-viento-torcido','Silbato de Viento Torcido'],['brujula-desobediente','Brújula Desobediente'],['taza-niebla','Taza para guardar niebla']][Math.floor(Math.random()*3)];addLoot(c[0]);document.getElementById('craftLog').textContent='Has fabricado: '+c[1]+'. Su utilidad sigue siendo sospechosa.';save();paint()};
 paint();
+
+// LIVING TRACE 001 · Pez de las Corrientes · cheap lab
+var currentStates=[
+ {k:'calm',label:'CALMA',msg:'El agua está estable. El pez mantiene una ruta baja y tranquila.'},
+ {k:'pressure',label:'FRENTE DE PRESIÓN',msg:'La presión cambia. El pez busca otra zona de la cámara y la corriente se aprieta.'},
+ {k:'anomaly',label:'CORRIENTE ANÓMALA',msg:'Algo no encaja con el flujo normal. El pez cambia altura y trayectoria.'}
+],currentIx=0,currentHidden=true;
+function paintCurrent(){
+ var tank=document.getElementById('currentTank'),log=document.getElementById('currentLog');
+ if(!tank||!log)return;
+ tank.className='currentTank '+(currentStates[currentIx].k==='calm'?'':currentStates[currentIx].k);
+ log.textContent=currentHidden?'Observa al pez y al agua. ¿Qué crees que está pasando?':currentStates[currentIx].label+' · '+currentStates[currentIx].msg;
+}
+var currentShift=document.getElementById('currentShift'),currentReveal=document.getElementById('currentReveal');
+if(currentShift)currentShift.onclick=function(){currentIx=(currentIx+1+Math.floor(Math.random()*2))%3;currentHidden=true;paintCurrent()};
+if(currentReveal)currentReveal.onclick=function(){currentHidden=false;paintCurrent()};
+paintCurrent();
+
 })();
 </script><script>(function(){if(location.search.indexOf('embed=1')>=0)document.body.classList.add('embed')})();</script><script defer src="isl-global-shell.js"></script>
 <script defer src="playtest-friends.js"></script></body></html>
