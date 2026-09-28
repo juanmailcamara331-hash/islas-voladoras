@@ -24,6 +24,20 @@
 .gameStat small{display:block;font-size:7px;letter-spacing:.12em;color:#839da4}.gameStat b{display:block;margin-top:3px;font-size:11px;color:#e9f2f3}
 .section{position:relative}.section:before{content:attr(data-chapter);position:absolute;right:14px;top:12px;font-size:8px;letter-spacing:.14em;color:#6e8990;font-weight:950}
 @media(max-width:620px){.visionHud{top:4px;border-radius:14px}.heroPortal{width:110px;opacity:.62}.gameStrip{grid-template-columns:1fr 1fr}.section:before{display:none}}
+
+.storyFrames{display:grid;grid-template-columns:repeat(9,minmax(150px,1fr));gap:7px;overflow:auto;padding:0 14px 14px;scroll-snap-type:x proximity}
+.storyFrame{position:relative;min-height:250px;border:1px solid #31505c;border-radius:15px;overflow:hidden;background:#071017;scroll-snap-align:start}
+.storyFrame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.08);opacity:.78}
+.storyFrame:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#04090df5 0,#04090d6b 55%,#04090d18 100%)}
+.storyFrame .sfCopy{position:absolute;z-index:2;left:11px;right:11px;bottom:11px}
+.storyFrame small{font-size:7px;letter-spacing:.13em;color:#8defff;font-weight:950}.storyFrame b{display:block;font-family:Georgia,serif;font-size:20px;margin:3px 0}.storyFrame span{display:block;font-size:8px;line-height:1.35;color:#b8c8cb}.storyFrame.proxy small{color:#ffc36e}
+.castStage{display:grid;grid-template-columns:1.1fr .9fr;gap:10px;padding:0 14px 14px}
+.castHero,.castStack article{position:relative;border:1px solid #31505c;border-radius:17px;overflow:hidden;background:#071017}
+.castHero{min-height:480px}.castHero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 24%;filter:saturate(.8) contrast(1.08);opacity:.82}.castHero:after,.castStack article:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050b10f4 0,#050b1055 63%,transparent)}
+.castHero .castCopy,.castStack .castCopy{position:absolute;z-index:2;left:16px;right:16px;bottom:15px}.castCopy small{font-size:7px;color:#8defff;letter-spacing:.13em;font-weight:950}.castCopy h3{font-family:Georgia,serif;font-size:28px;margin:4px 0}.castCopy p{font-size:10px;line-height:1.45;color:#c0cfd2;margin:0}.castStack{display:grid;gap:10px}.castStack article{min-height:150px}.castStack img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.76) contrast(1.08);opacity:.68}
+.refDNA{margin:0 14px 14px;border:1px solid #5b4c34;border-radius:16px;background:linear-gradient(135deg,#16130f,#08151c);padding:15px}.refDNA h3{font-family:Georgia,serif;font-size:25px;margin:4px 0 8px}.refDNA p{font-size:10px;line-height:1.55;color:#b9c7c9}.refGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.refCell{border:1px solid #314d57;border-radius:12px;padding:11px;background:#08151c}.refCell b{font-size:10px;color:#e6d2a5}.refCell span{display:block;margin-top:4px;font-size:8px;line-height:1.4;color:#90a6ab}
+@media(max-width:820px){.castStage{grid-template-columns:1fr}.castHero{min-height:390px}.refGrid{grid-template-columns:1fr}}
+
 </style>
 <link rel="stylesheet" href="isl-global-shell.css">
 </head>
@@ -63,6 +77,16 @@
 <div class="beat"><em>07</em><b>Infierno</b><span>Descenso, intimidad, misterio.</span></div>
 <div class="beat"><em>08</em><b>Ascenso</b><span>Vuelo, liberación, reencuentro.</span></div>
 <div class="beat"><em>09</em><b>Crear</b><span>Construir y continuar, no cerrar el mundo.</span></div>
+<div class="storyFrames" aria-label="Argumento visual 01 a 09">
+<div class="storyFrame"><img src="assets/start-zone-guide.png" alt=""><div class="sfCopy"><small>01 · CUIDADO</small><b>Entrar por una relación.</b><span>Escala humana antes de explicar el mundo.</span></div></div>
+<div class="storyFrame"><img src="assets/floating-islands-lookout.png" alt=""><div class="sfCopy"><small>02 · HORIZONTE</small><b>Querer ir más lejos.</b><span>Deseo, amistad y un cielo que promete algo.</span></div></div>
+<div class="storyFrame"><img src="assets/world-design-bible.png" alt=""><div class="sfCopy"><small>03 · OBSESIÓN</small><b>Intentar entenderlo todo.</b><span>Mapas, reglas, estudio y curiosidad que se densifica.</span></div></div>
+<div class="storyFrame"><img src="assets/bridge-worlds.png" alt=""><div class="sfCopy"><small>04 · CAÍDA</small><b>La teoría deja de bastar.</b><span>Fragilidad, contradicción y necesidad de responder.</span></div></div>
+<div class="storyFrame"><img src="assets/gallery-local/skyship-home-machine-view.webp" alt=""><div class="sfCopy"><small>05 · REENTRADA</small><b>Una casa que aprendió a volar.</b><span>El viaje vuelve a abrirse desde algo habitable.</span></div></div>
+<div class="storyFrame"><img src="assets/gallery-local/skyship-trinity.webp" alt=""><div class="sfCopy"><small>06 · PRESIÓN</small><b>El cielo deja de ser paisaje.</b><span>Tripulación, nave y peligro empiezan a exigir decisiones.</span></div></div>
+<div class="storyFrame proxy"><img src="assets/floating-ruins-guide.png" alt=""><div class="sfCopy"><small>07 · INFIERNO · PROXY</small><b>Entrar donde no querías mirar.</b><span>Imagen funcional provisional; no representa la escena final.</span></div></div>
+<div class="storyFrame"><img src="assets/epic-journey.png" alt=""><div class="sfCopy"><small>08 · ASCENSO</small><b>El mundo vuelve a respirar.</b><span>Liberación y escala después del valle.</span></div></div>
+<div class="storyFrame"><img src="assets/art-and-wind.png" alt=""><div class="sfCopy"><small>09 · CREAR</small><b>No termina: cambia de manos.</b><span>Construir deja abierto el mundo para otra historia.</span></div></div>
 </div></section>
 
 <section class="section" id="mundo" data-chapter="CAPÍTULO 02"><div class="sectionHead"><div class="eyebrow">02 · MUNDO</div><h2>El cielo no es decorado.</h2><p>El viaje ocurre entre regiones guiadas y espacios locales con libertad. El mundo debe orientar antes que el HUD: viento, luz, sonido, arquitectura, criaturas, tripulación y Huellas cuentan dónde estás y qué ha cambiado.</p></div>
@@ -76,6 +100,19 @@
 </div></section>
 
 <section class="section" id="personajes" data-chapter="CAPÍTULO 03"><div class="sectionHead"><div class="eyebrow">03 · PERSONAJES / TRIPULACIÓN</div><h2>Personas antes que funciones.</h2><p>Los personajes pueden beber de amigos, conocidos, dibujos, conversaciones y vida real, pero la persona real nunca se copia automáticamente al juego. ISL extrae gesto, contradicción, ritmo, relación y función; después transforma, mezcla y distancia.</p></div>
+<div class="castStage">
+<article class="castHero"><img src="assets/protagonist-sheet.png" alt="Protagonista ISL, referencia visual en iteración"><div class="castCopy"><small>PROTAGONISTA · ITERATION</small><h3>No una clase. Una manera de atravesar el mundo.</h3><p>Punk, curiosa, caótica, creativa, amistosa y oscura. Debe poder ser reconocida por silueta, verbos y contradicciones antes de que un dossier explique quién es.</p></div></article>
+<div class="castStack">
+<article><img src="assets/rpg-mascot-provisional.svg" alt=""><div class="castCopy"><small>COMPAÑERA · PROVISIONAL</small><h3>Rareza con afecto.</h3><p>La identidad exacta sigue pendiente de recuperar LAST GOOD; la función permanece: ternura, travesura, orientación y comportamiento imprevisible.</p></div></article>
+<article><img src="assets/gallery-local/skyship-home-machine-view.webp" alt=""><div class="castCopy"><small>TRIPULACIÓN · ENSEMBLE</small><h3>Las personas se entienden juntas.</h3><p>La química, el trabajo, el silencio, la fricción y los cambios de relación importan más que una colección de fichas aisladas.</p></div></article>
+<article><img src="assets/city-wind.png" alt=""><div class="castCopy"><small>MUNDO · PERSONAJE COLECTIVO</small><h3>Oficios, rutinas y contradicciones.</h3><p>Una ciudad o isla debe sentirse habitada incluso cuando la protagonista no está mirando.</p></div></article>
+</div></div>
+<div class="refDNA"><div class="eyebrow">REFERENCE DNA · FUNCIÓN, NO SUPERFICIE</div><h3>Cómo presentamos personajes sin copiar a nadie.</h3><p>La capa externa se usa como escuela de presentación: recorrido narrativo + motivos, personajes definidos por contradicción y ensemble, y espectáculo anclado a emoción humana. El resultado debe poder explicarse sin nombrar ninguna referencia.</p>
+<div class="refGrid">
+<div class="refCell"><b>UMBRAL + QUIRK</b><span>Entrada a un mundo, silueta singular, sombras y rareza al servicio de identidad.</span></div>
+<div class="refCell"><b>ENSEMBLE + MUNDO VIVO</b><span>Personas, flora, fauna, objetos, rutas y humor lateral conviven en la misma lectura.</span></div>
+<div class="refCell"><b>HUMANO → ASOMBRO</b><span>La gran imagen sólo importa si reduce la distancia entre quien mira y la experiencia.</span></div>
+</div></div>
 <div class="textGrid">
 <div class="textCard"><b>Human Character Lab</b><p>REALIDAD → HUELLA → DESIDENTIFICACIÓN → FUNCIÓN → CONTRADICCIÓN → MUTACIÓN ISL. Una foto puede aportar postura, ropa, materialidad o contexto; el carácter llega de la experiencia humana, no de leer una cara.</p><div class="tags"><span class="tag">PRIVATE BY DEFAULT</span><span class="tag">NO AUTO-CANON</span><span class="tag">CONSENT</span></div></div>
 <div class="textCard"><b>Relaciones que cambian</b><p>RECONOCER → MALINTERPRETAR → FRICCIÓN → DISTANCIA/CAMBIO → NUEVA INFORMACIÓN → RECONOCER DE NUEVO. La relación puede terminar en reencuentro o separación aceptada.</p></div>
