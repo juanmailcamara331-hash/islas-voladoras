@@ -412,3 +412,286 @@ avoid a beautiful outlier hiding a weak dimension and avoid one noisy session de
 No score replaces human reading.
 No score promotes CANON.
 If sample size is tiny, show qualitative bands instead of fake precision.
+
+
+## 17. CREATIVE SIGNATURE COHERENCE CONTRACT · 2026-09-28
+
+Estado:
+ACTIVE TRANSVERSAL QUALITY RULE · NO NEW ORGAN · HUMAN-AUTHORED SIGNATURE · NO AUTO-CANON
+
+### PURPOSE
+Argumento, diseño, aprendizaje, dificultad, diversión, criaturas, relaciones, mundo, progresión, audio, visuales, replay y presentación no deben optimizarse como departamentos separados.
+
+Toda pieza significativa debe buscar SINERGIA entre:
+- lo que el juego CUENTA;
+- lo que el jugador APRENDE;
+- lo que el jugador HACE;
+- lo que el mundo LE DEVUELVE;
+- cómo AUMENTA LA DIFICULTAD;
+- cómo CRECE LA SORPRESA;
+- cómo EVOLUCIONAN LAS RELACIONES;
+- qué RECUERDA el mundo;
+- qué deja HUELLA;
+- por qué sigue siendo DIVERTIDO;
+- por qué sigue sintiéndose inequívocamente ISL.
+
+La coherencia no significa uniformidad.
+Debe existir INTEGRIDAD DIALÉCTICA:
+tesis + antítesis + contradicción viva + consecuencia + aprendizaje + relectura.
+
+### HUMAN CREATIVE SIGNATURE
+La firma creativa humana del proyecto tiene prioridad sobre la optimización aislada.
+
+No reducir la firma a estética.
+Debe poder sentirse en:
+- ritmo;
+- humor;
+- ternura;
+- oscuridad;
+- contradicción;
+- sorpresa;
+- relación;
+- materialidad;
+- causalidad;
+- rareza funcional;
+- silencios;
+- consecuencias;
+- forma de aprender;
+- forma de fallar;
+- forma de volver a intentar;
+- forma de reencontrarse con mundo/personas/criaturas.
+
+IA, métricas, referencias, papers y automatizaciones pueden:
+ANALYZE · CONTRAST · FALSIFY · PREPARE · SUGGEST.
+
+No pueden:
+NORMALIZE · SANITIZE · REPLACE HUMAN TASTE · DECLARE FINAL IDENTITY.
+
+### CROSS-DOMAIN INVARIANT
+Para cualquier cambio importante preguntar:
+
+1. ARGUMENTO
+¿este cambio expresa o contradice de forma útil algo que el juego cuenta?
+
+2. GAMEPLAY
+¿el jugador hace físicamente algo que encarna esa idea?
+
+3. APRENDIZAJE
+¿se aprende jugando, observando y probando antes que leyendo explicación?
+
+4. DIFICULTAD
+¿la dificultad crece mediante comprensión + combinación + presión, no sólo mediante números mayores?
+
+5. DIVERSIÓN
+¿aparece curiosidad, agencia, ritmo, sorpresa, mastery, humor, vínculo o descubrimiento real?
+
+6. CREATIVIDAD
+¿hay espacio para una lectura/solución/expresión del jugador o todo está excesivamente resuelto?
+
+7. MUNDO
+¿el mundo responde y conserva alguna consecuencia relevante?
+
+8. RELACIONES
+¿personajes/compañeros/criaturas pueden cambiar el significado o la forma del problema?
+
+9. MEMORIA
+¿algo de esto merece ser recordado más tarde o recontextualizado?
+
+10. FIRMA HUMANA
+¿seguiría pareciendo ISL si se quitan logo, texto explicativo y referencias externas?
+
+Si 3+ dominios materiales contradicen el cambio:
+ITERATE / PARK antes de expandir.
+
+### DIFFICULTY × LEARNING CURVE
+Curva preferida:
+
+OBSERVAR
+→ PROBAR
+→ ENTENDER UNA REGLA
+→ USARLA CON LIBERTAD LOCAL
+→ ENCONTRAR UNA CONTRADICCIÓN
+→ COMBINAR CON OTRA REGLA/RELACIÓN
+→ ACTUAR BAJO PRESIÓN
+→ REINTERPRETAR ALGO APRENDIDO
+→ MASTERY WITH SURPRISE.
+
+Evitar:
+- tutorial dump;
+- dificultad por inflación de HP/daño como solución principal;
+- introducir varias reglas nuevas simultáneamente;
+- castigar antes de dar una señal legible;
+- hacer que la única mejora sea memorizar UI;
+- confundir oscuridad/misterio con información crítica ausente.
+
+Principio:
+THE PLAYER SHOULD FEEL SMARTER, NOT MERELY STRONGER.
+
+### CREATIVE FUN CURVE
+La diversión no debe entenderse sólo como recompensa inmediata.
+
+Curva deseada:
+ORIENTACIÓN
+→ CURIOSIDAD
+→ PEQUEÑO DOMINIO
+→ JUEGO / EXPERIMENTACIÓN
+→ SORPRESA
+→ CONSECUENCIA
+→ RESPIRO / HUMANIDAD
+→ NUEVA PREGUNTA.
+
+Alternar tensión y respiración.
+No hacer que toda escena tenga que ser intensa, rara, graciosa o trascendente.
+
+NORMALITY IS PART OF THE SYSTEM.
+
+### ARGUMENT × MECHANIC COHERENCE
+Un concepto narrativo fuerte debe intentar tener al menos UNA traducción jugable o causal.
+
+Ejemplos de traducción:
+SEPARACIÓN → rutas/relaciones realmente separadas;
+REENCUENTRO → mundo/personajes/criaturas recuerdan;
+CONTRADICCIÓN → dos soluciones defendibles con costes distintos;
+HOGAR → rutinas de nave que modifican relación/comportamiento;
+MEMORIA → Huellas y cambios persistentes;
+LIBERTAD → libertad local con consecuencias, no menú de elecciones abstractas;
+CREACIÓN → jugador transforma algo y después vive con esa transformación.
+
+No forzar todas las metáforas a convertirse en mecánica.
+Pero evitar argumento sin cuerpo jugable.
+
+### WORLD / CREATURE / CHARACTER SYNERGY
+Cuando un acto, NUDO o relación cambia:
+considerar si el cambio debe resonar en máximo 1–3 superficies:
+- lugar;
+- criatura;
+- companion/NPC;
+- objeto/reliquia;
+- rutina;
+- audio;
+- ruta;
+- combate;
+- Huella.
+
+No propagar a todo.
+Una consecuencia bien elegida vale más que diez indicadores.
+
+### REPLAY / RE-READING
+La rejugabilidad de calidad debería cambiar LECTURA además de capacidad.
+
+Preguntar:
+- ¿una nueva relación hace visible una capa anterior?
+- ¿una criatura responde de otro modo?
+- ¿un objeto antes trivial gana sentido?
+- ¿una regla conocida produce otro resultado por contexto?
+- ¿la dificultad nueva exige recombinar conocimiento y no sólo subir estadísticas?
+
+REPLAY = REINTERPRETATION BEFORE INFLATION.
+
+### DIALECTICAL INTEGRITY CHECK
+Para cualquier decisión creativa relevante preservar al menos:
+THESIS
++ ANTITHESIS
++ COST
++ HUMAN CONSEQUENCE
++ WHAT REMAINS UNRESOLVED.
+
+Una síntesis puede existir, pero no debe borrar automáticamente la tensión que hacía interesante la decisión.
+
+No moral bar.
+No “opción buena” disfrazada.
+No falsa complejidad donde una respuesta es obviamente óptima salvo que sea intencional y narrativa.
+
+### FUN / QUALITY EVIDENCE
+Además de claridad/agencia/feel/deseo/robustez, observar cualitativamente:
+
+- CURIOSITY: quiere ver qué pasa si...
+- RECALL: recuerda una escena/regla/criatura sin prompt.
+- SELF-EXPLANATION: puede explicar por qué algo ocurrió.
+- EXPERIMENTATION: prueba una opción no requerida.
+- OWNERSHIP: dice “yo hice / nosotros hicimos” en vez de “el juego me hizo”.
+- RETURN DESIRE: quiere volver a un lugar/persona/criatura.
+- SURPRISE WITHOUT CONFUSION: sorpresa con causalidad retrospectivamente legible.
+- HUMAN RESONANCE: aparece risa, cuidado, tensión, conversación o memoria real.
+
+No convertir estas señales en score totalizador.
+Son evidencia para lectura humana.
+
+### ANTI-FRAGMENTATION RULE
+Antes de crear un documento nuevo sobre:
+argumento · diseño · dificultad · aprendizaje · diversión · creatividad · progresión · mundo · relaciones
+
+preguntar:
+¿puede esta regla vivir dentro de un órgano existente?
+
+Default:
+UPDATE / CROSS-LINK / TEST
+antes de
+NEW DOCUMENT.
+
+### CONFLICT RESOLUTION
+Si dos documentos activos parecen pedir cosas incompatibles:
+
+1. recuperar autoridad;
+2. identificar si el conflicto es REAL o contextual;
+3. preservar ambos lados como tesis/antítesis;
+4. diseñar el test mínimo;
+5. observar experiencia humana;
+6. decidir o mantener coexistencia contextual;
+7. registrar qué condición activa cada opción.
+
+No “armonizar” borrando diferencias útiles.
+
+### MINIMUM COHERENCE CARD
+Para hitos de gameplay/narrativa significativos:
+
+HUMAN INTENT:
+ARGUMENT BEAT:
+PLAYER VERB:
+LEARNING:
+PRESSURE / DIFFICULTY:
+FUN SOURCE:
+CREATIVE FREEDOM:
+WORLD RESPONSE:
+RELATION / CREATURE ECHO:
+MEMORY / PAYOFF:
+THESIS:
+ANTITHESIS:
+HUMAN EVIDENCE:
+STOP:
+
+No exigir esta tarjeta para microcambios triviales.
+
+### QUALITY FAILURE MODES
+Warning if:
+- beautiful but not playable;
+- playable but thematically empty;
+- difficult but not learnable;
+- learnable but boring;
+- surprising but arbitrary;
+- creative but unreadable;
+- coherent but sterile;
+- emotional but manipulative/melodramatic;
+- systemic but no human texture;
+- weird but no consequence;
+- fun once but no memory;
+- replay adds power but no new reading;
+- metrics improve while human desire falls.
+
+### FINAL PRINCIPLE
+COMPLEJIDAD POR DENTRO · CLARIDAD POR FUERA.
+
+ISL quality is strongest when:
+ARGUMENT
+× PLAY
+× LEARNING
+× DIFFICULTY
+× FUN
+× RELATION
+× WORLD MEMORY
+× HUMAN CREATIVE SIGNATURE
+
+support each other without becoming the same thing.
+
+The target is not perfect coherence.
+The target is a living coherence with productive contradictions.
