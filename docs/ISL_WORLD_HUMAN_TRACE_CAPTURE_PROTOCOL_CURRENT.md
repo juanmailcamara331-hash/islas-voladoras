@@ -249,3 +249,169 @@ characters · creatures · locations · relics · cinematics · UI/world cues ·
 
 Guard:
 a powerful human source should deepen ISL, not make ISL dependent on one person or one private interpretation.
+
+
+## ARTWORK SOUL EXTRACTION METHOD · HUMAN-MADE WORKS · 2026-09-28
+Estado: ACTIVE METHOD · NO NEW ORGAN · NO AUTO-CANON · PRIVATE SOURCE / TRANSFERABLE FUNCTION
+
+Purpose:
+convert a human-made artwork plus the maker's own after-the-fact reading into reusable ISL emotional architecture without flattening the work into a fixed interpretation.
+
+### SOURCE LAYERS
+Preserve separately:
+A. WORK ITSELF
+- marks, composition, figure, empty space, material, scale, color, gesture.
+
+B. MAKER TESTIMONY
+- what the maker intended;
+- what was intuitive / unplanned;
+- what they only understood after making it;
+- what event, image or feeling they associate with it.
+
+C. HUMAN OBSERVER READING
+- interpretations from other humans;
+- metaphors;
+- emotional or narrative associations.
+
+D. ISL ABSTRACTION
+- transferable function;
+- scene grammar;
+- world rule;
+- character/entity mutation;
+- cheap test.
+
+Never collapse A/B/C/D into one “true meaning”.
+
+### CURRENT EXEMPLAR · IRENE ABSTRACT WORK 01
+Human-made source.
+Preferred documentation photo = newer full photograph.
+Earlier desk/room photograph = superseded as primary documentation reference.
+
+Visible composition:
+- massive dark fields left/right;
+- narrow vertical white rupture / passage;
+- small seated/crouched human figure high in the opening;
+- long vertical marks descending from the figure;
+- intuitive grey/black shadow forms accumulating below;
+- dark lower boundary / impact zone.
+
+Figure detail:
+- dark hair with fringe;
+- strongly marked eyes;
+- compact body;
+- arms kept close;
+- legs hanging;
+- perched/suspended position;
+- visual tension between vulnerability and refusal to disappear.
+
+Maker testimony captured in conversation:
+- lower shadow forms were made largely by intuition; maker did not fully know why while making them;
+- the white vertical band is experienced as a portal / passage rather than merely a stripe;
+- it is associated with “the day of the scream” and a felt action: “boom — and it goes down here”;
+- maker reads the body as being in a STATE OF WAITING.
+
+Human observer reading captured:
+- body compressed while presence remains;
+- figure occupies an uncomfortable threshold instead of simply crossing it;
+- possibility of FALL / SHELTER / DESCENT at the same time;
+- lower shadows can function as aftermath / reverberation / residue of passage.
+
+### MASTER INTERPRETIVE SEQUENCE
+SCREAM / EVENT
+→ RUPTURE
+→ PORTAL ACTIVATION
+→ DESCENT
+→ WAITING BODY
+→ IMPACT / ARRIVAL ZONE
+→ SHADOW ECHO
+→ PERSISTENT TRACE.
+
+This is a narrative abstraction, not a claim about literal events.
+
+### MASTER PHRASE / SM SEED
+“LA PIEZA NO MUESTRA SÓLO A UNA FIGURA EN UNA GRIETA; MUESTRA LA HUELLA DE UN DESCENSO A TRAVÉS DE UN PORTAL, COMO SI EL MUNDO HUBIERA SIDO RASGADO POR UN GRITO Y TODAVÍA CONSERVASE SU ECO EN LAS SOMBRAS.”
+
+State:
+STRONG SENSOR PHRASE · PHRASE BANK CANDIDATE · NO AUTO-CANON.
+
+### TRANSFERABLE SOUL GRAMMAR
+RUPTURE
++ THRESHOLD
++ DESCENT
++ WAITING
++ SMALL PRESENCE
++ OVERWHELMING SCALE
++ SHADOW RESIDUE
++ MEMORY OF IMPACT
++ PRESENCE THAT CONTINUES.
+
+### WAITING STATE
+Do not equate waiting with passivity.
+
+Candidate reading:
+WAITING = compressed agency held in reserve.
+
+Possible mutations:
+- a companion who does not move until a relation/world condition changes;
+- a creature that becomes still before environmental rupture;
+- a city or island “waiting” in architecture/material rather than dialogue;
+- a relic that stores a delayed consequence;
+- a portal that remains open after the event but no longer behaves the same;
+- a paradise that is not reward but a place finally safe enough to stop bracing.
+
+### EYES / GAZE AS FUNCTION
+Visible fact:
+the drawn eyes are heavily emphasized relative to the small scale of the figure.
+
+Do NOT infer the real maker/person's psychology from this.
+
+Transferable readings to test in fiction:
+- WATCHFULNESS WITHOUT MOVEMENT;
+- attention preceding action;
+- a subject physically compressed but perceptually active;
+- “I am still here / I am looking” as proof of persistence;
+- threshold awareness: the body waits, the gaze has already crossed.
+
+Candidate grammar:
+BODY WAITS · EYES ARRIVE FIRST.
+
+Use carefully:
+character staging · creature behavior · portal scenes · dark/paradise rhyme · close-up beats.
+
+### IRENE AS HUMAN SENSOR
+User-provided direction:
+Irene is highly intuitive, highly imaginative, and has had many lived experiences.
+Her opinions should be taken seriously across the game.
+
+Operational interpretation:
+IRENE = PRIORITY HUMAN SENSOR, not automatic authority.
+
+Use her feedback especially for:
+- intuitive image meaning;
+- emotional truth;
+- creature/person presence;
+- whether something feels alive vs designed;
+- darkness / beauty / threshold / absurdity;
+- human-material authenticity.
+
+Guard:
+her reaction can trigger RE-READ / CHEAP TEST / MUTATE, but cannot by itself promote CANON, override PRIMARY, bypass CQC, or replace broader human/device evidence.
+
+### METHOD FOR FUTURE NENE WORKS
+For each human-made work:
+1. PRESERVE RAW.
+2. DOCUMENT FULL VIEW.
+3. DOCUMENT 1–3 DETAILS.
+4. ASK MAKER WHAT WAS INTENTIONAL.
+5. ASK WHAT WAS INTUITIVE / UNKNOWN.
+6. RECORD LATER ASSOCIATIONS WITHOUT RETROACTIVELY DECLARING THEM “the truth”.
+7. READ BODY / SPACE / LIGHT / MATERIAL / GESTURE separately.
+8. EXTRACT 1–3 SOUL GRAMMARS.
+9. MUTATE across at most 1–3 game systems first.
+10. TEST one scene/entity cheaply.
+11. KEEP / MUTATE / PARK / KILL.
+12. Only then consider public gallery / Kickstarter / in-game use.
+
+Core rule:
+DO NOT EXPLAIN THE WORK UNTIL IT DIES.
+PRESERVE MYSTERY, THEN EXTRACT FUNCTION.
