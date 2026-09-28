@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-28 · THRESHOLD SOUL GRAMMAR
+- A strong transferable ISL pattern was extracted from the Irene human-made artwork and human reading.
+- Core: SMALL HUMAN PRESENCE + OVERWHELMING MASS + NARROW THRESHOLD + CONTAINMENT + WATCHFUL PRESENCE + RESISTANCE.
+- Key abstraction: "a person living in the gap between disappearing and still being there."
+- Cinematic Aesthetic Synthesizer now applies this to both DARK and PARADISE lanes:
+  - DARK = pressure / compression / ambiguous refuge-trap / presence under threat.
+  - PARADISE = vastness remains, but threshold becomes inhabitable; pressure becomes breath; scars/memory persist.
+- HELL and PARADISE may rhyme compositionally; difference must be relational, not merely red/black vs white/gold.
+- Human Trace now includes SOUL GRAMMAR EXTRACTION: transfer emotional function, not literal artwork/person identity.
+- Applicable to characters, creatures, locations, relics, skyship spaces and cinematics; mutate per entity.
+- NO AUTO-CANON. PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+
 # ACTIVE EXECUTION NOTE · 2026-09-28 · LIVING TRACE 001 / DAVID
 - New real-life source captured as LIVING TRACE 001: the author's fish David.
 - Route: existing Human Trace only; NO new organ/bot.
