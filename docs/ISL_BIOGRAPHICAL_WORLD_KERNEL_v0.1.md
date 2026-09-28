@@ -318,3 +318,100 @@ Rap crítico/satírico, comedia irreverente y sátira social pueden inspirar:
 - humor que nace de una verdad incómoda.
 
 Nunca copiar versos, cadencias, voces, personajes, chistes o estilo reconocible de artistas/obras concretas.
+
+
+## CHARACTER MUTATION PACKET · 2026-09-28
+Este packet especializa ISL_LIFE_TO_WORLD_PACKET cuando la fuente es una persona o relación real.
+
+### INPUT
+- una o varias personas reales como fuentes;
+- recuerdos/anécdotas del autor;
+- opcionalmente foto o vídeo consentido para anclas visibles;
+- material de Human Trace ya preservado.
+
+### SEPARACIÓN OBLIGATORIA
+VISIBLE FACTS ≠ HUMAN INTERPRETATION ≠ FICTIONAL MUTATION.
+
+VISIBLE FACTS:
+ropa, postura, objetos, acción visible, entorno, ritmo corporal observable.
+
+HUMAN INTERPRETATION:
+cómo vive el autor esa persona o relación; metáforas emocionales; contradicciones percibidas; historias compartidas.
+
+FICTIONAL MUTATION:
+el personaje ISL resultante, que debe poder sobrevivir sin nombre, rostro, biografía exacta ni anécdota literal de la fuente.
+
+### CHARACTER GRAMMAR
+Sintetizar:
+DESIRE + HABIT + CONTRADICTION + THRESHOLD + RELATION + CHANGE.
+
+Puede incluir:
+- quietud ↔ absurdo;
+- ego ↔ punto ciego;
+- cuidado ↔ dureza;
+- creatividad ↔ bloqueo;
+- expansión ↔ compresión;
+- lealtad ↔ distancia;
+- humor ↔ verdad incómoda.
+
+No son plantillas obligatorias; son ejemplos de tensiones observables.
+
+### RELATIONAL DESIGN
+Preferir relaciones dinámicas:
+RECOGNIZE → MISREAD → FRICTION → DISTANCE/CHANGE → NEW INFORMATION → RECOGNIZE AGAIN → REUNION OR ACCEPTED SEPARATION.
+
+La evolución puede expresarse por:
+- acciones compartidas;
+- rutinas;
+- espacios;
+- cambios de ropa/objetos;
+- disponibilidad;
+- distancia;
+- tono;
+- callbacks;
+- memoria del mundo.
+
+No exigir medidor visible de afinidad.
+
+### CHEAP CHARACTER TEST
+Antes de producir un NPC completo, probar una microescena de 30–120 s:
+A) exposición/dialogue-only;
+B) conducta/actividad compartida;
+C) si aporta, una variante de tensión o límite.
+
+Pregunta de lectura:
+"¿Qué crees que esta persona quería, evitaba o protegía?"
+y/o
+"¿En qué momento sentiste que empezabas a conocerla?"
+
+No revelar la fuente autobiográfica durante el test.
+
+### DISTANCE CHECK
+PASS si:
+- funciona para alguien que no conoce a la fuente;
+- no depende de reconocer a la persona real;
+- conserva verdad emocional;
+- tiene conducta propia en ISL;
+- puede entrar en conflicto con el jugador;
+- puede sorprender sin traicionar su gramática.
+
+FAIL si:
+- es cameo;
+- es caricatura privada;
+- necesita contexto externo;
+- replica voz/rostro/anécdota de forma innecesaria;
+- usa sufrimiento real como decoración;
+- sólo existe para halagar al autor o a su círculo.
+
+### COHORT METHOD
+Para grupos de amigos/conocidos:
+1. capturar 5–12 fuentes sin asignar rol todavía;
+2. sintetizar gramáticas individuales;
+3. comparar relaciones y contrastes;
+4. detectar duplicados funcionales;
+5. mezclar fuentes cuando aumente ficción/distancia;
+6. sólo entonces proponer NPC / companion / crew / merchant / antagonist / recurring secondary;
+7. testear química de pares y tríos antes de escribir biografías largas.
+
+Objetivo:
+construir una tripulación que se sienta humana por RELACIONES, no por cantidad de lore.
