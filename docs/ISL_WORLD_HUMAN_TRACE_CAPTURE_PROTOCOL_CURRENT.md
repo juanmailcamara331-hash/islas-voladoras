@@ -415,3 +415,45 @@ For each human-made work:
 Core rule:
 DO NOT EXPLAIN THE WORK UNTIL IT DIES.
 PRESERVE MYSTERY, THEN EXTRACT FUNCTION.
+
+
+## WAITING PRESENCE GRAMMAR · EYES / MOUTH / BODY · 2026-09-28
+Estado: TRANSFERABLE SOUL PATTERN · HUMAN-SOURCED · NO AUTO-CANON
+
+Source reading:
+- BODY = waiting / compressed / held;
+- EYES = already active / watchful / ahead of the body;
+- MOUTH = contained / information not yet released.
+
+Core:
+BODY WAITS
++ EYES ARRIVE FIRST
++ MOUTH RETAINS
+→ THRESHOLD TENSION
+→ EVENT STILL PENDING.
+
+Phrase seeds:
+- “El cuerpo espera. Los ojos ya han llegado.”
+- “La boca no calla porque no tenga nada que decir; calla porque todavía no ha llegado el momento.”
+
+Transferable function:
+WAITING ≠ PASSIVITY.
+Waiting may contain:
+- vigilance;
+- withheld action;
+- withheld speech;
+- recognition before movement;
+- decision before execution;
+- danger that has not yet declared itself.
+
+Entity mutation examples:
+- CHARACTER: sees before acting; speaks after threshold is crossed.
+- CREATURE: body still, gaze active, mouth closed until environmental change.
+- PORTAL: appears inert but behaves as if it has already registered presence.
+- RELIC: stores consequence before releasing it.
+- LOCATION: looks dormant while signs indicate latent response.
+- CINEMATIC: delay between recognition, movement and speech creates pressure.
+
+Guard:
+do not copy facial features or literal expression.
+Transfer timing, tension and relation between perception / action / speech.
