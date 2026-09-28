@@ -1,3 +1,17 @@
+# ACTIVE EXECUTION NOTE · 2026-09-28 · GALLERY TABLET REPAIR DEPLOYED · HUMAN RETEST PENDING
+- Authority repair only; no CANON / PRIMARY / SAFE HARBOR change.
+- Prior real-tablet evidence remains valid: VIDEO THUMBNAILS = FAIL, 3D visible lane = FAIL, overall AUDIO gallery != PASS on the tested build.
+- Subsequent repair commit `a118579b6911dc149a9968ac88d7efe77c5077b2` addresses video thumbnail/poster mapping, visible 3D preview ordering and chunk-audio play control.
+- Publication commit `83b7874a4238ca163d7946211845c5cc773faa02` is current repository HEAD.
+- GitHub Actions on that HEAD: Deploy private ISL Command Center run 36251921235 = SUCCESS; Security Baseline run 36251921272 = SUCCESS; CodeQL run 36251921224 = SUCCESS. Later surface-propagation fallback runs through 2026-09-28 also = SUCCESS.
+- MACHINE/DEPLOY lane for the repair = PASS.
+- HUMAN/DEVICE lane for the repaired build = HUMAN_READ_PENDING. Do NOT infer Gallery PASS until a real-device retest confirms video thumbnails, visible 3D state and audible per-track music behavior.
+- ONE ACTIVE = Gallery repaired-build real-device retest.
+- ONE NEXT = Three.js Local Asset Lab remains staged and MUST NOT activate until Gallery repaired-build human/device validation passes.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING.
+- SAFE HARBOR intact. PRE50 unchanged.
+- This note supersedes only the stale operational implication that the repair itself had not reached a verified private deploy; it does not supersede the human failure evidence or promote the repaired behavior to PASS.
+
 # ACTIVE EXECUTION NOTE · 2026-09-26 · GALLERY REAL-TABLET FAILURE EVIDENCE
 - Human real-tablet report + screenshots supersede previous inferred media pass where conflicting.
 - Observed truth:
