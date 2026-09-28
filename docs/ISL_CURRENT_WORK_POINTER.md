@@ -1,3 +1,16 @@
+# ACTIVE EXECUTION NOTE · 2026-09-28 · GAME VISION VISUAL ARGUMENT / EXTERNAL CRAFT DNA
+- Prepared and persisted: `docs/ISL_GAME_VISION_VISUAL_ARGUMENT_BULLET_2026-09-28.md`.
+- Purpose: make `portal/game-vision.html` read like a coherent game/presentation through existing ISL imagery, not a generic dashboard.
+- External craft research is FUNCTION-ONLY:
+  - Burton/MoMA → dual reading (story + motifs), world-threshold entrance, shadows/reflections, character quirk/silhouette, minimal explanatory dependence.
+  - Pratchett/Discworld/Kidby → ensemble character identity, world + people + objects + routes together, larger-than-life contradiction, lateral detail without blocking main read.
+  - Spielberg/Amblin/DGA → reduce aesthetic distance, emotion at center of spectacle, wonder/fear/humor/mystery coexist, relational epiphany, map/set-piece planning without killing spontaneity.
+- Reference Distance applies: no copied characters, prose, jokes, layouts, iconic silhouettes, shots or franchise surfaces.
+- Visual argument sequence uses existing assets only and labels proxies honestly; no image generation authorized.
+- Page now includes 01→09 visual story strip + character/ensemble presentation + reference-DNA functional summary.
+- Dashboard utility count regression introduced during surfacing was immediately corrected; global shell retains EL JUEGO · VISIÓN access without violating the six-module portal contract.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. SAFE HARBOR intact. NO AUTO-CANON.
+
 # ACTIVE EXECUTION NOTE · 2026-09-28 · HUMAN CHARACTER METHOD + GAME VISION SURFACE
 - Character creation methodology has been integrated into existing ISL organs; no new organ/bot created.
 - `docs/ISL_WORLD_HUMAN_TRACE_CAPTURE_PROTOCOL_CURRENT.md` now includes HUMAN CHARACTER SOURCE METHOD: person real = source, not NPC; visible facts ≠ human interpretation ≠ fictional mutation; character grammar before role/archetype; privacy/consent by default.
