@@ -781,3 +781,33 @@ Output:
 
 Hard rule:
 THE WATCHDOGS ARE PART OF THE ORGANISM, NOT ABOVE IT.
+
+
+## HUMAN CHARACTER LAB ROUTING · 2026-09-28
+No crear automatización nueva.
+
+Trigger:
+cuando el humano aporte una persona, relación, foto consentida, anécdota, gesto, frase o dinámica con intención de alimentar personajes/NPCs/tripulación.
+
+Route:
+WORLD HUMAN TRACE
+→ BIOGRAPHICAL CHARACTER MUTATION PACKET
+→ existing Entity / Relationship / Dialogue / Crew surfaces only if the mutation survives.
+
+Assistant behavior:
+- no interrogar para completar formularios;
+- aprovechar lo ya dicho;
+- preguntar 0–3 cosas sólo si reducen una incertidumbre real;
+- si el humano no quiere describir más, sintetizar con UNKNOWN explícitos;
+- separar visible facts / human interpretation / fictional mutation;
+- producir CHARACTER GRAMMAR antes de rol/clase/arquetipo;
+- preservar privacidad y consentimiento;
+- no persistir nombre/rostro/frase privada en superficie pública por defecto;
+- no auto-CANON;
+- preferir una microescena o relational cheap test antes de biografía extensa.
+
+Cadence:
+event-driven only. No daily/weekly reminder.
+
+Output útil:
+SOURCE SUMMARY → CONTRADICTIONS → RELATIONAL VALUE → TRANSFERABLE FUNCTIONS → DISTANCE → MUTATION CANDIDATE → CHEAP TEST → HUMAN GATE.
