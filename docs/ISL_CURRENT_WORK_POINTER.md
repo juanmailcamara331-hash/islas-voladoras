@@ -1,3 +1,16 @@
+# ACTIVE EXECUTION NOTE · 2026-09-28 · CREATIVE MEMORY RECOVERY ROUTING
+- Clean-room continuity audit found that the current Creative Memory methodology is persistently recoverable in Google Drive but does not currently have same-name GitHub docs.
+- This is a routing fact, NOT authority loss and NOT a request to create duplicate organs.
+- Recover these CURRENT sources from Drive when needed:
+  - ISL_CREATIVE_SERENDIPITY_LOOP_CURRENT · Drive ID `13I1ubg7Bm6Q3c7NQCuLmSasp44spP5JbqaaJgzwCKgk`
+  - ISL_CREATIVE_DNA_CROSSING_CURRENT · Drive ID `10XKZrYP4CU1ZQNQdCMuSi6K56N1YsPtXlwFzFSDVXig`
+  - ISL_CREATIVE_DNA_CROSSING_IMPLEMENTATION_PACK_CURRENT · Drive ID `1i3W9iX3gx9STfSrxLY5gJXkStCdUw39g2D15_rWsTwI`
+- GitHub same-name paths = ABSENT / UNVERIFIED as of this audit; do not infer nonexistence of the methodology from a GitHub 404.
+- EVENT ROUTER canonical GitHub artifact is `docs/ISL_EVENT_ROUTER_CURRENT.json`; a same-name .md path should not be assumed.
+- No mirror is created automatically. DO NOT ADD ORGANS. IMPROVE CIRCULATION.
+- Creative cadence result for this pass: NO VALID NEW FOUND GOLD established. Existing strong items examined did not satisfy the forgotten/reappeared requirement strongly enough to justify surfacing them again.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. SAFE HARBOR intact.
+
 # ACTIVE EXECUTION NOTE · 2026-09-28 · GALLERY TABLET REPAIR DEPLOYED · HUMAN RETEST PENDING
 - Authority repair only; no CANON / PRIMARY / SAFE HARBOR change.
 - Prior real-tablet evidence remains valid: VIDEO THUMBNAILS = FAIL, 3D visible lane = FAIL, overall AUDIO gallery != PASS on the tested build.
