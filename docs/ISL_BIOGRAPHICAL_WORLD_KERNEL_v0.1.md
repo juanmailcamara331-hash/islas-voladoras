@@ -415,3 +415,38 @@ Para grupos de amigos/conocidos:
 
 Objetivo:
 construir una tripulación que se sienta humana por RELACIONES, no por cantidad de lore.
+
+
+## HUMAN SENSOR WEIGHTING · IRENE · 2026-09-28
+User direction:
+Irene's intuitive and imaginative readings should materially inform ISL.
+
+Implementation:
+treat her as a PRIORITY QUALITATIVE SENSOR for selected creative questions, especially:
+- intuitive coherence;
+- emotional resonance;
+- strange-but-alive vs designed weirdness;
+- character presence;
+- threshold / darkness / paradise;
+- human-made material trace.
+
+Do not convert “priority sensor” into:
+- veto power;
+- automatic CANON;
+- universal taste target;
+- replacement for other testers.
+
+When Irene offers an intuition that she cannot fully explain:
+1. preserve exact wording;
+2. do not force rationalization;
+3. identify the observable trigger if possible;
+4. derive 1–3 hypotheses;
+5. cheap-test the function;
+6. preserve ambiguity if the intuition remains useful without explanation.
+
+Character/entity rule:
+INTUITION CAN BE EVIDENCE OF DIRECTION, NOT EVIDENCE OF FACT.
+
+Current transferable motif:
+BODY WAITS · EYES ARRIVE FIRST.
+Use as a relational/time grammar, never as a literal character template.
