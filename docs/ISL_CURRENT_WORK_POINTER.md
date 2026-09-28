@@ -1,3 +1,13 @@
+# ACTIVE EXECUTION NOTE · 2026-09-28 · HUMAN CHARACTER METHOD + GAME VISION SURFACE
+- Character creation methodology has been integrated into existing ISL organs; no new organ/bot created.
+- `docs/ISL_WORLD_HUMAN_TRACE_CAPTURE_PROTOCOL_CURRENT.md` now includes HUMAN CHARACTER SOURCE METHOD: person real = source, not NPC; visible facts ≠ human interpretation ≠ fictional mutation; character grammar before role/archetype; privacy/consent by default.
+- `docs/ISL_BIOGRAPHICAL_WORLD_KERNEL_v0.1.md` now includes CHARACTER MUTATION PACKET + cohort method + cheap character test.
+- `docs/ISL_AUTOMATION_PROMPTS_MASTER_CURRENT.md` now routes Human Character Lab event-driven through existing methods; explicitly NO new reminder/automation.
+- Public-facing `portal/game-vision.html` exists as EL JUEGO / VISIÓN VIVA: a presentation-game surface for story, world, characters, mechanics, feeling, methodology and current truth.
+- Human-source names/photos/private anecdotes remain private by default; public surface shows transformed method/fiction only.
+- PRIMARY remains Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. SAFE HARBOR intact. NO AUTO-CANON.
+- DO NOT ADD ORGANS. IMPROVE CIRCULATION.
+
 # ACTIVE EXECUTION NOTE · 2026-09-28 · CREATIVE MEMORY RECOVERY ROUTING
 - Clean-room continuity audit found that the current Creative Memory methodology is persistently recoverable in Google Drive but does not currently have same-name GitHub docs.
 - This is a routing fact, NOT authority loss and NOT a request to create duplicate organs.
