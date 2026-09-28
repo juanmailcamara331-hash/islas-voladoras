@@ -38,125 +38,119 @@
 .refDNA{margin:0 14px 14px;border:1px solid #5b4c34;border-radius:16px;background:linear-gradient(135deg,#16130f,#08151c);padding:15px}.refDNA h3{font-family:Georgia,serif;font-size:25px;margin:4px 0 8px}.refDNA p{font-size:10px;line-height:1.55;color:#b9c7c9}.refGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.refCell{border:1px solid #314d57;border-radius:12px;padding:11px;background:#08151c}.refCell b{font-size:10px;color:#e6d2a5}.refCell span{display:block;margin-top:4px;font-size:8px;line-height:1.4;color:#90a6ab}
 @media(max-width:820px){.castStage{grid-template-columns:1fr}.castHero{min-height:390px}.refGrid{grid-template-columns:1fr}}
 
+
+.journeyNav{position:sticky;top:6px;z-index:40;display:flex;gap:6px;align-items:center;margin:0 auto 10px;width:min(1100px,calc(100% - 8px));padding:7px;border:1px solid #35596566;border-radius:999px;background:#061018d6;backdrop-filter:blur(14px);overflow:auto}
+.journeyNav a,.journeyNav button{flex:0 0 auto;border:1px solid #2d4c58;border-radius:999px;background:#09171e;color:#c6d6d9;padding:8px 10px;font:900 8px/1 Inter,system-ui,sans-serif;letter-spacing:.08em}
+.journeyNav .home{color:#ffe0a0;border-color:#8b6b3f}.journeyNav .sound{color:#dffaff}
+.threshold{position:relative;min-height:78vh;border:1px solid #355765;border-radius:26px;overflow:hidden;background:#050b10;display:flex;align-items:flex-end}
+.threshold img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.08) brightness(.78)}
+.threshold:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#02070b28 0,#02070b55 38%,#02070bea 100%),linear-gradient(90deg,#02070db8 0,transparent 62%)}
+.thresholdCopy{position:relative;z-index:2;padding:clamp(24px,6vw,72px);max-width:880px}.thresholdCopy h1{font-family:Georgia,serif;font-size:clamp(56px,10vw,128px);font-weight:500;letter-spacing:-.055em;line-height:.84;margin:8px 0 18px}.thresholdCopy p{max-width:720px;color:#d6e2e3;line-height:1.6;font-size:clamp(15px,2vw,21px)}
+.whisper{font-family:Georgia,serif;font-style:italic;color:#dccda9;font-size:clamp(19px,2.4vw,30px);margin-top:14px}
+.journey{display:grid;gap:14px;margin-top:14px}.journeyScene{position:relative;min-height:72vh;border:1px solid #2f4f5c;border-radius:24px;overflow:hidden;background:#071017;display:flex;align-items:flex-end}
+.journeyScene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(1.08) brightness(.82)}
+.journeyScene:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,#04090d33 45%,#04090deb 100%)}
+.journeyScene .sceneCopy{position:relative;z-index:2;padding:clamp(22px,5vw,60px);max-width:880px}.sceneNum{font-size:9px;letter-spacing:.16em;font-weight:950;color:#8defff}.journeyScene h2{font-family:Georgia,serif;font-weight:500;font-size:clamp(42px,7vw,88px);line-height:.9;letter-spacing:-.04em;margin:7px 0 12px}.journeyScene p{max-width:700px;margin:0;color:#c7d5d7;font-size:clamp(13px,1.7vw,18px);line-height:1.55}
+.journeyScene[data-tone="rift"] img{filter:saturate(.55) contrast(1.16) brightness(.58)}.journeyScene[data-tone="rift"]:after{background:linear-gradient(180deg,#03050935,#0204079c 45%,#020407f4 100%)}.journeyScene[data-tone="rise"] img{filter:saturate(.82) contrast(1.05) brightness(.92)}
+.proxyMark{display:inline-block;margin-top:10px;border:1px solid #8d6b3f;border-radius:999px;padding:6px 8px;color:#ffd796;font-size:8px;letter-spacing:.1em}
+.humanExit{margin-top:14px;border:1px solid #425967;border-radius:24px;background:linear-gradient(145deg,#0d1b23,#081219);padding:clamp(22px,4vw,44px)}.humanExit h2{font-family:Georgia,serif;font-weight:500;font-size:clamp(38px,6vw,72px);margin:6px 0 10px}.humanExit>p{color:#aebfc3;max-width:780px;line-height:1.55}.dockGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.dock{border:1px solid #31505c;border-radius:16px;padding:18px;background:#08151c}.dock small{font-size:8px;letter-spacing:.13em;color:#8defff}.dock b{display:block;font-family:Georgia,serif;font-size:28px;margin:5px 0}.dock p{font-size:10px;line-height:1.5;color:#9fb3b8}.truthSlim{margin-top:12px;color:#7f959b;font-size:9px;line-height:1.5}
+@media(max-width:760px){.journeyNav{border-radius:14px}.threshold,.journeyScene{min-height:68vh;border-radius:18px}.dockGrid{grid-template-columns:1fr}}
+
 </style>
 <link rel="stylesheet" href="isl-global-shell.css">
 </head>
 <body>
-<nav class="visionHud" aria-label="Capítulos de la visión">
-<a class="visionHome" href="index.html?full=1">ISL</a>
-<a href="#historia">HISTORIA</a><a href="#mundo">MUNDO</a><a href="#personajes">PERSONAJES</a><a href="#juego">JUEGO</a><a href="#sensacion">SENSACIÓN</a><a href="#metodo">MÉTODO</a><a href="#estado">ESTADO</a>
+<nav class="journeyNav" aria-label="Viaje ISL">
+<a class="home" href="index.html?full=1">ISL</a>
+<a href="#s01">01</a><a href="#s02">02</a><a href="#s03">03</a><a href="#s04">04</a><a href="#s05">05</a><a href="#s06">06</a><a href="#s07">07</a><a href="#s08">08</a><a href="#s09">09</a>
+<button class="sound" id="journeySound" type="button" aria-pressed="false">♪ MÚSICA</button>
 </nav>
+<audio id="journeyAudio" loop preload="none" src="assets/airships-last-waltz-master.mp3"></audio>
 <main class="wrap">
-<section class="hero" id="top">
-<img src="assets/island-a-master.jpg" alt="Islas Voladoras">
-<div class="heroPortal" aria-hidden="true"><span>PUERTA DE VISIÓN</span></div>
-<div class="heroCopy">
-<div class="eyebrow">ISLAS VOLADORAS · VISIÓN VIVA DEL JUEGO</div>
-<h1>Un mundo que recuerda tus pasos.</h1>
-<div class="lead">Aventura aérea, islas imposibles, tripulación, rutinas, combate, humor oscuro, criaturas, reliquias y decisiones que regresan más tarde. Esta página no es una promesa de marketing: es el mapa humano de lo que ISL está intentando convertirse.</div>
-<div class="cta"><a class="btn gold" href="jugar.html">JUGAR LO QUE YA EXISTE</a><a class="btn" href="galeria.html">VER EL MUNDO</a><a class="btn" href="mission-map.html">VER ESTADO REAL</a></div>
-<div class="gameStrip">
-<div class="gameStat"><small>FORMATO</small><b>AVENTURA · RPG · MUNDO VIVO</b></div>
-<div class="gameStat"><small>CORAZÓN</small><b>RELACIONES + CONSECUENCIAS</b></div>
-<div class="gameStat"><small>RUMBO</small><b>GUIADO + LIBERTAD LOCAL</b></div>
-<div class="gameStat"><small>ESTADO</small><b>LAB + HUMAN GATES</b></div>
-</div>
+<section class="threshold" id="top">
+<img src="assets/island-a-master.jpg" alt="Horizonte de Islas Voladoras">
+<div class="thresholdCopy">
+<div class="eyebrow">ISLAS VOLADORAS · PUERTA DE VISIÓN</div>
+<h1>No vengas a entenderlo todo.</h1>
+<p>Entra. Mira qué recuerdas. Qué te da curiosidad. Qué parte del mundo parece estar esperándote.</p>
+<div class="whisper">Primero se siente. Después se explica.</div>
+<div class="cta"><a class="btn gold" href="#s01">ENTRAR EN EL VIAJE</a><a class="btn" href="jugar.html">JUGAR LO QUE YA EXISTE</a></div>
 </div>
 </section>
 
-<div class="truth"><b>ESTADO REAL</b><span>PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. Esta visión mezcla dirección estable, hipótesis de diseño y material LAB; ninguna imagen bonita ni idea reciente asciende automáticamente a CANON.</span></div>
+<div class="journey" aria-label="Viaje visual 01 a 09">
+<section class="journeyScene" id="s01">
+<img src="assets/start-zone-guide.png" alt="Primer contacto con el mundo">
+<div class="sceneCopy"><div class="sceneNum">01 · CUIDADO</div><h2>Empieza pequeño.</h2><p>Antes del mapa, una relación. Antes de la misión, una presencia. Antes de saber adónde vas, algo te hace querer quedarte.</p></div>
+</section>
 
-<section class="section" id="historia" data-chapter="CAPÍTULO 01"><div class="sectionHead"><div class="eyebrow">01 · HISTORIA / VIAJE</div><h2>Primero vives. Luego entiendes qué significó.</h2><p>ISL quiere una historia coral, humana, absurda y capaz de ponerse oscura sin moralina. La referencia literaria funciona por principios —sátira social, contradicción, personajes con vida propia, humor junto a consecuencias reales— nunca por copiar voz, frases o superficie de ningún autor.</p></div>
-<div class="arc">
-<div class="beat"><em>01</em><b>Cuidado</b><span>Entrar por una relación, no por una enciclopedia.</span></div>
-<div class="beat"><em>02</em><b>Horizonte</b><span>Deseo, amistad, mundo enorme.</span></div>
-<div class="beat"><em>03</em><b>Obsesión</b><span>Aprender, estudiar, perseguir una idea.</span></div>
-<div class="beat"><em>04</em><b>Caída</b><span>Contradicción, coste, rescate.</span></div>
-<div class="beat"><em>05</em><b>Reentrada</b><span>Dirigible, mundo reabierto.</span></div>
-<div class="beat"><em>06</em><b>Presión</b><span>Encuentro, tripulación, decisiones.</span></div>
-<div class="beat"><em>07</em><b>Infierno</b><span>Descenso, intimidad, misterio.</span></div>
-<div class="beat"><em>08</em><b>Ascenso</b><span>Vuelo, liberación, reencuentro.</span></div>
-<div class="beat"><em>09</em><b>Crear</b><span>Construir y continuar, no cerrar el mundo.</span></div>
-<div class="storyFrames" aria-label="Argumento visual 01 a 09">
-<div class="storyFrame"><img src="assets/start-zone-guide.png" alt=""><div class="sfCopy"><small>01 · CUIDADO</small><b>Entrar por una relación.</b><span>Escala humana antes de explicar el mundo.</span></div></div>
-<div class="storyFrame"><img src="assets/floating-islands-lookout.png" alt=""><div class="sfCopy"><small>02 · HORIZONTE</small><b>Querer ir más lejos.</b><span>Deseo, amistad y un cielo que promete algo.</span></div></div>
-<div class="storyFrame"><img src="assets/world-design-bible.png" alt=""><div class="sfCopy"><small>03 · OBSESIÓN</small><b>Intentar entenderlo todo.</b><span>Mapas, reglas, estudio y curiosidad que se densifica.</span></div></div>
-<div class="storyFrame"><img src="assets/bridge-worlds.png" alt=""><div class="sfCopy"><small>04 · CAÍDA</small><b>La teoría deja de bastar.</b><span>Fragilidad, contradicción y necesidad de responder.</span></div></div>
-<div class="storyFrame"><img src="assets/gallery-local/skyship-home-machine-view.webp" alt=""><div class="sfCopy"><small>05 · REENTRADA</small><b>Una casa que aprendió a volar.</b><span>El viaje vuelve a abrirse desde algo habitable.</span></div></div>
-<div class="storyFrame"><img src="assets/gallery-local/skyship-trinity.webp" alt=""><div class="sfCopy"><small>06 · PRESIÓN</small><b>El cielo deja de ser paisaje.</b><span>Tripulación, nave y peligro empiezan a exigir decisiones.</span></div></div>
-<div class="storyFrame proxy"><img src="assets/floating-ruins-guide.png" alt=""><div class="sfCopy"><small>07 · INFIERNO · PROXY</small><b>Entrar donde no querías mirar.</b><span>Imagen funcional provisional; no representa la escena final.</span></div></div>
-<div class="storyFrame"><img src="assets/epic-journey.png" alt=""><div class="sfCopy"><small>08 · ASCENSO</small><b>El mundo vuelve a respirar.</b><span>Liberación y escala después del valle.</span></div></div>
-<div class="storyFrame"><img src="assets/art-and-wind.png" alt=""><div class="sfCopy"><small>09 · CREAR</small><b>No termina: cambia de manos.</b><span>Construir deja abierto el mundo para otra historia.</span></div></div>
-</div></section>
+<section class="journeyScene" id="s02">
+<img src="assets/floating-islands-lookout.png" alt="Mirador entre islas flotantes">
+<div class="sceneCopy"><div class="sceneNum">02 · HORIZONTE</div><h2>Entonces aparece el cielo.</h2><p>El mundo se abre. No para llenarlo de marcadores, sino para que quieras llegar a algún sitio que todavía no comprendes.</p></div>
+</section>
 
-<section class="section" id="mundo" data-chapter="CAPÍTULO 02"><div class="sectionHead"><div class="eyebrow">02 · MUNDO</div><h2>El cielo no es decorado.</h2><p>El viaje ocurre entre regiones guiadas y espacios locales con libertad. El mundo debe orientar antes que el HUD: viento, luz, sonido, arquitectura, criaturas, tripulación y Huellas cuentan dónde estás y qué ha cambiado.</p></div>
-<div class="grid">
-<a class="card" href="rpg-home.html#mapa"><img src="assets/floating-islands-map.png" alt=""><div class="copy"><small>MUNDO</small><h3>Islas</h3><p>Zonas autoradas, cortinas de aire, rutas, secretos y leyes imposibles.</p></div></a>
-<a class="card" href="capsulas.html"><img src="assets/wind-lab-sunset.png" alt=""><div class="copy"><small>MEMORIA</small><h3>Escenas</h3><p>Momentos pequeños que más tarde vuelven con otra lectura.</p></div></a>
-<a class="card" href="galeria.html"><img src="assets/visual-bible-islands.png" alt=""><div class="copy"><small>VIDA</small><h3>Criaturas</h3><p>Extrañas, táctiles, bellas o peligrosas; no monstruos de catálogo.</p></div></a>
-<a class="card" href="galeria.html"><img src="assets/level-celestial-ruins.png" alt=""><div class="copy"><small>OBJETOS</small><h3>Reliquias</h3><p>Cosas que tienen historia, uso y memoria material.</p></div></a>
-<a class="card" href="huellas.html"><img src="assets/world-design-bible.png" alt=""><div class="copy"><small>CONSECUENCIA</small><h3>Huellas</h3><p>El juego recuerda aproximaciones, relaciones y decisiones sin convertirlas en una tabla moral.</p></div></a>
-<a class="card" href="recreo.html"><img src="assets/island-a-master.jpg" alt=""><div class="copy"><small>DESCANSO</small><h3>Recreo</h3><p>Jugar, pescar, intercambiar basura o encontrar algo imposible sin deberle productividad a nadie.</p></div></a>
-</div></section>
+<section class="journeyScene" id="s03">
+<img src="assets/world-design-bible.png" alt="Mapas y estudio del mundo">
+<div class="sceneCopy"><div class="sceneNum">03 · CURIOSIDAD / OBSESIÓN</div><h2>Empiezas a mirar demasiado.</h2><p>Mapas. Reglas. Criaturas. Reliquias. Rutas. La curiosidad deja de ser paseo y empieza a pedir respuestas.</p></div>
+</section>
 
-<section class="section" id="personajes" data-chapter="CAPÍTULO 03"><div class="sectionHead"><div class="eyebrow">03 · PERSONAJES / TRIPULACIÓN</div><h2>Personas antes que funciones.</h2><p>Los personajes pueden beber de amigos, conocidos, dibujos, conversaciones y vida real, pero la persona real nunca se copia automáticamente al juego. ISL extrae gesto, contradicción, ritmo, relación y función; después transforma, mezcla y distancia.</p></div>
-<div class="castStage">
-<article class="castHero"><img src="assets/protagonist-sheet.png" alt="Protagonista ISL, referencia visual en iteración"><div class="castCopy"><small>PROTAGONISTA · ITERATION</small><h3>No una clase. Una manera de atravesar el mundo.</h3><p>Punk, curiosa, caótica, creativa, amistosa y oscura. Debe poder ser reconocida por silueta, verbos y contradicciones antes de que un dossier explique quién es.</p></div></article>
-<div class="castStack">
-<article><img src="assets/rpg-mascot-provisional.svg" alt=""><div class="castCopy"><small>COMPAÑERA · PROVISIONAL</small><h3>Rareza con afecto.</h3><p>La identidad exacta sigue pendiente de recuperar LAST GOOD; la función permanece: ternura, travesura, orientación y comportamiento imprevisible.</p></div></article>
-<article><img src="assets/gallery-local/skyship-home-machine-view.webp" alt=""><div class="castCopy"><small>TRIPULACIÓN · ENSEMBLE</small><h3>Las personas se entienden juntas.</h3><p>La química, el trabajo, el silencio, la fricción y los cambios de relación importan más que una colección de fichas aisladas.</p></div></article>
-<article><img src="assets/city-wind.png" alt=""><div class="castCopy"><small>MUNDO · PERSONAJE COLECTIVO</small><h3>Oficios, rutinas y contradicciones.</h3><p>Una ciudad o isla debe sentirse habitada incluso cuando la protagonista no está mirando.</p></div></article>
-</div></div>
-<div class="refDNA"><div class="eyebrow">REFERENCE DNA · FUNCIÓN, NO SUPERFICIE</div><h3>Cómo presentamos personajes sin copiar a nadie.</h3><p>La capa externa se usa como escuela de presentación: recorrido narrativo + motivos, personajes definidos por contradicción y ensemble, y espectáculo anclado a emoción humana. El resultado debe poder explicarse sin nombrar ninguna referencia.</p>
-<div class="refGrid">
-<div class="refCell"><b>UMBRAL + QUIRK</b><span>Entrada a un mundo, silueta singular, sombras y rareza al servicio de identidad.</span></div>
-<div class="refCell"><b>ENSEMBLE + MUNDO VIVO</b><span>Personas, flora, fauna, objetos, rutas y humor lateral conviven en la misma lectura.</span></div>
-<div class="refCell"><b>HUMANO → ASOMBRO</b><span>La gran imagen sólo importa si reduce la distancia entre quien mira y la experiencia.</span></div>
-</div></div>
-<div class="textGrid">
-<div class="textCard"><b>Human Character Lab</b><p>REALIDAD → HUELLA → DESIDENTIFICACIÓN → FUNCIÓN → CONTRADICCIÓN → MUTACIÓN ISL. Una foto puede aportar postura, ropa, materialidad o contexto; el carácter llega de la experiencia humana, no de leer una cara.</p><div class="tags"><span class="tag">PRIVATE BY DEFAULT</span><span class="tag">NO AUTO-CANON</span><span class="tag">CONSENT</span></div></div>
-<div class="textCard"><b>Relaciones que cambian</b><p>RECONOCER → MALINTERPRETAR → FRICCIÓN → DISTANCIA/CAMBIO → NUEVA INFORMACIÓN → RECONOCER DE NUEVO. La relación puede terminar en reencuentro o separación aceptada.</p></div>
-<div class="textCard"><b>Creación como vínculo</b><p>Algunas relaciones se entienden mejor reparando, dibujando, cocinando, navegando o improvisando juntos que seleccionando respuestas de diálogo.</p></div>
-<div class="textCard"><b>Tripulación con fricción</b><p>No todos deben ser simpáticos ni redimirse. Gente brillante e insoportable, seca, generosa con límites, cobarde, leal, absurda o contradictoria puede convivir sin convertirse en etiquetas morales.</p></div>
+<section class="journeyScene" id="s04" data-tone="rift">
+<img src="assets/bridge-worlds.png" alt="Puente y caída entre mundos">
+<div class="sceneCopy"><div class="sceneNum">04 · CAÍDA</div><h2>La teoría no te salva.</h2><p>Algo rompe la estabilidad. El mundo deja de ser una idea bonita y exige una decisión, un coste o una mano tendida.</p></div>
+</section>
+
+<section class="journeyScene" id="s05">
+<img src="assets/gallery-local/skyship-home-machine-view.webp" alt="Dirigible hogar entre las islas">
+<div class="sceneCopy"><div class="sceneNum">05 · REENTRADA / HOGAR</div><h2>Una casa que aprendió a volar.</h2><p>Volver no significa retroceder. La nave reúne rutina, tripulación, reparación, silencio y la posibilidad de intentarlo otra vez.</p></div>
+</section>
+
+<section class="journeyScene" id="s06">
+<img src="assets/gallery-local/skyship-trinity.webp" alt="Dirigible bajo presión">
+<div class="sceneCopy"><div class="sceneNum">06 · PRESIÓN</div><h2>El cielo deja de ser paisaje.</h2><p>Viento, encuentros, maniobras, relaciones y consecuencias empiezan a chocar. Lo cotidiano y lo imposible ya viven en la misma cubierta.</p></div>
+</section>
+
+<section class="journeyScene" id="s07" data-tone="rift">
+<img src="assets/floating-ruins-guide.png" alt="Ruinas flotantes, imagen provisional">
+<div class="sceneCopy"><div class="sceneNum">07 · INFIERNO / UMBRAL</div><h2>Entras donde no querías mirar.</h2><p>La escala se vuelve presión. Hay menos información, más silencio y una presencia humana que todavía no desaparece.</p><span class="proxyMark">PROXY VISUAL · NO ESCENA FINAL</span></div>
+</section>
+
+<section class="journeyScene" id="s08" data-tone="rise">
+<img src="assets/epic-journey.png" alt="Ascenso y viaje entre islas">
+<div class="sceneCopy"><div class="sceneNum">08 · ASCENSO / REENCUENTRO</div><h2>El mundo vuelve a respirar.</h2><p>No porque todo se haya arreglado. Porque después del valle vuelves a ocupar espacio de otra manera.</p></div>
+</section>
+
+<section class="journeyScene" id="s09">
+<img src="assets/art-and-wind.png" alt="Arte y viento, creación en Islas Voladoras">
+<div class="sceneCopy"><div class="sceneNum">09 · CREAR / CONTINUAR</div><h2>No termina. Cambia de manos.</h2><p>Construir, dibujar, reparar, elegir, recordar. Lo que haces deja una Huella; regresar debería permitirte notar que el mundo también siguió viviendo.</p></div>
+</section>
 </div>
-<div class="cta" style="padding:0 14px 16px"><a class="btn" href="crew.html">ABRIR TRIPULACIÓN</a><a class="btn" href="huellas.html">VER HUELLAS</a></div></section>
 
-<section class="section" id="juego" data-chapter="CAPÍTULO 04"><div class="sectionHead"><div class="eyebrow">04 · CÓMO SE JUEGA</div><h2>Rutina, viaje, combate, creación y consecuencia.</h2><p>No es un mundo abierto de checklist. La macro-ruta puede estar guiada mientras el interior cambia por relaciones, tripulación, Huellas, equipo y formas de jugar.</p></div>
-<div class="textGrid">
-<div class="textCard"><b>Vida a bordo</b><p>Tareas, conversaciones, trabajo, descanso y pequeñas rutinas alimentan relaciones y preparación. La normalidad crea contraste para que lo extraordinario importe. Incluso una criatura mínima de la nave puede convertirse en lector silencioso del entorno: no como HUD, sino como vida que cambia cuando cambia el mundo.</p></div>
-<div class="textCard"><b>Dirigible</b><p>Navegación, viento, maniobras y combate donde el cielo deja de ser paisaje. El barco es hogar, sistema y consecuencia.</p></div>
-<div class="textCard"><b>Combate 2.5D</b><p>Encuentros tácticos y legibles, con transición desde el mundo 3D sin que parezca haber entrado otro juego.</p></div>
-<div class="textCard"><b>Progresión</b><p>USO → CONTEXTO → PATRÓN → TENSIÓN DE ARQUETIPO → MUTACIÓN. Las habilidades no deberían sentirse como una hoja de cálculo desconectada de la vida del personaje.</p></div>
-<div class="textCard"><b>Roles / rejugabilidad</b><p>Viajero, Druida, Alquimista, Pirata Punk y otras lentes pueden cambiar el recorrido, pero el conflicto entre rol inicial y arquetipo emergente sigue siendo una hipótesis en prueba.</p></div>
-<div class="textCard"><b>Guiado sin GPS</b><p>Menos minimapa y marcadores intrusivos. Más mundo, viento, sonido, arquitectura, Brújula/Huellas y lugares que ayudan a recuperar el rumbo.</p></div>
-</div></section>
-
-<section class="section" id="sensacion" data-chapter="CAPÍTULO 05"><div class="sectionHead"><div class="eyebrow">05 · CÓMO DEBE SENTIRSE</div><h2>Bello y roto. Tierno y corrosivo.</h2><p>La Contradicción Viva no obliga a meter rareza en todo. Su función es evitar que ISL se vuelva genérico, infantilizado o excesivamente limpio cuando una anomalía humana, punk o imposible puede devolverle identidad.</p></div>
-<div class="feel"><div class="quote"><strong>“Complejidad debajo. Vida arriba.”</strong><p>Oscuridad fuerte cuando toca; humor lateral; material gastado; ternura sin azúcar; mundo grande sin convertir al jugador en turista de iconos. La iluminación debe sostener negros locales, medios modelados y highlights controlados sin sacrificar legibilidad.</p></div>
-<div class="links">
-<a class="linkCard" href="galeria.html"><div><b>Galería Viva</b><span>Imagen · vídeo · 3D · música · making-of</span></div><i>›</i></a>
-<a class="linkCard" href="galeria.html#music"><div><b>Música</b><span>Motivos, atmósfera y memoria</span></div><i>›</i></a>
-<a class="linkCard" href="creative-bullets.html"><div><b>Balas creativas</b><span>Sensores visuales antes de producir</span></div><i>›</i></a>
-<a class="linkCard" href="capsulas-tv.html"><div><b>Cápsulas</b><span>Escenas cortas y tono</span></div><i>›</i></a>
-</div></div></section>
-
-<section class="section" id="metodo" data-chapter="CAPÍTULO 06"><div class="sectionHead"><div class="eyebrow">06 · CÓMO LO CONSTRUIMOS</div><h2>La metodología está detrás del telón.</h2><p>El jugador no debería necesitar entender el organismo. Para producción, cada pieza importante pasa por la mínima cadena que reduzca incertidumbre: recuperar fuente, definir entidad, probar barato, observar, decidir y sólo entonces escalar.</p></div>
-<div class="textGrid">
-<div class="textCard"><b>Lifecycle</b><p>INTENT → SOURCE → ENTITY → HYPOTHESIS → CHEAP TEST → EVIDENCE → HUMAN READ → DECISION → LOCK → PRODUCTION.</p></div>
-<div class="textCard"><b>Human Trace</b><p>La vida real alimenta el juego sin convertirlo en álbum privado. La verdad emocional puede sobrevivir aunque se pierda la literalidad.</p></div>
-<div class="textCard"><b>Reference Distance</b><p>Extraer función, no firma. Una referencia sólo sirve si el resultado continúa teniendo valor cuando nadie reconoce de dónde vino.</p></div>
-<div class="textCard"><b>Quality</b><p>Épico ↔ humano · extraño ↔ legible · artesanal ↔ robusto · libertad ↔ consecuencia · sistemas ↔ relaciones.</p></div>
+<section class="humanExit" id="salidas">
+<div class="eyebrow">DESPUÉS DEL VIAJE</div>
+<h2>¿Por dónde quieres volver a entrar?</h2>
+<p>La misma puerta, tres profundidades. No son tres landings distintas: son tres maneras de seguir dentro del mismo mundo.</p>
+<div class="dockGrid">
+<a class="dock" href="galeria.html"><small>SENTIR</small><b>Mundo vivo</b><p>Arte, criaturas, música, objetos, 3D, Huellas y making-of.</p></a>
+<a class="dock" href="jugar.html"><small>JUGAR</small><b>Lo que ya existe</b><p>Entrar en los prototipos y comprobar qué sobrevive en tus manos.</p></a>
+<a class="dock" href="mission-map.html"><small>ENTENDER</small><b>Las tripas</b><p>Estado real, pruebas, rumbo y qué está listo frente a lo que sigue siendo visión.</p></a>
 </div>
-<div class="cta" style="padding:0 14px 16px"><a class="btn" href="decision-engine.html">DECISION ENGINE</a><a class="btn" href="knowledge-health.html">KNOWLEDGE HEALTH</a><a class="btn" href="project-observatory.html">OBSERVATORIO</a></div></section>
+<div class="truthSlim">PRIMARY = Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. Esta landing mezcla dirección, material LAB y proxies visuales. Una imagen fuerte no equivale a gameplay terminado ni a CANON.</div>
+</section>
 
-<section class="section" id="estado" data-chapter="CAPÍTULO 07"><div class="sectionHead"><div class="eyebrow">07 · DÓNDE ESTAMOS AHORA</div><h2>La visión no sustituye la prueba.</h2><p>Esta landing puede enseñar hacia dónde va ISL, pero la autoridad operativa sigue estando en MASTER / CURRENT / checkpoints y en los gates humanos. El siguiente gran salto no es añadir más lore: es demostrar el juego en manos humanas.</p></div>
-<div class="textGrid">
-<div class="textCard"><b>ONE ACTIVE</b><p>Validación humana del build/experiencia que corresponda al gate activo. DEPLOYED ≠ HUMAN_VERIFIED.</p></div>
-<div class="textCard"><b>ONE NEXT</b><p>El siguiente sistema se despierta sólo cuando el anterior deja evidencia suficiente.</p></div>
-</div>
-<div class="cta" style="padding:0 14px 16px"><a class="btn gold" href="mission-map.html">VER MISIONES REALES</a><a class="btn" href="index.html?full=1">CENTRO DE MANDOS</a></div></section>
-
-<div class="footer">ISLAS VOLADORAS · EL JUEGO / VISIÓN VIVA · NO AUTO-CANON · RECENCY IS NOT AUTHORITY · DO NOT ADD ORGANS, IMPROVE CIRCULATION</div>
+<div class="footer">ISLAS VOLADORAS · VISIÓN VIVA · ONE GAME · ONE JOURNEY · NO AUTO-CANON</div>
 </main>
+<script>
+(function(){
+  const btn=document.getElementById('journeySound');
+  const audio=document.getElementById('journeyAudio');
+  if(!btn||!audio)return;
+  btn.addEventListener('click',async function(){
+    try{
+      if(audio.paused){await audio.play();btn.setAttribute('aria-pressed','true');btn.textContent='Ⅱ MÚSICA';}
+      else{audio.pause();btn.setAttribute('aria-pressed','false');btn.textContent='♪ MÚSICA';}
+    }catch(e){btn.textContent='♪ TOCA OTRA VEZ';}
+  });
+})();
+</script>
 <script defer src="isl-global-shell.js"></script>
 </body></html>
