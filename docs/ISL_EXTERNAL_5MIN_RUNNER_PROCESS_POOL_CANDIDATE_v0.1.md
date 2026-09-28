@@ -66,7 +66,7 @@ Cada job debe contener como mínimo:
   "created_at": "ISO-8601",
   "updated_at": "ISO-8601",
   "source": "sensor-or-human",
-  "type": "HEALTH_CHECK|DOC_DRIFT|BUILD_STATUS|DEPLOY_CHECK|PLAYTEST_REMINDER|ASSET_MISSING|QUEUE_STALE|CURATION_CANDIDATE|GENERATION_HANDOFF",
+  "type": "HEALTH_CHECK|DOC_DRIFT|BUILD_STATUS|DEPLOY_CHECK|PLAYTEST_REMINDER|ASSET_MISSING|QUEUE_STALE|CURATION_CANDIDATE|GENERATION_HANDOFF|DICE_OPPORTUNITY",
   "state": "SENSED|CLASSIFIED|READY_LOW_RISK|WAITING_HUMAN|WAITING_TOOL|RUNNING|VERIFY|PARKED|FAILED_SAFE|DONE",
   "authority_ref": "persistent-source",
   "destination": "explicit-destination",
@@ -140,6 +140,35 @@ No borrar automáticamente.
 ### GENERATION_HANDOFF
 Preparar prompt/spec/input package para adapter generativo.
 La ejecución depende de adapter + coste + human gate.
+
+### DICE_OPPORTUNITY
+Señal de baja frecuencia que indica que el hilo activo puede beneficiarse de una perturbación creativa controlada.
+
+NO tira el dado.
+NO genera contenido.
+NO abre lane nueva.
+
+Sólo prepara:
+- active_thread;
+- subject;
+- reason_for_serendipity;
+- protected_grammar;
+- current_blocker;
+- cheapest_test_context;
+- human_gate=true.
+
+Condiciones de elegibilidad:
+- no blocker técnico/seguridad/legal urgente;
+- no HUMAN_GATE pendiente que el dado intente saltar;
+- sesión/lane creativa real;
+- repetición/rigidez o ventana explícita de exploración;
+- no DICE_OPPORTUNITY reciente equivalente.
+
+Destino:
+SLOW_CREATIVE_LOOP / HUMAN_READ.
+
+Cadencia máxima sugerida:
+una oportunidad significativa por 1–3 sesiones creativas, nunca una por tick.
 
 ## 6 · ADAPTER CONTRACTS
 
@@ -343,8 +372,10 @@ P1 QUEUE_DEDUP
 P2 PLAYTEST_DUE_SENSOR
 P2 ASSET_STAGING_VERIFY
 P2 GENERATION_HANDOFF_PREP
+P3 DICE_OPPORTUNITY_SENSOR
 
 Do not activate creative generation jobs initially.
+DICE_OPPORTUNITY_SENSOR may be enabled only as PROPOSAL_ONLY and must never fire an expensive adapter.
 
 ## 16 · ACCEPTANCE TESTS
 A. same signal repeated 20 times → one job, no spam.
@@ -357,6 +388,9 @@ G. two workers race → idempotency prevents duplicate action.
 H. Discord notification fails → job remains valid; Discord is not authority.
 I. human rejects candidate → PARK without changing source.
 J. stale task → surfaced once, not resurrected automatically.
+K. 100 consecutive 5-minute ticks with no creative window → zero dice rolls is PASS.
+L. one DICE_OPPORTUNITY → one slow-loop handoff maximum; no automatic reroll.
+M. human says PARK/KILL → same opportunity cannot silently respawn without materially new context.
 
 ## 17 · IMPLEMENTATION ORDER
 PHASE 0 — schema + dry-run queue.
@@ -915,3 +949,59 @@ deadline compression comes last.
 
 ## FINAL PLANNING PRINCIPLE
 SCHEDULE THE EVIDENCE, NOT THE HOPE.
+
+
+## 19 · SERENDIPITY WINDOW IN THE PRODUCTION CALENDAR
+
+The die belongs to creative circulation, not the fast clock.
+
+### FAST CLOCK
+Every 5 minutes:
+the runner may detect whether a serendipity window exists.
+It records at most DICE_OPPORTUNITY.
+
+### SLOW CLOCK
+At a human/creative session boundary:
+the Orchestrator may consume one eligible DICE_OPPORTUNITY
+→ invoke HUMAN VARIATION RANDOMIZER
+→ roll at most D6 + optional domain D6
+→ create one DICE CARD
+→ cheapest test
+→ human read.
+
+### PRODUCTION PROTECTION
+When schedule pressure is HIGH or CRITICAL:
+- no automatic serendipity suggestion unless human explicitly asks;
+- preserve planned evidence;
+- weirdness may remain PARKED for later.
+
+When schedule pressure is LOW/NORMAL and the active lane is creatively stale:
+- DICE_OPPORTUNITY gains weight.
+
+### VALUE TEST
+A serendipity event is successful only if it:
+- reveals a useful relation;
+- creates a memorable cheap experiment;
+- exposes a hidden weakness;
+- or gives a piece genuine second life.
+
+“Interesting output” alone is insufficient.
+
+### TRACE
+If the result materially influences ISL:
+record its path:
+DICE_OPPORTUNITY
+→ ROLL
+→ TEST
+→ HUMAN RESPONSE
+→ MUTATION
+→ DESTINATION.
+
+If it dies:
+preserve only the minimal learned trace when useful.
+
+### FINAL SERENDIPITY RULE
+THE RUNNER MAY NOTICE THE WINDOW.
+THE RANDOMIZER MAY OPEN IT.
+THE ORCHESTRATOR DECIDES WHERE THE WIND COULD GO.
+THE HUMAN DECIDES WHETHER TO FOLLOW.
