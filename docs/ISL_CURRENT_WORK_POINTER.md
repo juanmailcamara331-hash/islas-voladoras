@@ -1,3 +1,15 @@
+# ACTIVE EXECUTION NOTE · 2026-09-28 · IRENE ARTWORK SOUL EXTRACTION / GAME-WIDE PROPAGATION
+- Full conversation around Irene Abstract Work 01 recovered into Human Trace as a structured source packet.
+- Preserve layers separately: WORK ITSELF / MAKER TESTIMONY / OBSERVER READING / ISL ABSTRACTION.
+- Maker testimony: shadows emerged largely by intuition; white vertical band is read as portal/passage; associated with “day of the scream” and a “boom → descent”; body is read by Irene as WAITING.
+- Transfer grammar: EVENT → RUPTURE → PORTAL → DESCENT → WAITING → IMPACT/ARRIVAL → SHADOW ECHO → PERSISTENT TRACE.
+- Gaze abstraction: BODY WAITS · EYES ARRIVE FIRST.
+- Strong phrase bank seeds now include the “world torn by a scream / echo in shadows” phrase and “El cuerpo espera. Los ojos ya han llegado.”
+- Irene is routed as PRIORITY QUALITATIVE SENSOR for intuition/emotional resonance/strange-alive/material-human questions; not automatic authority, not CANON gate replacement.
+- Method generalized for future Nene/human-made works: RAW → FULL VIEW → DETAILS → INTENTIONAL vs INTUITIVE → ASSOCIATIONS → SOUL GRAMMAR → LIMITED CROSS → CHEAP TEST → HUMAN GATE.
+- Dark/paradise, characters, creatures, locations, relics, portals, skyship spaces and pacing may inherit the function, never the literal artwork.
+- PRIMARY unchanged: Velaria V2 P0 · HUMAN_DEVICE_GREEN=PENDING. NO AUTO-CANON.
+
 # ACTIVE EXECUTION NOTE · 2026-09-28 · THRESHOLD SOUL GRAMMAR
 - A strong transferable ISL pattern was extracted from the Irene human-made artwork and human reading.
 - Core: SMALL HUMAN PRESENCE + OVERWHELMING MASS + NARROW THRESHOLD + CONTAINMENT + WATCHFUL PRESENCE + RESISTANCE.
