@@ -12,6 +12,7 @@ python3 tests/test_sync_packet.py
 python3 tests/test_sync_receive.py
 python3 tests/test_sync_wire.py
 python3 tests/test_sync_retry_stress.py
+python3 tests/test_folder_transport_sim.py
 python3 tests/test_roundtrip_replay.py
 python3 tests/test_trace_buffer.py
 python3 tests/test_tempo.py
