@@ -1,0 +1,56 @@
+name: ISL PUM NDS CI
+
+on:
+  push:
+    branches: [lab/pum-nds]
+    paths:
+      - 'labs/pum-nds/**'
+      - '.github/workflows/pum-nds-ci.yml'
+      - '.github/instructions/pum-nds.instructions.md'
+  pull_request:
+    paths:
+      - 'labs/pum-nds/**'
+      - '.github/workflows/pum-nds-ci.yml'
+      - '.github/instructions/pum-nds.instructions.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          test -f labs/pum-nds/README.md
+          test -f labs/pum-nds/AGENTS.md
+          if [ -f labs/pum-nds/tools/validate.py ]; then
+            python3 labs/pum-nds/tools/validate.py
+          fi
+
+  build:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:20241104
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build NDS
+        working-directory: labs/pum-nds
+        run: |
+          test -f Makefile
+          make
+      - name: Host-side tests
+        working-directory: labs/pum-nds
+        run: |
+          if [ -f tools/run_tests.sh ]; then sh tools/run_tests.sh; fi
+      - name: Collect player build
+        run: |
+          mkdir -p out
+          find labs/pum-nds -maxdepth 2 -type f -name '*.nds' -exec cp {} out/ISL_PUM_PLAYER.nds \;
+          test -f out/ISL_PUM_PLAYER.nds
+          if [ -f labs/pum-nds/PLAYER_README.md ]; then cp labs/pum-nds/PLAYER_README.md out/; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ISL_PUM_NDS_PLAYER_BUILD
+          path: out
+          if-no-files-found: error
