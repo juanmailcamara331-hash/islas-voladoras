@@ -4,6 +4,7 @@
 #define WORLD_W 12u
 #define WORLD_H 12u
 #define TARGET_MILESTONES 9u
+#define COLLECTION_VARIANTS 12u
 
 static uint32_t next_rng(SealedGameState* g) {
   uint32_t x = g->rng ? g->rng : 0xA341316Cu;
@@ -20,26 +21,53 @@ static uint16_t clamp_u16(int v, int lo, int hi) {
   return (uint16_t)v;
 }
 
-static void start_encounter(SealedGameState* g) {
-  uint32_t r = next_rng(g);
-  g->mode = GAME_COMBAT;
-  g->encounters++;
-  g->enemy_power = (uint16_t)(2u + g->level + ((r >> 3) % 3u));
-  g->enemy_hp = (uint16_t)(5u + g->level * 2u + (r % 5u));
-  g->combo = 0;
+static unsigned pop16(uint16_t v) {
+  unsigned n=0;
+  while(v){ n += v & 1u; v >>= 1; }
+  return n;
 }
 
-static void gain_progress(SealedGameState* g, uint16_t amount) {
-  g->xp = (uint16_t)(g->xp + amount);
-  uint16_t need = (uint16_t)(5u + g->level * 3u);
-  if (g->xp >= need) {
-    g->xp = (uint16_t)(g->xp - need);
-    g->level++;
-    g->hp_max = (uint16_t)(g->hp_max + 2u);
-    g->focus_max = (uint16_t)(g->focus_max + 1u);
-    g->hp = g->hp_max;
-    g->focus = g->focus_max;
+static uint16_t add_variant(uint16_t mask, uint32_t r) {
+  unsigned start = (unsigned)(r % COLLECTION_VARIANTS);
+  for (unsigned i=0;i<COLLECTION_VARIANTS;i++) {
+    unsigned idx=(start+i)%COLLECTION_VARIANTS;
+    uint16_t bit=(uint16_t)(1u<<idx);
+    if(!(mask&bit)) return (uint16_t)(mask|bit);
   }
+  return mask;
+}
+
+static void refresh_derived_stats(SealedGameState* g) {
+  unsigned rings=pop16(g->rings_mask);
+  unsigned pens=pop16(g->pens_mask);
+  g->hp_max=(uint16_t)(12u + (rings>6u?6u:rings));
+  g->focus_max=(uint16_t)(3u + (pens>4u?4u:pens/2u));
+  if(g->hp>g->hp_max) g->hp=g->hp_max;
+  if(g->focus>g->focus_max) g->focus=g->focus_max;
+}
+
+static void reward_collection(SealedGameState* g) {
+  uint32_t r=next_rng(g);
+  switch(r%3u){
+    case 0: g->rings_mask=add_variant(g->rings_mask,r>>3); break;
+    case 1: g->pens_mask=add_variant(g->pens_mask,r>>3); break;
+    default:g->lighters_mask=add_variant(g->lighters_mask,r>>3); break;
+  }
+  refresh_derived_stats(g);
+}
+
+static unsigned challenge(const SealedGameState* g) {
+  return 1u + g->milestones/3u + g->victories/5u;
+}
+
+static void start_encounter(SealedGameState* g) {
+  uint32_t r = next_rng(g);
+  unsigned ch=challenge(g);
+  g->mode = GAME_COMBAT;
+  g->encounters++;
+  g->enemy_power = (uint16_t)(2u + ch + ((r >> 3) % 3u));
+  g->enemy_hp = (uint16_t)(5u + ch * 2u + (r % 5u));
+  g->combo = 0;
 }
 
 static void explore(SealedGameState* g, GameAction action) {
@@ -59,20 +87,15 @@ static void explore(SealedGameState* g, GameAction action) {
       if (!(g->route_flags & bit)) {
         g->route_flags |= bit;
         g->milestones++;
-        gain_progress(g, 2u);
+        reward_collection(g);
       }
     }
 
-    if (g->milestones >= TARGET_MILESTONES)
-      g->closure_ready = 1;
-
-    if ((r % 7u) == 0u || (g->steps % 11u) == 0u)
-      start_encounter(g);
+    if (g->milestones >= TARGET_MILESTONES) g->closure_ready = 1;
+    if ((r % 7u) == 0u || (g->steps % 11u) == 0u) start_encounter(g);
   }
 
-  if (action == GAME_ACT_CONTEXT && g->closure_ready) {
-    g->mode = GAME_COMPLETE;
-  }
+  if (action == GAME_ACT_CONTEXT && g->closure_ready) g->mode = GAME_COMPLETE;
 }
 
 static void combat(SealedGameState* g, GameAction action) {
@@ -83,14 +106,16 @@ static void combat(SealedGameState* g, GameAction action) {
   uint32_t r = next_rng(g);
   uint16_t damage = 0;
   uint16_t enemy_damage = 0;
+  unsigned lighter_bonus = pop16(g->lighters_mask) ? 1u : 0u;
+  unsigned pen_bonus = pop16(g->pens_mask) ? 1u : 0u;
 
   if (action == GAME_ACT_PRIMARY) {
-    damage = (uint16_t)(2u + g->level + (r % 3u));
+    damage = (uint16_t)(2u + lighter_bonus + (r % 3u));
     g->combo++;
   } else if (action == GAME_ACT_SECONDARY) {
     if (g->focus) {
       g->focus--;
-      damage = (uint16_t)(4u + g->level + (r % 4u));
+      damage = (uint16_t)(4u + pen_bonus + (r % 4u));
       g->combo = (uint16_t)(g->combo + 2u);
     } else {
       damage = 1u;
@@ -107,11 +132,9 @@ static void combat(SealedGameState* g, GameAction action) {
   if (damage >= g->enemy_hp) {
     g->enemy_hp = 0;
     g->victories++;
-    gain_progress(g, 2u);
-    if ((g->victories % 3u) == 0u && g->milestones < TARGET_MILESTONES)
-      g->milestones++;
-    if (g->milestones >= TARGET_MILESTONES)
-      g->closure_ready = 1;
+    if ((g->victories % 2u) == 0u) reward_collection(g);
+    if ((g->victories % 3u) == 0u && g->milestones < TARGET_MILESTONES) g->milestones++;
+    if (g->milestones >= TARGET_MILESTONES) g->closure_ready = 1;
     g->mode = GAME_EXPLORE;
     return;
   }
@@ -144,18 +167,22 @@ void sealed_game_init(SealedGameState* g, uint32_t seed) {
   g->rng = g->seed ^ 0x9E3779B9u;
   g->x = 5u;
   g->y = 5u;
-  g->hp_max = 12u;
+  g->rings_mask = 1u;
+  g->pens_mask = 1u;
+  g->lighters_mask = 1u;
+  g->ring_slot_a = 0u;
+  g->ring_slot_b = 0u;
+  g->active_pen = 0u;
+  g->active_lighter = 0u;
+  refresh_derived_stats(g);
   g->hp = g->hp_max;
-  g->focus_max = 3u;
   g->focus = g->focus_max;
-  g->level = 1u;
   g->mode = GAME_EXPLORE;
 }
 
 void sealed_game_step(SealedGameState* g, GameAction action) {
   if (!g || g->mode == GAME_COMPLETE) return;
   g->turns++;
-
   if (g->mode == GAME_EXPLORE) explore(g, action);
   else if (g->mode == GAME_COMBAT) combat(g, action);
   else if (g->mode == GAME_RECOVER) recover(g, action);
