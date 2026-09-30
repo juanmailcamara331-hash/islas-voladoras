@@ -4,6 +4,7 @@ python3 tests/test_save_schema.py
 python3 tests/test_save_codec.py
 python3 tests/test_save_journal.py
 python3 tests/test_save_backend_contract.py
+python3 tests/test_save_fs_backend_contract.py
 python3 tests/test_gesture.py
 python3 tests/test_gesture_trace.py
 python3 tests/test_handoff.py
