@@ -17,3 +17,5 @@ python3 tools/ivv_check.py
 python3 tools/blind_pass1.py
 python3 tools/blind_pass2.py
 python3 tools/blind_pass3.py
+
+python3 tests/test_multimodal_schema.py
