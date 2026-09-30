@@ -134,3 +134,35 @@ void game_render_frame(const SealedGameState* g){
   else if(g->mode==GAME_RECOVER) draw_recover();
   else draw_complete();
 }
+
+
+static void glyph_a(int x,int y,u16 c){
+  rect(x+2,y,6,2,c); rect(x,y+2,2,8,c); rect(x+8,y+2,2,8,c); rect(x+2,y+5,6,2,c);
+}
+static void glyph_b(int x,int y,u16 c){
+  rect(x,y,2,10,c); rect(x+2,y,5,2,c); rect(x+2,y+4,5,2,c); rect(x+2,y+8,5,2,c);
+  rect(x+7,y+1,2,3,c); rect(x+7,y+5,2,3,c);
+}
+static void glyph_y(int x,int y,u16 c){
+  rect(x,y,2,4,c); rect(x+8,y,2,4,c); rect(x+2,y+3,2,2,c); rect(x+6,y+3,2,2,c); rect(x+4,y+5,2,5,c);
+}
+
+void game_render_pause(const SealedGameState* g, int checkpoint_valid){
+  const u16 panel=C(1,4,5);
+  const u16 edge=C(7,19,18);
+  const u16 gold=C(27,20,6);
+  const u16 dim=C(5,9,9);
+  game_render_frame(g);
+  rect(70,58,116,72,panel);
+  frame(70,58,116,72,edge);
+  frame(78,70,28,32,checkpoint_valid?gold:dim);
+  frame(114,70,28,32,edge);
+  frame(150,70,28,32,edge);
+  glyph_a(87,80,checkpoint_valid?gold:dim);
+  glyph_y(123,80,edge);
+  glyph_b(159,80,edge);
+  /* A = checkpoint, Y = restore, B = return. */
+  rect(81,110,22,2,checkpoint_valid?gold:dim);
+  rect(117,110,22,2,edge);
+  rect(153,110,22,2,edge);
+}

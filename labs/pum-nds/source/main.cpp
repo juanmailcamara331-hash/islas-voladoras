@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "semantic_input.h"
 #include "save_state.h"
+#include "save_journal.h"
 #include "gesture_trace.h"
 #include "trace_buffer.h"
 #include "tempo.h"
@@ -19,6 +20,8 @@ static TempoState g_tempo;
 static BiographyBook g_biography;
 static EchoQueue g_echo;
 static SealedGameState g_game;
+static SaveJournal g_journal;
+static int g_paused = 0;
 
 static uint32_t g_last_action_tick = 0;
 static uint16_t g_event_seq = 1;
@@ -59,6 +62,25 @@ static void render_game(void) {
   game_render_frame(&g_game);
 }
 
+static void sync_save_from_runtime(void) {
+  g_save.game = g_game;
+  g_save.checksum = save_checksum(&g_save);
+}
+
+static int checkpoint_save(void) {
+  sync_save_from_runtime();
+  if (!save_journal_stage(&g_journal, &g_save)) return 0;
+  return save_journal_commit(&g_journal);
+}
+
+static int checkpoint_load(void) {
+  IslSave restored;
+  if (!save_journal_recover(&g_journal, &restored)) return 0;
+  g_save = restored;
+  g_game = g_save.game;
+  return 1;
+}
+
 static void init_video() {
   screen_manager_init();
   game_render_init();
@@ -75,6 +97,7 @@ int main(void) {
   tempo_init(&g_tempo);
   biography_init(&g_biography);
   echo_init(&g_echo);
+  save_journal_init(&g_journal, &g_save);
 
   touchPosition touch;
   uint32_t decay_tick = 0;
@@ -87,6 +110,31 @@ int main(void) {
     const int down = keysDown();
     const int held = keysHeld();
     const int up = keysUp();
+
+    if (down & KEY_START) {
+      g_paused = !g_paused;
+      if (g_paused) game_render_pause(&g_game, 1);
+      else render_game();
+      audio_feedback_play(SFX_ACTION);
+      continue;
+    }
+
+    if (g_paused) {
+      if (down & KEY_A) {
+        if (checkpoint_save()) audio_feedback_play(SFX_COMPLETE);
+        else audio_feedback_play(SFX_IMPACT);
+        game_render_pause(&g_game, 1);
+      } else if (down & KEY_Y) {
+        if (checkpoint_load()) audio_feedback_play(SFX_RECOVER);
+        else audio_feedback_play(SFX_IMPACT);
+        game_render_pause(&g_game, 1);
+      } else if (down & KEY_B) {
+        g_paused = 0;
+        audio_feedback_play(SFX_ACTION);
+        render_game();
+      }
+      continue;
+    }
 
     GameAction action = map_action(down);
     if (action != GAME_ACT_NONE) {
