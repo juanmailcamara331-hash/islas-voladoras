@@ -31,17 +31,16 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    container: devkitpro/devkitarm:20241104
+    container: devkitpro/devkitarm:latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Nintendo DS toolchain libraries
+      - name: Install Nintendo DS development group
         run: |
-          dkp-pacman -Syy --noconfirm
+          dkp-pacman -Syyu --noconfirm
           dkp-pacman -S --needed --noconfirm nds-dev
       - name: Build NDS
         working-directory: labs/pum-nds
         run: |
-          test -f Makefile
           make
       - name: Host-side tests
         working-directory: labs/pum-nds
@@ -50,8 +49,7 @@ jobs:
       - name: Collect player build
         run: |
           mkdir -p out
-          find labs/pum-nds -maxdepth 2 -type f -name '*.nds' -exec cp {} out/ISL_PUM_PLAYER.nds \;
-          test -f out/ISL_PUM_PLAYER.nds
+          cp labs/pum-nds/ISL_PUM_PLAYER.nds out/ISL_PUM_PLAYER.nds
           if [ -f labs/pum-nds/PLAYER_README.md ]; then cp labs/pum-nds/PLAYER_README.md out/; fi
       - uses: actions/upload-artifact@v4
         with:
