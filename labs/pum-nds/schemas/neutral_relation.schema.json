@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ISL Neutral Relation Record",
+  "type": "object",
+  "required": [
+    "relation_id",
+    "entity_a",
+    "entity_b",
+    "context",
+    "old_functions",
+    "new_relation",
+    "human_status"
+  ],
+  "properties": {
+    "relation_id": {"type":"string"},
+    "entity_a": {"type":"string"},
+    "entity_b": {"type":"string"},
+    "context": {"type":"string"},
+    "old_functions": {
+      "type":"array",
+      "items":{"type":"string"}
+    },
+    "new_relation": {"type":"string"},
+    "gameplay_effect": {"type":"string"},
+    "state_requirements": {
+      "type":"array",
+      "items":{"type":"string"}
+    },
+    "input_requirements": {
+      "type":"array",
+      "items":{"type":"string"}
+    },
+    "provenance": {
+      "type":"object",
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type":"object",
+      "additionalProperties": true
+    },
+    "human_status": {
+      "type":"string",
+      "enum":["CANDIDATE","KEEP","MUTATE","PARK","KILL"]
+    }
+  },
+  "additionalProperties": true
+}
