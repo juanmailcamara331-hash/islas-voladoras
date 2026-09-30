@@ -34,6 +34,10 @@ jobs:
     container: devkitpro/devkitarm:20241104
     steps:
       - uses: actions/checkout@v4
+      - name: Install Nintendo DS toolchain libraries
+        run: |
+          dkp-pacman -Syy --noconfirm
+          dkp-pacman -S --needed --noconfirm nds-dev
       - name: Build NDS
         working-directory: labs/pum-nds
         run: |
