@@ -2,42 +2,153 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ISL Semantic Event Packet",
   "type": "object",
-  "required": ["event_id","run_id","device","kind","tick","payload_version"],
+  "required": [
+    "event_id",
+    "run_id",
+    "device",
+    "kind",
+    "tick",
+    "payload_version"
+  ],
   "properties": {
-    "event_id": {"type":"string"},
-    "run_id": {"type":"string"},
-    "device": {"type":"string","enum":["R36","TABLET","DESKTOP","UNREAL_TEST"]},
-    "kind": {"type":"string"},
-    "tick": {"type":"integer","minimum":0},
-    "payload_version": {"type":"integer","minimum":1},
+    "event_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string",
+      "enum": [
+        "R36",
+        "TABLET",
+        "DESKTOP",
+        "UNREAL_TEST"
+      ]
+    },
+    "kind": {
+      "type": "string"
+    },
+    "tick": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "payload_version": {
+      "type": "integer",
+      "minimum": 1
+    },
     "gesture": {
-      "type":"object",
-      "properties":{
-        "samples":{"type":"integer","minimum":0},
-        "distance":{"type":"integer","minimum":0},
-        "direction_changes":{"type":"integer","minimum":0},
-        "duration_frames":{"type":"integer","minimum":0}
+      "type": "object",
+      "properties": {
+        "samples": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "distance": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "direction_changes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duration_frames": {
+          "type": "integer",
+          "minimum": 0
+        }
       },
-      "additionalProperties":true
+      "additionalProperties": true
     },
     "voice": {
-      "type":"object",
-      "properties":{
-        "energy_band":{"type":"integer","minimum":0,"maximum":7},
-        "duration_ms":{"type":"integer","minimum":0},
-        "rhythm_class":{"type":"integer","minimum":0},
-        "pitch_change_band":{"type":"integer","minimum":0}
+      "type": "object",
+      "properties": {
+        "energy_band": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 7
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rhythm_class": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pitch_change_band": {
+          "type": "integer",
+          "minimum": 0
+        }
       },
-      "additionalProperties":true
+      "additionalProperties": true
     },
     "game": {
-      "type":"object",
-      "additionalProperties":true
+      "type": "object",
+      "additionalProperties": true
     },
     "provenance": {
-      "type":"object",
-      "additionalProperties":true
+      "type": "object",
+      "additionalProperties": true
+    },
+    "tempo": {
+      "type": "object",
+      "properties": {
+        "band": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "sample_window": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "biography": {
+      "type": "object",
+      "properties": {
+        "entity_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "encounters": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "uses": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "redefinitions": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
+    },
+    "echo": {
+      "type": "object",
+      "properties": {
+        "source_event": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "subject_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "kind": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "value": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": true
     }
   },
-  "additionalProperties":true
+  "additionalProperties": true
 }
