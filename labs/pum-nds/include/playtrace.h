@@ -8,7 +8,10 @@ typedef enum {
   TRACE_PRIMARY,
   TRACE_SECONDARY,
   TRACE_PUM,
-  TRACE_GESTURE
+  TRACE_GESTURE,
+  TRACE_TEMPO,
+  TRACE_BIOGRAPHY,
+  TRACE_ECHO
 } TraceKind;
 
 typedef struct {
