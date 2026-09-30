@@ -55,29 +55,28 @@ jobs:
           cp labs/pum-nds/PLAYER_README.md out/R36_PACKAGE/ISL_PUM/PLAYER_README.txt
           printf '%s\n' "$GITHUB_SHA" > out/R36_PACKAGE/ISL_PUM/VERSION.txt
           sha256sum out/R36_PACKAGE/roms/nds/ISL_PUM.nds > out/R36_PACKAGE/ISL_PUM/SHA256SUMS.txt
-          cat > out/R36_PACKAGE/ISL_PUM/INSTALL.txt <<'TXT'
-ISL PUM · PLAYER PACKAGE
-
-1. Copy the CONTENTS of R36_PACKAGE to the games SD card.
-2. Start the console.
-3. Launch ISL_PUM from Nintendo DS.
-4. Play.
-
-Do not edit save files.
-Do not read development files.
-If anything fails, preserve the SD card contents and report only the visible error.
-TXT
-          {
-            echo "build_sha=$GITHUB_SHA"
-            echo "run_id=$GITHUB_RUN_ID"
-            echo "branch=$GITHUB_REF_NAME"
-            echo "gate_static=PASS"
-            echo "gate_logic=PASS"
-            echo "gate_fault=PASS"
-            echo "gate_emulator=NOT_YET_VALIDATED"
-            echo "gate_device=NOT_YET_VALIDATED"
-            echo "gate_human=NOT_YET_VALIDATED"
-          } > out/R36_PACKAGE/ISL_PUM/BUILD_MANIFEST.txt
+          printf '%s\n' \
+            'ISL PUM · PLAYER PACKAGE' \
+            '' \
+            '1. Copy the CONTENTS of R36_PACKAGE to the games SD card.' \
+            '2. Start the console.' \
+            '3. Launch ISL_PUM from Nintendo DS.' \
+            '4. Play.' \
+            '' \
+            'Do not edit save files.' \
+            'If anything fails, preserve the SD contents and report only the visible error.' \
+            > out/R36_PACKAGE/ISL_PUM/INSTALL.txt
+          printf '%s\n' \
+            "build_sha=$GITHUB_SHA" \
+            "run_id=$GITHUB_RUN_ID" \
+            "branch=$GITHUB_REF_NAME" \
+            'gate_static=PASS' \
+            'gate_logic=PASS' \
+            'gate_fault=PASS' \
+            'gate_emulator=NOT_YET_VALIDATED' \
+            'gate_device=NOT_YET_VALIDATED' \
+            'gate_human=NOT_YET_VALIDATED' \
+            > out/R36_PACKAGE/ISL_PUM/BUILD_MANIFEST.txt
           (cd out && zip -qr ISL_PUM_R36_PLAYER_PACKAGE.zip R36_PACKAGE)
           sha256sum out/ISL_PUM_R36_PLAYER_PACKAGE.zip > out/ISL_PUM_R36_PLAYER_PACKAGE.sha256
       - uses: actions/upload-artifact@v4
