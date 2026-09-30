@@ -86,3 +86,38 @@ jobs:
             out/ISL_PUM_TECH_PREVIEW.zip
             out/ISL_PUM_TECH_PREVIEW.sha256
           if-no-files-found: error
+
+  emulator:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: ISL_PUM_TECH_PREVIEW
+          path: emu_input
+      - name: Extract NDS ROM
+        run: |
+          set -eu
+          unzip -q emu_input/ISL_PUM_TECH_PREVIEW.zip -d emu_input/pkg
+          test -f emu_input/pkg/R36_PACKAGE/roms/nds/ISL_PUM.nds
+          cp emu_input/pkg/R36_PACKAGE/roms/nds/ISL_PUM.nds /tmp/ISL_PUM.nds
+      - name: Install emulator test prerequisites
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake git pkg-config build-essential python3 python3-venv
+      - name: Build melonDS DS regression harness
+        run: |
+          set -eu
+          git clone --depth 1 https://github.com/JesseTG/melonds-ds.git /tmp/melonds-ds
+          cmake -S /tmp/melonds-ds -B /tmp/melonds-ds/build \
+            -DBUILD_TESTING=ON \
+            -DENABLE_OPENGL=OFF \
+            -DNDS_ROM=/tmp/ISL_PUM.nds
+          cmake --build /tmp/melonds-ds/build -j2
+      - name: Emulator boot gate
+        run: |
+          set -eu
+          ctest --test-dir /tmp/melonds-ds/build \
+            -R 'test_booting.*direct-nds-builtin|boots.*direct-nds-builtin' \
+            --output-on-failure
