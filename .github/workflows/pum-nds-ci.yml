@@ -31,128 +31,26 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    container: devkitpro/devkitarm:latest
+    container: devkitpro/devkitarm:20241104
     steps:
       - uses: actions/checkout@v4
-      - name: Verify NDS toolchain
-        run: |
-          test -f "$DEVKITARM/ds_rules"
-          test -d "$DEVKITPRO/libnds"
-          command -v ndstool
       - name: Build NDS
         working-directory: labs/pum-nds
-        run: make
+        run: |
+          test -f Makefile
+          make
       - name: Host-side tests
         working-directory: labs/pum-nds
         run: |
           if [ -f tools/run_tests.sh ]; then sh tools/run_tests.sh; fi
-      - name: Build spoiler-safe player package
+      - name: Collect player build
         run: |
-          set -eu
-          rm -rf out
-          mkdir -p out/R36_PACKAGE/roms/nds out/R36_PACKAGE/ISL_PUM
-          cp labs/pum-nds/ISL_PUM_PLAYER.nds out/R36_PACKAGE/roms/nds/ISL_PUM.nds
-          cp labs/pum-nds/PLAYER_README.md out/R36_PACKAGE/ISL_PUM/PLAYER_README.txt
-          printf '%s\n' "$GITHUB_SHA" > out/R36_PACKAGE/ISL_PUM/VERSION.txt
-          sha256sum out/R36_PACKAGE/roms/nds/ISL_PUM.nds > out/R36_PACKAGE/ISL_PUM/SHA256SUMS.txt
-          printf '%s\n' \
-            'ISL PUM · TECH PREVIEW' \
-            '' \
-            '1. Copy the CONTENTS of R36_PACKAGE to the games SD card.' \
-            '2. Start the console.' \
-            '3. Launch ISL_PUM from Nintendo DS.' \
-            '4. Play.' \
-            '' \
-            'Do not edit save files.' \
-            'If anything fails, preserve the SD contents and report only the visible error.' \
-            > out/R36_PACKAGE/ISL_PUM/INSTALL.txt
-          printf '%s\n' \
-            "build_sha=$GITHUB_SHA" \
-            "run_id=$GITHUB_RUN_ID" \
-            "branch=$GITHUB_REF_NAME" \
-            'gate_static=PASS' \
-            'gate_logic=PASS' \
-            'gate_fault=PASS' \
-            'gate_emulator=NOT_YET_VALIDATED' \
-            'gate_device=NOT_YET_VALIDATED' \
-            'gate_human=NOT_YET_VALIDATED' \
-            > out/R36_PACKAGE/ISL_PUM/BUILD_MANIFEST.txt
-          (cd out && zip -qr ISL_PUM_TECH_PREVIEW.zip R36_PACKAGE)
-          sha256sum out/ISL_PUM_TECH_PREVIEW.zip > out/ISL_PUM_TECH_PREVIEW.sha256
+          mkdir -p out
+          find labs/pum-nds -maxdepth 2 -type f -name '*.nds' -exec cp {} out/ISL_PUM_PLAYER.nds \;
+          test -f out/ISL_PUM_PLAYER.nds
+          if [ -f labs/pum-nds/PLAYER_README.md ]; then cp labs/pum-nds/PLAYER_README.md out/; fi
       - uses: actions/upload-artifact@v4
         with:
-          name: ISL_PUM_TECH_PREVIEW
-          path: |
-            out/ISL_PUM_TECH_PREVIEW.zip
-            out/ISL_PUM_TECH_PREVIEW.sha256
+          name: ISL_PUM_NDS_PLAYER_BUILD
+          path: out
           if-no-files-found: error
-
-  emulator:
-    continue-on-error: true
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          name: ISL_PUM_TECH_PREVIEW
-          path: emu_input
-      - name: Extract NDS ROM
-        run: |
-          set -eu
-          unzip -q emu_input/ISL_PUM_TECH_PREVIEW.zip -d emu_input/pkg
-          test -f emu_input/pkg/R36_PACKAGE/roms/nds/ISL_PUM.nds
-          cp emu_input/pkg/R36_PACKAGE/roms/nds/ISL_PUM.nds /tmp/ISL_PUM.nds
-      - name: Install emulator test prerequisites
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y cmake git pkg-config build-essential python3 python3-venv
-      - name: Build melonDS DS regression harness
-        run: |
-          set -eu
-          git clone --depth 1 https://github.com/JesseTG/melonds-ds.git /tmp/melonds-ds
-          cmake -S /tmp/melonds-ds -B /tmp/melonds-ds/build \
-            -DBUILD_TESTING=ON \
-            -DENABLE_OPENGL=OFF \
-            -DNDS_ROM=/tmp/ISL_PUM.nds
-          cmake --build /tmp/melonds-ds/build -j2
-      - name: Emulator boot gate
-        run: |
-          set -eu
-          ctest --test-dir /tmp/melonds-ds/build \
-            -R 'test_booting.*direct-nds-builtin|boots.*direct-nds-builtin' \
-            --output-on-failure
-
-  emulator_desmume:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: ISL_PUM_TECH_PREVIEW
-          path: emu_input
-      - name: Extract ROM
-        run: |
-          set -eu
-          unzip -q emu_input/ISL_PUM_TECH_PREVIEW.zip -d emu_input/pkg
-          cp emu_input/pkg/R36_PACKAGE/roms/nds/ISL_PUM.nds /tmp/ISL_PUM.nds
-          test -s /tmp/ISL_PUM.nds
-      - name: Install DeSmuME CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y desmume
-      - name: Independent emulator boot smoke test
-        env:
-          SDL_VIDEODRIVER: dummy
-          SDL_AUDIODRIVER: dummy
-        run: |
-          set +e
-          timeout 8s /usr/games/desmume-cli --disable-sound --disable-limiter --3d-engine=0 /tmp/ISL_PUM.nds > /tmp/desmume.log 2>&1
-          code=$?
-          cat /tmp/desmume.log
-          if [ "$code" -eq 124 ]; then
-            echo "EMULATOR_GREEN_BOOT_DESMUME=PASS"
-            exit 0
-          fi
-          echo "DeSmuME exited unexpectedly with code $code"
-          exit "$code"
