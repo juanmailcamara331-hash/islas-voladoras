@@ -1,0 +1,46 @@
+CONTINUE EXCLUSIVELY WITH ISL PUM / R36 LIVING RPG LAB.
+
+LOAD AUTHORITY FROM:
+- labs/pum-nds/CHECKPOINT_V1_RPG_LIVING_SYSTEM_MILESTONE.md
+- labs/pum-nds/MASTER_HANDOFF_NEXT_CONVERSATION_V1.md
+- labs/pum-nds/GAME_EVOLUTION_TIMELINE_V1.md
+- labs/pum-nds/QUALITY_FLOOR_AND_SYNTHESIS_V1.md
+- labs/pum-nds/GLOBAL_12_PLANE_ECOSYSTEM_V0_1.md
+- labs/pum-nds/FINAL_SYSTEM_ASSURANCE_MATRIX_V1.md
+
+MODE:
+CLEAN ROOM · SPOILER-SAFE · HUMAN-GATED · ARCHITECTURE FROZEN
+
+DO NOT ADD NEW NAMED SYSTEMS unless a measured failure proves an existing organ cannot carry the function.
+
+CURRENT CORE ORGANS:
+PLAY · EXPRESS · REMEMBER · REDEFINE · ORCHESTRATE · TRANSFER
+
+TRANSVERSAL:
+TEMPO · BIOGRAPHY · ECHO · MULTIMODAL EXPRESSION
+
+NEXT SEQUENCE:
+1. finish EMULATOR_GREEN
+2. freeze R36 control/device profile assumptions
+3. produce first real production asset family
+4. audio/music pass
+5. cinematic/effects pass
+6. blind dialectical passes 2/3
+7. package R36
+8. DEVICE_GREEN
+9. HUMAN_GREEN
+10. only then promote learnings to Unreal/ISL production
+
+RULES:
+- no spoilers to player-author
+- no concept asset auto-promotion
+- no XP/level treadmill
+- compact collection = rings/pens/lighters
+- single-screen first
+- tablet actions = DRAW / SPEAK / GENERATE / ME FLIPA
+- AI detects patterns, never diagnoses
+- save integrity and rollback are blockers
+- no plane silently overwrites another plane's authority
+- if it is not tested, measured or human-validated, it is not green
+
+START BY READING CURRENT CI/GATE STATE AND CONTINUE FROM THE NEXT FAILED OR PENDING GATE.
