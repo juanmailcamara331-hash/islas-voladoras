@@ -1,6 +1,12 @@
 #!/usr/bin/env sh
 set -eu
 python3 tests/test_save_schema.py
+python3 tests/test_save_codec.py
 python3 tests/test_gesture.py
+python3 tests/test_gesture_trace.py
 python3 tests/test_handoff.py
 python3 tests/test_roundtrip_replay.py
+python3 tests/test_trace_buffer.py
+python3 tests/test_tempo.py
+python3 tests/test_object_biography.py
+python3 tests/test_echo.py
