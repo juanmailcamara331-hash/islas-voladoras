@@ -148,6 +148,72 @@
         }
       },
       "additionalProperties": true
+    },
+    "multimodal": {
+      "type": "object",
+      "properties": {
+        "source_class": {
+          "type": "string"
+        },
+        "source_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "drawing_speed": {
+          "type": "number",
+          "minimum": 0
+        },
+        "stroke_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "direction_changes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "voice_duration_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "speech_rate": {
+          "type": "number",
+          "minimum": 0
+        },
+        "pitch_mean_hz": {
+          "type": "number",
+          "minimum": 0
+        },
+        "energy_mean": {
+          "type": "number",
+          "minimum": 0
+        },
+        "transcript": {
+          "type": "string"
+        },
+        "consent_tier": {
+          "enum": [
+            "C0_LOCAL",
+            "C1_PRIVATE",
+            "C2_AGGREGATED",
+            "C3_CAMPAIGN",
+            "C4_PUBLIC"
+          ]
+        },
+        "candidate_response": {
+          "type": "string"
+        },
+        "human_status": {
+          "enum": [
+            "UNSET",
+            "KEEP",
+            "MUTATE",
+            "PARK",
+            "KILL"
+          ]
+        }
+      },
+      "additionalProperties": true
     }
   },
   "additionalProperties": true
