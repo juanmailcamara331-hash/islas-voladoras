@@ -11,7 +11,7 @@ closure=(ROOT/"GLOBAL_DIALECTICAL_CLOSURE_MATRIX_V1.md").read_text()
 
 # PASS 1 — contradiction / generic bloat guards
 permanent_keys=set(re.findall(r"KEY_[A-Z0-9_]+", main))
-allowed={"KEY_UP","KEY_DOWN","KEY_LEFT","KEY_RIGHT","KEY_A","KEY_B","KEY_X","KEY_SELECT","KEY_TOUCH"}
+allowed={"KEY_UP","KEY_DOWN","KEY_LEFT","KEY_RIGHT","KEY_A","KEY_B","KEY_X","KEY_Y","KEY_START","KEY_SELECT","KEY_TOUCH"}
 extra=sorted(permanent_keys-allowed)
 if extra:
     fail.append("unexpected controls: "+",".join(extra))
