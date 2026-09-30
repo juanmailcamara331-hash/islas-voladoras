@@ -116,3 +116,12 @@ SPEAK
 GENERATE
 
 Then close and return to game.
+
+## Delight capture
+A fourth micro-action may appear in REVIEW/CREATE context only:
+ME FLIPA
+-> optional SPEAK / PHOTO
+-> save Favorite Capture packet
+-> return immediately to play.
+
+This is documentation, not a gameplay control.
