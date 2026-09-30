@@ -7,6 +7,7 @@
 #include "tempo.h"
 #include "object_biography.h"
 #include "echo.h"
+#include "screen_manager.h"
 
 static IslSave g_save;
 static GestureTrace g_gesture;
@@ -40,11 +41,11 @@ static void observe_action(TraceKind kind) {
 }
 
 static void init_video() {
-  consoleDemoInit();
-  iprintf("\x1b[2J");
-  iprintf("ISL PUM NDS\n");
-  iprintf("LAB ONLY / NO CANON\n\n");
-  iprintf("TECH VERTICAL\n");
+  screen_manager_init();
+  iprintf("\\x1b[2J");
+  iprintf("ISL PUM NDS\\n");
+  iprintf("LAB ONLY / NO CANON\\n\\n");
+  iprintf("TECH VERTICAL\\n");
 }
 
 int main(void) {
