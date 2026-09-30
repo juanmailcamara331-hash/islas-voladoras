@@ -6,6 +6,7 @@ void save_init(IslSave* s) {
   s->magic = ISL_SAVE_MAGIC;
   s->schema = ISL_SAVE_SCHEMA;
   s->world_seed = 0x51A7E123u;
+  sealed_game_init(&s->game, s->world_seed);
   s->checksum = save_checksum(s);
 }
 
@@ -24,5 +25,6 @@ int save_validate(const IslSave* s) {
   if (!s) return 0;
   if (s->magic != ISL_SAVE_MAGIC) return 0;
   if (s->schema != ISL_SAVE_SCHEMA) return 0;
+  if (s->game.seed != s->world_seed) return 0;
   return s->checksum == save_checksum(s);
 }
