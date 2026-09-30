@@ -56,7 +56,7 @@ jobs:
           printf '%s\n' "$GITHUB_SHA" > out/R36_PACKAGE/ISL_PUM/VERSION.txt
           sha256sum out/R36_PACKAGE/roms/nds/ISL_PUM.nds > out/R36_PACKAGE/ISL_PUM/SHA256SUMS.txt
           printf '%s\n' \
-            'ISL PUM · PLAYER PACKAGE' \
+            'ISL PUM · TECH PREVIEW' \
             '' \
             '1. Copy the CONTENTS of R36_PACKAGE to the games SD card.' \
             '2. Start the console.' \
@@ -77,12 +77,12 @@ jobs:
             'gate_device=NOT_YET_VALIDATED' \
             'gate_human=NOT_YET_VALIDATED' \
             > out/R36_PACKAGE/ISL_PUM/BUILD_MANIFEST.txt
-          (cd out && zip -qr ISL_PUM_R36_PLAYER_PACKAGE.zip R36_PACKAGE)
-          sha256sum out/ISL_PUM_R36_PLAYER_PACKAGE.zip > out/ISL_PUM_R36_PLAYER_PACKAGE.sha256
+          (cd out && zip -qr ISL_PUM_TECH_PREVIEW.zip R36_PACKAGE)
+          sha256sum out/ISL_PUM_TECH_PREVIEW.zip > out/ISL_PUM_TECH_PREVIEW.sha256
       - uses: actions/upload-artifact@v4
         with:
-          name: ISL_PUM_R36_PLAYER_PACKAGE
+          name: ISL_PUM_TECH_PREVIEW
           path: |
-            out/ISL_PUM_R36_PLAYER_PACKAGE.zip
-            out/ISL_PUM_R36_PLAYER_PACKAGE.sha256
+            out/ISL_PUM_TECH_PREVIEW.zip
+            out/ISL_PUM_TECH_PREVIEW.sha256
           if-no-files-found: error
