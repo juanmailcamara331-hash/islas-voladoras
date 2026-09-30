@@ -119,13 +119,13 @@ static void render_game(void) {
 
 static void init_video() {
   screen_manager_init();
-  sealed_game_init(&g_game, 0x51A7E123u);
+  save_init(&g_save);
+  g_game = g_save.game;
   render_game();
 }
 
 int main(void) {
   init_video();
-  save_init(&g_save);
   gesture_reset(&g_gesture);
   trace_buffer_init(&g_trace);
   tempo_init(&g_tempo);
@@ -191,6 +191,7 @@ int main(void) {
       echo_mark_fired(echo);
     }
 
+    g_save.game = g_game;
     g_save.play_ticks++;
     if (g_save.play_ticks - decay_tick >= 120u) {
       tempo_decay(&g_tempo);
