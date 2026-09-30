@@ -47,19 +47,46 @@ static void observe_action(TraceKind kind) {
   if (dt > 0xFFFFu) dt = 0xFFFFu;
   tempo_observe_action(&g_tempo, (uint16_t)dt);
   g_last_action_tick = g_save.play_ticks;
-  push_trace(kind, 0, 0, 0);
+  if (kind != TRACE_NONE) push_trace(kind, 0, 0, 0);
   push_trace(TRACE_TEMPO, (int16_t)tempo_band(&g_tempo), 0, g_tempo.sample_window);
 }
 
-static GameAction map_action(int down) {
-  if (down & KEY_UP) return GAME_ACT_UP;
-  if (down & KEY_DOWN) return GAME_ACT_DOWN;
-  if (down & KEY_LEFT) return GAME_ACT_LEFT;
-  if (down & KEY_RIGHT) return GAME_ACT_RIGHT;
-  if (down & KEY_A) return GAME_ACT_PRIMARY;
-  if (down & KEY_B) return GAME_ACT_SECONDARY;
-  if (down & (KEY_X | KEY_SELECT)) return GAME_ACT_CONTEXT;
-  return GAME_ACT_NONE;
+static SemanticAction map_semantic(int down) {
+  if (down & KEY_UP) return ACT_MOVE_UP;
+  if (down & KEY_DOWN) return ACT_MOVE_DOWN;
+  if (down & KEY_LEFT) return ACT_MOVE_LEFT;
+  if (down & KEY_RIGHT) return ACT_MOVE_RIGHT;
+  if (down & KEY_A) return ACT_PRIMARY;
+  if (down & KEY_B) return ACT_SECONDARY;
+  if (down & KEY_X) return ACT_CONTEXT_L1;
+  if (down & KEY_Y) return ACT_CONTEXT_R1;
+  if (down & KEY_SELECT) return ACT_PUM;
+  if (down & KEY_START) return ACT_MENU;
+  return ACT_NONE;
+}
+
+static GameAction game_action_from_semantic(SemanticAction action) {
+  switch (action) {
+    case ACT_MOVE_UP: return GAME_ACT_UP;
+    case ACT_MOVE_DOWN: return GAME_ACT_DOWN;
+    case ACT_MOVE_LEFT: return GAME_ACT_LEFT;
+    case ACT_MOVE_RIGHT: return GAME_ACT_RIGHT;
+    case ACT_PRIMARY: return GAME_ACT_PRIMARY;
+    case ACT_SECONDARY: return GAME_ACT_SECONDARY;
+    case ACT_PUM:
+    case ACT_CONTEXT_L1:
+    case ACT_CONTEXT_R1:
+      return GAME_ACT_CONTEXT;
+    default:
+      return GAME_ACT_NONE;
+  }
+}
+
+static TraceKind trace_kind_from_semantic(SemanticAction action) {
+  if (action == ACT_PRIMARY) return TRACE_PRIMARY;
+  if (action == ACT_SECONDARY) return TRACE_SECONDARY;
+  if (action == ACT_PUM || action == ACT_CONTEXT_L1 || action == ACT_CONTEXT_R1) return TRACE_PUM;
+  return TRACE_NONE;
 }
 
 static void render_game(void) {
@@ -149,7 +176,8 @@ int main(void) {
       continue;
     }
 
-    GameAction action = map_action(down);
+    SemanticAction semantic = map_semantic(down);
+    GameAction action = game_action_from_semantic(semantic);
     if (action != GAME_ACT_NONE) {
       GameMode before = (GameMode)g_game.mode;
       sealed_game_step(&g_game, action);
@@ -164,8 +192,7 @@ int main(void) {
         audio_feedback_play(SFX_ACTION);
       }
       g_save.event_count++;
-      observe_action(action == GAME_ACT_PRIMARY ? TRACE_PRIMARY :
-                     action == GAME_ACT_SECONDARY ? TRACE_SECONDARY : TRACE_PUM);
+      observe_action(trace_kind_from_semantic(semantic));
 
       if (action == GAME_ACT_PRIMARY) {
         biography_record_use(&g_biography, TECH_ENTITY, g_save.play_ticks);
