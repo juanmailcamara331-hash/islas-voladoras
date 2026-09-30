@@ -2,25 +2,26 @@
 #include <stdio.h>
 #include "semantic_input.h"
 #include "save_state.h"
+#include "gesture_trace.h"
 
 static IslSave g_save;
+static GestureTrace g_gesture;
 
 static void init_video() {
   consoleDemoInit();
   iprintf("\x1b[2J");
   iprintf("ISL PUM NDS\n");
   iprintf("LAB ONLY / NO CANON\n\n");
-  iprintf("A = primary\n");
-  iprintf("B = secondary\n");
-  iprintf("SELECT = PUM\n");
-  iprintf("D-pad = move\n");
+  iprintf("TECH VERTICAL\n");
 }
 
 int main(void) {
   init_video();
   save_init(&g_save);
+  gesture_reset(&g_gesture);
 
   int x = 12, y = 10;
+  touchPosition touch;
 
   while (pmMainLoop()) {
     swiWaitForVBlank();
@@ -28,26 +29,30 @@ int main(void) {
 
     const int down = keysDown();
     const int held = keysHeld();
+    const int up = keysUp();
 
     if (held & KEY_UP) y--;
     if (held & KEY_DOWN) y++;
     if (held & KEY_LEFT) x--;
     if (held & KEY_RIGHT) x++;
 
-    if (down & KEY_A) {
-      iprintf("\nPRIMARY @ %d,%d", x, y);
-      g_save.event_count++;
-    }
-
-    if (down & KEY_B) {
-      iprintf("\nSECONDARY");
-      g_save.event_count++;
-    }
+    if (down & KEY_A) g_save.event_count++;
+    if (down & KEY_B) g_save.event_count++;
 
     if (down & KEY_SELECT) {
-      iprintf("\nPUM");
       g_save.event_count++;
       g_save.relation_count++;
+    }
+
+    if (held & KEY_TOUCH) {
+      touchRead(&touch);
+      if (down & KEY_TOUCH) gesture_begin(&g_gesture, touch.px, touch.py);
+      else gesture_sample(&g_gesture, touch.px, touch.py);
+    }
+
+    if (up & KEY_TOUCH) {
+      gesture_end(&g_gesture);
+      g_save.event_count++;
     }
 
     g_save.play_ticks++;
