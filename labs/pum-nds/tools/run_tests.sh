@@ -13,3 +13,4 @@ python3 tests/test_echo.py
 python3 tests/test_fault_injection.py
 python3 tests/test_sealed_game_sim.py
 python3 tools/ivv_check.py
+python3 tools/blind_pass1.py
