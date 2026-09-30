@@ -79,7 +79,7 @@ int main(void) {
   touchPosition touch;
   uint32_t decay_tick = 0;
 
-  while (pmMainLoop()) {
+  while (1) {
     swiWaitForVBlank();
     audio_feedback_tick();
     scanKeys();
