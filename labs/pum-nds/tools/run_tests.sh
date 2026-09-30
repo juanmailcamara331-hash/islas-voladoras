@@ -10,3 +10,5 @@ python3 tests/test_trace_buffer.py
 python3 tests/test_tempo.py
 python3 tests/test_object_biography.py
 python3 tests/test_echo.py
+python3 tests/test_fault_injection.py
+python3 tools/ivv_check.py
