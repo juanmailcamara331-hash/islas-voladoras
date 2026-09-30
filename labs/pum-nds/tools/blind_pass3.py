@@ -21,7 +21,9 @@ for m in re.finditer(r'iprintf\("([^"\\]*(?:\\.[^"\\]*)*)"', main):
 
 # No giant permanent control vocabulary.
 keys=set(re.findall(r"KEY_[A-Z0-9_]+",main))
-if len(keys)>9:
+# Current approved surface: D-pad + A/B/X/Y + START/SELECT + touch.
+# Shoulder modifiers remain absent until a mechanic proves they are needed.
+if len(keys)>11:
     fail.append(f"control-bloat:{len(keys)}")
 
 # Core player screen should not display instrumentation names.
