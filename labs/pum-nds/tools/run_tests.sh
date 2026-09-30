@@ -3,3 +3,4 @@ set -eu
 python3 tests/test_save_schema.py
 python3 tests/test_gesture.py
 python3 tests/test_handoff.py
+python3 tests/test_roundtrip_replay.py
