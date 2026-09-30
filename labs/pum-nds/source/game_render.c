@@ -36,6 +36,12 @@ static void bars(const SealedGameState* g){
   rect(44,12,hpw,1,C(24,18,6));
   rect(42,18,40,4,C(2,5,6));
   rect(44,19,fow,1,C(7,19,18));
+
+  /* Compact collection signature: ring / pen / lighter. */
+  u16 ring=C(22,18,8), pen=C(7,19,18), light=C(27,10,5);
+  frame(168,10,10,10,ring);
+  rect(184,11,12,2,pen);
+  rect(202,10,7,10,light);
 }
 
 static void draw_player(int x,int y){
