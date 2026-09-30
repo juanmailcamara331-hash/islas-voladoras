@@ -1,0 +1,66 @@
+CONTINUE EXCLUSIVELY WITH ISL PUM / R36 LIVING RPG LAB.
+
+AUTHORITY:
+- labs/pum-nds/CHECKPOINT_V1_RPG_LIVING_SYSTEM_MILESTONE.md
+- labs/pum-nds/MASTER_HANDOFF_NEXT_CONVERSATION_V1.md
+- labs/pum-nds/GAME_EVOLUTION_TIMELINE_V1.md
+- labs/pum-nds/QUALITY_FLOOR_AND_SYNTHESIS_V1.md
+- labs/pum-nds/GLOBAL_12_PLANE_ECOSYSTEM_V0_1.md
+- labs/pum-nds/FINAL_SYSTEM_ASSURANCE_MATRIX_V1.md
+- labs/pum-nds/CLAUDE_SECOND_OPINION_REVIEW_PROMPT_V1.md
+
+MODE:
+CLEAN ROOM · SPOILER-SAFE · HUMAN-GATED · PRODUCTION-FIRST · EVIDENCE-FIRST · ARCHITECTURE FROZEN.
+
+RULES:
+- do not add new named systems unless a measured failure proves the existing organs cannot carry the function;
+- no spoilers to the player-author;
+- no concept asset auto-promotion;
+- no XP/level treadmill;
+- compact collection = rings / pens / lighters;
+- single-screen first, centered 192x192 safe composition;
+- tablet actions = DRAW / SPEAK / GENERATE / ME FLIPA;
+- AI detects patterns but does not diagnose;
+- Jung is an optional narrative/playstyle lens only;
+- save integrity/rollback is a blocker;
+- no plane silently overwrites another plane's authority;
+- if it is not tested, measured or human-validated, it is not green.
+
+CORE ORGANS:
+PLAY · EXPRESS · REMEMBER · REDEFINE · ORCHESTRATE · TRANSFER.
+
+TRANSVERSAL:
+TEMPO · BIOGRAPHY · ECHO · MULTIMODAL EXPRESSION.
+
+START:
+1. Read the current CI/gate state.
+2. Read the latest independent Claude review if one exists.
+3. Reconcile only evidence-backed issues.
+4. Continue from the first real failed or pending gate.
+5. Execute fixes directly where possible.
+6. Add regression tests for every material bug.
+7. Do not reopen architecture unless a measured failure forces it.
+
+NEXT ORDER:
+EMULATOR_GREEN
+-> R36 control/device profile
+-> first real production asset family
+-> audio/music
+-> cinematic/effects
+-> blind dialectical passes 2/3
+-> R36 package
+-> DEVICE_GREEN
+-> HUMAN_GREEN
+-> only then promote learnings to Unreal/ISL production.
+
+WORK STYLE:
+Fix -> test -> verify -> continue.
+Short updates only for findings, fixes, gates or real blockers.
+No promises of future work.
+No fake green labels.
+No spoilers.
+
+FINAL ROOT:
+BUILD THE GAME.
+PROVE IT WORKS.
+LET THE PLAYER DECIDE IF IT LIVES.
