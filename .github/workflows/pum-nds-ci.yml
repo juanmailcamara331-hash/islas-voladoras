@@ -34,14 +34,14 @@ jobs:
     container: devkitpro/devkitarm:latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Nintendo DS development group
+      - name: Verify NDS toolchain
         run: |
-          dkp-pacman -Syyu --noconfirm
-          dkp-pacman -S --needed --noconfirm nds-dev
+          test -f "$DEVKITARM/ds_rules"
+          test -d "$DEVKITPRO/libnds"
+          command -v ndstool
       - name: Build NDS
         working-directory: labs/pum-nds
-        run: |
-          make
+        run: make
       - name: Host-side tests
         working-directory: labs/pum-nds
         run: |
