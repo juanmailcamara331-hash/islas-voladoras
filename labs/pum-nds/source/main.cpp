@@ -8,6 +8,7 @@
 #include "object_biography.h"
 #include "echo.h"
 #include "screen_manager.h"
+#include "sealed_game.h"
 
 static IslSave g_save;
 static GestureTrace g_gesture;
@@ -15,6 +16,7 @@ static TraceBuffer g_trace;
 static TempoState g_tempo;
 static BiographyBook g_biography;
 static EchoQueue g_echo;
+static SealedGameState g_game;
 
 static uint32_t g_last_action_tick = 0;
 static uint16_t g_event_seq = 1;
@@ -40,12 +42,85 @@ static void observe_action(TraceKind kind) {
   push_trace(TRACE_TEMPO, (int16_t)tempo_band(&g_tempo), 0, g_tempo.sample_window);
 }
 
+static GameAction map_action(int down) {
+  if (down & KEY_UP) return GAME_ACT_UP;
+  if (down & KEY_DOWN) return GAME_ACT_DOWN;
+  if (down & KEY_LEFT) return GAME_ACT_LEFT;
+  if (down & KEY_RIGHT) return GAME_ACT_RIGHT;
+  if (down & KEY_A) return GAME_ACT_PRIMARY;
+  if (down & KEY_B) return GAME_ACT_SECONDARY;
+  if (down & (KEY_X | KEY_SELECT)) return GAME_ACT_CONTEXT;
+  return GAME_ACT_NONE;
+}
+
+static void draw_bar(const char* label, unsigned value, unsigned maxv) {
+  unsigned filled = maxv ? (value * 10u) / maxv : 0u;
+  iprintf("%s [", label);
+  for (unsigned i=0;i<10;i++) iprintf(i<filled ? "#" : ".");
+  iprintf("]\n");
+}
+
+static void render_game(void) {
+  consoleClear();
+
+  if (g_game.mode == GAME_COMPLETE) {
+    iprintf("\n\n\n");
+    iprintf("       * * *\n");
+    iprintf("        PUM\n");
+    iprintf("       * * *\n\n");
+    iprintf("   RUN COMPLETE\n");
+    iprintf("\n  START/POWER SAFE\n");
+    return;
+  }
+
+  // 24-character wide square-safe composition.
+  iprintf("ISL PUM        L%u\n", g_game.level);
+  draw_bar("HP", g_game.hp, g_game.hp_max);
+  draw_bar("FO", g_game.focus, g_game.focus_max);
+  iprintf("------------------------\n");
+
+  if (g_game.mode == GAME_EXPLORE) {
+    for (unsigned y=0;y<12;y++) {
+      iprintf("      ");
+      for (unsigned x=0;x<12;x++) {
+        if (x==g_game.x && y==g_game.y) iprintf("@");
+        else {
+          unsigned v=(x*17u+y*31u+g_game.seed) % 19u;
+          iprintf(v==0u ? "*" : v<3u ? ":" : ".");
+        }
+      }
+      iprintf("\n");
+    }
+    iprintf("\n  D-PAD MOVE");
+    if (g_game.closure_ready) iprintf("  X ?");
+    iprintf("\n");
+  } else if (g_game.mode == GAME_COMBAT) {
+    iprintf("\n");
+    iprintf("        [////]\n");
+    iprintf("       [//////]\n");
+    iprintf("        [////]\n\n");
+    iprintf("  TURN %lu\n", (unsigned long)g_game.turns);
+    iprintf("  OPP %u\n\n", g_game.enemy_hp);
+    iprintf("  A   B   X\n");
+  } else if (g_game.mode == GAME_RECOVER) {
+    iprintf("\n\n\n");
+    iprintf("      . . . .\n");
+    iprintf("        @\n");
+    iprintf("      . . . .\n\n");
+    iprintf("     A / X\n");
+  }
+
+  iprintf("\n");
+  iprintf("M%u V%u E%u\n",
+          g_game.milestones,
+          g_game.victories,
+          g_game.encounters);
+}
+
 static void init_video() {
   screen_manager_init();
-  iprintf("\\x1b[2J");
-  iprintf("ISL PUM NDS\\n");
-  iprintf("LAB ONLY / NO CANON\\n\\n");
-  iprintf("TECH VERTICAL\\n");
+  sealed_game_init(&g_game, 0x51A7E123u);
+  render_game();
 }
 
 int main(void) {
@@ -68,26 +143,29 @@ int main(void) {
     const int held = keysHeld();
     const int up = keysUp();
 
-    if (down & KEY_A) {
+    GameAction action = map_action(down);
+    if (action != GAME_ACT_NONE) {
+      GameMode before = (GameMode)g_game.mode;
+      sealed_game_step(&g_game, action);
       g_save.event_count++;
-      observe_action(TRACE_PRIMARY);
-      biography_record_use(&g_biography, TECH_ENTITY, g_save.play_ticks);
-      push_trace(TRACE_BIOGRAPHY, TECH_ENTITY, 1, 0);
-    }
+      observe_action(action == GAME_ACT_PRIMARY ? TRACE_PRIMARY :
+                     action == GAME_ACT_SECONDARY ? TRACE_SECONDARY : TRACE_PUM);
 
-    if (down & KEY_B) {
-      g_save.event_count++;
-      observe_action(TRACE_SECONDARY);
-    }
+      if (action == GAME_ACT_PRIMARY) {
+        biography_record_use(&g_biography, TECH_ENTITY, g_save.play_ticks);
+        push_trace(TRACE_BIOGRAPHY, TECH_ENTITY, 1, 0);
+      }
 
-    if (down & KEY_SELECT) {
-      g_save.event_count++;
-      g_save.relation_count++;
-      observe_action(TRACE_PUM);
-      biography_record_redefinition(&g_biography, TECH_ENTITY, g_save.play_ticks);
-      push_trace(TRACE_BIOGRAPHY, TECH_ENTITY, 2, 0);
-      echo_schedule(&g_echo, g_event_seq++, (uint16_t)g_trace.count, TECH_ENTITY,
-                    ECHO_RELATION, g_save.play_ticks + 180u, g_save.relation_count);
+      if (action == GAME_ACT_CONTEXT) {
+        g_save.relation_count++;
+        biography_record_redefinition(&g_biography, TECH_ENTITY, g_save.play_ticks);
+        push_trace(TRACE_BIOGRAPHY, TECH_ENTITY, 2, 0);
+        echo_schedule(&g_echo, g_event_seq++, (uint16_t)g_trace.count, TECH_ENTITY,
+                      ECHO_RELATION, g_save.play_ticks + 180u, g_save.relation_count);
+      }
+
+      if (before != (GameMode)g_game.mode || action != GAME_ACT_NONE)
+        render_game();
     }
 
     if (held & KEY_TOUCH) {
