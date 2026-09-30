@@ -10,6 +10,7 @@
 #include "screen_manager.h"
 #include "sealed_game.h"
 #include "game_render.h"
+#include "audio_feedback.h"
 
 static IslSave g_save;
 static GestureTrace g_gesture;
@@ -61,6 +62,7 @@ static void render_game(void) {
 static void init_video() {
   screen_manager_init();
   game_render_init();
+  audio_feedback_init();
   save_init(&g_save);
   g_game = g_save.game;
   render_game();
@@ -79,6 +81,7 @@ int main(void) {
 
   while (pmMainLoop()) {
     swiWaitForVBlank();
+    audio_feedback_tick();
     scanKeys();
 
     const int down = keysDown();
@@ -89,6 +92,16 @@ int main(void) {
     if (action != GAME_ACT_NONE) {
       GameMode before = (GameMode)g_game.mode;
       sealed_game_step(&g_game, action);
+      if (before != (GameMode)g_game.mode) {
+        if (g_game.mode == GAME_COMBAT) audio_feedback_play(SFX_IMPACT);
+        else if (g_game.mode == GAME_RECOVER) audio_feedback_play(SFX_IMPACT);
+        else if (g_game.mode == GAME_COMPLETE) audio_feedback_play(SFX_COMPLETE);
+        else audio_feedback_play(SFX_ACTION);
+      } else if (action >= GAME_ACT_UP && action <= GAME_ACT_RIGHT) {
+        audio_feedback_play(SFX_STEP);
+      } else {
+        audio_feedback_play(SFX_ACTION);
+      }
       g_save.event_count++;
       observe_action(action == GAME_ACT_PRIMARY ? TRACE_PRIMARY :
                      action == GAME_ACT_SECONDARY ? TRACE_SECONDARY : TRACE_PUM);
