@@ -10,6 +10,7 @@ python3 tests/test_gesture_trace.py
 python3 tests/test_handoff.py
 python3 tests/test_sync_packet.py
 python3 tests/test_sync_receive.py
+python3 tests/test_sync_wire.py
 python3 tests/test_sync_retry_stress.py
 python3 tests/test_roundtrip_replay.py
 python3 tests/test_trace_buffer.py
