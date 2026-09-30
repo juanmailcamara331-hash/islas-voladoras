@@ -46,11 +46,11 @@ jobs:
       - name: Collect player build
         run: |
           mkdir -p out
-          find labs/pum-nds -maxdepth 2 -type f -name '*.nds' -exec cp {} out/ISL_PUM_PLAYER.nds \;
-          test -f out/ISL_PUM_PLAYER.nds
+          find labs/pum-nds -maxdepth 2 -type f -name '*.nds' -exec cp {} out/ISL_PUM_TECH_PREVIEW.nds \;
+          test -f out/ISL_PUM_TECH_PREVIEW.nds
           if [ -f labs/pum-nds/PLAYER_README.md ]; then cp labs/pum-nds/PLAYER_README.md out/; fi
       - uses: actions/upload-artifact@v4
         with:
-          name: ISL_PUM_NDS_PLAYER_BUILD
+          name: ISL_PUM_TECH_PREVIEW
           path: out
           if-no-files-found: error
