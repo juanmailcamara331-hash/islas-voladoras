@@ -1,0 +1,62 @@
+name: ISL PUM GBA CI
+
+on:
+  push:
+    branches:
+      - lab/pum-gba
+    paths:
+      - 'labs/pum-gba/**'
+      - '.github/workflows/pum-gba-ci.yml'
+      - '.github/instructions/pum-gba.instructions.md'
+  pull_request:
+    paths:
+      - 'labs/pum-gba/**'
+      - '.github/workflows/pum-gba-ci.yml'
+      - '.github/instructions/pum-gba.instructions.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate lab contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate required files
+        run: |
+          test -f labs/pum-gba/README.md
+          test -f labs/pum-gba/AGENTS.md
+          if [ -f labs/pum-gba/tools/validate.py ]; then
+            python3 labs/pum-gba/tools/validate.py
+          fi
+
+  build-gba:
+    name: Build GBA
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:20241104
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        working-directory: labs/pum-gba
+        run: |
+          test -f Makefile
+          make
+      - name: Run host-side tests if present
+        working-directory: labs/pum-gba
+        run: |
+          if [ -f tools/run_tests.sh ]; then
+            sh tools/run_tests.sh
+          fi
+      - name: Collect player build
+        run: |
+          mkdir -p out
+          find labs/pum-gba -maxdepth 2 -type f -name '*.gba' -exec cp {} out/ISL_PUM_PLAYER.gba \;
+          test -f out/ISL_PUM_PLAYER.gba
+          if [ -f labs/pum-gba/PLAYER_README.md ]; then cp labs/pum-gba/PLAYER_README.md out/; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ISL_PUM_PLAYER_BUILD
+          path: out
+          if-no-files-found: error
