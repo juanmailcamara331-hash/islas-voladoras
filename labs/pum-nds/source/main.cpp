@@ -3,6 +3,8 @@
 #include "semantic_input.h"
 #include "save_state.h"
 #include "save_journal.h"
+#include "save_backend.h"
+#include "save_fs_backend.h"
 #include "gesture_trace.h"
 #include "trace_buffer.h"
 #include "tempo.h"
@@ -22,6 +24,8 @@ static EchoQueue g_echo;
 static SealedGameState g_game;
 static SaveJournal g_journal;
 static int g_paused = 0;
+static SaveBackend g_persist;
+static int g_persist_ready = 0;
 
 static uint32_t g_last_action_tick = 0;
 static uint16_t g_event_seq = 1;
@@ -70,7 +74,9 @@ static void sync_save_from_runtime(void) {
 static int checkpoint_save(void) {
   sync_save_from_runtime();
   if (!save_journal_stage(&g_journal, &g_save)) return 0;
-  return save_journal_commit(&g_journal);
+  if (!save_journal_commit(&g_journal)) return 0;
+  if (g_persist_ready && !save_backend_store(&g_persist, &g_save)) return 0;
+  return 1;
 }
 
 static int checkpoint_load(void) {
@@ -85,7 +91,14 @@ static void init_video() {
   screen_manager_init();
   game_render_init();
   audio_feedback_init();
+
   save_init(&g_save);
+  g_persist_ready = save_fs_backend_init("fat:/ISL_PUM_SAVE.bin", &g_persist);
+  if (g_persist_ready) {
+    IslSave persisted;
+    if (save_fs_backend_load_recover(&persisted)) g_save = persisted;
+  }
+
   g_game = g_save.game;
   render_game();
 }

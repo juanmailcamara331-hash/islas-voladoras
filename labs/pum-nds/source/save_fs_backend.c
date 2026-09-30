@@ -1,4 +1,5 @@
 #include "save_fs_backend.h"
+#include "save_codec.h"
 #include <fat.h>
 #include <stdio.h>
 #include <string.h>
@@ -8,15 +9,19 @@
 static char g_path[ISL_SAVE_PATH_MAX];
 static int g_ready = 0;
 
-static int fs_read(void* dst, size_t len) {
-  if (!g_ready || !dst || !len) return -1;
-  FILE* f = fopen(g_path, "rb");
+static int read_exact_path(const char* path, void* dst, size_t len) {
+  FILE* f = fopen(path, "rb");
   if (!f) return -1;
   size_t got = fread(dst, 1, len, f);
   int extra = fgetc(f);
   fclose(f);
   if (got != len || extra != EOF) return -1;
   return (int)got;
+}
+
+static int fs_read(void* dst, size_t len) {
+  if (!g_ready || !dst || !len) return -1;
+  return read_exact_path(g_path, dst, len);
 }
 
 static int fs_write(const void* src, size_t len) {
@@ -72,4 +77,26 @@ int save_fs_backend_init(const char* path, SaveBackend* out_backend) {
 
 int save_fs_backend_available(void) {
   return g_ready;
+}
+
+
+int save_fs_backend_load_recover(IslSave* out) {
+  char bak[ISL_SAVE_PATH_MAX + 5];
+  uint8_t blob[sizeof(IslSave)];
+  if (!g_ready || !out) return 0;
+
+  if (read_exact_path(g_path, blob, sizeof(blob)) == (int)sizeof(blob) &&
+      save_decode(out, blob, sizeof(blob))) {
+    return 1;
+  }
+
+  if (snprintf(bak, sizeof(bak), "%s.bak", g_path) >= (int)sizeof(bak)) return 0;
+  if (read_exact_path(bak, blob, sizeof(blob)) != (int)sizeof(blob)) return 0;
+  if (!save_decode(out, blob, sizeof(blob))) return 0;
+
+  /* Primary was absent or invalid. Restore the validated backup as the
+     current generation so the next write preserves a good predecessor. */
+  remove(g_path);
+  rename(bak, g_path);
+  return 1;
 }
