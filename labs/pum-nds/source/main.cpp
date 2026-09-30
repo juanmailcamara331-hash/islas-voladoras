@@ -17,17 +17,17 @@ static void init_video() {
 }
 
 int main(void) {
-  irqInit();
-  irqEnable(IRQ_VBLANK);
   init_video();
   save_init(&g_save);
 
   int x = 12, y = 10;
-  while (1) {
+
+  while (pmMainLoop()) {
     swiWaitForVBlank();
     scanKeys();
-    int down = keysDown();
-    int held = keysHeld();
+
+    const int down = keysDown();
+    const int held = keysHeld();
 
     if (held & KEY_UP) y--;
     if (held & KEY_DOWN) y++;
@@ -38,10 +38,12 @@ int main(void) {
       iprintf("\nPRIMARY @ %d,%d", x, y);
       g_save.event_count++;
     }
+
     if (down & KEY_B) {
       iprintf("\nSECONDARY");
       g_save.event_count++;
     }
+
     if (down & KEY_SELECT) {
       iprintf("\nPUM");
       g_save.event_count++;
@@ -51,5 +53,6 @@ int main(void) {
     g_save.play_ticks++;
     g_save.checksum = save_checksum(&g_save);
   }
+
   return 0;
 }
