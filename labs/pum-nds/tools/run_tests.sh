@@ -8,6 +8,7 @@ python3 tests/test_save_fs_backend_contract.py
 python3 tests/test_gesture.py
 python3 tests/test_gesture_trace.py
 python3 tests/test_handoff.py
+python3 tests/test_sync_packet.py
 python3 tests/test_roundtrip_replay.py
 python3 tests/test_trace_buffer.py
 python3 tests/test_tempo.py
