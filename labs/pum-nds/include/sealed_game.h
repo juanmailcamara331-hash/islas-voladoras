@@ -27,8 +27,16 @@ typedef struct {
   uint16_t x, y;
   uint16_t hp, hp_max;
   uint16_t focus, focus_max;
-  uint16_t level;
-  uint16_t xp;
+
+  /* Compact collection progression: no player-facing XP/level treadmill. */
+  uint16_t rings_mask;
+  uint16_t pens_mask;
+  uint16_t lighters_mask;
+  uint8_t ring_slot_a;
+  uint8_t ring_slot_b;
+  uint8_t active_pen;
+  uint8_t active_lighter;
+
   uint16_t milestones;
   uint16_t encounters;
   uint16_t victories;
