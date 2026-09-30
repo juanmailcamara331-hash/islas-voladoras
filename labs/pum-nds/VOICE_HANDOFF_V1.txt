@@ -1,0 +1,11 @@
+ISL PUM. Estamos en hito de sistema RPG vivo. La arquitectura ya está congelada. El juego portátil sirve para probar mecánicas, ergonomía, ritmo, expresión y transferencia a Unreal. Jugamos en R36 con pantalla principal única y un cuadrado seguro de ciento noventa y dos por ciento noventa y dos. La tablet aparece sólo cuando hace falta y tiene cuatro acciones: dibuja, habla, genera y me flipa.
+
+La progresión ya no depende de niveles y experiencia. Se concentra en anillos, bolis y mecheros. Tempo, Biografía, Eco y Expresión Multimodal trabajan por debajo sin tener botones propios. La IA detecta patrones de voz, sonido y dibujo, pero no diagnostica ni decide quién es el jugador. Los arquetipos de Jung sólo pueden funcionar como lentes narrativas opcionales y reversibles.
+
+El guardado debe ser transaccional, con dos slots, checksum, generaciones, rollback y copia independiente. Los bugs graves necesitan fix, test de regresión y test de recuperación. Los assets conceptuales no son producción: deben pasar por mock, test dentro del juego, test en dispositivo y decisión humana.
+
+Los doce planos conectan juego, tablet, memoria, orquestador, generación, Unreal, investigación, Kickstarter, comunidad, marketing, objetos físicos y operaciones. Ningún plano puede cambiar silenciosamente la autoridad de otro.
+
+Lo que falta ya no es arquitectura. Falta terminar emulador, controles reales de R36, assets finales, música, cinemáticas, combate de barcos, pasadas dialécticas dos y tres, paquete R36, validación en dispositivo y validación humana.
+
+Regla final: si no está testeado, medido o validado por humano, no está verde.
