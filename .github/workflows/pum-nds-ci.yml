@@ -43,12 +43,19 @@ jobs:
         working-directory: labs/pum-nds
         run: |
           if [ -f tools/run_tests.sh ]; then sh tools/run_tests.sh; fi
-      - name: Collect player build
+      - name: Collect technical build
         run: |
           mkdir -p out
           find labs/pum-nds -maxdepth 2 -type f -name '*.nds' -exec cp {} out/ISL_PUM_TECH_PREVIEW.nds \;
           test -f out/ISL_PUM_TECH_PREVIEW.nds
           if [ -f labs/pum-nds/PLAYER_README.md ]; then cp labs/pum-nds/PLAYER_README.md out/; fi
+      - name: Build R36 technical package
+        run: |
+          cp out/ISL_PUM_TECH_PREVIEW.nds labs/pum-nds/ISL_PUM_TECH_PREVIEW.nds
+          bash labs/pum-nds/deploy/make_r36_package.sh labs/pum-nds/ISL_PUM_TECH_PREVIEW.nds ISL_PUM_R36_TECH_PREVIEW_PACKAGE.zip
+          cp labs/pum-nds/out/ISL_PUM_R36_TECH_PREVIEW_PACKAGE.zip out/
+          rm -f labs/pum-nds/ISL_PUM_TECH_PREVIEW.nds
+          test -f out/ISL_PUM_R36_TECH_PREVIEW_PACKAGE.zip
       - uses: actions/upload-artifact@v4
         with:
           name: ISL_PUM_TECH_PREVIEW
