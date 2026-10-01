@@ -201,30 +201,63 @@ jobs:
             done
 
             if [ -z "$wid" ]; then
+              echo "melonDS window not found"
               cat melon-runtime.log || true
               kill "$emu_pid" "$wm_pid" "$xvfb_pid" 2>/dev/null || true
               exit 30
             fi
 
-            xdotool windowactivate --sync "$wid"
+            if ! kill -0 "$emu_pid" 2>/dev/null; then
+              echo "melonDS exited before input"
+              cat melon-runtime.log || true
+              kill "$wm_pid" "$xvfb_pid" 2>/dev/null || true
+              exit 31
+            fi
+
+            xdotool windowactivate --sync "$wid" || true
             sleep 2
+
+            if ! kill -0 "$emu_pid" 2>/dev/null; then
+              echo "melonDS exited after window activation"
+              cat melon-runtime.log || true
+              kill "$wm_pid" "$xvfb_pid" 2>/dev/null || true
+              exit 32
+            fi
 
             if [ "$mutate" = "yes" ]; then
               xdotool keydown --window "$wid" s
               sleep 0.2
               xdotool keyup --window "$wid" s
               sleep 0.8
+            if ! kill -0 "$emu_pid" 2>/dev/null; then
+              echo "melonDS exited during driven input"
+              cat melon-runtime.log || true
+              kill "$wm_pid" "$xvfb_pid" 2>/dev/null || true
+              exit 33
+            fi
             fi
 
             xdotool keydown --window "$wid" Return
             sleep 0.2
             xdotool keyup --window "$wid" Return
             sleep 0.6
+            if ! kill -0 "$emu_pid" 2>/dev/null; then
+              echo "melonDS exited during driven input"
+              cat melon-runtime.log || true
+              kill "$wm_pid" "$xvfb_pid" 2>/dev/null || true
+              exit 33
+            fi
 
             xdotool keydown --window "$wid" z
             sleep 0.2
             xdotool keyup --window "$wid" z
             sleep 1.0
+            if ! kill -0 "$emu_pid" 2>/dev/null; then
+              echo "melonDS exited during driven input"
+              cat melon-runtime.log || true
+              kill "$wm_pid" "$xvfb_pid" 2>/dev/null || true
+              exit 33
+            fi
 
             kill "$emu_pid" 2>/dev/null || true
             wait "$emu_pid" 2>/dev/null || true
