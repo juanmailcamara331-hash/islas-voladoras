@@ -53,7 +53,8 @@ static int read_game(Reader* r,SealedGameState* g){
 static int write_save(Writer* w,const IslSave* s){
   if(!w32(w,s->magic)||!w16(w,s->schema)||!w16(w,s->flags)||
      !w32(w,s->world_seed)||!w32(w,s->play_ticks)||!w32(w,s->event_count)||
-     !w32(w,s->relation_count)||!write_game(w,&s->game)) return 0;
+     !w32(w,s->relation_count)||!w16(w,s->relation_entity_id)||
+     !w16(w,s->relation_redefinitions)||!write_game(w,&s->game)) return 0;
   for(unsigned i=0;i<8;i++) if(!w32(w,s->reserved[i])) return 0;
   return 1;
 }
@@ -61,7 +62,8 @@ static int read_save(Reader* r,IslSave* s){
   memset(s,0,sizeof(*s));
   if(!r32(r,&s->magic)||!r16(r,&s->schema)||!r16(r,&s->flags)||
      !r32(r,&s->world_seed)||!r32(r,&s->play_ticks)||!r32(r,&s->event_count)||
-     !r32(r,&s->relation_count)||!read_game(r,&s->game)) return 0;
+     !r32(r,&s->relation_count)||!r16(r,&s->relation_entity_id)||
+     !r16(r,&s->relation_redefinitions)||!read_game(r,&s->game)) return 0;
   for(unsigned i=0;i<8;i++) if(!r32(r,&s->reserved[i])) return 0;
   s->checksum=save_checksum(s);
   return save_validate(s);

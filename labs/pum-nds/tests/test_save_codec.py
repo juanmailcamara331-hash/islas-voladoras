@@ -2,7 +2,7 @@
 import struct, hashlib
 
 MAGIC=0x49534C31
-SCHEMA=2
+SCHEMA=3
 
 def fnv1a(buf,checksum_offset=8):
     h=2166136261

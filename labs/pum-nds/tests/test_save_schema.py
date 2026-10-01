@@ -12,7 +12,7 @@ def macro(name,text):
     return m.group(1)
 
 def test_constants():
-    assert macro("ISL_SAVE_SCHEMA",save_h)=="2u"
+    assert macro("ISL_SAVE_SCHEMA",save_h)=="3u"
     assert macro("ISL_SAVE_MAGIC",save_h)=="0x49534C31u"
 
 def test_game_snapshot_required():

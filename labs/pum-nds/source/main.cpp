@@ -95,7 +95,17 @@ static void render_game(void) {
 
 static void sync_save_from_runtime(void) {
   g_save.game = g_game;
+  const BiographyEntry* rel = biography_find(&g_biography, TECH_ENTITY);
+  g_save.relation_entity_id = rel ? rel->entity_id : 0u;
+  g_save.relation_redefinitions = rel ? rel->redefinitions : 0u;
   g_save.checksum = save_checksum(&g_save);
+}
+
+static void restore_biography_from_save(void) {
+  biography_init(&g_biography);
+  if (g_save.relation_entity_id == 0u) return;
+  for (uint16_t i = 0; i < g_save.relation_redefinitions; ++i)
+    biography_record_redefinition(&g_biography, g_save.relation_entity_id, g_save.play_ticks);
 }
 
 static int checkpoint_save(void) {
@@ -111,6 +121,7 @@ static int checkpoint_load(void) {
   if (!save_journal_recover(&g_journal, &restored)) return 0;
   g_save = restored;
   g_game = g_save.game;
+  restore_biography_from_save();
   return 1;
 }
 
@@ -135,7 +146,7 @@ int main(void) {
   gesture_reset(&g_gesture);
   trace_buffer_init(&g_trace);
   tempo_init(&g_tempo);
-  biography_init(&g_biography);
+  restore_biography_from_save();
   echo_init(&g_echo);
   save_journal_init(&g_journal, &g_save);
 
@@ -206,6 +217,9 @@ int main(void) {
         echo_schedule(&g_echo, g_event_seq++, (uint16_t)g_trace.count, TECH_ENTITY,
                       ECHO_RELATION, g_save.play_ticks + 180u, g_save.relation_count);
       }
+
+      if (before != (GameMode)g_game.mode || action == GAME_ACT_CONTEXT)
+        checkpoint_save();
 
       if (before != (GameMode)g_game.mode || action != GAME_ACT_NONE)
         render_game();

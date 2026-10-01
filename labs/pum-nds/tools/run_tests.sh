@@ -22,6 +22,7 @@ python3 tests/test_fault_injection.py
 python3 tests/test_sealed_game_sim.py
 python3 tests/test_runtime_checkpoint.py
 python3 tests/test_runtime_persistence.py
+python3 tests/test_relation_persistence.py
 python3 tests/test_semantic_runtime.py
 python3 tools/ivv_check.py
 python3 tools/blind_pass1.py

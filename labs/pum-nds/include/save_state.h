@@ -3,7 +3,7 @@
 #include "sealed_game.h"
 
 #define ISL_SAVE_MAGIC 0x49534C31u
-#define ISL_SAVE_SCHEMA 2u
+#define ISL_SAVE_SCHEMA 3u
 
 typedef struct {
   uint32_t magic;
@@ -14,6 +14,8 @@ typedef struct {
   uint32_t play_ticks;
   uint32_t event_count;
   uint32_t relation_count;
+  uint16_t relation_entity_id;
+  uint16_t relation_redefinitions;
   SealedGameState game;
   uint32_t reserved[8];
 } IslSave;
