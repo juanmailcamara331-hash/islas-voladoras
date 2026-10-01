@@ -70,7 +70,7 @@ jobs:
       - name: Install legal HLE-capable emulator
         run: |
           sudo apt-get update
-          sudo apt-get install -y desmume xvfb xdotool
+          sudo apt-get install -y desmume xvfb xdotool openbox
           test -x /usr/games/desmume-cli
       - uses: actions/download-artifact@v4
         with:
@@ -107,8 +107,12 @@ jobs:
             xvfb_pid=$!
             export DISPLAY=":$display_num"
             sleep 0.5
+            openbox > "openbox-$display_num.log" 2>&1 &
+            wm_pid=$!
+            sleep 0.5
+            fs_path="$(pwd)/emulator_fs"
 
-            /usr/games/desmume-cli --disable-sound --disable-limiter --cflash-path emulator_fs artifact/ISL_PUM_TECH_PREVIEW.nds > emulator-input.log 2>&1 &
+            /usr/games/desmume-cli --disable-sound --disable-limiter --cflash-path "$fs_path" artifact/ISL_PUM_TECH_PREVIEW.nds > emulator-input.log 2>&1 &
             emu_pid=$!
 
             wid=""
@@ -120,22 +124,31 @@ jobs:
 
             if [ -z "$wid" ]; then
               cat emulator-input.log || true
-              kill "$emu_pid" "$xvfb_pid" 2>/dev/null || true
+              kill "$emu_pid" "$wm_pid" "$xvfb_pid" 2>/dev/null || true
               exit 20
             fi
 
+            xdotool windowactivate --sync "$wid"
             sleep 1
             if [ "$mutate" = "yes" ]; then
-              xdotool key --window "$wid" s
+              xdotool keydown --window "$wid" s
+              sleep 0.2
+              xdotool keyup --window "$wid" s
               sleep 0.5
             fi
-            xdotool key --window "$wid" Return
-            sleep 0.4
-            xdotool key --window "$wid" x
+            xdotool keydown --window "$wid" Return
+            sleep 0.2
+            xdotool keyup --window "$wid" Return
+            sleep 0.5
+            xdotool keydown --window "$wid" x
+            sleep 0.2
+            xdotool keyup --window "$wid" x
             sleep 1
 
             kill "$emu_pid" 2>/dev/null || true
             wait "$emu_pid" 2>/dev/null || true
+            kill "$wm_pid" 2>/dev/null || true
+            wait "$wm_pid" 2>/dev/null || true
             kill "$xvfb_pid" 2>/dev/null || true
             wait "$xvfb_pid" 2>/dev/null || true
           }
