@@ -19,3 +19,11 @@ Rules:
 - packet contains no platform path and no sealed narrative names.
 
 This packet does not prove network transport. Device validation remains required.
+
+
+## Portable wire representation
+The in-memory C struct is NOT the network/file format.
+
+`sync_wire` serializes every numeric field explicitly as little-endian bytes under its own wire schema and computes a checksum over the canonical payload. No compiler padding, pointer, raw memory address, or platform ABI is part of the exchange format.
+
+On decode, the receiving platform reconstructs logical save fields and computes its own local runtime checksum. This keeps NDS storage implementation details out of tablet/Unreal transport semantics.
