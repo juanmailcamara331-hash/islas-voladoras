@@ -61,3 +61,35 @@ jobs:
           name: ISL_PUM_TECH_PREVIEW
           path: out
           if-no-files-found: error
+
+
+  emulator_boot:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Install legal HLE-capable emulator
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y desmume xvfb
+          test -x /usr/games/desmume-cli
+      - uses: actions/download-artifact@v4
+        with:
+          name: ISL_PUM_TECH_PREVIEW
+          path: artifact
+      - name: Locate ROM
+        run: |
+          find artifact -type f -name 'ISL_PUM_TECH_PREVIEW.nds' -print
+          test -f artifact/ISL_PUM_TECH_PREVIEW.nds
+      - name: EMULATOR_GREEN_BOOT smoke gate
+        shell: bash
+        run: |
+          set +e
+          timeout --signal=TERM 8s xvfb-run -a /usr/games/desmume-cli             --disable-sound --disable-limiter             artifact/ISL_PUM_TECH_PREVIEW.nds             > emulator.log 2>&1
+          rc=$?
+          cat emulator.log
+          if [ "$rc" -eq 124 ]; then
+            echo "EMULATOR_GREEN_BOOT"
+            exit 0
+          fi
+          echo "Emulator exited before smoke interval (rc=$rc)"
+          exit "$rc"
