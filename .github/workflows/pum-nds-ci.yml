@@ -227,7 +227,6 @@ jobs:
             sleep 0.5
             focused="$(xdotool getwindowfocus 2>/dev/null || true)"
             echo "melonDS window=$wid focused=$focused"
-            test -n "$focused"
             sleep 3
 
             if ! kill -0 "$emu_pid" 2>/dev/null; then
@@ -237,11 +236,18 @@ jobs:
               exit 32
             fi
 
-            if [ "$mutate" = "yes" ]; then
-              xdotool keydown s
+            send_key() {
+              local key="$1"
+              echo "send key=$key display=$DISPLAY target=$wid"
+              xdotool keydown "$key"
               sleep 0.2
-              xdotool keyup s
-              sleep 0.8
+              xdotool keyup "$key"
+              sleep 0.4
+            }
+
+            if [ "$mutate" = "yes" ]; then
+              send_key s
+              sleep 0.4
             if ! kill -0 "$emu_pid" 2>/dev/null; then
               echo "melonDS exited during driven input"
               cat melon-runtime.log || true
@@ -250,10 +256,8 @@ jobs:
             fi
             fi
 
-            xdotool keydown Return
-            sleep 0.2
-            xdotool keyup Return
-            sleep 0.6
+            send_key Return
+            sleep 0.4
             if ! kill -0 "$emu_pid" 2>/dev/null; then
               echo "melonDS exited during driven input"
               cat melon-runtime.log || true
@@ -261,9 +265,7 @@ jobs:
               exit 33
             fi
 
-            xdotool keydown z
-            sleep 0.2
-            xdotool keyup z
+            send_key z
             sleep 1.0
             if ! kill -0 "$emu_pid" 2>/dev/null; then
               echo "melonDS exited during driven input"
@@ -299,7 +301,13 @@ jobs:
             stop_pid "$xvfb_pid"
           }
 
+          echo "DLDI image before first boot:"
+          stat dldi.img
+          sha256sum dldi.img
           drive_once yes 99
+          echo "DLDI image after first boot:"
+          stat dldi.img
+          sha256sum dldi.img
           cat melon-runtime.log || true
           mdir -i dldi.img ::/
           mcopy -i dldi.img ::/ISL_PUM_SAVE.bin first-save.bin
