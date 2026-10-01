@@ -140,9 +140,9 @@ jobs:
             sleep 0.2
             xdotool keyup --window "$wid" Return
             sleep 0.5
-            xdotool keydown --window "$wid" x
+            xdotool keydown --window "$wid" z
             sleep 0.2
-            xdotool keyup --window "$wid" x
+            xdotool keyup --window "$wid" z
             sleep 1
 
             kill "$emu_pid" 2>/dev/null || true
