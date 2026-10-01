@@ -156,6 +156,9 @@ jobs:
           FolderSync = false
           FolderPath = ""
 
+          [Instance0]
+          JoystickID = -1
+
           [Instance0.Keyboard]
           A = 90
           B = 88
