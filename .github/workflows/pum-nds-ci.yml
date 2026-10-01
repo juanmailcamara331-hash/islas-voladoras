@@ -70,7 +70,7 @@ jobs:
       - name: Install legal HLE-capable emulator
         run: |
           sudo apt-get update
-          sudo apt-get install -y desmume xvfb xdotool openbox
+          sudo apt-get install -y desmume xvfb xdotool openbox dosfstools mtools
           test -x /usr/games/desmume-cli
       - uses: actions/download-artifact@v4
         with:
@@ -98,7 +98,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p emulator_fs
+
+          dd if=/dev/zero of=emulator-cflash.img bs=1M count=16 status=none
+          mkfs.vfat emulator-cflash.img >/dev/null
 
           drive_once() {
             local mutate="$1"
@@ -110,9 +112,8 @@ jobs:
             openbox > "openbox-$display_num.log" 2>&1 &
             wm_pid=$!
             sleep 0.5
-            fs_path="$(pwd)/emulator_fs"
 
-            /usr/games/desmume-cli --disable-sound --disable-limiter --cflash-path "$fs_path" artifact/ISL_PUM_TECH_PREVIEW.nds > emulator-input.log 2>&1 &
+            /usr/games/desmume-cli --disable-sound --disable-limiter --cflash=emulator-cflash.img artifact/ISL_PUM_TECH_PREVIEW.nds > emulator-input.log 2>&1 &
             emu_pid=$!
 
             wid=""
@@ -154,11 +155,13 @@ jobs:
           }
 
           drive_once yes 99
-          test -f emulator_fs/ISL_PUM_SAVE.bin
+          cat emulator-input.log || true
+          mdir -i emulator-cflash.img ::/
+          mcopy -i emulator-cflash.img ::/ISL_PUM_SAVE.bin first-save.bin
 
           python3 - <<'PY'
           import struct
-          b=open("emulator_fs/ISL_PUM_SAVE.bin","rb").read()
+          b=open("first-save.bin","rb").read()
           assert len(b) >= 28, len(b)
           magic,=struct.unpack_from("<I",b,0)
           schema,=struct.unpack_from("<H",b,4)
@@ -169,16 +172,17 @@ jobs:
           print("first persisted relation_count",relation_count)
           PY
 
-          cp emulator_fs/ISL_PUM_SAVE.bin first-save.bin
           drive_once no 100
-          test -f emulator_fs/ISL_PUM_SAVE.bin
-          test -f emulator_fs/ISL_PUM_SAVE.bin.bak
+          cat emulator-input.log || true
+          mdir -i emulator-cflash.img ::/
+          mcopy -i emulator-cflash.img ::/ISL_PUM_SAVE.bin second-save.bin
+          mcopy -i emulator-cflash.img ::/ISL_PUM_SAVE.bin.bak backup-save.bin
 
           python3 - <<'PY'
           import struct
           first=open("first-save.bin","rb").read()
-          second=open("emulator_fs/ISL_PUM_SAVE.bin","rb").read()
-          backup=open("emulator_fs/ISL_PUM_SAVE.bin.bak","rb").read()
+          second=open("second-save.bin","rb").read()
+          backup=open("backup-save.bin","rb").read()
           assert backup == first, "backup did not preserve first persisted generation"
           relation_count,=struct.unpack_from("<I",second,24)
           assert relation_count >= 1, relation_count
