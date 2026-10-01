@@ -115,7 +115,7 @@ jobs:
       - name: Install melonDS gate dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends unzip xvfb libegl1 libgl1 libopengl0 openbox xdotool dosfstools mtools
+          sudo apt-get install -y --no-install-recommends unzip xvfb libegl1 libgl1 libopengl0 openbox xdotool dosfstools mtools libqt6multimedia6 libqt6network6 libqt6widgets6 libqt6gui6 libqt6core6t64 libsdl2-2.0-0 libenet7 libfaad2
       - uses: actions/download-artifact@v4
         with:
           name: ISL_PUM_TECH_PREVIEW
