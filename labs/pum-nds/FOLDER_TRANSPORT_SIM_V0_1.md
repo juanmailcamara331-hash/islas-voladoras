@@ -16,3 +16,7 @@ Properties under test:
 - no transport decision mutates CANON or sealed content.
 
 The real transport may later be Syncthing-class folder replication or a local helper. This simulation validates behavior, not network connectivity.
+
+
+## v0.2 tightening
+The simulation now parses the actual ISW1 header shape: explicit little-endian magic/schema/generation/source/target plus canonical FNV-1a payload checksum. Interrupted, duplicate, wrong-generation and same-generation divergent deliveries are tested against protocol identity rather than arbitrary SHA-only dummy bytes.
