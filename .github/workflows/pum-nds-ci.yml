@@ -124,7 +124,6 @@ jobs:
               exit 20
             fi
 
-            xdotool windowactivate --sync "$wid"
             sleep 1
             if [ "$mutate" = "yes" ]; then
               xdotool key --window "$wid" s
