@@ -5,7 +5,7 @@ main=(ROOT/"source/main.cpp").read_text()
 fs=(ROOT/"source/save_fs_backend.c").read_text()
 h=(ROOT/"include/save_fs_backend.h").read_text()
 
-assert 'save_fs_backend_init("/ISL_PUM_SAVE.bin", &g_persist)' in main
+assert 'save_fs_backend_init("ISL_PUM_SAVE.bin", &g_persist)' in main
 assert 'save_fs_backend_load_recover(&persisted)' in main
 assert 'save_backend_store(&g_persist, &g_save)' in main
 assert 'if (g_persist_ready && !save_backend_store' in main
