@@ -70,7 +70,7 @@ jobs:
       - name: Install legal HLE-capable emulator
         run: |
           sudo apt-get update
-          sudo apt-get install -y desmume xvfb
+          sudo apt-get install -y desmume xvfb xdotool
           test -x /usr/games/desmume-cli
       - uses: actions/download-artifact@v4
         with:
@@ -93,3 +93,82 @@ jobs:
           fi
           echo "Emulator exited before smoke interval (rc=$rc)"
           exit "$rc"
+
+      - name: EMULATOR_GREEN_INPUT_SAVE roundtrip gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p emulator_fs
+
+          drive_once() {
+            local mutate="$1"
+            local display_num="$2"
+            Xvfb ":$display_num" -screen 0 1024x768x24 > "xvfb-$display_num.log" 2>&1 &
+            xvfb_pid=$!
+            export DISPLAY=":$display_num"
+
+            /usr/games/desmume-cli --disable-sound --disable-limiter --cflash-path emulator_fs artifact/ISL_PUM_TECH_PREVIEW.nds > emulator-input.log 2>&1 &
+            emu_pid=$!
+
+            wid=""
+            for i in $(seq 1 40); do
+              wid=$(xdotool search --name "Desmume SDL" 2>/dev/null | head -n1 || true)
+              [ -n "$wid" ] && break
+              sleep 0.25
+            done
+
+            if [ -z "$wid" ]; then
+              cat emulator-input.log || true
+              kill "$emu_pid" "$xvfb_pid" 2>/dev/null || true
+              exit 20
+            fi
+
+            xdotool windowactivate --sync "$wid"
+            sleep 1
+            if [ "$mutate" = "yes" ]; then
+              xdotool key --window "$wid" s
+              sleep 0.5
+            fi
+            xdotool key --window "$wid" Return
+            sleep 0.4
+            xdotool key --window "$wid" x
+            sleep 1
+
+            kill "$emu_pid" 2>/dev/null || true
+            wait "$emu_pid" 2>/dev/null || true
+            kill "$xvfb_pid" 2>/dev/null || true
+            wait "$xvfb_pid" 2>/dev/null || true
+          }
+
+          drive_once yes 99
+          test -f emulator_fs/ISL_PUM_SAVE.bin
+
+          python3 - <<'PY'
+          import struct
+          b=open("emulator_fs/ISL_PUM_SAVE.bin","rb").read()
+          assert len(b) >= 28, len(b)
+          magic,=struct.unpack_from("<I",b,0)
+          schema,=struct.unpack_from("<H",b,4)
+          relation_count,=struct.unpack_from("<I",b,24)
+          assert magic == 0x49534C31, hex(magic)
+          assert schema >= 2, schema
+          assert relation_count >= 1, relation_count
+          print("first persisted relation_count",relation_count)
+          PY
+
+          cp emulator_fs/ISL_PUM_SAVE.bin first-save.bin
+          drive_once no 100
+          test -f emulator_fs/ISL_PUM_SAVE.bin
+          test -f emulator_fs/ISL_PUM_SAVE.bin.bak
+
+          python3 - <<'PY'
+          import struct
+          first=open("first-save.bin","rb").read()
+          second=open("emulator_fs/ISL_PUM_SAVE.bin","rb").read()
+          backup=open("emulator_fs/ISL_PUM_SAVE.bin.bak","rb").read()
+          assert backup == first, "backup did not preserve first persisted generation"
+          relation_count,=struct.unpack_from("<I",second,24)
+          assert relation_count >= 1, relation_count
+          assert second != first, "relaunch/save did not advance persisted state"
+          print("EMULATOR_GREEN_INPUT_SAVE",relation_count)
+          PY
