@@ -106,13 +106,14 @@ jobs:
             Xvfb ":$display_num" -screen 0 1024x768x24 > "xvfb-$display_num.log" 2>&1 &
             xvfb_pid=$!
             export DISPLAY=":$display_num"
+            sleep 0.5
 
             /usr/games/desmume-cli --disable-sound --disable-limiter --cflash-path emulator_fs artifact/ISL_PUM_TECH_PREVIEW.nds > emulator-input.log 2>&1 &
             emu_pid=$!
 
             wid=""
             for i in $(seq 1 40); do
-              wid=$(xdotool search --name "Desmume SDL" 2>/dev/null | head -n1 || true)
+              wid=$(xdotool search --name "Desmume" 2>/dev/null | head -n1 || true)
               [ -n "$wid" ] && break
               sleep 0.25
             done
