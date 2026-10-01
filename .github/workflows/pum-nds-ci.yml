@@ -114,7 +114,7 @@ jobs:
       - name: Install probe dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y unzip xvfb libfuse2
+          sudo apt-get install -y unzip xvfb libfuse2 libegl1 libgl1
       - name: Download official melonDS 1.1 AppImage
         run: |
           curl -L --fail --retry 3 \
@@ -135,9 +135,12 @@ jobs:
           rc=$?
           cat melonds-help.txt
           echo "melonDS help exit=$rc"
-          if grep -Eqi 'dldi|sd.?card|storage|image' melonds-help.txt; then
+          if [ "$rc" -ne 0 ]; then
+            echo "MELONDS_PROBE_RUNTIME_FAILED"
+            exit 1
+          fi
+          if grep -Eqi 'dldi|sd[ -]?card|storage' melonds-help.txt; then
             echo "MELONDS_STORAGE_CLI_HINT_FOUND"
           else
             echo "MELONDS_STORAGE_CLI_HINT_NOT_FOUND"
           fi
-          exit 0
