@@ -131,7 +131,7 @@ static void init_video() {
   audio_feedback_init();
 
   save_init(&g_save);
-  g_persist_ready = save_fs_backend_init("fat:/ISL_PUM_SAVE.bin", &g_persist);
+  g_persist_ready = save_fs_backend_init("/ISL_PUM_SAVE.bin", &g_persist);
   if (g_persist_ready) {
     IslSave persisted;
     if (save_fs_backend_load_recover(&persisted)) g_save = persisted;
