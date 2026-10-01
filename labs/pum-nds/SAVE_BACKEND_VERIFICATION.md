@@ -36,3 +36,15 @@ Only after round-trip succeeds on:
 - Android tablet emulator
 
 may automatic Wi-Fi sync be marked ready.
+
+
+## CI evidence
+- Portable save format/checksum tests: PASS.
+- Filesystem/DLDI backend compiles: PASS.
+- Runtime checkpoint + recovery contract: PASS.
+- Emulator boot: PASS.
+- Emulator input/save/relaunch round-trip: PENDING.
+- Exact R36 DraStic persistence: PENDING HUMAN DEVICE.
+- Android tablet round-trip: PENDING HUMAN DEVICE.
+
+The Ubuntu 24.04 DeSmuME binary used for boot CI lacks the required CompactFlash/DLDI CLI capability at runtime, so it cannot be used as evidence for filesystem persistence. A separate modern emulator probe is used instead.
