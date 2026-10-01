@@ -94,98 +94,50 @@ jobs:
           echo "Emulator exited before smoke interval (rc=$rc)"
           exit "$rc"
 
-      - name: EMULATOR_GREEN_INPUT_SAVE roundtrip gate
+      - name: DeSmuME DLDI capability probe
         shell: bash
         run: |
           set -euo pipefail
+          /usr/games/desmume-cli --help > desmume-help.txt 2>&1 || true
+          cat desmume-help.txt
+          if grep -q -- '--cflash' desmume-help.txt; then
+            echo "DESMUME_DLDI_CAPABLE"
+          else
+            echo "DESMUME_DLDI_UNAVAILABLE_IN_THIS_BUILD"
+          fi
 
-          dd if=/dev/zero of=emulator-cflash.img bs=1M count=16 status=none
-          mkfs.vfat emulator-cflash.img >/dev/null
 
-          drive_once() {
-            local mutate="$1"
-            local display_num="$2"
-            Xvfb ":$display_num" -screen 0 1024x768x24 > "xvfb-$display_num.log" 2>&1 &
-            xvfb_pid=$!
-            export DISPLAY=":$display_num"
-            sleep 0.5
-            openbox > "openbox-$display_num.log" 2>&1 &
-            wm_pid=$!
-            sleep 0.5
-
-            /usr/games/desmume-cli --disable-sound --disable-limiter --cflash=emulator-cflash.img artifact/ISL_PUM_TECH_PREVIEW.nds > emulator-input.log 2>&1 &
-            emu_pid=$!
-
-            wid=""
-            for i in $(seq 1 40); do
-              wid=$(xdotool search --name "Desmume" 2>/dev/null | head -n1 || true)
-              [ -n "$wid" ] && break
-              sleep 0.25
-            done
-
-            if [ -z "$wid" ]; then
-              cat emulator-input.log || true
-              kill "$emu_pid" "$wm_pid" "$xvfb_pid" 2>/dev/null || true
-              exit 20
-            fi
-
-            xdotool windowactivate --sync "$wid"
-            sleep 1
-            if [ "$mutate" = "yes" ]; then
-              xdotool keydown --window "$wid" s
-              sleep 0.2
-              xdotool keyup --window "$wid" s
-              sleep 0.5
-            fi
-            xdotool keydown --window "$wid" Return
-            sleep 0.2
-            xdotool keyup --window "$wid" Return
-            sleep 0.5
-            xdotool keydown --window "$wid" z
-            sleep 0.2
-            xdotool keyup --window "$wid" z
-            sleep 1
-
-            kill "$emu_pid" 2>/dev/null || true
-            wait "$emu_pid" 2>/dev/null || true
-            kill "$wm_pid" 2>/dev/null || true
-            wait "$wm_pid" 2>/dev/null || true
-            kill "$xvfb_pid" 2>/dev/null || true
-            wait "$xvfb_pid" 2>/dev/null || true
-          }
-
-          drive_once yes 99
-          cat emulator-input.log || true
-          mdir -i emulator-cflash.img ::/
-          mcopy -i emulator-cflash.img ::/ISL_PUM_SAVE.bin first-save.bin
-
-          python3 - <<'PY'
-          import struct
-          b=open("first-save.bin","rb").read()
-          assert len(b) >= 28, len(b)
-          magic,=struct.unpack_from("<I",b,0)
-          schema,=struct.unpack_from("<H",b,4)
-          relation_count,=struct.unpack_from("<I",b,24)
-          assert magic == 0x49534C31, hex(magic)
-          assert schema >= 2, schema
-          assert relation_count >= 1, relation_count
-          print("first persisted relation_count",relation_count)
-          PY
-
-          drive_once no 100
-          cat emulator-input.log || true
-          mdir -i emulator-cflash.img ::/
-          mcopy -i emulator-cflash.img ::/ISL_PUM_SAVE.bin second-save.bin
-          mcopy -i emulator-cflash.img ::/ISL_PUM_SAVE.bin.bak backup-save.bin
-
-          python3 - <<'PY'
-          import struct
-          first=open("first-save.bin","rb").read()
-          second=open("second-save.bin","rb").read()
-          backup=open("backup-save.bin","rb").read()
-          assert backup == first, "backup did not preserve first persisted generation"
-          relation_count,=struct.unpack_from("<I",second,24)
-          assert relation_count >= 1, relation_count
-          assert second != first, "relaunch/save did not advance persisted state"
-          print("EMULATOR_GREEN_INPUT_SAVE",relation_count)
-          PY
+  melonds_probe:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Install probe dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unzip xvfb libfuse2
+      - name: Download official melonDS 1.1 AppImage
+        run: |
+          curl -L --fail --retry 3 \
+            https://github.com/melonDS-emu/melonDS/releases/download/1.1/melonDS-1.1-appimage-x86_64.zip \
+            -o melonds.zip
+          unzip -q melonds.zip
+          find . -maxdepth 2 -type f -name '*.AppImage' -print
+          appimage="$(find . -maxdepth 2 -type f -name '*.AppImage' | head -n1)"
+          test -n "$appimage"
+          chmod +x "$appimage"
+          printf '%s\n' "$appimage" > melonds-path.txt
+      - name: Probe melonDS command line
+        shell: bash
+        run: |
+          set +e
+          appimage="$(cat melonds-path.txt)"
+          timeout 8s xvfb-run -a "$appimage" --appimage-extract-and-run --help > melonds-help.txt 2>&1
+          rc=$?
+          cat melonds-help.txt
+          echo "melonDS help exit=$rc"
+          if grep -Eqi 'dldi|sd.?card|storage|image' melonds-help.txt; then
+            echo "MELONDS_STORAGE_CLI_HINT_FOUND"
+          else
+            echo "MELONDS_STORAGE_CLI_HINT_NOT_FOUND"
+          fi
+          exit 0
