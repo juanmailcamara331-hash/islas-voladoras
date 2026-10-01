@@ -107,40 +107,172 @@ jobs:
           fi
 
 
-  melonds_probe:
+
+  melonds_dldi:
     needs: build
     runs-on: ubuntu-24.04
     steps:
-      - name: Install probe dependencies
+      - name: Install melonDS gate dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y unzip xvfb libfuse2 libegl1 libgl1
-      - name: Download official melonDS 1.1 AppImage
+          sudo apt-get install -y unzip xvfb libfuse2 libegl1 libgl1 openbox xdotool dosfstools mtools
+      - uses: actions/download-artifact@v4
+        with:
+          name: ISL_PUM_TECH_PREVIEW
+          path: artifact
+      - name: Prepare official melonDS 1.1 portable DLDI harness
+        shell: bash
         run: |
+          set -euo pipefail
           curl -L --fail --retry 3 \
             https://github.com/melonDS-emu/melonDS/releases/download/1.1/melonDS-1.1-appimage-x86_64.zip \
             -o melonds.zip
           unzip -q melonds.zip
-          find . -maxdepth 2 -type f -name '*.AppImage' -print
           appimage="$(find . -maxdepth 2 -type f -name '*.AppImage' | head -n1)"
           test -n "$appimage"
           chmod +x "$appimage"
-          printf '%s\n' "$appimage" > melonds-path.txt
-      - name: Probe melonDS command line
+          "$appimage" --appimage-extract >/dev/null
+
+          melon_bin="$(find squashfs-root -type f -name melonDS -perm -111 | head -n1)"
+          test -n "$melon_bin"
+          portable_dir="$(dirname "$melon_bin")/portable"
+          mkdir -p "$portable_dir"
+
+          dldi_img="$(pwd)/dldi.img"
+          truncate -s 256M "$dldi_img"
+          mkfs.vfat "$dldi_img" >/dev/null
+
+          cat > "$portable_dir/melonDS.toml" <<EOF
+          [Emu]
+          ConsoleType = 0
+          DirectBoot = true
+          ExternalBIOSEnable = false
+
+          [DLDI]
+          Enable = true
+          ImagePath = "$dldi_img"
+          ImageSize = 1
+          ReadOnly = false
+          FolderSync = false
+          FolderPath = ""
+
+          [Instance0.Keyboard]
+          A = 90
+          B = 88
+          X = 83
+          Y = 65
+          Start = 16777220
+          Select = 16777248
+          EOF
+
+          printf '%s\n' "$portable_dir" > melonds-portable.txt
+          printf '%s\n' "$(pwd)/squashfs-root/AppRun" > melonds-runner.txt
+          test -x "$(cat melonds-runner.txt)"
+          mdir -i dldi.img ::/
+
+      - name: MELONDS_GREEN_INPUT_SAVE_RELOAD gate
         shell: bash
         run: |
-          set +e
-          appimage="$(cat melonds-path.txt)"
-          timeout 8s xvfb-run -a "$appimage" --appimage-extract-and-run --help > melonds-help.txt 2>&1
-          rc=$?
-          cat melonds-help.txt
-          echo "melonDS help exit=$rc"
-          if [ "$rc" -ne 0 ]; then
-            echo "MELONDS_PROBE_RUNTIME_FAILED"
-            exit 1
-          fi
-          if grep -Eqi 'dldi|sd[ -]?card|storage' melonds-help.txt; then
-            echo "MELONDS_STORAGE_CLI_HINT_FOUND"
-          else
-            echo "MELONDS_STORAGE_CLI_HINT_NOT_FOUND"
-          fi
+          set -euo pipefail
+          runner="$(cat melonds-runner.txt)"
+          rom="$(pwd)/artifact/ISL_PUM_TECH_PREVIEW.nds"
+          test -f "$rom"
+
+          drive_once() {
+            local mutate="$1"
+            local display_num="$2"
+
+            Xvfb ":$display_num" -screen 0 1024x768x24 > "melon-xvfb-$display_num.log" 2>&1 &
+            xvfb_pid=$!
+            export DISPLAY=":$display_num"
+            sleep 0.5
+            openbox > "melon-openbox-$display_num.log" 2>&1 &
+            wm_pid=$!
+            sleep 0.5
+
+            "$runner" --boot always "$rom" > melon-runtime.log 2>&1 &
+            emu_pid=$!
+
+            wid=""
+            for i in $(seq 1 60); do
+              wid=$(xdotool search --name "melonDS" 2>/dev/null | head -n1 || true)
+              [ -n "$wid" ] && break
+              sleep 0.25
+            done
+
+            if [ -z "$wid" ]; then
+              cat melon-runtime.log || true
+              kill "$emu_pid" "$wm_pid" "$xvfb_pid" 2>/dev/null || true
+              exit 30
+            fi
+
+            xdotool windowactivate --sync "$wid"
+            sleep 2
+
+            if [ "$mutate" = "yes" ]; then
+              xdotool keydown --window "$wid" s
+              sleep 0.2
+              xdotool keyup --window "$wid" s
+              sleep 0.8
+            fi
+
+            xdotool keydown --window "$wid" Return
+            sleep 0.2
+            xdotool keyup --window "$wid" Return
+            sleep 0.6
+
+            xdotool keydown --window "$wid" z
+            sleep 0.2
+            xdotool keyup --window "$wid" z
+            sleep 1.0
+
+            kill "$emu_pid" 2>/dev/null || true
+            wait "$emu_pid" 2>/dev/null || true
+            kill "$wm_pid" 2>/dev/null || true
+            wait "$wm_pid" 2>/dev/null || true
+            kill "$xvfb_pid" 2>/dev/null || true
+            wait "$xvfb_pid" 2>/dev/null || true
+          }
+
+          drive_once yes 99
+          cat melon-runtime.log || true
+          mdir -i dldi.img ::/
+          mcopy -i dldi.img ::/ISL_PUM_SAVE.bin first-save.bin
+
+          python3 - <<'PY'
+          import struct
+          b=open("first-save.bin","rb").read()
+          assert len(b) >= 32, len(b)
+          magic,=struct.unpack_from("<I",b,0)
+          schema,=struct.unpack_from("<H",b,4)
+          checksum,=struct.unpack_from("<I",b,8)
+          play_ticks,=struct.unpack_from("<I",b,16)
+          relation_count,=struct.unpack_from("<I",b,24)
+          assert magic == 0x49534C31, hex(magic)
+          assert schema == 3, schema
+          assert checksum != 0, checksum
+          assert play_ticks > 0, play_ticks
+          assert relation_count >= 1, relation_count
+          print("melon first save", play_ticks, relation_count)
+          PY
+
+          drive_once no 100
+          cat melon-runtime.log || true
+          mdir -i dldi.img ::/
+          mcopy -i dldi.img ::/ISL_PUM_SAVE.bin second-save.bin
+          mcopy -i dldi.img ::/ISL_PUM_SAVE.bin.bak backup-save.bin
+
+          python3 - <<'PY'
+          import struct
+          first=open("first-save.bin","rb").read()
+          second=open("second-save.bin","rb").read()
+          backup=open("backup-save.bin","rb").read()
+          assert backup == first, "backup did not preserve prior generation"
+          ticks1,=struct.unpack_from("<I",first,16)
+          ticks2,=struct.unpack_from("<I",second,16)
+          rel2,=struct.unpack_from("<I",second,24)
+          assert ticks2 > ticks1, (ticks1,ticks2)
+          assert rel2 >= 1, rel2
+          assert second != first
+          print("MELONDS_GREEN_INPUT_SAVE_RELOAD", ticks1, ticks2, rel2)
+          PY
