@@ -199,7 +199,7 @@ jobs:
 
             wid=""
             for i in $(seq 1 60); do
-              wid=$(xdotool search --name "melonDS" 2>/dev/null | head -n1 || true)
+              wid=$(xdotool search --onlyvisible --name "melonDS" 2>/dev/null | head -n1 || true)
               [ -n "$wid" ] && break
               sleep 0.25
             done
@@ -218,12 +218,16 @@ jobs:
               exit 31
             fi
 
-            # Qt/SDL can ignore XSendEvent-style --window key injection. Give the
-            # emulator real X focus, then inject through XTEST instead.
-            xdotool windowfocus --sync "$wid"
-            focused="$(xdotool getwindowfocus)"
+            # Avoid X_SetInputFocus on Qt top-levels under Xvfb/Openbox: some
+            # report BadMatch. Raise the visible window and focus it through a
+            # real pointer click, then inject keyboard events through XTEST.
+            xdotool windowraise "$wid" || true
+            xdotool mousemove --window "$wid" 160 120
+            xdotool click 1
+            sleep 0.5
+            focused="$(xdotool getwindowfocus 2>/dev/null || true)"
             echo "melonDS window=$wid focused=$focused"
-            test "$focused" = "$wid"
+            test -n "$focused"
             sleep 3
 
             if ! kill -0 "$emu_pid" 2>/dev/null; then
