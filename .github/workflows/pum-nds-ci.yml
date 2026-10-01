@@ -218,8 +218,13 @@ jobs:
               exit 31
             fi
 
-            xdotool windowactivate --sync "$wid" || true
-            sleep 2
+            # Qt/SDL can ignore XSendEvent-style --window key injection. Give the
+            # emulator real X focus, then inject through XTEST instead.
+            xdotool windowfocus --sync "$wid"
+            focused="$(xdotool getwindowfocus)"
+            echo "melonDS window=$wid focused=$focused"
+            test "$focused" = "$wid"
+            sleep 3
 
             if ! kill -0 "$emu_pid" 2>/dev/null; then
               echo "melonDS exited after window activation"
@@ -229,9 +234,9 @@ jobs:
             fi
 
             if [ "$mutate" = "yes" ]; then
-              xdotool keydown --window "$wid" s
+              xdotool keydown s
               sleep 0.2
-              xdotool keyup --window "$wid" s
+              xdotool keyup s
               sleep 0.8
             if ! kill -0 "$emu_pid" 2>/dev/null; then
               echo "melonDS exited during driven input"
@@ -241,9 +246,9 @@ jobs:
             fi
             fi
 
-            xdotool keydown --window "$wid" Return
+            xdotool keydown Return
             sleep 0.2
-            xdotool keyup --window "$wid" Return
+            xdotool keyup Return
             sleep 0.6
             if ! kill -0 "$emu_pid" 2>/dev/null; then
               echo "melonDS exited during driven input"
@@ -252,9 +257,9 @@ jobs:
               exit 33
             fi
 
-            xdotool keydown --window "$wid" z
+            xdotool keydown z
             sleep 0.2
-            xdotool keyup --window "$wid" z
+            xdotool keyup z
             sleep 1.0
             if ! kill -0 "$emu_pid" 2>/dev/null; then
               echo "melonDS exited during driven input"
