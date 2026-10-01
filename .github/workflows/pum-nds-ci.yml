@@ -115,7 +115,7 @@ jobs:
       - name: Install melonDS gate dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y unzip xvfb libfuse2 libegl1 libgl1 libopengl0 openbox xdotool dosfstools mtools
+          sudo apt-get install -y --no-install-recommends unzip xvfb libegl1 libgl1 libopengl0 openbox xdotool dosfstools mtools
       - uses: actions/download-artifact@v4
         with:
           name: ISL_PUM_TECH_PREVIEW
@@ -125,16 +125,16 @@ jobs:
         run: |
           set -euo pipefail
           curl -L --fail --retry 3 \
-            https://github.com/melonDS-emu/melonDS/releases/download/1.1/melonDS-1.1-appimage-x86_64.zip \
+            https://github.com/melonDS-emu/melonDS/releases/download/1.1/melonDS-1.1-ubuntu-x86_64.zip \
             -o melonds.zip
-          unzip -q melonds.zip
-          appimage="$(find . -maxdepth 2 -type f -name '*.AppImage' | head -n1)"
-          test -n "$appimage"
-          chmod +x "$appimage"
-          "$appimage" --appimage-extract >/dev/null
+          mkdir -p melonds-ubuntu
+          unzip -q melonds.zip -d melonds-ubuntu
 
-          melon_bin="$(find squashfs-root -type f -name melonDS -perm -111 | head -n1)"
+          melon_bin="$(find melonds-ubuntu -type f -name melonDS | head -n1)"
           test -n "$melon_bin"
+          chmod +x "$melon_bin"
+          ldd "$melon_bin" | tee melonds-ldd.txt
+          ! grep -q 'not found' melonds-ldd.txt
           portable_dir="$(dirname "$melon_bin")/portable"
           mkdir -p "$portable_dir"
 
@@ -166,7 +166,7 @@ jobs:
           EOF
 
           printf '%s\n' "$portable_dir" > melonds-portable.txt
-          printf '%s\n' "$(pwd)/squashfs-root/AppRun" > melonds-runner.txt
+          printf '%s\n' "$(realpath "$melon_bin")" > melonds-runner.txt
           test -x "$(cat melonds-runner.txt)"
           mdir -i dldi.img ::/
 
