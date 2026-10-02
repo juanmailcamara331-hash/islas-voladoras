@@ -222,13 +222,21 @@ jobs:
             # report BadMatch. Raise the visible window and focus it through a
             # real pointer click, then inject keyboard events through XTEST.
             xdotool windowraise "$wid" || true
-            xdotool mousemove --window "$wid" 160 120
-            xdotool click 1
+            xwininfo -tree -id "$wid" || true
+            # At this point the target came from --onlyvisible, unlike the old
+            # BadMatch run. Focus the actual visible client explicitly.
+            if ! xdotool windowfocus --sync "$wid"; then
+              echo "direct windowfocus failed; trying visible descendants"
+              for child in $(xwininfo -tree -id "$wid" 2>/dev/null | awk '/0x[0-9a-f]+/ {print $1}' | tail -n +2); do
+                child_dec=$((child))
+                xdotool windowfocus --sync "$child_dec" 2>/dev/null && break || true
+              done
+            fi
             sleep 0.5
             focused="$(xdotool getwindowfocus 2>/dev/null || true)"
             focused_name="$(xdotool getwindowname "$focused" 2>/dev/null || true)"
             echo "melonDS window=$wid focused=$focused focused_name=$focused_name"
-            xwininfo -tree -id "$wid" || true
+            test "$focused" != "2097439"
             sleep 3
 
             if ! kill -0 "$emu_pid" 2>/dev/null; then
