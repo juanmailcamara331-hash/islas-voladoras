@@ -226,7 +226,9 @@ jobs:
             xdotool click 1
             sleep 0.5
             focused="$(xdotool getwindowfocus 2>/dev/null || true)"
-            echo "melonDS window=$wid focused=$focused"
+            focused_name="$(xdotool getwindowname "$focused" 2>/dev/null || true)"
+            echo "melonDS window=$wid focused=$focused focused_name=$focused_name"
+            xwininfo -tree -id "$wid" || true
             sleep 3
 
             if ! kill -0 "$emu_pid" 2>/dev/null; then
@@ -238,11 +240,15 @@ jobs:
 
             send_key() {
               local key="$1"
-              echo "send key=$key display=$DISPLAY target=$wid"
+              local before after
+              before="$(sha256sum dldi.img | awk '{print $1}')"
+              echo "send key=$key display=$DISPLAY target=$wid dldi_before=$before"
               xdotool keydown "$key"
               sleep 0.2
               xdotool keyup "$key"
-              sleep 0.4
+              sleep 0.8
+              after="$(sha256sum dldi.img | awk '{print $1}')"
+              echo "after key=$key dldi_after=$after changed=$([ "$before" != "$after" ] && echo yes || echo no)"
             }
 
             if [ "$mutate" = "yes" ]; then
