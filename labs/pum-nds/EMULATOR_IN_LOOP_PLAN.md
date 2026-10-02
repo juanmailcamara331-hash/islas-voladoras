@@ -37,8 +37,14 @@ None imply DEVICE_GREEN.
 ## Current evidence
 - EMULATOR_GREEN_BOOT = PASS on the CI DeSmuME 0.9.11 build using legal direct/HLE boot.
 - DeSmuME storage capability = UNAVAILABLE in the exact Ubuntu 24.04 binary used by CI: runtime help exposes no cflash option.
-- EMULATOR_GREEN_INPUT = PENDING.
-- EMULATOR_GREEN_SAVE = PENDING.
-- melonDS 1.1 capability probe = IN PROGRESS as the modern DLDI candidate.
+- EMULATOR_GREEN_INPUT = PASS.
+- EMULATOR_GREEN_SAVE = PASS.
+- MELONDS_GREEN_INPUT_SAVE_RELOAD = PASS.
+- Evidence: workflow #224 (run 36955793933), commit 3748c211ba4eaca64ebd5572e49fd4f73668a622.
+- First runtime save: play_ticks=349, relation_count=1.
+- Relaunch save: play_ticks=571, relation_count=1.
+- The second run produced a new primary save and preserved the prior generation in ISL_PUM_SAVE.bin.bak.
+- Input targeting was confirmed against the melonDS client window; S and Z produced FAT image mutations during the driven sequence.
+- Exact physical-device verification remains separate and pending.
 
 A missing emulator feature is not a game failure. Do not weaken gates to convert infrastructure absence into PASS.
