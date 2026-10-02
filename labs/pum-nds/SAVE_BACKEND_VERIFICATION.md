@@ -43,7 +43,11 @@ may automatic Wi-Fi sync be marked ready.
 - Filesystem/DLDI backend compiles: PASS.
 - Runtime checkpoint + recovery contract: PASS.
 - Emulator boot: PASS.
-- Emulator input/save/relaunch round-trip: PENDING.
+- Emulator input/save/relaunch round-trip: PASS on official melonDS 1.1 DLDI harness.
+- Evidence: workflow #224 (run 36955793933), commit 3748c211ba4eaca64ebd5572e49fd4f73668a622.
+- First save: play_ticks=349, relation_count=1.
+- Relaunch save: play_ticks=571, relation_count=1.
+- ISL_PUM_SAVE.bin.bak exactly preserved the first generation.
 - Exact R36 DraStic persistence: PENDING HUMAN DEVICE.
 - Android tablet round-trip: PENDING HUMAN DEVICE.
 
