@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"/>
+<title>Garage Rick · Jam 02</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#111;color:#f5f5f5}
+*{box-sizing:border-box}body{margin:0;padding:12px;display:flex;flex-direction:column;gap:10px;min-height:100vh}
+h1{font-size:18px;margin:0}.sub{opacity:.65;font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button{border:0;border-radius:18px;padding:22px 10px;font-size:22px;font-weight:800;background:#292929;color:white;touch-action:manipulation}
+button:active{transform:scale(.98)}
+.big{grid-column:1/-1;font-size:26px;min-height:90px}
+.chain{background:#59452e}.duck{background:#71660d}.left{background:#30303d}.right{background:#3a3030}.keep{background:#1e6f39}.back{background:#812020}
+.panel{background:#1b1b1b;border-radius:18px;padding:12px}
+#echo{font-size:26px;font-weight:900;min-height:42px}
+#pattern{font-family:ui-monospace,monospace;font-size:14px;line-height:1.5}
+input{width:100%;padding:14px;border-radius:12px;border:0;background:#292929;color:white;font-size:16px}
+.row{display:flex;gap:8px}.row button{flex:1;font-size:16px;padding:14px}
+</style>
+</head>
+<body>
+<h1>GARAGE RICK · JAM 02</h1>
+<div class="sub">Nada significa nada de antemano. Repite lo que te salga.</div>
+
+<div class="grid">
+  <button id="chain" class="chain">⛓ CADENA</button>
+  <button id="duck" class="duck">🦆 PATO</button>
+  <button id="left" class="left">PIE IZQ</button>
+  <button id="right" class="right">PIE DER</button>
+  <button id="keep" class="keep">ESTO SÍ</button>
+  <button id="back" class="back">QUITA</button>
+</div>
+
+<div class="panel">
+  <div class="sub">BOCA / RAP / SONIDO</div>
+  <input id="voiceText" placeholder="di o escribe lo que salga"/>
+  <div class="row" style="margin-top:8px">
+    <button id="voiceSave">GUARDAR</button>
+    <button id="mic">🎙 MICRO</button>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="sub">LO ÚLTIMO</div>
+  <div id="echo">—</div>
+</div>
+
+<div class="panel">
+  <div class="sub">PATRONES QUE ESTÁN VOLVIENDO</div>
+  <div id="pattern">todavía ninguno</div>
+</div>
+
+<div class="panel">
+  <div class="row">
+    <button id="export">EXPORTAR</button>
+    <button id="reset">NUEVA JAM</button>
+  </div>
+</div>
+
+<script>
+const events=[]; const counts={};
+const $=id=>document.getElementById(id);
+
+function tokenOf(kind,value){
+  if(kind==='voice') return 'voz:'+String(value).toLowerCase().trim();
+  return kind;
+}
+function add(kind,value=null){
+  const e={t:Date.now(),kind,value};
+  events.push(e);
+  const token=tokenOf(kind,value);
+  counts[token]=(counts[token]||0)+1;
+  $('echo').textContent=kind==='voice'?value:kind.toUpperCase();
+  navigator.vibrate?.(25);
+  renderPatterns();
+}
+function renderPatterns(){
+  const reps=Object.entries(counts)
+    .filter(([,n])=>n>=2)
+    .sort((a,b)=>b[1]-a[1])
+    .slice(0,8);
+  $('pattern').textContent=reps.length
+    ? reps.map(([k,n])=>k+' × '+n).join('\n')
+    : 'todavía ninguno';
+}
+['chain','duck','left','right','keep','back'].forEach(id=>{
+  $(id).onclick=()=>add(id);
+});
+$('voiceSave').onclick=()=>{
+  const t=$('voiceText').value.trim();
+  if(t){add('voice',t);$('voiceText').value='';}
+};
+
+let rec=null;
+$('mic').onclick=()=>{
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){$('echo').textContent='micro no disponible';return;}
+  if(rec){rec.stop();return;}
+  rec=new SR(); rec.lang='es-ES'; rec.interimResults=false; rec.continuous=false;
+  rec.onresult=e=>add('voice',e.results[0][0].transcript);
+  rec.onend=()=>{rec=null;$('mic').textContent='🎙 MICRO';};
+  rec.start(); $('mic').textContent='■ PARAR';
+};
+
+$('export').onclick=()=>{
+  const blob=new Blob([JSON.stringify({
+    schema:'GARAGE_JAM_02',
+    created_at:new Date().toISOString(),
+    events,
+    repeated_patterns:Object.fromEntries(Object.entries(counts).filter(([,n])=>n>=2))
+  },null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='garage_jam02_'+Date.now()+'.json';
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+$('reset').onclick=()=>{
+  events.length=0;
+  Object.keys(counts).forEach(k=>delete counts[k]);
+  $('echo').textContent='—'; renderPatterns();
+};
+</script>
+</body>
+</html>
