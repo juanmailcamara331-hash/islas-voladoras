@@ -338,3 +338,93 @@ plus:
 OBJECT → STORY → MUTATE
 
 without needing a complex dashboard.
+
+
+## 19. SALIDAS FÍSICAS / NO-SCREEN OUTPUT
+Goal: make Garage results arrive in the room without forcing the user to stare at a normal display.
+
+Candidate output organs:
+- THERMAL PRINTER: tiny receipts, prompts, checkpoints, QR/NFC handoffs
+- PHOTO / LABEL PRINTER: stickers, cards, small visual fragments
+- 3D PRINTER: tokens, mockup parts, figurines, knobs, strange artifacts
+- PLOTTER / DRAWING MACHINE: lines, worms, maps, diagrams
+- TRANSPARENT DISPLAY / PROJECTION FILM: floating-looking text/images on acrylic/glass
+- REAR-PROJECTION SURFACE: screen-like result without looking like a monitor
+- E-INK OBJECT: persistent low-power cards/signs that feel printed
+- LIGHT / LED SHAPE: encode state with form/light instead of text
+- MECHANICAL OUTPUT: servo, pointer, flag, shutter, drawer, rotating token
+
+Design law:
+when possible, output should be tangible, persistent, surprising and recoverable.
+
+### Ritual · MATERIAL RETURN
+Garage finishes something
+→ choose best physical medium
+→ produce ONE artifact
+→ lamp/duck signals
+→ artifact appears in tray / wall / transparent surface / printer / 3D queue
+→ human GREEN / RED / PARK
+
+## 20. TRANSPARENT SURFACE / "SCREEN THAT DOESN'T LOOK LIKE A SCREEN"
+A transparent or semi-transparent interaction surface can act as a physical window into Garage.
+
+Possible implementations:
+- transparent OLED/LCD panel
+- clear acrylic + rear projection
+- holographic/projection film
+- transparent capacitive touch foil on acrylic/glass
+
+Target behavior:
+the interface appears only when summoned, otherwise the surface looks like an object/window, not a computer monitor.
+
+Use:
+- draw a worm directly on clear surface
+- drag physical-looking weights
+- preview a 3D object floating against the room
+- show one result card, then disappear
+
+## 21. BUTT CHORD CONTROLLER / NALGA PIM-PAM-PUM
+No intimate/body-mounted sensing required.
+
+Implement with two pressure zones in or beside the seat:
+LEFT BUTT PAD
+RIGHT BUTT PAD
+
+Each press is an explicit input event, not emotion inference.
+
+Example vocabulary:
+- right = PIM
+- left = PAM
+- both = PUM
+- right-right = NEXT
+- left-left = BACK
+- right-left-right = RARO
+- left-right-left = RETURN
+- both held = GREEN checkpoint
+- both quick x2 = RED rollback to last GREEN
+
+The system may also learn user-defined "chords":
+PIM-PAM-PUM-PUM-PUM
+→ user assigns action
+→ mapping is stored explicitly
+
+Rules:
+- debounce accidental shifts
+- require deliberate timing windows
+- always show/acknowledge recognized sequence
+- mappings are reversible
+- no hidden biometric interpretation
+
+## 22. PHYSICAL OUTPUT ROUTER
+A small software router chooses how each result should materialize.
+
+Examples:
+- 1 sentence / checkpoint → thermal printer
+- image / poster → photo printer or transparent surface
+- object / mockup → 3D-print queue
+- branch/state → e-ink card
+- urgent Human Gate → lamp + duck + receipt
+- living worm/state → table worm / LED form
+
+OUTPUT ROUTER chooses a medium, never authority.
+Human can force another medium at any time.
