@@ -21,7 +21,7 @@ def xorshift32(x):
 
 
 def pop16(v):
-    return v.bit_count()
+    return bin(v & 0xFFFF).count("1")
 
 
 class G:
