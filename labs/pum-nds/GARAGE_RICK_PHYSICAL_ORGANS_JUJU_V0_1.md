@@ -1,99 +1,340 @@
-# GARAGE RICK · PHYSICAL ORGANS / JUJU DEVICES V0.1
+# GARAGE RICK · PHYSICAL ORGANS / JUJU DEVICES V0.2
 
 STATUS: LAB ONLY · PLAYFUL · REVERSIBLE · HUMAN-GATED
 
-Goal: create physical interfaces that make Garage Zero feel summoned, touched, inhabited and funny instead of merely opened as software.
+Goal: physical interfaces that make Garage Zero feel summoned, touched, built, broken, stretched, shouted at and played with instead of merely opened as software.
+
+## Root law
+Physical actions are observable traces, never automatic truth.
+Everything remains reversible.
+Nothing physical silently changes canon, identity, spend or publication state.
 
 ## 1. PATATA TABLET DESCENDENTE
-A ceiling-hung tablet/creative panel that descends when summoned by a "juiju, juiju" whistle/tone or a simple fallback button.
-Functions: drawing, worms, creative weights, RETURN, campaign machine, hologram lenses.
-V0: tablet + hanging mount + full-screen launcher.
-Later: servo/pulley + microphone/whistle detection.
+Ceiling-hung tablet / creative panel summoned by "juiju, juiju", whistle, voice cue or fallback button.
 
-## 2. CAJÓN DE RUIDO
-A physical drawer full of absurd objects. Opening it triggers one random prompt seed + one media/input slot.
-Examples: screw, feather, coin, broken toy, paper scrap.
-Purpose: serendipity through material input, not random text alone.
+Functions:
+- drawing
+- worms
+- weights
+- campaign machine
+- RETURN
+- mockups
+- recipes
+- situated perspectives
 
-## 3. LÁMPARA DE RETURN
-A desk/ceiling lamp whose state reflects RETURN quality:
-- dim = weak/unfinished return
-- warm pulse = useful return
-- brief strong pulse = strong human confirmation
-Never decides authority; only mirrors state.
+V0:
+tablet + hanging support + fullscreen launcher.
 
-## 4. TIMBRE DE PUM
-A chunky physical button/bell.
-One press creates a "PUM packet": freeze current state + capture active branch + snapshot recent trace + queue one bounded transformation.
-Long press = PARK, not delete.
+Later:
+servo/pulley + whistle detection.
 
-## 5. RADIO DE VOCES
-Old radio / cassette-player style panel where each knob selects a situated perspective or model role.
-Not characters with authority: lenses only.
-Knobs may include ICE, HUMAN TRACE, RESEARCH, CHAOS, CONSERVATIVE, PUNK, etc.
-Output must display who/what lens influenced it.
+## 2. TIMBRE DE PUM · CHECKPOINT REAL
+One press:
+- checkpoint current conversation/session
+- snapshot active branch
+- capture recent trace
+- write a RETURN anchor
+- optionally create a compact handoff packet
 
-## 6. GUSANO DE MESA
-Flexible LED/servo strip or projected worm that deforms according to live creative weights.
-It is a physical visualization, not an oracle.
-Touching/bending it can optionally change sliders.
+Long press:
+PARK current thing without deleting it.
 
-## 7. CAJA DE MUTACIÓN
-A small physical box with two input slots:
-A + B -> candidate recombination.
-Drop in cards, QR tags, NFC objects, printed images, words, small props.
-The machine records provenance of both inputs before generating anything.
+The sound should feel physical and satisfying.
 
-## 8. PERISCOPIO DE HOLOGRAMAS
-A small screen/mirror/periscope that shows only one situated perspective at a time.
-Purpose: prevent the "all views blended into mush" problem.
-One lens in, one view out, provenance visible.
+## 3. CAJA DE MUTACIÓN · OBJETOS DE VIDA
+A physical box for meaningful personal objects:
+things built, broken, kept, found, inherited, used, ruined or remembered.
 
-## 9. RULETA DE PRESUPUESTO
-Physical rotary dial for campaign spend.
-Separate hard stop for MAX SPEND.
-Turning the dial only changes proposals until Human Gate confirms execution.
+When an object enters:
+1. camera / tag / manual naming captures it
+2. microphone asks: "¿qué significa esto para ti?"
+3. user speaks naturally
+4. Garage stores object + story + date + provenance
+5. it becomes eligible as a future creative ingredient
 
-## 10. TECLADO BASURA
-Old keyboard/typewriter with oversized remapped keys:
-PUM / PARK / RETURN / KEEP / MUTATE / KILL / RARO / HUMAN GATE.
-The point is speed and ritual, not productivity theater.
+Two or more objects can be recombined:
+OBJECT A + OBJECT B + CURRENT PROBLEM
+→ candidate mutation
 
-## 11. TUBO DE ENTREGA
-A pneumatic-tube-looking prop or drawer that receives finished outputs:
-prints, cards, campaign briefs, 3D previews, QR codes, tiny receipts.
-Digital V0 can simulate this with an inbox animation; physical later.
+The object meaning comes from the human narration, not from AI guessing.
 
-## 12. PEZ TESTIGO
-A tiny passive ambient object (could literally nod to David the fish) that only indicates Garage activity:
-blink / twitch / bubble sound.
-No controls, no authority.
-Exists to make background work perceptible without dashboards.
+## 4. RADIO DEL MUNDO
+A real radio-like object with access to live/world stations when external services are connected.
 
-## 13. BOTÓN ROJO DE REALIDAD
-One unmistakable physical safety button:
-stops automation, paid actions, publishing, motors, or external calls.
-Always hardware-first when real actuators or spend are connected.
+Functions:
+- listen normally to stations from Puerto Rico or anywhere else
+- favorite stations
+- capture a moment with one physical button
+- record station metadata/time, not copyrighted broadcast archives by default
+- create a creative trace from the listening context
+- optionally route the mood/texture as a candidate influence
 
-## 14. MESA DE MEZCLAS DE MAGISTRALIDAD
-Physical sliders for weights such as:
-naturalidad / rareza / oscuridad / estética / evidencia / serendipia / coste / riesgo.
-Every movement writes a trace event.
-Weights guide generation; they do not rewrite project identity.
+Possible ritual:
+TUNE → LISTEN → PUM → SAY WHY → STORE TRACE
 
-## 15. CINTA DE CONTEXTO
-A small thermal-printer-like strip that prints the current 3-line context:
-WHERE WE ARE
-WHAT MOVED
-WHAT NEEDS HUMAN
-Useful when several branches are alive at once.
+Radio is not "a voice authority". It is a world-input instrument.
 
-## Build law
-Do not build all of these.
-Prototype the cheapest thing that changes the feeling of the Garage.
+## 5. GUSANO DE MESA
+A flexible strip/object/projection that physically changes shape or light.
 
-Suggested first physical trio:
-PATATA TABLET + TIMBRE DE PUM + LÁMPARA DE RETURN.
+Simple meaning:
+the worm is a visible body for the current creative state.
 
-Together they create:
-SUMMON -> ACT -> SEE CONSEQUENCE.
+No abstract sliders required in V0.
+
+Examples:
+- more stretched = push farther / more mutation
+- curled = return / consolidate
+- twitching = many active branches
+- calm = stable
+- touch one segment = select one branch
+- physically bend it = give a coarse directional nudge
+
+It never interprets emotion.
+
+## 6. PERISCOPIO HOLOGRAMA — PARKED / OPTIONAL
+Not intuitive enough yet.
+Do not build until a clear physical function appears.
+Preserve the idea only as:
+"one perspective at a time, provenance visible."
+
+## 7. TECLADO BASURA · CHILD MODE
+Large, instantly recognizable controls.
+Fewer labels, more symbols and tactile differences.
+
+Candidate keys:
+- PUM = checkpoint / capture
+- ✓ VERDE = esto está de puta madre / KEEP
+- ↶ ROJO = volver atrás
+- ⏸ PARK = leave it for later
+- ✹ RARO = make one bounded strange variation
+- ⌂ RETURN = return to last strong anchor
+
+Design law:
+a child should be able to learn the important controls by touching them.
+
+## 8. BOTÓN VERDE / BOTÓN ROJO
+GREEN:
+"This is good. Preserve this state."
+Creates a strong positive human checkpoint.
+
+RED:
+"Everything since GREEN is crap; go back."
+
+RED does NOT delete history.
+It creates a branch reversal:
+CURRENT → RED → RESTORE LAST GREEN
+
+All work since GREEN remains stored as trace and can be recovered later.
+
+This is distinct from UNDO:
+- UNDO = one local action
+- RED = return to last strong human-approved state
+- GREEN = strong checkpoint / KEEP
+
+## 9. PATO TESTIGO
+Replace fish witness with duck witness.
+
+A tiny physical duck that indicates Garage activity without becoming a dashboard.
+
+Possible states:
+- still = idle
+- one blink = task received
+- head twitch = branch moved
+- soft quack = result waiting
+- wings / light = human decision required
+
+No authority.
+No nagging.
+No constant noise.
+
+## 10. TUBO DE RESULTADOS
+The pneumatic-tube idea becomes a delivery ritual, not literal document storage.
+
+Possible physical outputs:
+- tiny thermal receipt
+- QR code to result
+- NFC token
+- printed card
+- small mockup/photo
+- campaign summary
+- "one thing worth seeing"
+
+Ritual:
+GARAGE WORKS → TUBE/CHUTE OPENS → ONE RESULT ARRIVES
+
+V0 can simply be a little drawer with a thermal printer.
+
+## 11. CINTA DE CONTEXTO
+Tiny thermal printer.
+
+Instead of dashboards, prints:
+DÓNDE ESTAMOS
+QUÉ HA CAMBIADO
+QUÉ NECESITA TU MANO
+
+Optional fourth line:
+VOLVER A: [GREEN CHECKPOINT]
+
+## 12. LÁMPARA DE RETURN — REDEFINED
+Previous version was too abstract.
+
+New role:
+only lights when something has come back from the Garage and is genuinely waiting for the human.
+
+OFF = nothing needs you
+ON = one useful return is waiting
+PULSE = external action needs Human Gate
+
+It is a "come look when worth it" lamp, not a quality oracle.
+
+## 13. MOCKUP BENCH / MESA DE MAQUETAS
+A physical bench for making crude representations:
+cardboard, clay, LEGO, paper, wire, broken toys, printed screenshots, foam, tape.
+
+Garage can photograph states and keep version trace.
+
+Action grammar:
+BUILD → BREAK → BEND → STRETCH → RECOMBINE → PUM
+
+Physical deformation becomes provenance.
+
+## 14. BREAK BOX
+A safe sacrificial zone for things the user wants to cut, snap, open or dismantle.
+
+Purpose:
+destruction as inspection and recombination.
+
+Every object can have:
+BEFORE PHOTO
+→ BREAK
+→ PARTS PHOTO
+→ WHAT WAS LEARNED
+→ POSSIBLE NEW FUNCTION
+
+No automatic promotion to canon.
+
+## 15. GRITO INPUT
+A microphone mode for coarse explicit acoustic controls.
+
+Allowed features:
+- loudness
+- duration
+- rhythm
+- repeated syllables
+- silence
+
+Example mappings:
+- one loud "PUM" = capture
+- "PIM PAM PUM" = three-stage gesture
+- long shout = stronger bounded mutation request
+- silence after shout = commit/capture pause
+
+Never infer real emotion or mental state.
+
+## 16. FINGER LANGUAGE
+Simple hand/finger gestures, learned explicitly.
+
+Possible child-like vocabulary:
+- one finger = PIM / point/select
+- two fingers = PAM / compare/pair
+- three fingers = PUM / transform
+- closed hand = PARK
+- open hand = RETURN/show
+- pinch = make smaller / reduce weight
+- spread fingers = expand / increase
+
+Meanings are user-defined and editable.
+
+## 17. "SENSOR DE LAS PELOTAS" — SAFE JOKE VERSION
+Do not require body/genital sensing.
+
+Make it a tactile controller placed near the chair:
+two squeeze balls / stress balls / soft pressure pads.
+
+Possible mappings:
+- squeeze left = back / reduce
+- squeeze right = forward / increase
+- squeeze both = PUM
+- release both = neutral
+
+Keeps the joke and the bodily laziness without instrumenting intimate anatomy.
+
+## 18. RITUALS
+
+### RITUAL A · SUMMON
+JUJU whistle
+→ PATATA TABLET descends
+→ PATO wakes
+→ current branch appears
+
+### RITUAL B · THIS IS GOOD
+make/draw/build something
+→ GREEN
+→ checkpoint
+→ lamp briefly acknowledges
+→ trace preserved
+
+### RITUAL C · THIS WENT TO SHIT
+work after GREEN
+→ RED
+→ restore last GREEN
+→ keep rejected branch in history
+→ optional thermal note: "RECOVERABLE"
+
+### RITUAL D · OBJECT WITH A LIFE
+place meaningful object in mutation box
+→ say what it means
+→ PUM
+→ provenance stored
+→ candidate connections prepared
+
+### RITUAL E · WORLD RADIO
+turn dial
+→ Puerto Rico / world station
+→ listen
+→ hear something interesting
+→ PUM
+→ say why
+→ context trace stored
+
+### RITUAL F · MAKE / BREAK / REMAKE
+mockup bench
+→ build
+→ bend
+→ break
+→ photograph
+→ recombine
+→ GREEN or RED
+
+### RITUAL G · LAZY CONTROL
+hands off keyboard
+→ squeeze balls / finger sign / shout
+→ Garage receives explicit command
+→ visible acknowledgement
+
+### RITUAL H · DELIVERY
+Garage finishes something worth human attention
+→ RETURN lamp turns on
+→ duck twitches
+→ drawer/tube provides one card/QR/receipt
+→ human decides GREEN / RED / PARK
+
+## First coherent physical kit
+Not every device at once.
+
+Best coherent starter kit:
+- PATATA TABLET
+- PUM BELL
+- GREEN + RED buttons
+- DUCK WITNESS
+- THERMAL PRINTER
+- MUTATION BOX
+- two squeeze balls
+
+This yields:
+SUMMON → CREATE → CAPTURE → APPROVE/RETURN → RECEIVE
+plus:
+OBJECT → STORY → MUTATE
+
+without needing a complex dashboard.
