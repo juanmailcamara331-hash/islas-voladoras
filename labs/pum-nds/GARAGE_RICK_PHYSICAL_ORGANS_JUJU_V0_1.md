@@ -428,3 +428,67 @@ Examples:
 
 OUTPUT ROUTER chooses a medium, never authority.
 Human can force another medium at any time.
+
+
+## 23. CADENA DE SERVICIO / PULL-CHAIN
+A hanging pull-chain inspired by old cistern chains, servant-call cords and mechanical service pulls.
+
+Physical action:
+PULL
+→ Garage brings something toward the user.
+
+Possible meanings:
+- short pull = BRING NEXT RESULT
+- double pull = BRING LAST GREEN
+- long pull = BRING SOMETHING USEFUL FROM PARK
+- three short pulls = BRING RANDOM USEFUL MUTATION
+- pull + hold = SUMMON PATATA TABLET / physical output surface
+
+The action should feel mechanical:
+chain, bell, counterweight, pulley, click, clack.
+
+No hidden interpretation.
+Each pattern is an explicit command.
+
+### BUTTER MODE
+A playful ritual inspired by old service mechanisms:
+user pulls chain
+→ one selected object/output physically moves closer.
+
+Possible actuators:
+- small rail
+- drawer
+- lazy susan
+- belt/conveyor
+- cord/pulley tray
+- servo arm
+- sliding shelf
+
+Examples:
+- bring thermal receipt
+- bring mutation box
+- bring duck
+- bring controller
+- bring 3D-printed token
+- bring the current physical mockup tray
+
+The point is not automation theater.
+It is a physical command:
+"I want that thing here now."
+
+### FLUSH MODE
+A second semantic mode can use a toilet-like pull ritual:
+PULL HARD
+→ clear current surface / discard current working state from view
+→ preserve trace
+→ return to last strong checkpoint if configured
+
+Important:
+FLUSH never deletes history.
+It only removes current clutter from the active surface.
+
+Possible mapping:
+- gentle pull = bring
+- hard pull = flush/clear
+- chain + GREEN = keep and bring forward
+- chain + RED = flush current branch and return
