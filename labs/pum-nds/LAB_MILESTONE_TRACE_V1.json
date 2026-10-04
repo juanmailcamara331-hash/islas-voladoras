@@ -1,0 +1,177 @@
+{
+  "schema": "isl-pum-milestone-trace-v1",
+  "project": "ISL_PUM_NDS",
+  "status": "LAB_ONLY_NO_CANON_HUMAN_GATED_SPOILER_LOCKED",
+  "authority_ref": "labs/pum-nds/ISL_PUM_BLIND_LAB_CLOSURE_MASTER_V1.md",
+  "rule": "milestone_is_evidence_not_canon",
+  "milestones": [
+    {
+      "id": "M0",
+      "name": "ORIGIN_VISUAL",
+      "window": "pre-2026-09-30",
+      "state": "EVIDENCED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "visual impulse can initiate a cheap blind playable experiment",
+      "source_refs": [
+        "conversation:origin-green-image"
+      ]
+    },
+    {
+      "id": "M1",
+      "name": "PORTABLE_GAME_HYPOTHESIS",
+      "window": "2026-09-30",
+      "state": "EVIDENCED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "portable feel, few controls, short sessions, fun-first",
+      "source_refs": [
+        "conversation:blind-portable-game"
+      ]
+    },
+    {
+      "id": "M2",
+      "name": "NDS_R36_BODY",
+      "window": "2026-09-30/2026-10-01",
+      "state": "EVIDENCED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "R36 main body + NDS ROM + square-safe single-screen play",
+      "source_refs": [
+        "repo:labs/pum-nds",
+        "conversation:r36-nds-architecture"
+      ]
+    },
+    {
+      "id": "M3",
+      "name": "BLIND_CONTENT",
+      "window": "2026-09-30/2026-10-04",
+      "state": "ACTIVE",
+      "spoiler_class": "SEALED_CONTENT",
+      "learned_function": "player surprise is part of the experiment; design/content stays sealed before play",
+      "source_refs": [
+        "repo:labs/pum-nds/source/sealed_game.c",
+        "conversation:spoiler-lock"
+      ]
+    },
+    {
+      "id": "M4",
+      "name": "SAVE_TRACE_RESILIENCE",
+      "window": "2026-10-01/2026-10-02",
+      "state": "EVIDENCED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "versioned save, checksum, journal/recovery and trace are testable independently",
+      "source_refs": [
+        "repo:labs/pum-nds/source/save_*",
+        "ci:228"
+      ]
+    },
+    {
+      "id": "M5",
+      "name": "TABLET_EXPRESSION",
+      "window": "2026-09-30/2026-10-04",
+      "state": "DESIGNED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "tablet enters only for touch/drawing/voice capabilities that materially improve the experiment",
+      "source_refs": [
+        "repo:labs/pum-nds/CROSS_DEVICE_HANDOFF.md",
+        "conversation:tablet-expression"
+      ]
+    },
+    {
+      "id": "M6",
+      "name": "MULTIMODAL_RESEARCH",
+      "window": "2026-09-30/2026-10-04",
+      "state": "DESIGNED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "observable features can be linked to game context without diagnostic claims",
+      "source_refs": [
+        "repo:labs/pum-nds/MULTIMODAL_EXPRESSION_MAPPER_V0_1.md",
+        "conversation:paper-language-drawing"
+      ]
+    },
+    {
+      "id": "M7",
+      "name": "SERENDIPITY_ORCHESTRATION",
+      "window": "2026-09-29/2026-10-04",
+      "state": "DESIGNED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "unexpected relations remain candidates until Orchestrator context + Human Gate",
+      "source_refs": [
+        "conversation:serendipinator-orchestrator",
+        "repo:labs/pum-nds/INTEGRATION_ATLAS.md"
+      ]
+    },
+    {
+      "id": "M8",
+      "name": "REACTIVOS_METAFISICOS",
+      "window": "2026-10-03/2026-10-04",
+      "state": "EVIDENCED_METHOD",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "controlled conceptual perturbation can expose useful mechanics/aesthetic/material relations without automatic authority",
+      "source_refs": [
+        "conversation:ICE-reactivos",
+        "garage:metaphysical-reagent-method"
+      ]
+    },
+    {
+      "id": "M9",
+      "name": "PIZARRA_VIVA_GARAGE",
+      "window": "2026-10-02/2026-10-04",
+      "state": "DESIGNED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "project health should be expressed from real signals, not static kanban status",
+      "source_refs": [
+        "conversation:pizarra-viva",
+        "conversation:garage-zero"
+      ]
+    },
+    {
+      "id": "M10",
+      "name": "PROCESS_POOL_RUNNER",
+      "window": "2026-09-28/2026-10-04",
+      "state": "DESIGNED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "fast mechanical circulation uses dedup, safe action/no-op, verify, stop; decisions remain slow/human",
+      "source_refs": [
+        "repo:docs/ISL_EXTERNAL_5MIN_RUNNER_PROCESS_POOL_CANDIDATE_v0.1.md",
+        "conversation:external-runner-1min"
+      ]
+    },
+    {
+      "id": "M11",
+      "name": "PHASED_GAME_LAB",
+      "window": "2026-10-04",
+      "state": "FROZEN_RULE",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "each new game/phase is a fresh experiment; only human-proven functions survive",
+      "source_refs": [
+        "conversation:new-phases-new-games",
+        "repo:labs/pum-nds/ISL_PUM_BLIND_LAB_CLOSURE_MASTER_V1.md"
+      ]
+    },
+    {
+      "id": "M12",
+      "name": "TRANSFER",
+      "window": "2026-09-30/2026-10-04",
+      "state": "DESIGNED",
+      "spoiler_class": "PUBLIC_DEV",
+      "learned_function": "approved mechanics transfer through design/runtime/evidence records, never by treating NDS code as production authority",
+      "source_refs": [
+        "repo:labs/pum-nds/UNREAL_HANDOFF.md",
+        "repo:labs/pum-nds/ISL_PUM_BLIND_LAB_CLOSURE_MASTER_V1.md"
+      ]
+    }
+  ],
+  "current": {
+    "active": "close first blind playable laboratory animal",
+    "next": "verify CI 229 then package for R36 and human blind play",
+    "blocked": "physical SD transfer until microSD is accessible by phone/reader",
+    "parked": [
+      "campaign",
+      "Kickstarter",
+      "merch",
+      "SEO",
+      "commercial systems",
+      "large Unreal production",
+      "unrelated branches"
+    ]
+  }
+}
