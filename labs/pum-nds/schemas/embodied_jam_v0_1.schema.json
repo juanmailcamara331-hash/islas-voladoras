@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "garage.embodied-jam.v0.1",
+  "title": "Garage Embodied Jam Trace",
+  "type": "object",
+  "required": ["session_id", "events"],
+  "properties": {
+    "session_id": {"type":"string"},
+    "anchor": {
+      "type":"object",
+      "properties":{
+        "kind":{"type":"string","enum":["object","image","none"]},
+        "id":{"type":["string","null"]},
+        "human_meaning":{"type":["string","null"]}
+      }
+    },
+    "events": {
+      "type":"array",
+      "items":{
+        "type":"object",
+        "required":["t","kind"],
+        "properties":{
+          "t":{"type":"number","minimum":0},
+          "kind":{"type":"string","enum":["voice","chain","foot","hand","pum","green","red","artifact","note"]},
+          "side":{"type":["string","null"],"enum":["left","right","both",null]},
+          "duration_ms":{"type":["number","null"],"minimum":0},
+          "text":{"type":["string","null"]},
+          "value":{},
+          "artifact_id":{"type":["string","null"]}
+        },
+        "additionalProperties":true
+      }
+    },
+    "human_verdict":{"type":["string","null"],"enum":["keep","mutate","park","kill",null]}
+  },
+  "additionalProperties":true
+}
