@@ -492,3 +492,141 @@ Possible mapping:
 - hard pull = flush/clear
 - chain + GREEN = keep and bring forward
 - chain + RED = flush current branch and return
+
+
+## 24. ONE OBJECT = ONE VERB
+The physical grammar must stay child-simple.
+
+Core:
+- PUM = CAPTURE / CHECKPOINT
+- GREEN = KEEP / APPROVE
+- RED = GO BACK / ROLLBACK TO LAST GREEN
+- CHAIN = BRING
+- DUCK = DELIVER / SIGNAL ONE RETURN
+- DOUBLE-KICK PEDALS = TEMPO
+
+No device should carry five unrelated meanings.
+
+## 25. CHAIN = BRING, PHYSICALLY
+The chain must do a chain-like thing.
+
+Preferred behavior:
+PULL
+→ bell/click
+→ a tray, drawer, transparent surface or selected physical object comes toward the user.
+
+Variants:
+- short pull = bring current result tray
+- long pull = bring Patata Tablet / transparent surface
+- pull while RED held = bring last GREEN state
+- pull while GREEN held = bring approved artifact forward
+
+No hidden menu.
+
+## 26. DUCK = DELIVERY ANIMAL
+The duck should do a duck-like thing, not behave like a status LED.
+
+Narrative:
+Garage works quietly.
+When one useful RETURN is ready, the duck becomes the courier.
+
+Possible physical actions:
+- turns head toward the delivery point
+- one soft quack
+- pecks once
+- opens a tiny wing/door
+- "lays an egg" token containing NFC/QR/result id
+- waddles a tiny distance toward the tray
+
+The duck signals ONE return worth seeing.
+No quacking for background noise.
+
+### EGG OUTPUT
+A reusable egg/token can represent the returned artifact.
+Tap egg on NFC reader
+→ open/show/materialize that exact result.
+GREEN / RED decides its fate.
+
+## 27. DOUBLE-BASS PEDALS / FEET TEMPO
+Two foot pedals inspired by double-kick drum pedals.
+
+LEFT FOOT = PAM
+RIGHT FOOT = PIM
+BOTH / chord = PUM
+
+Primary meaning:
+TEMPO, not navigation.
+
+The user can tap a rhythm to set how aggressively the Garage cycles through safe local work.
+
+Examples:
+- slow pulse = fewer, calmer iterations
+- medium pulse = normal working cadence
+- fast alternating double-kick = more rapid bounded candidate generation
+- stop feet = hold current cadence
+- both pedals hard together = PUM checkpoint
+
+The system measures only explicit rhythm features:
+- tap timestamps
+- BPM
+- left/right alternation
+- pattern length
+- deliberate chord
+
+No emotion inference.
+
+### TEMPO SAFETY
+Tempo may accelerate:
+- local planning
+- local recombination
+- local ranking
+- local rendering previews
+- safe queued transforms
+
+Tempo may NOT silently accelerate:
+- paid spend
+- publishing
+- irreversible external actions
+- canon promotion
+
+Those remain Human-Gated.
+
+## 28. RHYTHM RECIPES
+User-defined foot patterns can become named commands.
+
+Example:
+PIM PAM PUM PUM PUM
+→ user assigns meaning
+→ mapping is stored explicitly
+→ future recognition gives visible acknowledgement before action
+
+Patterns are editable and reversible.
+
+Potential first mappings:
+- PIM PAM = compare
+- PIM PAM PUM = transform
+- PIM PIM PAM = one stranger variant
+- PAM PAM = slow down
+- PIM PIM = speed up
+- BOTH = checkpoint
+
+## 29. VOICE NEEDS ITS OWN IDENTITY
+Voice should not be generic "assistant voice".
+
+Role:
+EXPLAIN / NAME / SELL / FRAME.
+
+The voice layer can:
+- narrate what an object means after the user explains it
+- give a campaign pitch
+- read the one useful return aloud
+- turn a rough idea into a clear public-facing message
+- provide marketing/copy variants when explicitly invoked
+
+It should stay silent by default.
+Physical cue can invoke it:
+- pull a small microphone lever
+- lift an old handset
+- press a TALK key
+
+This keeps voice as a deliberate instrument, not constant chatter.
