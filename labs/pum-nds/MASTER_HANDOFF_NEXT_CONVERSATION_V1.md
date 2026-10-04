@@ -1,5 +1,10 @@
 # ISL PUM · MASTER HANDOFF FOR NEXT CONVERSATION v1
 
+> **READ FIRST / AUTHORITY UPDATE — 2026-10-04**
+> Before reconstructing or extending this lab, read `ISL_PUM_BLIND_LAB_CLOSURE_MASTER_V1.md` and `LAB_MILESTONE_TRACE_V1.json`.
+> Those files freeze the integrated architecture, milestone trace, spoiler-lock, reactivos metafísicos, process-pool/runner law, tablet+mic research path, and phased-game rule. This handoff remains historical context and must not override the closure master.
+
+
 Status: LAB ONLY · SPOILER-SAFE · HUMAN-GATED · ARCHITECTURE FROZEN
 Purpose: Carry the entire portable RPG / R36 / tablet experiment cleanly into the next conversation without reconstructing history.
 
