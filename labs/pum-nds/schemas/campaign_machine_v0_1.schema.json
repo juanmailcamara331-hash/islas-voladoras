@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "garage.campaign-machine.v0.1",
+  "title": "Garage Rick Campaign Machine Brief",
+  "type": "object",
+  "required": ["id", "objective", "budget", "channels"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "enum": ["awareness","leads","prelaunch","kickstarter","sales","retention"]},
+    "budget": {
+      "type": "object",
+      "required": ["currency","total"],
+      "properties": {
+        "currency": {"type": "string", "default": "EUR"},
+        "total": {"type": "number", "minimum": 0},
+        "exploration_pct": {"type": "number", "minimum": 0, "maximum": 100, "default": 20}
+      },
+      "additionalProperties": false
+    },
+    "channels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "enabled"],
+        "properties": {
+          "name": {"type": "string"},
+          "enabled": {"type": "boolean"},
+          "min_spend": {"type": "number", "minimum": 0, "default": 0},
+          "max_spend": {"type": ["number","null"], "minimum": 0},
+          "weight": {"type": "number", "minimum": 0, "default": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "tone": {"type": "string", "default": "natural"},
+    "markets": {"type": "array", "items": {"type": "string"}},
+    "evidence_weight": {"type": "number", "minimum": 0, "maximum": 1, "default": 0.7},
+    "human_gate": {"type": "boolean", "const": true}
+  },
+  "additionalProperties": true
+}
