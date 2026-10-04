@@ -1,0 +1,20 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"garage.mixed-initiative-task.v1",
+  "title":"Garage Mixed-Initiative Task Packet",
+  "type":"object",
+  "required":["task_id","branch","lane","instruction"],
+  "properties":{
+    "task_id":{"type":"string","minLength":1},
+    "branch":{"type":"string","minLength":1},
+    "lane":{"type":"string","enum":["safe","taste","hard_gate"]},
+    "instruction":{"type":"string","minLength":1},
+    "provenance":{"type":["object","null"]},
+    "max_safe_steps":{"type":"integer","minimum":1,"maximum":50,"default":8},
+    "spend_cap":{"type":"number","minimum":0,"default":0},
+    "allow_publish":{"type":"boolean","const":false},
+    "allow_external_send":{"type":"boolean","const":false},
+    "return_when":{"type":"array","items":{"type":"string"},"default":["material_delta","taste_needed","blocked","batch_complete"]}
+  },
+  "additionalProperties":true
+}
