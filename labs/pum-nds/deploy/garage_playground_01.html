@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"/>
+<title>Garage Rick · Playground 01</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#111;color:#f4f4f4}
+*{box-sizing:border-box} body{margin:0;padding:14px;min-height:100vh;display:flex;flex-direction:column;gap:12px}
+h1{font-size:20px;margin:0} .sub{opacity:.7;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+button{border:0;border-radius:18px;padding:22px 12px;font-size:22px;font-weight:800;background:#2a2a2a;color:#fff;touch-action:manipulation}
+button:active{transform:scale(.98)}
+.green{background:#1f7a3a}.red{background:#8a2222}.chain{background:#5a4631}.duck{background:#7a6a16}.wide{grid-column:1/-1}
+.beat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.beat button{min-height:110px;font-size:28px}
+.panel{background:#1b1b1b;border-radius:18px;padding:12px}
+#status{font-size:28px;font-weight:900;min-height:42px}
+#log{font-family:ui-monospace,monospace;font-size:12px;white-space:pre-wrap;max-height:180px;overflow:auto;background:#0b0b0b;padding:10px;border-radius:12px}
+input{width:100%;padding:14px;border-radius:12px;border:0;background:#2a2a2a;color:#fff;font-size:16px}
+.row{display:flex;gap:8px}.row button{flex:1;font-size:16px;padding:14px}
+</style>
+</head>
+<body>
+<h1>GARAGE RICK · PLAYGROUND 01</h1>
+<div class="sub">Juega. No interpretes demasiado. Si algo mola, repítelo.</div>
+
+<div class="grid">
+  <button id="pum" class="wide">PUM · GUARDA MOMENTO</button>
+  <button id="green" class="green">DE PUTA MADRE · SE QUEDA</button>
+  <button id="red" class="red">A TOMAR POR CULO · ATRÁS</button>
+  <button id="chain" class="chain">⛓ TIRAR CADENA</button>
+  <button id="duck" class="duck">🦆 PATO</button>
+</div>
+
+<div class="panel">
+  <div class="sub">DOBLE BOMBO</div>
+  <div class="beat">
+    <button id="left">PAM · PIE IZQ</button>
+    <button id="right">PIM · PIE DER</button>
+  </div>
+  <div id="tempo" class="sub" style="margin-top:8px">tempo: —</div>
+</div>
+
+<div class="panel">
+  <div class="sub">BOCA / RAP / SONIDO</div>
+  <input id="voiceText" placeholder="Escribe lo que has dicho si no usas micro"/>
+  <div class="row" style="margin-top:8px">
+    <button id="voiceSave">GUARDAR FRASE</button>
+    <button id="mic">🎙 MICRO</button>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="sub">AHORA</div>
+  <div id="status">quieto</div>
+</div>
+
+<div class="panel">
+  <div class="row">
+    <button id="export">EXPORTAR TRAZA</button>
+    <button id="clear">LIMPIAR VISTA</button>
+  </div>
+  <div id="log"></div>
+</div>
+
+<script>
+const events=[]; let lastBeat=null; const beatTimes=[];
+const $=id=>document.getElementById(id);
+function add(kind,value=null){
+ const e={t:Date.now(),kind,value}; events.push(e);
+ $('status').textContent=label(e);
+ render();
+ navigator.vibrate?.(kind==='green'?[60,40,60]:kind==='red'?[120]:[30]);
+}
+function label(e){
+ const map={pum:'PUM',green:'SE QUEDA',red:'VOLVEMOS ATRÁS',chain:'CADENA',duck:'PATO',left:'PAM',right:'PIM',voice:'VOZ'};
+ return map[e.kind]||e.kind;
+}
+function render(){
+ $('log').textContent=events.slice(-18).map(e=>new Date(e.t).toLocaleTimeString()+'  '+label(e)+(e.value?' · '+JSON.stringify(e.value):'')).join('\n');
+}
+function beat(side){
+ const now=Date.now(); add(side);
+ beatTimes.push(now); if(beatTimes.length>8) beatTimes.shift();
+ if(beatTimes.length>1){
+   const ds=[]; for(let i=1;i<beatTimes.length;i++) ds.push(beatTimes[i]-beatTimes[i-1]);
+   const avg=ds.reduce((a,b)=>a+b,0)/ds.length;
+   const bpm=Math.round(60000/avg);
+   $('tempo').textContent='tempo aprox: '+bpm+' BPM';
+ }
+ lastBeat=side;
+}
+$('pum').onclick=()=>add('pum');
+$('green').onclick=()=>add('green');
+$('red').onclick=()=>add('red');
+$('chain').onclick=()=>add('chain');
+$('duck').onclick=()=>add('duck');
+$('left').onclick=()=>beat('left');
+$('right').onclick=()=>beat('right');
+$('voiceSave').onclick=()=>{const t=$('voiceText').value.trim(); if(t){add('voice',t); $('voiceText').value='';}};
+$('clear').onclick=()=>{$('log').textContent=''; $('status').textContent='quieto';};
+
+let rec=null;
+$('mic').onclick=()=>{
+ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(!SR){$('status').textContent='micro voz no disponible aquí'; return;}
+ if(rec){rec.stop();rec=null;$('mic').textContent='🎙 MICRO';return;}
+ rec=new SR(); rec.lang='es-ES'; rec.interimResults=false; rec.continuous=false;
+ rec.onresult=e=>{const t=e.results[0][0].transcript; add('voice',t);};
+ rec.onend=()=>{rec=null;$('mic').textContent='🎙 MICRO';};
+ rec.start(); $('mic').textContent='■ PARAR';
+};
+
+$('export').onclick=()=>{
+ const blob=new Blob([JSON.stringify({schema:'GARAGE_PLAYGROUND_01',created_at:new Date().toISOString(),events},null,2)],{type:'application/json'});
+ const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='garage_playground_trace_'+Date.now()+'.json'; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+</script>
+</body>
+</html>
