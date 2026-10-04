@@ -630,3 +630,59 @@ Physical cue can invoke it:
 - press a TALK key
 
 This keeps voice as a deliberate instrument, not constant chatter.
+
+
+## 30. MICRO-AFFIRMATION + BODY COUPLING
+Some signals only become meaningful when combined.
+
+Example candidate:
+HUM / AJÁ + deliberate butt movement
+→ strong positive micro-confirmation:
+"this is going very well; continue this line."
+
+Important:
+- neither HUM nor body movement alone should be overinterpreted
+- the combination is learned only through explicit human confirmation
+- it is weaker than a strong GREEN checkpoint unless repeated/confirmed
+
+Possible levels:
+- one HUM/AJÁ = continue
+- repeated HUM/AJÁ + matching body rhythm = strong local reinforcement
+- explicit phrase "de puta madre" = GREEN checkpoint
+
+## 31. SNEEZE = INTERRUPTION EVENT, NOT MEANING
+A sneeze is treated first as a physical interruption, not as a command.
+
+If the user explicitly chooses, it can participate in a learned combo.
+Default behavior:
+SNEEZE
+→ mark interruption timestamp
+→ preserve current micro-state
+→ after activity resumes, check whether a tiny local element was dropped
+
+## 32. MICROREPARACIÓN ENTRÓPICA AUSENTE (CANDIDATE)
+Working hypothesis, not established theory.
+
+Definition:
+After a brief involuntary interruption (sneeze, cough, dropped object, sudden pause), the Garage checks for a very small missing transition or lost state and offers one reversible repair.
+
+Pipeline:
+INTERRUPTION
+→ SNAPSHOT
+→ RESUME
+→ LOCAL GAP CHECK
+→ CANDIDATE MICRO-REPAIR
+→ HUMAN ACCEPT / REJECT
+
+Examples:
+- restore a slider/weight that was mid-change
+- recover an unfinished phrase fragment
+- reconnect one object association that was interrupted
+- resume a rhythm sequence from the last stable beat
+- re-open the exact physical/output state active before interruption
+
+Never interpret the sneeze itself as emotion, intention or hidden meaning.
+
+If combined intentionally:
+SNEEZE + HUM/AJÁ + body rhythm
+may become a user-defined command, but only after explicit assignment.
