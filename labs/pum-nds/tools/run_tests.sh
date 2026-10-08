@@ -21,6 +21,7 @@ python3 tests/test_object_biography.py
 python3 tests/test_echo.py
 python3 tests/test_fault_injection.py
 python3 tests/test_sealed_game_sim.py
+python3 tests/test_reencounter_runtime.py
 python3 tests/test_runtime_checkpoint.py
 python3 tests/test_runtime_persistence.py
 python3 tests/test_relation_persistence.py
