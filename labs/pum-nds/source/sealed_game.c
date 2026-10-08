@@ -147,23 +147,24 @@ static void combat(SealedGameState* g, GameAction action) {
   uint32_t r = next_rng(g);
   uint16_t damage = 0;
   uint16_t enemy_damage = 0;
+  int guarding = 0;
   unsigned lighter_bonus = pop16(g->lighters_mask) ? 1u : 0u;
   unsigned pen_bonus = pop16(g->pens_mask) ? 1u : 0u;
 
   if (action == GAME_ACT_PRIMARY) {
+    /* A: straightforward attack. Two attacks prepare a strange follow-up. */
     damage = (uint16_t)(2u + lighter_bonus + (r % 3u));
     g->combo++;
   } else if (action == GAME_ACT_SECONDARY) {
-    if (g->focus) {
-      g->focus--;
-      damage = (uint16_t)(4u + pen_bonus + (r % 4u));
-      g->combo = (uint16_t)(g->combo + 2u);
-    } else {
-      damage = 1u;
-    }
+    /* B: actual defense, never a disguised heavy attack. */
+    guarding = 1;
+    if (g->focus < g->focus_max) g->focus++;
   } else {
-    if (g->combo >= 2u) {
-      damage = (uint16_t)(3u + g->combo);
+    /* X/Y/SELECT: release the accumulated combo at the cost of one focus.
+       With insufficient combo/focus, the action gathers focus instead. */
+    if (g->combo >= 2u && g->focus > 0u) {
+      g->focus--;
+      damage = (uint16_t)(3u + g->combo + pen_bonus);
       g->combo = 0u;
     } else if (g->focus < g->focus_max) {
       g->focus++;
@@ -182,6 +183,8 @@ static void combat(SealedGameState* g, GameAction action) {
 
   g->enemy_hp = (uint16_t)(g->enemy_hp - damage);
   enemy_damage = (uint16_t)(1u + (g->enemy_power / 3u) + ((r >> 8) % 2u));
+  /* A guarded turn softens the hit, but cannot stall the fight forever. */
+  if (guarding) enemy_damage = enemy_damage > 2u ? (uint16_t)(enemy_damage - 2u) : 1u;
 
   if (enemy_damage >= g->hp) {
     g->hp = 0;
