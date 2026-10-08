@@ -129,7 +129,7 @@ static void explore(SealedGameState* g, GameAction action) {
     }
 
     if (g->milestones >= TARGET_MILESTONES) g->closure_ready = 1;
-    if ((r % 7u) == 0u || (g->steps % 11u) == 0u) start_encounter(g);
+    /* Let the player approach the nearby object before random battles.\n       Wandering still unlocks encounters after a handful of steps. */\n    if (((g->reserved & PUM_OBJECT_MET) || g->steps >= 8u) &&\n        ((r % 7u) == 0u || (g->steps % 11u) == 0u))\n      start_encounter(g);
   }
 
   if (action == GAME_ACT_CONTEXT && g->closure_ready) g->mode = GAME_COMPLETE;
