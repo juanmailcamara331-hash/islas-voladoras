@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "@netlify/blobs": "11.1.0",
-    "@netlify/functions": "6.0.0"
+    "@netlify/functions": "6.0.2"
   },
   "scripts": {
     "validate:isl": "node scripts/validate-isl-data.mjs"
