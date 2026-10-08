@@ -45,6 +45,30 @@ int main(void) {
   assert(g->milestones == once + 1u);
   assert(g->hp == g->hp_max && g->focus == g->focus_max);
 
+  /* Real C combat: B must protect, not damage. X spends focus on a combo. */
+  SealedGameState fight, strike;
+  sealed_game_init(&fight, 19u);
+  fight.mode = GAME_COMBAT;
+  fight.enemy_hp = 40u;
+  fight.enemy_power = 6u;
+  fight.hp = 13u;
+  fight.focus = 0u;
+  strike = fight;
+  sealed_game_step(&fight, GAME_ACT_SECONDARY);
+  sealed_game_step(&strike, GAME_ACT_PRIMARY);
+  assert(fight.mode == GAME_COMBAT);
+  assert(fight.enemy_hp == 40u);
+  assert(fight.focus == 1u);
+  assert(fight.hp > strike.hp);
+  sealed_game_step(&fight, GAME_ACT_PRIMARY);
+  sealed_game_step(&fight, GAME_ACT_PRIMARY);
+  assert(fight.combo == 2u);
+  uint16_t hp_before_strange = fight.enemy_hp;
+  sealed_game_step(&fight, GAME_ACT_CONTEXT);
+  assert(fight.enemy_hp < hp_before_strange);
+  assert(fight.focus == 0u);
+  assert(fight.combo == 0u);
+
   s.checksum = save_checksum(&s);
   assert(save_validate(&s));
   IslSave loaded = s;
