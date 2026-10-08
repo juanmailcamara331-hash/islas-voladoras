@@ -26,6 +26,7 @@ python3 tests/test_runtime_persistence.py
 python3 tests/test_relation_persistence.py
 python3 tests/test_relation_export.py
 python3 tests/test_semantic_runtime.py
+python3 tests/test_handheld_input.py
 python3 tools/ivv_check.py
 python3 tools/blind_pass1.py
 python3 tools/blind_pass2.py

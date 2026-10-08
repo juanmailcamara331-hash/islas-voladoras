@@ -5,7 +5,8 @@ main=(ROOT/"source/main.cpp").read_text()
 
 assert "static SemanticAction map_semantic" in main
 assert "static GameAction game_action_from_semantic" in main
-assert "SemanticAction semantic = map_semantic(down);" in main
+assert "SemanticAction semantic = map_semantic(input);" in main
+assert "const int repeated = keysDownRepeat();" in main
 assert "GameAction action = game_action_from_semantic(semantic);" in main
 assert "sealed_game_step(&g_game, action);" in main
 assert "ACT_PUM" in main and "KEY_SELECT" in main

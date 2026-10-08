@@ -121,6 +121,7 @@ def step(g, action):
 
         r = next_rng(g)
         damage = 0
+        guarding = action == SECONDARY
         lighter_bonus = 1 if pop16(g.lighters_mask) else 0
         pen_bonus = 1 if pop16(g.pens_mask) else 0
 
@@ -128,15 +129,12 @@ def step(g, action):
             damage = 2 + lighter_bonus + (r % 3)
             g.combo += 1
         elif action == SECONDARY:
-            if g.focus:
-                g.focus -= 1
-                damage = 4 + pen_bonus + (r % 4)
-                g.combo += 2
-            else:
-                damage = 1
+            if g.focus < g.focusmax:
+                g.focus += 1
         else:
-            if g.combo >= 2:
-                damage = 3 + g.combo
+            if g.combo >= 2 and g.focus > 0:
+                g.focus -= 1
+                damage = 3 + g.combo + pen_bonus
                 g.combo = 0
             elif g.focus < g.focusmax:
                 g.focus += 1
@@ -155,6 +153,8 @@ def step(g, action):
 
         g.enemyhp -= damage
         enemy_damage = 1 + g.enemy_power // 3 + ((r >> 8) % 2)
+        if guarding:
+            enemy_damage = max(1, enemy_damage - 2)
         if enemy_damage >= g.hp:
             g.hp = 0
             g.mode = RECOVER
@@ -213,9 +213,9 @@ def policy(g, rng):
         return PRIMARY
 
     if g.mode == COMBAT:
-        if g.focus and (r % 100) < 35:
+        if g.hp <= (g.hpmax // 3) and (r % 100) < 40:
             return SECONDARY
-        if g.combo >= 2 and ((r >> 8) % 100) < 25:
+        if g.combo >= 2 and g.focus and ((r >> 8) % 100) < 50:
             return CONTEXT
         return PRIMARY
 

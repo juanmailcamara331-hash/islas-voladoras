@@ -18,6 +18,11 @@ static void frame(int x,int y,int w,int h,u16 c){
   rect(x,y,w,1,c); rect(x,y+h-1,w,1,c); rect(x,y,1,h,c); rect(x+w-1,y,1,h,c);
 }
 
+/* Tiny button glyphs, drawn by hand for the low-resolution square crop. */
+static void glyph_a(int x,int y,u16 c);
+static void glyph_b(int x,int y,u16 c);
+static void glyph_x(int x,int y,u16 c);
+
 static void clear_bg(void){
   const u16 bg=C(1,4,5);
   for(int i=0;i<256*192;i++) fb[i]=bg;
@@ -44,12 +49,50 @@ static void bars(const SealedGameState* g){
   rect(202,10,7,10,light);
 }
 
-static void draw_player(int x,int y){
-  const u16 gold=C(28,21,7);
-  rect(x+3,y,2,8,gold);
-  rect(x,y+3,8,2,gold);
-  px(x+3,y+3,C(31,29,19));
-  px(x+4,y+4,C(31,29,19));
+static void draw_player(int x,int y,unsigned steps){
+  const u16 coat=C(9,23,20), gold=C(28,21,7), light=C(31,29,19);
+  const u16 shade=C(1,5,6);
+  rect(x+1,y+9,7,1,shade);
+  rect(x+2,y+3,5,5,coat);
+  rect(x+3,y+1,4,3,gold);
+  px(x+5,y+2,shade);
+  px(x+6,y+2,light);
+  rect(x+1,y+5,2,2,gold);
+  px(x+6,y+5,light);
+  if (steps & 1u) { rect(x+2,y+8,2,2,gold); rect(x+6,y+7,2,2,coat); }
+  else            { rect(x+2,y+7,2,2,coat); rect(x+6,y+8,2,2,gold); }
+}
+
+/* A small, readable invitation inside the square safe area.
+   The change in silhouette is driven by state stored in the real SAVE. */
+static void draw_pum_object(const SealedGameState* g, int ox, int oy, int cs) {
+  int sx=ox+7*cs+2, sy=oy+5*cs+2;
+  const u16 pale=C(22,27,24), lilac=C(17,11,23), gold=C(28,21,7);
+  if (g->reserved & 0x0004u) {
+    frame(sx-1,sy-1,11,11,gold);
+    rect(sx+4,sy,2,9,pale);
+    rect(sx,sy+4,10,2,pale);
+    px(sx+4,sy+4,gold);
+  } else if (g->reserved & 0x0001u) {
+    frame(sx,sy+1,9,7,lilac);
+    rect(sx+2,sy+3,5,3,pale);
+    px(sx+4,sy+4,C(2,5,6));
+    px(sx+9,sy,C(26,13,13));
+  } else {
+    frame(sx+1,sy+1,7,7,lilac);
+    px(sx+3,sy+3,pale);
+    px(sx+6,sy+6,gold);
+  }
+
+  int dx=(int)g->x-7, dy=(int)g->y-5;
+  if (dx<0) dx=-dx;
+  if (dy<0) dy=-dy;
+  if (dx+dy<=1) {
+    frame(sx-2,sy-2,13,13,gold);
+    rect(204,86,16,17,C(2,6,7));
+    frame(204,86,16,17,gold);
+    glyph_a(207,89,gold);
+  }
 }
 
 static void draw_map(const SealedGameState* g){
@@ -71,7 +114,8 @@ static void draw_map(const SealedGameState* g){
       if(((x+y)&7)==0) px(ox+x*cs+1,oy+y*cs+10,edge);
     }
   }
-  draw_player(ox+g->x*cs+2,oy+g->y*cs+2);
+  draw_pum_object(g,ox,oy,cs);
+  draw_player(ox+g->x*cs+2,oy+g->y*cs+1,g->steps);
 }
 
 static void draw_combat(const SealedGameState* g){
@@ -94,10 +138,13 @@ static void draw_combat(const SealedGameState* g){
   rect(92,145,72,5,C(2,5,6));
   rect(94,147,ehp*68/24,1,hot);
 
-  // three non-text action marks
+  /* Readable controller hints instead of three unexplained empty boxes. */
   frame(82,164,20,16,gold);
   frame(118,164,20,16,edge);
   frame(154,164,20,16,C(16,8,18));
+  glyph_a(87,167,gold);
+  glyph_b(123,167,edge);
+  glyph_x(159,167,C(24,14,27));
 }
 
 static void draw_recover(void){
@@ -142,6 +189,13 @@ static void glyph_a(int x,int y,u16 c){
 static void glyph_b(int x,int y,u16 c){
   rect(x,y,2,10,c); rect(x+2,y,5,2,c); rect(x+2,y+4,5,2,c); rect(x+2,y+8,5,2,c);
   rect(x+7,y+1,2,3,c); rect(x+7,y+5,2,3,c);
+}
+static void glyph_x(int x,int y,u16 c){
+  for(int i=0;i<8;i++){
+    px(x+1+i,y+1+i,c);
+    px(x+8-i,y+1+i,c);
+    px(x+2+i,y+1+i,c);
+  }
 }
 static void glyph_y(int x,int y,u16 c){
   rect(x,y,2,4,c); rect(x+8,y,2,4,c); rect(x+2,y+3,2,2,c); rect(x+6,y+3,2,2,c); rect(x+4,y+5,2,5,c);

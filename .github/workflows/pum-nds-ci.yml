@@ -67,6 +67,9 @@ jobs:
     needs: build
     runs-on: ubuntu-24.04
     steps:
+      - uses: actions/checkout@v4
+      - name: Verify real C re-encounter and save integrity
+        run: python3 labs/pum-nds/tests/test_reencounter_runtime.py
       - name: Install legal HLE-capable emulator
         run: |
           sudo apt-get update

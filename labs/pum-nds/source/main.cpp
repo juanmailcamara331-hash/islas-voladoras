@@ -143,6 +143,9 @@ static void init_video() {
 
 int main(void) {
   init_video();
+  /* Hold the D-pad to walk: 16-frame initial delay, 5-frame repeat.
+     Actions A/B/X/Y/SELECT remain single-press to prevent accidental spam. */
+  keysSetRepeat(16, 5);
   gesture_reset(&g_gesture);
   trace_buffer_init(&g_trace);
   tempo_init(&g_tempo);
@@ -159,6 +162,7 @@ int main(void) {
     scanKeys();
 
     const int down = keysDown();
+    const int repeated = keysDownRepeat(); /* Read only once per frame. */
     const int held = keysHeld();
     const int up = keysUp();
 
@@ -187,12 +191,19 @@ int main(void) {
       continue;
     }
 
-    SemanticAction semantic = map_semantic(down);
+    const int direction_mask = KEY_UP | KEY_DOWN | KEY_LEFT | KEY_RIGHT;
+    const int input = (down & ~direction_mask) | (repeated & direction_mask);
+    SemanticAction semantic = map_semantic(input);
     GameAction action = game_action_from_semantic(semantic);
     if (action != GAME_ACT_NONE) {
       GameMode before = (GameMode)g_game.mode;
+      const uint16_t before_object = g_game.reserved;
       sealed_game_step(&g_game, action);
-      if (before != (GameMode)g_game.mode) {
+      /* A tiny distinct chime when the object first remembers the player,
+         or when the player returns later. Do not chime merely for leaving. */
+      if ((g_game.reserved & 0x0005u) != (before_object & 0x0005u)) {
+        audio_feedback_play(SFX_COMPLETE);
+      } else if (before != (GameMode)g_game.mode) {
         if (g_game.mode == GAME_COMBAT) audio_feedback_play(SFX_IMPACT);
         else if (g_game.mode == GAME_RECOVER) audio_feedback_play(SFX_IMPACT);
         else if (g_game.mode == GAME_COMPLETE) audio_feedback_play(SFX_COMPLETE);
@@ -218,7 +229,8 @@ int main(void) {
                       ECHO_RELATION, g_save.play_ticks + 180u, g_save.relation_count);
       }
 
-      if (before != (GameMode)g_game.mode || action == GAME_ACT_CONTEXT)
+      if (before != (GameMode)g_game.mode || action == GAME_ACT_CONTEXT ||
+          g_game.reserved != before_object)
         checkpoint_save();
 
       if (before != (GameMode)g_game.mode || action != GAME_ACT_NONE)

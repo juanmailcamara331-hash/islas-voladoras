@@ -6,6 +6,14 @@
 #define TARGET_MILESTONES 9u
 #define COLLECTION_VARIANTS 12u
 
+/* Tiny persistent encounter: reuse the existing save's reserved bits.
+   No new data layout and no separate quest subsystem. */
+#define PUM_OBJECT_X 7u
+#define PUM_OBJECT_Y 5u
+#define PUM_OBJECT_MET 0x0001u
+#define PUM_OBJECT_LEFT 0x0002u
+#define PUM_OBJECT_REUNITED 0x0004u
+
 static uint32_t next_rng(SealedGameState* g) {
   uint32_t x = g->rng ? g->rng : 0xA341316Cu;
   x ^= x << 13;
@@ -70,6 +78,31 @@ static void start_encounter(SealedGameState* g) {
   g->combo = 0;
 }
 
+static unsigned object_distance(const SealedGameState* g) {
+  unsigned dx = g->x > PUM_OBJECT_X ? g->x - PUM_OBJECT_X : PUM_OBJECT_X - g->x;
+  unsigned dy = g->y > PUM_OBJECT_Y ? g->y - PUM_OBJECT_Y : PUM_OBJECT_Y - g->y;
+  return dx + dy;
+}
+
+static void touch_pum_object(SealedGameState* g) {
+  if (object_distance(g) > 1u) return;
+
+  if (!(g->reserved & PUM_OBJECT_MET)) {
+    g->reserved |= PUM_OBJECT_MET;
+    reward_collection(g);
+    if (g->milestones < TARGET_MILESTONES) g->milestones++;
+  } else if ((g->reserved & PUM_OBJECT_LEFT) &&
+             !(g->reserved & PUM_OBJECT_REUNITED)) {
+    g->reserved |= PUM_OBJECT_REUNITED;
+    reward_collection(g);
+    g->hp = g->hp_max;
+    g->focus = g->focus_max;
+    if (g->milestones < TARGET_MILESTONES) g->milestones++;
+  }
+
+  if (g->milestones >= TARGET_MILESTONES) g->closure_ready = 1;
+}
+
 static void explore(SealedGameState* g, GameAction action) {
   int moved = 0;
   if (action == GAME_ACT_UP)    { g->y = clamp_u16((int)g->y - 1, 0, WORLD_H-1); moved = 1; }
@@ -77,7 +110,11 @@ static void explore(SealedGameState* g, GameAction action) {
   if (action == GAME_ACT_LEFT)  { g->x = clamp_u16((int)g->x - 1, 0, WORLD_W-1); moved = 1; }
   if (action == GAME_ACT_RIGHT) { g->x = clamp_u16((int)g->x + 1, 0, WORLD_W-1); moved = 1; }
 
+  if (action == GAME_ACT_PRIMARY) touch_pum_object(g);
+
   if (moved) {
+    if ((g->reserved & PUM_OBJECT_MET) && object_distance(g) >= 3u)
+      g->reserved |= PUM_OBJECT_LEFT;
     g->steps++;
     uint32_t r = next_rng(g);
     uint32_t cell = (uint32_t)g->x * 17u + (uint32_t)g->y * 31u + g->seed;
@@ -92,7 +129,11 @@ static void explore(SealedGameState* g, GameAction action) {
     }
 
     if (g->milestones >= TARGET_MILESTONES) g->closure_ready = 1;
-    if ((r % 7u) == 0u || (g->steps % 11u) == 0u) start_encounter(g);
+    /* Let the player approach the nearby object before random battles.
+       Wandering still unlocks encounters after a handful of steps. */
+    if (((g->reserved & PUM_OBJECT_MET) || g->steps >= 8u) &&
+        ((r % 7u) == 0u || (g->steps % 11u) == 0u))
+      start_encounter(g);
   }
 
   if (action == GAME_ACT_CONTEXT && g->closure_ready) g->mode = GAME_COMPLETE;
@@ -106,23 +147,24 @@ static void combat(SealedGameState* g, GameAction action) {
   uint32_t r = next_rng(g);
   uint16_t damage = 0;
   uint16_t enemy_damage = 0;
+  int guarding = 0;
   unsigned lighter_bonus = pop16(g->lighters_mask) ? 1u : 0u;
   unsigned pen_bonus = pop16(g->pens_mask) ? 1u : 0u;
 
   if (action == GAME_ACT_PRIMARY) {
+    /* A: straightforward attack. Two attacks prepare a strange follow-up. */
     damage = (uint16_t)(2u + lighter_bonus + (r % 3u));
     g->combo++;
   } else if (action == GAME_ACT_SECONDARY) {
-    if (g->focus) {
-      g->focus--;
-      damage = (uint16_t)(4u + pen_bonus + (r % 4u));
-      g->combo = (uint16_t)(g->combo + 2u);
-    } else {
-      damage = 1u;
-    }
+    /* B: actual defense, never a disguised heavy attack. */
+    guarding = 1;
+    if (g->focus < g->focus_max) g->focus++;
   } else {
-    if (g->combo >= 2u) {
-      damage = (uint16_t)(3u + g->combo);
+    /* X/Y/SELECT: release the accumulated combo at the cost of one focus.
+       With insufficient combo/focus, the action gathers focus instead. */
+    if (g->combo >= 2u && g->focus > 0u) {
+      g->focus--;
+      damage = (uint16_t)(3u + g->combo + pen_bonus);
       g->combo = 0u;
     } else if (g->focus < g->focus_max) {
       g->focus++;
@@ -141,6 +183,8 @@ static void combat(SealedGameState* g, GameAction action) {
 
   g->enemy_hp = (uint16_t)(g->enemy_hp - damage);
   enemy_damage = (uint16_t)(1u + (g->enemy_power / 3u) + ((r >> 8) % 2u));
+  /* A guarded turn softens the hit, but cannot stall the fight forever. */
+  if (guarding) enemy_damage = enemy_damage > 2u ? (uint16_t)(enemy_damage - 2u) : 1u;
 
   if (enemy_damage >= g->hp) {
     g->hp = 0;
