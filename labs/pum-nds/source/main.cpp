@@ -199,7 +199,11 @@ int main(void) {
       GameMode before = (GameMode)g_game.mode;
       const uint16_t before_object = g_game.reserved;
       sealed_game_step(&g_game, action);
-      if (before != (GameMode)g_game.mode) {
+      /* A tiny distinct chime when the object first remembers the player,
+         or when the player returns later. Do not chime merely for leaving. */
+      if ((g_game.reserved & 0x0005u) != (before_object & 0x0005u)) {
+        audio_feedback_play(SFX_COMPLETE);
+      } else if (before != (GameMode)g_game.mode) {
         if (g_game.mode == GAME_COMBAT) audio_feedback_play(SFX_IMPACT);
         else if (g_game.mode == GAME_RECOVER) audio_feedback_play(SFX_IMPACT);
         else if (g_game.mode == GAME_COMPLETE) audio_feedback_play(SFX_COMPLETE);
