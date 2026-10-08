@@ -191,6 +191,7 @@ int main(void) {
     GameAction action = game_action_from_semantic(semantic);
     if (action != GAME_ACT_NONE) {
       GameMode before = (GameMode)g_game.mode;
+      const uint16_t before_object = g_game.reserved;
       sealed_game_step(&g_game, action);
       if (before != (GameMode)g_game.mode) {
         if (g_game.mode == GAME_COMBAT) audio_feedback_play(SFX_IMPACT);
@@ -218,7 +219,8 @@ int main(void) {
                       ECHO_RELATION, g_save.play_ticks + 180u, g_save.relation_count);
       }
 
-      if (before != (GameMode)g_game.mode || action == GAME_ACT_CONTEXT)
+      if (before != (GameMode)g_game.mode || action == GAME_ACT_CONTEXT ||
+          g_game.reserved != before_object)
         checkpoint_save();
 
       if (before != (GameMode)g_game.mode || action != GAME_ACT_NONE)
