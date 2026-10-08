@@ -52,6 +52,36 @@ static void draw_player(int x,int y){
   px(x+4,y+4,C(31,29,19));
 }
 
+/* A small, readable invitation inside the square safe area.
+   The change in silhouette is driven by state stored in the real SAVE. */
+static void draw_pum_object(const SealedGameState* g, int ox, int oy, int cs) {
+  int sx=ox+7*cs+2, sy=oy+5*cs+2;
+  const u16 pale=C(22,27,24), lilac=C(17,11,23), gold=C(28,21,7);
+  if (g->reserved & 0x0004u) {
+    frame(sx-1,sy-1,11,11,gold);
+    rect(sx+4,sy,2,9,pale);
+    rect(sx,sy+4,10,2,pale);
+    px(sx+4,sy+4,gold);
+  } else if (g->reserved & 0x0001u) {
+    frame(sx,sy+1,9,7,lilac);
+    rect(sx+2,sy+3,5,3,pale);
+    px(sx+4,sy+4,C(2,5,6));
+    px(sx+9,sy,C(26,13,13));
+  } else {
+    frame(sx+1,sy+1,7,7,lilac);
+    px(sx+3,sy+3,pale);
+    px(sx+6,sy+6,gold);
+  }
+
+  int dx=(int)g->x-7, dy=(int)g->y-5;
+  if (dx<0) dx=-dx;
+  if (dy<0) dy=-dy;
+  if (dx+dy<=1) {
+    px(sx-1,sy+4,gold);
+    px(sx+10,sy+4,gold);
+  }
+}
+
 static void draw_map(const SealedGameState* g){
   const int ox=56, oy=32, cs=12;
   const u16 cell0=C(2,7,8);
@@ -71,6 +101,7 @@ static void draw_map(const SealedGameState* g){
       if(((x+y)&7)==0) px(ox+x*cs+1,oy+y*cs+10,edge);
     }
   }
+  draw_pum_object(g,ox,oy,cs);
   draw_player(ox+g->x*cs+2,oy+g->y*cs+2);
 }
 
