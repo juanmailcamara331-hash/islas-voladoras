@@ -12,6 +12,15 @@ harness = r"""
 #include "save_state.h"
 
 int main(void) {
+  SealedGameState opening;
+  sealed_game_init(&opening, 42u);
+  for (int i = 0; i < 7; ++i) {
+    sealed_game_step(&opening, GAME_ACT_UP);
+    assert(opening.mode == GAME_EXPLORE);
+    assert(opening.encounters == 0u);
+  }
+  assert(opening.steps == 7u);
+
   IslSave s;
   save_init(&s);
   SealedGameState* g = &s.game;
