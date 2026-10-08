@@ -143,6 +143,9 @@ static void init_video() {
 
 int main(void) {
   init_video();
+  /* Hold the D-pad to walk: 16-frame initial delay, 5-frame repeat.
+     Actions A/B/X/Y/SELECT remain single-press to prevent accidental spam. */
+  keysSetRepeat(16, 5);
   gesture_reset(&g_gesture);
   trace_buffer_init(&g_trace);
   tempo_init(&g_tempo);
@@ -159,6 +162,7 @@ int main(void) {
     scanKeys();
 
     const int down = keysDown();
+    const int repeated = keysDownRepeat(); /* Read only once per frame. */
     const int held = keysHeld();
     const int up = keysUp();
 
@@ -187,7 +191,9 @@ int main(void) {
       continue;
     }
 
-    SemanticAction semantic = map_semantic(down);
+    const int direction_mask = KEY_UP | KEY_DOWN | KEY_LEFT | KEY_RIGHT;
+    const int input = (down & ~direction_mask) | (repeated & direction_mask);
+    SemanticAction semantic = map_semantic(input);
     GameAction action = game_action_from_semantic(semantic);
     if (action != GAME_ACT_NONE) {
       GameMode before = (GameMode)g_game.mode;
